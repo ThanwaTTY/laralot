@@ -55,14 +55,18 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>
+      {{--  <h1>
         Dashboard
         <small>Control panel</small>
-      </h1>
+      </h1>  --}}
+      <div class="col-md-12" style="padding-left: 0px;">
+      {{--  <div class="pull-left">  --}}
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-        <li class="active">Dashboard</li>
+        <li class="active"><i class="fa fa-home"></i></li>
+        <li class="active">ยินดีต้อนรับ</li>
       </ol>
+      {{--  </div>  --}}
+      </div>
     </section>
 
     <!-- Main content -->
