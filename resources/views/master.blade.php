@@ -12,6 +12,26 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
+<style>
+#lot {
+    position: absolute;
+    right: -350px;
+    height: 1000%;
+    width: 1000%;
+}
+#headbox {
+  background-color: #3c8dbc;
+  padding: 15px 10px;
+}
+#main-header {
+  background-color: #3c8dbc;
+}
+#unclick {
+    background: rgba(0,0,0,0.0);
+    color: #f6f6f6;
+    Cursor:Default;
+}
+</style>
 
 @include('nev-bar-top')
   <!-- Left side column. contains the logo and sidebar -->
