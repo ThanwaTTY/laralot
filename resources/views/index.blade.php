@@ -32,6 +32,7 @@
   .row {
     margin-right: -8px;
     margin-left: -15px;
+    padding-top: 3px;
 }
   .info-boxcreate {
     display: block;
