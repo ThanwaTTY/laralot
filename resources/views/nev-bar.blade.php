@@ -5,7 +5,7 @@
       <div class="row">
         <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 15px;">
           <div class="info-boxcreate">
-            <span id="size" class="info-box-icon bg-green"><i class="fa fa-table"></i></span>
+            <a href=""><span id="size" class="info-box-icon bg-green"><i class="fa fa-table"></i></span></a>
 
 
             <!-- /.info-box-content -->
@@ -14,7 +14,7 @@
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 10px;">
           <div class="info-boxcreate">
-            <span id="size" class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
+            <a href=""><span id="size" class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span></a>
 
             <!-- /.info-box-content -->
           </div>
@@ -22,7 +22,7 @@
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 5px;">
           <div class="info-boxcreate">
-            <span id="size" class="info-box-icon bg-yellow"><i class="fa fa-bar-chart"></i></span>
+            <a href=""><span id="size" class="info-box-icon bg-yellow"><i class="fa fa-bar-chart"></i></span></a>
 
             <!-- /.info-box-content -->
           </div>
@@ -30,7 +30,7 @@
         </div>
         <div class="col-md-3 col-sm-6 col-xs-12"  style="padding-left: 0px;">
           <div class="info-boxcreate">
-            <span id="size" class="info-box-icon bg-red"><i class="fa fa-refresh"></i></span>
+            <a href=""><span id="size" class="info-box-icon bg-red"><i class="fa fa-refresh"></i></span></a>
 
             <!-- /.info-box-content -->
           </div>
