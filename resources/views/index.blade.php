@@ -28,6 +28,29 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <style>
+  .row {
+    margin-right: -8px;
+    margin-left: -15px;
+}
+  .info-boxcreate {
+    display: block;
+    min-height: 40px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+    border-radius: 2px;
+    margin-bottom: 15px;
+    
+}
+  #size{
+    height: 49px;
+    width: 55px;
+    line-height: 0px;
+    min-height: 0px;
+  }
+
+  </style>
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->

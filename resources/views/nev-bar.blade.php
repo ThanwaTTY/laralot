@@ -2,17 +2,86 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-      <div class="user-panel">
-        <div class="pull-left image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+      <div class="row">
+        <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 15px;">
+          <div class="info-boxcreate">
+            <span id="size" class="info-box-icon bg-green"><i class="fa fa-table"></i></span>
+
+
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
         </div>
-        <div class="pull-left info">
-          <p>Alexander Pierce</p>
-          <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 10px;">
+          <div class="info-boxcreate">
+            <span id="size" class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span>
+
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 5px;">
+          <div class="info-boxcreate">
+            <span id="size" class="info-box-icon bg-yellow"><i class="fa fa-bar-chart"></i></span>
+
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
+        </div>
+        <div class="col-md-3 col-sm-6 col-xs-12"  style="padding-left: 0px;">
+          <div class="info-boxcreate">
+            <span id="size" class="info-box-icon bg-red"><i class="fa fa-refresh"></i></span>
+
+            <!-- /.info-box-content -->
+          </div>
+          <!-- /.info-box -->
         </div>
       </div>
+      {{-- <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;background-color: #3c8dbc;">
+        <div class="col-md-3"><i class="fa fa-table" style="color:white;font-size:40px;background-color: red;padding:5px 5px"></i></div>
+        <div class="col-md-3"><i class="fa fa-users" style="color:white;font-size:40px;background-color: red;padding:5px 5px"></i></div>
+        <div class="col-md-3"><i class="fa fa-bar-chart" style="color:white;font-size:40px;background-color: red;padding:5px 5px"></i></div>
+        <div class="col-md-3"><i class="fa fa-refresh" style="color:white;font-size:40px;background-color: red;padding:5px 5px"></i></div>
+      </div> --}}
+
+      <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+        <div class="col-md-5"><span style="float:right;color:white;">ชื่อ:</span></div>
+        <div class="col-md-7"><span style="float:left;color:white;">palm</span></div>
+      </div>
+      <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+        <div class="col-md-5"><span style="float:right;color:white;">ระดับ:</span></div>
+        <div class="col-md-7"><span style="float:left;color:white;">เอเย่นต์</span></div>
+      </div>
+       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+        <div class="col-md-5"><span style="float:right;color:white;">เครดิต:</span></div>
+        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+      </div>
+       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+        <div class="col-md-5"><span style="float:right;color:white;">ใช้ไป:</span></div>
+        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+      </div>
+       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+        <div class="col-md-5"><span style="float:right;color:white;">เหลือ:</span></div>
+        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+      </div>
+       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+        <div class="col-md-5"><span style="float:right;color:white;">ได้เสีย:</span></div>
+        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+      </div>
+       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+        <div class="col-md-5"><span style="float:right;color:white;">สมาชิก:</span></div>
+        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+      </div>
+       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+        <div class="col-md-5"><span style="float:right;color:white;">ออนไลน์:</span></div>
+        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+      </div>
+        <li>
+          
+        </li>
+      
       <!-- search form -->
-      <form action="#" method="get" class="sidebar-form">
+      {{-- <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
           <input type="text" name="q" class="form-control" placeholder="Search...">
               <span class="input-group-btn">
@@ -20,19 +89,19 @@
                 </button>
               </span>
         </div>
-      </form>
+      </form> --}}
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+        {{-- <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
-          </a>
-          <ul class="treeview-menu">
+          </a> --}}
+          {{-- <ul class="treeview-menu">
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
           </ul>
@@ -46,116 +115,97 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-          </ul>
-        </li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Boxed</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Fixed</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+          </ul>--}}
+        {{-- </li>  --}}
         <li>
           <a href="pages/widgets.html">
-            <i class="fa fa-th"></i> <span>Widgets</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+            <i class="fa fa-th"></i> <span>รายการแทง</span>
+           <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
+           <ul class="treeview-menu">
+            <li><a href="#"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
+          </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-pie-chart"></i>
-            <span>Charts</span>
+            <i class="fa fa-users"></i>
+            <span>จัดการสมาชิก</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/charts/chartjs.html"><i class="fa fa-circle-o"></i> ChartJS</a></li>
-            <li><a href="pages/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
-            <li><a href="pages/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
-            <li><a href="pages/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> เปิด-ปิด หวย/อัตราจ่าย</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> สมาชิกออนไลน์</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> รายการเก็บของ / อั้น</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-laptop"></i>
-            <span>UI Elements</span>
+            <i class="fa fa-tv (alias)"></i>
+            <span>จัดการหน้าร้าน</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
-            <li><a href="pages/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
-            <li><a href="pages/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
-            <li><a href="pages/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
-            <li><a href="pages/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
-            <li><a href="pages/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> จัดการโพย</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ตั้งค่าสมาชิก</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-edit"></i> <span>Forms</span>
+            <i class="fa fa-bar-chart"></i> <span>รายการแพ้/ชนะ</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
-            <li><a href="pages/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
-            <li><a href="pages/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> แพ้-ชนะ สมาชิก/ประเภท</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> แพ้-ชนะ สุทธิ</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> รายการที่ถูกรางวัล</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ผลการออกรางวัล</a></li>
           </ul>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-table"></i> <span>Tables</span>
+            <i class="fa fa-refresh"></i> <span>การเงิน</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
-            <li><a href="pages/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> จัดการยอด</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> ประวัติการเงิน</a></li>
           </ul>
-        </li>
-        <li>
-          <a href="pages/calendar.html">
-            <i class="fa fa-calendar"></i> <span>Calendar</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-red">3</small>
-              <small class="label pull-right bg-blue">17</small>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a href="pages/mailbox/mailbox.html">
-            <i class="fa fa-envelope"></i> <span>Mailbox</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
-            </span>
-          </a>
         </li>
         <li class="treeview">
           <a href="#">
-            <i class="fa fa-folder"></i> <span>Examples</span>
+            <i class="fa fa-question"></i> <span>คู่มือการใช้งาน</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="pages/examples/invoice.html"><i class="fa fa-circle-o"></i> Invoice</a></li>
-            <li><a href="pages/examples/profile.html"><i class="fa fa-circle-o"></i> Profile</a></li>
-            <li><a href="pages/examples/login.html"><i class="fa fa-circle-o"></i> Login</a></li>
-            <li><a href="pages/examples/register.html"><i class="fa fa-circle-o"></i> Register</a></li>
-            <li><a href="pages/examples/lockscreen.html"><i class="fa fa-circle-o"></i> Lockscreen</a></li>
-            <li><a href="pages/examples/404.html"><i class="fa fa-circle-o"></i> 404 Error</a></li>
-            <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
-            <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
-            <li><a href="pages/examples/pace.html"><i class="fa fa-circle-o"></i> Pace Page</a></li>
+            <li><a href="#"><i class="fa fa-circle-o"></i> คู่มือการใช้งาน</a></li>
           </ul>
         </li>
-        <li class="treeview">
+        {{-- <li class="treeview">
           <a href="#">
             <i class="fa fa-share"></i> <span>Multilevel</span>
             <span class="pull-right-container">
@@ -187,8 +237,8 @@
             </li>
             <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
           </ul>
-        </li>
-        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+        </li> --}}
+        {{-- <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li> --}}
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
