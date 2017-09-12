@@ -59,11 +59,15 @@
 .bot-margin-3 {
     margin-bottom: 13px !important;
     margin-left: 18px !important;
-    border-button: 2px;
+
 }
 
 .bot-margin-3 i {
     font-size: 28px;
+}
+
+.line-button {
+
 }
   </style>
 @endsection
@@ -86,141 +90,88 @@
 
     <!-- Main content -->
     <section class="content">
+    <div class="line-button"></div>
+      <h2 class="text-primary">ยินดีต้อนรับเอเย่นต์ [3M3K]</h2>
       <!-- Small boxes (Stat box) -->
       <div class="row">
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-aqua">
-            <div class="inner">
-              <h3>150</h3>
-
-              <p>New Orders</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-bag"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+        <div class="col-xs-12">
+        <div class="alert alert-warning alert-dismissible">
+                {{-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button> --}}
+                <h4 class="text-red"><i class="icon fa fa-warning"></i> เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
+                <span class="black">กรุณาตั้งจำนวนการรับของต่อตัวในหน้า <a href="https://agent.superlot999.com/items/settings">ตั้งค่าการรับของ</a> เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้</span>
+              </div>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-green">
-            <div class="inner">
-              <h3>53<sup style="font-size: 20px">%</sup></h3>
-
-              <p>Bounce Rate</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-stats-bars"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
+        <div class="col-xs-12">
+          <h2><i class="text-primary">></i> จำนวนสมาชิก</h2>
         </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-yellow">
-            <div class="inner">
-              <h3>44</h3>
-
-              <p>User Registrations</p>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="col-xs-1">
+                <div class="box">
+                  <div class="box-header  text-center">
+                    <h3 class="box-title">เมมเบอร์</h3>
+                  </div>
+                <!-- /.box-header -->
+                  <div class="box-body no-padding">
+                    <table class="table table-striped  text-center">
+                      <tbody>
+                        <tr>
+                          <th style="padding: 12px;">4</th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                <!-- /.box-body -->
+              </div>
             </div>
-            <div class="icon">
-              <i class="ion ion-person-add"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
-        </div>
-        <!-- ./col -->
-        <div class="col-lg-3 col-xs-6">
-          <!-- small box -->
-          <div class="small-box bg-red">
-            <div class="inner">
-              <h3>65</h3>
 
-              <p>Unique Visitors</p>
-            </div>
-            <div class="icon">
-              <i class="ion ion-pie-graph"></i>
-            </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
-          </div>
-        </div>
-        <!-- ./col -->
+
       </div>
+        <div class="col-xs-12">
+          <h2><i class="text-primary">></i> จำนวนสมาชิก</h2>
+        </div>
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="col-xs-12">
+              <div class="box">
+                <!-- /.box-header -->
+                  <div class="box-body no-padding">
+                    <table class="table table-striped">
+                      <tbody>
+                        <tr>
+                          <th style="padding: 12px;"  class="text-center">ชนิดหวย</th>
+                          <th style="padding: 12px;" class="text-center">วันที่</th>
+                          <th style="padding: 12px;">ประกาศ</th>
+                        </tr>
+                        <tr>
+                          <td style="padding: 12px;">ประกาศระบบ</td>
+                          <td style="padding: 12px;">25-08-2017 09:49:00</td>
+                          <td style="padding: 12px;"><b>ประกาศข่าว...หวยลาว<br>
+<br>
+หวยลาวจะเปลี่ยนการออกผลรางวัล จากเดิมสัปดาห์ละ 2 ครั้ง <br>
+วันจันทร์ และพฤหัส จะเปลี่ยนเป็น สัปดาห์ละ 1 ครั้ง คือวัน พุธ วันเดียว<br>
+เริ่มงวดแรกวันพุธที่ 30 ส.ค. 60  <br>
+<br>
+โดยบริษัทขอเลื่อนเวลาปิดรับเร็วขึ้นชั่วคราว เฉพาะงวดแรก เป็นเวลา 19.45 น. หลังจากนั้นหากตรวจสอบแล้วว่า <br>
+สามารถปิดรับเวลาเดิมได้ก็จะทำการปรับเวลาให้ปิดตามเดิม คือ 20.10 น. <br>
+<br>
+แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                <!-- /.box-body -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        
       <!-- /.row -->
       <!-- Main row -->
-      <div class="row">
-        <!-- Left col -->
-        <section class="col-lg-7 connectedSortable">
-          <!-- Custom tabs (Charts with tabs)-->
-          <div class="nav-tabs-custom">
-            <!-- Tabs within a box -->
-            <ul class="nav nav-tabs pull-right">
-              <li class="active"><a href="#revenue-chart" data-toggle="tab">Area</a></li>
-              <li><a href="#sales-chart" data-toggle="tab">Donut</a></li>
-              <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li>
-            </ul>
-            <div class="tab-content no-padding">
-              <!-- Morris chart - Sales -->
-              <div class="chart tab-pane active" id="revenue-chart" style="position: relative; height: 300px;"></div>
-              <div class="chart tab-pane" id="sales-chart" style="position: relative; height: 300px;"></div>
-            </div>
-          </div>
-          <!-- /.nav-tabs-custom -->
-        </section>
-        <!-- /.Left col -->
-        <!-- right col (We are only adding the ID to make the widgets sortable)-->
-        <section class="col-lg-5 connectedSortable">
 
-          <!-- Map box -->
-          <div class="box box-solid bg-light-blue-gradient">
-            <div class="box-header">
-              <!-- tools box -->
-              <div class="pull-right box-tools">
-                <button type="button" class="btn btn-primary btn-sm daterange pull-right" data-toggle="tooltip" title="Date range">
-                  <i class="fa fa-calendar"></i></button>
-                <button type="button" class="btn btn-primary btn-sm pull-right" data-widget="collapse" data-toggle="tooltip" title="Collapse" style="margin-right: 5px;">
-                  <i class="fa fa-minus"></i></button>
-              </div>
-              <!-- /. tools -->
-
-              <i class="fa fa-map-marker"></i>
-
-              <h3 class="box-title">
-                Visitors
-              </h3>
-            </div>
-            <div class="box-body">
-              <div id="world-map" style="height: 250px; width: 100%;"></div>
-            </div>
-            <!-- /.box-body-->
-            <div class="box-footer no-border">
-              <div class="row">
-                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                  <div id="sparkline-1"></div>
-                  <div class="knob-label">Visitors</div>
-                </div>
-                <!-- ./col -->
-                <div class="col-xs-4 text-center" style="border-right: 1px solid #f4f4f4">
-                  <div id="sparkline-2"></div>
-                  <div class="knob-label">Online</div>
-                </div>
-                <!-- ./col -->
-                <div class="col-xs-4 text-center">
-                  <div id="sparkline-3"></div>
-                  <div class="knob-label">Exists</div>
-                </div>
-                <!-- ./col -->
-              </div>
-              <!-- /.row -->
-            </div>
-          </div>
-          <!-- /.box -->
-        </section>
-        <!-- right col -->
-      </div>
       <!-- /.row (main row) -->
 
     </section>
