@@ -23,6 +23,21 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
+
+    <style>
+    .sidebar .sidebar-shortcuts-large {
+        line-height: 45px;
+    }
+    .bot-margin-3 {
+        margin-bottom: 13px !important;
+        margin-left: 18px !important;
+        border-button: 2px;
+    }
+
+    .bot-margin-3 i {
+        font-size: 28px;
+    }
+    </style>
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->
@@ -41,46 +56,6 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 
- <script  src="{{asset('date/jquery-ui.min.js')}}"></script>
-
-  <script  src="{{asset('date/jquery-ui-timepicker-addon.js')}}"></script>
-  <script  src="{{asset('date/jquery-ui-sliderAccess.js')}}"></script>
-
-<!-- page script -->
-<script>
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false
-    });
-  });
-</script>
-
-<script type="text/javascript">
-      $(function(){
-
-        $("#date").datetimepicker({
-          dateFormat: 'yy-mm-dd',
-          timeFormat: 'HH:mm:ss'
-        });
-
-      });
-  </script>
-  <script type="text/javascript">
-    $(function(){
-
-    	$("#date2").datetimepicker({
-        dateFormat: 'yy-mm-dd',
-        timeFormat: 'HH:mm:ss'
-    	});
-
-    });
-    </script>
 @endsection
 
 @section('content')
@@ -98,14 +73,172 @@
         </div>        
     @endif
 
-
+<section class="content-header">
+      <h1>
+        1.เพิ่มสมาชิก
+      </h1>
+</section>
 
 
 <section class="content">
+<form class="form-horizontal" action="" method="post">
+    {{ csrf_field() }}
+        <div class="modal-content">
+            <div class="box box-info">
+                    <div class="box-header">
+                        <h4>ข้อมูลสมาชิก</h4>
+                    </div>
+                        {{-- <form class="form-horizontal" action="" method="post"> --}}
+                           
+                            <div class="box-body">
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                        
+                                                    <div class="form-group">
+                                                            <lable for="inputname" class="col-sm-2 control-label">Input Name</lable>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" id="inputname" placeholder="Input name" value="">
+                                                            </div>
 
-<div class="col-xs-12">
-       ghfdbfdbgfdbfdbfbfsbfsbfsegregregrte
-</div>
+                                                            <lable for="inpassword" class="col-sm-2 control-label">Password</lable>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" id="inpassword" placeholder="Input password" value="">
+                                                            </div>
+                                                    </div>
 
+                                                    <div class="form-group">
+                                                            <lable for="inputname" class="col-sm-2 control-label">Input Name</lable>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" id="inputname" placeholder="Input name" value="">
+                                                            </div>
+
+                                                            <lable for="inpassword" class="col-sm-2 control-label">Password</lable>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" id="inpassword" placeholder="Input password" value="">
+                                                            </div>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                            <lable for="inputname" class="col-sm-2 control-label">Input Name</lable>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" id="inputname" placeholder="Input name" value="">
+                                                            </div>
+
+                                                            <lable for="inpassword" class="col-sm-2 control-label">Password</lable>
+                                                            <div class="col-sm-3">
+                                                                <input type="text" class="form-control" id="inpassword" placeholder="Input password" value="">
+                                                            </div>
+                                                    </div>
+                                        </div>                                  
+                                    </div>
+   
+                            </div>
+            </div>
+        
+        </div>
+
+        <div class="modal-content">
+                <div class="box box-info">
+                        <div class="box-header">
+                            <h4>แบ่งหุ้น / เก็บของ</h4>
+                        </div>
+                                <div class="box-body">
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                            
+                                                <div class="form-group">
+                                                        <lable for="inputname" class="col-sm-2 control-label">Input Name</lable>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" class="form-control" id="inputname" placeholder="Input name" value="">
+                                                        </div>
+
+                                                        <lable for="inpassword" class="col-sm-2 control-label">Password</lable>
+                                                        <div class="col-sm-3">
+                                                            <input type="text" class="form-control" id="inpassword" placeholder="Input password" value="">
+                                                        </div>
+                                                </div>
+
+                                            </div>                                  
+                                        </div>
+    
+                                </div>
+                            
+                </div>
+        </div>
+
+        <div class="modal-content">
+                <div class="box box-info">
+                    <div class="box-header">
+                        <h4>ข้อมูลการแทง</h4>
+                    </div>
+                        <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                    
+                                            <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
+                                                    <table class="table table-bordered bg-gray">
+                                                        <thead>
+                                                            <tr>
+                                                            <th class="text-center" rowspan="2" style="padding-top:20px;">ประเภท</th>
+                                                                
+                                                                <th class="text-center" colspan="3">จำนวนรายการ</th>
+                                                            </tr>
+                                                            <tr> 
+                                                                <th>ขั้นต่ำ</th>
+                                                                <th>สูงสุด</th>
+                                                                <th>สูงสุดต่อเลข</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>LSM99</td>
+                                                                <td class="text-right"></td>
+                                                                <td class="text-right"></td>
+                                                                <td class="text-right"></td>
+
+                                                            </tr>
+                                                        
+                                                        </tbody>
+                                                    </table>
+                                            </div>
+                                    </div>                                  
+                                </div>
+
+                        </div>
+                            
+                </div>
+        </div>
+
+        <div class="modal-content">
+                <div class="box box-info">
+                        <div class="box-header">
+                            <h4>อัตราจ่าย และ คอมมิชชั่น</h4>
+                        </div>
+                        <div class="box-body">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    
+                                        <div class="form-group">
+                                                <lable for="inputname" class="col-sm-2 control-label">Input Name</lable>
+                                                <div class="col-sm-3">
+                                                    <input type="text" class="form-control" id="inputname" placeholder="Input name" value="">
+                                                </div>
+
+                                                <lable for="inpassword" class="col-sm-2 control-label">Password</lable>
+                                                <div class="col-sm-3">
+                                                    <input type="text" class="form-control" id="inpassword" placeholder="Input password" value="">
+                                                </div>
+                                        </div>
+
+                                    </div>                                  
+                                </div>
+
+                        </div>
+                            
+                </div>
+        </div>
+    </form>
 </section>
 @endsection
+
+ 
