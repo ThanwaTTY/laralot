@@ -3,38 +3,22 @@
     <section class="sidebar">
       <!-- Sidebar user panel -->
       <div class="row">
-        <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 15px;">
-          <div class="info-boxcreate">
-            <a href=""><span id="size" class="info-box-icon bg-green"><i class="fa fa-table"></i></span></a>
+        <div class="sidebar-shortcuts-large bot-margin-3" id="sidebar-shortcuts-large">
+              <button class="btn btn-success btn-ajax" data-href="https://agent.superlot999.com/items/overall">
+                <i class="ace-icon fa fa-table white"></i>
+              </button>
 
+              <button class="btn btn-info btn-ajax" data-href="https://agent.superlot999.com/users/edit1">
+                <i class="ace-icon fa fa-users"></i>
+              </button>
 
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 10px;">
-          <div class="info-boxcreate">
-            <a href=""><span id="size" class="info-box-icon bg-aqua"><i class="fa fa-users"></i></span></a>
+              <button class="btn btn-warning btn-ajax" data-href="https://agent.superlot999.com/reports/by-member">
+                <i class="ace-icon fa fa-bar-chart-o"></i>
+              </button>
 
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12" style="padding-left: 5px;">
-          <div class="info-boxcreate">
-            <a href=""><span id="size" class="info-box-icon bg-yellow"><i class="fa fa-bar-chart"></i></span></a>
-
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
-        </div>
-        <div class="col-md-3 col-sm-6 col-xs-12"  style="padding-left: 0px;">
-          <div class="info-boxcreate">
-            <a href=""><span id="size" class="info-box-icon bg-red"><i class="fa fa-refresh"></i></span></a>
-
-            <!-- /.info-box-content -->
-          </div>
-          <!-- /.info-box -->
+              <button class="btn btn-danger btn-ajax" data-href="https://agent.superlot999.com/transfers">
+                <i class="ace-icon fa fa-refresh"></i>
+              </button>
         </div>
       </div>
       {{-- <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;background-color: #3c8dbc;">

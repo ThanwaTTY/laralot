@@ -28,7 +28,7 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <style>
+{{--   <style>
   .row {
     margin-right: -8px;
     margin-left: -15px;
@@ -51,6 +51,20 @@
     min-height: 0px;
   }
 
+  </style> --}}
+  <style>
+.sidebar .sidebar-shortcuts-large {
+    line-height: 45px;
+}
+.bot-margin-3 {
+    margin-bottom: 13px !important;
+    margin-left: 18px !important;
+    border-button: 2px;
+}
+
+.bot-margin-3 i {
+    font-size: 28px;
+}
   </style>
 @endsection
 @section('content')
