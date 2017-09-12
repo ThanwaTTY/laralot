@@ -22,3 +22,9 @@ Route::get('/index', function () {
     //return view('welcome');
     // return 'welcome';
 });
+
+Route::get('/index/user/create', function () {
+    return view('user.create');
+});
+
+

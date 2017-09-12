@@ -146,7 +146,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
+            <li><a href="index/user/create"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
