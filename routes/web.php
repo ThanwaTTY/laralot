@@ -22,3 +22,8 @@ Route::get('/index', function () {
     //return view('welcome');
     // return 'welcome';
 });
+
+//รายการเเทง
+Route::get('/listpoint', function () {
+    return view('listlottery/listpoint/index'); 
+});
