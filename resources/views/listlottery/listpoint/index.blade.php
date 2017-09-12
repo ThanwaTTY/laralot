@@ -147,7 +147,89 @@
                                    <button class="btn btn-primary">รีเฟช</button>
                                 </div>
                             </div>
-                        
+                            <br>
+                            <br>
+                        <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
+                            <table class="table table-bordered bg-gray">
+                                <thead>
+                                    <tr> 
+                                        <th></th>
+                                        <th></th>
+                                        <th class="text-center">3ตัวบน</th>
+                                        <th class="text-center">3ตัวล่าง</th>
+                                        <th class="text-center">3ตัวโต๊ด</th>
+                                        <th class="text-center">2ตัวบน</th>
+                                        <th class="text-center">2ตัวล่าง</th>
+                                        <th class="text-center">2ตัวโต๊ด</th>
+                                        <th class="text-center">วิ่งบน</th>
+                                        <th class="text-center">วิ่งล่าง</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr style="background-color:#ffe6cc;">
+                                        <th style="background-color:#e6e6e6;">ซื้อ</th>
+                                        <th style="background-color:#e6e6e6;"class="text-right">0.00</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    <tr style="background-color:#ffc180;">
+                                        <th style="background-color:#e6e6e6;">คอม</th>
+                                        <th style="background-color:#e6e6e6;"class="text-right">0.00</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>                
+                                    <tr style="background-color:#ffe6cc;">
+                                        <th style="background-color:#e6e6e6;">รับ</th>
+                                        <th style="background-color:#e6e6e6;"class="text-right">0.00</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>                
+                                    <tr style="background-color:#ffc180;">
+                                        <th style="background-color:#e6e6e6;">จ่าย</th>
+                                        <th style="background-color:#e6e6e6;"class="text-right">0.00</th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>  
+                                    <tr>
+                                        <th>ตั่งสู้</th>
+                                        <th><center><button class="btn btn-primary">บันทึก</button></center></th>
+                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
+                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
+                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
+                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
+                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
+                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
+                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
+                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
+                                    </tr>                                                       
+                                </tbody>
+                                
+                            </table>
+                        </div>
                     </div>
                     {{-- <div class="modal-footer">
                     

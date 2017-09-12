@@ -23,15 +23,12 @@ Route::get('/index', function () {
     // return 'welcome';
 });
 
-<<<<<<< HEAD
 //รายการเเทง
 Route::get('/listpoint', function () {
     return view('listlottery/listpoint/index'); 
 });
-=======
 Route::get('/index/user/create', function () {
     return view('user.create');
 });
 
 
->>>>>>> 784854bfec97bdbd6860a2ffcc3c00023c261370
