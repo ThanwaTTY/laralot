@@ -53,22 +53,7 @@
 
   </style> --}}
   <style>
-.sidebar .sidebar-shortcuts-large {
-    line-height: 45px;
-}
-.bot-margin-3 {
-    margin-bottom: 13px !important;
-    margin-left: 18px !important;
 
-}
-
-.bot-margin-3 i {
-    font-size: 28px;
-}
-
-.line-button {
-
-}
   </style>
 @endsection
 @section('content')
@@ -137,7 +122,7 @@
               <div class="box">
                 <!-- /.box-header -->
                   <div class="box-body no-padding">
-                    <table class="table table-striped">
+                    <table class="table-bordered">
                       <tbody>
                         <tr>
                           <th style="padding: 12px;"  class="text-center">ชนิดหวย</th>
