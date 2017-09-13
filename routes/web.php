@@ -32,6 +32,10 @@ Route::get('/listlotuser', function () {
     return view('listlottery/listlotuser/index'); 
 });
 
+Route::get('/listresult', function () {
+    return view('listlottery/listresult/index'); 
+});
+
 Route::get('/index/user/create', function () {
     return view('user.create');
 });
