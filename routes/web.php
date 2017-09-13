@@ -11,13 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-    //return view('welcome');
-    // return 'welcome';
-});
+// Route::get('/', function () {
+//     return view('master');
+//     //return view('welcome');
+//     // return 'welcome';
+// });
 
-Route::get('/index', function () {
+Route::get('/', function () {
     return view('index');
     //return view('welcome');
     // return 'welcome';
