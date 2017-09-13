@@ -23,6 +23,10 @@ Route::get('/', function () {
     // return 'welcome';
 });
 
+//รายการเเทง
+Route::get('/listpoint', function () {
+    return view('listlottery/listpoint/index'); 
+});
 Route::get('/index/user/create', function () {
     return view('user.create');
 });

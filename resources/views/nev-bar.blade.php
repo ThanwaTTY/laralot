@@ -113,7 +113,7 @@
             </span>
           </a>
            <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
+            <li><a href="/listpoint"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
