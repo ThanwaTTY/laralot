@@ -24,9 +24,14 @@ Route::get('/index', function () {
 });
 
 //รายการเเทง
-Route::get('/listpoint', function () {
-    return view('listlottery/listpoint/index'); 
+Route::get('/listlotpoint', function () {
+    return view('listlottery/listlotpoint/index'); 
 });
+
+Route::get('/listlotuser', function () {
+    return view('listlottery/listlotuser/index'); 
+});
+
 Route::get('/index/user/create', function () {
     return view('user.create');
 });
