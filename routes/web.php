@@ -28,14 +28,13 @@ Route::get('/listlotpoint', function () {
     return view('listlottery/listlotpoint/index'); 
 });
 
-<<<<<<< HEAD
 Route::get('/index/user/adduser', function () {
     return view('user.adduser.create');
 });
 
 Route::get('/index/user/general', function () {
     return view('user.general.index');
-=======
+});
 Route::get('/listlotuser', function () {
     return view('listlottery/listlotuser/index'); 
 });
@@ -50,7 +49,6 @@ Route::get('/settingof', function () {
 
 Route::get('/index/user/create', function () {
     return view('user.create');
->>>>>>> b849e8845fb9c1b519d67c501f63842afaa27aa7
 });
 
 Route::get('/index/user/useronline', function () {
