@@ -94,7 +94,7 @@
                                     <thead>
                                         <tr style="background-color:#e6e6e6;">
                                         <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
-                                        <input type="checkbox" name="vehicle" value="Bike">เเสดงชื่อ
+                                        <input type="checkbox" name="" value="">เเสดงชื่อ
                                         </th>
                                         <th class="text-center" rowspan="2" style="padding-top:20px;">ระดับชั้น</th>
                                         <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
