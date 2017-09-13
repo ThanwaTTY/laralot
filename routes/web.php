@@ -27,8 +27,20 @@ Route::get('/', function () {
 Route::get('/listpoint', function () {
     return view('listlottery/listpoint/index'); 
 });
-Route::get('/index/user/create', function () {
-    return view('user.create');
+
+Route::get('/index/user/adduser', function () {
+    return view('user.adduser.create');
 });
 
+Route::get('/index/user/general', function () {
+    return view('user.general.index');
+});
+
+Route::get('/index/user/useronline', function () {
+    return view('user.useronline.index');
+});
+
+Route::get('/index/user/listkeep', function () {
+    return view('user.listkeep.index');
+});
 
