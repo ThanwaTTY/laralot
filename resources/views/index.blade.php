@@ -53,25 +53,7 @@
 
   </style> --}}
   <style>
-.sidebar .sidebar-shortcuts-large {
-    line-height: 45px;
-}
-.bot-margin-3 {
-    margin-bottom: 13px !important;
-    margin-left: 18px !important;
 
-}
-
-.bot-margin-3 i {
-    font-size: 28px;
-}
-
-.line-button {
-
-}
-.boder-right {
-border: 1px solid black;
-}
   </style>
 @endsection
 @section('content')
