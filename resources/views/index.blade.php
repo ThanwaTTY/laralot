@@ -69,6 +69,9 @@
 .line-button {
 
 }
+.boder-right {
+border: 1px solid black;
+}
   </style>
 @endsection
 @section('content')
@@ -137,7 +140,7 @@
               <div class="box">
                 <!-- /.box-header -->
                   <div class="box-body no-padding">
-                    <table class="table table-striped">
+                    <table class="table-bordered">
                       <tbody>
                         <tr>
                           <th style="padding: 12px;"  class="text-center">ชนิดหวย</th>
