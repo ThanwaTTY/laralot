@@ -59,3 +59,19 @@ Route::get('/index/user/listkeep', function () {
     return view('user.listkeep.index');
 });
 
+Route::get('/index/user/high-low-number', function () {
+    return view('user.high-low-number.index');
+});
+
+Route::get('/index/user/open-close-lottery', function () {
+    return view('user.open-close-lottery.index');
+});
+
+
+
+
+
+
+
+
+

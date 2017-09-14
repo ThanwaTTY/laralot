@@ -40,9 +40,9 @@
 
     p.one {
     border-style: solid;
-    border-color: #00ccff;
+    border-color: #006699;
     padding: 15px;
-    background: #b3ffff;
+    background: #b3e6ff;
     }
     </style>
 @endsection
@@ -88,16 +88,134 @@
 
 
 <section class="content">
-<form class="form-horizontal" action="" method="post">
-    {{ csrf_field() }}
-        
         <div class="row">
             <div class="col-sm-8">
-                <p class="one"> สถานะ: <b class="bg-yellow">เหลือง = ระงับ,</b> <b class="bg-red">แดง = ล็อค</b><p>
+                <p class="one"> <b>สถานะ:</b> <b style="background:#ffe066;">เหลือง = ระงับ,</b> <b style="background:#ff6666;">แดง = ล็อค</b><p>
             </div>
         </div>
-           
-</form>
+        <br>
+    <form class="form-horizontal" action="" method="post">
+        {{ csrf_field() }}
+            <div class="row">
+                <!-- Left col -->
+                <section class="col-lg-12 connectedSortable">
+                <!-- Custom tabs (Charts with tabs)-->
+                <div class="nav-tabs-custom">
+                    <!-- Tabs within a box -->
+                    <ul class="nav nav-tabs pull-left">
+                    <li class="active" style=""><a href="#tab1" data-toggle="tab">ข้อมูลทั่วไป</a></li>
+                    <li><a href="#tab2" data-toggle="tab">รหัสผ่าน</a></li>
+                    <li><a href="#tab3" data-toggle="tab">แบ่งหุ้น/เก็บของ</a></li>
+                    {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
+                    </ul>
+                    <div class="tab-content no-padding">
+                    <!-- Morris chart - Sales -->
+                    <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
+                            <div class="col-sm-10">
+                                <table class="table table-bordered bg-gray">
+                                    <thead> 
+                                        <tr> 
+                                            <th class="text-center">#</th>
+                                            <th class="text-center">ชื่อผู้ใช้</th>
+                                            <th class="text-center">ระดับ</th>
+                                            <th class="text-center">ชื่อ</th>
+                                            <th class="text-center">โทร</th>
+                                            <th class="text-center">สถานะ</th>
+                                            <th class="text-center">บันทึก</th>
+                                            <th class="text-center">เครดิต</th>
+                                            <th class="text-center">ได้เสียสุทธิ</th>
+                                            <th class="text-center">ใช้งานล่าสุด</th>
+                                            <th class="text-center">Login ล่าสุด</th>
+                                            <th class="text-center">IP ล่าสุด</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">3m3k001</td>
+                                            <td class="text-center">เมมเบอร์</td>
+                                            <td class="text-center"><input type="text"></td>
+                                            <td><input type="text"></td>
+                                            <td class="text-center"><select name="" id="">
+                                                    <option value="">ปกติ</option>
+                                                </select>
+                                            </td>
+                                            <td></td>
+                                            <td class="text-right">0</td>
+                                            <td class="text-right">0</td>
+                                            <td></td>
+                                            <td class="text-center">19-07-2017 20:32:09</td>
+                                            <td class="text-center">134.196.33.166</td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                            </div>
+                    </div>
+                    <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
+                            <div class="col-sm-4">
+                                <table class="table table-bordered bg-gray">
+                                    <thead> 
+                                        <tr> 
+                                            <th class="text-center">#</th>
+                                            <th class="text-center">ชื่อผู้ใช้</th>
+                                            <th class="text-center">ระดับ</th>
+                                            <th class="text-center">รหัสผ่าน</th>
+                                            <th class="text-center">บันทึก</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">3m3k001</td>
+                                            <td class="text-center">เมมเบอร์</td>
+                                            <td class="text-center"><input type="text"></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                            </div>
+                    </div>
+                     <div class="chart tab-pane" id="tab3" style="position: relative; height: 300px;">
+                            <div class="col-sm-4">
+                                <table class="table table-bordered bg-gray">
+                                    <thead> 
+                                        <tr> 
+                                            <th class="text-center">#</th>
+                                            <th class="text-center">ชื่อผู้ใช้</th>
+                                            <th class="text-center">ระดับ</th>
+                                            <th class="text-center">แบ่งหุ้น</th>
+                                            <th class="text-center">เก็บของ</th>
+                                            <th class="text-center">บันทึก</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="text-center">1</td>
+                                            <td class="text-center">3m3k001</td>
+                                            <td class="text-center">เมมเบอร์</td>
+                                            <td class="text-center"><select name="" id="">
+                                                    <option value="">0.0%</option>
+                                                </select>
+                                            </td>
+                                             <td class="text-center"><select name="" id="">
+                                                    <option value="">90.0%</option>
+                                                </select>
+                                                <input type="checkbox"> (เก็บของี่เกิน)
+                                            </td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </table> 
+                            </div>
+                    </div>
+                    </div>
+                </div>
+                </section>
+            </div>
+            
+          
+            
+    </form>
 </section>
 @endsection
 
