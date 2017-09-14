@@ -47,11 +47,11 @@ Route::get('/listlottery/settingof', function () {
     return view('listlottery.settingof.index');
 });
 
-Route::get('/settingtype', function () {
+Route::get('/listlottery/settingtype', function () {
     return view('listlottery.settingtype.index');
 });
 
-Route::get('/cancellot', function () {
+Route::get('/listlottery/cancellot', function () {
     return view('listlottery.cancellot.index');
 });
 

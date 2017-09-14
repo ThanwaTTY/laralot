@@ -117,8 +117,8 @@
             <li><a href="/listlottery/listlotuser"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
             <li><a href="/listlottery/listresult"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
             <li><a href="/listlottery/settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
+            <li><a href="/listlottery/settingtype"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
+            <li><a href="/listlottery/cancellot"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
           </ul>
         </li>
         <li class="treeview">
