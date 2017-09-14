@@ -28,6 +28,15 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <style>
+    .form-group label{
+        margin-top:5px;
+    }
+    .form-group input{
+        margin-top:5px;
+    }
+   
+  </style>
 {{--   <style>
   .row {
     margin-right: -8px;
@@ -73,61 +82,113 @@
         <h1>
             List
         </h1>
+        {{-- <div class="col-xs-12"> --}}
+            <h2 class="text-white">รายการที่ถูกยกเลิก</h2>                            
+        {{-- </div>  --}}
     </section>
 
     <!-- Main content -->
     <section class="content">
         <div class="modal-content">
-            <div class="box box-info">      
-                <br>
-                <form action="form-horizontal" method="post">
-                    {{ csrf_field() }}
-                    <div class="box-body">
+        <div class="col-xs-10"> 
+            <div class="box box-info">
                             <div class="row">
                                 <div class="col-xs-12">
                                      <h2 class="text-aqua">รายการที่ถูกยกเลิก</h2>                            
                                 </div>                                  
-                            
-                                <br>
-                                <div class="col-xs-6">
+                            </div>
+                <div class="box-header bg-aqua">
+                <h3 class="box-title">
+                    ค้นหาโพย
+                </h3>
+                <!-- tools box -->
+                <div class="pull-right box-tools">
+                    {{-- <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                    <i class="fa fa-minus"></i></button>
+                    <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                    <i class="fa fa-times"></i></button> --}}
+                </div>
+                <!-- /. tools -->
+                </div>     
+                
+                    <form action="form-horizontal" method="post">
+                        {{ csrf_field() }}
+                        
+                        <div class="box-body">
+                                <div class="row">
+                                        <div class="col-xs-12">
+                                            <p>ลำดับโพย เเละ หมายเลข สามารถกรอกได้หลายตัว คั่นด้วยคอมม่า เช่น 123,456</p>                            
+                                        </div>                                  
+                                    <br>
                                     <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="" class="col-sm-4 control-label">วันที่เเทง</label>
-                                            <div class="col-sm-8">
-                                            <input type="" class="form-control" id="" placeholder="">
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">วันที่เเทง</label>
+                                                <div class="col-sm-8">
+                                                <input type="" class="form-control" id="" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">ลำดับโพย</label>
+                                                <div class="col-sm-8">
+                                                <input type="" class="form-control" id="" placeholder="">
+                                                </div>
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label for="" class="col-sm-4 control-label">ลำดับโพย</label>
-                                            <div class="col-sm-8">
-                                            <input type="password" class="form-control" id="" placeholder="Password">
+                                        <div class="col-xs-6">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-5 control-label">ชื่อผู้ใช้</label>
+                                                <div class="col-sm-7">
+                                                <input type="" class="form-control" id="" placeholder="">
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-5 control-label">หมายเลขที่เเทง</label>
+                                                <div class="col-sm-7">
+                                                <input type="" class="form-control" id="" placeholder="">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-6">
-                                        <div class="form-group">
-                                            <label for="" class="col-sm-5 control-label">ชื่อผู้ใช้</label>
-                                            <div class="col-sm-7">
-                                            <input type="" class="form-control" id="" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="" class="col-sm-5 control-label">หมายเลขที่เเทง</label>
-                                            <div class="col-sm-7">
-                                            <input type="password" class="form-control" id="" placeholder="Password">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                
-                    </div>
-                    {{-- <div class="modal-footer">
+                                </div>    
+                                 <button class="btn btn-primary">บันทึก</button>
+                        </div>
+                        {{-- <div class="modal-footer">
+                        
+                        <button type="submit" class="btn btn-primary">บันทึก</button>
+                        </div> --}}
+                    </form>
                     
-                    <button type="submit" class="btn btn-primary">บันทึก</button>
-                    </div> --}}
-                </form>
+                    <div class="col-xs-9">
+                    <br>
+                        <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
+                                <table class="table table-bordered bg-gray">
+                                    <thead>
+                                        <tr> 
+                                            <th rowspan="2" class="text-center">#</th>
+                                            <th rowspan="2" class="text-center">เวลา</th>
+                                            <th rowspan="2" class="text-center">ชื่อผู้ใช้</th>
+                                            <th rowspan="2" class="text-center">ชนิดหวย</th>
+                                            <th rowspan="2" class="text-center">งวดหวย</th>
+                                            <th rowspan="2" class="text-center">รหัสโพส</th>
+                                            <th rowspan="2" class="text-center">ลำดับโพย</th>
+                                            <th rowspan="2" class="text-center">Bet#</th>
+                                            <th rowspan="2" class="text-center">อัตราจ่าย</th>
+                                            <th rowspan="2" class="text-center">รายการ</th>
+                                            <th rowspan="2" class="text-center">ยอดเเทง</th>
+                                            <th rowspan="2" class="text-center">หมายเหตุ</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                        </tr>                                                     
+                                    </tbody>                                  
+                                </table>
+                            </div>
+                    </div>
               </div>
-         </div>    
+         </div> 
+        </div>   
     </div> 
 </section>
     <!-- /.content -->
