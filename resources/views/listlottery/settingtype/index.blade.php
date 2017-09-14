@@ -87,20 +87,14 @@
                     <div class="box-body">
                             <div class="row">
                                 <div class="col-xs-12">
-                                     <h2 class="text-aqua">ตั่งค่าการรับของ</h2>                            
-                                </div>                                  
-                            </div>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                     <h4 class="text-primary">>รัฐบาลไทย,</h4>                            
+                                     <h2 class="text-aqua">ตั่งค่าการรับของเเยกตามชนิด</h2>                            
                                 </div>                                  
                             </div>
                             <br>
                              <div class="row">
                                 <div class="col-xs-12">
-                                     <div style="background-color:#ffd6cc;color:black;padding:5px;border: 3px solid #ff471a; ">
-                                        <h4 style="color:#ff471a;">เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
-                                        <p>กรุณาตั้งจำนวนการรับของต่อตัวในหน้า ตั้งค่าการรับของ เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้ </p>
+                                     <div style="background-color:#b3d9ff;color:black;padding:5px;border: 2px solid #0073e6; ">            
+                                        <p>กรุณาใส่จำนวนเงินที่ท่านต้องการถือสู้ ต่อตัว ของแต่ละประเภทลงในช่องด้านล่าง เพื่อเปิดรับของ หากไม่ต้องการถือสู้ในประเภทใด ๆ ให้ใส่ 0  </p>
                                        
                                      </div>                           
                                 </div>                                  
@@ -111,27 +105,11 @@
                                      <h4 class="text-primary">>>ตั่งเวลาปิดรับของรัฐบาล</h4>                            
                                 </div>                                  
                             </div>
-                            <br>
-                             <div class="row">
-                                <div class="col-xs-2">
-                                    <button class="btn btn-primary">3ตัวท้าย</button>                        
-                                </div>                                  
-                            </div>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                     <h4 class="text-primary">>>ตั่งค่าการรับของรัฐบาลไทย 3 ตัวท้าย</h4>                            
-                                </div>                                  
-                            </div>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                    <p>กรุณาใส่จำนวนเงินที่ท่านต้องการถือสู้ ต่อตัว ของแต่ละประเภทลงในช่องด้านล่าง เพื่อเปิดรับของ หากไม่ต้องการถือสู้ในประเภทใด ๆ ให้ใส่ 0 </p>                      
-                                </div>                                  
-                            </div>
                             <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
                                 <table class="table table-bordered"style="background-color:#f2f2f2;">
                                     <thead>
                                         <tr style="background-color:#e6e6e6;">
-                                            <th></th>
+                                            <th class="text-center">ชนิด</th>
                                             <th class="text-center">3 ตัวบน</th>
                                             <th class="text-center">3 ตัวล่าง</th>
                                             <th class="text-center">3 ตัวโต๊ด</th>
@@ -140,12 +118,12 @@
                                             <th class="text-center">2ตัวโต๊ด</th>
                                             <th class="text-center">วิ่งบน</th>
                                             <th class="text-center">วิ่งล่าง</th>
-                                            <th></th>
+                                            <th class="text-center" colspan="2"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <tr>
-                                           <td class="text-center">0 = ไม่รับ</td>
+                                           <td class="text-center">กรอกทุกเเถว</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -155,19 +133,29 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
                                         </tr>
-                                    
+      {{-- //////////////////////////////////////////////////////////////////// --}}
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">กรอกทุกเเถว</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     <form>
                                     </tbody>
                                 </table>
                             </div>
-                </form>
-                            <br>
-           {{-- //////////////////////////////////////////////////////////////////// --}}
-
-
-                   
-            
-            </div>    
+            </form>
+      </div>    
     </div> 
 </section>
     <!-- /.content -->
