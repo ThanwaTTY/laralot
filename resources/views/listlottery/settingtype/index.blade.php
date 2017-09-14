@@ -132,13 +132,16 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td></td>
                                            <td><input type="checkbox"></td>
                                         </tr>
-      {{-- //////////////////////////////////////////////////////////////////// --}}
+      {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+                                        <tr>
+                                            <th class="text-center bg-green" colspan="11">รัฐบาล</th>
+                                        </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">กรอกทุกเเถว</td>
+                                           <td class="text-center">รัฐบาลไทย</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -150,7 +153,167 @@
                                            <td><button class="btn btn-primary">บันทึก</button></td>
                                            <td><input type="checkbox"></td>
                                         </tr>
-                                     <form>
+                                     </form>
+      {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+                                      <tr>
+                                        <th class="text-center bg-green" colspan="11">หวย ธกส.</th>
+                                      </tr>                                                                  
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวย ธกส. (BAAC1)</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวย ธกส. (BAAC2)</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+    {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+                                     <tr>
+                                        <th class="text-center bg-green" colspan="11">หวย หุ้นไทย.</th>
+                                     </tr>                                                                  
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center"><<หวยหุ้นไทยรอบเปิดเช้า>></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่ 2</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่ 2</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่ 2</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่ 2</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่ 2</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่ 2</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่ 2</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+
+       {{-- /////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                     </tbody>
                                 </table>
                             </div>
