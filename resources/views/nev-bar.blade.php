@@ -118,7 +118,7 @@
             <li><a href="/listresult"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
             <li><a href="/settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
             <li><a href="/settingtype"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
+            <li><a href="/cancellot"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
           </ul>
         </li>
         <li class="treeview">

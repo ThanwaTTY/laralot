@@ -25,7 +25,7 @@ Route::get('/', function () {
 
 //รายการเเทง
 Route::get('/listlotpoint', function () {
-    return view('listlottery/listlotpoint/index'); 
+    return view('listlottery.listlotpoint.index'); 
 });
 
 Route::get('/index/user/adduser', function () {
@@ -36,20 +36,25 @@ Route::get('/index/user/general', function () {
     return view('user.general.index');
 });
 Route::get('/listlotuser', function () {
-    return view('listlottery/listlotuser/index'); 
+    return view('listlottery.listlotuser.index'); 
 });
 
 Route::get('/listresult', function () {
-    return view('listlottery/listresult/index'); 
+    return view('listlottery.listresult.index'); 
 });
 
 Route::get('/settingof', function () {
-    return view('listlottery/settingof/index'); 
+    return view('listlottery.settingof.index'); 
 });
 
 Route::get('/settingtype', function () {
-    return view('listlottery/settingtype/index'); 
+    return view('listlottery.settingtype.index'); 
 });
+
+Route::get('/cancellot', function () {
+    return view('listlottery.cancellot.index'); 
+});
+
 
 Route::get('/index/user/create', function () {
     return view('user.create');

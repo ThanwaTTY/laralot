@@ -118,7 +118,8 @@
                                             <th class="text-center">2ตัวโต๊ด</th>
                                             <th class="text-center">วิ่งบน</th>
                                             <th class="text-center">วิ่งล่าง</th>
-                                            <th class="text-center" colspan="2"></th>
+                                            <th class="text-center"></th>
+                                            <th class="text-center"></th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -521,7 +522,7 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่ <b>4</b></td>
+                                           <td class="text-center">หวยหุ้นไทยเปิดเช้าคู่</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -714,8 +715,581 @@
                                            <td><input type="checkbox"></td>
                                         </tr>
                                      </form>
+    {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+                                     <tr>
+                                        <th class="text-center bg-green" colspan="11">หวยเวียดนาม</th>
+                                     </tr>                                                                  
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center"><b>ฮานอย Hà Nội</b></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">คั้ญฮหว่า Khánh Hòa</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">กอนตูม Kon Tum</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ฟู้เอียน Phú Yên</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เถื่อเทียน-เว้ Thừa Thiên Huế</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ดั๊กลัก Đắc Lắc</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">กว๋างนาม Quảng Nam</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">กว๋างนาม Quảng Nam</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ดานัง Đà Nẵng</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">บิ่ญดิ่ญ Bình Định</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">กว๋างบิ่ญ Quảng Bình</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">กว๋างจิ Quảng Trị</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ซาลาย Gia Lai</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">นิญถ่วน Ninh Thuận</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ดั๊กนง Đắc Nông</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">กว๋างหงาย Quảng Ngãi</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เกียนซาง Kiên Giang</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เลิมด่ง Lâm Đồng</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เตี่ยนซาง Tiền Giang</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">กำเมา Cà Mau</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ด่งท้าบ Đồng Tháp</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">โฮจิมินห์ Thanh pho Ho Chi Minh</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">โฮจิมินห์ Thanh pho Ho Chi Minh</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เบ๊นแจ Bến Tre</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เบ๊นแจ Bến Tre</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เบ๊นแจ Bến Tre</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เบ๊นแจ Bến Tre</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ซ้อกจัง Sóc Trăng</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ซ้อกจัง Sóc Trăng</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ซ้อกจัง Sóc Trăng</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เต็ยนิญ Tây Ninh</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">จ่าวิญ Trà Vinh</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวิญล็อง Vĩnh Long</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวิญล็อง Vĩnh Long</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">เต็ยนิญ Tây Ninh</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวิญล็อง Vĩnh Long</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">ล็องอาน Long An</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+
 
        {{-- /////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>                                           
+                                            <th colspan="2"><button class="btn btn-primary">บันทึกทั้งหมด</button></th>
+                                            
+                                           
+                                        </tr>  
                                     </tbody>
                                 </table>
                             </div>
