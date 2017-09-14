@@ -187,7 +187,7 @@
     </section>
 
     <!-- Main content -->
-    <section class="content">
+  <section class="content">
       <!-- Small boxes (Stat box) -->
 
       <!-- /.row -->
@@ -217,7 +217,7 @@
       </div>
       <!-- /.row (main row) -->
 
-    </section>
+  </section>
 
 @endsection
 @section('footer')

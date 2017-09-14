@@ -134,7 +134,7 @@
             <li><a href="/user/general"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> เปิด-ปิด หวย/อัตราจ่าย</a></li>
+            <li><a href="/index/user/open-close-lottery"><i class="fa fa-circle-o"></i> เปิด-ปิด หวย/อัตราจ่าย</a></li>
             <li><a href="/index/user/useronline"><i class="fa fa-circle-o"></i> สมาชิกออนไลน์</a></li>
             <li><a href="/index/user/listkeep"><i class="fa fa-circle-o"></i> รายการเก็บของ / อั้น</a></li>
           </ul>

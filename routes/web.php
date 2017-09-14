@@ -47,6 +47,15 @@ Route::get('/listlottery/settingof', function () {
     return view('listlottery.settingof.index');
 });
 
+Route::get('/settingtype', function () {
+    return view('listlottery.settingtype.index');
+});
+
+Route::get('/cancellot', function () {
+    return view('listlottery.cancellot.index');
+});
+
+
 Route::get('/index/user/create', function () {
     return view('user.create');
 });
@@ -57,4 +66,12 @@ Route::get('/index/user/useronline', function () {
 
 Route::get('/index/user/listkeep', function () {
     return view('user.listkeep.index');
+});
+
+Route::get('/index/user/high-low-number', function () {
+    return view('user.high-low-number.index');
+});
+
+Route::get('/index/user/open-close-lottery', function () {
+    return view('user.open-close-lottery.index');
 });
