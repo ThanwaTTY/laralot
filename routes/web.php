@@ -24,27 +24,27 @@ Route::get('/', function () {
 });
 
 //รายการเเทง
-Route::get('/listlotpoint', function () {
-    return view('listlottery/listlotpoint/index'); 
+Route::get('/listlottery/listlotpoint', function () {
+    return view('listlottery.listlotpoint.index');
 });
 
-Route::get('/index/user/adduser', function () {
+Route::get('/user/adduser', function () {
     return view('user.adduser.create');
 });
 
-Route::get('/index/user/general', function () {
+Route::get('/user/general', function () {
     return view('user.general.index');
 });
-Route::get('/listlotuser', function () {
-    return view('listlottery/listlotuser/index'); 
+Route::get('/listlottery/listlotuser', function () {
+    return view('listlottery.listlotuser.index');
 });
 
-Route::get('/listresult', function () {
-    return view('listlottery/listresult/index'); 
+Route::get('/listlottery/listresult', function () {
+    return view('listlottery.listresult.index');
 });
 
-Route::get('/settingof', function () {
-    return view('listlottery/settingof/index'); 
+Route::get('/listlottery/settingof', function () {
+    return view('listlottery.settingof.index');
 });
 
 Route::get('/index/user/create', function () {
@@ -58,4 +58,3 @@ Route::get('/index/user/useronline', function () {
 Route::get('/index/user/listkeep', function () {
     return view('user.listkeep.index');
 });
-
