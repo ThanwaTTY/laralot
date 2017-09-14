@@ -55,23 +55,18 @@ Route::get('/listlottery/cancellot', function () {
     return view('listlottery.cancellot.index');
 });
 
-
-Route::get('/index/user/create', function () {
-    return view('user.create');
-});
-
-Route::get('/index/user/useronline', function () {
+Route::get('/user/useronline', function () {
     return view('user.useronline.index');
 });
 
-Route::get('/index/user/listkeep', function () {
+Route::get('/user/listkeep', function () {
     return view('user.listkeep.index');
 });
 
-Route::get('/index/user/high-low-number', function () {
+Route::get('/user/high-low-number', function () {
     return view('user.high-low-number.index');
 });
 
-Route::get('/index/user/open-close-lottery', function () {
+Route::get('/user/open-close-lottery', function () {
     return view('user.open-close-lottery.index');
 });
