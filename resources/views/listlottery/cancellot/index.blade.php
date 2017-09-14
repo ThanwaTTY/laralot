@@ -80,26 +80,54 @@
         <div class="modal-content">
             <div class="box box-info">      
                 <br>
-                <form class="form-horizontal" action="" method="post">
+                <form action="form-horizontal" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">
                             <div class="row">
                                 <div class="col-xs-12">
                                      <h2 class="text-aqua">รายการที่ถูกยกเลิก</h2>                            
                                 </div>                                  
-                            </div>
-                            <br>
-                                                    
-                            </div>
-                            <br>
+                            
+                                <br>
+                                <div class="col-xs-6">
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-4 control-label">วันที่เเทง</label>
+                                            <div class="col-sm-8">
+                                            <input type="" class="form-control" id="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-4 control-label">ลำดับโพย</label>
+                                            <div class="col-sm-8">
+                                            <input type="password" class="form-control" id="" placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-6">
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-5 control-label">ชื่อผู้ใช้</label>
+                                            <div class="col-sm-7">
+                                            <input type="" class="form-control" id="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="" class="col-sm-5 control-label">หมายเลขที่เเทง</label>
+                                            <div class="col-sm-7">
+                                            <input type="password" class="form-control" id="" placeholder="Password">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
                     </div>
                     {{-- <div class="modal-footer">
                     
                     <button type="submit" class="btn btn-primary">บันทึก</button>
                     </div> --}}
                 </form>
-            
-            </div>    
+              </div>
+         </div>    
     </div> 
 </section>
     <!-- /.content -->
