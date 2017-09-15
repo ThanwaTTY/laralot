@@ -92,7 +92,7 @@
 
 <section class="content-header">
       <h1>
-        3. ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข >> 3M3K
+        4. อัตราจ่าย/คอมมิชชั่น >> 3M3K
       </h1>
 </section>
 
@@ -101,9 +101,11 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div class="one">
-                         <p class="bold">สูงสุด = สูงสุดต่อ 1 โพย</p> 
-                         <p class="bold">สูงสุดต่อหมายเลข = สูงสุดต่อหมายเลขต่อ 1 สมาชิก</p> 
-                         <b>สถานะ:</b> <b style="background:#ffe066;">เหลือง = ระงับ,</b> <b style="background:#ff6666;">แดง = ล็อค</b>
+                         <p class="bold">คัดลอก
+                         <b>1. เลือกว่าต้องการคัดลอกจากใคร 2. ติ๊กเลือกว่าจะตั้งค่าดังกล่าวให้ใคร 3. กดปุ่มแก้ไข</b></p>
+                         <p class="bold">*** ระบบทจะำการกรอกข้อมูลให้ทั้ง อัตราจ่าย และคอมมิชชั่น</p>
+                         <b>สถานะ:</b> <b style="background:#ffe066;">เหลือง = ระงับ,</b> <b style="background:#ff6666;">แดง = ล็อค,</b> 
+                         <b style="background:#b3b3b3;">เทา = อัตราจ่ายหรือชนิดการแทงถูกปิด</b>
                     </div>
                 </div>                                 
             </div>
@@ -117,9 +119,8 @@
                 <div class="nav-tabs-custom">
                     <!-- Tabs within a box -->
                     <ul class="nav nav-tabs pull-left">
-                    <li class="bg-primary active" style=""><a href="#tab1" data-toggle="tab">ขั้นต่ำ</a></li>
-                    <li class="bg-primary"><a href="#tab2" data-toggle="tab">สูงสุด</a></li>
-                    <li class="bg-primary"><a href="#tab3" data-toggle="tab">สูงสุดต่อเลข</a></li>
+                    <li class="bg-primary active" style=""><a href="#tab1" data-toggle="tab">อัตราจ่าย</a></li>
+                    <li class="bg-primary"><a href="#tab2" data-toggle="tab">คอมมิชชั่น</a></li>
                     {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
                     </ul>
                     <div class="tab-content no-padding">
@@ -240,65 +241,7 @@
                                 </table> 
                             </div>
                     </div>
-                     <div class="chart tab-pane" id="tab3" style="position: relative; height: 300px;">
-                            <div class="col-sm-10">
-                                <table class="table table-bordered bg-gray">
-                                    <thead> 
-                                        <tr> 
-                                            <th class="text-center" colspan="12" style="color:#0000ff;">สูงสุดต่อเลข 3 ตัวท้าย</th>
-                                        </tr>
-                                         <tr> 
-                                            <th class="text-center" colspan="3" style="padding-top:20px;">
-                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
-                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
-                                            </th>
-                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
-                                            <th class="text-center">3 ตัวบน<input type="text">>=10000</th>
-                                            <th class="text-center">3 ตัวล่าง<input type="text">>=100000</th>
-                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=30000</th>
-                                            <th class="text-center">2 ตัวบน<input type="text">>=100000</th>
-                                            <th class="text-center">2 ตัวล่าง<input type="text">>=100000</th>
-                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=100000</th>
-                                            <th class="text-center">วิ่งบน<input type="text">>=300000</th>
-                                            <th class="text-center">วิ่งล่าง<input type="text">>=300000</th>
-
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">3M3K001</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>10000</td>
-                                            <td>100000</td>
-                                            <td>30000</td>
-                                            <td>100000</td>
-                                            <td>100000</td>
-                                            <td>100000</td>
-                                            <td>300000</td>
-                                            <td>300000</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">3M3K002</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>10000</td>
-                                            <td>100000</td>
-                                            <td>30000</td>
-                                            <td>100000</td>
-                                            <td>100000</td>
-                                            <td>100000</td>
-                                            <td>300000</td>
-                                            <td>300000</td>
-                                        </tr>
-                                    </tbody>
-                                </table> 
-                            </div>
-                    </div>
-                    </div>
+                   
                 </div>
                 </section>
             </div>

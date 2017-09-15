@@ -105,20 +105,20 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
           </ul>--}}
         {{-- </li>  --}}
-        <li>
-          <a href="pages/widgets.html">
+        <li class="treeview">
+          <a href="#">
             <i class="fa fa-th"></i> <span>รายการแทง</span>
            <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
            <ul class="treeview-menu">
-            <li><a href="/listlotpoint"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
-            <li><a href="/listlotuser"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
-            <li><a href="/listresult"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
-            <li><a href="/settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
-            <li><a href="/settingtype"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
-            <li><a href="/cancellot"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
+            <li><a href="/listlottery/listlotpoint"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
+            <li><a href="/listlottery/listlotuser"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
+            <li><a href="/listlottery/listresult"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
+            <li><a href="/listlottery/settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
+            <li><a href="/listlottery/settingtype"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
+            <li><a href="/listlottery/cancellot"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -130,13 +130,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/index/user/adduser"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
-            <li><a href="/index/user/general"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
-            <li><a href="/index/user/high-low-number"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
-            <li><a href="/index/user/commission"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
-            <li><a href="/index/user/open-close-lottery"><i class="fa fa-circle-o"></i> เปิด-ปิด หวย/อัตราจ่าย</a></li>
-            <li><a href="/index/user/useronline"><i class="fa fa-circle-o"></i> สมาชิกออนไลน์</a></li>
-            <li><a href="/index/user/listkeep"><i class="fa fa-circle-o"></i> รายการเก็บของ / อั้น</a></li>
+            <li><a href="/user/adduser"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
+            <li><a href="/user/general"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
+            <li><a href="/user/high-low-number"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
+            <li><a href="/user/commission"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
+            <li><a href="/user/open-close-lottery"><i class="fa fa-circle-o"></i> เปิด-ปิด หวย/อัตราจ่าย</a></li>
+            <li><a href="/user/useronline"><i class="fa fa-circle-o"></i> สมาชิกออนไลน์</a></li>
+            <li><a href="/user/listkeep"><i class="fa fa-circle-o"></i> รายการเก็บของ / อั้น</a></li>
           </ul>
         </li>
         <li class="treeview">

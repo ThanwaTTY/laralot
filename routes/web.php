@@ -24,59 +24,54 @@ Route::get('/', function () {
 });
 
 //รายการเเทง
-Route::get('/listlotpoint', function () {
-    return view('listlottery.listlotpoint.index'); 
+Route::get('/listlottery/listlotpoint', function () {
+    return view('listlottery.listlotpoint.index');
 });
 
-Route::get('/index/user/adduser', function () {
+Route::get('/user/adduser', function () {
     return view('user.adduser.create');
 });
 
-Route::get('/index/user/general', function () {
+Route::get('/user/general', function () {
     return view('user.general.index');
 });
-Route::get('/listlotuser', function () {
-    return view('listlottery.listlotuser.index'); 
+Route::get('/listlottery/listlotuser', function () {
+    return view('listlottery.listlotuser.index');
 });
 
-Route::get('/listresult', function () {
-    return view('listlottery.listresult.index'); 
+Route::get('/listlottery/listresult', function () {
+    return view('listlottery.listresult.index');
 });
 
-Route::get('/settingof', function () {
-    return view('listlottery.settingof.index'); 
+Route::get('/listlottery/settingof', function () {
+    return view('listlottery.settingof.index');
 });
 
-Route::get('/settingtype', function () {
-    return view('listlottery.settingtype.index'); 
+Route::get('/listlottery/settingtype', function () {
+    return view('listlottery.settingtype.index');
 });
 
-Route::get('/cancellot', function () {
-    return view('listlottery.cancellot.index'); 
+Route::get('/listlottery/cancellot', function () {
+    return view('listlottery.cancellot.index');
 });
 
-
-Route::get('/index/user/create', function () {
-    return view('user.create');
-});
-
-Route::get('/index/user/useronline', function () {
+Route::get('/user/useronline', function () {
     return view('user.useronline.index');
 });
 
-Route::get('/index/user/listkeep', function () {
+Route::get('/user/listkeep', function () {
     return view('user.listkeep.index');
 });
 
-Route::get('/index/user/high-low-number', function () {
+Route::get('/user/high-low-number', function () {
     return view('user.high-low-number.index');
 });
 
-Route::get('/index/user/open-close-lottery', function () {
+Route::get('/user/open-close-lottery', function () {
     return view('user.open-close-lottery.index');
 });
 
-Route::get('/index/user/commission', function () {
+Route::get('/user/commission', function () {
     return view('user.commission.index');
 });
 
