@@ -75,8 +75,9 @@ Route::get('/user/commission', function () {
     return view('user.commission.index');
 });
 
-
-
+Route::get('/shopmanagement/chitmanagement', function (){
+    return view('shopmanagement.chitmanagement.index');
+});
 
 
 
