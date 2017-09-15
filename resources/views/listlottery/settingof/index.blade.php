@@ -71,10 +71,20 @@
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            List
-        </h1>
+      <section class="sidebar-shortcuts-large bot-margin-3">
+      {{--  <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>  --}}
+      <div class="row">
+        {{--  <div class="pull-left">  --}}
+          <ol class="breadcrumb">
+            <li class="active"><i class="fa fa-home"></i></li>
+            <li class="active">ยินดีต้อนรับ</li>
+            <li class="active">ตั้งค่าการรับของ</li>
+          </ol>
+        {{--  </div>  --}}
+      </div>
     </section>
 
     <!-- Main content -->
@@ -92,7 +102,7 @@
                             </div>
                              <div class="row">
                                 <div class="col-xs-12">
-                                     <h4 class="text-primary">>รัฐบาลไทย,</h4>                            
+                                     <h4 class="text-primary">> รัฐบาลไทย</h4>                            
                                 </div>                                  
                             </div>
                             <br>
@@ -108,7 +118,7 @@
                             <br>
                             <div class="row">
                                 <div class="col-xs-12">
-                                     <h4 class="text-primary">>>ตั่งเวลาปิดรับของรัฐบาล</h4>                            
+                                     <h4 class="text-primary">> ตั่งเวลาปิดรับของรัฐบาล</h4>                            
                                 </div>                                  
                             </div>
                             <br>
@@ -119,7 +129,7 @@
                             </div>
                              <div class="row">
                                 <div class="col-xs-12">
-                                     <h4 class="text-primary">>>ตั่งค่าการรับของรัฐบาลไทย 3 ตัวท้าย</h4>                            
+                                     <h4 class="text-primary">> ตั่งค่าการรับของรัฐบาลไทย 3 ตัวท้าย</h4>                            
                                 </div>                                  
                             </div>
                              <div class="row">
@@ -165,7 +175,7 @@
            {{-- //////////////////////////////////////////////////////////////////// --}}
                             <div class="row">
                                 <div class="col-xs-12">
-                                     <h4 class="text-primary">>>ตั่งค่าการรับของเป็นรายตัว (เฉพาะงวด)</h4> 
+                                     <h4 class="text-primary">> ตั่งค่าการรับของเป็นรายตัว (เฉพาะงวด)</h4> 
                                 </div>                                  
                             </div>
                           
@@ -410,7 +420,7 @@
            {{-- //////////////////////////////////////////////////// --}}
                             <div class="row">
                                 <div class="col-xs-12">
-                                     <h4 class="text-primary">>>เลขปิดรับ [3M3K] 3ตัวท้าย</h4> 
+                                     <h4 class="text-primary">> เลขปิดรับ [3M3K] 3ตัวท้าย</h4> 
                                 </div>                                  
                             </div>
                           
