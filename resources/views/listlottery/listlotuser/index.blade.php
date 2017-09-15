@@ -135,20 +135,20 @@
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td  colspan="2">รวม :</td>
-                                                    <td>0.00</td>
+                                                    <td class="text-center" colspan="2"><b>รวม :</b></td>
+                                                    <td class="text-right">0.00</td>
                                                     {{-- สมาชิก --}}
-                                                    <td>0.00</td>
-                                                    <td>0.00</td>
-                                                    <td></td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right"></td>
                                                     {{-- เอเย่นต์ --}}
                                                     <td style="background-color:#ffe6cc;">0.00</td>
                                                     <td style="background-color:#ffe6cc;">0.00</td>
                                                     <td style="background-color:#ffe6cc;">0.00</td>
                                                     {{-- บรษัท --}}
-                                                    <td>0.00</td>
-                                                    <td>0.00</td>
-                                                    <td>0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
                                                 </tr>
                                             </tbody>
                                         </table> 
