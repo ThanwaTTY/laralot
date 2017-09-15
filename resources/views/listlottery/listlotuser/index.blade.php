@@ -138,22 +138,23 @@
                                                     <td  colspan="2">รวม :</td>
                                                     <td>0.00</td>
                                                     {{-- สมาชิก --}}
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>0.00</td>
+                                                    <td>0.00</td>
                                                     <td></td>
                                                     {{-- เอเย่นต์ --}}
-                                                    <td style="background-color:#ffe6cc;"></td>
-                                                    <td style="background-color:#ffe6cc;"></td>
-                                                    <td style="background-color:#ffe6cc;"></td>
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
                                                     {{-- บรษัท --}}
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
+                                                    <td>0.00</td>
+                                                    <td>0.00</td>
+                                                    <td>0.00</td>
                                                 </tr>
                                             </tbody>
                                         </table> 
                                     </div>
                             </div>
+                            <br>
                             <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
                                     <div class="form-inline col-xs-2">
                                         <label class="col-sm-6 control-label">เเยกอัตราจ่าย</label>
@@ -167,22 +168,173 @@
                                       <br>
                                     <div class="col-sm-12">
                                         <table class="table table-bordered bg-gray">
-                                            <thead> 
+                                            <thead>
+                                                <tr style="background-color:#e6e6e6;">
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ประเภท <br>                                               </th>
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
+                                                <th class="text-center" colspan="3">สมาชิก</th>
+                                                <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
+                                                <th class="text-center" colspan="3">บริษัท</th>
+                                                </tr>
                                                 <tr> 
-                                                    <th class="text-center">#</th>
-                                                    <th class="text-center">ชื่อผู้ใช้</th>
-                                                    <th class="text-center">ระดับ</th>
-                                                    <th class="text-center">รหัสผ่าน</th>
-                                                    <th class="text-center">บันทึก</th>
+                                                    <th class="text-center">ยอดส่งออก</th>
+                                                    <th class="text-center">ค่าคอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                    <th class="text-center">ถือหุ้น</th>
+                                                    <th class="text-center">คอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                    <th class="text-center">ถือหุ้น</th>
+                                                    <th class="text-center">คอม</th>
+                                                    <th class="text-center">รวม</th>
                                                 </tr>
                                             </thead>
+                                            <tr>
+                                            <th class="text-center bg-green" colspan="11">3 ตัวท้าย</th>
+                                        </tr>   
                                             <tbody>
                                                 <tr>
-                                                    <td class="text-center">1</td>
-                                                    <td class="text-center">3m3k001</td>
-                                                    <td class="text-center">เมมเบอร์</td>
-                                                    <td class="text-center"><input type="text"></td>
-                                                    <td></td>
+                                                    <td class="text-center"><b>3 ตัวบน</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><b>3 ตัวล่าง</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><b>3 ตัวโต๊ด</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><b>2 ตัวบน</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><b>2 ตัวล่าง</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><b>2 ตัวโต๊ด</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><b>วิ่งบน</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><b>วิ่งล่าง</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="text-center"><b>รวม :</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
+                                                    <td class="text-right" ></td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
                                                 </tr>
                                             </tbody>
                                         </table> 
