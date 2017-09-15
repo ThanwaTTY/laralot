@@ -204,9 +204,33 @@
                                                 </table>
                                             </div>
                         {{-- //////////////////////////////////////////////////// --}}
+                                                <div class="col-xs-12">
+                                                    <h4>สรุปยอด</h4>   
+                                                </div>
+                                                <div class="col-xs-12">
+                                                    <p>วันที่:15/09/2017 ชนิดหวย: ทั้งหมด</p>                            
+                                                </div>   
+                                                <div class="col-xs-2">                       
+                                                 <table class="table table-bordered">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>งวดหวย</th>
+                                                            <th>0.00</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>จ่ายออก</th>
+                                                            <th>0.00</th>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>รวมทั้งหมด</th>
+                                                            <th>0.00</th>
+                                                        </tr>
+                                                  </table>
+                                                 </div>
+                                                </div>
+                                            </div> 
                                         </div>  
                                      </div>       
-                            </div>
                 </form>
             
             </div>    
