@@ -76,11 +76,6 @@
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            List
-        </h1>
-    </section>
 
     <!-- Main content -->
     <section class="content">
@@ -114,6 +109,103 @@
                                 <div class="col-xs-12">
                                   <h3>> รายการโพย</h3>     
                                 </div>
+                                <div class="col-xs-12">
+                                  <form class="form-group">
+                                     <div class="col-xs-2">
+                                        <label class="col-sm-12 control-label">วันที่</label>
+                                        <input type="" class="form-control" id="" placeholder="DD/MM/YY">
+                                     </div>
+                                     <div class="col-xs-2">
+                                        <label class="col-sm-12 control-label">ชนิดหวย</label>
+                                        <select class="form-control">
+                                            <option>ทั้งหมด</option>
+                                            <option>รัฐบาล</option>
+                                            <option>หวย ธกส</option>
+                                            <option>หวยหุ้นไทย</option>
+                                            <option>หวยลาว</option>
+                                        </select>
+                                     </div>
+                                     <div class="col-xs-2">
+                                        <label class="col-sm-12 control-label">คำต้น</label>
+                                        <input type="" class="form-control" id="" placeholder="รหัส,ยอดรวม,หมายเหตุ">
+                                     </div>
+                                     <div class="col-xs-2">
+                                        <label class="col-sm-12 control-label">สถานะ รับเข้า</label>
+                                        <select class="form-control">
+                                            <option>ทั้งหมด</option>
+                                            <option>ยังไม่จัดการ</option>
+                                            <option>ยืนยันเเล้ว</option>
+                                            <option>ยกเลิกเเล้ว</option>
+                                        </select>
+                                     </div>
+                                     <div class="col-xs-2">
+                                        <label class="col-sm-12 control-label">สถานะ จ่ายออก</label>
+                                        <select class="form-control">
+                                            <option>ทั้งหมด</option>
+                                            <option>ไม่ถูกรางวัล</option>
+                                            <option>ถูกรางวัล-จ่ายเเล้ว</option>
+                                            <option>ถูกรางวัล-ยังไม่จ่าย</option>
+                                        </select>
+                                     </div>
+                                     <br>
+                                     <div class="col-xs-2">
+                                        <button type="submit" class="btn btn-primary">ค้นหา</button>          
+                                     </div>             
+                                  </form>
+                                    <div class="col-xs-12">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input type="checkbox" value="">
+                                                เเสดงรายละเอียด
+                                            </label>
+                                        </div>                                    
+                                    </div> 
+                                    <div class="row">
+                                        <div class="col-xs-12">
+                                            <p>วันที่:15/09/2017 ชนิดหวย: ทั้งหมด</p>                            
+                                        </div>  
+                                        <div class="col-xs-12">
+                                            <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
+                                                <table class="table table-bordered"style="background-color:#f2f2f2;">
+                                                    <thead>
+                                                        <tr style="background-color:#e6e6e6;">
+                                                            <th class="text-center" colspan="3"></th>
+                                                            <th class="text-center" colspan="2">งวดหวย</th>
+                                                            <th class="text-center" colspan="9">โพย</th>
+                                                            <th class="text-center" colspan="3">รับเข้า</th>
+                                                            <th class="text-center" colspan="3">จ่ายออก</th>
+                                                        </tr>
+                                                            <th>#</th>
+                                                            <th>เวลา</th>
+                                                            <th>ชื่อผู้ใช้</th>
+                                                            <th>ชนิดหวย</th>
+                                                            <th>งวดหวย</th>
+                                                            <th>รหัสโพย</th>
+                                                            <th>อัตราจ่าย</th>
+                                                            <th>การเเทง</th>
+                                                            <th>ยอดเเทง</th>
+                                                            <th>ค่าคอม</th>
+                                                            <th>รวม</th>
+                                                            <th>อายุโพย</th>
+                                                            <th>หมายเหตุ</th>
+                                                            <th>ดู</th>
+                                                            <th>ยืนยัน</th>
+                                                            <th>ลบ</th>
+                                                            <th>ใบเสร็จ</th>
+                                                            <th>รางวัล</th>
+                                                            <th>ใบเสร็จ</th>
+                                                        <tr> 
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                        {{-- //////////////////////////////////////////////////// --}}
+                                        </div>  
+                                     </div>       
                             </div>
                 </form>
             
