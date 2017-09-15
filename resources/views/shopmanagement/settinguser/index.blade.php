@@ -98,13 +98,16 @@
                             <br>
                              <div class="row">
                                 <div class="col-xs-12">
-                                     <div style="background-color:#ffd6cc;color:black;padding:5px;border: 3px solid #ff471a; ">
+                                     <div style="background-color:#b3d9ff;color:black;padding:5px;border: 3px solid #3399ff; ">
                                         <h4 style="color:#ff471a;">เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
                                         <p>กรุณาตั้งจำนวนการรับของต่อตัวในหน้า ตั้งค่าการรับของ เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้ </p>
                                        
                                      </div>                           
                                 </div>                                  
                             </div>
+                            <br>
+                            <div style="border: 3px solid #ff471a; ">
+                            </div> 
                             <br>
                             <div class="row">
                                 <div class="col-xs-12">

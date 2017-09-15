@@ -105,6 +105,9 @@
                                   </form>
                                 </div>                                  
                             </div>
+                            <br>
+                            <div style="border: 3px solid #4da6ff; ">
+                            </div> 
                             <div class="row">
                                 <div class="col-xs-12">
                                   <h3>> รายการโพย</h3>     
@@ -160,6 +163,9 @@
                                             </label>
                                         </div>                                    
                                     </div> 
+                                     <br><br><br>
+                                        <div style="border: 3px solid #4da6ff; ">
+                                        </div> 
                                     <div class="row">
                                         <div class="col-xs-12">
                                             <p>วันที่:15/09/2017 ชนิดหวย: ทั้งหมด</p>                            
