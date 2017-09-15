@@ -2,7 +2,7 @@
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
       <!-- Sidebar user panel -->
-      <div class="row">
+      <div id="icon-menu" class="row">
         <div class="sidebar-shortcuts-large bot-margin-3" id="sidebar-shortcuts-large">
               <button class="btn btn-success btn-ajax" data-href="https://agent.superlot999.com/items/overall">
                 <i class="ace-icon fa fa-table white"></i>
@@ -21,44 +21,40 @@
               </button>
         </div>
       </div>
-      {{-- <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;background-color: #3c8dbc;">
-        <div class="col-md-3"><i class="fa fa-table" style="color:white;font-size:40px;background-color: red;padding:5px 5px"></i></div>
-        <div class="col-md-3"><i class="fa fa-users" style="color:white;font-size:40px;background-color: red;padding:5px 5px"></i></div>
-        <div class="col-md-3"><i class="fa fa-bar-chart" style="color:white;font-size:40px;background-color: red;padding:5px 5px"></i></div>
-        <div class="col-md-3"><i class="fa fa-refresh" style="color:white;font-size:40px;background-color: red;padding:5px 5px"></i></div>
-      </div> --}}
 
-      <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-        <div class="col-md-5"><span style="float:right;color:white;">ชื่อ:</span></div>
-        <div class="col-md-7"><span style="float:left;color:white;">palm</span></div>
-      </div>
-      <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-        <div class="col-md-5"><span style="float:right;color:white;">ระดับ:</span></div>
-        <div class="col-md-7"><span style="float:left;color:white;">เอเย่นต์</span></div>
-      </div>
-       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-        <div class="col-md-5"><span style="float:right;color:white;">เครดิต:</span></div>
-        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
-      </div>
-       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-        <div class="col-md-5"><span style="float:right;color:white;">ใช้ไป:</span></div>
-        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
-      </div>
-       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-        <div class="col-md-5"><span style="float:right;color:white;">เหลือ:</span></div>
-        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
-      </div>
-       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-        <div class="col-md-5"><span style="float:right;color:white;">ได้เสีย:</span></div>
-        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
-      </div>
-       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-        <div class="col-md-5"><span style="float:right;color:white;">สมาชิก:</span></div>
-        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
-      </div>
-       <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-        <div class="col-md-5"><span style="float:right;color:white;">ออนไลน์:</span></div>
-        <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+      <div class="row" style="padding-top: 20px">
+        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-md-5"><span style="float:right;color:white;">ชื่อ:</span></div>
+          <div class="col-md-7"><span style="float:left;color:white;">palm</span></div>
+        </div>
+        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-md-5"><span style="float:right;color:white;">ระดับ:</span></div>
+          <div class="col-md-7"><span style="float:left;color:white;">เอเย่นต์</span></div>
+        </div>
+        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-md-5"><span style="float:right;color:white;">เครดิต:</span></div>
+          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        </div>
+        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-md-5"><span style="float:right;color:white;">ใช้ไป:</span></div>
+          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        </div>
+        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-md-5"><span style="float:right;color:white;">เหลือ:</span></div>
+          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        </div>
+        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-md-5"><span style="float:right;color:white;">ได้เสีย:</span></div>
+          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        </div>
+        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-md-5"><span style="float:right;color:white;">สมาชิก:</span></div>
+          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        </div>
+        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-md-5"><span style="float:right;color:white;">ออนไลน์:</span></div>
+          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        </div>
       </div>
         <li>
           
@@ -160,7 +156,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> แพ้-ชนะ สมาชิก/ประเภท</a></li>
+            <li><a href="/report/userreport"><i class="fa fa-circle-o"></i> แพ้-ชนะ สมาชิก/ประเภท</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> แพ้-ชนะ สุทธิ</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> รายการที่ถูกรางวัล</a></li>
             <li><a href="#"><i class="fa fa-circle-o"></i> ผลการออกรางวัล</a></li>

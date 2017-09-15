@@ -105,6 +105,44 @@
       background-color: #3e8e41;
   }
 
+.sidebar-shortcuts-large bot-margin-3 {
+
+  width: 20px;
+}
+
+#icon-menu {
+  background: white;
+  height: 49px;
+  width: 107%;
+  border: 1px solid;
+}
+
+.breadcrumb {
+    padding: 8px 15px;
+    margin-bottom: 20px;
+    list-style: none;
+    background-color: #f5f5f5;
+    border-radius: 0px;
+    border: 1px solid;
+    min-height: 49px;
+    margin-left: -3px;
+    margin-bottom: -12px;
+}
+.breadcrumb>li+li:before {
+    padding: 0 5px;
+    color: #ccc;
+    content: ">";
+}
+.h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 0px;
+    margin-bottom: 15px;
+}
+
+#text-primary {
+    color: #337ab7;
+    padding-bottom: 15px;
+    border-bottom: 1px solid;
+}
 </style>
 
 @include('nev-bar-top')

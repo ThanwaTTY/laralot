@@ -78,13 +78,20 @@
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            List
-        </h1>
-        {{-- <div class="col-xs-12"> --}}
-            <h2 class="text-white">รายการที่ถูกยกเลิก</h2>                            
-        {{-- </div>  --}}
+      <section class="sidebar-shortcuts-large bot-margin-3">
+      {{--  <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>  --}}
+      <div class="row">
+        {{--  <div class="pull-left">  --}}
+          <ol class="breadcrumb">
+            <li class="active"><i class="fa fa-home"></i></li>
+            <li class="active">ยินดีต้อนรับ</li>
+            <li class="active">รายการที่ถูกยกเลิก</li>
+          </ol>
+        {{--  </div>  --}}
+      </div>
     </section>
 
     <!-- Main content -->

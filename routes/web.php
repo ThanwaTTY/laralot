@@ -88,3 +88,34 @@ Route::get('/shopmanagement/settinguser', function (){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/report/userreport', function () {
+    return view('report.userreport.index');
+});
