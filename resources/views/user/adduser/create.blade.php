@@ -320,10 +320,10 @@
                         <div class="box-header with-border">
                             <b>อัตราจ่าย และ คอมมิชชั่น</b>
                             <p class="pull-right">คัดลอกจาก
-                            <select name="" class="" id="">
-                                <option value="">สูงสุด</option>
-                            </select>
-                        </p>
+                                <select name="" class="" id="">
+                                    <option value="">สูงสุด</option>
+                                </select>
+                            </p>
                         </div>
                        <div class="row">
                             <!-- Left col -->

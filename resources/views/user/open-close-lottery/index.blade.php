@@ -182,62 +182,6 @@
                                                                             <td class="text-center">เปิด</td>
                                                                         </tr>
                                                                     </tbody>
-                                                                </table> <div class="row">
-                                    <!-- Left col -->
-                                    <section class="col-lg-12 connectedSortable">
-                                    <!-- Custom tabs (Charts with tabs)-->
-                                        <div class="nav-tabs-custom">
-                                            <!-- Tabs within a box -->
-                                            <ul class="nav nav-tabs pull-left"  style="padding-bottom: 5px">
-                                            <li class="active bg-primary" style=""><a href="#tab11" data-toggle="tab">รัฐบาล</a></li>
-                                            <li class="bg-primary"><a href="#tab22" data-toggle="tab">หวย ธกส</a></li>
-                                            <li class="bg-primary"><a href="#tab33" data-toggle="tab">หวยหุ้นไทย</a></li>
-                                            <li class="bg-primary"><a href="#tab44" data-toggle="tab">หวยลาว</a></li>
-                                            <li class="bg-primary"><a href="#tab55" data-toggle="tab">หวยมาเลย์ (Magnum4D)</a></li>
-                                            <li class="bg-primary"><a href="#tab66" data-toggle="tab">หวยหุ้นต่างประเทศ</a></li>
-                                            <li class="bg-primary"><a href="#tab77" data-toggle="tab">หวยเวียดนาม</a></li>
-                                            {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
-                                            </ul>
-                                                    <div class="tab-content no-padding">
-                                                        <!-- Morris chart - Sales -->
-                                                        <div class="chart tab-pane active" id="tab11" style="position: relative; height: 300px;">
-                                                            <div class="col-sm-4">
-                                                                <table class="table table-bordered bg-gray">
-                                                                    <thead> 
-                                                                        <tr> 
-                                                                            <th class="text-center" colspan="5" style="color:#0000ff;">เปิด/ปิด กลุ่มหวย รํฐบาล</th>
-                                                                        </tr>
-                                                                        <tr> 
-                                                                            <th class="text-center" colspan="3" style="padding:15px;">
-                                                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
-                                                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
-                                                                            </th>
-                                                                            <th class="text-center" style="padding:15px;"><input type="checkbox"></th>
-                                                                            <th class="text-center" style="padding:15px;">การใช้งาน 
-                                                                                <select name="" id="">
-                                                                                    <option value="">เปิด</option>
-                                                                                    <option value="">ปิด</option>
-                                                                                </select>
-                                                                            </th>
-                                                                        </tr>
-                                                                    </thead>
-                                                                    <tbody>
-                                                                        <tr>
-                                                                            <td class="text-center">1</td>
-                                                                            <td class="text-center">3M3K001</td>
-                                                                            <td class="text-center">เมมเบอร์</td>
-                                                                            <td class="text-center"><input type="checkbox"></td>
-                                                                            <td class="text-center">เปิด</td>
-                                                                        </tr>
-
-                                                                        <tr>
-                                                                            <td class="text-center">2</td>
-                                                                            <td class="text-center">3M3K002</td>
-                                                                            <td class="text-center">เมมเบอร์</td>
-                                                                            <td class="text-center"><input type="checkbox"></td>
-                                                                            <td class="text-center">เปิด</td>
-                                                                        </tr>
-                                                                    </tbody>
                                                                 </table> 
                                                             
                                                         </div>

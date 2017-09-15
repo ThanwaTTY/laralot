@@ -112,139 +112,306 @@
         <br>
     <form class="form-horizontal" action="" method="post">
         {{ csrf_field() }}
-            <div class="row">
+        <div class="row">
                 <!-- Left col -->
-                <section class="col-lg-12 connectedSortable">
-                <!-- Custom tabs (Charts with tabs)-->
+            <section class="col-lg-12 connectedSortable">
+            <!-- Custom tabs (Charts with tabs)-->
                 <div class="nav-tabs-custom">
                     <!-- Tabs within a box -->
                     <ul class="nav nav-tabs pull-left">
-                    <li class="bg-primary active" style=""><a href="#tab1" data-toggle="tab">อัตราจ่าย</a></li>
-                    <li class="bg-primary"><a href="#tab2" data-toggle="tab">คอมมิชชั่น</a></li>
-                    {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
+                        <li class="bg-primary active" style=""><a href="#tab1" data-toggle="tab">อัตราจ่าย</a></li>
+                        <li class="bg-primary"><a href="#tab2" data-toggle="tab">คอมมิชชั่น</a></li>
                     </ul>
                     <div class="tab-content no-padding">
                     <!-- Morris chart - Sales -->
-                    <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                            <div class="col-sm-10">
-                                <table class="table table-bordered bg-gray">
-                                    <thead> 
-                                        <tr> 
-                                            <th class="text-center" colspan="12" style="color:#0000ff;">ขั้นต่ำ 3 ตัวท้าย</th>
-                                        </tr>
-                                         <tr> 
-                                            <th class="text-center" colspan="3" style="padding-top:20px;">
-                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
-                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
-                                            </th>
-                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
-                                            <th class="text-center">3 ตัวบน<input type="text">>=5</th>
-                                            <th class="text-center">3 ตัวล่าง<input type="text">>=5</th>
-                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=5</th>
-                                            <th class="text-center">2 ตัวบน<input type="text">>=5</th>
-                                            <th class="text-center">2 ตัวล่าง<input type="text">>=5</th>
-                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=5</th>
-                                            <th class="text-center">วิ่งบน<input type="text">>=5</th>
-                                            <th class="text-center">วิ่งล่าง<input type="text">>=5</th>
+                        <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;"><br>
+                            <div class="row">
+                                <!-- Left col -->
+                                <section class="col-lg-12 connectedSortable">
+                                <!-- Custom tabs (Charts with tabs)-->
+                                    <div class="nav-tabs-custom">
+                                        <!-- Tabs within a box -->
+                                        <ul class="nav nav-tabs pull-left">
+                                        <li class="bg-primary active" style=""><a href="#tab11" data-toggle="tab">หวยรัฐ 70</a></li>
+                                        <li class="bg-primary"><a href="#tab22" data-toggle="tab">หวย 70</a></li>
+                                        {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
+                                        </ul>
+                                        <div class="tab-content no-padding">
+                                        <!-- Morris chart - Sales -->
+                                        <div class="chart tab-pane active" id="tab11" style="position: relative; height: 300px;">
+                                            <div class="col-sm-10"><br>
+                                                <ul class="nav nav-tabs pull-left">
+                                                    <li class="bg-primary active" style=""><a href="#tab11" data-toggle="tab">3 ตัวท้าย</a></li>
+                                                </ul>
+                                                <table class="table table-bordered bg-gray">
+                                                    <thead> 
+                                                        <tr> 
+                                                            <th class="text-center" colspan="11" style="color:#0000ff;">อัตราจ่าย หวยรัฐ 70 3 ตัวท้าย</th>
+                                                        </tr>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">3M3K001</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                        </tr>
+                                                        <tr> 
+                                                            <th class="text-center" colspan="3" style="padding-top:20px;">
+                                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
+                                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
+                                                            </th>
+                                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
+                                                            <th class="text-center">3 ตัวบน<input type="text">>=550</th>
+                                                            <th class="text-center">3 ตัวล่าง<input type="text">>=125</th>
+                                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=105</th>
+                                                            <th class="text-center">2 ตัวบน<input type="text">>=70</th>
+                                                            <th class="text-center">2 ตัวล่าง<input type="text">>=70</th>
+                                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=12</th>
+                                                            <th class="text-center">วิ่งบน<input type="text">>=3</th>
+                                                            <th class="text-center">วิ่งล่าง<input type="text">>=4</th>
 
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">3M3K002</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                        </tr>
-                                    </tbody>
-                                </table> 
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">1</td>
+                                                            <td class="text-center">3M3K001</td>
+                                                            <td class="text-center">เมมเบอร์</td>
+                                                            <td class="text-center"><input type="checkbox"></td>
+                                                            <td>550</td>
+                                                            <td>125</td>
+                                                            <td>105</td>
+                                                            <td>70</td>
+                                                            <td>70</td>
+                                                            <td>12</td>
+                                                            <td>3</td>
+                                                            <td>4</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text-center">2</td>
+                                                            <td class="text-center">3M3K002</td>
+                                                            <td class="text-center">เมมเบอร์</td>
+                                                            <td class="text-center"><input type="checkbox"></td>
+                                                            <td>550</td>
+                                                            <td>125</td>
+                                                            <td>105</td>
+                                                            <td>70</td>
+                                                            <td>70</td>
+                                                            <td>12</td>
+                                                            <td>3</td>
+                                                            <td>4</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </div>
+                                        </div>
+                                        <div class="chart tab-pane" id="tab22" style="position: relative; height: 300px;">
+                                            <div class="col-sm-10"><br>
+                                                    <ul class="nav nav-tabs pull-left">
+                                                        <li class="bg-primary active" style=""><a href="#tab11" data-toggle="tab">3 ตัวท้าย</a></li>
+                                                    </ul>
+                                                <table class="table table-bordered bg-gray">
+                                                    <thead> 
+                                                            <tr> 
+                                                                <th class="text-center" colspan="11" style="color:#0000ff;">อัตราจ่าย หวย 70 3 ตัวท้าย</th>
+                                                            </tr>
+                                                        <tr> 
+                                                            <th class="text-center" colspan="3" style="padding-top:20px;">
+                                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
+                                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
+                                                            </th>
+                                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
+                                                            <th class="text-center">3 ตัวบน<input type="text">>=550</th>
+                                                            <th class="text-center">3 ตัวล่าง<input type="text">>=1</th>
+                                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=105</th>
+                                                            <th class="text-center">2 ตัวบน<input type="text">>=70</th>
+                                                            <th class="text-center">2 ตัวล่าง<input type="text">>=70</th>
+                                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=12</th>
+                                                            <th class="text-center">วิ่งบน<input type="text">>=3</th>
+                                                            <th class="text-center">วิ่งล่าง<input type="text">>=4</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">1</td>
+                                                            <td class="text-center">3M3K001</td>
+                                                            <td class="text-center">เมมเบอร์</td>
+                                                            <td class="text-center"><input type="checkbox"></td>
+                                                            <td>550</td>
+                                                            <td>1</td>
+                                                            <td>105</td>
+                                                            <td>70</td>
+                                                            <td>70</td>
+                                                            <td>12</td>
+                                                            <td>3</td>
+                                                            <td>4</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text-center">2</td>
+                                                            <td class="text-center">3M3K002</td>
+                                                            <td class="text-center">เมมเบอร์</td>
+                                                            <td class="text-center"><input type="checkbox"></td>
+                                                            <td>550</td>
+                                                            <td>1</td>
+                                                            <td>105</td>
+                                                            <td>70</td>
+                                                            <td>70</td>
+                                                            <td>12</td>
+                                                            <td>3</td>
+                                                            <td>4</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </section>
                             </div>
-                    </div>
-                    <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
-                            <div class="col-sm-10">
-                                <table class="table table-bordered bg-gray">
-                                    <thead> 
-                                        <tr> 
-                                            <th class="text-center" colspan="12" style="color:#0000ff;">สูงสุด 3 ตัวท้าย</th>
-                                        </tr>
-                                         <tr> 
-                                            <th class="text-center" colspan="3" style="padding-top:20px;">
-                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
-                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
-                                            </th>
-                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
-                                            <th class="text-center">3 ตัวบน<input type="text">>=3000</th>
-                                            <th class="text-center">3 ตัวล่าง<input type="text">>=3000</th>
-                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=3000</th>
-                                            <th class="text-center">2 ตัวบน<input type="text">>=10000</th>
-                                            <th class="text-center">2 ตัวล่าง<input type="text">>=10000</th>
-                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=10000</th>
-                                            <th class="text-center">วิ่งบน<input type="text">>=10000</th>
-                                            <th class="text-center">วิ่งล่าง<input type="text">>=10000</th>
+                        </div>
+                        <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;"><br>
+                           <div class="row">
+                                <!-- Left col -->
+                                <section class="col-lg-12 connectedSortable">
+                                <!-- Custom tabs (Charts with tabs)-->
+                                    <div class="nav-tabs-custom">
+                                        <!-- Tabs within a box -->
+                                        <ul class="nav nav-tabs pull-left">
+                                        <li class="bg-primary active" style=""><a href="#tab10" data-toggle="tab">หวยรัฐ 70</a></li>
+                                        <li class="bg-primary"><a href="#tab20" data-toggle="tab">หวย 70</a></li>
+                                        {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
+                                        </ul>
+                                        <div class="tab-content no-padding">
+                                        <!-- Morris chart - Sales -->
+                                        <div class="chart tab-pane active" id="tab10" style="position: relative; height: 300px;">
+                                            <div class="col-sm-10"><br>
+                                                    <ul class="nav nav-tabs pull-left">
+                                                        <li class="bg-primary active" style=""><a href="#tab11" data-toggle="tab">3 ตัวท้าย</a></li>
+                                                    </ul>
+                                                <table class="table table-bordered bg-gray">
+                                                    <thead> 
+                                                        <tr> 
+                                                            <th class="text-center" colspan="11" style="color:#0000ff;">อัตราจ่าย หวยรัฐ 70 3 ตัวท้าย</th>
+                                                        </tr>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">3M3K001</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>3000</td>
-                                            <td>3000</td>
-                                            <td>3000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                        </tr>
+                                                        <tr> 
+                                                            <th class="text-center" colspan="3" style="padding-top:20px;">
+                                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
+                                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
+                                                            </th>
+                                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
+                                                            <th class="text-center">3 ตัวบน<input type="text">>=33</th>
+                                                            <th class="text-center">3 ตัวล่าง<input type="text">>=33</th>
+                                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=33</th>
+                                                            <th class="text-center">2 ตัวบน<input type="text">>=28</th>
+                                                            <th class="text-center">2 ตัวล่าง<input type="text">>=28</th>
+                                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=28</th>
+                                                            <th class="text-center">วิ่งบน<input type="text">>=12</th>
+                                                            <th class="text-center">วิ่งล่าง<input type="text">>=12</th>
 
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">3M3K002</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>3000</td>
-                                            <td>3000</td>
-                                            <td>3000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                        </tr>
-                                    </tbody>
-                                </table> 
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">1</td>
+                                                            <td class="text-center">3M3K001</td>
+                                                            <td class="text-center">เมมเบอร์</td>
+                                                            <td class="text-center"><input type="checkbox"></td>
+                                                            <td>33</td>
+                                                            <td>33</td>
+                                                            <td>33</td>
+                                                            <td>28</td>
+                                                            <td>28</td>
+                                                            <td>28</td>
+                                                            <td>12</td>
+                                                            <td>12</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text-center">2</td>
+                                                            <td class="text-center">3M3K002</td>
+                                                            <td class="text-center">เมมเบอร์</td>
+                                                            <td class="text-center"><input type="checkbox"></td>
+                                                            <td>33</td>
+                                                            <td>33</td>
+                                                            <td>33</td>
+                                                            <td>28</td>
+                                                            <td>28</td>
+                                                            <td>28</td>
+                                                            <td>12</td>
+                                                            <td>12</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </div>
+                                        </div>
+                                        <div class="chart tab-pane" id="tab20" style="position: relative; height: 300px;">
+                                                <div class="col-sm-10"><br>
+                                                    <ul class="nav nav-tabs pull-left">
+                                                            <li class="bg-primary active" style=""><a href="#tab11" data-toggle="tab">3 ตัวท้าย</a></li>
+                                                    </ul>
+                                                <table class="table table-bordered bg-gray">
+                                                    <thead> 
+                                                            <tr> 
+                                                                <th class="text-center" colspan="11" style="color:#0000ff;">อัตราจ่าย หวย 70 3 ตัวท้าย</th>
+                                                            </tr>
+                                                        <tr> 
+                                                            <th class="text-center" colspan="3" style="padding-top:20px;">
+                                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
+                                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
+                                                            </th>
+                                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
+                                                            <th class="text-center">3 ตัวบน<input type="text">>=33</th>
+                                                            <th class="text-center">3 ตัวล่าง<input type="text">>=0</th>
+                                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=33</th>
+                                                            <th class="text-center">2 ตัวบน<input type="text">>=28</th>
+                                                            <th class="text-center">2 ตัวล่าง<input type="text">>=28</th>
+                                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=28</th>
+                                                            <th class="text-center">วิ่งบน<input type="text">>=12</th>
+                                                            <th class="text-center">วิ่งล่าง<input type="text">>=12</th>
+
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="text-center">1</td>
+                                                            <td class="text-center">3M3K001</td>
+                                                            <td class="text-center">เมมเบอร์</td>
+                                                            <td class="text-center"><input type="checkbox"></td>
+                                                            <td>33</td>
+                                                            <td>0</td>
+                                                            <td>33</td>
+                                                            <td>28</td>
+                                                            <td>28</td>
+                                                            <td>28</td>
+                                                            <td>12</td>
+                                                            <td>12</td>
+                                                        </tr>
+
+                                                        <tr>
+                                                            <td class="text-center">2</td>
+                                                            <td class="text-center">3M3K002</td>
+                                                            <td class="text-center">เมมเบอร์</td>
+                                                            <td class="text-center"><input type="checkbox"></td>
+                                                            <td>33</td>
+                                                            <td>0</td>
+                                                            <td>33</td>
+                                                            <td>28</td>
+                                                            <td>28</td>
+                                                            <td>28</td>
+                                                            <td>12</td>
+                                                            <td>12</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table> 
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </section>
                             </div>
+                        </div>
                     </div>
-                   
                 </div>
-                </section>
-            </div>
+            </section>
+        </div>
             
           
             
