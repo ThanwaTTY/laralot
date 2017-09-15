@@ -87,82 +87,43 @@
                     <div class="box-body">
                             <div class="row">
                                 <div class="col-xs-12">
-                                     <h2 class="text-aqua">ตั่งค่าการรับของ</h2>                            
-                                </div>                                  
-                            </div>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                     <h4 class="text-primary">>รัฐบาลไทย,</h4>                            
+                                     <h2 class="text-aqua">ตั่งค่าสมาชิก >>3M3K</h2>                            
                                 </div>                                  
                             </div>
                             <br>
                              <div class="row">
                                 <div class="col-xs-12">
                                      <div style="background-color:#b3d9ff;color:black;padding:5px;border: 3px solid #3399ff; ">
-                                        <h4 style="color:#ff471a;">เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
-                                        <p>กรุณาตั้งจำนวนการรับของต่อตัวในหน้า ตั้งค่าการรับของ เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้ </p>
+                                        <h4 style="color:#1a8cff;">คำเเนะนำ</h4>
+                                        <p>-เพิ่มสมาชิกหน้าร้าน ได้ที่เมนู เพิ่มสมาชิก</p>
+                                        <p>-เพิ่มผู้ช่วยหน้าร้าน ได้ที่เมนู เพิ่มผู้ช่วย</p>
                                        
                                      </div>                           
                                 </div>                                  
                             </div>
                             <br>
-                            <div style="border: 3px solid #ff471a; ">
-                            </div> 
-                            <br>
                             <div class="row">
-                                <div class="col-xs-12">
-                                     <h4 class="text-primary">>>ตั่งเวลาปิดรับของรัฐบาล</h4>                            
-                                </div>                                  
-                            </div>
-                            <br>
-                             <div class="row">
-                                <div class="col-xs-2">
-                                    <button class="btn btn-primary">3ตัวท้าย</button>                        
-                                </div>                                  
-                            </div>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                     <h4 class="text-primary">>>ตั่งค่าการรับของรัฐบาลไทย 3 ตัวท้าย</h4>                            
-                                </div>                                  
-                            </div>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                    <p>กรุณาใส่จำนวนเงินที่ท่านต้องการถือสู้ ต่อตัว ของแต่ละประเภทลงในช่องด้านล่าง เพื่อเปิดรับของ หากไม่ต้องการถือสู้ในประเภทใด ๆ ให้ใส่ 0 </p>                      
-                                </div>                                  
-                            </div>
-                            <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                <table class="table table-bordered"style="background-color:#f2f2f2;">
-                                    <thead>
-                                        <tr style="background-color:#e6e6e6;">
-                                            <th></th>
-                                            <th class="text-center">3 ตัวบน</th>
-                                            <th class="text-center">3 ตัวล่าง</th>
-                                            <th class="text-center">3 ตัวโต๊ด</th>
-                                            <th class="text-center">2 ตัวบน</th>
-                                            <th class="text-center">2 ตัวล่า</th>
-                                            <th class="text-center">2ตัวโต๊ด</th>
-                                            <th class="text-center">วิ่งบน</th>
-                                            <th class="text-center">วิ่งล่าง</th>
-                                            <th></th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                           <td class="text-center">0 = ไม่รับ</td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                        </tr>
-                                    
-                                    </tbody>
-                                </table>
-                            </div>
+                                <div class="col-xs-4">
+                                    <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
+                                        <table class="table table-bordered"style="background-color:#f2f2f2;">
+                                            <thead>
+                                                <tr style="background-color:#e6e6e6;">
+                                                    <th colspan="2"class="center"style="padding-top:20px"><button class="btn btn-primary">เเก้ไข</button></th>
+                                                    <th colspan="2"class="center"style="padding-top:20px"><button class="btn btn-primary">ยกเลิก</button></th>
+                                                    <th class="text-center"style="padding-top:25px"> <input type="checkbox" value=""></th>
+                                                    <th class="text-center">ระบบหน้าร้าน<select class="form-control">
+                                                                                            <option></option>
+                                                                                            <option>เปิด</option>
+                                                                                            <option>ปิด</option>
+                                                                                        </select></th>
+                                                    <th class="text-center"  rowspan="2">อายุโพย<input type="" class="form-control" id="" placeholder="">
+                                                    <p><=0นาที</p></th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            </tbody>
+                                        </table>
+                                    </div>
                 </form>
                             <br>
             </div>    
