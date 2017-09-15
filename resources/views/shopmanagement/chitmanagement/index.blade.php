@@ -133,7 +133,7 @@
                                         <input type="" class="form-control" id="" placeholder="รหัส,ยอดรวม,หมายเหตุ">
                                      </div>
                                      <div class="col-xs-2">
-                                        <label class="col-sm-12 control-label">สถานะ รับเข้า</label>
+                                        <label class="col-sm-12 control-label">สถานะ <i class="fa fa-arrow-down"style="color:#33cc33;">รับเข้า</i></label>
                                         <select class="form-control">
                                             <option>ทั้งหมด</option>
                                             <option>ยังไม่จัดการ</option>
@@ -142,7 +142,7 @@
                                         </select>
                                      </div>
                                      <div class="col-xs-2">
-                                        <label class="col-sm-12 control-label">สถานะ จ่ายออก</label>
+                                        <label class="col-sm-12 control-label">สถานะ <i class="fa fa-arrow-up"style="color:#ff1a1a;">จ่ายออก</i></label>
                                         <select class="form-control">
                                             <option>ทั้งหมด</option>
                                             <option>ไม่ถูกรางวัล</option>
@@ -178,8 +178,8 @@
                                                             <th class="text-center" colspan="3"></th>
                                                             <th class="text-center" colspan="2">งวดหวย</th>
                                                             <th class="text-center" colspan="9">โพย</th>
-                                                            <th class="text-center" colspan="3">รับเข้า</th>
-                                                            <th class="text-center" colspan="3">จ่ายออก</th>
+                                                            <th class="text-center" colspan="3"><i class="fa fa-arrow-down"style="color:#33cc33;">รับเข้า</i></th>
+                                                            <th class="text-center" colspan="3"><i class="fa fa-arrow-up"style="color:#ff1a1a;">จ่ายออก</i></th>
                                                         </tr>
                                                             <th>#</th>
                                                             <th>เวลา</th>

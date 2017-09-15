@@ -95,8 +95,8 @@
                                 <div class="col-xs-12">
                                      <div style="background-color:#b3d9ff;color:black;padding:5px;border: 3px solid #3399ff; ">
                                         <h4 style="color:#1a8cff;">คำเเนะนำ</h4>
-                                        <p>-เพิ่มสมาชิกหน้าร้าน ได้ที่เมนู เพิ่มสมาชิก</p>
-                                        <p>-เพิ่มผู้ช่วยหน้าร้าน ได้ที่เมนู เพิ่มผู้ช่วย</p>
+                                        <p>-เพิ่มสมาชิกหน้าร้าน ได้ที่เมนู <b style="color:#3399ff;">เพิ่มสมาชิก</b></p>
+                                        <p>-เพิ่มผู้ช่วยหน้าร้าน ได้ที่เมนู <b style="color:#3399ff;">เพิ่มผู้ช่วย</b></p>
                                        
                                      </div>                           
                                 </div>                                  
