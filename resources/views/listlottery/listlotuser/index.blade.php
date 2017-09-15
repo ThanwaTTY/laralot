@@ -91,64 +91,109 @@
             <div class="box box-info">      
                 <br>
                 <form class="form-horizontal" action="" method="post">
-                    {{ csrf_field() }}
-                    <div class="box-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                     <h2 class="text-aqua">ดูของสมาชิก สมาชิก/ประเภท</h2>                            
-                                </div>                                  
-                            </div>                            
-                            <br>
-                            <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                <table class="table table-bordered"style="background-color:#f2f2f2;">
-                                    <thead>
-                                        <tr style="background-color:#e6e6e6;">
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
-                                        <input type="checkbox" name="" value="">เเสดงชื่อ
-                                        </th>
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ระดับชั้น</th>
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
-                                        <th class="text-center" colspan="3">สมาชิก</th>
-                                        <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
-                                        <th class="text-center" colspan="3">บริษัท</th>
-                                        </tr>
-                                        <tr> 
-                                            <th class="text-center">ยอดส่งออก</th>
-                                            <th class="text-center">ค่าคอม</th>
-                                            <th class="text-center">รวม</th>
-                                            <th class="text-center">ถือหุ้น</th>
-                                            <th class="text-center">คอม</th>
-                                            <th class="text-center">รวม</th>
-                                            <th class="text-center">ถือหุ้น</th>
-                                            <th class="text-center">คอม</th>
-                                            <th class="text-center">รวม</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td  colspan="2">รวม :</td>
-                                            <td>0.00</td>
-                                            {{-- สมาชิก --}}
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                            {{-- เอเย่นต์ --}}
-                                            <td style="background-color:#ffe6cc;"></td>
-                                            <td style="background-color:#ffe6cc;"></td>
-                                            <td style="background-color:#ffe6cc;"></td>
-                                            {{-- บรษัท --}}
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-                                        </tr>
-                                    
-                                    </tbody>
-                                </table>
+                {{ csrf_field() }}
+                    <div class="row">
+                        <div class="col-xs-12">
+                                <h2 class="text-aqua">ดูของสมาชิก สมาชิก/ประเภท</h2>                            
+                        </div>                                  
+                        <!-- Left col -->
+                        <section class="col-lg-12 connectedSortable">
+                        <!-- Custom tabs (Charts with tabs)-->
+                        <div class="nav-tabs-custom">
+                            <!-- Tabs within a box -->
+                            <ul class="nav nav-tabs pull-left">
+                            <li class="active" style=""><a href="#tab1" data-toggle="tab">เเยกตามสมาชิก</a></li>
+                            <li><a href="#tab2" data-toggle="tab">เเยกตามประเภท</a></li>
+                            </ul>
+                            <div class="tab-content no-padding">
+                            <!-- Morris chart - Sales -->
+                            <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
+                                    <div class="col-sm-10">
+                                        <table class="table table-bordered bg-gray">
+                                            <thead>
+                                                <tr style="background-color:#e6e6e6;">
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
+                                                <input type="checkbox" name="" value="">เเสดงชื่อ
+                                                </th>
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ระดับชั้น</th>
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
+                                                <th class="text-center" colspan="3">สมาชิก</th>
+                                                <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
+                                                <th class="text-center" colspan="3">บริษัท</th>
+                                                </tr>
+                                                <tr> 
+                                                    <th class="text-center">ยอดส่งออก</th>
+                                                    <th class="text-center">ค่าคอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                    <th class="text-center">ถือหุ้น</th>
+                                                    <th class="text-center">คอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                    <th class="text-center">ถือหุ้น</th>
+                                                    <th class="text-center">คอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td  colspan="2">รวม :</td>
+                                                    <td>0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td style="background-color:#ffe6cc;"></td>
+                                                    <td style="background-color:#ffe6cc;"></td>
+                                                    <td style="background-color:#ffe6cc;"></td>
+                                                    {{-- บรษัท --}}
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table> 
+                                    </div>
                             </div>
+                            <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
+                                    <div class="form-inline col-xs-2">
+                                        <label class="col-sm-6 control-label">เเยกอัตราจ่าย</label>
+                                        <select class="form-control col-sm-6">
+                                            <option></option>
+                                            <option>หวยรัฐ70</option>
+                                            <option>หวย70</option>
+                                        </select>
+                                     </div>
+                                     <br>
+                                      <br>
+                                    <div class="col-sm-12">
+                                        <table class="table table-bordered bg-gray">
+                                            <thead> 
+                                                <tr> 
+                                                    <th class="text-center">#</th>
+                                                    <th class="text-center">ชื่อผู้ใช้</th>
+                                                    <th class="text-center">ระดับ</th>
+                                                    <th class="text-center">รหัสผ่าน</th>
+                                                    <th class="text-center">บันทึก</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center">1</td>
+                                                    <td class="text-center">3m3k001</td>
+                                                    <td class="text-center">เมมเบอร์</td>
+                                                    <td class="text-center"><input type="text"></td>
+                                                    <td></td>
+                                                </tr>
+                                            </tbody>
+                                        </table> 
+                                    </div>
+                               </div>
+                            </div>
+                        </div>
+                        </section>
                     </div>
-                </form>
-            
-            </div>    
+              </form>            
+        </div>    
     </div> 
 </section>
     <!-- /.content -->
