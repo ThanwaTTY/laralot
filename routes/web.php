@@ -84,3 +84,34 @@ Route::get('/user/commission', function () {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Route::get('/report/userreport', function () {
+    return view('report.userreport.index');
+});

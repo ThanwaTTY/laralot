@@ -76,10 +76,20 @@
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->
-    <section class="content-header">
-        <h1>
-            List
-        </h1>
+      <section class="sidebar-shortcuts-large bot-margin-3">
+      {{--  <h1>
+        Dashboard
+        <small>Control panel</small>
+      </h1>  --}}
+      <div class="row">
+        {{--  <div class="pull-left">  --}}
+          <ol class="breadcrumb">
+            <li class="active"><i class="fa fa-home"></i></li>
+            <li class="active">ยินดีต้อนรับ</li>
+            <li class="active">ดูของรวม / คาดคะเนได้เสีย</li>
+          </ol>
+        {{--  </div>  --}}
+      </div>
     </section>
 
     <!-- Main content -->

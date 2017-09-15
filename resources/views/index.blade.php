@@ -58,25 +58,25 @@
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+    <section class="sidebar-shortcuts-large bot-margin-3">
       {{--  <h1>
         Dashboard
         <small>Control panel</small>
       </h1>  --}}
-      <div class="col-md-12" style="padding-left: 0px;">
-      {{--  <div class="pull-left">  --}}
-      <ol class="breadcrumb">
-        <li class="active"><i class="fa fa-home"></i></li>
-        <li class="active">ยินดีต้อนรับ</li>
-      </ol>
-      {{--  </div>  --}}
+      <div class="row">
+        {{--  <div class="pull-left">  --}}
+          <ol class="breadcrumb">
+            <li class="active"><i class="fa fa-home"></i></li>
+            <li class="active">ยินดีต้อนรับ</li>
+          </ol>
+        {{--  </div>  --}}
       </div>
     </section>
 
     <!-- Main content -->
     <section class="content">
     <div class="line-button"></div>
-      <h2 class="text-primary">ยินดีต้อนรับเอเย่นต์ [3M3K]</h2>
+      <h2 id="text-primary" class="text-primary">ยินดีต้อนรับเอเย่นต์ [3M3K]</h2>
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-xs-12">
@@ -133,15 +133,15 @@
                           <td style="padding: 12px;">ประกาศระบบ</td>
                           <td style="padding: 12px;">25-08-2017 09:49:00</td>
                           <td style="padding: 12px;"><b>ประกาศข่าว...หวยลาว<br>
-<br>
-หวยลาวจะเปลี่ยนการออกผลรางวัล จากเดิมสัปดาห์ละ 2 ครั้ง <br>
-วันจันทร์ และพฤหัส จะเปลี่ยนเป็น สัปดาห์ละ 1 ครั้ง คือวัน พุธ วันเดียว<br>
-เริ่มงวดแรกวันพุธที่ 30 ส.ค. 60  <br>
-<br>
-โดยบริษัทขอเลื่อนเวลาปิดรับเร็วขึ้นชั่วคราว เฉพาะงวดแรก เป็นเวลา 19.45 น. หลังจากนั้นหากตรวจสอบแล้วว่า <br>
-สามารถปิดรับเวลาเดิมได้ก็จะทำการปรับเวลาให้ปิดตามเดิม คือ 20.10 น. <br>
-<br>
-แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b></td>
+                            <br>
+                            หวยลาวจะเปลี่ยนการออกผลรางวัล จากเดิมสัปดาห์ละ 2 ครั้ง <br>
+                            วันจันทร์ และพฤหัส จะเปลี่ยนเป็น สัปดาห์ละ 1 ครั้ง คือวัน พุธ วันเดียว<br>
+                            เริ่มงวดแรกวันพุธที่ 30 ส.ค. 60  <br>
+                            <br>
+                            โดยบริษัทขอเลื่อนเวลาปิดรับเร็วขึ้นชั่วคราว เฉพาะงวดแรก เป็นเวลา 19.45 น. หลังจากนั้นหากตรวจสอบแล้วว่า <br>
+                            สามารถปิดรับเวลาเดิมได้ก็จะทำการปรับเวลาให้ปิดตามเดิม คือ 20.10 น. <br>
+                            <br>
+                            แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b></td>
                         </tr>
                       </tbody>
                     </table>
