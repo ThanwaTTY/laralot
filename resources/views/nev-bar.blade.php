@@ -149,7 +149,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/shopmanagement/chitmanagement"><i class="fa fa-circle-o"></i> จัดการโพย</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> ตั้งค่าสมาชิก</a></li>
+            <li><a href="/shopmanagement/settinguser"><i class="fa fa-circle-o"></i> ตั้งค่าสมาชิก</a></li>
           </ul>
         </li>
         <li class="treeview">
