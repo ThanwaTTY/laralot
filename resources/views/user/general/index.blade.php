@@ -44,6 +44,11 @@
     padding: 15px;
     background: #b3e6ff;
     }
+
+    .nav-tabs-custom>.nav-tabs>li>a {
+    color: #fff;
+    border-radius: 0;
+    }
     </style>
 @endsection
 @section('footer')
@@ -103,15 +108,15 @@
                 <div class="nav-tabs-custom">
                     <!-- Tabs within a box -->
                     <ul class="nav nav-tabs pull-left">
-                    <li class="active" style=""><a href="#tab1" data-toggle="tab">ข้อมูลทั่วไป</a></li>
-                    <li><a href="#tab2" data-toggle="tab">รหัสผ่าน</a></li>
-                    <li><a href="#tab3" data-toggle="tab">แบ่งหุ้น/เก็บของ</a></li>
+                    <li class="bg-primary active" style=""><a href="#tab1" data-toggle="tab">ข้อมูลทั่วไป</a></li>
+                    <li class="bg-primary"><a href="#tab2" data-toggle="tab">รหัสผ่าน</a></li>
+                    <li class="bg-primary"><a href="#tab3" data-toggle="tab">แบ่งหุ้น/เก็บของ</a></li>
                     {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
                     </ul>
                     <div class="tab-content no-padding">
                     <!-- Morris chart - Sales -->
                     <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                            <div class="col-sm-10">
+                            <div class="col-sm-10"><br>
                                 <table class="table table-bordered bg-gray">
                                     <thead> 
                                         <tr> 
@@ -152,7 +157,7 @@
                             </div>
                     </div>
                     <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
-                            <div class="col-sm-4">
+                            <div class="col-sm-4"><br>
                                 <table class="table table-bordered bg-gray">
                                     <thead> 
                                         <tr> 
@@ -176,7 +181,7 @@
                             </div>
                     </div>
                      <div class="chart tab-pane" id="tab3" style="position: relative; height: 300px;">
-                            <div class="col-sm-4">
+                            <div class="col-sm-4"><br>
                                 <table class="table table-bordered bg-gray">
                                     <thead> 
                                         <tr> 

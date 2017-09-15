@@ -73,11 +73,11 @@
         </div>        
     @endif
 
-<section class="content-header">
+{{-- <section class="content-header">
       <h1>
-        1.เพิ่มสมาชิก
+        สมาชิกออนไลน์
       </h1>
-</section>
+</section> --}}
 
 
 <section class="content">
@@ -86,30 +86,46 @@
         <div class="modal-content">
             <div class="box box-info">
                     <div class="box-header">
-                        <h4>สมาชิกออนไลน์</h4>
+                        <h3>สมาชิกออนไลน์</h3>
                     </div>
                         {{-- <form class="form-horizontal" action="" method="post"> --}}
                            
                     <div class="box-body">
                             <div class="row">
-                                <div class="col-md-8">
-                                
-                                            <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                            <table class="table table-bordered bg-gray">
-                                                <thead>
-                                                    <tr>
-                                                        <th class="text-center">#</th>
-                                                        <th class="text-center">ชื่อผู้ใช้</th>
-                                                        <th class="text-center">ระดับ</th>
-                                                        <th class="text-center">ใช้งานล่าสุด</th>
-                                                        <th class="text-center">Login ล่าสุด</th>
-                                                        <th class="text-center">IP ล่าสุด</th>
-                                                    </tr>
-                                                </thead>
-                                                
-                                            </table>
+                            
+                                <!-- Left col -->
+                                <section class="col-lg-12 connectedSortable">
+                                    <!-- Custom tabs (Charts with tabs)-->
+                                    <div class="nav-tabs-custom">
+                                        <!-- Tabs within a box -->
+                                        <ul class="nav nav-tabs pull-left">
+                                            <li class="active" style=""><a href="#tab1" data-toggle="tab">เมมเบอร์</a></li>
+                                        </ul>
+                                        <div class="tab-content no-padding">
+                                        <!-- Morris chart - Sales -->
+                                            <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
+                                                <div class="col-md-8">
+                                                    <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
+                                                        <table class="table table-bordered bg-gray">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center">#</th>
+                                                                    <th class="text-center">ชื่อผู้ใช้</th>
+                                                                    <th class="text-center">ระดับ</th>
+                                                                    <th class="text-center">ใช้งานล่าสุด</th>
+                                                                    <th class="text-center">Login ล่าสุด</th>
+                                                                    <th class="text-center">IP ล่าสุด</th>
+                                                                </tr>
+                                                            </thead>
+                                                        </table>
+                                                    </div>
+                                                </div>            
+                                            </div>
+                                        </div>
                                     </div>
-                                </div>                                  
+                                </section>
+     
+                                                      
                             </div>
 
                     </div>

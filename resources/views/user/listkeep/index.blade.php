@@ -73,11 +73,11 @@
         </div>        
     @endif
 
-<section class="content-header">
+{{-- <section class="content-header">
       <h1>
         1.เพิ่มสมาชิก
       </h1>
-</section>
+</section> --}}
 
 
 <section class="content">
@@ -86,41 +86,53 @@
         <div class="modal-content">
             <div class="box box-info">
                     <div class="box-header">
-                        <h4>รายการเก็บของตามสมาชิก</h4>
+                        <h2>รายการเก็บของตามสมาชิก</h2>
                         <b>รัฐบาลไทย (เปลี่ยนได้ที่แถบเมนูด้านบน)</b>
                     </div>
                         {{-- <form class="form-horizontal" action="" method="post"> --}}
                            
                     <div class="box-body">
                             <div class="row">
-                                <div class="col-md-8">
-                                
-                                            <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                            <table class="table table-bordered bg-gray">
-                                                <thead>
-                                                    <tr>
-                                                            <th class="text-center" colspan="13">3 ตัวท้าย</th>
-                                                    </tr>
-                                                    <tr>
-                                                        <th class="text-center">#</th>
-                                                        <th class="text-center">ชื่อผู้ใช้</th>
-                                                        <th class="text-center">ระดับ</th>
-                                                        <th class="text-center">ได้รับ</th>
-                                                        <th class="text-center">3 ตัวบน</th>
-                                                        <th class="text-center">3 ตัวล่าง</th>
-                                                        <th class="text-center">3 ตัวโต๊ด</th>
-                                                        <th class="text-center">2 ตัวบน</th>
-                                                        <th class="text-center">2 ตัวล่าง</th>
-                                                        <th class="text-center">2 ตัวโต๊ด</th>
-                                                        <th class="text-center">วิ่งบน</th>
-                                                        <th class="text-center">วิ่งล่าง</th>
-                                                        <th class="text-center">ดูของ</th>
-                                                    </tr>
-                                                </thead>
-                                                
-                                            </table>
-                                    </div>
-                                </div>                                  
+                                    <section class="col-lg-12 connectedSortable">
+                                        <div class="nav-tabs-custom">
+                                            <!-- Tabs within a box -->
+                                            <ul class="nav nav-tabs pull-left">
+                                            <li class="active" style=""><a href="#tab1" data-toggle="tab">3 ตัวท้าย</a></li>
+                                            {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
+                                            </ul>
+                                            <div class="tab-content no-padding">
+                                            <!-- Morris chart - Sales -->
+                                                <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
+                                                    <div class="col-md-8">
+                                                        <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
+                                                            <table class="table table-bordered bg-gray">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th class="text-center" colspan="13" style="color:#0000ff;">3 ตัวท้าย</th>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th class="text-center">#</th>
+                                                                        <th class="text-center">ชื่อผู้ใช้</th>
+                                                                        <th class="text-center">ระดับ</th>
+                                                                        <th class="text-center">ได้รับ</th>
+                                                                        <th class="text-center">3 ตัวบน</th>
+                                                                        <th class="text-center">3 ตัวล่าง</th>
+                                                                        <th class="text-center">3 ตัวโต๊ด</th>
+                                                                        <th class="text-center">2 ตัวบน</th>
+                                                                        <th class="text-center">2 ตัวล่าง</th>
+                                                                        <th class="text-center">2 ตัวโต๊ด</th>
+                                                                        <th class="text-center">วิ่งบน</th>
+                                                                        <th class="text-center">วิ่งล่าง</th>
+                                                                        <th class="text-center">ดูของ</th>
+                                                                    </tr>
+                                                                </thead>
+                                                            </table>
+                                                        </div>
+                                                    </div> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section>                                 
                             </div>
 
                     </div>
