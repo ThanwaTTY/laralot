@@ -76,6 +76,11 @@ Route::get('/index/user/open-close-lottery', function () {
     return view('user.open-close-lottery.index');
 });
 
+Route::get('/index/user/commission', function () {
+    return view('user.commission.index');
+});
+
+
 
 
 
