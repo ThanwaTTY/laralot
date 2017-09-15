@@ -64,7 +64,17 @@
 @endsection
 
 @section('content')
-    
+    <section class="sidebar-shortcuts-large bot-margin-3">
+        <div class="row">
+            {{--  <div class="pull-left">  --}}
+            <ol class="breadcrumb">
+                <li class="active"><i class="fa fa-home"></i></li>
+                <li class="active">ยินดีต้อนรับ</li>
+                <li class="active">เพิ่มสมาชิก</li>
+            </ol>
+            {{--  </div>  --}}
+        </div>
+    </section>
         
     @if($errors->all())
         <div class="box-body">
@@ -89,7 +99,7 @@
 <form class="form-horizontal" action="" method="post">
     {{ csrf_field() }}
         <div class="modal-content">
-            <div class="box box-info">
+            <div class="box box-solid box-primary">
                 <div class="box-header with-border with-border">
                     <b>ข้อมูลสมาชิก</b>
                 </div>
@@ -98,43 +108,60 @@
                             <div class="box-body">
                                 <div class="row">
                                     <div class="col-md-12">
-                                            <div class="form-group">
-                                                <lable for="inputname" class="col-sm-2 control-label">ระดับ</lable>
-                                                <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inputname" placeholder="Input name" value="">
+                                        <div class="form-group">
+                                            <label for="user_type" class="control-label col-xs-1" autofill="false">ระดับ:</label>
+                                                <div class="col-xs-3">
+                                                    <select class="form-control" id="user_type" name="user_type"><option value="1">เมมเบอร์</option></select>
                                                 </div>
+                                            <div class="col-xs-2"></div>
+                                            <label for="credit" class="control-label col-xs-1">เครดิต:</label>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" name="max_credit" type="text">
+                                            </div>
+                                            <span class="help-inline col-xs-2">
+                                                <span class="middle">* สูงสุด 0</span>
+                                            </span>
+                                        </div>
 
-                                                <lable for="inpassword" class="col-sm-2 control-label">เครดิต</lable>
-                                                <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inpassword" placeholder="Input password" value="">
-                                                    *สูงสุด 0</p>
+                                        <div class="form-group">
+                                            <label for="username" class="control-label col-xs-1" =""="">ชื่อผู้ใช้:</label>
+                                            <div class="col-xs-3">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon">3M3K</span>
+                                                    <input id="username" class="form-control" name="username" type="text">
                                                 </div>
                                             </div>
+                                            <span class="help-inline col-xs-2">
+                                                <span class="middle bigger-125" id="username-availability"></span>
+                                            </span>
 
-                                            <div class="form-group">
-                                                <lable for="inputname" class="col-sm-2 control-label">ชื่อผู้ใช้</lable>
-                                                <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inputname" placeholder="Input name" value="">
-                                                </div>
+                                            <label for="password" class="control-label col-xs-1">รหัสผ่าน:</label>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" name="password" type="password" value="" id="password">
+                                            </div>
+                                            <span class="help-inline col-xs-2">
+                                                <span class="middle">* อย่างน้อย 6 ตัวอักษร</span>
+                                            </span>
+                                        </div>
 
-                                                <lable for="inpassword" class="col-sm-2 control-label">รหัสผ่าน</lable>
-                                                <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inpassword" placeholder="Input password" value="">
-                                                    <p>*อย่างน้อย 6 ตัวอักษร</p>
-                                                </div>
+                                        <div class="form-group">
+                                            <label for="name" class="control-label col-xs-1">ชื่อ-สกุล:</label>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" name="name" type="text" id="name">
                                             </div>
 
-                                            <div class="form-group">
-                                                <lable for="inputname" class="col-sm-2 control-label">ชื่อ-สกุล</lable>
-                                                <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inputname" placeholder="Input name" value="">
-                                                </div>
+                                            <div class="col-xs-2"></div>
 
-                                                <lable for="inpassword" class="col-sm-2 control-label">เบอร์โทร</lable>
-                                                <div class="col-sm-3">
-                                                    <input type="text" class="form-control" id="inpassword" placeholder="Input password" value="">
-                                                </div>
+                                            <label for="phone" class="control-label col-xs-1">เบอร์โทร:</label>
+                                            <div class="col-xs-3">
+                                                <input class="form-control" name="phone" type="text" id="phone">
                                             </div>
+                                        </div>
+
+
+
+
+
                                     </div>                                  
                                 </div>
    
@@ -144,7 +171,7 @@
         </div>
 
         <div class="modal-content">
-                <div class="box box-info">
+                <div class="box box-solid box-primary">
                         <div class="box-header with-border with-border">
                             <b>แบ่งหุ้น / เก็บของ</b>
                         </div>
@@ -194,7 +221,7 @@
         </div>
 
         <div class="modal-content">
-                <div class="box box-info">
+                <div class="box box-solid box-primary">
                     <div class="box-header with-border">
                         <b>ข้อมูลการแทง</b>
                         <p class="pull-right">คัดลอกจาก
@@ -289,7 +316,7 @@
         </div>
 
         <div class="modal-content">
-                <div class="box box-info">
+                <div class="box box-solid box-primary">
                         <div class="box-header with-border">
                             <b>อัตราจ่าย และ คอมมิชชั่น</b>
                             <p class="pull-right">คัดลอกจาก

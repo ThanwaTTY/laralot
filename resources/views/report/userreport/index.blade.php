@@ -47,7 +47,26 @@
     </section>
 
     <!-- Main content -->
+<div id="content" class="col-xs-12"><div class="page-header">
+  <h1>
+    ได้เสีย สมาชิก/ประเภท
+    <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                  3M3K
+                  </small>
+  </h1>
+  <h4 class="sub">
+    <i class="fa fa-angle-right orange"></i>
+    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 กันยายน 2560
+    <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
+  </h4>
+</div>
 
+
+  <div class="alert alert-info">
+    <h3 class="no-margin">ยังไม่ประกาศผลรางวัล กรุณาไปที่ <a href="https://agent.superlot999.com/items/by-member" class="ajax">รายการแทง</a></h3>
+  </div>
+  </div>
     <!-- /.content -->
 @endsection
 @section('footer')
