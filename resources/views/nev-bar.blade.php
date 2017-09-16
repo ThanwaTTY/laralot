@@ -170,8 +170,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> จัดการยอด</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> ประวัติการเงิน</a></li>
+            <li><a href="/money/manage-balance"><i class="fa fa-circle-o"></i> จัดการยอด</a></li>
+            <li><a href="/money/history"><i class="fa fa-circle-o"></i> ประวัติการเงิน</a></li>
           </ul>
         </li>
         <li class="treeview">

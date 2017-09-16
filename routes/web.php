@@ -83,6 +83,14 @@ Route::get('/shopmanagement/settinguser', function (){
     return view('shopmanagement.settinguser.index');
 });
 
+Route::get('/money/manage-balance', function (){
+    return view('money.manage-balance.index');
+});
+
+Route::get('/money/history', function (){
+    return view('money.history.index');
+});
+
 
 
 
