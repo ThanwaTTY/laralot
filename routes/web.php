@@ -127,3 +127,7 @@ Route::get('/money/history', function (){
 Route::get('/report/userreport', function () {
     return view('report.userreport.index');
 });
+
+Route::get('/report/winlossreport', function () {
+    return view('report.winlossreport.index');
+});

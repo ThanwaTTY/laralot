@@ -28,6 +28,12 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <style>
+  table, td, th {
+
+    border: 1px solid grey !important;
+}
+</style>
 {{--   <style>
   .row {
     margin-right: -8px;
@@ -75,64 +81,77 @@
 
     <!-- Main content -->
     <section class="content">
-    <div class="line-button"></div>
-      <h2 id="text-primary" class="text-primary">ยินดีต้อนรับเอเย่นต์ [3M3K]</h2>
+      <div class="page-header">
+        <h1>ยินดีต้อนรับเอเย่นต์ [3M3K]</h1>
+      </div>
+      
       <!-- Small boxes (Stat box) -->
       <div class="row">
         <div class="col-xs-12">
-        <div class="alert alert-warning alert-dismissible">
-                {{-- <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button> --}}
-                <h4 class="text-red"><i class="icon fa fa-warning"></i> เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
-                <span class="black">กรุณาตั้งจำนวนการรับของต่อตัวในหน้า <a href="https://agent.superlot999.com/items/settings">ตั้งค่าการรับของ</a> เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้</span>
-              </div>
+        <div class="alert alert-danger">
+          <h4><i class="fa fa-warning"></i> เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
+          <span class="black">กรุณาตั้งจำนวนการรับของต่อตัวในหน้า <a href="https://agent.superlot999.com/items/settings">ตั้งค่าการรับของ</a> เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้</span>
         </div>
-        <div class="col-xs-12">
-          <h2><i class="text-primary">></i> จำนวนสมาชิก</h2>
-        </div>
+        
+          <h3><i class="fa fa-angle-right blue"></i> จำนวนสมาชิก</h3>
+        
           <div class="row">
-            <div class="col-xs-12">
-              <div class="col-xs-1">
+            <div class="col-xs-1">
+            
+              <div class="table-auto">
                 <div class="box">
-                  <div class="box-header  text-center">
-                    <h3 class="box-title">เมมเบอร์</h3>
-                  </div>
-                <!-- /.box-header -->
-                  <div class="box-body no-padding">
-                    <table class="table table-striped  text-center">
-                      <tbody>
+                  <table  class="table table-bordered">
+                    <thead class="thin-border-bottom">
+                      <tr>
+                        <th class="text-center bigger-125">เมมเบอร์</th>
+                      </tr>
+                    </thead>
+                    <tbody>
                         <tr>
-                          <th style="padding: 12px;">4</th>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                <!-- /.box-body -->
+                          <td class="text-center">
+                          <b class="bigger-150">
+                            4<br>
+                          </b>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
               </div>
+
             </div>
           </div>
 
 
       </div>
-        <div class="col-xs-12">
-          <h2><i class="text-primary">></i> จำนวนสมาชิก</h2>
-        </div>
+        
+          <h3><i class="fa fa-angle-right blue"></i> ข้อความประกาศ</h3>
+        
         <div class="row">
-          <div class="col-xs-12">
-            <div class="col-xs-12">
-              <div class="box">
-                <!-- /.box-header -->
-                  <div class="box-body no-padding">
-                    <table class="table-bordered">
-                      <tbody>
+          
+              <div class="col-xs-12">
+                <div class="box">
+                  <table  class="table table-bordered">
+                    <thead class="thin-border-bottom">
+                      <tr class="padding">
+                        <th class="text-center">ชนิดหวย</th>
+                        <th class="text-center">วันที่</th>
+                        <th class="">ประกาศ</th>
+                      </tr>
+                    </thead>
+                    <tbody>
                         <tr>
-                          <th style="padding: 12px;"  class="text-center">ชนิดหวย</th>
-                          <th style="padding: 12px;" class="text-center">วันที่</th>
-                          <th style="padding: 12px;">ประกาศ</th>
-                        </tr>
-                        <tr>
-                          <td style="padding: 12px;">ประกาศระบบ</td>
-                          <td style="padding: 12px;">25-08-2017 09:49:00</td>
-                          <td style="padding: 12px;"><b>ประกาศข่าว...หวยลาว<br>
+                          <td class="text-center">
+                          <b class="bigger-150">
+                          ประกาศระบบ
+                          </b>
+                        </td>
+                        <td class="text-center">
+                          <b class="bigger-150">
+                          25-08-2017 09:49:00
+                          </b>
+                        </td>
+                        <td class="">
+                          <b>ประกาศข่าว...หวยลาว<br>
                             <br>
                             หวยลาวจะเปลี่ยนการออกผลรางวัล จากเดิมสัปดาห์ละ 2 ครั้ง <br>
                             วันจันทร์ และพฤหัส จะเปลี่ยนเป็น สัปดาห์ละ 1 ครั้ง คือวัน พุธ วันเดียว<br>
@@ -141,15 +160,13 @@
                             โดยบริษัทขอเลื่อนเวลาปิดรับเร็วขึ้นชั่วคราว เฉพาะงวดแรก เป็นเวลา 19.45 น. หลังจากนั้นหากตรวจสอบแล้วว่า <br>
                             สามารถปิดรับเวลาเดิมได้ก็จะทำการปรับเวลาให้ปิดตามเดิม คือ 20.10 น. <br>
                             <br>
-                            แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                <!-- /.box-body -->
+                            แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
               </div>
-            </div>
-          </div>
+          
         </div>
 
 
