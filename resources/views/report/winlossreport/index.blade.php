@@ -56,76 +56,71 @@
                   </small>
   </h1>
 </div>
+                        {{-- <form class="form-horizontal" action="" method="post"> --}}
+                          
 
+<div class="alert alert-info">แสดงข้อมูลงวดที่ <b>ออกรางวัลแล้ว</b> และเป็นผลรวม เท่านั้น</div>
 
-  <div class="alert alert-info">
-    <h5 class="no-margin">แสดงข้อมูลงวดที่ ออกรางวัลแล้ว และเป็นผลรวม เท่านั้น</a></h5>
-  </div>
-  <form class="form-horizontal" action="" method="post">
-    {{ csrf_field() }}
-        <div class="modal-content">
+<form method="POST" action="https://agent.superlot999.com/reports/by-date/9306" accept-charset="UTF-8" id="filter-form2" class="form-inline"><input name="_token" type="hidden" value="j5nbY9HBoZe0b52McGVHurzhSek0wQ2t3BuLU4Vy">
+{{ csrf_field() }}
+  <div class="modal-content">
             <div class="box box-solid box-primary">
                 <div class="box-header with-border with-border">
-                    <b>ตัวเลือกการค้นหา</b>
-                </div>
-                        {{-- <form class="form-horizontal" action="" method="post"> --}}
-                           
-                            <div class="box-body">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <div class="form-group">
-                                            <label for="user_type" class="control-label col-xs-1" autofill="false">ระดับ:</label>
-                                                <div class="col-xs-3">
-                                                    <select class="form-control" id="user_type" name="user_type"><option value="1">เมมเบอร์</option></select>
-                                                </div>
-                                            <div class="col-xs-2"></div>
-                                            <label for="credit" class="control-label col-xs-1">เครดิต:</label>
-                                            <div class="col-xs-3">
-                                                <input class="form-control" name="max_credit" type="text">
-                                            </div>
-                                            <span class="help-inline col-xs-2">
-                                                <span class="middle">* สูงสุด 0</span>
-                                            </span>
-                                        </div>
+        ตัวเลือกการค้นหา
+      </h5>
+    </div>
 
-                                        <div class="form-group">
-                                            <label for="username" class="control-label col-xs-1" =""="">ชื่อผู้ใช้:</label>
-                                            <div class="col-xs-3">
-                                                <div class="input-group">
-                                                    <span class="input-group-addon">3M3K</span>
-                                                    <input id="username" class="form-control" name="username" type="text">
-                                                </div>
-                                            </div>
-                                            <span class="help-inline col-xs-2">
-                                                <span class="middle bigger-125" id="username-availability"></span>
-                                            </span>
-
-                                            <label for="password" class="control-label col-xs-1">รหัสผ่าน:</label>
-                                            <div class="col-xs-3">
-                                                <input class="form-control" name="password" type="password" value="" id="password">
-                                            </div>
-                                            <span class="help-inline col-xs-2">
-                                                <span class="middle">* อย่างน้อย 6 ตัวอักษร</span>
-                                            </span>
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="name" class="control-label col-xs-1">ชื่อ-สกุล:</label>
-                                            <div class="col-xs-3">
-                                                <input class="form-control" name="name" type="text" id="name">
-                                            </div>
-
-                                            <div class="col-xs-2"></div>
-
-                                            <label for="phone" class="control-label col-xs-1">เบอร์โทร:</label>
-                                            <div class="col-xs-3">
-                                                <input class="form-control" name="phone" type="text" id="phone">
-                                            </div>
-                                        </div>
+    <div class="widget-body" id="game-type-list">
+      <div class="widget-main">
+        <table>
+          <tbody><tr>
+            <td class="padding-5" colspan="10">
+              <label for="date"><input type="radio" id="date" name="filter" value="date" checked=""> วันนี้</label>
+              <label for="yesterday" class="left-padding-10"><input type="radio" id="yesterday" name="filter" value="yesterday"> เมื่อวาน</label>
+              <label for="week" class="left-padding-10"><input type="radio" id="week" name="filter" value="week"> สัปดาห์นี้ (จันทร์ - อาทิตย์)</label>
+              <label for="prev_week" class="left-padding-10"><input type="radio" id="prev_week" name="filter" value="prev_week"> สัปดาห์ที่แล้ว (จันทร์ - อาทิตย์)</label>
+            </td>
+          </tr>
+          <tr>
+            <td class="padding-5">
+              <input type="radio" name="filter" value="month">
+            </td>
+            <td>เดือน</td>
+            <td class="left-padding-5">
+              <select id="select-month" name="month"><option value="0" selected="selected">กันยายน - 09/2560</option><option value="1">สิงหาคม - 08/2560</option><option value="2">กรกฎาคม - 07/2560</option><option value="3">มิถุนายน - 06/2560</option><option value="4">พฤษาภาคม - 05/2560</option><option value="5">เมษายน - 04/2560</option><option value="6">มีนาคม - 03/2560</option><option value="7">กุมภาพันธ์ - 02/2560</option><option value="8">มกราคม - 01/2560</option><option value="9">ธันวาคม - 12/2559</option><option value="10">พฤศจิกายน - 11/2559</option><option value="11">ตุลาคม - 10/2559</option></select>
+            </td>
+          </tr>
+          <tr>
+            <td class="padding-5">
+              <input type="radio" name="filter" value="range">
+            </td>
+            <td>ตั้งแต่วันที่</td>
+            <td class="left-padding-5">
+              <div class="input-group">
+                <input type="text" name="from" id="input-from" class="form-control input-sm max-width-110 date-mask" value="16-09-2017">
+                <span class="input-group-addon">
+                  <i class="fa fa-calendar bigger-110"></i>
+                </span>
+              </div>
+            </td>
+            <td class="left-padding-10">ถึงวันที่</td>
+            <td class="left-padding-10">
+              <div class="input-group">
+                <input type="text" name="to" id="input-to" class="form-control input-sm max-width-110 date-mask" value="16-09-2017">
+                <span class="input-group-addon">
+                  <i class="fa fa-calendar bigger-110"></i>
+                </span>
+              </div>
+            </td>
+          </tr>
+        </tbody></table><br>
 
 
 
 
+
+
+                                    </div>  
 
                                     </div>                                  
                                 </div>
