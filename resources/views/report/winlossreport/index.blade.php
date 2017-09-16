@@ -72,7 +72,7 @@
                          </h5>
                     </div>
           <form method="POST" action="https://agent.superlot999.com/reports/by-date/9306" accept-charset="UTF-8" id="filter-form2" class="form-inline"><input name="_token" type="hidden" value="j5nbY9HBoZe0b52McGVHurzhSek0wQ2t3BuLU4Vy">
-                                    {{ csrf_field() }}
+                {{ csrf_field() }}
                     <div class="box-body">
                         <div class="widget-main">
                             <table id="unborder">
@@ -130,11 +130,106 @@
                             <br>
                              <button class="btn btn-primary">ค้นหา</button>
 
-                    </div>
+                   
              </form>
-                    <div>แสดงข้อมูลงวดที่ <b>ออกรางวัลแล้ว</b> และเป็นผลรวม เท่านั้น</div>
-         </div>
+                            <div class="col-xs-12">
+                                    <h4> ข้อมูลรวม 1 วันตั่งเเต่วันที่ </h4>                            
+                            </div>
+                            <div class="col-sm-10">
+                                        <table class="table table-bordered bg-gray">
+                                            <thead>
+                                                <tr style="background-color:#e6e6e6;">
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
+                                                <input type="checkbox" name="" value="">เเสดงชื่อ
+                                                </th>
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ระดับชั้น</th>
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
+                                                <th class="text-center" colspan="3">สมาชิก</th>
+                                                <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
+                                                <th class="text-center" colspan="3">บริษัท</th>
+                                                </tr>
+                                                <tr> 
+                                                    <th class="text-center">ยอดส่งออก</th>
+                                                    <th class="text-center">ค่าคอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                    <th class="text-center">ถือหุ้น</th>
+                                                    <th class="text-center">คอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                    <th class="text-center">ถือหุ้น</th>
+                                                    <th class="text-center">คอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center" colspan="2"><b>รวม :</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right"></td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table> 
+                                    </div>
+                            <div class="col-xs-12">
+                                <h4> รวมทั้งหมด </h4>                            
+                            </div>
+                            <div class="col-sm-10">
+                                        <table class="table table-bordered bg-gray">
+                                            <thead>
+                                                <tr style="background-color:#e6e6e6;">
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
+                                                <input type="checkbox" name="" value="">เเสดงชื่อ
+                                                </th>
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ระดับชั้น</th>
+                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
+                                                <th class="text-center" colspan="3">สมาชิก</th>
+                                                <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
+                                                <th class="text-center" colspan="3">บริษัท</th>
+                                                </tr>
+                                                <tr> 
+                                                    <th class="text-center">ยอดส่งออก</th>
+                                                    <th class="text-center">ค่าคอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                    <th class="text-center">ถือหุ้น</th>
+                                                    <th class="text-center">คอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                    <th class="text-center">ถือหุ้น</th>
+                                                    <th class="text-center">คอม</th>
+                                                    <th class="text-center">รวม</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="text-center" colspan="2"><b>รวม :</b></td>
+                                                    <td class="text-right">0.00</td>
+                                                    {{-- สมาชิก --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right"></td>
+                                                    {{-- เอเย่นต์ --}}
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
+                                                    <td style="background-color:#ffe6cc;">0.00</td>
+                                                    {{-- บรษัท --}}
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                    <td class="text-right">0.00</td>
+                                                </tr>
+                                            </tbody>
+                                        </table> 
+                                    </div>              
      </div>
+</div>
     
 
   </div>
