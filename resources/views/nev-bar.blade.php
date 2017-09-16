@@ -22,7 +22,7 @@
         </div>
       </div>
 
-      <div class="row" style="padding-top: 20px">
+      <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
         <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-md-5"><span style="float:right;color:white;">ชื่อ:</span></div>
           <div class="col-md-7"><span style="float:left;color:white;">palm</span></div>
@@ -56,9 +56,7 @@
           <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
         </div>
       </div>
-        <li>
-          
-        </li>
+
       
       <!-- search form -->
       {{-- <form action="#" method="get" class="sidebar-form">
@@ -73,7 +71,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        <li class="header">MAIN NAVIGATION</li>
+        {{-- <li class="header">MAIN NAVIGATION</li> --}}
         {{-- <li class="active treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>

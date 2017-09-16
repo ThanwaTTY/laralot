@@ -35,9 +35,6 @@
       font-size: 28px;
   }
 
-  .line-button {
-
-  }
   .boder-right {
   border: 1px solid black;
   }
@@ -80,7 +77,9 @@
       display: block;
   }
 
-  .dropdown-content a:hover {background-color: #f1f1f1}
+ .dropdown-content a:hover {
+      background-color: #f1f1f1
+      }
 
   .dropdown:hover .dropdown-content {
       display: block;
@@ -123,12 +122,6 @@
         margin-bottom: 15px;
     }
 
-    #text-primary {
-        color: #337ab7;
-        padding-bottom: 15px;
-        border-bottom: 1px solid;
-        
-    }
     .page-header {
         margin: 0 0 12px;
         border-bottom: 1px dotted #e2e2e2;
@@ -160,7 +153,84 @@
     .orange {
         color: #ff892a !important;
     }
-    a:hover, a:focus {
+    a:hover {
     color: #2a6496;
     text-decoration: underline;
     }
+
+.alert-danger {
+    background: #ffebe8 !important;
+    border: 1px solid #dd3c10 !important;
+    color: #333 !important;
+}
+.alert-danger > h4 {
+    color: #dd3c10;
+}
+.alert {
+    font-size: 14px;
+    border-radius: 0;
+}
+
+table thead tr {
+
+    background:#d2d6de;
+
+    
+}
+table {
+    border: black !important;
+    border-color: #999 !important;
+}
+table, td, th {
+
+    border: 1px solid grey !important;
+}
+.table-auto {
+    width: auto;
+}
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th, .table>thead>tr>th {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: top;
+    border-top: 1px solid #ddd;
+}
+.box {
+    position: relative;
+    border-radius: 3px;
+    background: #ffffff;
+    border-top: 0px solid #d2d6de;
+    margin-bottom: 20px;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
+}
+.blue {
+    color: #478fca !important;
+}
+.page-header {
+    margin: 0 0 12px;
+    border-bottom: 1px dotted #e2e2e2;
+    padding-bottom: 16px;
+    padding-top: 7px;
+}
+.page-header h1 {
+    padding: 0!important;
+    margin: 0 8px!important;
+    font-size: 24px!important;
+    font-weight: lighter!important;
+    color: #2679b5 !important;
+}
+h1 {
+    font-size: 32px;
+    font-weight: normal;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.breadcrumb>li, .breadcrumb>li.active {
+    color: #555;
+    padding: 0 3px 0 3px;
+
+}
+.skin-blue .sidebar-menu>li:hover>a, .skin-blue .sidebar-menu>li.active>a {
+    color: #fff;
+    background: #1e282c;
+    /* border-left-color: #3c8dbc; */
+}
