@@ -28,6 +28,12 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <style>
+  table, td, th {
+
+    border: 1px solid grey !important;
+}
+</style>
 {{--   <style>
   .row {
     margin-right: -8px;

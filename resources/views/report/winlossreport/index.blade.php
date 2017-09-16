@@ -28,6 +28,11 @@
   <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <style>
+    #unborder table, td, th {
+    border: 0px solid gray !important;
+    }
+  </style>
 @endsection
 @section('content')
     <!-- Content Header (Page header) -->
@@ -58,76 +63,80 @@
 </div>
                         {{-- <form class="form-horizontal" action="" method="post"> --}}
                           
-
 <div class="alert alert-info">แสดงข้อมูลงวดที่ <b>ออกรางวัลแล้ว</b> และเป็นผลรวม เท่านั้น</div>
 
-<form method="POST" action="https://agent.superlot999.com/reports/by-date/9306" accept-charset="UTF-8" id="filter-form2" class="form-inline"><input name="_token" type="hidden" value="j5nbY9HBoZe0b52McGVHurzhSek0wQ2t3BuLU4Vy">
-{{ csrf_field() }}
-  <div class="modal-content">
-            <div class="box box-solid box-primary">
-                <div class="box-header with-border with-border">
-        ตัวเลือกการค้นหา
-      </h5>
-    </div>
+                <div class="modal-content">
+                    <div class="box box-solid box-primary">
+                        <div class="box-header with-border with-border">
+                        ตัวเลือกการค้นหา
+                         </h5>
+                    </div>
+          <form method="POST" action="https://agent.superlot999.com/reports/by-date/9306" accept-charset="UTF-8" id="filter-form2" class="form-inline"><input name="_token" type="hidden" value="j5nbY9HBoZe0b52McGVHurzhSek0wQ2t3BuLU4Vy">
+                                    {{ csrf_field() }}
+                    <div class="box-body">
+                        <div class="widget-main">
+                            <table id="unborder">
+                            <tbody><tr>
+                                <td class="padding-5" colspan="10">
+                                <label for="date"><input type="radio" id="date" name="filter" value="date" checked=""> วันนี้</label>
+                                <label for="yesterday" class="left-padding-10"><input type="radio" id="yesterday" name="filter" value="yesterday"> เมื่อวาน</label>
+                                <label for="week" class="left-padding-10"><input type="radio" id="week" name="filter" value="week"> สัปดาห์นี้ (จันทร์ - อาทิตย์)</label>
+                                <label for="prev_week" class="left-padding-10"><input type="radio" id="prev_week" name="filter" value="prev_week"> สัปดาห์ที่แล้ว (จันทร์ - อาทิตย์)</label>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="">
+                                <input type="radio" name="filter" value="month">
+                                </td>
+                                <td>เดือน</td>
+                                <td class="">
+                                <input id="username" class="form-control" name="username" type="text">
+                                </td>
+                            </tr>
 
-    <div class="widget-body" id="game-type-list">
-      <div class="widget-main">
-        <table>
-          <tbody><tr>
-            <td class="padding-5" colspan="10">
-              <label for="date"><input type="radio" id="date" name="filter" value="date" checked=""> วันนี้</label>
-              <label for="yesterday" class="left-padding-10"><input type="radio" id="yesterday" name="filter" value="yesterday"> เมื่อวาน</label>
-              <label for="week" class="left-padding-10"><input type="radio" id="week" name="filter" value="week"> สัปดาห์นี้ (จันทร์ - อาทิตย์)</label>
-              <label for="prev_week" class="left-padding-10"><input type="radio" id="prev_week" name="filter" value="prev_week"> สัปดาห์ที่แล้ว (จันทร์ - อาทิตย์)</label>
-            </td>
-          </tr>
-          <tr>
-            <td class="padding-5">
-              <input type="radio" name="filter" value="month">
-            </td>
-            <td>เดือน</td>
-            <td class="left-padding-5">
-              <select id="select-month" name="month"><option value="0" selected="selected">กันยายน - 09/2560</option><option value="1">สิงหาคม - 08/2560</option><option value="2">กรกฎาคม - 07/2560</option><option value="3">มิถุนายน - 06/2560</option><option value="4">พฤษาภาคม - 05/2560</option><option value="5">เมษายน - 04/2560</option><option value="6">มีนาคม - 03/2560</option><option value="7">กุมภาพันธ์ - 02/2560</option><option value="8">มกราคม - 01/2560</option><option value="9">ธันวาคม - 12/2559</option><option value="10">พฤศจิกายน - 11/2559</option><option value="11">ตุลาคม - 10/2559</option></select>
-            </td>
-          </tr>
-          <tr>
-            <td class="padding-5">
-              <input type="radio" name="filter" value="range">
-            </td>
-            <td>ตั้งแต่วันที่</td>
-            <td class="left-padding-5">
-              <div class="input-group">
-                <input type="text" name="from" id="input-from" class="form-control input-sm max-width-110 date-mask" value="16-09-2017">
-                <span class="input-group-addon">
-                  <i class="fa fa-calendar bigger-110"></i>
-                </span>
-              </div>
-            </td>
-            <td class="left-padding-10">ถึงวันที่</td>
-            <td class="left-padding-10">
-              <div class="input-group">
-                <input type="text" name="to" id="input-to" class="form-control input-sm max-width-110 date-mask" value="16-09-2017">
-                <span class="input-group-addon">
-                  <i class="fa fa-calendar bigger-110"></i>
-                </span>
-              </div>
-            </td>
-          </tr>
-        </tbody></table><br>
-
-
-
-
-
-
-                                    </div>  
-
-                                    </div>                                  
+                            <tr>
+                                <td class="padding-5">
+                                <input type="radio" name="filter" value="range">
+                                </td>
+                                <td>ตั้งแต่วันที่</td>
+                                <td class="left-padding-5">
+                                <div class="input-group">
+                                    <input id="username" class="form-control" name="username" type="text">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-calendar bigger-110"></i>
+                                    </span>
                                 </div>
-   
-                            </div>
-            </div>
-    </form>
+                                </td>
+                                <td class="left-padding-10">ถึงวันที่</td>
+                                <td class="left-padding-10">
+                                <div class="input-group">
+                                    <input id="username" class="form-control" name="username" type="text">
+                                    <span class="input-group-addon">
+                                    <i class="fa fa-calendar bigger-110"></i>
+                                    </span>
+                                </div>
+                                </td>
+                            </tr>
+                            </tbody>
+                            </table>
+                            <br>
+                                 <label>ชนิดหวย :</label>
+                                 <button class="btn btn-warning">เลือก</button>
+                            </div>  
+                            <br>
+                            <br>
+                            <div style="border: 3px solid #4da6ff; ">
+                            </div>   
+                            <br>
+                             <button class="btn btn-primary">ค้นหา</button>
+
+                    </div>
+             </form>
+                    <div>แสดงข้อมูลงวดที่ <b>ออกรางวัลแล้ว</b> และเป็นผลรวม เท่านั้น</div>
+         </div>
+     </div>
+    
+
   </div>
   
 
