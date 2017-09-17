@@ -80,8 +80,8 @@
         {{--  <div class="pull-left">  --}}
           <ol class="breadcrumb">
             <li class="active"><i class="fa fa-home"></i></li>
-            <li class="active">ยินดีต้อนรับ</li>
-            <li class="active">ตั้งค่ารับของแยกตามชนิด</li>
+            <li class="active">เเพ้ ชนะ</li>
+            <li class="active">การออกรางวัล</li>
           </ol>
         {{--  </div>  --}}
       </div>
@@ -97,71 +97,107 @@
                     <div class="box-body">
                             <div class="row">
                                 <div class="col-xs-12">
-                                     <h2 class="text-aqua">ตั่งค่าการรับของเเยกตามชนิด</h2>                            
+                                     <h2 class="text-aqua">ผลการออกรางวัล</h2>                            
+                                </div>  
+                               
+                                <div class="col-xs-12">
+                                     <h3 style="color:#0000ff">><b style="color:#1a1a1a"> หวยรัฐ</b> 5 งวดล่าสุด</h3> 
+                                                            
                                 </div>                                  
                             </div>
                             <br>
                              <div class="row">
                                 <div class="col-xs-12">
-                                     <div style="background-color:#b3d9ff;color:black;padding:5px;border: 2px solid #0073e6; ">            
-                                        <p>กรุณาใส่จำนวนเงินที่ท่านต้องการถือสู้ ต่อตัว ของแต่ละประเภทลงในช่องด้านล่าง เพื่อเปิดรับของ หากไม่ต้องการถือสู้ในประเภทใด ๆ ให้ใส่ 0  </p>
-                                       
-                                     </div>                           
-                                </div>                                  
-                            </div>
+                                  <div class="table-responsive col-xs-5"><!-- มี tab เลื่อนข้างล่าง  -->
+                                    <table class="table table-bordered bg-gray">
+                                        <thead>
+                                            <tr style="background-color:#4d4d4d;color:#ffffff">
+                                                <th class="text-center" style="padding-top:40px;" rowspan="2" colspan="2">ชื่อ งวด</th>
+                                                <th class="text-center" style="padding-top:10px;" colspan="4">3 ตัวท้าย</th>
+                                            
+                                            </tr>
+                                            <tr style="background-color:#4d4d4d;color:#ffffff">
+                                                <th class="text-center" style="padding-top:20px;">3 ตัวบน</th>
+                                                <th class="text-center" style="padding-top:20px;">2 ตัวบน</th>
+                                                <th class="text-center" style="padding-top:20px;">2ตัวล่าง</th>
+                                                <th class="text-center" style="padding-top:20px;"  colspan="2">3ตัวล่าง</th>
+                                            </tr>
+                                        </thead> 
+                                        <body>
+                                            <tr>
+                                                <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>16</b> กันยา<b>2560</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>1</b> กันยา<b>2560</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>16</b> สิงหาคม<b>2560</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>1</b> สิงหาคม<b>2560</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>1</b> กรกฎาคม<b>2560</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
+                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                            </tr>
+                                        <body>   
+                                    </table>
+                                 </div>                                                                   
+                             </div>
+                            </div> 
                             <br>
                             <div class="row">
                                 <div class="col-xs-12">
-                                     <h3 style="color:#0000ff">>หวยหุ้น วันที่ 17-09-2017</h3> 
+                                     <h3 style="color:#0000ff">><b style="color:#1a1a1a"> หวยหุ้น วันที่ 17-09-2017</h3> 
                                       <div class="col-xs-4">
                                             <div class="form-group">
                                                 <label for="" class="col-sm-4 control-label">เลือกวันที่:</label>
                                                 <div class="col-sm-8">
                                                 <input type="" class="form-control" id="" placeholder="">
                                                 </div>
-                                        </div>                           
-                                </div>                                  
+                                      </div>                           
+                                </div>
+                             </div>                                 
                             </div>
                             <div class="table-responsive col-xs-7"><!-- มี tab เลื่อนข้างล่าง  -->
-                                <table class="table table-bordered">
+                                <table class="table table-bordered bg-gray">
                                     <thead>
-                                        <tr style="background-color:#e6e6e6;">
-                                            <th class="text-center" style="padding-top:20px;" rowspan="2">ชนิดหวย</th>
-                                            <th class="text-center" style="padding-top:20px;" rowspan="2">ชื่อ งวด</th>
-                                            <th class="text-center" style="padding-top:20px;" colspan="3">3 ตัวท้าย</th>
+                                        <tr style="background-color:#4d4d4d;color:#ffffff">
+                                            <th class="text-center" style="padding-top:40px;" rowspan="2">ชนิดหวย</th>
+                                            <th class="text-center" style="padding-top:40px;" rowspan="2">ชื่อ งวด</th>
+                                            <th class="text-center" style="padding-top:10px;" colspan="3">3 ตัวท้าย</th>
                                            
                                         </tr>
-                                        <tr>
+                                        <tr style="background-color:#4d4d4d;color:#ffffff">
                                             <th class="text-center" style="padding-top:20px;">3 ตัวบน</th>
                                             <th class="text-center" style="padding-top:20px;">2 ตัวบน</th>
                                             <th class="text-center" style="padding-top:20px;">2ตัวล่าง</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                           <td class="text-center">กรอกทุกเเถว</td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                        </tr>
-      {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
-                                        <tr>
-                                            <th class="text-center bg-green" colspan="5">รัฐบาล</th>
-                                        </tr>                                                                  
-                                     <form class="form-horizontal" action="" method="post">
-                                        <tr>
-                                           <td class="text-center">รัฐบาลไทย</td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                          
-                                        </tr>
-                                     </form>
+                                       
       {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                       <tr>
-                                        <th class="text-center bg-green" colspan="5">หวย ธกส.</th>
+                                        <th class="text-center" style="background-color:#66b3ff;" colspan="5">หวย ธกส.</th>
                                       </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -185,7 +221,7 @@
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                      <tr>
-                                        <th class="text-center bg-green" colspan="5">หวย หุ้นไทย.</th>
+                                        <th class="text-center"style="background-color:#66b3ff;" colspan="5">หวย หุ้นไทย.</th>
                                      </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -309,7 +345,7 @@
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                         <tr>
-                                            <th class="text-center bg-green" colspan="5">หวยลาว</th>
+                                            <th class="text-center" style="background-color:#66b3ff;" colspan="5">หวยลาว</th>
                                         </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -343,7 +379,7 @@
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                         <tr>
-                                            <th class="text-center bg-green" colspan="5">หวยมาเลย์ <b>(Magnum4D)</b></th>
+                                            <th class="text-center" style="background-color:#66b3ff;" colspan="5">หวยมาเลย์ <b>(Magnum4D)</b></th>
                                         </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -377,7 +413,7 @@
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                      <tr>
-                                        <th class="text-center bg-green" colspan="5">หวย หุ้นต่างประเทศ.</th>
+                                        <th class="text-center" style="background-color:#66b3ff;" colspan="5">หวย หุ้นต่างประเทศ.</th>
                                      </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -541,7 +577,7 @@
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                      <tr>
-                                        <th class="text-center bg-green" colspan="5">หวยเวียดนาม</th>
+                                        <th class="text-center" style="background-color:#66b3ff;" colspan="5">หวยเวียดนาม</th>
                                      </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -917,14 +953,7 @@
 
        {{-- /////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                         <tr>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>
-                                            <th></th>                                           
+                                                                                 
                                             <th colspan="2"><button class="btn btn-primary">บันทึกทั้งหมด</button></th>
                                             
                                            
