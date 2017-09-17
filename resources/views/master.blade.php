@@ -23,7 +23,7 @@
 @include('nev-bar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper  table-responsive">
 @yield('content')
   </div>
   <!-- /.content-wrapper -->
