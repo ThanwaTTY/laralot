@@ -103,10 +103,11 @@
                         <section class="col-lg-12 connectedSortable">
                         <!-- Custom tabs (Charts with tabs)-->
                             <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                                    <div class="col-sm-10">
+                                    <div class="table-responsive col-sm-10"><!-- มี tab เลื่อนข้างล่าง  -->
+
                                         <table class="table table-bordered bg-gray">
                                             <thead>
-                                                <tr style="background-color:#f2f2f2;">
+                                                <tr style="background-color:#4d4d4d;color:#ffffff">
                                                 <th class="text-center" style="padding-top:20px;" rowspan="2">#</th>
                                                 <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
                                                 <input type="checkbox" name="" value="">เเสดงชื่อ
