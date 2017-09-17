@@ -800,13 +800,16 @@
                                                 <td class="ac table-p5-row-9474-col-active">เปิด</td>
                                                 <td></td>
                                                 <td class="ac table-p5-row-9474-col-btg_active_1">เปิด</td>
+                                            </tr>
                                             <tr data-id="10230" class=" ">
                                                 <td class="id">2</td>
                                                 <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
                                                 <td class="type">เมมเบอร์</td>
                                                 <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
                                                 <td class="ac table-p5-row-10230-col-active">เปิด</td>
-                                                <td class="ac table-p5-row-10230-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                   </tr>
+                                                <td></td>
+                                                <td class="ac table-p5-row-10230-col-btg_active_1">เปิด</td>  
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                 </tr>
                                             <tr data-id="11239" class=" ">
                                                 <td class="id">3</td>
                                                 <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
@@ -814,7 +817,8 @@
                                                 <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
                                                 <td class="ac table-p5-row-11239-col-active">เปิด</td>
                                                 <td></td>
-                                                <td class="ac table-p5-row-11239-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                       </tr>
+                                                <td class="ac table-p5-row-11239-col-btg_active_1">เปิด</td>   
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                     </tr>
                                             <tr data-id="11240" class=" ">
                                                 <td class="id">4</td>
                                                 <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
@@ -822,7 +826,8 @@
                                                 <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
                                                 <td class="ac table-p5-row-11240-col-active">เปิด</td>
                                                 <td></td>
-                                                <td class="ac table-p5-row-11240-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                               </tr>
+                                                <td class="ac table-p5-row-11240-col-btg_active_1">เปิด</td> 
+                                            </tr>                                                                                                                                                                                                                                                                                                                                               </tr>
                                         </tbody>
                                 </table>
                             </form>
@@ -873,7 +878,8 @@
                                             <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
                                             <td class="ac table-p11-row-9474-col-active">เปิด</td>
                                             <td></td>
-                                            <td class="ac table-p11-row-9474-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                           </tr>
+                                            <td class="ac table-p11-row-9474-col-btg_active_1">เปิด</td>
+                                        </tr>                                                                                                                                                                                                                                                                                                                                                             </tr>
                                         <tr data-id="10230" class=" ">
                                             <td class="id">2</td>
                                             <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
@@ -881,20 +887,25 @@
                                             <td class="ac table-p11-row-10230-col-active">เปิด</td>
                                             <td></td>
                                             <td class="ac table-p11-row-10230-col-btg_active_1">เปิด</td>
+                                        </tr>  
                                         <tr data-id="11239" class=" ">
                                             <td class="id">3</td>
                                             <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
                                             <td class="type">เมมเบอร์</td>
                                             <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
                                             <td class="ac table-p11-row-11239-col-active">เปิด</td>
-                                            <td class="ac table-p11-row-11239-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                     </tr>
+                                            <td></td>
+                                            <td class="ac table-p11-row-11239-col-btg_active_1">เปิด</td> 
+                                        </tr>                                                                                                                                                                                                                                                                                                                                                      </tr>
                                         <tr data-id="11240" class=" ">
                                             <td class="id">4</td>
                                             <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
                                             <td class="type">เมมเบอร์</td>
                                             <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
                                             <td class="ac table-p11-row-11240-col-active">เปิด</td>
-                                            <td class="ac table-p11-row-11240-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                         </tr>
+                                            <td></td>
+                                            <td class="ac table-p11-row-11240-col-btg_active_1">เปิด</td> 
+                                        </tr>                                                                                                                                                                                                                                                                                                                                                        </tr>
                                     </tbody>
                                 </table>
                             </form>
