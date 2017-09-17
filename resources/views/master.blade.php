@@ -10,12 +10,15 @@
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
   {{-- <link rel="stylesheet" href="/css/custom.css"> --}}
+  <link rel="stylesheet" href="/css/top-custom.css">
 </head>
+
 <body class="hold-transition skin-blue sidebar-mini">
+@include('nev-bar-top-menu')
 <div class="wrapper">
 
-
-@include('nev-bar-top')
+{{-- 
+@include('nev-bar-top') --}}
   <!-- Left side column. contains the logo and sidebar -->
 @include('nev-bar')
 

@@ -28,12 +28,13 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-  <style>
+  <link rel="stylesheet" href="/css/custom2.css">
+  {{-- <style>
   table, td, th {
 
     border: 1px solid grey !important;
 }
-</style>
+</style> --}}
 {{--   <style>
   .row {
     margin-right: -8px;
@@ -63,121 +64,104 @@
   </style>
 @endsection
 @section('content')
-    <!-- Content Header (Page header) -->
-    <section class="sidebar-shortcuts-large bot-margin-3">
-      {{--  <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>  --}}
-      <div class="row">
-        {{--  <div class="pull-left">  --}}
-          <ol class="breadcrumb">
-            <li class="active"><i class="fa fa-home"></i></li>
-            <li class="active">ยินดีต้อนรับ</li>
-          </ol>
-        {{--  </div>  --}}
-      </div>
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="page-header">
-        <h1>ยินดีต้อนรับเอเย่นต์ [3M3K]</h1>
-      </div>
-      
-      <!-- Small boxes (Stat box) -->
-      <div class="row">
-        <div class="col-xs-12">
-        <div class="alert alert-danger">
-          <h4><i class="fa fa-warning"></i> เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
-          <span class="black">กรุณาตั้งจำนวนการรับของต่อตัวในหน้า <a href="https://agent.superlot999.com/items/settings">ตั้งค่าการรับของ</a> เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้</span>
-        </div>
-        
-          <h3><i class="fa fa-angle-right blue"></i> จำนวนสมาชิก</h3>
-        
-          <div class="row">
-            <div class="col-xs-1">
-            
-              <div class="table-auto">
-                <div class="box">
-                  <table  class="table table-bordered">
-                    <thead class="thin-border-bottom">
-                      <tr>
-                        <th class="text-center bigger-125">เมมเบอร์</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                          <td class="text-center">
-                          <b class="bigger-150">
-                            4<br>
-                          </b>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
+<div class="main-content">
+      <!-- #section:basics/content.breadcrumbs -->
+<div class="breadcrumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <!-- <a href="#">Home</a> -->
+    </li>
+  <li>ยินดีต้อนรับ</li></ul><!-- /.breadcrumb -->
 
-            </div>
-          </div>
+  <span id="global-clock" class="pull-right"></span>
+</div>
 
-
-      </div>
-        
-          <h3><i class="fa fa-angle-right blue"></i> ข้อความประกาศ</h3>
-        
+<!-- /section:basics/content.breadcrumbs -->
+      <div class="page-content" id="user-content">
         <div class="row">
-          
-              <div class="col-xs-12">
-                <div class="box">
-                  <table  class="table table-bordered">
-                    <thead class="thin-border-bottom">
-                      <tr class="padding">
-                        <th class="text-center">ชนิดหวย</th>
-                        <th class="text-center">วันที่</th>
-                        <th class="">ประกาศ</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                          <td class="text-center">
-                          <b class="bigger-150">
-                          ประกาศระบบ
-                          </b>
-                        </td>
-                        <td class="text-center">
-                          <b class="bigger-150">
-                          25-08-2017 09:49:00
-                          </b>
-                        </td>
-                        <td class="">
-                          <b>ประกาศข่าว...หวยลาว<br>
-                            <br>
-                            หวยลาวจะเปลี่ยนการออกผลรางวัล จากเดิมสัปดาห์ละ 2 ครั้ง <br>
-                            วันจันทร์ และพฤหัส จะเปลี่ยนเป็น สัปดาห์ละ 1 ครั้ง คือวัน พุธ วันเดียว<br>
-                            เริ่มงวดแรกวันพุธที่ 30 ส.ค. 60  <br>
-                            <br>
-                            โดยบริษัทขอเลื่อนเวลาปิดรับเร็วขึ้นชั่วคราว เฉพาะงวดแรก เป็นเวลา 19.45 น. หลังจากนั้นหากตรวจสอบแล้วว่า <br>
-                            สามารถปิดรับเวลาเดิมได้ก็จะทำการปรับเวลาให้ปิดตามเดิม คือ 20.10 น. <br>
-                            <br>
-                            แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-              </div>
-          
-        </div>
+          <div id="content" class="col-xs-12"><div class="page-header">
+  <h1>ยินดีต้อนรับเอเย่นต์ [3M3K]</h1>
+</div>
+
+<style>#content table * {font-family: Arial}</style>
 
 
-        
-      <!-- /.row -->
-      <!-- Main row -->
+<div class="alert alert-danger">
+  <h4><i class="fa fa-warning"></i> เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
+  <span class="black">กรุณาตั้งจำนวนการรับของต่อตัวในหน้า <a href="https://agent.superlot999.com/items/settings">ตั้งค่าการรับของ</a> เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้</span>
+</div>
 
-      <!-- /.row (main row) -->
+<!-- <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap">
+  <thead class="thin-border-bottom">
+          <th class="align-center bigger-125">เอเย่นต์</th>
+        <th class="align-center bigger-125">สมาชิก</th>
+  </thead>
+  <tbody>
+    <tr>
+              <td>
+          <h3 class="align-center no-margin padding-10"><b><span class="n2c">0.00</span></b><br>บาท</h3>
+                            </td>
+            <td>
+        <h3 class="align-center no-margin padding-10"><b><span class="n2c">-0</span></b><br>บาท</h3>
+                      </td>
+    </tr>
+  </tbody>
+</table> -->
 
-    </section>
-    <!-- /.content -->
+<h3><i class="fa fa-angle-right blue"></i> จำนวนสมาชิก</h3>
+
+<table class="table table-bordered table-border-dark table-auto table-nowrap">
+  <thead class="thin-border-bottom">
+          <tr><th class="align-center bigger-125">เมมเบอร์</th>
+      </tr></thead>
+  <tbody>
+          <tr><td class="align-center">
+        <b class="bigger-150">
+          4<br>
+        </b>
+                      </td>
+      
+</tr></tbody></table>
+
+<h3><i class="fa fa-angle-right blue"></i> ข้อความประกาศ</h3>
+
+<table class="table table-bordered table-nowrap table-border-dark">
+  <thead class="thin-border-bottom">
+    <tr><th class="align-center">ชนิดหวย</th>
+    <th class="align-center">วันที่</th>
+    <th>ประกาศ</th>
+  </tr></thead>
+
+  <tbody>
+          <tr>
+        <td class="align-center bigger-110 width-1">ประกาศระบบ</td>
+        <td class="bigger-110 width-1">25-08-2017 09:49:00</td>
+        <td class="bigger-110">         <b>ประกาศข่าว...หวยลาว<br>
+<br>
+หวยลาวจะเปลี่ยนการออกผลรางวัล จากเดิมสัปดาห์ละ 2 ครั้ง <br>
+วันจันทร์ และพฤหัส จะเปลี่ยนเป็น สัปดาห์ละ 1 ครั้ง คือวัน พุธ วันเดียว<br>
+เริ่มงวดแรกวันพุธที่ 30 ส.ค. 60  <br>
+<br>
+โดยบริษัทขอเลื่อนเวลาปิดรับเร็วขึ้นชั่วคราว เฉพาะงวดแรก เป็นเวลา 19.45 น. หลังจากนั้นหากตรวจสอบแล้วว่า <br>
+สามารถปิดรับเวลาเดิมได้ก็จะทำการปรับเวลาให้ปิดตามเดิม คือ 20.10 น. <br>
+<br>
+แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b></td>
+      </tr>
+      </tbody>
+</table>
+
+<script>
+  $.each($('.n2c'), function(key, value) {
+    $(this).html(n2c($(this).text()));
+  });
+</script>
+</div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.page-content -->
+    </div>
+
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->
