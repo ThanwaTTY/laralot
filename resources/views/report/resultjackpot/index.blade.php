@@ -1061,7 +1061,7 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">บักเลียว Bạc Liêu</td>
+                                           <td class="text-center">โฮจิมินห์ Thanh pho Ho Chi Minh</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -1091,7 +1091,7 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">หวงเต่า Vũng Tàu</td>
+                                           <td class="text-center">เบ๊นแจ Bến Tre</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -1106,7 +1106,7 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">เกิ้นเทอ Cần Thơ</td>
+                                           <td class="text-center">เบ๊นแจ Bến Tre</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -1121,7 +1121,7 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">ด่งนาย Đồng Nai</td>
+                                           <td class="text-center">เบ๊นแจ Bến Tre</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -1151,7 +1151,7 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">อานชาง An Giang</td>
+                                           <td class="text-center">ซ้อกจัง Sóc Trăng</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -1166,7 +1166,7 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">บิ่ญถ่วน Bình Thuận</td>
+                                           <td class="text-center">ซ้อกจัง Sóc Trăng</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -1182,21 +1182,6 @@
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
                                            <td class="text-center">เต็ยนิญ Tây Ninh</td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
-                                        </tr>
-                                     </form>
-                                     <form class="form-horizontal" action="" method="post">
-                                        <tr>
-                                           <td class="text-center">บิ่ญเชือง Bình Dương</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -1241,7 +1226,7 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">บิ่ญเฟื้อก Bình Phước</td>
+                                           <td class="text-center">หวิญล็อง Vĩnh Long</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
@@ -1256,7 +1241,22 @@
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
-                                           <td class="text-center">เหิ่วชาง Hậu Giang</td>
+                                           <td class="text-center">เต็ยนิญ Tây Ninh</td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
+                                           <td><button class="btn btn-primary">บันทึก</button></td>
+                                           <td><input type="checkbox"></td>
+                                        </tr>
+                                     </form>
+                                     <form class="form-horizontal" action="" method="post">
+                                        <tr>
+                                           <td class="text-center">หวิญล็อง Vĩnh Long</td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>

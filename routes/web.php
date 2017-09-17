@@ -135,3 +135,7 @@ Route::get('/report/winlossreport', function () {
 Route::get('/report/jackpot' , function (){
     return view('report.jackpot.index');
 });
+
+Route::get('/report/resultjackpot' , function (){
+    return view('report.resultjackpot.index');
+});
