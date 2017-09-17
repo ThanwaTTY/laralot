@@ -96,26 +96,18 @@
     <section class="content">
         <div class="modal-content">
             <div class="box box-info">      
-                <br>
                 <form class="form-horizontal" action="" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                     <h2 class="text-aqua">ดูของรวม [3M3K]</h2>                            
-                                </div>                                  
-                            </div>
                              <div class="row">
                                 <div class="col-xs-12">
-                                     <h4 class="text-primary">>รัฐบาลไทย,</h4>                            
-                                </div>                                  
-                            </div>
-                            <br>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="alert alert-info">
-                                        <span class="negative">ตัวเลขสีแดง</span> = เต็มแล้ว, <span class="positive">พื้นหลังสีเขียว</span> = ถูกรางวัล<br>
-                                        <b>กด Ctrl+F เพื่อค้นหา</b>
+                                    <div class="page-header">
+                                        <h1>ดูของรวม [3M3K]</h1>
+                                        <h4 class="sub">
+                                            <i class="fa fa-angle-right orange"></i>
+                                            <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 กันยายน 2560
+                                            <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
+                                        </h4>
                                     </div>
                                      {{-- <div style="background-color:#b3e6ff;color:black;padding:5px;border: 3px solid #006699; ">
                                         {{-- <p style="color:#cc0000;">ตัวสีเเดง = เต็มเเล้ว</p><p style="color:#009933;">พื้นหลังสีเขียว = ถูกรางวัล</p> --}}
@@ -124,7 +116,11 @@
                                      </div>                             --}}
                                 </div>                                  
                             </div>
-                            <br>
+                            <div class="alert alert-info">
+                                <span class="negative">ตัวเลขสีแดง</span> = เต็มแล้ว, <span class="positive">พื้นหลังสีเขียว</span> = ถูกรางวัล<br>
+                                <b>กด Ctrl+F เพื่อค้นหา</b>
+                            </div>
+                            
                             <div class="row">
                                 <div class="col-xs-3">
                                     <div class="col-xs-3 text-right">
