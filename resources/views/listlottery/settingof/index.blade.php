@@ -95,33 +95,25 @@
                 <form class="form-horizontal" action="" method="post">
                     {{ csrf_field() }}
                     <div class="box-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                     <h2 class="text-aqua">ตั่งค่าการรับของ</h2>                            
-                                </div>                                  
+                            <div class="page-header">
+                                <h1>
+                                    ตั้งค่าการรับของ
+                                </h1>
+                                <h4 class="sub">
+                                    <i class="fa fa-angle-right orange"></i>
+                                    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 กันยายน 2560
+                                    <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
+                                </h4>
                             </div>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                     <h4 class="text-primary">> รัฐบาลไทย</h4>                            
-                                </div>                                  
+                            <div class="alert alert-danger">
+                                <h4><i class="fa fa-warning"></i> เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
+                                <span class="black">กรุณาตั้งจำนวนการรับของต่อตัวในหน้า <a href="https://agent.superlot999.com/items/settings">ตั้งค่าการรับของ</a> เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้</span>
                             </div>
-                            <br>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                     <div style="background-color:#ffd6cc;color:black;padding:5px;border: 3px solid #ff471a; ">
-                                        <h4 style="color:#ff471a;">เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
-                                        <p>กรุณาตั้งจำนวนการรับของต่อตัวในหน้า ตั้งค่าการรับของ เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้ </p>
-                                       
-                                     </div>                           
-                                </div>                                  
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                     <h4 class="text-primary">> ตั่งเวลาปิดรับของรัฐบาล</h4>                            
-                                </div>                                  
-                            </div>
-                            <br>
+                                <h3>
+                                    <i class="fa fa-angle-right blue"></i> ตั้งเวลาปิดรับของ 
+                                    <span class="deep-blue">รัฐบาลไทย</span> 
+                                    <a href="#" id="toggle-bet-close-time">(แสดง/ซ่อน)</a>
+                                </h3>
                              <div class="row">
                                 <div class="col-xs-2">
                                     <button class="btn btn-primary">3ตัวท้าย</button>                        
