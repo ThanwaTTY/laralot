@@ -24,20 +24,7 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
 
-    <style>
-    .sidebar .sidebar-shortcuts-large {
-        line-height: 45px;
-    }
-    .bot-margin-3 {
-        margin-bottom: 13px !important;
-        margin-left: 18px !important;
-        border-button: 2px;
-    }
-
-    .bot-margin-3 i {
-        font-size: 28px;
-    }
-    </style>
+<link rel="stylesheet" href="/css/custom2.css">
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->
@@ -73,70 +60,78 @@
         </div>        
     @endif
 
-{{-- <section class="content-header">
-      <h1>
-        สมาชิกออนไลน์
-      </h1>
-</section> --}}
+<div class="main-content">
+      <!-- #section:basics/content.breadcrumbs -->
+<div class="breadcrumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <!-- <a href="#">Home</a> -->
+    </li>
+  <li>
+					
+					 จัดการสมาชิก 
+
+					
+				</li><li>
+							
+							สมาชิกออนไลน์
+						</li></ul><!-- /.breadcrumb -->
+
+  <span id="global-clock" class="pull-right"></span>
+</div>
+
+<!-- /section:basics/content.breadcrumbs -->
+      <div class="page-content" id="user-content">
+        <div class="row">
+          <div id="content" class="col-xs-12"><div class="page-header">
+  <h1>
+    สมาชิกออนไลน์
+    <small>
+              <i class="ace-icon fa fa-angle-double-right"></i>
+        <a href="https://agent.superlot999.com/users/online/9306" class="ajax">
+          3M3K
+        </a>
+          </small>
+  </h1>
+</div>
 
 
-<section class="content">
-<form class="form-horizontal" action="" method="post">
-    {{ csrf_field() }}
-        <div class="modal-content">
-            <div class="box box-info">
-                    <div class="box-header">
-                        <h3>สมาชิกออนไลน์</h3>
-                    </div>
-                        {{-- <form class="form-horizontal" action="" method="post"> --}}
-                           
-                    <div class="box-body">
-                            <div class="row">
-                            
-                                <!-- Left col -->
-                                <section class="col-lg-12 connectedSortable">
-                                    <!-- Custom tabs (Charts with tabs)-->
-                                    <div class="nav-tabs-custom">
-                                        <!-- Tabs within a box -->
-                                        <ul class="nav nav-tabs pull-left">
-                                            <li class="active" style=""><a href="#tab1" data-toggle="tab">เมมเบอร์</a></li>
-                                        </ul>
-                                        <div class="tab-content no-padding">
-                                        <!-- Morris chart - Sales -->
-                                            <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                                                <div class="col-md-8">
-                                                    <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                                        <table class="table table-bordered bg-gray">
-                                                            <thead>
-                                                                <tr>
-                                                                    <th class="text-center">#</th>
-                                                                    <th class="text-center">ชื่อผู้ใช้</th>
-                                                                    <th class="text-center">ระดับ</th>
-                                                                    <th class="text-center">ใช้งานล่าสุด</th>
-                                                                    <th class="text-center">Login ล่าสุด</th>
-                                                                    <th class="text-center">IP ล่าสุด</th>
-                                                                </tr>
-                                                            </thead>
-                                                        </table>
-                                                    </div>
-                                                </div>            
-                                            </div>
-                                        </div>
-                                    </div>
-                                </section>
-     
-                                                      
-                            </div>
+<div class="min-width-800 max-width-1100">
+  <ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
+                          <li class="bigger-110 active"><a href="#member" data-toggle="tab">เมมเบอร์</a></li>
+      </ul>
+</div>
 
-                    </div>
-            </div>
-        </div>
-            {{-- <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">บันทึก</button>
-            </div> --}}
-     
-    </form>
-</section>
+<div class="space-4"></div>
+
+<!-- in active -->
+<div class="tab-content no-border no-padding">
+              <div class="tab-pane in active" id="member">
+      
+  <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin">
+    <thead class="thin-border-bottom">
+      <tr><th class="width-1">#</th>
+      <th class="ac">ชื่อผู้ใช้</th>
+      <th class="ac">ระดับ</th>
+      <th class="ac">ชื่อ</th>
+      <th class="ac">ใช้งานล่าสุด</th>
+      <th class="ac">Login ล่าสุด</th>
+      <th class="ac">IP ล่าสุด</th>
+    </tr></thead>
+    <tbody>
+          </tbody>
+  </table>
+
+    </div>
+  </div>
+
+</div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.page-content -->
+    </div>
+
+
 @endsection
 
  

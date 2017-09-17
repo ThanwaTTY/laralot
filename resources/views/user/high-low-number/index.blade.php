@@ -24,7 +24,7 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
 
-    <style>
+    {{-- <style>
     .sidebar .sidebar-shortcuts-large {
         line-height: 45px;
     }
@@ -53,8 +53,9 @@
     color: #fff;
     border-radius: 0;
     }
-    </style>
-    </style>
+    </style> --}}
+    <link rel="stylesheet" href="/css/custom2.css">
+
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->
@@ -90,223 +91,4378 @@
         </div>        
     @endif
 
-<section class="content-header">
-      <h1>
-        3. ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข >> 3M3K
-      </h1>
-</section>
+<div class="main-content">
+      <!-- #section:basics/content.breadcrumbs -->
+<div class="breadcrumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <!-- <a href="#">Home</a> -->
+    </li>
+  <li>
+					
+					 จัดการสมาชิก 
+
+					
+				</li><li>
+								
+								3. ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข
+							</li></ul><!-- /.breadcrumb -->
+
+  <span id="global-clock" class="pull-right"></span>
+</div>
+
+<!-- /section:basics/content.breadcrumbs -->
+      <div class="page-content" id="user-content">
+        <div class="row">
+          <div id="content" class="col-xs-12"><div class="page-header">
+  <h1>
+    3. ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข
+    <small>
+              <i class="ace-icon fa fa-angle-double-right"></i>
+                <a href="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=username_asc" class="ajax">3M3K</a>
+          </small>
+  </h1>
+</div>
 
 
-<section class="content">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="one">
-                         <p class="bold">สูงสุด = สูงสุดต่อ 1 โพย</p> 
-                         <p class="bold">สูงสุดต่อหมายเลข = สูงสุดต่อหมายเลขต่อ 1 สมาชิก</p> 
-                         <b>สถานะ:</b> <b style="background:#ffe066;">เหลือง = ระงับ,</b> <b style="background:#ff6666;">แดง = ล็อค</b>
-                    </div>
-                </div>                                 
-            </div>
-        <br>
-    <form class="form-horizontal" action="" method="post">
-        {{ csrf_field() }}
-            <div class="row">
-                <!-- Left col -->
-                <section class="col-lg-12 connectedSortable">
-                <!-- Custom tabs (Charts with tabs)-->
-                <div class="nav-tabs-custom">
-                    <!-- Tabs within a box -->
-                    <ul class="nav nav-tabs pull-left">
-                    <li class="bg-primary active" style=""><a href="#tab1" data-toggle="tab">ขั้นต่ำ</a></li>
-                    <li class="bg-primary"><a href="#tab2" data-toggle="tab">สูงสุด</a></li>
-                    <li class="bg-primary"><a href="#tab3" data-toggle="tab">สูงสุดต่อเลข</a></li>
-                    {{-- <li class="pull-left header"><i class="fa fa-inbox"></i> Sales</li> --}}
-                    </ul>
-                    <div class="tab-content no-padding">
-                    <!-- Morris chart - Sales -->
-                    <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                            <div class="col-sm-10"><br>
-                                <table class="table table-bordered bg-gray">
-                                    <thead> 
-                                        <tr> 
-                                            <th class="text-center" colspan="12" style="color:#0000ff;">ขั้นต่ำ 3 ตัวท้าย</th>
-                                        </tr>
-                                         <tr> 
-                                            <th class="text-center" colspan="3" style="padding-top:20px;">
-                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
-                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
-                                            </th>
-                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
-                                            <th class="text-center">3 ตัวบน<input type="text">>=5</th>
-                                            <th class="text-center">3 ตัวล่าง<input type="text">>=5</th>
-                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=5</th>
-                                            <th class="text-center">2 ตัวบน<input type="text">>=5</th>
-                                            <th class="text-center">2 ตัวล่าง<input type="text">>=5</th>
-                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=5</th>
-                                            <th class="text-center">วิ่งบน<input type="text">>=5</th>
-                                            <th class="text-center">วิ่งล่าง<input type="text">>=5</th>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">3M3K001</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                        </tr>
+<div class="alert alert-info">
+  <b>สูงสุด</b> = สูงสุดต่อ1โพย<br>
+  <b>สูงสุดต่อหมายเลข</b> = สูงสุดต่อหมายเลขต่อ1สมาชิก<br>
+  <b>สถานะ:</b> <span class="bg-warning">เหลือง=ระงับ</span>, <span class="bg-danger">แดง=ล็อค</span>
+</div>
 
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">3M3K002</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                            <td>5</td>
-                                        </tr>
-                                    </tbody>
-                                </table> 
-                            </div>
-                    </div>
-                    <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
-                            <div class="col-sm-10"><br>
-                                <table class="table table-bordered bg-gray">
-                                    <thead> 
-                                        <tr> 
-                                            <th class="text-center" colspan="12" style="color:#0000ff;">สูงสุด 3 ตัวท้าย</th>
-                                        </tr>
-                                         <tr> 
-                                            <th class="text-center" colspan="3" style="padding-top:20px;">
-                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
-                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
-                                            </th>
-                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
-                                            <th class="text-center">3 ตัวบน<input type="text">>=3000</th>
-                                            <th class="text-center">3 ตัวล่าง<input type="text">>=3000</th>
-                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=3000</th>
-                                            <th class="text-center">2 ตัวบน<input type="text">>=10000</th>
-                                            <th class="text-center">2 ตัวล่าง<input type="text">>=10000</th>
-                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=10000</th>
-                                            <th class="text-center">วิ่งบน<input type="text">>=10000</th>
-                                            <th class="text-center">วิ่งล่าง<input type="text">>=10000</th>
+<label class="inline">
+  <input type="checkbox" id="input-checkbox-name" data-target="page">
+  <span class="lbl"> แสดงชื่อ</span>
+</label>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">3M3K001</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>3000</td>
-                                            <td>3000</td>
-                                            <td>3000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                        </tr>
+<div class="min-width-800 max-width-1100">
+  <ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
+    <li class="js-change-tab active" data-tab1="min"><a href="#min" data-toggle="tab">ขั้นต่ำ</a></li>
+    <li class="js-change-tab " data-tab1="max"><a href="#max" data-toggle="tab">สูงสุด</a></li>
+    <li class="js-change-tab " data-tab1="max_per_num"><a href="#max_per_num" data-toggle="tab">
+    สูงสุดต่อเลข</a></li>
 
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">3M3K002</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>3000</td>
-                                            <td>3000</td>
-                                            <td>3000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                            <td>10000</td>
-                                        </tr>
-                                    </tbody>
-                                </table> 
-                            </div>
-                    </div>
-                     <div class="chart tab-pane" id="tab3" style="position: relative; height: 300px;">
-                            <div class="col-sm-10"><br>
-                                <table class="table table-bordered bg-gray">
-                                    <thead> 
-                                        <tr> 
-                                            <th class="text-center" colspan="12" style="color:#0000ff;">สูงสุดต่อเลข 3 ตัวท้าย</th>
-                                        </tr>
-                                         <tr> 
-                                            <th class="text-center" colspan="3" style="padding-top:20px;">
-                                                <button type="submit" class="btn btn-primary btn-sm">แก้ไข</button>
-                                                <button type="submit" class="btn btn-primary btn-sm">ยกเลิก</button>
-                                            </th>
-                                            <th class="text-center" style="padding-top:20px;"><input type="checkbox"></th>
-                                            <th class="text-center">3 ตัวบน<input type="text">>=10000</th>
-                                            <th class="text-center">3 ตัวล่าง<input type="text">>=100000</th>
-                                            <th class="text-center">3 ตัวโต๊ด<input type="text">>=30000</th>
-                                            <th class="text-center">2 ตัวบน<input type="text">>=100000</th>
-                                            <th class="text-center">2 ตัวล่าง<input type="text">>=100000</th>
-                                            <th class="text-center">2 ตัวโต๊ด<input type="text">>=100000</th>
-                                            <th class="text-center">วิ่งบน<input type="text">>=300000</th>
-                                            <th class="text-center">วิ่งล่าง<input type="text">>=300000</th>
+    <li class="pull-right right-padding-10 users__edit-options">
+  
+  <span class="bolder">แสดง</span>
+  <select id="users-edit-filter">
+    <option value="4">ทั้งหมด</option>
+    <option value="1" selected="selected">ปกติ</option>
+    <option value="2">ระงับ</option>
+    <option value="3">ล็อค</option>
+  </select>
 
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center">1</td>
-                                            <td class="text-center">3M3K001</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>10000</td>
-                                            <td>100000</td>
-                                            <td>30000</td>
-                                            <td>100000</td>
-                                            <td>100000</td>
-                                            <td>100000</td>
-                                            <td>300000</td>
-                                            <td>300000</td>
-                                        </tr>
+  <span class="bolder">เรียง</span>
+  <select id="users-edit-order">
+    <option value="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=username_asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+    <option value="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=username_desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+    <option value="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=id_asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+    <option value="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=id_desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+  </select>
+</li>
+  </ul>
+</div>
 
-                                        <tr>
-                                            <td class="text-center">2</td>
-                                            <td class="text-center">3M3K002</td>
-                                            <td class="text-center">เมมเบอร์</td>
-                                            <td class="text-center"><input type="checkbox"></td>
-                                            <td>10000</td>
-                                            <td>100000</td>
-                                            <td>30000</td>
-                                            <td>100000</td>
-                                            <td>100000</td>
-                                            <td>100000</td>
-                                            <td>300000</td>
-                                            <td>300000</td>
-                                        </tr>
-                                    </tbody>
-                                </table> 
-                            </div>
-                    </div>
-                    </div>
-                </div>
-                </section>
-            </div>
-            
-          
-            
-    </form>
-</section>
+<div class="tab-content no-border no-margin-top no-padding width-800 max-width-1100" id="users-edit-tab-content">
+      <div class="tab-pane active" id="min" data-action="update-min" data-parent-id="9306">
+      <ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
+                              <li class="js-change-tab active" data-tab2="1">
+              <a data-toggle="tab" href="#min_1">3 ตัวท้าย</a>
+            </li>
+                                                                                                                                    </ul>
+
+      <div class="tab-content no-padding">
+                  <div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      ขั้นต่ำ 3 ตัวท้าย
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="min">
+                      <input name="bet_type_group_id" type="hidden" value="1">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="min_1" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="min_2" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="min_3" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="min_4" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="min_5" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="min_6" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="min_7" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="min_8" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-min-1-row-9474-col-min_1">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-9474-col-min_2">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-9474-col-min_3">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-9474-col-min_4">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-9474-col-min_5">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-9474-col-min_6">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-9474-col-min_7">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-9474-col-min_8">
+                          5
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-min-1-row-10230-col-min_1">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-10230-col-min_2">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-10230-col-min_3">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-10230-col-min_4">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-10230-col-min_5">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-10230-col-min_6">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-10230-col-min_7">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-10230-col-min_8">
+                          5
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-min-1-row-11239-col-min_1">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11239-col-min_2">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11239-col-min_3">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11239-col-min_4">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11239-col-min_5">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11239-col-min_6">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11239-col-min_7">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11239-col-min_8">
+                          5
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-min-1-row-11240-col-min_1">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11240-col-min_2">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11240-col-min_3">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11240-col-min_4">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11240-col-min_5">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11240-col-min_6">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11240-col-min_7">
+                          5
+                        </td>
+                                              <td class="table-min-1-row-11240-col-min_8">
+                          5
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="min_2" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      ขั้นต่ำ 3 ตัวหัว
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="min">
+                      <input name="bet_type_group_id" type="hidden" value="2">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="min_21" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="min_22" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="min_23" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="min_24" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="min_25" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="min_26" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="min_27" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">5</a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="min_28" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-min-2-row-9474-col-min_21">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-9474-col-min_22">
+                          
+                        </td>
+                                              <td class="table-min-2-row-9474-col-min_23">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-9474-col-min_24">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-9474-col-min_25">
+                          
+                        </td>
+                                              <td class="table-min-2-row-9474-col-min_26">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-9474-col-min_27">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-9474-col-min_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-min-2-row-10230-col-min_21">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-10230-col-min_22">
+                          
+                        </td>
+                                              <td class="table-min-2-row-10230-col-min_23">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-10230-col-min_24">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-10230-col-min_25">
+                          
+                        </td>
+                                              <td class="table-min-2-row-10230-col-min_26">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-10230-col-min_27">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-10230-col-min_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-min-2-row-11239-col-min_21">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11239-col-min_22">
+                          
+                        </td>
+                                              <td class="table-min-2-row-11239-col-min_23">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11239-col-min_24">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11239-col-min_25">
+                          
+                        </td>
+                                              <td class="table-min-2-row-11239-col-min_26">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11239-col-min_27">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11239-col-min_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-min-2-row-11240-col-min_21">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11240-col-min_22">
+                          
+                        </td>
+                                              <td class="table-min-2-row-11240-col-min_23">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11240-col-min_24">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11240-col-min_25">
+                          
+                        </td>
+                                              <td class="table-min-2-row-11240-col-min_26">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11240-col-min_27">
+                          5
+                        </td>
+                                              <td class="table-min-2-row-11240-col-min_28">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="min_3" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      ขั้นต่ำ 2 ตัวท้าย (หวยตัว)
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="min">
+                      <input name="bet_type_group_id" type="hidden" value="3">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="min_31" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="min_32" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="min_33" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="min_34" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="min_35" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="min_36" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="min_37" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="min_38" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-min-3-row-9474-col-min_31">
+                          
+                        </td>
+                                              <td class="table-min-3-row-9474-col-min_32">
+                          
+                        </td>
+                                              <td class="table-min-3-row-9474-col-min_33">
+                          
+                        </td>
+                                              <td class="table-min-3-row-9474-col-min_34">
+                          0
+                        </td>
+                                              <td class="table-min-3-row-9474-col-min_35">
+                          0
+                        </td>
+                                              <td class="table-min-3-row-9474-col-min_36">
+                          
+                        </td>
+                                              <td class="table-min-3-row-9474-col-min_37">
+                          
+                        </td>
+                                              <td class="table-min-3-row-9474-col-min_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-min-3-row-10230-col-min_31">
+                          
+                        </td>
+                                              <td class="table-min-3-row-10230-col-min_32">
+                          
+                        </td>
+                                              <td class="table-min-3-row-10230-col-min_33">
+                          
+                        </td>
+                                              <td class="table-min-3-row-10230-col-min_34">
+                          0
+                        </td>
+                                              <td class="table-min-3-row-10230-col-min_35">
+                          0
+                        </td>
+                                              <td class="table-min-3-row-10230-col-min_36">
+                          
+                        </td>
+                                              <td class="table-min-3-row-10230-col-min_37">
+                          
+                        </td>
+                                              <td class="table-min-3-row-10230-col-min_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-min-3-row-11239-col-min_31">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11239-col-min_32">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11239-col-min_33">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11239-col-min_34">
+                          0
+                        </td>
+                                              <td class="table-min-3-row-11239-col-min_35">
+                          0
+                        </td>
+                                              <td class="table-min-3-row-11239-col-min_36">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11239-col-min_37">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11239-col-min_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-min-3-row-11240-col-min_31">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11240-col-min_32">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11240-col-min_33">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11240-col-min_34">
+                          0
+                        </td>
+                                              <td class="table-min-3-row-11240-col-min_35">
+                          0
+                        </td>
+                                              <td class="table-min-3-row-11240-col-min_36">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11240-col-min_37">
+                          
+                        </td>
+                                              <td class="table-min-3-row-11240-col-min_38">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="min_4" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      ขั้นต่ำ 2 ตัวหัว (หวยตัว)
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="min">
+                      <input name="bet_type_group_id" type="hidden" value="4">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="min_41" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="min_42" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="min_43" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="min_44" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="min_45" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="min_46" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="min_47" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="min_48" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-min-4-row-9474-col-min_41">
+                          
+                        </td>
+                                              <td class="table-min-4-row-9474-col-min_42">
+                          
+                        </td>
+                                              <td class="table-min-4-row-9474-col-min_43">
+                          
+                        </td>
+                                              <td class="table-min-4-row-9474-col-min_44">
+                          0
+                        </td>
+                                              <td class="table-min-4-row-9474-col-min_45">
+                          
+                        </td>
+                                              <td class="table-min-4-row-9474-col-min_46">
+                          
+                        </td>
+                                              <td class="table-min-4-row-9474-col-min_47">
+                          
+                        </td>
+                                              <td class="table-min-4-row-9474-col-min_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-min-4-row-10230-col-min_41">
+                          
+                        </td>
+                                              <td class="table-min-4-row-10230-col-min_42">
+                          
+                        </td>
+                                              <td class="table-min-4-row-10230-col-min_43">
+                          
+                        </td>
+                                              <td class="table-min-4-row-10230-col-min_44">
+                          0
+                        </td>
+                                              <td class="table-min-4-row-10230-col-min_45">
+                          
+                        </td>
+                                              <td class="table-min-4-row-10230-col-min_46">
+                          
+                        </td>
+                                              <td class="table-min-4-row-10230-col-min_47">
+                          
+                        </td>
+                                              <td class="table-min-4-row-10230-col-min_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-min-4-row-11239-col-min_41">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11239-col-min_42">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11239-col-min_43">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11239-col-min_44">
+                          0
+                        </td>
+                                              <td class="table-min-4-row-11239-col-min_45">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11239-col-min_46">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11239-col-min_47">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11239-col-min_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-min-4-row-11240-col-min_41">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11240-col-min_42">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11240-col-min_43">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11240-col-min_44">
+                          0
+                        </td>
+                                              <td class="table-min-4-row-11240-col-min_45">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11240-col-min_46">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11240-col-min_47">
+                          
+                        </td>
+                                              <td class="table-min-4-row-11240-col-min_48">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="min_5" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      ขั้นต่ำ สูง-ต่ำ
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="min">
+                      <input name="bet_type_group_id" type="hidden" value="5">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        หลักแสน<br>
+                        <input class="form-control input-sm ac" name="min_51" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักหมื่น<br>
+                        <input class="form-control input-sm ac" name="min_52" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักพัน<br>
+                        <input class="form-control input-sm ac" name="min_53" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักร้อย<br>
+                        <input class="form-control input-sm ac" name="min_54" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักสิบ<br>
+                        <input class="form-control input-sm ac" name="min_55" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักหน่วย<br>
+                        <input class="form-control input-sm ac" name="min_56" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-min-5-row-9474-col-min_51">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-9474-col-min_52">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-9474-col-min_53">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-9474-col-min_54">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-9474-col-min_55">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-9474-col-min_56">
+                          50
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-min-5-row-10230-col-min_51">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-10230-col-min_52">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-10230-col-min_53">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-10230-col-min_54">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-10230-col-min_55">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-10230-col-min_56">
+                          50
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-min-5-row-11239-col-min_51">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11239-col-min_52">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11239-col-min_53">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11239-col-min_54">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11239-col-min_55">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11239-col-min_56">
+                          50
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-min-5-row-11240-col-min_51">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11240-col-min_52">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11240-col-min_53">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11240-col-min_54">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11240-col-min_55">
+                          50
+                        </td>
+                                              <td class="table-min-5-row-11240-col-min_56">
+                          50
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="min_6" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      ขั้นต่ำ คู่-คี่
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="min">
+                      <input name="bet_type_group_id" type="hidden" value="6">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        หลักแสน<br>
+                        <input class="form-control input-sm ac" name="min_61" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักหมื่น<br>
+                        <input class="form-control input-sm ac" name="min_62" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักพัน<br>
+                        <input class="form-control input-sm ac" name="min_63" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักร้อย<br>
+                        <input class="form-control input-sm ac" name="min_64" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักสิบ<br>
+                        <input class="form-control input-sm ac" name="min_65" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                          <th>
+                        หลักหน่วย<br>
+                        <input class="form-control input-sm ac" name="min_66" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">50</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-min-6-row-9474-col-min_61">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-9474-col-min_62">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-9474-col-min_63">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-9474-col-min_64">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-9474-col-min_65">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-9474-col-min_66">
+                          50
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-min-6-row-10230-col-min_61">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-10230-col-min_62">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-10230-col-min_63">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-10230-col-min_64">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-10230-col-min_65">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-10230-col-min_66">
+                          50
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-min-6-row-11239-col-min_61">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11239-col-min_62">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11239-col-min_63">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11239-col-min_64">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11239-col-min_65">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11239-col-min_66">
+                          50
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-min-6-row-11240-col-min_61">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11240-col-min_62">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11240-col-min_63">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11240-col-min_64">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11240-col-min_65">
+                          50
+                        </td>
+                                              <td class="table-min-6-row-11240-col-min_66">
+                          50
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="min_7" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      ขั้นต่ำ 4-5-6 ตัวตรง
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="min">
+                      <input name="bet_type_group_id" type="hidden" value="7">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        4 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="min_71" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">10</a>
+                      </th>
+                                          <th>
+                        5 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="min_72" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">10</a>
+                      </th>
+                                          <th>
+                        6 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="min_73" type="text" value="">
+                        &gt;=
+                        <a href="#" class="fill-input" tabindex="-1">10</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-min-7-row-9474-col-min_71">
+                          10
+                        </td>
+                                              <td class="table-min-7-row-9474-col-min_72">
+                          10
+                        </td>
+                                              <td class="table-min-7-row-9474-col-min_73">
+                          10
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-min-7-row-10230-col-min_71">
+                          10
+                        </td>
+                                              <td class="table-min-7-row-10230-col-min_72">
+                          10
+                        </td>
+                                              <td class="table-min-7-row-10230-col-min_73">
+                          10
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-min-7-row-11239-col-min_71">
+                          10
+                        </td>
+                                              <td class="table-min-7-row-11239-col-min_72">
+                          10
+                        </td>
+                                              <td class="table-min-7-row-11239-col-min_73">
+                          10
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-min-7-row-11240-col-min_71">
+                          10
+                        </td>
+                                              <td class="table-min-7-row-11240-col-min_72">
+                          10
+                        </td>
+                                              <td class="table-min-7-row-11240-col-min_73">
+                          10
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+              </div>
+    </div>
+      <div class="tab-pane " id="max" data-action="update-max" data-parent-id="9306">
+      <ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
+                              <li class="js-change-tab active" data-tab2="1">
+              <a data-toggle="tab" href="#max_1">3 ตัวท้าย</a>
+            </li>
+                                                                                                                                    </ul>
+
+      <div class="tab-content no-padding">
+                  <div id="max_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุด 3 ตัวท้าย
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max">
+                      <input name="bet_type_group_id" type="hidden" value="1">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_1" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">3000</a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_2" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">3000</a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_3" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">3000</a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_4" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_5" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_6" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="max_7" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="max_8" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max-1-row-9474-col-max_1">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-9474-col-max_2">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-9474-col-max_3">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-9474-col-max_4">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-9474-col-max_5">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-9474-col-max_6">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-9474-col-max_7">
+                          100000
+                        </td>
+                                              <td class="table-max-1-row-9474-col-max_8">
+                          100000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max-1-row-10230-col-max_1">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-10230-col-max_2">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-10230-col-max_3">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-10230-col-max_4">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-10230-col-max_5">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-10230-col-max_6">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-10230-col-max_7">
+                          100000
+                        </td>
+                                              <td class="table-max-1-row-10230-col-max_8">
+                          100000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max-1-row-11239-col-max_1">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-11239-col-max_2">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-11239-col-max_3">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-11239-col-max_4">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-11239-col-max_5">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-11239-col-max_6">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-11239-col-max_7">
+                          100000
+                        </td>
+                                              <td class="table-max-1-row-11239-col-max_8">
+                          100000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max-1-row-11240-col-max_1">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-11240-col-max_2">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-11240-col-max_3">
+                          3000
+                        </td>
+                                              <td class="table-max-1-row-11240-col-max_4">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-11240-col-max_5">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-11240-col-max_6">
+                          10000
+                        </td>
+                                              <td class="table-max-1-row-11240-col-max_7">
+                          100000
+                        </td>
+                                              <td class="table-max-1-row-11240-col-max_8">
+                          100000
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_2" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุด 3 ตัวหัว
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max">
+                      <input name="bet_type_group_id" type="hidden" value="2">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_21" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">3000</a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_22" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_23" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">3000</a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_24" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_25" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_26" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="max_27" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="max_28" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max-2-row-9474-col-max_21">
+                          3000
+                        </td>
+                                              <td class="table-max-2-row-9474-col-max_22">
+                          
+                        </td>
+                                              <td class="table-max-2-row-9474-col-max_23">
+                          3000
+                        </td>
+                                              <td class="table-max-2-row-9474-col-max_24">
+                          10000
+                        </td>
+                                              <td class="table-max-2-row-9474-col-max_25">
+                          
+                        </td>
+                                              <td class="table-max-2-row-9474-col-max_26">
+                          10000
+                        </td>
+                                              <td class="table-max-2-row-9474-col-max_27">
+                          100000
+                        </td>
+                                              <td class="table-max-2-row-9474-col-max_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max-2-row-10230-col-max_21">
+                          3000
+                        </td>
+                                              <td class="table-max-2-row-10230-col-max_22">
+                          
+                        </td>
+                                              <td class="table-max-2-row-10230-col-max_23">
+                          3000
+                        </td>
+                                              <td class="table-max-2-row-10230-col-max_24">
+                          10000
+                        </td>
+                                              <td class="table-max-2-row-10230-col-max_25">
+                          
+                        </td>
+                                              <td class="table-max-2-row-10230-col-max_26">
+                          10000
+                        </td>
+                                              <td class="table-max-2-row-10230-col-max_27">
+                          100000
+                        </td>
+                                              <td class="table-max-2-row-10230-col-max_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max-2-row-11239-col-max_21">
+                          3000
+                        </td>
+                                              <td class="table-max-2-row-11239-col-max_22">
+                          
+                        </td>
+                                              <td class="table-max-2-row-11239-col-max_23">
+                          3000
+                        </td>
+                                              <td class="table-max-2-row-11239-col-max_24">
+                          10000
+                        </td>
+                                              <td class="table-max-2-row-11239-col-max_25">
+                          
+                        </td>
+                                              <td class="table-max-2-row-11239-col-max_26">
+                          10000
+                        </td>
+                                              <td class="table-max-2-row-11239-col-max_27">
+                          100000
+                        </td>
+                                              <td class="table-max-2-row-11239-col-max_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max-2-row-11240-col-max_21">
+                          3000
+                        </td>
+                                              <td class="table-max-2-row-11240-col-max_22">
+                          
+                        </td>
+                                              <td class="table-max-2-row-11240-col-max_23">
+                          3000
+                        </td>
+                                              <td class="table-max-2-row-11240-col-max_24">
+                          10000
+                        </td>
+                                              <td class="table-max-2-row-11240-col-max_25">
+                          
+                        </td>
+                                              <td class="table-max-2-row-11240-col-max_26">
+                          10000
+                        </td>
+                                              <td class="table-max-2-row-11240-col-max_27">
+                          100000
+                        </td>
+                                              <td class="table-max-2-row-11240-col-max_28">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_3" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุด 2 ตัวท้าย (หวยตัว)
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max">
+                      <input name="bet_type_group_id" type="hidden" value="3">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_31" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_32" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_33" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_34" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_35" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_36" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="max_37" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="max_38" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max-3-row-9474-col-max_31">
+                          
+                        </td>
+                                              <td class="table-max-3-row-9474-col-max_32">
+                          
+                        </td>
+                                              <td class="table-max-3-row-9474-col-max_33">
+                          
+                        </td>
+                                              <td class="table-max-3-row-9474-col-max_34">
+                          0
+                        </td>
+                                              <td class="table-max-3-row-9474-col-max_35">
+                          0
+                        </td>
+                                              <td class="table-max-3-row-9474-col-max_36">
+                          
+                        </td>
+                                              <td class="table-max-3-row-9474-col-max_37">
+                          
+                        </td>
+                                              <td class="table-max-3-row-9474-col-max_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max-3-row-10230-col-max_31">
+                          
+                        </td>
+                                              <td class="table-max-3-row-10230-col-max_32">
+                          
+                        </td>
+                                              <td class="table-max-3-row-10230-col-max_33">
+                          
+                        </td>
+                                              <td class="table-max-3-row-10230-col-max_34">
+                          0
+                        </td>
+                                              <td class="table-max-3-row-10230-col-max_35">
+                          0
+                        </td>
+                                              <td class="table-max-3-row-10230-col-max_36">
+                          
+                        </td>
+                                              <td class="table-max-3-row-10230-col-max_37">
+                          
+                        </td>
+                                              <td class="table-max-3-row-10230-col-max_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max-3-row-11239-col-max_31">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11239-col-max_32">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11239-col-max_33">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11239-col-max_34">
+                          0
+                        </td>
+                                              <td class="table-max-3-row-11239-col-max_35">
+                          0
+                        </td>
+                                              <td class="table-max-3-row-11239-col-max_36">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11239-col-max_37">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11239-col-max_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max-3-row-11240-col-max_31">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11240-col-max_32">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11240-col-max_33">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11240-col-max_34">
+                          0
+                        </td>
+                                              <td class="table-max-3-row-11240-col-max_35">
+                          0
+                        </td>
+                                              <td class="table-max-3-row-11240-col-max_36">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11240-col-max_37">
+                          
+                        </td>
+                                              <td class="table-max-3-row-11240-col-max_38">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_4" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุด 2 ตัวหัว (หวยตัว)
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max">
+                      <input name="bet_type_group_id" type="hidden" value="4">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_41" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_42" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_43" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_44" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_45" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_46" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="max_47" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="max_48" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max-4-row-9474-col-max_41">
+                          
+                        </td>
+                                              <td class="table-max-4-row-9474-col-max_42">
+                          
+                        </td>
+                                              <td class="table-max-4-row-9474-col-max_43">
+                          
+                        </td>
+                                              <td class="table-max-4-row-9474-col-max_44">
+                          0
+                        </td>
+                                              <td class="table-max-4-row-9474-col-max_45">
+                          
+                        </td>
+                                              <td class="table-max-4-row-9474-col-max_46">
+                          
+                        </td>
+                                              <td class="table-max-4-row-9474-col-max_47">
+                          
+                        </td>
+                                              <td class="table-max-4-row-9474-col-max_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max-4-row-10230-col-max_41">
+                          
+                        </td>
+                                              <td class="table-max-4-row-10230-col-max_42">
+                          
+                        </td>
+                                              <td class="table-max-4-row-10230-col-max_43">
+                          
+                        </td>
+                                              <td class="table-max-4-row-10230-col-max_44">
+                          0
+                        </td>
+                                              <td class="table-max-4-row-10230-col-max_45">
+                          
+                        </td>
+                                              <td class="table-max-4-row-10230-col-max_46">
+                          
+                        </td>
+                                              <td class="table-max-4-row-10230-col-max_47">
+                          
+                        </td>
+                                              <td class="table-max-4-row-10230-col-max_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max-4-row-11239-col-max_41">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11239-col-max_42">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11239-col-max_43">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11239-col-max_44">
+                          0
+                        </td>
+                                              <td class="table-max-4-row-11239-col-max_45">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11239-col-max_46">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11239-col-max_47">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11239-col-max_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max-4-row-11240-col-max_41">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11240-col-max_42">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11240-col-max_43">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11240-col-max_44">
+                          0
+                        </td>
+                                              <td class="table-max-4-row-11240-col-max_45">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11240-col-max_46">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11240-col-max_47">
+                          
+                        </td>
+                                              <td class="table-max-4-row-11240-col-max_48">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_5" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุด สูง-ต่ำ
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max">
+                      <input name="bet_type_group_id" type="hidden" value="5">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        หลักแสน<br>
+                        <input class="form-control input-sm ac" name="max_51" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักหมื่น<br>
+                        <input class="form-control input-sm ac" name="max_52" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักพัน<br>
+                        <input class="form-control input-sm ac" name="max_53" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักร้อย<br>
+                        <input class="form-control input-sm ac" name="max_54" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักสิบ<br>
+                        <input class="form-control input-sm ac" name="max_55" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักหน่วย<br>
+                        <input class="form-control input-sm ac" name="max_56" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max-5-row-9474-col-max_51">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-9474-col-max_52">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-9474-col-max_53">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-9474-col-max_54">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-9474-col-max_55">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-9474-col-max_56">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max-5-row-10230-col-max_51">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-10230-col-max_52">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-10230-col-max_53">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-10230-col-max_54">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-10230-col-max_55">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-10230-col-max_56">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max-5-row-11239-col-max_51">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11239-col-max_52">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11239-col-max_53">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11239-col-max_54">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11239-col-max_55">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11239-col-max_56">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max-5-row-11240-col-max_51">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11240-col-max_52">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11240-col-max_53">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11240-col-max_54">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11240-col-max_55">
+                          999999999
+                        </td>
+                                              <td class="table-max-5-row-11240-col-max_56">
+                          999999999
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_6" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุด คู่-คี่
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max">
+                      <input name="bet_type_group_id" type="hidden" value="6">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        หลักแสน<br>
+                        <input class="form-control input-sm ac" name="max_61" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักหมื่น<br>
+                        <input class="form-control input-sm ac" name="max_62" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักพัน<br>
+                        <input class="form-control input-sm ac" name="max_63" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักร้อย<br>
+                        <input class="form-control input-sm ac" name="max_64" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักสิบ<br>
+                        <input class="form-control input-sm ac" name="max_65" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักหน่วย<br>
+                        <input class="form-control input-sm ac" name="max_66" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max-6-row-9474-col-max_61">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-9474-col-max_62">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-9474-col-max_63">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-9474-col-max_64">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-9474-col-max_65">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-9474-col-max_66">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max-6-row-10230-col-max_61">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-10230-col-max_62">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-10230-col-max_63">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-10230-col-max_64">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-10230-col-max_65">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-10230-col-max_66">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max-6-row-11239-col-max_61">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11239-col-max_62">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11239-col-max_63">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11239-col-max_64">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11239-col-max_65">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11239-col-max_66">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max-6-row-11240-col-max_61">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11240-col-max_62">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11240-col-max_63">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11240-col-max_64">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11240-col-max_65">
+                          999999999
+                        </td>
+                                              <td class="table-max-6-row-11240-col-max_66">
+                          999999999
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_7" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุด 4-5-6 ตัวตรง
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max">
+                      <input name="bet_type_group_id" type="hidden" value="7">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        4 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="max_71" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">1000</a>
+                      </th>
+                                          <th>
+                        5 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="max_72" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">1000</a>
+                      </th>
+                                          <th>
+                        6 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="max_73" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">1000</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max-7-row-9474-col-max_71">
+                          1000
+                        </td>
+                                              <td class="table-max-7-row-9474-col-max_72">
+                          1000
+                        </td>
+                                              <td class="table-max-7-row-9474-col-max_73">
+                          1000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max-7-row-10230-col-max_71">
+                          1000
+                        </td>
+                                              <td class="table-max-7-row-10230-col-max_72">
+                          1000
+                        </td>
+                                              <td class="table-max-7-row-10230-col-max_73">
+                          1000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max-7-row-11239-col-max_71">
+                          1000
+                        </td>
+                                              <td class="table-max-7-row-11239-col-max_72">
+                          1000
+                        </td>
+                                              <td class="table-max-7-row-11239-col-max_73">
+                          1000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max-7-row-11240-col-max_71">
+                          1000
+                        </td>
+                                              <td class="table-max-7-row-11240-col-max_72">
+                          1000
+                        </td>
+                                              <td class="table-max-7-row-11240-col-max_73">
+                          1000
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+              </div>
+    </div>
+      <div class="tab-pane " id="max_per_num" data-action="update-max_per_num" data-parent-id="9306">
+      <ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
+                              <li class="js-change-tab active" data-tab2="1">
+              <a data-toggle="tab" href="#max_per_num_1">3 ตัวท้าย</a>
+            </li>
+                                                                                                                                    </ul>
+
+      <div class="tab-content no-padding">
+                  <div id="max_per_num_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุดต่อเลข 3 ตัวท้าย
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max_per_num">
+                      <input name="bet_type_group_id" type="hidden" value="1">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_1" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_2" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_per_num_3" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">30000</a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_4" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_5" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_per_num_6" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_7" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">300000</a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_8" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">300000</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max_per_num-1-row-9474-col-max_per_num_1">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-1-row-9474-col-max_per_num_2">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-9474-col-max_per_num_3">
+                          30000
+                        </td>
+                                              <td class="table-max_per_num-1-row-9474-col-max_per_num_4">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-9474-col-max_per_num_5">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-9474-col-max_per_num_6">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-9474-col-max_per_num_7">
+                          300000
+                        </td>
+                                              <td class="table-max_per_num-1-row-9474-col-max_per_num_8">
+                          300000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max_per_num-1-row-10230-col-max_per_num_1">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-1-row-10230-col-max_per_num_2">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-10230-col-max_per_num_3">
+                          30000
+                        </td>
+                                              <td class="table-max_per_num-1-row-10230-col-max_per_num_4">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-10230-col-max_per_num_5">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-10230-col-max_per_num_6">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-10230-col-max_per_num_7">
+                          300000
+                        </td>
+                                              <td class="table-max_per_num-1-row-10230-col-max_per_num_8">
+                          300000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max_per_num-1-row-11239-col-max_per_num_1">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11239-col-max_per_num_2">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11239-col-max_per_num_3">
+                          30000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11239-col-max_per_num_4">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11239-col-max_per_num_5">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11239-col-max_per_num_6">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11239-col-max_per_num_7">
+                          300000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11239-col-max_per_num_8">
+                          300000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max_per_num-1-row-11240-col-max_per_num_1">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11240-col-max_per_num_2">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11240-col-max_per_num_3">
+                          30000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11240-col-max_per_num_4">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11240-col-max_per_num_5">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11240-col-max_per_num_6">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11240-col-max_per_num_7">
+                          300000
+                        </td>
+                                              <td class="table-max_per_num-1-row-11240-col-max_per_num_8">
+                          300000
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_per_num_2" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุดต่อเลข 3 ตัวหัว
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max_per_num">
+                      <input name="bet_type_group_id" type="hidden" value="2">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_21" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_22" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_per_num_23" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">30000</a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_24" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_25" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_per_num_26" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">100000</a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_27" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">200000</a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_28" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max_per_num-2-row-9474-col-max_per_num_21">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-2-row-9474-col-max_per_num_22">
+                          
+                        </td>
+                                              <td class="table-max_per_num-2-row-9474-col-max_per_num_23">
+                          30000
+                        </td>
+                                              <td class="table-max_per_num-2-row-9474-col-max_per_num_24">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-2-row-9474-col-max_per_num_25">
+                          
+                        </td>
+                                              <td class="table-max_per_num-2-row-9474-col-max_per_num_26">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-2-row-9474-col-max_per_num_27">
+                          200000
+                        </td>
+                                              <td class="table-max_per_num-2-row-9474-col-max_per_num_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max_per_num-2-row-10230-col-max_per_num_21">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-2-row-10230-col-max_per_num_22">
+                          
+                        </td>
+                                              <td class="table-max_per_num-2-row-10230-col-max_per_num_23">
+                          30000
+                        </td>
+                                              <td class="table-max_per_num-2-row-10230-col-max_per_num_24">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-2-row-10230-col-max_per_num_25">
+                          
+                        </td>
+                                              <td class="table-max_per_num-2-row-10230-col-max_per_num_26">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-2-row-10230-col-max_per_num_27">
+                          200000
+                        </td>
+                                              <td class="table-max_per_num-2-row-10230-col-max_per_num_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max_per_num-2-row-11239-col-max_per_num_21">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11239-col-max_per_num_22">
+                          
+                        </td>
+                                              <td class="table-max_per_num-2-row-11239-col-max_per_num_23">
+                          30000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11239-col-max_per_num_24">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11239-col-max_per_num_25">
+                          
+                        </td>
+                                              <td class="table-max_per_num-2-row-11239-col-max_per_num_26">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11239-col-max_per_num_27">
+                          200000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11239-col-max_per_num_28">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max_per_num-2-row-11240-col-max_per_num_21">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11240-col-max_per_num_22">
+                          
+                        </td>
+                                              <td class="table-max_per_num-2-row-11240-col-max_per_num_23">
+                          30000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11240-col-max_per_num_24">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11240-col-max_per_num_25">
+                          
+                        </td>
+                                              <td class="table-max_per_num-2-row-11240-col-max_per_num_26">
+                          100000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11240-col-max_per_num_27">
+                          200000
+                        </td>
+                                              <td class="table-max_per_num-2-row-11240-col-max_per_num_28">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_per_num_3" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุดต่อเลข 2 ตัวท้าย (หวยตัว)
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max_per_num">
+                      <input name="bet_type_group_id" type="hidden" value="3">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_31" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_32" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_per_num_33" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_34" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_35" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_per_num_36" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_37" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_38" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max_per_num-3-row-9474-col-max_per_num_31">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-9474-col-max_per_num_32">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-9474-col-max_per_num_33">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-9474-col-max_per_num_34">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-3-row-9474-col-max_per_num_35">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-3-row-9474-col-max_per_num_36">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-9474-col-max_per_num_37">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-9474-col-max_per_num_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max_per_num-3-row-10230-col-max_per_num_31">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-10230-col-max_per_num_32">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-10230-col-max_per_num_33">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-10230-col-max_per_num_34">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-3-row-10230-col-max_per_num_35">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-3-row-10230-col-max_per_num_36">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-10230-col-max_per_num_37">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-10230-col-max_per_num_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max_per_num-3-row-11239-col-max_per_num_31">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11239-col-max_per_num_32">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11239-col-max_per_num_33">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11239-col-max_per_num_34">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-3-row-11239-col-max_per_num_35">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-3-row-11239-col-max_per_num_36">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11239-col-max_per_num_37">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11239-col-max_per_num_38">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max_per_num-3-row-11240-col-max_per_num_31">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11240-col-max_per_num_32">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11240-col-max_per_num_33">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11240-col-max_per_num_34">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-3-row-11240-col-max_per_num_35">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-3-row-11240-col-max_per_num_36">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11240-col-max_per_num_37">
+                          
+                        </td>
+                                              <td class="table-max_per_num-3-row-11240-col-max_per_num_38">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_per_num_4" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุดต่อเลข 2 ตัวหัว (หวยตัว)
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max_per_num">
+                      <input name="bet_type_group_id" type="hidden" value="4">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        3 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_41" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_42" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        3 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_per_num_43" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_44" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">0</a>
+                      </th>
+                                          <th>
+                        2 ตัวล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_45" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        2 ตัวโต๊ด<br>
+                        <input class="form-control input-sm ac" name="max_per_num_46" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งบน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_47" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                          <th>
+                        วิ่งล่าง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_48" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1"></a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max_per_num-4-row-9474-col-max_per_num_41">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-9474-col-max_per_num_42">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-9474-col-max_per_num_43">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-9474-col-max_per_num_44">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-4-row-9474-col-max_per_num_45">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-9474-col-max_per_num_46">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-9474-col-max_per_num_47">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-9474-col-max_per_num_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max_per_num-4-row-10230-col-max_per_num_41">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-10230-col-max_per_num_42">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-10230-col-max_per_num_43">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-10230-col-max_per_num_44">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-4-row-10230-col-max_per_num_45">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-10230-col-max_per_num_46">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-10230-col-max_per_num_47">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-10230-col-max_per_num_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max_per_num-4-row-11239-col-max_per_num_41">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11239-col-max_per_num_42">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11239-col-max_per_num_43">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11239-col-max_per_num_44">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-4-row-11239-col-max_per_num_45">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11239-col-max_per_num_46">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11239-col-max_per_num_47">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11239-col-max_per_num_48">
+                          
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max_per_num-4-row-11240-col-max_per_num_41">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11240-col-max_per_num_42">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11240-col-max_per_num_43">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11240-col-max_per_num_44">
+                          0
+                        </td>
+                                              <td class="table-max_per_num-4-row-11240-col-max_per_num_45">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11240-col-max_per_num_46">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11240-col-max_per_num_47">
+                          
+                        </td>
+                                              <td class="table-max_per_num-4-row-11240-col-max_per_num_48">
+                          
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_per_num_5" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุดต่อเลข สูง-ต่ำ
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max_per_num">
+                      <input name="bet_type_group_id" type="hidden" value="5">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        หลักแสน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_51" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักหมื่น<br>
+                        <input class="form-control input-sm ac" name="max_per_num_52" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักพัน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_53" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักร้อย<br>
+                        <input class="form-control input-sm ac" name="max_per_num_54" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักสิบ<br>
+                        <input class="form-control input-sm ac" name="max_per_num_55" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักหน่วย<br>
+                        <input class="form-control input-sm ac" name="max_per_num_56" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max_per_num-5-row-9474-col-max_per_num_51">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-9474-col-max_per_num_52">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-9474-col-max_per_num_53">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-9474-col-max_per_num_54">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-9474-col-max_per_num_55">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-9474-col-max_per_num_56">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max_per_num-5-row-10230-col-max_per_num_51">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-10230-col-max_per_num_52">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-10230-col-max_per_num_53">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-10230-col-max_per_num_54">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-10230-col-max_per_num_55">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-10230-col-max_per_num_56">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max_per_num-5-row-11239-col-max_per_num_51">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11239-col-max_per_num_52">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11239-col-max_per_num_53">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11239-col-max_per_num_54">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11239-col-max_per_num_55">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11239-col-max_per_num_56">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max_per_num-5-row-11240-col-max_per_num_51">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11240-col-max_per_num_52">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11240-col-max_per_num_53">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11240-col-max_per_num_54">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11240-col-max_per_num_55">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-5-row-11240-col-max_per_num_56">
+                          999999999
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_per_num_6" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุดต่อเลข คู่-คี่
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max_per_num">
+                      <input name="bet_type_group_id" type="hidden" value="6">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        หลักแสน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_61" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักหมื่น<br>
+                        <input class="form-control input-sm ac" name="max_per_num_62" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักพัน<br>
+                        <input class="form-control input-sm ac" name="max_per_num_63" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักร้อย<br>
+                        <input class="form-control input-sm ac" name="max_per_num_64" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักสิบ<br>
+                        <input class="form-control input-sm ac" name="max_per_num_65" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                          <th>
+                        หลักหน่วย<br>
+                        <input class="form-control input-sm ac" name="max_per_num_66" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">999999999</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max_per_num-6-row-9474-col-max_per_num_61">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-9474-col-max_per_num_62">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-9474-col-max_per_num_63">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-9474-col-max_per_num_64">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-9474-col-max_per_num_65">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-9474-col-max_per_num_66">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max_per_num-6-row-10230-col-max_per_num_61">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-10230-col-max_per_num_62">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-10230-col-max_per_num_63">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-10230-col-max_per_num_64">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-10230-col-max_per_num_65">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-10230-col-max_per_num_66">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max_per_num-6-row-11239-col-max_per_num_61">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11239-col-max_per_num_62">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11239-col-max_per_num_63">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11239-col-max_per_num_64">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11239-col-max_per_num_65">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11239-col-max_per_num_66">
+                          999999999
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max_per_num-6-row-11240-col-max_per_num_61">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11240-col-max_per_num_62">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11240-col-max_per_num_63">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11240-col-max_per_num_64">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11240-col-max_per_num_65">
+                          999999999
+                        </td>
+                                              <td class="table-max_per_num-6-row-11240-col-max_per_num_66">
+                          999999999
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+                  <div id="max_per_num_7" class="tab-pane " data-action="update-min" data-parent-id="9306">
+
+            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+              <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                <thead clsss="thin-border-bottom">
+                  <tr>
+                    <th colspan="99" class="deep-blue caption">
+                      สูงสุดต่อเลข 4-5-6 ตัวตรง
+                    </th>
+                  </tr>
+
+                  <tr>
+                    <th colspan="3" class="vm">
+                      <input name="action" type="hidden" value="max_per_num">
+                      <input name="bet_type_group_id" type="hidden" value="7">
+                      <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                      <a class="btn btn-primary btn-xs">ยกเลิก</a>
+                    </th>
+
+                    <th><input class="check-all" name="" type="checkbox" value="0"></th>
+
+                                          <th>
+                        4 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_71" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        5 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_72" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                          <th>
+                        6 ตัวตรง<br>
+                        <input class="form-control input-sm ac" name="max_per_num_73" type="text" value="">
+                        &lt;=
+                        <a href="#" class="fill-input" tabindex="-1">10000</a>
+                      </th>
+                                      </tr>
+                </thead>
+
+                <tbody>
+                                                          <tr data-id="9474" data-status="1" class=" ">
+                      <td class="id">1</td>
+                      <td>
+                                                  3M3K001 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+
+                                              <td class="table-max_per_num-7-row-9474-col-max_per_num_71">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-7-row-9474-col-max_per_num_72">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-7-row-9474-col-max_per_num_73">
+                          10000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="10230" data-status="1" class=" ">
+                      <td class="id">2</td>
+                      <td>
+                                                  3M3K002 <span class="span-name jquery-hide">()</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+
+                                              <td class="table-max_per_num-7-row-10230-col-max_per_num_71">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-7-row-10230-col-max_per_num_72">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-7-row-10230-col-max_per_num_73">
+                          10000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11239" data-status="1" class=" ">
+                      <td class="id">3</td>
+                      <td>
+                                                  3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+
+                                              <td class="table-max_per_num-7-row-11239-col-max_per_num_71">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-7-row-11239-col-max_per_num_72">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-7-row-11239-col-max_per_num_73">
+                          10000
+                        </td>
+                                          </tr>
+                                                          <tr data-id="11240" data-status="1" class=" ">
+                      <td class="id">4</td>
+                      <td>
+                                                  3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
+                                              </td>
+
+                      <td class="type" nowrap="">
+                        เมมเบอร์
+                                              </td>
+
+                      <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+
+                                              <td class="table-max_per_num-7-row-11240-col-max_per_num_71">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-7-row-11240-col-max_per_num_72">
+                          10000
+                        </td>
+                                              <td class="table-max_per_num-7-row-11240-col-max_per_num_73">
+                          10000
+                        </td>
+                                          </tr>
+                                  </tbody>
+              </table>
+            </form>
+
+          </div>
+              </div>
+    </div>
+  </div>
+</div><!-- /.col -->
+        </div><!-- /.row -->
+      </div><!-- /.page-content -->
+    </div>
+
 @endsection
 
  

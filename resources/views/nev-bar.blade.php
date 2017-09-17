@@ -23,37 +23,37 @@
       </div>
 
       <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
-        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-md-5"><span style="float:right;color:white;">ชื่อ:</span></div>
-          <div class="col-md-7"><span style="float:left;color:white;">palm</span></div>
+        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-xs-5"><span style="float:right;color:white;">ชื่อ:</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">palm</span></div>
         </div>
-        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-md-5"><span style="float:right;color:white;">ระดับ:</span></div>
-          <div class="col-md-7"><span style="float:left;color:white;">เอเย่นต์</span></div>
+        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-xs-5"><span style="float:right;color:white;">ระดับ:</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">เอเย่นต์</span></div>
         </div>
-        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-md-5"><span style="float:right;color:white;">เครดิต:</span></div>
-          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-xs-5"><span style="float:right;color:white;">เครดิต:</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
-        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-md-5"><span style="float:right;color:white;">ใช้ไป:</span></div>
-          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-xs-5"><span style="float:right;color:white;">ใช้ไป:</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
-        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-md-5"><span style="float:right;color:white;">เหลือ:</span></div>
-          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-xs-5"><span style="float:right;color:white;">เหลือ:</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
-        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-md-5"><span style="float:right;color:white;">ได้เสีย:</span></div>
-          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-xs-5"><span style="float:right;color:white;">ได้เสีย:</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
-        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-md-5"><span style="float:right;color:white;">สมาชิก:</span></div>
-          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-xs-5"><span style="float:right;color:white;">สมาชิก:</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
-        <div class="col-md-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-md-5"><span style="float:right;color:white;">ออนไลน์:</span></div>
-          <div class="col-md-7"><span style="float:left;color:white;">0</span></div>
+        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
+          <div class="col-xs-5"><span style="float:right;color:white;">ออนไลน์:</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
       </div>
 
