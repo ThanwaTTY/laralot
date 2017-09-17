@@ -502,6 +502,26 @@ ul, ol {
     font-size: 14px;
     border-radius: 0;
 }
+.alert-danger {
+    background: #ffebe8 !important;
+    border: 1px solid #dd3c10 !important;
+    color: #333;
+}
+.alert-danger > h4 {
+    color: #dd3c10 !important;
+}
+.black {
+    color: #000 !important;
+}
+.alert h4 {
+    margin-top: 0;
+    color: inherit;
+}
+h4 {
+    font-size: 18px;
+    font-weight: normal;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
 .right-padding-10 {
     padding-right: 10px !important;
 }
@@ -541,4 +561,62 @@ a:hover {
 
 a:active, a:hover {
     outline: 0;
+}
+
+th, td, .table-bordered {
+    border-radius: 0 !important;
+}
+.table-bordered {
+    border: 1px solid #ddd;
+}
+
+table {
+    max-width: 100%;
+    background-color: transparent;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+.align-center {
+    text-align: center !important;
+}
+.bigger-150 {
+    font-size: 150% !important;
+}
+b, strong {
+    font-weight: bold;
+}
+table {
+    max-width: 100%;
+    background-color: transparent;
+}
+.table-auto {
+    width: auto !important;
+}
+.table-bordered>thead.thin-border-bottom>tr>th, .table-bordered>thead.thin-border-bottom>tr>td {
+    border-bottom-width: 1px;
+}
+.table.table-bordered>thead>tr>th {
+    vertical-align: middle;
+}
+.w1, .width-1 {
+    width: 1px;
+}
+.bigger-110 {
+    font-size: 110% !important;
+}
+h3 {
+    font-size: 22px;
+    font-weight: normal;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+.fa {
+    display: inline-block;
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
