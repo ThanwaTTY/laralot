@@ -112,24 +112,29 @@
                             <br>
                             <div class="row">
                                 <div class="col-xs-12">
-                                     <h4 class="text-primary">>>ตั่งเวลาปิดรับของรัฐบาล</h4>                            
+                                     <h3 style="color:#0000ff">>หวยหุ้น วันที่ 17-09-2017</h3> 
+                                      <div class="col-xs-4">
+                                            <div class="form-group">
+                                                <label for="" class="col-sm-4 control-label">เลือกวันที่:</label>
+                                                <div class="col-sm-8">
+                                                <input type="" class="form-control" id="" placeholder="">
+                                                </div>
+                                        </div>                           
                                 </div>                                  
                             </div>
-                            <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                <table class="table table-bordered"style="background-color:#f2f2f2;">
+                            <div class="table-responsive col-xs-7"><!-- มี tab เลื่อนข้างล่าง  -->
+                                <table class="table table-bordered">
                                     <thead>
                                         <tr style="background-color:#e6e6e6;">
-                                            <th class="text-center">ชนิด</th>
-                                            <th class="text-center">3 ตัวบน</th>
-                                            <th class="text-center">3 ตัวล่าง</th>
-                                            <th class="text-center">3 ตัวโต๊ด</th>
-                                            <th class="text-center">2 ตัวบน</th>
-                                            <th class="text-center">2 ตัวล่า</th>
-                                            <th class="text-center">2ตัวโต๊ด</th>
-                                            <th class="text-center">วิ่งบน</th>
-                                            <th class="text-center">วิ่งล่าง</th>
-                                            <th class="text-center"></th>
-                                            <th class="text-center"></th>
+                                            <th class="text-center" style="padding-top:20px;" rowspan="2">ชนิดหวย</th>
+                                            <th class="text-center" style="padding-top:20px;" rowspan="2">ชื่อ งวด</th>
+                                            <th class="text-center" style="padding-top:20px;" colspan="3">3 ตัวท้าย</th>
+                                           
+                                        </tr>
+                                        <tr>
+                                            <th class="text-center" style="padding-top:20px;">3 ตัวบน</th>
+                                            <th class="text-center" style="padding-top:20px;">2 ตัวบน</th>
+                                            <th class="text-center" style="padding-top:20px;">2ตัวล่าง</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -139,16 +144,10 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td></td>
-                                           <td><input type="checkbox"></td>
                                         </tr>
       {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                         <tr>
-                                            <th class="text-center bg-green" colspan="11">รัฐบาล</th>
+                                            <th class="text-center bg-green" colspan="5">รัฐบาล</th>
                                         </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -157,17 +156,12 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
       {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                       <tr>
-                                        <th class="text-center bg-green" colspan="11">หวย ธกส.</th>
+                                        <th class="text-center bg-green" colspan="5">หวย ธกส.</th>
                                       </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -176,12 +170,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -191,17 +180,12 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                      <tr>
-                                        <th class="text-center bg-green" colspan="11">หวย หุ้นไทย.</th>
+                                        <th class="text-center bg-green" colspan="5">หวย หุ้นไทย.</th>
                                      </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -210,12 +194,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -225,12 +204,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -240,12 +214,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -255,12 +224,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -270,12 +234,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -285,12 +244,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -300,12 +254,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -315,12 +264,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -330,12 +274,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -345,12 +284,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -360,12 +294,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -375,17 +304,12 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                         <tr>
-                                            <th class="text-center bg-green" colspan="11">หวยลาว</th>
+                                            <th class="text-center bg-green" colspan="5">หวยลาว</th>
                                         </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -394,12 +318,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -409,12 +328,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -424,17 +338,12 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                         <tr>
-                                            <th class="text-center bg-green" colspan="11">หวยมาเลย์ <b>(Magnum4D)</b></th>
+                                            <th class="text-center bg-green" colspan="5">หวยมาเลย์ <b>(Magnum4D)</b></th>
                                         </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -443,12 +352,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -458,12 +362,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -473,17 +372,12 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                      <tr>
-                                        <th class="text-center bg-green" colspan="11">หวย หุ้นต่างประเทศ.</th>
+                                        <th class="text-center bg-green" colspan="5">หวย หุ้นต่างประเทศ.</th>
                                      </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -492,12 +386,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -507,12 +396,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -522,12 +406,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -537,12 +416,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -552,12 +426,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -567,12 +436,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -582,12 +446,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -597,12 +456,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -612,12 +466,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -627,12 +476,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -642,12 +486,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -657,12 +496,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -672,12 +506,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -687,12 +516,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -702,12 +526,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -717,17 +536,12 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
     {{-- ////////////////////////////////////////////////////////////////////////////////////////////////////// --}}
                                      <tr>
-                                        <th class="text-center bg-green" colspan="11">หวยเวียดนาม</th>
+                                        <th class="text-center bg-green" colspan="5">หวยเวียดนาม</th>
                                      </tr>                                                                  
                                      <form class="form-horizontal" action="" method="post">
                                         <tr>
@@ -736,12 +550,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -751,12 +560,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -766,12 +570,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -781,12 +580,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -796,12 +590,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -811,12 +600,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -826,12 +610,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -841,12 +620,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -856,12 +630,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -871,12 +640,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -886,12 +650,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -901,12 +660,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -916,12 +670,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -931,12 +680,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -946,12 +690,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -961,12 +700,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -976,12 +710,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -991,12 +720,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1006,12 +730,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1021,12 +740,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1036,12 +750,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1051,12 +760,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1066,12 +770,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1081,12 +780,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1096,12 +790,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1111,12 +800,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1126,12 +810,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1141,12 +820,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1156,12 +830,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1171,12 +840,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1186,12 +850,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1201,12 +860,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1216,12 +870,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1231,12 +880,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1246,12 +890,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1261,12 +900,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
                                      <form class="form-horizontal" action="" method="post">
@@ -1276,12 +910,7 @@
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
                                            <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><input type="text"size="1" class="form-control" id="" placeholder="" value=""></td>
-                                           <td><button class="btn btn-primary">บันทึก</button></td>
-                                           <td><input type="checkbox"></td>
+                                          
                                         </tr>
                                      </form>
 
