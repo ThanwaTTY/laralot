@@ -157,13 +157,8 @@
                             <br>
                             <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
                                     <div class="form-inline col-xs-2">
-<<<<<<< HEAD
-                                        <label class="col-xs-6 control-label">เเยกอัตราจ่าย</label>
-                                        <select class="form-control col-xs-6">
-=======
                                         <label class="col-sm-6 form-control">เเยกอัตราจ่าย</label>
                                         <select class="form-control col-sm-6">
->>>>>>> 5c8d39e45a6c48eb9960e90f1a0fd3146eeb7d2b
                                             <option></option>
                                             <option>หวยรัฐ70</option>
                                             <option>หวย70</option>
