@@ -119,7 +119,7 @@
     4. อัตราจ่าย/คอมมิชชั่น
     <small>
               <i class="ace-icon fa fa-angle-double-right"></i>
-                <a href="https://agent.superlot999.com/users/edit3/9306?tab1=payout&amp;tab2=5&amp;tab3=1&amp;order=username_asc" class="ajax">3M3K</a>
+                <a href="#" class="ajax">3M3K</a>
           </small>
   </h1>
 </div>
@@ -141,8 +141,8 @@
 
 <div class="min-width-800 max-width-1100">
   <ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
-    <li class="active"><a href="https://agent.superlot999.com/users/edit3/9306?tab1=payout&amp;tab2=5&amp;tab3=1&amp;order=username_asc" class="ajax">อัตราจ่าย</a></li>
-    <li class=""><a href="https://agent.superlot999.com/users/edit3/9306?tab1=com&amp;tab2=5&amp;tab3=1&amp;order=username_asc" class="ajax">คอมมิชชั่น</a></li>
+    <li class="active"><a href="#" class="ajax">อัตราจ่าย</a></li>
+    <li class=""><a href="#" class="ajax">คอมมิชชั่น</a></li>
 
     
     <li class="pull-right right-padding-10 users__edit-options">
@@ -159,26 +159,26 @@
 
   <span class="bolder">เรียง</span>
   <select id="users-edit-order">
-    <option value="https://agent.superlot999.com/users/edit3/9306?tab1=payout&amp;tab2=5&amp;tab3=1&amp;order=username_asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
-    <option value="https://agent.superlot999.com/users/edit3/9306?tab1=payout&amp;tab2=5&amp;tab3=1&amp;order=username_desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-    <option value="https://agent.superlot999.com/users/edit3/9306?tab1=payout&amp;tab2=5&amp;tab3=1&amp;order=id_asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-    <option value="https://agent.superlot999.com/users/edit3/9306?tab1=payout&amp;tab2=5&amp;tab3=1&amp;order=id_desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+    <option value="#" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+    <option value="#">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+    <option value="#">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+    <option value="#">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
   </select>
 </li>
   </ul>
 
   <ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
           <li class="active">
-        <a href="https://agent.superlot999.com/users/edit3/9306?tab2=5&amp;tab1=payout&amp;tab3=1&amp;order=username_asc" class="nowrap ajax">หวยรัฐ 70</a>
+        <a href="#" class="nowrap ajax">หวยรัฐ 70</a>
       </li>
           <li class="">
-        <a href="https://agent.superlot999.com/users/edit3/9306?tab2=11&amp;tab1=payout&amp;tab3=1&amp;order=username_asc" class="nowrap ajax">หวย 70</a>
+        <a href="#" class="nowrap ajax">หวย 70</a>
       </li>
       </ul>
 
   <ul class="nav nav-tabs padding-24 tab-color-blue background-blue">
                   <li class="active">
-          <a href="https://agent.superlot999.com/users/edit3/9306?tab3=1&amp;tab1=payout&amp;tab2=5&amp;order=username_asc" class="nowrap ajax">
+          <a href="#" class="nowrap ajax">
             3 ตัวท้าย</a>
         </li>
                                                                         </ul>
@@ -188,7 +188,7 @@
 <div class="min-width-800 max-width-1100">
   <div id="payout_5" class="tab-pane active" data-action="update-payout" data-parent-id="9306">
 
-    <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+    <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
       <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit ">
         <thead>
           <tr>

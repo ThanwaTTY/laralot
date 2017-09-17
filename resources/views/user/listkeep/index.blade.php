@@ -89,7 +89,7 @@
     รายการเก็บของตามสมาชิก
     <small>
             <i class="ace-icon fa fa-angle-double-right"></i>
-      <a href="https://agent.superlot999.com/users/take-list/9306" class="ajax">3M3K</a>
+      <a href="#" class="ajax">3M3K</a>
           </small>
     </h1><h4 class="sub">
     <i class="fa fa-angle-right orange"></i>

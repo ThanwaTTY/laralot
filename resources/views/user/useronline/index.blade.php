@@ -89,7 +89,7 @@
     สมาชิกออนไลน์
     <small>
               <i class="ace-icon fa fa-angle-double-right"></i>
-        <a href="https://agent.superlot999.com/users/online/9306" class="ajax">
+        <a href="#" class="ajax">
           3M3K
         </a>
           </small>

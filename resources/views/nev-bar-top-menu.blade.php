@@ -626,7 +626,7 @@
             <li class="divider"></li>
 
             <li>
-              <a href="https://agent.superlot999.com/logout">
+              <a href="/logout">
                 <i class="ace-icon fa fa-power-off"></i>
                 Logout
               </a>

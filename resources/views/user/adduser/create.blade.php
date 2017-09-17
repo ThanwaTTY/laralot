@@ -110,7 +110,7 @@
         <div class="alert alert-success hidden" id="success"></div>
         <div class="alert alert-danger hidden" id="error"></div>
 
-        <form method="POST" action="https://agent.superlot999.com/users/create" accept-charset="UTF-8" id="create-user-form" class="form-horizontal" autocomplete="off"><input name="_token" type="hidden" value="uxxSpiZ338ZTX1mxPhKq1ql7p446dvtlqPlNnN6n">
+        <form method="POST" action="#" accept-charset="UTF-8" id="create-user-form" class="form-horizontal" autocomplete="off"><input name="_token" type="hidden" value="uxxSpiZ338ZTX1mxPhKq1ql7p446dvtlqPlNnN6n">
 
                 <div class="widget-box widget-color-blue2 width-1100 max-width-1100">
                       <div class="widget-header">
@@ -382,7 +382,7 @@
                               <label class="width-100">
                                 <input class="" name="take_remain" type="checkbox" value="1">
                                 <span class="lbl"> เก็บของที่เกิน</span>
-                                <a href="https://agent.superlot999.com/help" target="_blank"><i class="fa fa-question-circle"></i></a>
+                                <a href="#" target="_blank"><i class="fa fa-question-circle"></i></a>
                               </label>
                             </div>
                         </div>
