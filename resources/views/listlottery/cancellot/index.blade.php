@@ -81,7 +81,7 @@
       <section class="sidebar-shortcuts-large bot-margin-3">
       {{--  <h1>
         Dashboard
-        <small>Control panel</small>
+        <xsall>Control panel</xsall>
       </h1>  --}}
       <div class="row">
         {{--  <div class="pull-left">  --}}
@@ -110,9 +110,9 @@
                 </h3>
                 <!-- tools box -->
                 <div class="pull-right box-tools">
-                    {{-- <button type="button" class="btn btn-info btn-sm" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
+                    {{-- <button type="button" class="btn btn-info btn-xs" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
                     <i class="fa fa-minus"></i></button>
-                    <button type="button" class="btn btn-info btn-sm" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
+                    <button type="button" class="btn btn-info btn-xs" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
                     <i class="fa fa-times"></i></button> --}}
                 </div>
                 <!-- /. tools -->
@@ -130,28 +130,28 @@
                                     <div class="col-xs-12">
                                         <div class="col-xs-4">
                                             <div class="form-group">
-                                                <label for="" class="col-sm-4 control-label">วันที่เเทง</label>
-                                                <div class="col-sm-8">
+                                                <label for="" class="col-xs-4 control-label">วันที่เเทง</label>
+                                                <div class="col-xs-8">
                                                 <input type="" class="form-control" id="" placeholder="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="" class="col-sm-4 control-label">ลำดับโพย</label>
-                                                <div class="col-sm-8">
+                                                <label for="" class="col-xs-4 control-label">ลำดับโพย</label>
+                                                <div class="col-xs-8">
                                                 <input type="" class="form-control" id="" placeholder="">
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-xs-4">
                                             <div class="form-group">
-                                                <label for="" class="col-sm-5 control-label">ชื่อผู้ใช้</label>
-                                                <div class="col-sm-7">
+                                                <label for="" class="col-xs-5 control-label">ชื่อผู้ใช้</label>
+                                                <div class="col-xs-7">
                                                 <input type="" class="form-control" id="" placeholder="">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="" class="col-sm-5 control-label">หมายเลขที่เเทง</label>
-                                                <div class="col-sm-7">
+                                                <label for="" class="col-xs-5 control-label">หมายเลขที่เเทง</label>
+                                                <div class="col-xs-7">
                                                 <input type="" class="form-control" id="" placeholder="">
                                                 </div>
                                             </div>

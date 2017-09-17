@@ -72,7 +72,7 @@
       <section class="sidebar-shortcuts-large bot-margin-3">
       {{--  <h1>
         Dashboard
-        <small>Control panel</small>
+        <xsall>Control panel</xsall>
       </h1>  --}}
       <div class="row">
         {{--  <div class="pull-left">  --}}
@@ -108,7 +108,7 @@
                             <div class="tab-content no-padding">
                             <!-- Morris chart - Sales -->
                             <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                                    <div class="col-sm-10">
+                                    <div class="table-responsive col-xs-10">
                                         <table class="table table-bordered bg-gray">
                                             <thead>
                                                 <tr style="background-color:#e6e6e6;">
@@ -157,8 +157,8 @@
                             <br>
                             <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
                                     <div class="form-inline col-xs-2">
-                                        <label class="col-sm-6 control-label">เเยกอัตราจ่าย</label>
-                                        <select class="form-control col-sm-6">
+                                        <label class="col-xs-6 control-label">เเยกอัตราจ่าย</label>
+                                        <select class="form-control col-xs-6">
                                             <option></option>
                                             <option>หวยรัฐ70</option>
                                             <option>หวย70</option>
@@ -166,7 +166,7 @@
                                      </div>
                                      <br>
                                       <br>
-                                    <div class="col-sm-12">
+                                    <div class="table-responsive col-xs-12">
                                         <table class="table table-bordered bg-gray">
                                             <thead>
                                                 <tr style="background-color:#e6e6e6;">
