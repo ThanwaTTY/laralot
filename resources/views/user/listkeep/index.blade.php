@@ -103,7 +103,7 @@
                                             <div class="tab-content no-padding">
                                             <!-- Morris chart - Sales -->
                                                 <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                                                    <div class="col-md-8">
+                                                    <div class="col-xs-8">
                                                         <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
                                                             <table class="table table-bordered bg-gray">
                                                                 <thead>

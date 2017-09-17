@@ -145,7 +145,7 @@
                                                     <div class="tab-content no-padding">
                                                         <!-- Morris chart - Sales -->
                                                         <div class="chart tab-pane active" id="tab11" style="position: relative; height: 300px;">
-                                                            <div class="col-sm-4">
+                                                            <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 
@@ -188,7 +188,7 @@
                                                     </div>
 
                                                     <div class="chart tab-pane" id="tab22" style="position: relative; height: 300px;">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 
@@ -231,7 +231,7 @@
                                                     </div>
 
                                                     <div class="chart tab-pane" id="tab33" style="position: relative; height: 300px;">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 
@@ -274,7 +274,7 @@
                                                     </div>
 
                                                     <div class="chart tab-pane" id="tab44" style="position: relative; height: 300px;">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 
@@ -317,7 +317,7 @@
                                                     </div>
 
                                                     <div class="chart tab-pane" id="tab55" style="position: relative; height: 300px;">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 
@@ -360,7 +360,7 @@
                                                     </div>
 
                                                     <div class="chart tab-pane" id="tab66" style="position: relative; height: 300px;">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 
@@ -403,7 +403,7 @@
                                                     </div>
 
                                                     <div class="chart tab-pane" id="tab77" style="position: relative; height: 300px;">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 
@@ -450,7 +450,7 @@
                                 </div>
                             </div>
                             <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
-                                    <div class="col-sm-4">
+                                    <div class="col-xs-4">
                                         <table class="table table-bordered bg-gray">
                                             <thead> 
                                                 <tr> 
@@ -507,7 +507,7 @@
                                                     <div class="tab-content no-padding">
                                                         <!-- Morris chart - Sales -->
                                                         <div class="chart tab-pane active" id="tab10" style="position: relative; height: 300px;">
-                                                            <div class="col-sm-4">
+                                                            <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 
@@ -550,7 +550,7 @@
                                                     </div>
 
                                                     <div class="chart tab-pane" id="tab20" style="position: relative; height: 300px;">
-                                                        <div class="col-sm-4">
+                                                        <div class="col-xs-4">
                                                                 <table class="table table-bordered bg-gray">
                                                                     <thead> 
                                                                         <tr> 

@@ -125,7 +125,7 @@
                     <div class="tab-content no-padding">
                     <!-- Morris chart - Sales -->
                     <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                            <div class="col-sm-10"><br>
+                            <div class="col-xs-10"><br>
                                 <table class="table table-bordered bg-gray">
                                     <thead> 
                                         <tr> 
@@ -183,7 +183,7 @@
                             </div>
                     </div>
                     <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
-                            <div class="col-sm-10"><br>
+                            <div class="col-xs-10"><br>
                                 <table class="table table-bordered bg-gray">
                                     <thead> 
                                         <tr> 
@@ -241,7 +241,7 @@
                             </div>
                     </div>
                      <div class="chart tab-pane" id="tab3" style="position: relative; height: 300px;">
-                            <div class="col-sm-10"><br>
+                            <div class="col-xs-10"><br>
                                 <table class="table table-bordered bg-gray">
                                     <thead> 
                                         <tr> 

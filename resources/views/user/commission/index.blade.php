@@ -139,7 +139,7 @@
                                         <div class="tab-content no-padding">
                                         <!-- Morris chart - Sales -->
                                         <div class="chart tab-pane active" id="tab11" style="position: relative; height: 300px;">
-                                            <div class="col-sm-10"><br>
+                                            <div class="col-xs-10"><br>
                                                 <ul class="nav nav-tabs pull-left">
                                                     <li class="bg-primary active" style=""><a href="#tab11" data-toggle="tab">3 ตัวท้าย</a></li>
                                                 </ul>
