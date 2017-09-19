@@ -1,7 +1,5 @@
   <aside class="main-sidebar">
-    <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-      <!-- Sidebar user panel -->
       <div id="icon-menu" class="row">
         <div class="sidebar-shortcuts-large bot-margin-3" id="sidebar-shortcuts-large">
               <button class="btn btn-success btn-ajax" data-href="https://agent.superlot999.com/items/overall">
@@ -56,49 +54,7 @@
           <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
       </div>
-
-      
-      <!-- search form -->
-      {{-- <form action="#" method="get" class="sidebar-form">
-        <div class="input-group">
-          <input type="text" name="q" class="form-control" placeholder="Search...">
-              <span class="input-group-btn">
-                <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                </button>
-              </span>
-        </div>
-      </form> --}}
-      <!-- /.search form -->
-      <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu">
-        {{-- <li class="header">MAIN NAVIGATION</li> --}}
-        {{-- <li class="active treeview">
-          <a href="#">
-            <i class="fa fa-dashboard"></i> <span>Dashboard</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a> --}}
-          {{-- <ul class="treeview-menu">
-            <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
-            <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
-          </ul>
-        </li>
-        <li class="treeview">
-          <a href="#">
-            <i class="fa fa-files-o"></i>
-            <span>Layout Options</span>
-            <span class="pull-right-container">
-              <span class="label label-primary pull-right">4</span>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Boxed</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Fixed</a></li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
-          </ul>--}}
-        {{-- </li>  --}}
         <li class="treeview">
           <a href="#">
             <i class="fa fa-th"></i> <span>รายการแทง</span>
@@ -183,45 +139,363 @@
             <li><a href="#"><i class="fa fa-circle-o"></i> คู่มือการใช้งาน</a></li>
           </ul>
         </li>
-        {{-- <li class="treeview">
-          <a href="#">
-            <i class="fa fa-share"></i> <span>Multilevel</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-            <li>
-              <a href="#"><i class="fa fa-circle-o"></i> Level One
-                <span class="pull-right-container">
-                  <i class="fa fa-angle-left pull-right"></i>
-                </span>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="#"><i class="fa fa-circle-o"></i> Level Two</a></li>
-                <li>
-                  <a href="#"><i class="fa fa-circle-o"></i> Level Two
-                    <span class="pull-right-container">
-                      <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                  </a>
-                  <ul class="treeview-menu">
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                    <li><a href="#"><i class="fa fa-circle-o"></i> Level Three</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-            <li><a href="#"><i class="fa fa-circle-o"></i> Level One</a></li>
-          </ul>
-        </li> --}}
-        {{-- <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li> --}}
-        {{-- <li class="header">LABELS</li>
-        <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> --}}
       </ul>
     </section>
-    <!-- /.sidebar -->
   </aside>
+{{-- <aside class="main-sidesidebar"> --}}
+
+{{-- <div id="sidebar" class="sidebar responsive">
+	<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+		<div class="sidebar-shortcuts-large bot-margin-3" id="sidebar-shortcuts-large">
+			<button class="btn btn-success btn-ajax" data-href="https://agent.superlot999.com/items/overall">
+				<i class="ace-icon fa fa-table white"></i>
+			</button>
+
+			<button class="btn btn-info btn-ajax" data-href="https://agent.superlot999.com/users/edit1">
+				<i class="ace-icon fa fa-users"></i>
+			</button>
+
+			<button class="btn btn-warning btn-ajax" data-href="https://agent.superlot999.com/reports/by-member">
+				<i class="ace-icon fa fa-bar-chart-o"></i>
+			</button>
+
+			<button class="btn btn-danger btn-ajax" data-href="https://agent.superlot999.com/transfers">
+				<i class="ace-icon fa fa-refresh"></i>
+			</button>
+		</div>
+
+		<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+			<span class="btn btn-success"></span>
+
+			<span class="btn btn-info"></span>
+
+			<span class="btn btn-warning"></span>
+
+			<span class="btn btn-danger"></span>
+		</div>
+
+		<!-- #account-summary -->
+		<div id="account-summary">
+			<ul>
+				<li><span class="prop">ชื่อ:</span><span id="">002@3M3K</span></li>
+				<li><span class="prop">ระดับ:</span><span id="">เอเย่นต์</span></li>
+				<li><span class="prop">เครดิต:</span><span id="max_credit">0</span></li>
+				<li><span class="prop">ใช้ไป:</span><span id="used_credit">0</span></li>
+				<li><span class="prop">เหลือ:</span><span id="credit_balance">0</span></li>
+				<li><span class="prop">ได้เสีย:</span><span id="cash_balance">0</span></li>
+				<li><span class="prop">สมาชิก:</span><span id="member_count">4</span></li>
+				<li><span class="prop">ออนไลน์:</span><span id="member_online">0</span></li>
+			</ul>
+		</div><!-- /#account-summary -->
+	</div>
+
+	<ul class="nav nav-list" id="sidebar-menu">
+					<li class="hsub open">
+				<a href="#" class="dropdown-toggle">
+					<i class="menu-icon fa fa-table"></i>
+					<span class="menu-text"> รายการแทง </span>
+
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+
+				<b class="arrow"></b>
+
+				<ul class="submenu nav-show" style="display: block;">
+					<li class="active">
+						<a href="https://agent.superlot999.com/items/overall" data-url="https://agent.superlot999.com/items/overall" class="loadpartial">
+							<i class="menu-icon fa fa-caret-right"></i>
+							ดูของรวม / คาดคะเนได้เสีย
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li>
+						<a href="https://agent.superlot999.com/items/by-member" data-url="https://agent.superlot999.com/items/by-member">
+							<i class="menu-icon fa fa-caret-right"></i>
+							ดูของ สมาชิก/ประเภท
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li>
+					  <a href="https://agent.superlot999.com/items/by-date/9306" data-url="https://agent.superlot999.com/items/by-date">
+							<i class="menu-icon fa fa-caret-right"></i>
+							รอผลเดิมพัน
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li>
+						<a href="https://agent.superlot999.com/items/settings" data-url="https://agent.superlot999.com/items/settings">
+							<i class="menu-icon fa fa-caret-right"></i>
+							ตั้งค่าการรับของ
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li>
+						<a href="https://agent.superlot999.com/items/limit-settings" data-url="https://agent.superlot999.com/items/limit-settings">
+							<i class="menu-icon fa fa-caret-right"></i>
+							ตั้งค่ารับของแยกตามชนิด
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<!-- <li>
+						<a href="https://agent.superlot999.com/items/default-settings" data-url="https://agent.superlot999.com/items/default-settings" >
+							<i class="menu-icon fa fa-caret-right"></i>
+							ตั้งรับของล่วงหน้า
+						</a>
+
+						<b class="arrow"></b>
+					</li> -->
+
+											<li>
+															<a href="https://agent.superlot999.com/items/cancelled" data-url="https://agent.superlot999.com/items/cancelled">
+									<i class="menu-icon fa fa-caret-right"></i>
+									ยกเลิก โพย/รายการแทง
+								</a>
+							
+							<b class="arrow"></b>
+						</li>
+									</ul>
+			</li>
+		
+					<li class="hsub">
+				<a href="#" class="dropdown-toggle">
+					<i class="menu-icon fa fa-users"></i>
+					<span class="menu-text"> จัดการสมาชิก </span>
+
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+
+				<b class="arrow"></b>
+
+				<ul class="submenu">
+											<li>
+							<a href="https://agent.superlot999.com/users/create" data-url="https://agent.superlot999.com/users/create">
+								<i class="menu-icon fa fa-caret-right"></i>
+								1. เพิ่มสมาชิก
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+
+						<li>
+							<a href="https://agent.superlot999.com/users/edit1" data-url="https://agent.superlot999.com/users/edit1">
+								<i class="menu-icon fa fa-caret-right"></i>
+								2. ข้อมูลทั่วไป/เก็บของ
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+
+						<li>
+							<a href="https://agent.superlot999.com/users/edit2" data-url="https://agent.superlot999.com/users/edit2">
+								<i class="menu-icon fa fa-caret-right"></i>
+								3. ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+
+						<li>
+							<a href="https://agent.superlot999.com/users/edit3" data-url="https://agent.superlot999.com/users/edit3">
+								<i class="menu-icon fa fa-caret-right"></i>
+								4. อัตราจ่าย/คอมมิชชั่น
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+
+						<li>
+							<a href="https://agent.superlot999.com/users/edit4" data-url="https://agent.superlot999.com/users/edit4">
+								<i class="menu-icon fa fa-caret-right"></i>
+								5. เปิด-ปิด หวย/อัตราจ่าย
+							</a>
+
+							<b class="arrow"></b>
+						</li>
+					
+					<li>
+						<a href="https://agent.superlot999.com/users/online" data-url="https://agent.superlot999.com/users/online">
+							<i class="menu-icon fa fa-caret-right"></i>
+							สมาชิกออนไลน์
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li>
+						<a href="https://agent.superlot999.com/users/take-list" data-url="https://agent.superlot999.com/users/take-list">
+							<i class="menu-icon fa fa-caret-right"></i>
+							รายการเก็บของ / อั้น
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+				</ul>
+			</li>
+		
+					<li class="hsub">
+				<a href="#" class="dropdown-toggle">
+					<i class="menu-icon fa fa-desktop"></i>
+					<span class="menu-text">จัดการหน้าร้าน</span>
+
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+
+				<b class="arrow"></b>
+
+				<ul class="submenu">
+												<li>
+		<a href="https://agent.superlot999.com/shop/bills" data-url="https://agent.superlot999.com/shop/bills">
+			<i class="menu-icon fa fa-caret-right"></i> จัดการโพย
+		</a>
+		<b class="arrow"></b>
+	</li>
+																	<li>
+		<a href="https://agent.superlot999.com/shop/members" data-url="https://agent.superlot999.com/shop/members">
+			<i class="menu-icon fa fa-caret-right"></i> ตั้งค่าสมาชิก
+		</a>
+		<b class="arrow"></b>
+	</li>
+									</ul>
+			</li>
+		
+					<li class="hsub">
+				<a href="#" class="dropdown-toggle">
+					<i class="menu-icon fa fa-bar-chart-o"></i>
+					<span class="menu-text"> รายงานแพ้ชนะ </span>
+
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+
+				<b class="arrow"></b>
+
+				<ul class="submenu">
+					<li>
+						<a href="https://agent.superlot999.com/reports/by-member" data-url="https://agent.superlot999.com/reports/by-member">
+							<i class="menu-icon fa fa-caret-right"></i>
+							แพ้-ชนะ สมาชิก/ประเภท
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li>
+						<a href="https://agent.superlot999.com/reports/by-date/9306" data-url="https://agent.superlot999.com/reports/by-date">
+							<i class="menu-icon fa fa-caret-right"></i>
+							แพ้-ชนะ สุทธิ
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					<li>
+						<a href="https://agent.superlot999.com/reports/winning" data-url="https://agent.superlot999.com/reports/winning">
+							<i class="menu-icon fa fa-caret-right"></i>
+							รายการที่ถูกรางวัล
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+					
+					<li>
+						<a href="https://agent.superlot999.com/reports/game-results" data-url="https://agent.superlot999.com/reports/game-results">
+							<i class="menu-icon fa fa-caret-right"></i>
+							ผลการออกรางวัล
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+				</ul>
+			</li>
+		
+					<li class="hsub">
+				<a href="#" class="dropdown-toggle">
+					<i class="menu-icon fa fa-refresh"></i>
+					<span class="menu-text"> การเงิน </span>
+
+					<b class="arrow fa fa-angle-down"></b>
+				</a>
+
+				<b class="arrow"></b>
+
+				<ul class="submenu">
+					<li>
+						<a href="https://agent.superlot999.com/transfers" data-url="https://agent.superlot999.com/transfers">
+							<i class="menu-icon fa fa-caret-right"></i>
+							จัดการยอด
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+ 					<!-- <li>
+						<a href="" data-url="">
+							<i class="menu-icon fa fa-caret-right"></i>
+							จัดการเครดิต
+						</a>
+
+						<b class="arrow"></b>
+					</li> -->
+
+					<li>
+						<a href="https://agent.superlot999.com/financial/transactions/show/9306/balance" data-url="https://agent.superlot999.com/financial/transactions/show">
+							<i class="menu-icon fa fa-caret-right"></i>
+							ประวัติการเงิน
+						</a>
+
+						<b class="arrow"></b>
+					</li>
+
+  <!-- 					<li>
+              <a href="" data-url="">
+                <i class="menu-icon fa fa-caret-right"></i>
+                ประวัติการเงินสมาชิก
+              </a>
+
+              <b class="arrow"></b>
+            </li> -->
+          </ul>
+        </li>
+      
+        
+      
+      
+      <li class="hsub">
+          <a href="#" class="dropdown-toggle">
+              <i class="menu-icon fa fa-question"></i>
+              <span class="menu-text"> คู่มือการใช้งาน </span>
+
+              <b class="arrow fa fa-angle-down"></b>
+          </a>
+
+          <b class="arrow"></b>
+
+          <ul class="submenu">
+              <li>
+                  <a href="https://agent.superlot999.com/help" data-url="https://agent.superlot999.com/help">
+                      <i class="menu-icon fa fa-caret-right"></i>
+                      คู่มือการใช้งาน
+                  </a>
+
+                  <b class="arrow"></b>
+              </li>
+          </ul>
+      </li>
+    </ul>
+
+    <div class="sidebar-toggle" id="">
+      <i class="ace-icon fa fa-angle-double-left"></i>
+    </div>
+</div> --}}
+
+{{-- </aside> --}}
