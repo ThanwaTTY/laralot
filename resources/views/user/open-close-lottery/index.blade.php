@@ -116,14 +116,14 @@
                             5. เปิด-ปิด อัตราจ่าย/หวย
                             <small>
                                 <i class="ace-icon fa fa-angle-double-right"></i>
-                                <a href="https://agent.superlot999.com/users/edit4/9306?tab1=gtg_status&amp;order=username_asc" class="ajax">3M3K</a>
+                                <a href="#" class="ajax">3M3K</a>
                             </small>
                         </h1>
                     </div>
 
                 <div class="min-width-800 max-width-1100">
                     <div class="alert alert-info">
-                        อ่านคำอธิบายระบบใหม่ได้ที่ <a href="https://agent.superlot999.com/help" target="_blank">คู่มือการใช้งาน</a><br>
+                        อ่านคำอธิบายระบบใหม่ได้ที่ <a href="#" target="_blank">คู่มือการใช้งาน</a><br>
                         <b>สถานะ:</b> <span class="bg-warning">เหลือง=ระงับ</span>, <span class="bg-danger">แดง=ล็อค</span>
                     </div>
                 </div>
@@ -211,10 +211,10 @@
 
                     <span class="bolder">เรียง</span>
                     <select id="users-edit-order">
-                        <option value="https://agent.superlot999.com/users/edit4/9306?tab1=gtg_status&amp;tab2=1&amp;tab3=5&amp;order=username_asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
-                        <option value="https://agent.superlot999.com/users/edit4/9306?tab1=gtg_status&amp;tab2=1&amp;tab3=5&amp;order=username_desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-                        <option value="https://agent.superlot999.com/users/edit4/9306?tab1=gtg_status&amp;tab2=1&amp;tab3=5&amp;order=id_asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-                        <option value="https://agent.superlot999.com/users/edit4/9306?tab1=gtg_status&amp;tab2=1&amp;tab3=5&amp;order=id_desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+                        <option value="#" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+                        <option value="#">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+                        <option value="#">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+                        <option value="#">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
                     </select>
                     </li>
                     </ul>
@@ -249,7 +249,7 @@
 
                     <div class="tab-content no-padding">
                         <div class="tab-pane in active" id="gtg_status_1">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                 <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                     <thead>
                                         <tr>
@@ -314,7 +314,7 @@
                         </div>
 
                         <div class="tab-pane " id="gtg_status_16">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                             <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                 <thead>
                                     <tr>
@@ -375,7 +375,7 @@
                         </div>
 
                         <div class="tab-pane " id="gtg_status_2">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                 <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -437,7 +437,7 @@
                         </div>
 
                         <div class="tab-pane " id="gtg_status_6">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                 <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -499,7 +499,7 @@
                         </div>
 
                         <div class="tab-pane " id="gtg_status_5">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                 <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                     <thead>
                                         <tr>
@@ -559,7 +559,7 @@
                         </div>
 
                         <div class="tab-pane " id="gtg_status_3">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                 <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                     <thead>
                                         <tr>
@@ -620,7 +620,7 @@
                         </div>
 
                         <div class="tab-pane " id="gtg_status_15">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                 <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                     <thead>
                                         <tr>
@@ -685,7 +685,7 @@
                 <div class="tab-pane " id="btg_visibility">
                     <div class="tab-content no-padding">
                         <div class="tab-pane in active" id="btg_visibility">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                 <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                     <thead>
                                         <tr>
@@ -759,7 +759,7 @@
 
                     <div class="tab-content no-padding">
                         <div class="tab-pane in active" id="payout_status_5">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -800,13 +800,16 @@
                                                 <td class="ac table-p5-row-9474-col-active">เปิด</td>
                                                 <td></td>
                                                 <td class="ac table-p5-row-9474-col-btg_active_1">เปิด</td>
+                                            </tr>
                                             <tr data-id="10230" class=" ">
                                                 <td class="id">2</td>
                                                 <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
                                                 <td class="type">เมมเบอร์</td>
                                                 <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
                                                 <td class="ac table-p5-row-10230-col-active">เปิด</td>
-                                                <td class="ac table-p5-row-10230-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                   </tr>
+                                                <td></td>
+                                                <td class="ac table-p5-row-10230-col-btg_active_1">เปิด</td>  
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                 </tr>
                                             <tr data-id="11239" class=" ">
                                                 <td class="id">3</td>
                                                 <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
@@ -814,7 +817,8 @@
                                                 <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
                                                 <td class="ac table-p5-row-11239-col-active">เปิด</td>
                                                 <td></td>
-                                                <td class="ac table-p5-row-11239-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                       </tr>
+                                                <td class="ac table-p5-row-11239-col-btg_active_1">เปิด</td>   
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                     </tr>
                                             <tr data-id="11240" class=" ">
                                                 <td class="id">4</td>
                                                 <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
@@ -822,7 +826,8 @@
                                                 <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
                                                 <td class="ac table-p5-row-11240-col-active">เปิด</td>
                                                 <td></td>
-                                                <td class="ac table-p5-row-11240-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                               </tr>
+                                                <td class="ac table-p5-row-11240-col-btg_active_1">เปิด</td> 
+                                            </tr>                                                                                                                                                                                                                                                                                                                                               </tr>
                                         </tbody>
                                 </table>
                             </form>
@@ -830,7 +835,7 @@
                         </div>
 
                         <div class="tab-pane " id="payout_status_11">
-                            <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                 <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                     <thead>
                                         <tr>
@@ -873,7 +878,8 @@
                                             <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
                                             <td class="ac table-p11-row-9474-col-active">เปิด</td>
                                             <td></td>
-                                            <td class="ac table-p11-row-9474-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                           </tr>
+                                            <td class="ac table-p11-row-9474-col-btg_active_1">เปิด</td>
+                                        </tr>                                                                                                                                                                                                                                                                                                                                                             </tr>
                                         <tr data-id="10230" class=" ">
                                             <td class="id">2</td>
                                             <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
@@ -881,20 +887,25 @@
                                             <td class="ac table-p11-row-10230-col-active">เปิด</td>
                                             <td></td>
                                             <td class="ac table-p11-row-10230-col-btg_active_1">เปิด</td>
+                                        </tr>  
                                         <tr data-id="11239" class=" ">
                                             <td class="id">3</td>
                                             <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
                                             <td class="type">เมมเบอร์</td>
                                             <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
                                             <td class="ac table-p11-row-11239-col-active">เปิด</td>
-                                            <td class="ac table-p11-row-11239-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                     </tr>
+                                            <td></td>
+                                            <td class="ac table-p11-row-11239-col-btg_active_1">เปิด</td> 
+                                        </tr>                                                                                                                                                                                                                                                                                                                                                      </tr>
                                         <tr data-id="11240" class=" ">
                                             <td class="id">4</td>
                                             <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
                                             <td class="type">เมมเบอร์</td>
                                             <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
                                             <td class="ac table-p11-row-11240-col-active">เปิด</td>
-                                            <td class="ac table-p11-row-11240-col-btg_active_1">เปิด</td>                                                                                                                                                                                                                                                                                                                                                         </tr>
+                                            <td></td>
+                                            <td class="ac table-p11-row-11240-col-btg_active_1">เปิด</td> 
+                                        </tr>                                                                                                                                                                                                                                                                                                                                                        </tr>
                                     </tbody>
                                 </table>
                             </form>

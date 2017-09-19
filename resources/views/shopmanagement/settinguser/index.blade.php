@@ -72,9 +72,6 @@
 @section('content')
     <!-- Content Header (Page header) -->
     <section class="content-header">
-        <h1>
-            List
-        </h1>
     </section>
 
     <!-- Main content -->
@@ -125,7 +122,7 @@
                                         </table>
                                     </div>
                 </form>
-                            <br>
+                 <br>
             </div>    
     </div> 
 </section>
