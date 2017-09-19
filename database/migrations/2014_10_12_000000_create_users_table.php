@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('status');
             $table->decimal('win_lose_tatal');
             $table->dateTime('login_new');
+            $table->string('ip');
             $table->rememberToken();
             $table->timestamps();
         });
