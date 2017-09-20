@@ -220,3 +220,7 @@ table {
 .bg-dark {
     background-color: #dddddd !important;
 }
+.navbar-default {
+    background-color: #3c8dbc;
+    border-color: #e7e7e7;
+}

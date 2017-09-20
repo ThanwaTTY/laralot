@@ -75,22 +75,25 @@ Route::get('/user/commission', function () {
     return view('user.commission.index');
 });
 
-Route::get('/shopmanagement/chitmanagement', function (){
+Route::get('/shopmanagement/chitmanagement', function () {
     return view('shopmanagement.chitmanagement.index');
 });
 
-Route::get('/shopmanagement/settinguser', function (){
+Route::get('/shopmanagement/settinguser', function () {
     return view('shopmanagement.settinguser.index');
 });
 
-Route::get('/money/manage-balance', function (){
+Route::get('/money/manage-balance', function () {
     return view('money.manage-balance.index');
 });
 
-Route::get('/money/history', function (){
+Route::get('/money/history', function () {
     return view('money.history.index');
 });
 
+Route::get('/index2', function () {
+    return view('index2');
+});
 
 
 
@@ -132,10 +135,10 @@ Route::get('/report/winlossreport', function () {
     return view('report.winlossreport.index');
 });
 
-Route::get('/report/jackpot' , function (){
+Route::get('/report/jackpot', function () {
     return view('report.jackpot.index');
 });
 
-Route::get('/report/resultjackpot' , function (){
+Route::get('/report/resultjackpot', function () {
     return view('report.resultjackpot.index');
 });
