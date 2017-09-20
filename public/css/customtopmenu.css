@@ -1,3 +1,11 @@
+.main-header .sidebar-toggle {
+    float: left;
+    background-color: transparent;
+    background-image: none;
+    padding: 1px 3px !important;
+    font-family: fontAwesome;
+    color: #fff;
+}
 .navbar-nav>li {
     line-height: 45px;
     border-left: 1px solid #E1E1E1;
