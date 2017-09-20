@@ -121,108 +121,107 @@
                         </h1>
                     </div>
 
-                <div class="min-width-800 max-width-1100">
-                    <div class="alert alert-info">
-                        อ่านคำอธิบายระบบใหม่ได้ที่ <a href="#" target="_blank">คู่มือการใช้งาน</a><br>
-                        <b>สถานะ:</b> <span class="bg-warning">เหลือง=ระงับ</span>, <span class="bg-danger">แดง=ล็อค</span>
+                    <div class="min-width-800 max-width-1100">
+                        <div class="alert alert-info">
+                            อ่านคำอธิบายระบบใหม่ได้ที่ <a href="#" target="_blank">คู่มือการใช้งาน</a><br>
+                            <b>สถานะ:</b> <span class="bg-warning">เหลือง=ระงับ</span>, <span class="bg-danger">แดง=ล็อค</span>
+                        </div>
                     </div>
-                </div>
 
-                <label class="inline">
-                    <input type="checkbox" id="input-checkbox-name" data-target="page">
-                    <span class="lbl"> แสดงชื่อ</span>
-                </label>
+                    <label class="inline">
+                        <input type="checkbox" id="input-checkbox-name" data-target="page">
+                        <span class="lbl"> แสดงชื่อ</span>
+                    </label>
 
-                <div class="min-width-800 max-width-1100 clearfix">
-                    <div class="pull-left">
-                        <label>
-                            <input class="" type="checkbox" id="input-checkbox-detail">
-                            <span class="lbl"> ดูอัตราจ่าย - กลุ่มหวย</span>
-                        </label>
+                    <div class="min-width-800 max-width-1100 clearfix">
+                        <div class="pull-left">
+                            <label>
+                                <input class="" type="checkbox" id="input-checkbox-detail">
+                                <span class="lbl"> ดูอัตราจ่าย - กลุ่มหวย</span>
+                            </label>
 
-                        <table class="table table-nonfluid table-bordered table-border-dark table-nowrap jquery-hide span-detail">
-                            <thead class="thin-border-bottom">
-                                <tr>
-                                    <th></th>
-                                    <th>รัฐบาล</th>
-                                    <th>หวย ธกส.</th>
-                                    <th>หวยหุ้นไทย</th>
-                                    <th>หวยลาว</th>
-                                    <th>หวยมาเลย์ (Magnum4D)</th>
-                                    <th>หวยหุ้นต่างประเทศ</th>
-                                    <th>หวยเวียดนาม</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="ac am">
-                                    <td class="dark">หวยรัฐ 70</td>
-                                    <td class="ac am ">
-                                        <i class="fa fa-check green"></i>
-                                    </td>
-                                    <td class="ac am "></td>
-                                    <td class="ac am "></td>
-                                    <td class="ac am "></td>
-                                    <td class="ac am "></td>
-                                    <td class="ac am "></td>
-                                    <td class="ac am "></td>
-                                </tr>
-                                <tr class="ac am">
-                                    <td class="dark">หวย 70</td>
-                                    <td class="ac am "></td>
-                                    <td class="ac am ">
-                                        <i class="fa fa-check green"></i>
-                                    </td>
-                                    <td class="ac am ">
-                                        <i class="fa fa-check green"></i>
-                                    </td>
-                                    <td class="ac am ">
-                                        <i class="fa fa-check green"></i>
-                                    </td>
-                                    <td class="ac am ">
-                                        <i class="fa fa-check green"></i>
-                                    </td>
-                                    <td class="ac am ">
-                                        <i class="fa fa-check green"></i>
-                                    </td>
-                                    <td class="ac am ">
-                                        <i class="fa fa-check green"></i>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+                            <table class="table table-nonfluid table-bordered table-border-dark table-nowrap jquery-hide span-detail">
+                                <thead class="thin-border-bottom">
+                                    <tr>
+                                        <th></th>
+                                        <th>รัฐบาล</th>
+                                        <th>หวย ธกส.</th>
+                                        <th>หวยหุ้นไทย</th>
+                                        <th>หวยลาว</th>
+                                        <th>หวยมาเลย์ (Magnum4D)</th>
+                                        <th>หวยหุ้นต่างประเทศ</th>
+                                        <th>หวยเวียดนาม</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="ac am">
+                                        <td class="dark">หวยรัฐ 70</td>
+                                        <td class="ac am ">
+                                            <i class="fa fa-check green"></i>
+                                        </td>
+                                        <td class="ac am "></td>
+                                        <td class="ac am "></td>
+                                        <td class="ac am "></td>
+                                        <td class="ac am "></td>
+                                        <td class="ac am "></td>
+                                        <td class="ac am "></td>
+                                    </tr>
+                                    <tr class="ac am">
+                                        <td class="dark">หวย 70</td>
+                                        <td class="ac am "></td>
+                                        <td class="ac am ">
+                                            <i class="fa fa-check green"></i>
+                                        </td>
+                                        <td class="ac am ">
+                                            <i class="fa fa-check green"></i>
+                                        </td>
+                                        <td class="ac am ">
+                                            <i class="fa fa-check green"></i>
+                                        </td>
+                                        <td class="ac am ">
+                                            <i class="fa fa-check green"></i>
+                                        </td>
+                                        <td class="ac am ">
+                                            <i class="fa fa-check green"></i>
+                                        </td>
+                                        <td class="ac am ">
+                                            <i class="fa fa-check green"></i>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                </div>
 
-                <div class="min-width-800 max-width-1100">
-                    <ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
-                        <li class="js-change-tab active" data-tab1="gtg_status"><a href="#gtg_status" data-toggle="tab">เปิด/ปิด กลุ่มหวย</a></li>
-                        <li class="js-change-tab " data-tab1="btg_visibility"><a href="#btg_visibility" data-toggle="tab">เปิด/ปิด ชนิดการแทง</a></li>
-                        <li class="js-change-tab " data-tab1="payout_status"><a href="#payout_status" data-toggle="tab">เปิด/ปิด อัตราจ่าย</a></li>
+                    <div class="min-width-800 max-width-1100">
+                        <ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
+                            <li class="js-change-tab active" data-tab1="gtg_status"><a href="#gtg_status" data-toggle="tab">เปิด/ปิด กลุ่มหวย</a></li>
+                            <li class="js-change-tab " data-tab1="btg_visibility"><a href="#btg_visibility" data-toggle="tab">เปิด/ปิด ชนิดการแทง</a></li>
+                            <li class="js-change-tab " data-tab1="payout_status"><a href="#payout_status" data-toggle="tab">เปิด/ปิด อัตราจ่าย</a></li>
 
-                        <li class="pull-right right-padding-10 users__edit-options">
-                    
-                    <span class="bolder">แสดง</span>
-                    <select id="users-edit-filter">
-                        <option value="4">ทั้งหมด</option>
-                        <option value="1" selected="selected">ปกติ</option>
-                        <option value="2">ระงับ</option>
-                        <option value="3">ล็อค</option>
-                    </select>
+                            <li class="pull-right right-padding-10 users__edit-options">
+                        
+                        <span class="bolder">แสดง</span>
+                        <select id="users-edit-filter">
+                            <option value="4">ทั้งหมด</option>
+                            <option value="1" selected="selected">ปกติ</option>
+                            <option value="2">ระงับ</option>
+                            <option value="3">ล็อค</option>
+                        </select>
 
-                    <span class="bolder">เรียง</span>
-                    <select id="users-edit-order">
-                        <option value="#" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
-                        <option value="#">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-                        <option value="#">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-                        <option value="#">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
-                    </select>
-                    </li>
-                    </ul>
-                </div>
+                        <span class="bolder">เรียง</span>
+                        <select id="users-edit-order">
+                            <option value="#" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+                            <option value="#">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+                            <option value="#">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+                            <option value="#">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+                        </select>
+                        </li>
+                        </ul>
+                    </div>
 
-        <div class="tab-content no-border no-margin-top no-padding width-800 max-width-1100">
-                <!-- Tab: Game Type Group Status -->
-                <div class="tab-pane active" id="gtg_status">
+                <div class="tab-content no-border no-margin-top no-padding width-800 max-width-1100">             
+                    <div class="tab-pane active" id="gtg_status">
                         <ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
                             <li class="active">
                                 <a data-toggle="tab" href="#gtg_status_1" class="nowrap">รัฐบาล</a>
@@ -247,136 +246,135 @@
                             </li>
                         </ul>
 
-                    <div class="tab-content no-padding">
-                        <div class="tab-pane in active" id="gtg_status_1">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                                <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="99" class="deep-blue caption">
-                                            เปิด/ปิด กลุ่มหวย รัฐบาล
-                                            </th>
-                                        </tr>
+                        <div class="tab-content no-padding">
+                            <div class="tab-pane in active" id="gtg_status_1">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="99" class="deep-blue caption">
+                                                เปิด/ปิด กลุ่มหวย รัฐบาล
+                                                </th>
+                                            </tr>
 
-                                        <tr>
-                                            <th colspan="3" class="vm">
-                                            <input name="action" type="hidden" value="gtg_active">
-                                            <input name="game_type_group_id" type="hidden" value="1">
-                                            <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
-                                            <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
-                                            </th>
+                                            <tr>
+                                                <th colspan="3" class="vm">
+                                                <input name="action" type="hidden" value="gtg_active">
+                                                <input name="game_type_group_id" type="hidden" value="1">
+                                                <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                                                <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
+                                                </th>
 
-                                            <th><input class="check-all" name="" type="checkbox" value="0"></th>
-                                            <th> การใช้งาน<br>
-                                                <select name="active">
-                                                    <option value="-1" selected="selected"></option>
-                                                    <option value="1">เปิด</option><option value="0">ปิด</option>
-                                                </select><br>
-                                                &nbsp;
-                                            </th>
-                                        </tr>
-                                    </thead>
+                                                <th><input class="check-all" name="" type="checkbox" value="0"></th>
+                                                <th> การใช้งาน<br>
+                                                    <select name="active">
+                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="1">เปิด</option><option value="0">ปิด</option>
+                                                    </select><br>
+                                                    &nbsp;
+                                                </th>
+                                            </tr>
+                                        </thead>
 
-                                    <tbody>
-                                        <tr data-id="9474" data-status="1" class=" ">
-                                            <td class="id">1</td>
+                                        <tbody>
+                                            <tr data-id="9474" data-status="1" class=" ">
+                                                <td class="id">1</td>
 
-                                            <td>3M3K001 <span class="span-name jquery-hide">()</span> </td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                            <td class="ac table-gtg1-row-9474-col-active">เปิด</td>
-                                        </tr>
+                                                <td>3M3K001 <span class="span-name jquery-hide">()</span> </td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                                <td class="ac table-gtg1-row-9474-col-active">เปิด</td>
+                                            </tr>
+                                                <tr data-id="10230" data-status="1" class=" ">
+                                                <td class="id">2</td>
+                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+                                                <td class="ac table-gtg1-row-10230-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11239" data-status="1" class=" ">
+                                                <td class="id">3</td>
+                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+                                                <td class="ac table-gtg1-row-11239-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11240" data-status="1" class=" ">
+                                                <td class="id">4</td>
+                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+                                                <td class="ac table-gtg1-row-11240-col-active">เปิด</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane " id="gtg_status_16">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="99" class="deep-blue caption">
+                                                เปิด/ปิด กลุ่มหวย หวย ธกส.
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="3" class="vm">
+                                                <input name="action" type="hidden" value="gtg_active">
+                                                <input name="game_type_group_id" type="hidden" value="16">
+                                                <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                                                <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
+                                                </th>
+                                                <th><input class="check-all" name="" type="checkbox" value="0"></th>
+                                                <th>การใช้งาน<br>
+                                                    <select name="active">
+                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="1">เปิด</option>
+                                                        <option value="0">ปิด</option>
+                                                    </select><br>
+                                                    &nbsp;
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-id="9474" data-status="1" class=" ">
+                                                <td class="id">1</td>
+                                                <td> 3M3K001 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                            </tr>
                                             <tr data-id="10230" data-status="1" class=" ">
-                                            <td class="id">2</td>
-                                            <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                            <td class="ac table-gtg1-row-10230-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="11239" data-status="1" class=" ">
-                                            <td class="id">3</td>
-                                            <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                            <td class="ac table-gtg1-row-11239-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="11240" data-status="1" class=" ">
-                                            <td class="id">4</td>
-                                            <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                            <td class="ac table-gtg1-row-11240-col-active">เปิด</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+                                                <td class="id">2</td>
+                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+                                                <td class="ac table-gtg16-row-10230-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11239" data-status="1" class=" ">
+                                                <td class="id">3</td>
+                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+                                                <td class="ac table-gtg16-row-11239-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11240" data-status="1" class=" ">
+                                                <td class="id">4</td>
+                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+                                                <td class="ac table-gtg16-row-11240-col-active">เปิด</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
 
-                        </div>
-
-                        <div class="tab-pane " id="gtg_status_16">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                            <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
-                                <thead>
-                                    <tr>
-                                        <th colspan="99" class="deep-blue caption">
-                                        เปิด/ปิด กลุ่มหวย หวย ธกส.
-                                        </th>
-                                    </tr>
-                                    <tr>
-                                        <th colspan="3" class="vm">
-                                        <input name="action" type="hidden" value="gtg_active">
-                                        <input name="game_type_group_id" type="hidden" value="16">
-                                        <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
-                                        <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
-                                        </th>
-                                        <th><input class="check-all" name="" type="checkbox" value="0"></th>
-                                        <th>การใช้งาน<br>
-                                            <select name="active">
-                                                <option value="-1" selected="selected"></option>
-                                                <option value="1">เปิด</option>
-                                                <option value="0">ปิด</option>
-                                            </select><br>
-                                            &nbsp;
-                                        </th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr data-id="9474" data-status="1" class=" ">
-                                        <td class="id">1</td>
-                                        <td> 3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                        <td class="type">เมมเบอร์</td>
-                                        <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                        <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
-                                    </tr>
-                                    <tr data-id="10230" data-status="1" class=" ">
-                                        <td class="id">2</td>
-                                        <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                        <td class="type">เมมเบอร์</td>
-                                        <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                        <td class="ac table-gtg16-row-10230-col-active">เปิด</td>
-                                    </tr>
-                                    <tr data-id="11239" data-status="1" class=" ">
-                                        <td class="id">3</td>
-                                        <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                        <td class="type">เมมเบอร์</td>
-                                        <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                        <td class="ac table-gtg16-row-11239-col-active">เปิด</td>
-                                    </tr>
-                                    <tr data-id="11240" data-status="1" class=" ">
-                                        <td class="id">4</td>
-                                        <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                        <td class="type">เมมเบอร์</td>
-                                        <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                        <td class="ac table-gtg16-row-11240-col-active">เปิด</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            </form>
-                        </div>
-
-                        <div class="tab-pane " id="gtg_status_2">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                                <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                            <div class="tab-pane " id="gtg_status_2">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
                                                 <th colspan="99" class="deep-blue caption">
@@ -431,14 +429,13 @@
                                                 <td class="ac table-gtg2-row-11240-col-active">เปิด</td>
                                             </tr>
                                         </tbody>
-                                </table>
-                            </form>
+                                    </table>
+                                </form>
+                            </div>
 
-                        </div>
-
-                        <div class="tab-pane " id="gtg_status_6">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                                <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                            <div class="tab-pane " id="gtg_status_6">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
                                                 <th colspan="99" class="deep-blue caption">
@@ -494,272 +491,269 @@
                                                 <td class="ac table-gtg6-row-11240-col-active">เปิด</td>
                                             </tr>
                                         </tbody>
-                                </table>
-                            </form>
-                        </div>
+                                    </table>
+                                </form>
+                            </div>
 
-                        <div class="tab-pane " id="gtg_status_5">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                                <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="99" class="deep-blue caption">
-                                            เปิด/ปิด กลุ่มหวย หวยมาเลย์ (Magnum4D)
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="3" class="vm">
-                                            <input name="action" type="hidden" value="gtg_active">
-                                            <input name="game_type_group_id" type="hidden" value="5">
-                                            <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
-                                            <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
-                                            </th>
-                                            <th><input class="check-all" name="" type="checkbox" value="0"></th>
-                                            <th>การใช้งาน<br>
-                                                <select name="active">
-                                                    <option value="-1" selected="selected"></option>
-                                                    <option value="1">เปิด</option><option value="0">ปิด</option>
-                                                </select><br>
-                                                &nbsp;
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-id="9474" data-status="1" class=" ">
-                                            <td class="id">1</td>
-                                            <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                            <td class="ac table-gtg5-row-9474-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="10230" data-status="1" class=" ">
-                                            <td class="id">2</td>
-                                            <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                            <td class="ac table-gtg5-row-10230-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="11239" data-status="1" class=" ">
-                                            <td class="id">3</td>
-                                            <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                            <td class="ac table-gtg5-row-11239-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="11240" data-status="1" class=" ">
-                                            <td class="id">4</td>
-                                            <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                            <td class="ac table-gtg5-row-11240-col-active">เปิด</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </div>
-
-                        <div class="tab-pane " id="gtg_status_3">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                                <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="99" class="deep-blue caption">
-                                            เปิด/ปิด กลุ่มหวย หวยหุ้นต่างประเทศ
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="3" class="vm">
+                            <div class="tab-pane " id="gtg_status_5">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="99" class="deep-blue caption">
+                                                เปิด/ปิด กลุ่มหวย หวยมาเลย์ (Magnum4D)
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="3" class="vm">
                                                 <input name="action" type="hidden" value="gtg_active">
-                                                <input name="game_type_group_id" type="hidden" value="3">
+                                                <input name="game_type_group_id" type="hidden" value="5">
                                                 <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
                                                 <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
                                                 </th>
-                                            <th><input class="check-all" name="" type="checkbox" value="0"></th>
-                                            <th>การใช้งาน<br>
-                                                <select name="active">
-                                                    <option value="-1" selected="selected"></option>
-                                                    <option value="1">เปิด</option>
-                                                    <option value="0">ปิด</option>
-                                                </select><br>
-                                                &nbsp;
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-id="9474" data-status="1" class=" ">
-                                            <td class="id">1</td>
-                                            <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                            <td class="ac table-gtg3-row-9474-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="10230" data-status="1" class=" ">
-                                            <td class="id">2</td>
-                                            <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                            <td class="ac table-gtg3-row-10230-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="11239" data-status="1" class=" ">
-                                            <td class="id">3</td>
-                                            <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                            <td class="ac table-gtg3-row-11239-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="11240" data-status="1" class=" ">
-                                            <td class="id">4</td>
-                                            <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                            <td class="ac table-gtg3-row-11240-col-active">เปิด</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </div>
+                                                <th><input class="check-all" name="" type="checkbox" value="0"></th>
+                                                <th>การใช้งาน<br>
+                                                    <select name="active">
+                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="1">เปิด</option><option value="0">ปิด</option>
+                                                    </select><br>
+                                                    &nbsp;
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-id="9474" data-status="1" class=" ">
+                                                <td class="id">1</td>
+                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                                <td class="ac table-gtg5-row-9474-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="10230" data-status="1" class=" ">
+                                                <td class="id">2</td>
+                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+                                                <td class="ac table-gtg5-row-10230-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11239" data-status="1" class=" ">
+                                                <td class="id">3</td>
+                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+                                                <td class="ac table-gtg5-row-11239-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11240" data-status="1" class=" ">
+                                                <td class="id">4</td>
+                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+                                                <td class="ac table-gtg5-row-11240-col-active">เปิด</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
 
-                        <div class="tab-pane " id="gtg_status_15">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                                <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="99" class="deep-blue caption">
-                                            เปิด/ปิด กลุ่มหวย หวยเวียดนาม
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="3" class="vm">
-                                                <input name="action" type="hidden" value="gtg_active">
-                                                <input name="game_type_group_id" type="hidden" value="15">
+                            <div class="tab-pane " id="gtg_status_3">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="99" class="deep-blue caption">
+                                                เปิด/ปิด กลุ่มหวย หวยหุ้นต่างประเทศ
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="3" class="vm">
+                                                    <input name="action" type="hidden" value="gtg_active">
+                                                    <input name="game_type_group_id" type="hidden" value="3">
+                                                    <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                                                    <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
+                                                    </th>
+                                                <th><input class="check-all" name="" type="checkbox" value="0"></th>
+                                                <th>การใช้งาน<br>
+                                                    <select name="active">
+                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="1">เปิด</option>
+                                                        <option value="0">ปิด</option>
+                                                    </select><br>
+                                                    &nbsp;
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-id="9474" data-status="1" class=" ">
+                                                <td class="id">1</td>
+                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                                <td class="ac table-gtg3-row-9474-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="10230" data-status="1" class=" ">
+                                                <td class="id">2</td>
+                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+                                                <td class="ac table-gtg3-row-10230-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11239" data-status="1" class=" ">
+                                                <td class="id">3</td>
+                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+                                                <td class="ac table-gtg3-row-11239-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11240" data-status="1" class=" ">
+                                                <td class="id">4</td>
+                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+                                                <td class="ac table-gtg3-row-11240-col-active">เปิด</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane " id="gtg_status_15">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="99" class="deep-blue caption">
+                                                เปิด/ปิด กลุ่มหวย หวยเวียดนาม
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="3" class="vm">
+                                                    <input name="action" type="hidden" value="gtg_active">
+                                                    <input name="game_type_group_id" type="hidden" value="15">
+                                                    <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                                                    <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
+                                                </th>
+                                                <th><input class="check-all" name="" type="checkbox" value="0"></th>
+                                                <th>การใช้งาน<br>
+                                                    <select name="active">
+                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="1">เปิด</option><option value="0">ปิด</option>
+                                                    </select><br>
+                                                    &nbsp;
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-id="9474" data-status="1" class=" ">
+                                                <td class="id">1</td>
+                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                                <td class="ac table-gtg15-row-9474-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="10230" data-status="1" class=" ">
+                                                <td class="id">2</td>
+                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+                                                <td class="ac table-gtg15-row-10230-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11239" data-status="1" class=" ">
+                                                <td class="id">3</td>
+                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+                                                <td class="ac table-gtg15-row-11239-col-active">เปิด</td>
+                                            </tr>
+                                            <tr data-id="11240" data-status="1" class=" ">
+                                                <td class="id">4</td>
+                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+                                                <td class="ac table-gtg15-row-11240-col-active">เปิด</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
+                        </div>
+                    </div>   
+
+                    <div class="tab-pane " id="btg_visibility">
+                        <div class="tab-content no-padding">
+                            <div class="tab-pane in active" id="btg_visibility">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="99" class="deep-blue caption">
+                                                    เปิด/ปิด ชนิดการแทง
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th colspan="3" class="vm">
+                                                <input name="action" type="hidden" value="btg_visibility">
                                                 <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
                                                 <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
-                                            </th>
-                                            <th><input class="check-all" name="" type="checkbox" value="0"></th>
-                                            <th>การใช้งาน<br>
-                                                <select name="active">
-                                                    <option value="-1" selected="selected"></option>
-                                                    <option value="1">เปิด</option><option value="0">ปิด</option>
-                                                </select><br>
-                                                &nbsp;
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-id="9474" data-status="1" class=" ">
-                                            <td class="id">1</td>
-                                            <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                            <td class="ac table-gtg15-row-9474-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="10230" data-status="1" class=" ">
-                                            <td class="id">2</td>
-                                            <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                            <td class="ac table-gtg15-row-10230-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="11239" data-status="1" class=" ">
-                                            <td class="id">3</td>
-                                            <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                            <td class="ac table-gtg15-row-11239-col-active">เปิด</td>
-                                        </tr>
-                                        <tr data-id="11240" data-status="1" class=" ">
-                                            <td class="id">4</td>
-                                            <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                            <td class="ac table-gtg15-row-11240-col-active">เปิด</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
+                                                </th>
+                                                <th><input class="check-all" name="" type="checkbox" value="0"></th>
+                                                <th>3 ตัวท้าย<br>
+                                                    <select class="vh" name="btg_visible_1">
+                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="1">เปิด</option>
+                                                        <option value="0">ปิด</option>
+                                                    </select>
+                                                    <br>
+                                                    &nbsp;
+                                                </th>                                                                                                                                                                                                                                                                                           </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-id="9474" data-status="1" class=" ">
+                                                <td class="id">1</td>
+                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                                <td class="ac table-btg_visibility-row-9474-col-btg_visible_1">เปิด</td>
+                                            </tr>                                                                                                                                                                                                                                                                                                                          </tr>
+                                            <tr data-id="10230" data-status="1" class=" ">
+                                                <td class="id">2</td>
+                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+                                                <td class="ac table-btg_visibility-row-10230-col-btg_visible_1">เปิด</td>
+                                            </tr>                                                                                                                                                                                                                                                                       </tr>
+                                            <tr data-id="11239" data-status="1" class=" ">
+                                                <td class="id">3</td>
+                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+                                                <td class="ac table-btg_visibility-row-11239-col-btg_visible_1">เปิด</td>  
+                                            </tr>                                                                                                                                                                                                                                                                  </tr>
+                                            <tr data-id="11240" data-status="1" class=" ">
+                                                <td class="id">4</td>
+                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+                                                <td class="ac table-btg_visibility-row-11240-col-btg_visible_1">เปิด</td>
+                                            </tr>                                                                                                                                                                                                                                                                                                 </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
                         </div>
                     </div>
-                </div>
-    
-    <!-- Tab: Bet Type Group Visibility -->
-                <div class="tab-pane " id="btg_visibility">
-                    <div class="tab-content no-padding">
-                        <div class="tab-pane in active" id="btg_visibility">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                                <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="99" class="deep-blue caption">
-                                                เปิด/ปิด ชนิดการแทง
-                                            </th>
-                                        </tr>
-                                        <tr>
-                                            <th colspan="3" class="vm">
-                                            <input name="action" type="hidden" value="btg_visibility">
-                                            <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
-                                            <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
-                                            </th>
-                                            <th><input class="check-all" name="" type="checkbox" value="0"></th>
-                                            <th>3 ตัวท้าย<br>
-                                                <select class="vh" name="btg_visible_1">
-                                                    <option value="-1" selected="selected"></option>
-                                                    <option value="1">เปิด</option>
-                                                    <option value="0">ปิด</option>
-                                                </select>
-                                                <br>
-                                                &nbsp;
-                                            </th>                                                                                                                                                                                                                                                                                           </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-id="9474" data-status="1" class=" ">
-                                            <td class="id">1</td>
-                                            <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                            <td class="ac table-btg_visibility-row-9474-col-btg_visible_1">เปิด</td>
-                                        </tr>                                                                                                                                                                                                                                                                                                                          </tr>
-                                        <tr data-id="10230" data-status="1" class=" ">
-                                            <td class="id">2</td>
-                                            <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                            <td class="ac table-btg_visibility-row-10230-col-btg_visible_1">เปิด</td>
-                                        </tr>                                                                                                                                                                                                                                                                       </tr>
-                                        <tr data-id="11239" data-status="1" class=" ">
-                                            <td class="id">3</td>
-                                            <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                            <td class="ac table-btg_visibility-row-11239-col-btg_visible_1">เปิด</td>  
-                                        </tr>                                                                                                                                                                                                                                                                  </tr>
-                                        <tr data-id="11240" data-status="1" class=" ">
-                                            <td class="id">4</td>
-                                            <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                            <td class="ac table-btg_visibility-row-11240-col-btg_visible_1">เปิด</td>
-                                        </tr>                                                                                                                                                                                                                                                                                                 </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-    
-    <!-- Tab: Payout Status -->
-                <div class="tab-pane " id="payout_status">
-                    <ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
-                        <li class="active">
-                            <a data-toggle="tab" href="#payout_status_5" class="nowrap">หวยรัฐ 70</a>
-                        </li>
-                        <li class="">
-                            <a data-toggle="tab" href="#payout_status_11" class="nowrap">หวย 70</a>
-                        </li>
-                    </ul>
 
-                    <div class="tab-content no-padding">
-                        <div class="tab-pane in active" id="payout_status_5">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                    <div class="tab-pane " id="payout_status">
+                        <ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
+                            <li class="active">
+                                <a data-toggle="tab" href="#payout_status_5" class="nowrap">หวยรัฐ 70</a>
+                            </li>
+                            <li class="">
+                                <a data-toggle="tab" href="#payout_status_11" class="nowrap">หวย 70</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content no-padding">
+                            <div class="tab-pane in active" id="payout_status_5">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -829,91 +823,89 @@
                                                 <td class="ac table-p5-row-11240-col-btg_active_1">เปิด</td> 
                                             </tr>                                                                                                                                                                                                                                                                                                                                               </tr>
                                         </tbody>
-                                </table>
-                            </form>
+                                    </table>
+                                </form>
+                            </div>
 
-                        </div>
+                            <div class="tab-pane " id="payout_status_11">
+                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                    <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
+                                        <thead>
+                                            <tr>
+                                                <th colspan="99" class="deep-blue caption">
+                                                เปิด/ปิด อัตราจ่าย หวย 70
+                                                </th>
+                                            </tr>
 
-                        <div class="tab-pane " id="payout_status_11">
-                            <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
-                                <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
-                                    <thead>
-                                        <tr>
-                                            <th colspan="99" class="deep-blue caption">
-                                            เปิด/ปิด อัตราจ่าย หวย 70
-                                            </th>
-                                        </tr>
+                                            <tr>
+                                                <th colspan="3" class="vm">
+                                                <input name="action" type="hidden" value="payout_active">
+                                                <input name="payout_id" type="hidden" value="11">
+                                                <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                                                <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
+                                                </th>
 
-                                        <tr>
-                                            <th colspan="3" class="vm">
-                                            <input name="action" type="hidden" value="payout_active">
-                                            <input name="payout_id" type="hidden" value="11">
-                                            <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
-                                            <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
-                                            </th>
-
-                                            <th><input class="check-all" name="" type="checkbox" value="0"></th>
-                                            <th>การใช้งาน<br>
-                                                <select name="active">
-                                                    <option value="-1" selected="selected"></option>
-                                                    <option value="1">เปิด</option>
-                                                    <option value="0">ปิด</option>
-                                                </select><br> &nbsp;
-                                            </th>
-                                            <th>&nbsp;</th>
-                                            <th>3 ตัวท้าย<br>
-                                                <select name="btg_active_1">
-                                                    <option value="-1" selected="selected"></option>
-                                                    <option value="1">เปิด</option>
-                                                    <option value="0">ปิด</option>
-                                                </select><br>
-                                                &nbsp;
-                                            </th>                                                                                                                                                                                                                                                                                                                                               </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr data-id="9474" class=" ">
-                                            <td class="id">1</td>
-                                            <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                            <td class="ac table-p11-row-9474-col-active">เปิด</td>
-                                            <td></td>
-                                            <td class="ac table-p11-row-9474-col-btg_active_1">เปิด</td>
-                                        </tr>                                                                                                                                                                                                                                                                                                                                                             </tr>
-                                        <tr data-id="10230" class=" ">
-                                            <td class="id">2</td>
-                                            <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                            <td class="type">เมมเบอร์</td><td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                            <td class="ac table-p11-row-10230-col-active">เปิด</td>
-                                            <td></td>
-                                            <td class="ac table-p11-row-10230-col-btg_active_1">เปิด</td>
-                                        </tr>  
-                                        <tr data-id="11239" class=" ">
-                                            <td class="id">3</td>
-                                            <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                            <td class="ac table-p11-row-11239-col-active">เปิด</td>
-                                            <td></td>
-                                            <td class="ac table-p11-row-11239-col-btg_active_1">เปิด</td> 
-                                        </tr>                                                                                                                                                                                                                                                                                                                                                      </tr>
-                                        <tr data-id="11240" class=" ">
-                                            <td class="id">4</td>
-                                            <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                            <td class="type">เมมเบอร์</td>
-                                            <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                            <td class="ac table-p11-row-11240-col-active">เปิด</td>
-                                            <td></td>
-                                            <td class="ac table-p11-row-11240-col-btg_active_1">เปิด</td> 
-                                        </tr>                                                                                                                                                                                                                                                                                                                                                        </tr>
-                                    </tbody>
-                                </table>
-                            </form>
-
+                                                <th><input class="check-all" name="" type="checkbox" value="0"></th>
+                                                <th>การใช้งาน<br>
+                                                    <select name="active">
+                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="1">เปิด</option>
+                                                        <option value="0">ปิด</option>
+                                                    </select><br> &nbsp;
+                                                </th>
+                                                <th>&nbsp;</th>
+                                                <th>3 ตัวท้าย<br>
+                                                    <select name="btg_active_1">
+                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="1">เปิด</option>
+                                                        <option value="0">ปิด</option>
+                                                    </select><br>
+                                                    &nbsp;
+                                                </th>                                                                                                                                                                                                                                                                                                                                               </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr data-id="9474" class=" ">
+                                                <td class="id">1</td>
+                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                                <td class="ac table-p11-row-9474-col-active">เปิด</td>
+                                                <td></td>
+                                                <td class="ac table-p11-row-9474-col-btg_active_1">เปิด</td>
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                             </tr>
+                                            <tr data-id="10230" class=" ">
+                                                <td class="id">2</td>
+                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
+                                                <td class="type">เมมเบอร์</td><td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
+                                                <td class="ac table-p11-row-10230-col-active">เปิด</td>
+                                                <td></td>
+                                                <td class="ac table-p11-row-10230-col-btg_active_1">เปิด</td>
+                                            </tr>  
+                                            <tr data-id="11239" class=" ">
+                                                <td class="id">3</td>
+                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
+                                                <td class="ac table-p11-row-11239-col-active">เปิด</td>
+                                                <td></td>
+                                                <td class="ac table-p11-row-11239-col-btg_active_1">เปิด</td> 
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                      </tr>
+                                            <tr data-id="11240" class=" ">
+                                                <td class="id">4</td>
+                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
+                                                <td class="type">เมมเบอร์</td>
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
+                                                <td class="ac table-p11-row-11240-col-active">เปิด</td>
+                                                <td></td>
+                                                <td class="ac table-p11-row-11240-col-btg_active_1">เปิด</td> 
+                                            </tr>                                                                                                                                                                                                                                                                                                                                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </form>
+                            </div>
                         </div>
                     </div>
                 </div>
-        </div>
                 <script>
                 $(document).ready(function() {
                     $('#content > .tab-content > .tab-pane').each(function (key, val) {
