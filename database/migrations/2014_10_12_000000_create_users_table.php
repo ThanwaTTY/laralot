@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('tel');
             $table->string('status');
-            $table->decimal('win_lose_tatal');
+            $table->decimal('win_lose_total');
             $table->dateTime('login_new');
             $table->string('ip');
             $table->rememberToken();
