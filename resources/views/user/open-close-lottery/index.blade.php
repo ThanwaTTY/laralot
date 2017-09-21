@@ -258,7 +258,7 @@
                                             </tr>
 
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                 <input name="action" type="hidden" value="gtg_active">
                                                 <input name="game_type_group_id" type="hidden" value="1">
                                                 <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -321,7 +321,7 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                 <input name="action" type="hidden" value="gtg_active">
                                                 <input name="game_type_group_id" type="hidden" value="16">
                                                 <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -382,7 +382,7 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                     <input name="action" type="hidden" value="gtg_active">
                                                     <input name="game_type_group_id" type="hidden" value="2">
                                                     <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -443,7 +443,7 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                     <input name="action" type="hidden" value="gtg_active">
                                                     <input name="game_type_group_id" type="hidden" value="6">
                                                     <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -505,7 +505,7 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                 <input name="action" type="hidden" value="gtg_active">
                                                 <input name="game_type_group_id" type="hidden" value="5">
                                                 <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -565,7 +565,7 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                     <input name="action" type="hidden" value="gtg_active">
                                                     <input name="game_type_group_id" type="hidden" value="3">
                                                     <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -626,7 +626,7 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                     <input name="action" type="hidden" value="gtg_active">
                                                     <input name="game_type_group_id" type="hidden" value="15">
                                                     <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -690,7 +690,7 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                 <input name="action" type="hidden" value="btg_visibility">
                                                 <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
                                                 <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
@@ -762,7 +762,7 @@
                                                 </th>
                                             </tr>
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                     <input name="action" type="hidden" value="payout_active">
                                                     <input name="payout_id" type="hidden" value="5">
                                                     <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -838,7 +838,7 @@
                                             </tr>
 
                                             <tr>
-                                                <th colspan="3" class="vm">
+                                                <th colspan="3" class="vm text-center">
                                                 <input name="action" type="hidden" value="payout_active">
                                                 <input name="payout_id" type="hidden" value="11">
                                                 <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>

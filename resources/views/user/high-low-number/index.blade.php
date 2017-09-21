@@ -179,7 +179,7 @@
                         </tr>
 
                         <tr>
-                          <th colspan="3" class="vm">
+                          <th colspan="3" class="vm text-center">
                             <input name="action" type="hidden" value="min">
                             <input name="bet_type_group_id" type="hidden" value="1">
                             <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -307,7 +307,7 @@
                           </th>
                         </tr>
                         <tr>
-                          <th colspan="3" class="vm">
+                          <th colspan="3" class="vm text-center">
                             <input name="action" type="hidden" value="min">
                             <input name="bet_type_group_id" type="hidden" value="2">
                             <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -435,7 +435,7 @@
                           </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="min">
                               <input name="bet_type_group_id" type="hidden" value="3">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -563,7 +563,7 @@
                           </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="min">
                               <input name="bet_type_group_id" type="hidden" value="4">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -692,7 +692,7 @@
                           </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="min">
                               <input name="bet_type_group_id" type="hidden" value="5">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -800,7 +800,7 @@
                           </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="min">
                               <input name="bet_type_group_id" type="hidden" value="6">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -909,7 +909,7 @@
                         </tr>
 
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="min">
                               <input name="bet_type_group_id" type="hidden" value="7">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -1001,7 +1001,7 @@
                           </tr>
 
                           <tr>
-                              <th colspan="3" class="vm">
+                              <th colspan="3" class="vm text-center">
                                 <input name="action" type="hidden" value="max">
                                 <input name="bet_type_group_id" type="hidden" value="1">
                                 <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -1827,7 +1827,7 @@
                         </tr>
 
                         <tr>
-                          <th colspan="3" class="vm">
+                          <th colspan="3" class="vm text-center">
                             <input name="action" type="hidden" value="max_per_num">
                             <input name="bet_type_group_id" type="hidden" value="1">
                             <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -1836,207 +1836,115 @@
 
                           <th><input class="check-all" name="" type="checkbox" value="0"></th>
 
-                                                <th>
+                            <th>
                               3 ตัวบน<br>
                               <input class="form-control input-sm ac" name="max_per_num_1" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">10000</a>
                             </th>
-                                                <th>
+                            <th>
                               3 ตัวล่าง<br>
                               <input class="form-control input-sm ac" name="max_per_num_2" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">100000</a>
                             </th>
-                                                <th>
+                            <th>
                               3 ตัวโต๊ด<br>
                               <input class="form-control input-sm ac" name="max_per_num_3" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">30000</a>
                             </th>
-                                                <th>
+                            <th>
                               2 ตัวบน<br>
                               <input class="form-control input-sm ac" name="max_per_num_4" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">100000</a>
                             </th>
-                                                <th>
+                            <th>
                               2 ตัวล่าง<br>
                               <input class="form-control input-sm ac" name="max_per_num_5" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">100000</a>
                             </th>
-                                                <th>
+                            <th>
                               2 ตัวโต๊ด<br>
                               <input class="form-control input-sm ac" name="max_per_num_6" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">100000</a>
                             </th>
-                                                <th>
+                            <th>
                               วิ่งบน<br>
                               <input class="form-control input-sm ac" name="max_per_num_7" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">300000</a>
                             </th>
-                                                <th>
+                            <th>
                               วิ่งล่าง<br>
                               <input class="form-control input-sm ac" name="max_per_num_8" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">300000</a>
                             </th>
-                                            </tr>
+                        </tr>
                       </thead>
 
                       <tbody>
-                                                                <tr data-id="9474" data-status="1" class=" ">
+                        <tr data-id="9474" data-status="1" class=" ">
                             <td class="id">1</td>
-                            <td>
-                                                        3M3K001 <span class="span-name jquery-hide">()</span>
-                                                    </td>
-
-                            <td class="type" nowrap="">
-                              เมมเบอร์
-                                                    </td>
-
+                            <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
+                            <td class="type" nowrap="">เมมเบอร์</td>
                             <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-
-                                                    <td class="table-max_per_num-1-row-9474-col-max_per_num_1">
-                                10000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-9474-col-max_per_num_2">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-9474-col-max_per_num_3">
-                                30000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-9474-col-max_per_num_4">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-9474-col-max_per_num_5">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-9474-col-max_per_num_6">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-9474-col-max_per_num_7">
-                                300000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-9474-col-max_per_num_8">
-                                300000
-                              </td>
-                                                </tr>
-                                                                <tr data-id="10230" data-status="1" class=" ">
+                            <td class="table-max_per_num-1-row-9474-col-max_per_num_1">10000</td>
+                            <td class="table-max_per_num-1-row-9474-col-max_per_num_2">100000</td>
+                            <td class="table-max_per_num-1-row-9474-col-max_per_num_3">30000</td>
+                            <td class="table-max_per_num-1-row-9474-col-max_per_num_4">100000</td>
+                            <td class="table-max_per_num-1-row-9474-col-max_per_num_5">100000</td>
+                            <td class="table-max_per_num-1-row-9474-col-max_per_num_6">100000</td>
+                            <td class="table-max_per_num-1-row-9474-col-max_per_num_7">300000</td>
+                            <td class="table-max_per_num-1-row-9474-col-max_per_num_8">300000</td>
+                        </tr>
+                        <tr data-id="10230" data-status="1" class=" ">
                             <td class="id">2</td>
-                            <td>
-                                                        3M3K002 <span class="span-name jquery-hide">()</span>
-                                                    </td>
-
-                            <td class="type" nowrap="">
-                              เมมเบอร์
-                                                    </td>
-
+                            <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
+                            <td class="type" nowrap="">เมมเบอร์</td>
                             <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-
-                                                    <td class="table-max_per_num-1-row-10230-col-max_per_num_1">
-                                10000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-10230-col-max_per_num_2">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-10230-col-max_per_num_3">
-                                30000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-10230-col-max_per_num_4">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-10230-col-max_per_num_5">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-10230-col-max_per_num_6">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-10230-col-max_per_num_7">
-                                300000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-10230-col-max_per_num_8">
-                                300000
-                              </td>
-                                                </tr>
-                                                                <tr data-id="11239" data-status="1" class=" ">
+                            <td class="table-max_per_num-1-row-10230-col-max_per_num_1">10000</td>
+                            <td class="table-max_per_num-1-row-10230-col-max_per_num_2">100000</td>
+                            <td class="table-max_per_num-1-row-10230-col-max_per_num_3">30000</td>
+                            <td class="table-max_per_num-1-row-10230-col-max_per_num_4">100000</td>
+                            <td class="table-max_per_num-1-row-10230-col-max_per_num_5">100000</td>
+                            <td class="table-max_per_num-1-row-10230-col-max_per_num_6">100000</td>
+                            <td class="table-max_per_num-1-row-10230-col-max_per_num_7">300000</td>
+                            <td class="table-max_per_num-1-row-10230-col-max_per_num_8">300000</td>
+                        </tr>
+                        <tr data-id="11239" data-status="1" class=" ">
                             <td class="id">3</td>
-                            <td>
-                                                        3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span>
-                                                    </td>
-
-                            <td class="type" nowrap="">
-                              เมมเบอร์
-                                                    </td>
-
+                            <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
+                            <td class="type" nowrap="">เมมเบอร์</td>
                             <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-
-                                                    <td class="table-max_per_num-1-row-11239-col-max_per_num_1">
-                                10000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11239-col-max_per_num_2">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11239-col-max_per_num_3">
-                                30000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11239-col-max_per_num_4">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11239-col-max_per_num_5">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11239-col-max_per_num_6">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11239-col-max_per_num_7">
-                                300000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11239-col-max_per_num_8">
-                                300000
-                              </td>
-                                                </tr>
-                                                                <tr data-id="11240" data-status="1" class=" ">
+                            <td class="table-max_per_num-1-row-11239-col-max_per_num_1">10000</td>
+                            <td class="table-max_per_num-1-row-11239-col-max_per_num_2">100000</td>
+                            <td class="table-max_per_num-1-row-11239-col-max_per_num_3">30000</td>
+                            <td class="table-max_per_num-1-row-11239-col-max_per_num_4">100000</td>
+                            <td class="table-max_per_num-1-row-11239-col-max_per_num_5">100000</td>
+                            <td class="table-max_per_num-1-row-11239-col-max_per_num_6">100000</td>
+                            <td class="table-max_per_num-1-row-11239-col-max_per_num_7">300000</td>
+                            <td class="table-max_per_num-1-row-11239-col-max_per_num_8">300000</td>
+                        </tr>
+                        <tr data-id="11240" data-status="1" class=" ">
                             <td class="id">4</td>
-                            <td>
-                                                        3M3KTOR <span class="span-name jquery-hide">(thanwa)</span>
-                                                    </td>
-
-                            <td class="type" nowrap="">
-                              เมมเบอร์
-                                                    </td>
-
+                            <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
+                            <td class="type" nowrap="">เมมเบอร์</td>
                             <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-
-                                                    <td class="table-max_per_num-1-row-11240-col-max_per_num_1">
-                                10000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11240-col-max_per_num_2">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11240-col-max_per_num_3">
-                                30000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11240-col-max_per_num_4">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11240-col-max_per_num_5">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11240-col-max_per_num_6">
-                                100000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11240-col-max_per_num_7">
-                                300000
-                              </td>
-                                                    <td class="table-max_per_num-1-row-11240-col-max_per_num_8">
-                                300000
-                              </td>
-                                                </tr>
-                                        </tbody>
+                            <td class="table-max_per_num-1-row-11240-col-max_per_num_1">10000</td>
+                            <td class="table-max_per_num-1-row-11240-col-max_per_num_2">100000</td>
+                            <td class="table-max_per_num-1-row-11240-col-max_per_num_3">30000</td>
+                            <td class="table-max_per_num-1-row-11240-col-max_per_num_4">100000</td>
+                            <td class="table-max_per_num-1-row-11240-col-max_per_num_5">100000</td>
+                            <td class="table-max_per_num-1-row-11240-col-max_per_num_6">100000</td>
+                            <td class="table-max_per_num-1-row-11240-col-max_per_num_7">300000</td>
+                            <td class="table-max_per_num-1-row-11240-col-max_per_num_8">300000</td>
+                        </tr>
+                      </tbody>
                     </table>
                   </form>
 
@@ -2053,7 +1961,7 @@
                         </tr>
 
                         <tr>
-                          <th colspan="3" class="vm">
+                          <th colspan="3" class="vm text-center">
                             <input name="action" type="hidden" value="max_per_num">
                             <input name="bet_type_group_id" type="hidden" value="2">
                             <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -2183,7 +2091,7 @@
                           </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="max_per_num">
                               <input name="bet_type_group_id" type="hidden" value="3">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -2313,7 +2221,7 @@
                         </tr>
 
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="max_per_num">
                               <input name="bet_type_group_id" type="hidden" value="4">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -2442,7 +2350,7 @@
                           </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="max_per_num">
                               <input name="bet_type_group_id" type="hidden" value="5">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -2553,7 +2461,7 @@
                           </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="max_per_num">
                               <input name="bet_type_group_id" type="hidden" value="6">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
@@ -2663,7 +2571,7 @@
                           </th>
                         </tr>
                         <tr>
-                            <th colspan="3" class="vm">
+                            <th colspan="3" class="vm text-center">
                               <input name="action" type="hidden" value="max_per_num">
                               <input name="bet_type_group_id" type="hidden" value="7">
                               <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>

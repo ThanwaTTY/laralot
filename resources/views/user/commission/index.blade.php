@@ -192,7 +192,7 @@
                                 </th>
                             </tr>
                             <tr>
-                                <th colspan="3" class="vm">
+                                <th colspan="3" class="vm text-center">
                                     <input name="action" type="hidden" value="payout">
                                     <input name="payout_id" type="hidden" value="5">
                                     <input name="bet_type_group_id" type="hidden" value="1">
