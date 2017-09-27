@@ -1,6 +1,6 @@
   <aside class="main-sidebar">
     <section class="sidebar">
-      <div id="icon-menu" class="row">
+      {{-- <div id="icon-menu" class="row">
         <div class="sidebar-shortcuts-large bot-margin-3" id="sidebar-shortcuts-large">
               <button class="btn btn-success btn-ajax" data-href="https://agent.superlot999.com/items/overall">
                 <i class="ace-icon fa fa-table white"></i>
@@ -18,7 +18,50 @@
                 <i class="ace-icon fa fa-refresh"></i>
               </button>
         </div>
-      </div>
+      </div> --}}
+			<div class="sidebar-shortcuts" id="sidebar-shortcuts">
+				<div class="sidebar-shortcuts-large bot-margin-3" id="sidebar-shortcuts-large">
+					<button class="btn btn-success btn-ajax" data-href="https://agent.superlot999.com/items/overall">
+						<i class="ace-icon fa fa-table white"></i>
+					</button>
+
+					<button class="btn btn-info btn-ajax" data-href="https://agent.superlot999.com/users/edit1">
+						<i class="ace-icon fa fa-users"></i>
+					</button>
+
+					<button class="btn btn-warning btn-ajax" data-href="https://agent.superlot999.com/reports/by-member">
+						<i class="ace-icon fa fa-bar-chart-o"></i>
+					</button>
+
+					<button class="btn btn-danger btn-ajax" data-href="https://agent.superlot999.com/transfers">
+						<i class="ace-icon fa fa-refresh"></i>
+					</button>
+				</div>
+
+				<div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+					<span class="btn btn-success"></span>
+
+					<span class="btn btn-info"></span>
+
+					<span class="btn btn-warning"></span>
+
+					<span class="btn btn-danger"></span>
+				</div>
+
+				<!-- #account-summary -->
+				<div id="account-summary">
+					<ul>
+						<li><span class="prop">ชื่อ:</span><span id="">002@3M3K</span></li>
+						<li><span class="prop">ระดับ:</span><span id="">เอเย่นต์</span></li>
+						<li><span class="prop">เครดิต:</span><span id="max_credit">0</span></li>
+						<li><span class="prop">ใช้ไป:</span><span id="used_credit">0</span></li>
+						<li><span class="prop">เหลือ:</span><span id="credit_balance">0</span></li>
+						<li><span class="prop">ได้เสีย:</span><span id="cash_balance">0</span></li>
+						<li><span class="prop">สมาชิก:</span><span id="member_count">5</span></li>
+						<li><span class="prop">ออนไลน์:</span><span id="member_online">0</span></li>
+					</ul>
+				</div><!-- /#account-summary -->
+			</div>
 
       <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">

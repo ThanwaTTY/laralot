@@ -30,7 +30,7 @@
                 }
                 </style>
 
-                <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="game-type-select" style="transform: translate(25%, 0);">
+                <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="game-type-select" style="transform: translate(43%, 0);">
                   <li>
                                   <table class="table" id="select-game-type-table">
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
@@ -565,7 +565,7 @@
                 </ul>
               </li>
               <li class="green dropdown-fix">
-                <a data-toggle="dropdown" class="dropdown-toggle" href="#" aria-expanded="false">
+                <a id="aa" data-toggle="dropdown" class="" href="#" aria-expanded="false">
                   <i class="fa fa-calendar"></i>
                   <span id="navbar-game-title">
                     งวดวันที่ 16 กันยายน 2560
@@ -596,22 +596,51 @@
                     <li><a href="#" class="game-item" data-id="22914">งวดวันที่ 1 ธันวาคม 2559</a></li>
                 </ul>
               </li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li class="dropdown">
-                      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li class="dropdown-header">Nav header</li>
-                        <li><a href="#">Separated link</a></li>
-                        <li><a href="#">One more separated link</a></li>
-                      </ul>
-                    </li>
-                  </ul>
+
+              <li class="light-blue dropdown-fix">
+                <a data-toggle="dropdown" href="#" class="">
+                  <i class="ace-icon fa fa-user"></i>
+                  002@3M3K [เอเย่นต์]
+                </a>
+
+                <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="user-toggle-list">
+                  <li>
+                    <a href="/" class="ajax">
+                      <i class="ace-icon fa fa-home"></i>
+                      หน้าแรก
+                    </a>
+                  </li>
+
+                  <!-- <li>
+                    <a href="/rules" class="ajax">
+                      <i class="ace-icon fa fa-question-circle"></i>
+                      กฎและกติกา
+                    </a>
+                  </li> -->
+
+                  <li>
+                    <a href="/password" class="ajax">
+                      <i class="ace-icon fa fa-cog"></i>
+                      เปลี่ยนรหัสผ่าน
+                    </a>
+                  </li>
+
+                  <li class="divider"></li>
+
+                  <li>
+                    <a href="/logout">
+                      <i class="ace-icon fa fa-power-off"></i>
+                      Logout
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li>
+                <div id="global-clock" class="align-right inline-block pull-right">วันที่ 17 กันยายน 2560 เวลา 14:42:33</div>
+              </li>
+              
+            </ul>
             {{-- <ul class="nav navbar-nav navbar-right">
               <li class="active"><a href="./">Default <span class="sr-only">(current)</span></a></li>
               <li><a href="../navbar-static-top/">Static top</a></li>
