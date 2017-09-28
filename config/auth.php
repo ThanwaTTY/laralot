@@ -69,7 +69,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\User::class,
         ],
-
+        // สามารถใช้ model อื่นในการ login ได้
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

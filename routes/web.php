@@ -11,6 +11,9 @@
 |
 */
 
+Route::get('/members/create', 'Members\MemberController@create');
+Route::post('/members', 'Members\MemberController@store')->name('members.store');
+
 Route::get('/test', function () {
     return view('portest');
     //return view('welcome');

@@ -110,8 +110,8 @@
         <div class="alert alert-success hidden" id="success"></div>
         <div class="alert alert-danger hidden" id="error"></div>
 
-        <form method="POST" action="#" accept-charset="UTF-8" id="create-user-form" class="form-horizontal" autocomplete="off"><input name="_token" type="hidden" value="uxxSpiZ338ZTX1mxPhKq1ql7p446dvtlqPlNnN6n">
-
+        <form method="POST" action="{{ route('members.store') }}" accept-charset="UTF-8" id="create-user-form" class="form-horizontal" autocomplete="off"><input name="_token" type="hidden" value="uxxSpiZ338ZTX1mxPhKq1ql7p446dvtlqPlNnN6n">
+        {{ csrf_field() }}
                 <div class="widget-box widget-color-blue2 width-1100 max-width-1100">
                       <div class="widget-header">
                           <h5 class="widget-title bigger">
@@ -122,15 +122,15 @@
                     <div class="widget-body">
                       <div class="widget-main no-padding-bottom">
                         <div class="form-group">
-                            <label for="user_type" class="control-label col-xs-1" autofill="false">ระดับ:</label>
+                            <label for="level" class="control-label col-xs-1" autofill="false">ระดับ:</label>
                               <div class="col-xs-3">
-                                  <select class="form-control" id="user_type" name="user_type"><option value="1">เมมเบอร์</option></select>
+                                  <select class="form-control" id="level" name="level"><option value="1">เมมเบอร์</option></select>
                               </div>
 
                             <div class="col-xs-2"></div>
                               <label for="credit" class="control-label col-xs-1">เครดิต:</label>
                             <div class="col-xs-3">
-                              <input class="form-control" name="max_credit" type="text">
+                              <input class="form-control" name="credit" type="text">
                             </div>
                             <span class="help-inline col-xs-2">
                               <span class="middle">* สูงสุด 0</span>
