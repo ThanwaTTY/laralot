@@ -16,7 +16,7 @@ Route::post('/login', 'AuthController@postLogin');
 
 
 
-// Route::group(['middleware'=>['auth']], function () {
+Route::group(['middleware'=>['auth']], function () {
 
         Route::get('/members/create', 'Members\MemberController@create');
         Route::post('/members', 'Members\MemberController@store')->name('members.store');
@@ -104,7 +104,7 @@ Route::post('/login', 'AuthController@postLogin');
         Route::get('/index2', function () {
             return view('index2');
         });
-    // });
+    });
 
 
 

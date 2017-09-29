@@ -47,7 +47,7 @@
       <link rel="stylesheet" href="/css/custom2.css">
 @endsection
 @section('footer')
-<!-- jQuery 2.2.3 -->
+{{-- <!-- jQuery 2.2.3 -->
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
@@ -61,8 +61,17 @@
 <!-- AdminLTE App -->
 <script src="/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="/dist/js/demo.js"></script>
+<script src="/dist/js/demo.js"></script> --}}
 
+<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="/plugins/input-mask/jquery.inputmask.js"></script>
+
+<script>
+  $(function () {
+    //Money Euro
+    $("[data-mask]").inputmask();
+  });
+</script>
 @endsection
 
 @section('content')
@@ -165,7 +174,8 @@
                             <div class="col-xs-2"></div>
                               <label for="phone" class="control-label col-xs-1">เบอร์โทร:</label>
                             <div class="col-xs-3">
-                              <input class="form-control" name="phone" type="text" id="phone">
+                              <input class="form-control" name="phone" type="text" id="phone" data-inputmask="'mask': ['999-999-9999 ', '+99 99 99 9999[9]']" 
+                                data-mask="" value="{{ old('phone') }}">
                             </div>
                         </div>
                       </div>
