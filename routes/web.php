@@ -16,7 +16,7 @@ Route::post('/login', 'AuthController@postLogin');
 
 
 
-Route::group(['middleware'=>['auth']], function () {
+// Route::group(['middleware'=>['auth']], function () {
 
         Route::get('/members/create', 'Members\MemberController@create');
         Route::post('/members', 'Members\MemberController@store')->name('members.store');
@@ -104,9 +104,7 @@ Route::group(['middleware'=>['auth']], function () {
         Route::get('/index2', function () {
             return view('index2');
         });
-
-});
-
+    // });
 
 
 
@@ -137,18 +135,19 @@ Route::group(['middleware'=>['auth']], function () {
 
 
 
-Route::get('/report/userreport', function () {
-    return view('report.userreport.index');
-});
 
-Route::get('/report/winlossreport', function () {
-    return view('report.winlossreport.index');
-});
+        Route::get('/report/userreport', function () {
+            return view('report.userreport.index');
+        });
 
-Route::get('/report/jackpot', function () {
-    return view('report.jackpot.index');
-});
+        Route::get('/report/winlossreport', function () {
+            return view('report.winlossreport.index');
+        });
 
-Route::get('/report/resultjackpot', function () {
-    return view('report.resultjackpot.index');
-});
+        Route::get('/report/jackpot', function () {
+            return view('report.jackpot.index');
+        });
+
+        Route::get('/report/resultjackpot', function () {
+            return view('report.resultjackpot.index');
+        });
