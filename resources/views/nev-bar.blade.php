@@ -123,7 +123,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/user/adduser"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
+            <li><a href="/members/create"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
             <li><a href="/user/general"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
             <li><a href="/user/high-low-number"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
             <li><a href="/user/commission"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
