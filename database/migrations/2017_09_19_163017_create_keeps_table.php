@@ -13,15 +13,15 @@ class CreateKeepsTable extends Migration
      */
     public function up()
     {
-        Schema::create('keeps', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
-            $table->decimal('share');
-            $table->decimal('keeplist');
-            $table->string('keepover');
-            $table->rememberToken();
-            $table->timestamps();
-        });
+        // Schema::create('keeps', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->integer('user_id')->unsigned()->index();
+        //     $table->decimal('share');
+        //     $table->decimal('keeplist');
+        //     $table->string('keepover');
+        //     $table->rememberToken();
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -31,6 +31,6 @@ class CreateKeepsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('keeps');
+        // Schema::dropIfExists('keeps');
     }
 }
