@@ -51,7 +51,7 @@
 				<!-- #account-summary -->
 				<div id="account-summary">
 					<ul>
-						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}@3M3K</span></li>
+						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}@3M3K{{ auth()->user()->username }}</span></li>
 						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 1)
 																															Member
 																													@elseif(auth()->user()->level == 2)
@@ -83,11 +83,27 @@
       <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-xs-5"><span style="float:right;color:white;">ชื่อ:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">palm</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">{{ auth()->user()->name }}</span></div>
         </div>
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-xs-5"><span style="float:right;color:white;">ระดับ:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">เอเย่นต์</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">@if(auth()->user()->level == 1)
+																																					Member
+																																			@elseif(auth()->user()->level == 2)
+																																					Agent
+																																			@elseif(auth()->user()->level == 3)
+																																					Master
+																																			@elseif(auth()->user()->level == 4)
+																																					Senior
+																																			@elseif(auth()->user()->level == 5)
+																																					Super Senior
+																																			@elseif(auth()->user()->level == 6)
+																																					Pathner
+																																			@elseif(auth()->user()->level == 7)
+																																					บริษัท
+																																													
+																																			@endif</span>
+					</div>
         </div>
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-xs-5"><span style="float:right;color:white;">เครดิต:</span></div>
