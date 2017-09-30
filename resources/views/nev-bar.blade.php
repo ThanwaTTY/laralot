@@ -51,8 +51,25 @@
 				<!-- #account-summary -->
 				<div id="account-summary">
 					<ul>
-						<li><span class="prop">ชื่อ:</span><span id="">002@3M3K</span></li>
-						<li><span class="prop">ระดับ:</span><span id="">เอเย่นต์</span></li>
+						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}@3M3K</span></li>
+						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 1)
+																															Member
+																													@elseif(auth()->user()->level == 2)
+																															Agent
+																													@elseif(auth()->user()->level == 3)
+																															Master
+																													@elseif(auth()->user()->level == 4)
+																															Senior
+																													@elseif(auth()->user()->level == 5)
+																															Super Senior
+																													@elseif(auth()->user()->level == 6)
+																															Pathner
+																													@elseif(auth()->user()->level == 7)
+																															บริษัท
+																																							
+																													@endif
+																								</span>
+						</li>
 						<li><span class="prop">เครดิต:</span><span id="max_credit">0</span></li>
 						<li><span class="prop">ใช้ไป:</span><span id="used_credit">0</span></li>
 						<li><span class="prop">เหลือ:</span><span id="credit_balance">0</span></li>
