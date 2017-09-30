@@ -13,6 +13,8 @@
 
 Route::get('/login', 'AuthController@getlogin')->name('login');
 Route::post('/login', 'AuthController@postLogin');
+Route::get('/logout', 'AuthController@logout');
+
 
 
 
