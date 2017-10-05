@@ -179,7 +179,7 @@
                             <td class="type">@if($members->level == 1)
                                                     Member
                                             @elseif($members->level == 2)
-													Agent																								
+													                          Agent																								
                                             @elseif($members->level == 3)
                                                     Master
                                             @elseif($members->level == 4)
@@ -212,8 +212,8 @@
                             <td class="ac am p5">134.196.33.166</td>
                           </tr>
                         </tbody>
-                    
-                    
+                    </form>
+                    @endforeach
                     </table>
                 </div>
             <!-- Tab 2 Password -->
@@ -228,6 +228,9 @@
                             <th>บันทึก</th>
                           </tr>
                         </thead>
+                    @foreach($member as $members)
+                      <form action="/members/{{$members->id}}/edit" method="post">
+                        {{ csrf_field() }}
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" class=" ">
                             <td class="id">{{$members->id}}</td>
@@ -235,7 +238,7 @@
                             <td class="type">@if($members->level == 1)
                                                     Member
                                             @elseif($members->level == 2)
-													Agent																								Agent
+																										Agent
                                             @elseif($members->level == 3)
                                                     Master
                                             @elseif($members->level == 4)
@@ -255,7 +258,7 @@
                             </td>
                           </tr>             
                         </tbody>
-                    </form>
+                      </form>
                     @endforeach
                     </table>
                 </div>
