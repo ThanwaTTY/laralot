@@ -13,21 +13,21 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('level');
-            $table->decimal('credit');
-            $table->string('username');
-            $table->string('password');
-            $table->string('name');
-            $table->string('tel');
-            $table->string('status');
-            $table->decimal('win_lose_total');
-            $table->dateTime('login_new');
-            $table->string('ip');
-            $table->rememberToken();
-            $table->timestamps();
-        });
+        // Schema::create('users', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->string('level');
+        //     $table->decimal('credit');
+        //     $table->string('username');
+        //     $table->string('password');
+        //     $table->string('name');
+        //     $table->string('tel');
+        //     $table->string('status');
+        //     $table->decimal('win_lose_total');
+        //     $table->dateTime('login_new');
+        //     $table->string('ip');
+        //     $table->rememberToken();
+        //     $table->timestamps();
+        // });
     }
 
     /**
@@ -37,6 +37,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        // Schema::dropIfExists('users');
     }
 }

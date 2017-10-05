@@ -67,9 +67,9 @@ return [
     'providers' => [
         'users' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Member::class,
         ],
-
+        // สามารถใช้ model อื่นในการ login ได้
         // 'users' => [
         //     'driver' => 'database',
         //     'table' => 'users',

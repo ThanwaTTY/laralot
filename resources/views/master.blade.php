@@ -11,6 +11,7 @@
   <![endif]-->
   {{-- <link rel="stylesheet" href="/css/custom.css"> --}}
   <link rel="stylesheet" href="/css/top-custom.css">
+  <link rel="stylesheet" href="/css/menu-custom.css">
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -21,6 +22,7 @@
 @include('nev-bar-top') --}}
   <!-- Left side column. contains the logo and sidebar -->
 @include('nev-bar')
+{{-- @include('nev-bar2') --}}
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper  table-responsive">

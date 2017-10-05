@@ -1,3 +1,4 @@
+
 <div id="navbar" class="navbar navbar-default" style="background: #3c8dbc;"><!-- navbar-fixed-top -->
   <div class="navbar-container" id="navbar-container">
 
@@ -598,7 +599,22 @@
         <li class="light-blue dropdown-fix">
           <a data-toggle="dropdown" href="#" class="dropdown-toggle">
             <i class="ace-icon fa fa-user"></i>
-            002@3M3K [เอเย่นต์]
+            {{ auth()->user()->id }}@3M3K{{ auth()->user()->username }}[ @if(auth()->user()->level == 1)
+                                                                              Member
+                                                                          @elseif(auth()->user()->level == 2)
+                                                                              Agent
+                                                                          @elseif(auth()->user()->level == 3)
+                                                                              Master
+                                                                          @elseif(auth()->user()->level == 4)
+                                                                              Senior
+                                                                          @elseif(auth()->user()->level == 5)
+                                                                              Super Senior
+                                                                          @elseif(auth()->user()->level == 6)
+                                                                              Pathner
+                                                                          @elseif(auth()->user()->level == 7)
+                                                                              บริษัท
+                                                                                             
+                                                                          @endif  ]
           </a>
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="user-toggle-list">

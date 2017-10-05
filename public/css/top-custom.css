@@ -167,7 +167,7 @@ li.divider {
 #global-clock {
     font-size: 12px;
     font-weight: normal;
-    line-height: 45px;
+    line-height: 50px;
     padding-right: 0px;
     padding-left: 10px;
     color: #fff;
@@ -219,4 +219,8 @@ table {
 }
 .bg-dark {
     background-color: #dddddd !important;
+}
+.navbar-default {
+    background-color: #3c8dbc;
+    border-color: #e7e7e7;
 }
