@@ -26,4 +26,28 @@ class MemberController extends Controller
         ]);
         return redirect('/members/create');
     }
+
+    public function edit()
+    {
+        $level = auth()->user()->level;
+        $member = Member::where('level','<',$level)->get();
+
+
+        return view('members/edit', compact('member') ); 
+    }
+    public function update(Request $request,$id)
+    {
+            $members = Member::find($id);
+            // dd($members->name);
+            // $members = Member::where('id', $members->id)->first();
+            $members->name = request('name');
+            $members->phone = request('phone');    
+
+            if(request('password')) {
+                $members->password = bcrypt(request('password'));
+            }
+            $members->update();
+
+         return redirect('/members/edit');
+    }
 }

@@ -13,6 +13,8 @@
 
 Route::get('/login', 'AuthController@getlogin')->name('login');
 Route::post('/login', 'AuthController@postLogin');
+Route::get('/logout', 'AuthController@logout');
+
 
 
 
@@ -20,6 +22,8 @@ Route::group(['middleware'=>['auth']], function () {
 
         Route::get('/members/create', 'Members\MemberController@create');
         Route::post('/members', 'Members\MemberController@store')->name('members.store');
+        Route::get('/members/edit', 'Members\MemberController@edit');
+        Route::post('/members/{id}/edit', 'Members\MemberController@update');
 
         Route::get('/test', function () {
             return view('portest');
@@ -38,13 +42,13 @@ Route::group(['middleware'=>['auth']], function () {
             return view('listlottery.listlotpoint.index');
         });
 
-        Route::get('/user/adduser', function () {
-            return view('user.adduser.create');
-        });
+        // Route::get('/user/adduser', function () {
+        //     return view('user.adduser.create');
+        // });
 
-        Route::get('/user/general', function () {
-            return view('user.general.index');
-        });
+        // Route::get('/user/general', function () {
+        //     return view('user.general.index');
+        // });
         Route::get('/listlottery/listlotuser', function () {
             return view('listlottery.listlotuser.index');
         });

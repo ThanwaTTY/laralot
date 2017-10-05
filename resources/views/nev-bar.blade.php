@@ -51,8 +51,25 @@
 				<!-- #account-summary -->
 				<div id="account-summary">
 					<ul>
-						<li><span class="prop">ชื่อ:</span><span id="">002@3M3K</span></li>
-						<li><span class="prop">ระดับ:</span><span id="">เอเย่นต์</span></li>
+						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}@3M3K{{ auth()->user()->username }}</span></li>
+						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 1)
+																															Member
+																													@elseif(auth()->user()->level == 2)
+																															Agent
+																													@elseif(auth()->user()->level == 3)
+																															Master
+																													@elseif(auth()->user()->level == 4)
+																															Senior
+																													@elseif(auth()->user()->level == 5)
+																															Super Senior
+																													@elseif(auth()->user()->level == 6)
+																															Pathner
+																													@elseif(auth()->user()->level == 7)
+																															บริษัท
+																																							
+																													@endif
+																								</span>
+						</li>
 						<li><span class="prop">เครดิต:</span><span id="max_credit">0</span></li>
 						<li><span class="prop">ใช้ไป:</span><span id="used_credit">0</span></li>
 						<li><span class="prop">เหลือ:</span><span id="credit_balance">0</span></li>
@@ -66,11 +83,27 @@
       {{-- <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-xs-5"><span style="float:right;color:white;">ชื่อ:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">palm</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">{{ auth()->user()->name }}</span></div>
         </div>
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-xs-5"><span style="float:right;color:white;">ระดับ:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">เอเย่นต์</span></div>
+          <div class="col-xs-7"><span style="float:left;color:white;">@if(auth()->user()->level == 1)
+																																					Member
+																																			@elseif(auth()->user()->level == 2)
+																																					Agent
+																																			@elseif(auth()->user()->level == 3)
+																																					Master
+																																			@elseif(auth()->user()->level == 4)
+																																					Senior
+																																			@elseif(auth()->user()->level == 5)
+																																					Super Senior
+																																			@elseif(auth()->user()->level == 6)
+																																					Pathner
+																																			@elseif(auth()->user()->level == 7)
+																																					บริษัท
+																																													
+																																			@endif</span>
+					</div>
         </div>
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-xs-5"><span style="float:right;color:white;">เครดิต:</span></div>
@@ -124,7 +157,7 @@
           </a>
           <ul class="treeview-menu">
             <li><a href="/members/create"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
-            <li><a href="/user/general"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
+            <li><a href="/members/edit"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
             <li><a href="/user/high-low-number"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
             <li><a href="/user/commission"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
             <li><a href="/user/open-close-lottery"><i class="fa fa-circle-o"></i> เปิด-ปิด หวย/อัตราจ่าย</a></li>

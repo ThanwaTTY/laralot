@@ -602,26 +602,22 @@
             {{ auth()->user()->name }}
             
               @if(auth()->user()->level == '1')
-                [Member]
+                [เมมเบอร์]
               @elseif(auth()->user()->level == '2')
-                [Agent]
+                [เอเย่นต์]
               @elseif(auth()->user()->level == '3')
-                [Master]
+                [มาสเตอร์]
               @elseif(auth()->user()->level == '4')
-                [Senior]
+                [ซีเนียร์]
               @elseif(auth()->user()->level == '5')
-                [Super Senior]
+                [ซุปเปอร์ซีเนียร์]
               @elseif(auth()->user()->level == '6')
-                [Pathner]
+                [พาร์ทเนอร์]
               @elseif(auth()->user()->level == '7')    
-                [Company]
+                [บริษัท]
               @else
                   
               @endif
-              
-              
-              
-              
           </a>
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="user-toggle-list">
