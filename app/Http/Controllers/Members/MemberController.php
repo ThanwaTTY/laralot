@@ -29,11 +29,21 @@ class MemberController extends Controller
 
     public function edit()
     {
-        $member = Member::get();
-        // foreach ($member as $key => $members) {
-        //      $members[$members->id] = Member::where('member_id', $members->id)->first();
-        // }
-        
+        $level = auth()->user()->level;
+        $member = Member::where('level','<',$level)->get();
+
+
         return view('members/edit', compact('member') ); 
+    }
+    public function update(Request $request,$id)
+    {
+            $members = Member::find($id);
+            // dd($members->name);
+            // $members = Member::where('id', $members->id)->first();
+            $members->name = request('name');
+            $members->phone = request('phone');     
+            $members->update();
+
+         return redirect('/members/edit');
     }
 }

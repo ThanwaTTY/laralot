@@ -166,15 +166,34 @@
                             <th class="ac">Login ล่าสุด</th>
                             <th class="ac">IP ล่าสุด</th>
                           </tr>
-                        </thead>
-                        @foreach($member as $members)
+                        </thead> 
+                   
+                    
+                    @foreach($member as $members)
+                    <form action="/members/{{$members->id}}/edit" method="post">
+                        {{ csrf_field() }}
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" data-status="1" class=" ">
                             <td class="id">1</td>
-                            <td>3M3K001 </td>
-                            <td class="type">เมมเบอร์</td>
-                            <td class="name"><input class="form-control input-sm" data-old="" name="name" type="text" value="{{$members->username}}"></td>
-                            <td class="phone"><input class="form-control input-sm" data-old="" name="phone" type="text" value=""></td>
+                            <td>3M3K{{$members->id}} </td>
+                            <td class="type">@if($members->level == 1)
+                                                    Member
+                                            @elseif($members->level == 2)
+													Agent																								Agent
+                                            @elseif($members->level == 3)
+                                                    Master
+                                            @elseif($members->level == 4)
+                                                    Senior
+                                            @elseif($members->level == 5)
+                                                    Super Senior
+                                            @elseif($members->level == 6)
+                                                    Pathner
+                                            @elseif($members->level == 7)
+                                                    บริษัท
+                                            @endif
+                            </td>
+                            <td class="name"><input class="form-control input-sm" data-old="" name="name" type="text" value="{{$members->name}}"></td>
+                            <td class="phone"><input class="form-control input-sm" data-old="" name="phone" type="text" value="{{$members->phone}}"></td>
                             <td class="status">
                               <select data-old="1" name="status">
                               <option value="1" selected="selected">ปกติ</option>
@@ -183,17 +202,19 @@
                               </select>
                             </td>
                             <td class="control child-hidden">
-                              <button class="btn-save btn btn-xs btn-success no-border"><i class="ace-icon fa fa-check"></i></button>
-                              <button class="btn-cancel btn btn-xs btn-danger no-border"><i class="ace-icon fa fa-times"></i></button>
+                              <button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
+                              <button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
                             </td>
-                            <td class="ar">0</td>
+                            <td class="ar">{{$members->credit}}</td>
                             <td class="ar n2c">0</td>
                             <td class="ac am p5"></td>
                             <td class="ac am p5">19-07-2017<br>20:32:09</td>
                             <td class="ac am p5">134.196.33.166</td>
                           </tr>
                         </tbody>
-                        @endforeach
+                    </form>
+                    @endforeach
+                    
                     </table>
                 </div>
             <!-- Tab 2 Password -->

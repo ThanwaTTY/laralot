@@ -23,6 +23,8 @@ Route::group(['middleware'=>['auth']], function () {
         Route::get('/members/create', 'Members\MemberController@create');
         Route::post('/members', 'Members\MemberController@store')->name('members.store');
         Route::get('/members/edit', 'Members\MemberController@edit');
+        Route::post('/members/{id}/edit', 'Members\MemberController@update');
+
         Route::get('/test', function () {
             return view('portest');
             //return view('welcome');
