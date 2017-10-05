@@ -26,4 +26,14 @@ class MemberController extends Controller
         ]);
         return redirect('/members/create');
     }
+
+    public function edit()
+    {
+        $member = Member::get();
+        // foreach ($member as $key => $members) {
+        //      $members[$members->id] = Member::where('member_id', $members->id)->first();
+        // }
+        
+        return view('members/edit', compact('member') ); 
+    }
 }
