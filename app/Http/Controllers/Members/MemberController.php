@@ -17,8 +17,18 @@ class MemberController extends Controller
         return view('members.create', compact('member'));
     }
 
-    public function store()
+    public function store(Request $request)
     {
+        $rules =[
+            'username' => 'required',
+            'password' => 'required',
+            'level' => 'required',
+            'credit' => 'required',
+            'name' => 'required',
+            'phone' => 'required'
+        ];
+
+        $this->validate($request, $rules);
         Member::create([
            'username' => request('username'),
            'password' => bcrypt(request('password')),

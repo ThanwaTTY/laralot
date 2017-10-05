@@ -130,20 +130,20 @@
 
                     <div class="widget-body">
                       <div class="widget-main no-padding-bottom">
-                        <div class="form-group">
+                        <div class="form-group has-feedback{{ $errors->has('level') ? ' has-error' : '' }}">
                             <label for="level" class="control-label col-xs-1" autofill="false">ระดับ:</label>
                               <div class="col-xs-3">
                               <select class="form-control" id="level" name="level">
                             {{-- @foreach($member as $members) --}}
                               
                               @if(auth()->user()->level == 7)                                                              
-                                  <option value="1">เมมเบอร์</option>
-                                  <option value="2">เอเย่นต์</option>
-                                  <option value="3">มาสเตอร์</option>
-                                  <option value="4">ซีเนียร์</option>
-                                  <option value="5">ซูเปอร์ซีเนียร์</option>
-                                  <option value="6">พารท์เนอร์</option>
-                                  <option value="7">บริษัท</option>
+                                  <option (old('level') == 1) ? 'selected' : '' value="1">เมมเบอร์</option>
+                                  <option (old('level') == 2) ? 'selected' : '' value="2">เอเย่นต์</option>
+                                  <option (old('level') == 3) ? 'selected' : '' value="3">มาสเตอร์</option>
+                                  <option (old('level') == 4) ? 'selected' : '' value="4">ซีเนียร์</option>
+                                  <option (old('level') == 5) ? 'selected' : '' value="5">ซูเปอร์ซีเนียร์</option>
+                                  <option (old('level') == 6) ? 'selected' : '' value="6">พารท์เนอร์</option>
+                                  <option (old('level') == 7) ? 'selected' : '' value="7">บริษัท</option>
                               @elseif(auth()->user()->level == 6)
                                   <option value="1">เมมเบอร์</option>
                                   <option value="2">เอเย่นต์</option>
@@ -173,49 +173,71 @@
                              
                             {{-- @endforeach --}}
                                </select>
+                               <p style="color:red">{{ $errors->first('level') }}</p>
                               </div>
 
                             <div class="col-xs-2"></div>
-                              <label for="credit" class="control-label col-xs-1">เครดิต:</label>
-                            <div class="col-xs-3">
-                              <input class="form-control" name="credit" type="text">
+
+                            <div class="has-feedback{{ $errors->has('credit') ? ' has-error' : '' }}">
+                                <label for="credit" class="control-label col-xs-1">เครดิต:</label>
+                              <div class="col-xs-3">
+                                <input class="form-control" name="credit" type="text" value="{{ old('credit') }}">
+                                <p style="color:red">{{ $errors->first('credit') }}</p>
+                              </div>
+                              <span class="help-inline col-xs-2">
+                                <span class="middle">* สูงสุด 0</span>
+                              </span>
                             </div>
-                            <span class="help-inline col-xs-2">
-                              <span class="middle">* สูงสุด 0</span>
-                            </span>
+                            
                         </div>
           
                         <div class="form-group">
-                            <label for="username" class="control-label col-xs-1" =""="">ชื่อผู้ใช้:</label>
+                          <div class="has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
+                              <label for="username" class="control-label col-xs-1" =""="">ชื่อผู้ใช้:</label>
                               <div class="col-xs-3">
-                                <div class="input-group">
+                                <div class="input-group has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
                                     <span class="input-group-addon">3M3K</span>
-                                    <input id="username" class="form-control" name="username" type="text">
+                                    <input id="username" class="form-control" name="username" type="text" value="{{ old('username') }}">
                                 </div>
+                                <p style="color:red">{{ $errors->first('username') }}</p>
                               </div>
-                              <span class="help-inline col-xs-2">
-                                <span class="middle bigger-125" id="username-availability"></span>
-                              </span>
-                              <label for="password" class="control-label col-xs-1">รหัสผ่าน:</label>
+                          </div>
+
+                            <div class="has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <span class="help-inline col-xs-2">
+                                  <span class="middle bigger-125" id="password-availability"></span>
+                                </span>
+                                <label for="password" class="control-label col-xs-1">รหัสผ่าน:</label>
                                 <div class="col-xs-3">
-                                  <input class="form-control" name="password" type="password" value="" id="password">
+                                  <input class="form-control" name="password" type="password" value="{{ old('password') }}" id="password">
+                                  <p style="color:red">{{ $errors->first('password') }}</p>
                                 </div>
                                 <span class="help-inline col-xs-2">
                                   <span class="middle">* อย่างน้อย 6 ตัวอักษร</span>
                                 </span>
+                            </div>
+                            
                         </div>
 
                         <div class="form-group">
+                          <div class="has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="control-label col-xs-1">ชื่อ-สกุล:</label>
                             <div class="col-xs-3">
-                              <input class="form-control" name="name" type="text" id="name">
+                              <input class="form-control" name="name" type="text" id="name" value="{{ old('name') }}">
+                              <p style="color:red">{{ $errors->first('name') }}</p>
                             </div>
+                          </div>
+                          
+
                             <div class="col-xs-2"></div>
+                          <div class="has-feedback{{ $errors->has('phone') ? ' has-error' : '' }}">
                               <label for="phone" class="control-label col-xs-1">เบอร์โทร:</label>
-                            <div class="col-xs-3">
-                              <input class="form-control" name="phone" type="text" id="phone" data-inputmask="'mask': ['999-999-9999 ', '+99 99 99 9999[9]']" 
-                                data-mask="" value="{{ old('phone') }}">
-                            </div>
+                              <div class="col-xs-3">
+                                <input class="form-control" name="phone" type="text" id="phone" data-inputmask="'mask': ['999-999-9999 ', '+99 99 99 9999[9]']" 
+                                  data-mask="" value="{{ old('phone') }}">
+                                  <p style="color:red">{{ $errors->first('phone') }}</p>
+                              </div>
+                          </div>
                         </div>
                       </div>
                     </div>
