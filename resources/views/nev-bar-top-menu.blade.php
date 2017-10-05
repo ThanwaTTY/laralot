@@ -599,22 +599,25 @@
         <li class="light-blue dropdown-fix">
           <a data-toggle="dropdown" href="#" class="dropdown-toggle">
             <i class="ace-icon fa fa-user"></i>
-            {{ auth()->user()->id }}@3M3K{{ auth()->user()->username }}[ @if(auth()->user()->level == 1)
-                                                                              Member
-                                                                          @elseif(auth()->user()->level == 2)
-                                                                              Agent
-                                                                          @elseif(auth()->user()->level == 3)
-                                                                              Master
-                                                                          @elseif(auth()->user()->level == 4)
-                                                                              Senior
-                                                                          @elseif(auth()->user()->level == 5)
-                                                                              Super Senior
-                                                                          @elseif(auth()->user()->level == 6)
-                                                                              Pathner
-                                                                          @elseif(auth()->user()->level == 7)
-                                                                              บริษัท
-                                                                                             
-                                                                          @endif  ]
+            {{ auth()->user()->name }}
+            
+              @if(auth()->user()->level == '1')
+                [เมมเบอร์]
+              @elseif(auth()->user()->level == '2')
+                [เอเย่นต์]
+              @elseif(auth()->user()->level == '3')
+                [มาสเตอร์]
+              @elseif(auth()->user()->level == '4')
+                [ซีเนียร์]
+              @elseif(auth()->user()->level == '5')
+                [ซุปเปอร์ซีเนียร์]
+              @elseif(auth()->user()->level == '6')
+                [พาร์ทเนอร์]
+              @elseif(auth()->user()->level == '7')    
+                [บริษัท]
+              @else
+                  
+              @endif
           </a>
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="user-toggle-list">
@@ -651,7 +654,10 @@
         </li>
 
         <li>
-          <div id="global-clock" class="align-right inline-block pull-right">วันที่ 17 กันยายน 2560 เวลา 14:42:33</div>
+          <div id="global-clock" class="align-right inline-block pull-right">
+            <span id="theTime"></span>
+          </div>
+          
         </li>
 
         <!-- /section:basics/navbar.user_menu -->
