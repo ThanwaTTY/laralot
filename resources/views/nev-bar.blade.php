@@ -63,7 +63,7 @@
 				</div><!-- /#account-summary -->
 			</div>
 
-      <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
+      {{-- <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-xs-5"><span style="float:right;color:white;">ชื่อ:</span></div>
           <div class="col-xs-7"><span style="float:left;color:white;">palm</span></div>
@@ -96,7 +96,7 @@
           <div class="col-xs-5"><span style="float:right;color:white;">ออนไลน์:</span></div>
           <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
-      </div>
+      </div> --}}
       <ul class="sidebar-menu">
         <li class="treeview">
           <a href="#">

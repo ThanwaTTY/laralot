@@ -599,7 +599,29 @@
         <li class="light-blue dropdown-fix">
           <a data-toggle="dropdown" href="#" class="dropdown-toggle">
             <i class="ace-icon fa fa-user"></i>
-            002@3M3K [เอเย่นต์]
+            {{ auth()->user()->name }}
+            
+              @if(auth()->user()->level == '1')
+                [Member]
+              @elseif(auth()->user()->level == '2')
+                [Agent]
+              @elseif(auth()->user()->level == '3')
+                [Master]
+              @elseif(auth()->user()->level == '4')
+                [Senior]
+              @elseif(auth()->user()->level == '5')
+                [Super Senior]
+              @elseif(auth()->user()->level == '6')
+                [Pathner]
+              @elseif(auth()->user()->level == '7')    
+                [Company]
+              @else
+                  
+              @endif
+              
+              
+              
+              
           </a>
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="user-toggle-list">
@@ -636,7 +658,10 @@
         </li>
 
         <li>
-          <div id="global-clock" class="align-right inline-block pull-right">วันที่ 17 กันยายน 2560 เวลา 14:42:33</div>
+          <div id="global-clock" class="align-right inline-block pull-right">
+            <span id="theTime"></span>
+          </div>
+          
         </li>
 
         <!-- /section:basics/navbar.user_menu -->
