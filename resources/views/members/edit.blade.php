@@ -179,7 +179,7 @@
                             <td class="type">@if($members->level == 1)
                                                     Member
                                             @elseif($members->level == 2)
-													Agent																								Agent
+													Agent																								
                                             @elseif($members->level == 3)
                                                     Master
                                             @elseif($members->level == 4)

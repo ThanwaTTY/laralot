@@ -11,7 +11,10 @@ class MemberController extends Controller
     //
     public function create()
     {
-        return view('members.create');
+        //ถ้าlevelต่ำกว่าคนล๊อกอินไม่สามารถเพิ่มสมาชิกที่สูงกว่าได้
+        // $levels = DB::table('levels')->where('id' , '<' , auth()->user()->level)->get();
+        $member = Member::get();
+        return view('members.create', compact('member'));
     }
 
     public function store()

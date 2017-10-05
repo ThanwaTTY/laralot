@@ -133,7 +133,46 @@
                         <div class="form-group">
                             <label for="level" class="control-label col-xs-1" autofill="false">ระดับ:</label>
                               <div class="col-xs-3">
-                                  <select class="form-control" id="level" name="level"><option value="1">เมมเบอร์</option></select>
+                              <select class="form-control" id="level" name="level">
+                            {{-- @foreach($member as $members) --}}
+                              
+                              @if(auth()->user()->level == 7)                                                              
+                                  <option value="1">เมมเบอร์</option>
+                                  <option value="2">เอเย่นต์</option>
+                                  <option value="3">มาสเตอร์</option>
+                                  <option value="4">ซีเนียร์</option>
+                                  <option value="5">ซูเปอร์ซีเนียร์</option>
+                                  <option value="6">พารท์เนอร์</option>
+                                  <option value="7">บริษัท</option>
+                              @elseif(auth()->user()->level == 6)
+                                  <option value="1">เมมเบอร์</option>
+                                  <option value="2">เอเย่นต์</option>
+                                  <option value="3">มาสเตอร์</option>
+                                  <option value="4">ซีเนียร์</option>
+                                  <option value="5">ซูเปอร์ซีเนียร์</option>
+                                  <option value="6">พารท์เนอร์</option>
+                              @elseif(auth()->user()->level == 5)
+                                  <option value="1">เมมเบอร์</option>
+                                  <option value="2">เอเย่นต์</option>
+                                  <option value="3">มาสเตอร์</option>
+                                  <option value="4">ซีเนียร์</option>
+                                  <option value="5">ซูเปอร์ซีเนียร์</option>
+                              @elseif(auth()->user()->level ==  4)
+                                  <option value="1">เมมเบอร์</option>
+                                  <option value="2">เอเย่นต์</option>
+                                  <option value="3">มาสเตอร์</option>
+                                  <option value="4">ซีเนียร์</option>
+                              @elseif(auth()->user()->level == 3)
+                                  <option value="1">เมมเบอร์</option>
+                                  <option value="2">เอเย่นต์</option>
+                                  <option value="3">มาสเตอร์</option>
+                              @elseif(auth()->user()->level == 2)
+                                  <option value="1">เมมเบอร์</option>
+                                  <option value="2">เอเย่นต์</option>
+                              @endif
+                             
+                            {{-- @endforeach --}}
+                               </select>
                               </div>
 
                             <div class="col-xs-2"></div>
