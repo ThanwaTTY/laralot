@@ -41,7 +41,11 @@ class MemberController extends Controller
             // dd($members->name);
             // $members = Member::where('id', $members->id)->first();
             $members->name = request('name');
-            $members->phone = request('phone');     
+            $members->phone = request('phone');    
+
+            if(request('password')) {
+                $members->password = bcrypt(request('password'));
+            }
             $members->update();
 
          return redirect('/members/edit');
