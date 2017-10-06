@@ -196,19 +196,19 @@
                             <td class="phone"><input class="form-control input-sm" data-old="" name="phone" type="text" value="{{$members->phone}}"></td>
                             <td class="status">
                               <select data-old="1" name="status">
-                              @if( $members->status <= 1)
-                                <option value="1" selected="selected">ปกติ</option>
-                                <option value="2">ระงับ</option>
-                                <option value="3">ล็อค</option>
-                              @elseif( $members->status == 2)
-                                <option value="1">ปกติ</option>
-                                <option value="2" selected="selected">ระงับ</option>
-                                <option value="3">ล็อค</option>
-                               @elseif( $members->status == 3)
-                                <option value="1">ปกติ</option>
-                                <option value="2">ระงับ</option>
-                                <option value="3"  selected="selected">ล็อค</option>
-                              @endif
+                              {{-- @if($members->status == 0) --}}
+                                <option value="0" {{ ($members->status == 0) ? 'selected="selected"' : ''}}>ปกติ</option>
+                                <option value="1" {{ ($members->status == 1) ? 'selected="selected"' : ''}}>ระงับ</option>
+                                <option value="2" {{ ($members->status == 2) ? 'selected="selected"' : ''}}>ล็อค</option>
+                              {{-- @elseif( $members->status == 1)
+                                <option value="0">ปกติ</option>
+                                <option value="1" selected="selected">ระงับ</option>
+                                <option value="2">ล็อค</option>
+                               @elseif( $members->status == 2)
+                                <option value="0">ปกติ</option>
+                                <option value="1">ระงับ</option>
+                                <option value="2"  selected="selected">ล็อค</option>
+                              @endif --}}
                               </select>
                             </td>
                             <td class="control child-hidden">

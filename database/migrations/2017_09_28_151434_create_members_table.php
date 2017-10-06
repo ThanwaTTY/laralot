@@ -21,7 +21,7 @@ class CreateMembersTable extends Migration
             $table->decimal('credit', 20, 7);
             $table->string('name');
             $table->string('phone');
-            $table->string('status')->default(0);
+            $table->integer('status')->default(0);
             $table->string('latest_use')->default('');
             $table->string('latest_login')->default('');
             $table->string('latest_ip')->default('');

@@ -64,9 +64,9 @@ class MemberController extends Controller
                 $members->password = bcrypt(request('password'));
             }
 
-            if(request('status')){
+            // if(request('status')){
                 $members->status = request('status');
-            }
+            // }
             $members->update();
 
          return redirect('/members/edit');
