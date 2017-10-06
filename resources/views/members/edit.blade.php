@@ -153,12 +153,12 @@
                     <table class="table table-bordered table-border-dark table-nowrap no-margin-bottom min-width-800 max-width-1100 users__edit users__edit--larger">
                         <thead>
                           <tr>
-                            <th>#</th>
-                            <th>ชื่อผู้ใช้</th>
+                            <th>Id</th>
+                            <th class="ac">ชื่อผู้ใช้</th>
                             <th class="ac">ระดับ</th>
-                            <th>ชื่อ</th>
-                            <th>โทร</th>
-                            <th>สถานะ</th>
+                            <th class="ac">ชื่อ</th>
+                            <th class="ac">โทร</th>
+                            <th class="ac">สถานะ</th>
                             <th class="ac">บันทึก</th>
                             <th class="ac">เครดิต</th>
                             <th class="ac">ได้เสียสุทธิ</th>
@@ -174,9 +174,9 @@
                         {{ csrf_field() }}
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" data-status="1" class=" ">
-                            <td class="id">{{$members->id}}</td>
-                            <td>{{ $members->username }}{{$members->id}} </td>
-                            <td class="type">@if($members->level == 7)
+                            <td class="ac">{{$members->id}}</td>
+                            <td class="ac">{{ $members->username }}{{$members->id}} </td>
+                            <td class="type ac">@if($members->level == 7)
                                                     Member
                                             @elseif($members->level == 6)
 													                          Agent																								
@@ -221,10 +221,10 @@
                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom min-width-800 max-width-1100 users__edit users__edit--larger">
                         <thead>
                           <tr>
-                            <th>#</th>
-                            <th>ชื่อผู้ใช้</th>
-                            <th>ระดับ</th>
-                            <th>รหัสผ่าน</th>
+                            <th>Id</th>
+                            <th class="ac">ชื่อผู้ใช้</th>
+                            <th class="ac">ระดับ</th>
+                            <th class="ac">รหัสผ่าน</th>
                             <th>บันทึก</th>
                           </tr>
                         </thead>
@@ -233,9 +233,9 @@
                         {{ csrf_field() }}
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" class=" ">
-                            <td class="id">{{$members->id}}</td>
-                            <td>{{ $members->username}}{{$members->id}}</td>
-                            <td class="type">@if($members->level == 7)
+                            <td class="ac">{{$members->id}}</td>
+                            <td class="ac">{{ $members->username}}{{$members->id}}</td>
+                            <td class="type ac">@if($members->level == 7)
                                                     Member
                                             @elseif($members->level == 6)
 																										Agent
