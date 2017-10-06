@@ -51,7 +51,7 @@
 				<!-- #account-summary -->
 				<div id="account-summary">
 					<ul>
-						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}@3M3K{{ auth()->user()->username }}</span></li>
+						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}{{ auth()->user()->username }}</span></li>
 						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 7)
 																															Member
 																													@elseif(auth()->user()->level == 6)

@@ -62,7 +62,7 @@
 <script src="/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
-
+{{-- 
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="/plugins/input-mask/jquery.inputmask.js"></script>
 
@@ -71,7 +71,7 @@
     //Money Euro
     $("[data-mask]").inputmask();
   });
-</script>
+</script> --}}
 @endsection
 
 @section('content')
@@ -234,8 +234,8 @@
                           <div class="has-feedback{{ $errors->has('phone') ? ' has-error' : '' }}">
                               <label for="phone" class="control-label col-xs-1">เบอร์โทร:</label>
                               <div class="col-xs-3">
-                                <input class="form-control" name="phone" type="text" id="phone" data-inputmask="'mask': ['999-999-9999 ', '+99 99 99 9999[9]']" 
-                                  data-mask="" value="{{ old('phone') }}">
+                                <input class="form-control" name="phone" type="text" id="phone" 
+                                 value="{{ old('phone') }}">
                                   <p style="color:red">{{ $errors->first('phone') }}</p>
                               </div>
                           </div>
