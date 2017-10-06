@@ -205,7 +205,7 @@
                               <button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
                               <button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
                             </td>
-                            <td class="ar">{{$members->credit}}</td>
+                            <td class="ar">{{ number_format($members->credit,'2')}}</td>
                             <td class="ar n2c">0</td>
                             <td class="ac am p5"></td>
                             <td class="ac am p5">19-07-2017<br>20:32:09</td>
