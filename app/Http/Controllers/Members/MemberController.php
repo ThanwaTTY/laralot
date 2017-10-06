@@ -30,7 +30,7 @@ class MemberController extends Controller
 
         $this->validate($request, $rules);
         Member::create([
-           'username' => request('username'),
+           'username' => request('useradd').request('username'),
            'password' => bcrypt(request('password')),
            'level' => request('level'),
            'credit' => request('credit'),

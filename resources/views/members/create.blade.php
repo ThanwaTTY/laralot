@@ -196,7 +196,8 @@
                               <label for="username" class="control-label col-xs-1" =""="">ชื่อผู้ใช้:</label>
                               <div class="col-xs-3">
                                 <div class="input-group has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
-                                    <span class="input-group-addon">3M3K</span>
+                                    <span class="input-group-addon">{{ auth()->user()->username }}</span>
+                                    <input type="hidden" name="useradd" value="{{ auth()->user()->username }}@">
                                     <input id="username" class="form-control" name="username" type="text" value="{{ old('username') }}">
                                 </div>
                                 <p style="color:red">{{ $errors->first('username') }}</p>
