@@ -175,21 +175,21 @@
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" data-status="1" class=" ">
                             <td class="id">{{$members->id}}</td>
-                            <td>3M3K{{$members->id}} </td>
-                            <td class="type">@if($members->level == 1)
+                            <td>{{ $members->username }}{{$members->id}} </td>
+                            <td class="type">@if($members->level == 7)
                                                     Member
-                                            @elseif($members->level == 2)
+                                            @elseif($members->level == 6)
 													                          Agent																								
-                                            @elseif($members->level == 3)
+                                            @elseif($members->level == 5)
                                                     Master
                                             @elseif($members->level == 4)
                                                     Senior
-                                            @elseif($members->level == 5)
+                                            @elseif($members->level == 3)
                                                     Super Senior
-                                            @elseif($members->level == 6)
+                                            @elseif($members->level == 2)
                                                     Pathner
-                                            @elseif($members->level == 7)
-                                                    บริษัท
+                                            @elseif($members->level == 1)
+                                                    Admin
                                             @endif
                             </td>
                             <td class="name"><input class="form-control input-sm" data-old="" name="name" type="text" value="{{$members->name}}"></td>
@@ -234,24 +234,24 @@
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" class=" ">
                             <td class="id">{{$members->id}}</td>
-                            <td>3M3K{{$members->id}}</td>
-                            <td class="type">@if($members->level == 1)
+                            <td>{{ $members->username}}{{$members->id}}</td>
+                            <td class="type">@if($members->level == 7)
                                                     Member
-                                            @elseif($members->level == 2)
+                                            @elseif($members->level == 6)
 																										Agent
-                                            @elseif($members->level == 3)
+                                            @elseif($members->level == 5)
                                                     Master
                                             @elseif($members->level == 4)
                                                     Senior
-                                            @elseif($members->level == 5)
+                                            @elseif($members->level == 3)
                                                     Super Senior
-                                            @elseif($members->level == 6)
+                                            @elseif($members->level == 2)
                                                     Pathner
-                                            @elseif($members->level == 7)
-                                                    บริษัท
+                                            @elseif($members->level == 1)
+                                                    Admin
                                             @endif
                             </td>
-                            <td class="password"><input class="form-control input-sm" data-old="" name="password" type="password" value="{{$members->password}}"></td>
+                            <td class="password"><input class="form-control input-sm" data-old="" name="password" type="password" value=""></td>
                             <td class="control child-hidden">
                               <button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
                               <button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>

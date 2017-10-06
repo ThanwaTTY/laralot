@@ -43,7 +43,7 @@ class MemberController extends Controller
     public function edit()
     {
         $level = auth()->user()->level;
-        $member = Member::where('level','<',$level)->get();
+        $member = Member::where('level','>',$level)->get();
 
 
         return view('members/edit', compact('member') ); 
