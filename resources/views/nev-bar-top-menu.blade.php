@@ -601,20 +601,20 @@
             <i class="ace-icon fa fa-user"></i>
             {{ auth()->user()->name }}
             
-              @if(auth()->user()->level == '1')
-                [เมมเบอร์]
-              @elseif(auth()->user()->level == '2')
-                [เอเย่นต์]
-              @elseif(auth()->user()->level == '3')
-                [มาสเตอร์]
-              @elseif(auth()->user()->level == '4')
-                [ซีเนียร์]
-              @elseif(auth()->user()->level == '5')
-                [ซุปเปอร์ซีเนียร์]
+              @if(auth()->user()->level == '7')
+                [Member]
               @elseif(auth()->user()->level == '6')
-                [พาร์ทเนอร์]
-              @elseif(auth()->user()->level == '7')    
-                [บริษัท]
+                [Agent]
+              @elseif(auth()->user()->level == '5')
+                [Master]
+              @elseif(auth()->user()->level == '4')
+                [Senior]
+              @elseif(auth()->user()->level == '3')
+                [Super Senior]
+              @elseif(auth()->user()->level == '2')
+                [Pathner]
+              @elseif(auth()->user()->level == '1')    
+                [Admin]
               @else
                   
               @endif

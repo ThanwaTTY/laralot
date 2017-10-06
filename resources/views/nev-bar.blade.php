@@ -52,20 +52,20 @@
 				<div id="account-summary">
 					<ul>
 						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}@3M3K{{ auth()->user()->username }}</span></li>
-						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 1)
+						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 7)
 																															Member
-																													@elseif(auth()->user()->level == 2)
+																													@elseif(auth()->user()->level == 6)
 																															Agent
-																													@elseif(auth()->user()->level == 3)
+																													@elseif(auth()->user()->level == 5)
 																															Master
 																													@elseif(auth()->user()->level == 4)
 																															Senior
-																													@elseif(auth()->user()->level == 5)
+																													@elseif(auth()->user()->level == 3)
 																															Super Senior
-																													@elseif(auth()->user()->level == 6)
+																													@elseif(auth()->user()->level == 2)
 																															Pathner
-																													@elseif(auth()->user()->level == 7)
-																															บริษัท
+																													@elseif(auth()->user()->level == 1)
+																															Admin
 																																							
 																													@endif
 																								</span>
