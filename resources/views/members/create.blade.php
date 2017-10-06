@@ -136,39 +136,39 @@
                               <select class="form-control" id="level" name="level">
                             {{-- @foreach($member as $members) --}}
                               
-                              @if(auth()->user()->level == 7)                                                              
-                                  <option (old('level') == 1) ? 'selected' : '' value="1">เมมเบอร์</option>
-                                  <option (old('level') == 2) ? 'selected' : '' value="2">เอเย่นต์</option>
-                                  <option (old('level') == 3) ? 'selected' : '' value="3">มาสเตอร์</option>
-                                  <option (old('level') == 4) ? 'selected' : '' value="4">ซีเนียร์</option>
-                                  <option (old('level') == 5) ? 'selected' : '' value="5">ซูเปอร์ซีเนียร์</option>
-                                  <option (old('level') == 6) ? 'selected' : '' value="6">พารท์เนอร์</option>
-                                  <option (old('level') == 7) ? 'selected' : '' value="7">บริษัท</option>
-                              @elseif(auth()->user()->level == 6)
-                                  <option value="1">เมมเบอร์</option>
-                                  <option value="2">เอเย่นต์</option>
-                                  <option value="3">มาสเตอร์</option>
-                                  <option value="4">ซีเนียร์</option>
-                                  <option value="5">ซูเปอร์ซีเนียร์</option>
-                                  <option value="6">พารท์เนอร์</option>
-                              @elseif(auth()->user()->level == 5)
-                                  <option value="1">เมมเบอร์</option>
-                                  <option value="2">เอเย่นต์</option>
-                                  <option value="3">มาสเตอร์</option>
-                                  <option value="4">ซีเนียร์</option>
-                                  <option value="5">ซูเปอร์ซีเนียร์</option>
-                              @elseif(auth()->user()->level ==  4)
-                                  <option value="1">เมมเบอร์</option>
-                                  <option value="2">เอเย่นต์</option>
-                                  <option value="3">มาสเตอร์</option>
-                                  <option value="4">ซีเนียร์</option>
-                              @elseif(auth()->user()->level == 3)
-                                  <option value="1">เมมเบอร์</option>
-                                  <option value="2">เอเย่นต์</option>
-                                  <option value="3">มาสเตอร์</option>
+                              @if(auth()->user()->level == 1)                                                              
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                                  <option value="4">Senior</option>
+                                  <option value="3">Super Senior</option>
+                                  <option value="2">Pathner</option>
+                                  <option value="1">Admin</option>
                               @elseif(auth()->user()->level == 2)
-                                  <option value="1">เมมเบอร์</option>
-                                  <option value="2">เอเย่นต์</option>
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                                  <option value="4">Senior</option>
+                                  <option value="3">Super Senior</option>
+                                  <option value="2">Pathner</option>
+                              @elseif(auth()->user()->level == 3)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                                  <option value="4">Senior</option>
+                                  <option value="3">Super Senior</option>
+                              @elseif(auth()->user()->level ==  4)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                                  <option value="4">Senior</option>
+                              @elseif(auth()->user()->level == 5)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                              @elseif(auth()->user()->level == 6)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
                               @endif
                              
                             {{-- @endforeach --}}
