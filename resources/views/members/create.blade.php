@@ -127,7 +127,18 @@
                             ข้อมูลสมาชิก
                           </h5>
                       </div>
-
+              @if(session()->get('massage'))
+                  <div class="box">
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                          <i class="fa fa-times"></i></button>
+                      </div>
+                      <div class="callout callout-danger">
+                        <h4>Fail !</h4>
+                        <p>{{ session()->get('massage') }}</p>
+                    </div>
+                  </div>
+                @endif
                     <div class="widget-body">
                       <div class="widget-main no-padding-bottom">
                         <div class="form-group has-feedback{{ $errors->has('level') ? ' has-error' : '' }}">
@@ -177,7 +188,7 @@
                               </div>
 
                             <div class="col-xs-2"></div>
-
+         
                             <div class="has-feedback{{ $errors->has('credit') ? ' has-error' : '' }}">
                                 <label for="credit" class="control-label col-xs-1">เครดิต:</label>
                               <div class="col-xs-3">

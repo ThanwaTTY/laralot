@@ -27,9 +27,12 @@ class MemberController extends Controller
             'name' => 'required',
             'phone' => 'required'
         ];
+         $credits = auth()->user()->credit;
+         $credit = request('credit');
 
         $this->validate($request, $rules);
-        
+        // dd($credits);
+        if($credits >= $credit){          
         Member::create([
            'username' => request('useradd').request('username'),
            'password' => bcrypt(request('password')),
@@ -39,6 +42,10 @@ class MemberController extends Controller
            'phone' => request('phone')
         ]);
         return redirect('/members/create');
+        }else{
+            session()->flash('massage', 'เครติดเกินจำนวนเงิน');
+            return redirect('/members/create');
+        }
     }
 
     public function edit()
@@ -47,8 +54,8 @@ class MemberController extends Controller
         $username = auth()->user()->username;
         $username = $username.'%';
         // dd($username);
-        // $member = Member::where('level','>',$level)->get();
-        $member = Member::where('username','like',$username)->get();
+        $member = Member::where('level','>',$level)->get();
+        // $member = Member::where('username','like',$username)->get();
         
 
         return view('members/edit', compact('member') ); 
