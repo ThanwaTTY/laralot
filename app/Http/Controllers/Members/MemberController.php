@@ -19,6 +19,11 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
+         $id = auth()->user()->id;
+         $username = auth()->user()->username;
+         $username = $username. '%';
+         $totalcredit = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
+        //  dd($totalcredit);
         $rules =[
             'username' => 'required',
             'password' => 'required',
@@ -29,11 +34,13 @@ class MemberController extends Controller
         ];
          $credits = auth()->user()->credit;
          $credit = request('credit');
-
+         $total = $credit + $totalcredit;
+        //  dd($total);
+       
         $this->validate($request, $rules);
         // dd($credits);
-        if($credits >= $credit){          
-        Member::create([
+        if($credits >= $total){          
+           Member::create([
            'username' => request('useradd').request('username'),
            'password' => bcrypt(request('password')),
            'level' => request('level'),
@@ -41,6 +48,7 @@ class MemberController extends Controller
            'name' => request('name'),
            'phone' => request('phone')
         ]);
+        
         return redirect('/members/create');
         }else{
             session()->flash('massage', 'เครติดเกินจำนวนเงิน');
@@ -50,12 +58,15 @@ class MemberController extends Controller
 
     public function edit()
     {
-        $level = auth()->user()->level;
+        $id = auth()->user()->id;
         $username = auth()->user()->username;
         $username = $username.'%';
         // dd($username);
-        $member = Member::where('level','>',$level)->get();
-        // $member = Member::where('username','like',$username)->get();
+        // $member = Member::where('level','>',$level)->get();
+
+        $member = Member::where('id','!=',$id)->where('username','like',$username)->get();
+        // $member = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
+        // dd($member);
         
 
         return view('members/edit', compact('member') ); 

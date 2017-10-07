@@ -188,7 +188,7 @@
                               </div>
 
                             <div class="col-xs-2"></div>
-         
+                                  
                             <div class="has-feedback{{ $errors->has('credit') ? ' has-error' : '' }}">
                                 <label for="credit" class="control-label col-xs-1">เครดิต:</label>
                               <div class="col-xs-3">
@@ -196,7 +196,7 @@
                                 <p style="color:red">{{ $errors->first('credit') }}</p>
                               </div>
                               <span class="help-inline col-xs-2">
-                                <span class="middle"></span>
+                                <span class="middle"><span class="middle">* สูงสุด 0</span></span>
                               </span>
                             </div>
                             
