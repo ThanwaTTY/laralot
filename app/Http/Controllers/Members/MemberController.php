@@ -19,10 +19,10 @@ class MemberController extends Controller
          $credit_auths = Member::find($id);
          $totalcredit = Member::where('id','!=',$id)->where('useradd',$id)->sum('credit');
          $credit = $credit_auths->credit-$totalcredit;
-
+        // dd($totalcredit);
 
         $member = Member::get();
-        return view('members.create', compact('member','credit'));
+        return view('members.create', compact('member','credit','totalcredit'));
     }
 
     public function store(Request $request)
