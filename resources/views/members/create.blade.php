@@ -185,7 +185,7 @@
                                 <p style="color:red">{{ $errors->first('credit') }}</p>
                               </div>
                               <span class="help-inline col-xs-2">
-                                <span class="middle">* สูงสุด 0</span>
+                                <span class="middle"></span>
                               </span>
                             </div>
                             
@@ -197,7 +197,7 @@
                               <div class="col-xs-3">
                                 <div class="input-group has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
                                     <span class="input-group-addon">{{ auth()->user()->username }}</span>
-                                    <input type="hidden" name="useradd" value="{{ auth()->user()->username }}@">
+                                    <input type="hidden" name="useradd" value="{{ auth()->user()->username }}">
                                     <input id="username" class="form-control" name="username" type="text" value="{{ old('username') }}">
                                 </div>
                                 <p style="color:red">{{ $errors->first('username') }}</p>

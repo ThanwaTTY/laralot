@@ -599,7 +599,7 @@
         <li class="light-blue dropdown-fix">
           <a data-toggle="dropdown" href="#" class="dropdown-toggle">
             <i class="ace-icon fa fa-user"></i>
-            {{ auth()->user()->name }}
+            {{ auth()->user()->username }}
             
               @if(auth()->user()->level == '7')
                 [Member]

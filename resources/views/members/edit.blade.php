@@ -175,7 +175,7 @@
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" data-status="1" class=" ">
                             <td class="ac">{{$members->id}}</td>
-                            <td class="ac">{{ $members->username }}{{$members->id}} </td>
+                            <td class="ac">{{ $members->username }} </td>
                             <td class="type ac">@if($members->level == 7)
                                                     Member
                                             @elseif($members->level == 6)
@@ -244,7 +244,7 @@
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" class=" ">
                             <td class="ac">{{$members->id}}</td>
-                            <td class="ac">{{ $members->username}}{{$members->id}}</td>
+                            <td class="ac">{{ $members->username}}</td>
                             <td class="type ac">@if($members->level == 7)
                                                     Member
                                             @elseif($members->level == 6)

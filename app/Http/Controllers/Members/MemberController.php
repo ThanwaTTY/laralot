@@ -29,6 +29,7 @@ class MemberController extends Controller
         ];
 
         $this->validate($request, $rules);
+        
         Member::create([
            'username' => request('useradd').request('username'),
            'password' => bcrypt(request('password')),
@@ -43,8 +44,12 @@ class MemberController extends Controller
     public function edit()
     {
         $level = auth()->user()->level;
-        $member = Member::where('level','>',$level)->get();
-
+        $username = auth()->user()->username;
+        $username = $username.'%';
+        // dd($username);
+        // $member = Member::where('level','>',$level)->get();
+        $member = Member::where('username','like',$username)->get();
+        
 
         return view('members/edit', compact('member') ); 
     }
@@ -59,14 +64,15 @@ class MemberController extends Controller
             if (request('phone')) {
                 $members->phone = request('phone');
             } 
+            if(request('password')==null){
+                $members->status = request('status');
+            }
 
             if(request('password')) {
                 $members->password = bcrypt(request('password'));
             }
 
-            // if(request('status')){
-                $members->status = request('status');
-            // }
+
             $members->update();
 
          return redirect('/members/edit');
