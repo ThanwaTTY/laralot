@@ -62,7 +62,7 @@
 <script src="/dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
-
+{{-- 
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <script src="/plugins/input-mask/jquery.inputmask.js"></script>
 
@@ -71,7 +71,7 @@
     //Money Euro
     $("[data-mask]").inputmask();
   });
-</script>
+</script> --}}
 @endsection
 
 @section('content')
@@ -127,56 +127,129 @@
                             ข้อมูลสมาชิก
                           </h5>
                       </div>
-
+              @if(session()->get('massage'))
+                  <div class="box">
+                      <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                          <i class="fa fa-times"></i></button>
+                      </div>
+                      <div class="callout callout-danger">
+                        <h4>Fail !</h4>
+                        <p>{{ session()->get('massage') }}</p>
+                    </div>
+                  </div>
+                @endif
                     <div class="widget-body">
                       <div class="widget-main no-padding-bottom">
-                        <div class="form-group">
+                        <div class="form-group has-feedback{{ $errors->has('level') ? ' has-error' : '' }}">
                             <label for="level" class="control-label col-xs-1" autofill="false">ระดับ:</label>
                               <div class="col-xs-3">
-                                  <select class="form-control" id="level" name="level"><option value="1">เมมเบอร์</option></select>
+                              <select class="form-control" id="level" name="level">
+                            {{-- @foreach($member as $members) --}}
+                              
+                              @if(auth()->user()->level == 1)                                                              
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                                  <option value="4">Senior</option>
+                                  <option value="3">Super Senior</option>
+                                  <option value="2">Pathner</option>
+                                  <option value="1">Admin</option>
+                              @elseif(auth()->user()->level == 2)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                                  <option value="4">Senior</option>
+                                  <option value="3">Super Senior</option>
+                                  <option value="2">Pathner</option>
+                              @elseif(auth()->user()->level == 3)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                                  <option value="4">Senior</option>
+                                  <option value="3">Super Senior</option>
+                              @elseif(auth()->user()->level ==  4)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                                  <option value="4">Senior</option>
+                              @elseif(auth()->user()->level == 5)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                                  <option value="5">Master</option>
+                              @elseif(auth()->user()->level == 6)
+                                  <option value="7">Member</option>
+                                  <option value="6">agent</option>
+                              @endif
+                             
+                            {{-- @endforeach --}}
+                               </select>
+                               <p style="color:red">{{ $errors->first('level') }}</p>
                               </div>
 
                             <div class="col-xs-2"></div>
-                              <label for="credit" class="control-label col-xs-1">เครดิต:</label>
-                            <div class="col-xs-3">
-                              <input class="form-control" name="credit" type="text">
+                                  
+                            <div class="has-feedback{{ $errors->has('credit') ? ' has-error' : '' }}">
+                                <label for="credit" class="control-label col-xs-1">เครดิต:</label>
+                              <div class="col-xs-3">
+                                <input class="form-control" name="credit" type="text" value="{{ old('credit') }}">
+                                <p style="color:red">{{ $errors->first('credit') }}</p>
+                              </div>
+                              <span class="help-inline col-xs-2">
+                                <span class="middle"><span class="middle">* สูงสุด {{ $credit }}</span></span>
+                              </span>
                             </div>
-                            <span class="help-inline col-xs-2">
-                              <span class="middle">* สูงสุด 0</span>
-                            </span>
+                            
                         </div>
           
                         <div class="form-group">
-                            <label for="username" class="control-label col-xs-1" =""="">ชื่อผู้ใช้:</label>
+                          <div class="has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
+                              <label for="username" class="control-label col-xs-1" =""="">ชื่อผู้ใช้:</label>
                               <div class="col-xs-3">
-                                <div class="input-group">
-                                    <span class="input-group-addon">3M3K</span>
-                                    <input id="username" class="form-control" name="username" type="text">
+                                <div class="input-group has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
+                                    <span class="input-group-addon">{{ auth()->user()->username }}</span>
+                                    <input type="hidden" name="useradd" value="{{ auth()->user()->username }}">
+                                    <input id="username" class="form-control" name="username" type="text" value="{{ old('username') }}">
                                 </div>
+                                <p style="color:red">{{ $errors->first('username') }}</p>
                               </div>
-                              <span class="help-inline col-xs-2">
-                                <span class="middle bigger-125" id="username-availability"></span>
-                              </span>
-                              <label for="password" class="control-label col-xs-1">รหัสผ่าน:</label>
+                          </div>
+
+                            <div class="has-feedback{{ $errors->has('password') ? ' has-error' : '' }}">
+                                <span class="help-inline col-xs-2">
+                                  <span class="middle bigger-125" id="password-availability"></span>
+                                </span>
+                                <label for="password" class="control-label col-xs-1">รหัสผ่าน:</label>
                                 <div class="col-xs-3">
-                                  <input class="form-control" name="password" type="password" value="" id="password">
+                                  <input class="form-control" name="password" type="password" value="{{ old('password') }}" id="password">
+                                  <p style="color:red">{{ $errors->first('password') }}</p>
                                 </div>
                                 <span class="help-inline col-xs-2">
                                   <span class="middle">* อย่างน้อย 6 ตัวอักษร</span>
                                 </span>
+                            </div>
+                            
                         </div>
 
                         <div class="form-group">
+                          <div class="has-feedback{{ $errors->has('name') ? ' has-error' : '' }}">
                             <label for="name" class="control-label col-xs-1">ชื่อ-สกุล:</label>
                             <div class="col-xs-3">
-                              <input class="form-control" name="name" type="text" id="name">
+                              <input class="form-control" name="name" type="text" id="name" value="{{ old('name') }}">
+                              <p style="color:red">{{ $errors->first('name') }}</p>
                             </div>
+                          </div>
+                          
+
                             <div class="col-xs-2"></div>
+                          <div class="has-feedback{{ $errors->has('phone') ? ' has-error' : '' }}">
                               <label for="phone" class="control-label col-xs-1">เบอร์โทร:</label>
-                            <div class="col-xs-3">
-                              <input class="form-control" name="phone" type="text" id="phone" data-inputmask="'mask': ['999-999-9999 ', '+99 99 99 9999[9]']" 
-                                data-mask="" value="{{ old('phone') }}">
-                            </div>
+                              <div class="col-xs-3">
+                                <input class="form-control" name="phone" type="text" id="phone" 
+                                 value="{{ old('phone') }}">
+                                  <p style="color:red">{{ $errors->first('phone') }}</p>
+                              </div>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -204,187 +277,12 @@
                             <label for="take" class="control-label col-xs-1">เก็บของ:</label>
                             <div class="col-xs-2">
                               <select class="form-control" id="take" name="take">
-                                <option value="90.0" selected="selected">90.0%</option>
+                              @for($i = 90; $i >= 0; $i -= 0.5)
+                                  <option value="{{ number_format($i, 1, '.', ',') }}">{{ number_format($i, 1, '.', ',') }}%</option>
+                              @endfor
+                                {{-- <option value="90.0" selected="selected">90.0%</option>
                                 <option value="89.5">89.5%</option>
-                                <option value="89.0">89.0%</option>
-                                <option value="88.5">88.5%</option>
-                                <option value="88.0">88.0%</option>
-                                <option value="87.5">87.5%</option>
-                                <option value="87.0">87.0%</option>
-                                <option value="86.5">86.5%</option>
-                                <option value="86.0">86.0%</option>
-                                <option value="85.5">85.5%</option>
-                                <option value="85.0">85.0%</option>
-                                <option value="84.5">84.5%</option>
-                                <option value="84.0">84.0%</option>
-                                <option value="83.5">83.5%</option>
-                                <option value="83.0">83.0%</option>
-                                <option value="82.5">82.5%</option>
-                                <option value="82.0">82.0%</option>
-                                <option value="81.5">81.5%</option>
-                                <option value="81.0">81.0%</option>
-                                <option value="80.5">80.5%</option>
-                                <option value="80.0">80.0%</option>
-                                <option value="79.5">79.5%</option>
-                                <option value="79.0">79.0%</option>
-                                <option value="78.5">78.5%</option>
-                                <option value="78.0">78.0%</option>
-                                <option value="77.5">77.5%</option>
-                                <option value="77.0">77.0%</option>
-                                <option value="76.5">76.5%</option>
-                                <option value="76.0">76.0%</option>
-                                <option value="75.5">75.5%</option>
-                                <option value="75.0">75.0%</option>
-                                <option value="74.5">74.5%</option>
-                                <option value="74.0">74.0%</option>
-                                <option value="73.5">73.5%</option>
-                                <option value="73.0">73.0%</option>
-                                <option value="72.5">72.5%</option>
-                                <option value="72.0">72.0%</option>
-                                <option value="71.5">71.5%</option>
-                                <option value="71.0">71.0%</option>
-                                <option value="70.5">70.5%</option>
-                                <option value="70.0">70.0%</option>
-                                <option value="69.5">69.5%</option>
-                                <option value="69.0">69.0%</option>
-                                <option value="68.5">68.5%</option>
-                                <option value="68.0">68.0%</option>
-                                <option value="67.5">67.5%</option>
-                                <option value="67.0">67.0%</option>
-                                <option value="66.5">66.5%</option>
-                                <option value="66.0">66.0%</option>
-                                <option value="65.5">65.5%</option>
-                                <option value="65.0">65.0%</option>
-                                <option value="64.5">64.5%</option>
-                                <option value="64.0">64.0%</option>
-                                <option value="63.5">63.5%</option>
-                                <option value="63.0">63.0%</option>
-                                <option value="62.5">62.5%</option>
-                                <option value="62.0">62.0%</option>
-                                <option value="61.5">61.5%</option>
-                                <option value="61.0">61.0%</option>
-                                <option value="60.5">60.5%</option>
-                                <option value="60.0">60.0%</option>
-                                <option value="59.5">59.5%</option>
-                                <option value="59.0">59.0%</option>
-                                <option value="58.5">58.5%</option>
-                                <option value="58.0">58.0%</option>
-                                <option value="57.5">57.5%</option>
-                                <option value="57.0">57.0%</option>
-                                <option value="56.5">56.5%</option>
-                                <option value="56.0">56.0%</option>
-                                <option value="55.5">55.5%</option>
-                                <option value="55.0">55.0%</option>
-                                <option value="54.5">54.5%</option>
-                                <option value="54.0">54.0%</option>
-                                <option value="53.5">53.5%</option>
-                                <option value="53.0">53.0%</option>
-                                <option value="52.5">52.5%</option>
-                                <option value="52.0">52.0%</option>
-                                <option value="51.5">51.5%</option>
-                                <option value="51.0">51.0%</option>
-                                <option value="50.5">50.5%</option>
-                                <option value="50.0">50.0%</option>
-                                <option value="49.5">49.5%</option>
-                                <option value="49.0">49.0%</option>
-                                <option value="48.5">48.5%</option>
-                                <option value="48.0">48.0%</option>
-                                <option value="47.5">47.5%</option>
-                                <option value="47.0">47.0%</option>
-                                <option value="46.5">46.5%</option>
-                                <option value="46.0">46.0%</option>
-                                <option value="45.5">45.5%</option>
-                                <option value="45.0">45.0%</option>
-                                <option value="44.5">44.5%</option>
-                                <option value="44.0">44.0%</option>
-                                <option value="43.5">43.5%</option>
-                                <option value="43.0">43.0%</option>
-                                <option value="42.5">42.5%</option>
-                                <option value="42.0">42.0%</option>
-                                <option value="41.5">41.5%</option>
-                                <option value="41.0">41.0%</option>
-                                <option value="40.5">40.5%</option>
-                                <option value="40.0">40.0%</option>
-                                <option value="39.5">39.5%</option>
-                                <option value="39.0">39.0%</option>
-                                <option value="38.5">38.5%</option>
-                                <option value="38.0">38.0%</option>
-                                <option value="37.5">37.5%</option>
-                                <option value="37.0">37.0%</option>
-                                <option value="36.5">36.5%</option>
-                                <option value="36.0">36.0%</option>
-                                <option value="35.5">35.5%</option>
-                                <option value="35.0">35.0%</option>
-                                <option value="34.5">34.5%</option>
-                                <option value="34.0">34.0%</option>
-                                <option value="33.5">33.5%</option>
-                                <option value="33.0">33.0%</option>
-                                <option value="32.5">32.5%</option>
-                                <option value="32.0">32.0%</option>
-                                <option value="31.5">31.5%</option>
-                                <option value="31.0">31.0%</option>
-                                <option value="30.5">30.5%</option>
-                                <option value="30.0">30.0%</option>
-                                <option value="29.5">29.5%</option>
-                                <option value="29.0">29.0%</option>
-                                <option value="28.5">28.5%</option>
-                                <option value="28.0">28.0%</option>
-                                <option value="27.5">27.5%</option>
-                                <option value="27.0">27.0%</option>
-                                <option value="26.5">26.5%</option>
-                                <option value="26.0">26.0%</option>
-                                <option value="25.5">25.5%</option>
-                                <option value="25.0">25.0%</option>
-                                <option value="24.5">24.5%</option>
-                                <option value="24.0">24.0%</option>
-                                <option value="23.5">23.5%</option>
-                                <option value="23.0">23.0%</option>
-                                <option value="22.5">22.5%</option>
-                                <option value="22.0">22.0%</option>
-                                <option value="21.5">21.5%</option>
-                                <option value="21.0">21.0%</option>
-                                <option value="20.5">20.5%</option>
-                                <option value="20.0">20.0%</option>
-                                <option value="19.5">19.5%</option>
-                                <option value="19.0">19.0%</option>
-                                <option value="18.5">18.5%</option>
-                                <option value="18.0">18.0%</option>
-                                <option value="17.5">17.5%</option>
-                                <option value="17.0">17.0%</option>
-                                <option value="16.5">16.5%</option>
-                                <option value="16.0">16.0%</option>
-                                <option value="15.5">15.5%</option>
-                                <option value="15.0">15.0%</option>
-                                <option value="14.5">14.5%</option>
-                                <option value="14.0">14.0%</option>
-                                <option value="13.5">13.5%</option>
-                                <option value="13.0">13.0%</option>
-                                <option value="12.5">12.5%</option>
-                                <option value="12.0">12.0%</option>
-                                <option value="11.5">11.5%</option>
-                                <option value="11.0">11.0%</option>
-                                <option value="10.5">10.5%</option>
-                                <option value="10.0">10.0%</option>
-                                <option value="9.5">9.5%</option>
-                                <option value="9.0">9.0%</option>
-                                <option value="8.5">8.5%</option>
-                                <option value="8.0">8.0%</option>
-                                <option value="7.5">7.5%</option>
-                                <option value="7.0">7.0%</option>
-                                <option value="6.5">6.5%</option>
-                                <option value="6.0">6.0%</option>
-                                <option value="5.5">5.5%</option>
-                                <option value="5.0">5.0%</option>
-                                <option value="4.5">4.5%</option>
-                                <option value="4.0">4.0%</option>
-                                <option value="3.5">3.5%</option>
-                                <option value="3.0">3.0%</option>
-                                <option value="2.5">2.5%</option>
-                                <option value="2.0">2.0%</option>
-                                <option value="1.5">1.5%</option>
-                                <option value="1.0">1.0%</option>
-                                <option value="0.5">0.5%</option>
-                                <option value="0.0">0.0%</option>
+                                <option value="0.0">0.0%</option> --}}
                               </select>
                             </div>
                             <div class="col-xs-3 left-margin-10" style="margin-top: 5px">

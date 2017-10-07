@@ -51,36 +51,36 @@
 				<!-- #account-summary -->
 				<div id="account-summary">
 					<ul>
-						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}@3M3K{{ auth()->user()->username }}</span></li>
-						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 1)
+						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}{{ auth()->user()->username }}</span></li>
+						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 7)
 																															Member
-																													@elseif(auth()->user()->level == 2)
+																													@elseif(auth()->user()->level == 6)
 																															Agent
-																													@elseif(auth()->user()->level == 3)
+																													@elseif(auth()->user()->level == 5)
 																															Master
 																													@elseif(auth()->user()->level == 4)
 																															Senior
-																													@elseif(auth()->user()->level == 5)
+																													@elseif(auth()->user()->level == 3)
 																															Super Senior
-																													@elseif(auth()->user()->level == 6)
+																													@elseif(auth()->user()->level == 2)
 																															Pathner
-																													@elseif(auth()->user()->level == 7)
-																															บริษัท
+																													@elseif(auth()->user()->level == 1)
+																															Admin
 																																							
 																													@endif
 																								</span>
 						</li>
-						<li><span class="prop">เครดิต:</span><span id="max_credit">0</span></li>
+						<li><span class="prop">เครดิต:</span><span id="max_credit">{{ number_format(auth()->user()->credit, '2' )}}</span></li>
 						<li><span class="prop">ใช้ไป:</span><span id="used_credit">0</span></li>
 						<li><span class="prop">เหลือ:</span><span id="credit_balance">0</span></li>
 						<li><span class="prop">ได้เสีย:</span><span id="cash_balance">0</span></li>
-						<li><span class="prop">สมาชิก:</span><span id="member_count">5</span></li>
+						<li><span class="prop">สมาชิก:</span><span id="member_count"></span></li>
 						<li><span class="prop">ออนไลน์:</span><span id="member_online">0</span></li>
 					</ul>
 				</div><!-- /#account-summary -->
 			</div>
 
-      <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
+      {{-- <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
         <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
           <div class="col-xs-5"><span style="float:right;color:white;">ชื่อ:</span></div>
           <div class="col-xs-7"><span style="float:left;color:white;">{{ auth()->user()->name }}</span></div>
@@ -129,7 +129,7 @@
           <div class="col-xs-5"><span style="float:right;color:white;">ออนไลน์:</span></div>
           <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
         </div>
-      </div>
+      </div> --}}
       <ul class="sidebar-menu">
         <li class="treeview">
           <a href="#">

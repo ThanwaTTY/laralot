@@ -153,12 +153,12 @@
                     <table class="table table-bordered table-border-dark table-nowrap no-margin-bottom min-width-800 max-width-1100 users__edit users__edit--larger">
                         <thead>
                           <tr>
-                            <th>#</th>
-                            <th>ชื่อผู้ใช้</th>
+                            <th>Id</th>
+                            <th class="ac">ชื่อผู้ใช้</th>
                             <th class="ac">ระดับ</th>
-                            <th>ชื่อ</th>
-                            <th>โทร</th>
-                            <th>สถานะ</th>
+                            <th class="ac">ชื่อ</th>
+                            <th class="ac">โทร</th>
+                            <th class="ac">สถานะ</th>
                             <th class="ac">บันทึก</th>
                             <th class="ac">เครดิต</th>
                             <th class="ac">ได้เสียสุทธิ</th>
@@ -174,46 +174,56 @@
                         {{ csrf_field() }}
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" data-status="1" class=" ">
-                            <td class="id">{{$members->id}}</td>
-                            <td>3M3K{{$members->id}} </td>
-                            <td class="type">@if($members->level == 1)
+                            <td class="ac">{{$members->id}}</td>
+                            <td class="ac">{{ $members->username }} </td>
+                            <td class="type ac">@if($members->level == 7)
                                                     Member
-                                            @elseif($members->level == 2)
-													Agent																								Agent
-                                            @elseif($members->level == 3)
+                                            @elseif($members->level == 6)
+													                          Agent																								
+                                            @elseif($members->level == 5)
                                                     Master
                                             @elseif($members->level == 4)
                                                     Senior
-                                            @elseif($members->level == 5)
+                                            @elseif($members->level == 3)
                                                     Super Senior
-                                            @elseif($members->level == 6)
+                                            @elseif($members->level == 2)
                                                     Pathner
-                                            @elseif($members->level == 7)
-                                                    บริษัท
+                                            @elseif($members->level == 1)
+                                                    Admin
                                             @endif
                             </td>
                             <td class="name"><input class="form-control input-sm" data-old="" name="name" type="text" value="{{$members->name}}"></td>
                             <td class="phone"><input class="form-control input-sm" data-old="" name="phone" type="text" value="{{$members->phone}}"></td>
                             <td class="status">
                               <select data-old="1" name="status">
-                              <option value="1" selected="selected">ปกติ</option>
-                              <option value="2">ระงับ</option>
-                              <option value="3">ล็อค</option>
+                              {{-- @if($members->status == 0) --}}
+                                <option value="0" {{ ($members->status == 0) ? 'selected="selected"' : ''}}>ปกติ</option>
+                                <option value="1" {{ ($members->status == 1) ? 'selected="selected"' : ''}}>ระงับ</option>
+                                <option value="2" {{ ($members->status == 2) ? 'selected="selected"' : ''}}>ล็อค</option>
+                              {{-- @elseif( $members->status == 1)
+                                <option value="0">ปกติ</option>
+                                <option value="1" selected="selected">ระงับ</option>
+                                <option value="2">ล็อค</option>
+                               @elseif( $members->status == 2)
+                                <option value="0">ปกติ</option>
+                                <option value="1">ระงับ</option>
+                                <option value="2"  selected="selected">ล็อค</option>
+                              @endif --}}
                               </select>
                             </td>
                             <td class="control child-hidden">
                               <button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
                               <button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
                             </td>
-                            <td class="ar">{{$members->credit}}</td>
+                            <td class="ar">{{ number_format($members->credit,'2')}}</td>
                             <td class="ar n2c">0</td>
                             <td class="ac am p5"></td>
                             <td class="ac am p5">19-07-2017<br>20:32:09</td>
                             <td class="ac am p5">134.196.33.166</td>
                           </tr>
                         </tbody>
-                    
-                    
+                    </form>
+                    @endforeach
                     </table>
                 </div>
             <!-- Tab 2 Password -->
@@ -221,41 +231,44 @@
                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom min-width-800 max-width-1100 users__edit users__edit--larger">
                         <thead>
                           <tr>
-                            <th>#</th>
-                            <th>ชื่อผู้ใช้</th>
-                            <th>ระดับ</th>
-                            <th>รหัสผ่าน</th>
+                            <th>Id</th>
+                            <th class="ac">ชื่อผู้ใช้</th>
+                            <th class="ac">ระดับ</th>
+                            <th class="ac">รหัสผ่าน</th>
                             <th>บันทึก</th>
                           </tr>
                         </thead>
+                    @foreach($member as $members)
+                      <form action="/members/{{$members->id}}/edit" method="post">
+                        {{ csrf_field() }}
                         <tbody>
                           <tr data-parent-id="9306" data-member-id="9474" class=" ">
-                            <td class="id">{{$members->id}}</td>
-                            <td>3M3K{{$members->id}}</td>
-                            <td class="type">@if($members->level == 1)
+                            <td class="ac">{{$members->id}}</td>
+                            <td class="ac">{{ $members->username}}</td>
+                            <td class="type ac">@if($members->level == 7)
                                                     Member
-                                            @elseif($members->level == 2)
-													Agent																								Agent
-                                            @elseif($members->level == 3)
+                                            @elseif($members->level == 6)
+																										Agent
+                                            @elseif($members->level == 5)
                                                     Master
                                             @elseif($members->level == 4)
                                                     Senior
-                                            @elseif($members->level == 5)
+                                            @elseif($members->level == 3)
                                                     Super Senior
-                                            @elseif($members->level == 6)
+                                            @elseif($members->level == 2)
                                                     Pathner
-                                            @elseif($members->level == 7)
-                                                    บริษัท
+                                            @elseif($members->level == 1)
+                                                    Admin
                                             @endif
                             </td>
-                            <td class="password"><input class="form-control input-sm" data-old="" name="password" type="password" value="{{$members->password}}"></td>
+                            <td class="password"><input class="form-control input-sm" data-old="" name="password" type="password" value=""></td>
                             <td class="control child-hidden">
                               <button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
                               <button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
                             </td>
                           </tr>             
                         </tbody>
-                    </form>
+                      </form>
                     @endforeach
                     </table>
                 </div>
