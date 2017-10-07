@@ -196,7 +196,7 @@
                                 <p style="color:red">{{ $errors->first('credit') }}</p>
                               </div>
                               <span class="help-inline col-xs-2">
-                                <span class="middle"><span class="middle">* สูงสุด 0</span></span>
+                                <span class="middle"><span class="middle">* สูงสุด {{ $credit }}</span></span>
                               </span>
                             </div>
                             

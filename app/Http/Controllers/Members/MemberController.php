@@ -13,8 +13,16 @@ class MemberController extends Controller
     {
         //ถ้าlevelต่ำกว่าคนล๊อกอินไม่สามารถเพิ่มสมาชิกที่สูงกว่าได้
         // $levels = DB::table('levels')->where('id' , '<' , auth()->user()->level)->get();
+         $id = auth()->user()->id;
+         $username = auth()->user()->username;
+         $username = $username. '%';
+         $credit_auths = Member::find($id);
+         $totalcredit = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
+         $credit = $credit_auths->credit-$totalcredit;
+
+
         $member = Member::get();
-        return view('members.create', compact('member'));
+        return view('members.create', compact('member','credit'));
     }
 
     public function store(Request $request)
@@ -22,6 +30,7 @@ class MemberController extends Controller
          $id = auth()->user()->id;
          $username = auth()->user()->username;
          $username = $username. '%';
+         
          $totalcredit = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
         //  dd($totalcredit);
         $rules =[
