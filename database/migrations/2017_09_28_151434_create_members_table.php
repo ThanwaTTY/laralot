@@ -26,6 +26,7 @@ class CreateMembersTable extends Migration
             $table->string('latest_login')->default('');
             $table->string('latest_ip')->default('');
             $table->string('online')->default(0);
+            $table->integer('useradd');
             $table->rememberToken();
             $table->timestamps();
         });

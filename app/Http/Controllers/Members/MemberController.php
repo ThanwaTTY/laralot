@@ -14,10 +14,10 @@ class MemberController extends Controller
         //ถ้าlevelต่ำกว่าคนล๊อกอินไม่สามารถเพิ่มสมาชิกที่สูงกว่าได้
         // $levels = DB::table('levels')->where('id' , '<' , auth()->user()->level)->get();
          $id = auth()->user()->id;
-         $username = auth()->user()->username;
-         $username = $username. '%';
+         $useradd = auth()->user()->useradd;
+        //  $username = $username. '%';
          $credit_auths = Member::find($id);
-         $totalcredit = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
+         $totalcredit = Member::where('id','!=',$id)->where('useradd',$id)->sum('credit');
          $credit = $credit_auths->credit-$totalcredit;
 
 
@@ -28,10 +28,10 @@ class MemberController extends Controller
     public function store(Request $request)
     {
          $id = auth()->user()->id;
-         $username = auth()->user()->username;
-         $username = $username. '%';
+         $useradd = auth()->user()->useradd;
+        //  $username = $username. '%';
          
-         $totalcredit = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
+         $totalcredit = Member::where('id','!=',$id)->where('useradd',$id)->sum('credit');
         //  dd($totalcredit);
         $rules =[
             'username' => 'required',
@@ -44,8 +44,9 @@ class MemberController extends Controller
          $credits = auth()->user()->credit;
          $credit = request('credit');
          $total = $credit + $totalcredit;
+         $useradd = auth()->user()->id;
         //  dd($total);
-       
+    //    dd($useradd);
         $this->validate($request, $rules);
         // dd($credits);
         if($credits >= $total){          
@@ -55,7 +56,8 @@ class MemberController extends Controller
            'level' => request('level'),
            'credit' => request('credit'),
            'name' => request('name'),
-           'phone' => request('phone')
+           'phone' => request('phone'),
+           'useradd' => auth()->user()->id
         ]);
         
         return redirect('/members/create');
@@ -68,12 +70,12 @@ class MemberController extends Controller
     public function edit()
     {
         $id = auth()->user()->id;
-        $username = auth()->user()->username;
-        $username = $username.'%';
+        $useradd = auth()->user()->useradd;
+        // $username = $username.'%';
         // dd($username);
         // $member = Member::where('level','>',$level)->get();
 
-        $member = Member::where('id','!=',$id)->where('username','like',$username)->get();
+        $member = Member::where('id','!=',$id)->where('useradd',$id)->get();
         // $member = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
         // dd($member);
         
