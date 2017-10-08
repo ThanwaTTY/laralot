@@ -197,10 +197,10 @@ li.divider {
     font-size: 13px;
     font-weight: normal;
 }
-.table {
+/*.table {
     width: 100%;
     margin-bottom: 20px;
-}
+}*/
 table {
     max-width: 100%;
     background-color: transparent;

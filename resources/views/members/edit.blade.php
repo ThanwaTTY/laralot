@@ -23,34 +23,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-
-    {{-- <style>
-    .sidebar .sidebar-shortcuts-large {
-        line-height: 45px;
-    }
-    .bot-margin-3 {
-        margin-bottom: 13px !important;
-        margin-left: 18px !important;
-        border-button: 2px;
-    }
-
-    .bot-margin-3 i {
-        font-size: 28px;
-    }
-
-    p.one {
-    border-style: solid;
-    border-color: #006699;
-    padding: 15px;
-    background: #b3e6ff;
-    }
-
-    .nav-tabs-custom>.nav-tabs>li>a {
-    color: #fff;
-    border-radius: 0;
-    }
-    </style> --}}
-    <link rel="stylesheet" href="/css/custom2.css">
+  <link rel="stylesheet" href="/css/custom2.css">
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->

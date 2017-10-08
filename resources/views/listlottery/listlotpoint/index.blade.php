@@ -1,265 +1,805 @@
 @extends('master')
 @section('head')
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="/plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="/plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="/plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-{{--   <style>
-  .row {
-    margin-right: -8px;
-    margin-left: -15px;
-    padding-top: 3px;
-}
-  .info-boxcreate {
-    display: block;
-    min-height: 40px;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    border-radius: 2px;
-    margin-bottom: 15px;
-    
-}
-  #size{
-    height: 49px;
-    width: 55px;
-    line-height: 0px;
-    min-height: 0px;
-  }
-
-  </style> --}}
-  <style>
-.sidebar .sidebar-shortcuts-large {
-    line-height: 45px;
-}
-.bot-margin-3 {
-    margin-bottom: 13px !important;
-    margin-left: 18px !important;
-    border-button: 2px;
-}
-
-.bot-margin-3 i {
-    font-size: 28px;
-}
-
-.negative {
-    color: #e3302c;
-}
-.positive {
-    color: #508600;
-}
-  </style>
+  <link rel="stylesheet" href="/css/custom2.css">
+  {{-- <style>
+  .table {
+    width: 77%;
+    margin-bottom: 20px;
+    }
+    </style> --}}
 @endsection
 @section('content')
-    <!-- Content Header (Page header) -->
-      <section class="sidebar-shortcuts-large bot-margin-3">
-      {{--  <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>  --}}
-      <div class="row">
-        {{--  <div class="pull-left">  --}}
-          <ol class="breadcrumb">
-            <li class="active"><i class="fa fa-home"></i></li>
-            <li class="active">ยินดีต้อนรับ</li>
-            <li class="active">ดูของรวม / คาดคะเนได้เสีย</li>
-          </ol>
-        {{--  </div>  --}}
-      </div>
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="modal-content">
-            <div class="box box-info">      
-                <form class="form-horizontal" action="" method="post">
-                    {{ csrf_field() }}
-                    <div class="box-body">
-                             <div class="row">
-                                <div class="col-xs-12">
-                                    <div class="page-header">
-                                        <h1>ดูของรวม [3M3K]</h1>
-                                        <h4 class="sub">
-                                            <i class="fa fa-angle-right orange"></i>
-                                            <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 กันยายน 2560
-                                            <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
-                                        </h4>
-                                    </div>
-                                     {{-- <div style="background-color:#b3e6ff;color:black;padding:5px;border: 3px solid #006699; ">
-                                        {{-- <p style="color:#cc0000;">ตัวสีเเดง = เต็มเเล้ว</p><p style="color:#009933;">พื้นหลังสีเขียว = ถูกรางวัล</p> --}}
-                                        {{-- <b><b style="color:#cc0000;">ตัวเลขสีแดง</b> = เต็มเเล้ว <b  style="color:#009933;">พื้นหลังสีเขียว</b> = ถูกรางวัล</b>
-                                        <p>กด Ctrl+F เพื่อค้นหา</p>
-                                     </div>                             --}}
-                                </div>                                  
-                            </div>
-                            <div class="alert alert-info">
-                                <span class="negative">ตัวเลขสีแดง</span> = เต็มแล้ว, <span class="positive">พื้นหลังสีเขียว</span> = ถูกรางวัล<br>
-                                <b>กด Ctrl+F เพื่อค้นหา</b>
-                            </div>
-                            
-                            <div class="row">
-                                <div class="col-xs-3">
-                                    <div class="col-xs-3 text-right">
-                                       <p>ดู :</p>
-                                   </div>
-                                   <div class="col-xs-9 text-left">
-                                            <select class="form-control" id="">
-                                                <option>ของรวม</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                            </select>
-                                   </div>
-                                </div>
-                                 <div class="col-xs-3">
-                                    <div class="col-xs-6 text-right">
-                                       <p>จำนวนเเถว :</p>
-                                   </div>
-                                   <div class="col-xs-6 text-left">
-                                            <select class="form-control" id="">
-                                                <option>50</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                            </select>
-                                   </div>
-                                </div>
-                                 <div class="col-xs-3">
-                                    <div class="col-xs-2 text-right">
-                                       <p>เรียง:</p>
-                                   </div>
-                                   <div class="col-xs-10 text-left">
-                                            <select class="form-control" id="">
-                                                <option>คาดคะเนยอดเสีย มาก->น้อย</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                                <option>...</option>
-                                            </select>
-                                   </div>
-                                </div>
-                                
-                                <div class="col-xs-3">
-                                   <button class="btn btn-primary">รีเฟช</button>
-                                </div>
-                            </div>
-                            <br>
-                            <br>
-                        <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                            <table class="table table-bordered bg-gray">
-                                <thead>
-                                    <tr> 
-                                        <th></th>
-                                        <th></th>
-                                        <th class="text-center">3ตัวบน</th>
-                                        <th class="text-center">3ตัวล่าง</th>
-                                        <th class="text-center">3ตัวโต๊ด</th>
-                                        <th class="text-center">2ตัวบน</th>
-                                        <th class="text-center">2ตัวล่าง</th>
-                                        <th class="text-center">2ตัวโต๊ด</th>
-                                        <th class="text-center">วิ่งบน</th>
-                                        <th class="text-center">วิ่งล่าง</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr style="background-color:#ffe6cc;">
-                                        <th style="background-color:#e6e6e6;">ซื้อ</th>
-                                        <th style="background-color:#e6e6e6;"class="text-right">0.00</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>
-                                    <tr style="background-color:#ffc180;">
-                                        <th style="background-color:#e6e6e6;">คอม</th>
-                                        <th style="background-color:#e6e6e6;"class="text-right">0.00</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>                
-                                    <tr style="background-color:#ffe6cc;">
-                                        <th style="background-color:#e6e6e6;">รับ</th>
-                                        <th style="background-color:#e6e6e6;"class="text-right">0.00</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>                
-                                    <tr style="background-color:#ffc180;">
-                                        <th style="background-color:#e6e6e6;">จ่าย</th>
-                                        <th style="background-color:#e6e6e6;"class="text-right">0.00</th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                        <th></th>
-                                    </tr>  
-                                    <tr>
-                                        <th>ตั่งสู้</th>
-                                        <th><center><button class="btn btn-primary">บันทึก</button></center></th>
-                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
-                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
-                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
-                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
-                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
-                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
-                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
-                                        <th><input type="text"size="1" class="form-control" id="" placeholder="" value=""></th>
-                                    </tr>                                                       
-                                </tbody>
-                                
-                            </table>
-                        </div>
-                    </div>
-                    {{-- <div class="modal-footer">
-                    
-                    <button type="submit" class="btn btn-primary">บันทึก</button>
-                    </div> --}}
-                </form>
-            
-            </div>    
-    </div> 
-</section>
-    <!-- /.content -->
+<div class="breadcrumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <!-- <a href="#">Home</a> -->
+    </li>
+    <li>
+        รายการแทง
+    </li>
+    <li>
+        ดูของรวม / คาดคะเนได้เสีย
+    </li>
+  </ul><!-- /.breadcrumb -->
+  <span id="global-clock" class="pull-right"></span>
+</div>
+
+<div class="page-content" id="user-content">
+        <div class="row">
+          <div id="content" class="col-xs-12"> <div class="page-header">
+  <h1>ดูของรวม [3M3K]</h1>
+  <h4 class="sub">
+    <i class="fa fa-angle-right orange"></i>
+    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 ตุลาคม 2560
+    <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
+  </h4>
+</div>
+
+  
+  
+<div class="alert alert-info">
+  <span class="negative">ตัวเลขสีแดง</span> = เต็มแล้ว, <span class="positive">พื้นหลังสีเขียว</span> = ถูกรางวัล<br>
+  <b>กด Ctrl+F เพื่อค้นหา</b>
+</div>
+
+<input type="hidden" name="user_id" value="9306">
+
+<!-- Filter -->
+<form method="GET" action="https://agent.superlot999.com/get-items" accept-charset="UTF-8" class="form-inline overall-table-filter">
+  <label for="show-kind" class="right-padding-5 bolder">ดู :</label>
+
+  <select class="form-control input-sm bigger-110 update-trigger" id="show-kind" name=""><option value="item" selected="selected">ของรวม</option><option value="predict">คาดคะเนได้เสีย</option></select>
+
+  <label for="show-num-rows" class="left-padding-10 right-padding-5 bolder">จำนวนแถว :</label>
+
+  <select class="form-control input-sm bigger-110 update-trigger" id="show-num-rows" name=""><option value="50">50</option><option value="250">250</option><option value="500">500</option><option value="750">750</option><option value="1000">all</option></select>
+
+  <label for="show-order" class="left-padding-10 right-padding-5 bolder">เรียง :</label>
+
+  <select class="form-control input-sm bigger-110 update-trigger" id="show-order" name=""><option value="predict_desc">คาดคะเนยอดเสีย มาก-&gt;น้อย</option><option value="predict_asc">คาดคะเนยอดเสีย น้อย-&gt;มาก</option><option value="take_desc">ยอดแทง มาก-&gt;น้อย</option><option value="take_asc">ยอดแทง น้อย-&gt;มาก</option><option value="num_asc">หมายเลข น้อย-&gt;มาก</option><option value="num_desc">หมายเลข มาก-&gt;น้อย</option></select>
+
+      <input id="show-filter" name="show-filter" type="hidden" value="all">
+  
+  <button type="button" class="btn btn-primary btn-sm left-margin-10" id="btn-refresh">รีเฟรช</button>
+
+  <span class="align-middle left-margin-10">
+    <span id="overall-timer">รีเฟรชใน 36 วินาที</span>
+  </span>
+</form>
+
+<div class="space-4"></div>
+
+<div class="tabbable">
+  <ul class="nav nav-tabs tab-color-blue">
+                  <li class="active">
+          <a data-toggle="tab" href="#bet_type_group_1">3 ตัวท้าย</a>
+        </li>
+                                                    </ul>
+</div>
+
+<div class="tab-content no-border no-padding">
+      <div class="tab-pane in active" id="bet_type_group_1">
+
+      <form method="POST" action="https://agent.superlot999.com/update-bet-limit" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form"><input name="_token" type="hidden" value="VE0U8lpB8pFrbxFHyLnWN4AUhCKdErLrG5yBD0sy">
+
+        <input name="game_type_id" type="hidden" value="1">
+        <input name="bet_type_group_id" type="hidden" value="1">
+        <table class="table table-bordered table-border-dark table-nano-compact table-fancy table-auto table-nowrap no-margin-bottom overall-table">
+          <!-- Bet Types -->
+          <thead class="thin-border-bottom">
+            <tr>
+              <th class="width-160">
+                              </th>
+                              <th class="align-center">3 ตัวบน</th>
+                              <th class="align-center">3 ตัวล่าง</th>
+                              <th class="align-center">3 ตัวโต๊ด</th>
+                              <th class="align-center">2 ตัวบน</th>
+                              <th class="align-center">2 ตัวล่าง</th>
+                              <th class="align-center">2 ตัวโต๊ด</th>
+                              <th class="align-center">วิ่งบน</th>
+                              <th class="align-center">วิ่งล่าง</th>
+                          </tr>
+          </thead>
+
+          <!-- Summary -->
+          <tbody class="summary">
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">ซื้อ</span>
+                  <span class="pull-right n2c sum-buy-1">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c buy-1">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-2">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-3">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-4">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-5">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-6">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-7">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-8">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">คอม</span>
+                  <span class="pull-right n2c sum-com-1">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c com-1">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-2">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-3">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-4">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-5">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-6">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-7">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-8">0.00</td>
+                              </tr>
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">รับ</span>
+                  <span class="pull-right n2c sum-take-1">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c take-1">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-2">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-3">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-4">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-5">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-6">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-7">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-8">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">จ่าย</span>
+                  <span class="pull-right n2c sum-pay-1">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c pay-1">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-2">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-3">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-4">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-5">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-6">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-7">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-8">0.00</td>
+                              </tr>
+                      </tbody>
+
+          <!-- Bet Limit -->
+          <tbody class="control">
+            <tr class="odd">
+              <td class="align-middle bolder">
+                <span class="pull-left">ตั้งสู้</span>
+                                  <span class="pull-right">
+                    <button type="text" class="btn btn-primary btn-xs bigger-110" id="btn-update-bet-limit" data-game-type-id="1">
+                      บันทึก
+                    </button>
+                  </span>
+                              </td>
+                                                <td>
+                                          <div class="input-group-limit_1 input-icon input-icon-left">
+                        <input type="text" name="limit_1" value="100" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_2 input-icon input-icon-left">
+                        <input type="text" name="limit_2" value="100" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_3 input-icon input-icon-left">
+                        <input type="text" name="limit_3" value="100" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_4 input-icon input-icon-left">
+                        <input type="text" name="limit_4" value="500" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_5 input-icon input-icon-left">
+                        <input type="text" name="limit_5" value="500" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_6 input-icon input-icon-left">
+                        <input type="text" name="limit_6" value="100" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_7 input-icon input-icon-left">
+                        <input type="text" name="limit_7" value="1000" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_8 input-icon input-icon-left">
+                        <input type="text" name="limit_8" value="1000" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                          </tr>
+          </tbody>
+
+          <!-- Content -->
+          <tbody class="data" data-bet-type-group-id="1"></tbody>
+        </table>
+      </form>
+
+    </div>
+      <div class="tab-pane " id="bet_type_group_2">
+
+      <form method="POST" action="https://agent.superlot999.com/update-bet-limit" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form"><input name="_token" type="hidden" value="VE0U8lpB8pFrbxFHyLnWN4AUhCKdErLrG5yBD0sy">
+
+        <input name="game_type_id" type="hidden" value="1">
+        <input name="bet_type_group_id" type="hidden" value="2">
+        <table class="table table-bordered table-border-dark table-nano-compact table-fancy table-auto table-nowrap no-margin-bottom overall-table">
+          <!-- Bet Types -->
+          <thead class="thin-border-bottom">
+            <tr>
+              <th class="width-160">
+                              </th>
+                              <th class="align-center">3 ตัวบน</th>
+                              <th class="align-center">3 ตัวล่าง</th>
+                              <th class="align-center">3 ตัวโต๊ด</th>
+                              <th class="align-center">2 ตัวบน</th>
+                              <th class="align-center">2 ตัวล่าง</th>
+                              <th class="align-center">2 ตัวโต๊ด</th>
+                              <th class="align-center">วิ่งบน</th>
+                              <th class="align-center">วิ่งล่าง</th>
+                          </tr>
+          </thead>
+
+          <!-- Summary -->
+          <tbody class="summary">
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">ซื้อ</span>
+                  <span class="pull-right n2c sum-buy-2">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c buy-21">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-22">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-23">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-24">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-25">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-26">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-27">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-28">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">คอม</span>
+                  <span class="pull-right n2c sum-com-2">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c com-21">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-22">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-23">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-24">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-25">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-26">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-27">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-28">0.00</td>
+                              </tr>
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">รับ</span>
+                  <span class="pull-right n2c sum-take-2">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c take-21">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-22">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-23">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-24">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-25">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-26">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-27">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-28">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">จ่าย</span>
+                  <span class="pull-right n2c sum-pay-2">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c pay-21">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-22">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-23">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-24">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-25">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-26">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-27">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-28">0.00</td>
+                              </tr>
+                      </tbody>
+
+          <!-- Bet Limit -->
+          <tbody class="control">
+            <tr class="odd">
+              <td class="align-middle bolder">
+                <span class="pull-left">ตั้งสู้</span>
+                                  <span class="pull-right">
+                    <button type="text" class="btn btn-primary btn-xs bigger-110" id="btn-update-bet-limit" data-game-type-id="1">
+                      บันทึก
+                    </button>
+                  </span>
+                              </td>
+                                                <td>
+                                          <div class="input-group-limit_21 input-icon input-icon-left">
+                        <input type="text" name="limit_21" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div>
+                        <input class="form-control input-sm input-small align-right width-110" disabled="disabled" name="" type="text">
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_23 input-icon input-icon-left">
+                        <input type="text" name="limit_23" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_24 input-icon input-icon-left">
+                        <input type="text" name="limit_24" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div>
+                        <input class="form-control input-sm input-small align-right width-110" disabled="disabled" name="" type="text">
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_26 input-icon input-icon-left">
+                        <input type="text" name="limit_26" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_27 input-icon input-icon-left">
+                        <input type="text" name="limit_27" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div>
+                        <input class="form-control input-sm input-small align-right width-110" disabled="disabled" name="" type="text">
+                      </div>
+                                      </td>
+                                          </tr>
+          </tbody>
+
+          <!-- Content -->
+          <tbody class="data" data-bet-type-group-id="2"></tbody>
+        </table>
+      </form>
+
+    </div>
+      <div class="tab-pane " id="bet_type_group_5">
+
+      <form method="POST" action="https://agent.superlot999.com/update-bet-limit" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form"><input name="_token" type="hidden" value="VE0U8lpB8pFrbxFHyLnWN4AUhCKdErLrG5yBD0sy">
+
+        <input name="game_type_id" type="hidden" value="1">
+        <input name="bet_type_group_id" type="hidden" value="5">
+        <table class="table table-bordered table-border-dark table-nano-compact table-fancy table-auto table-nowrap no-margin-bottom overall-table">
+          <!-- Bet Types -->
+          <thead class="thin-border-bottom">
+            <tr>
+              <th class="width-160">
+                              </th>
+                              <th class="align-center">หลักแสน</th>
+                              <th class="align-center">หลักหมื่น</th>
+                              <th class="align-center">หลักพัน</th>
+                              <th class="align-center">หลักร้อย</th>
+                              <th class="align-center">หลักสิบ</th>
+                              <th class="align-center">หลักหน่วย</th>
+                          </tr>
+          </thead>
+
+          <!-- Summary -->
+          <tbody class="summary">
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">ซื้อ</span>
+                  <span class="pull-right n2c sum-buy-5">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c buy-51">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-52">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-53">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-54">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-55">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-56">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">คอม</span>
+                  <span class="pull-right n2c sum-com-5">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c com-51">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-52">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-53">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-54">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-55">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-56">0.00</td>
+                              </tr>
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">รับ</span>
+                  <span class="pull-right n2c sum-take-5">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c take-51">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-52">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-53">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-54">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-55">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-56">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">จ่าย</span>
+                  <span class="pull-right n2c sum-pay-5">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c pay-51">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-52">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-53">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-54">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-55">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-56">0.00</td>
+                              </tr>
+                      </tbody>
+
+          <!-- Bet Limit -->
+          <tbody class="control">
+            <tr class="odd">
+              <td class="align-middle bolder">
+                <span class="pull-left">ตั้งสู้</span>
+                                  <span class="pull-right">
+                    <button type="text" class="btn btn-primary btn-xs bigger-110" id="btn-update-bet-limit" data-game-type-id="1">
+                      บันทึก
+                    </button>
+                  </span>
+                              </td>
+                                                <td>
+                                          <div class="input-group-limit_51 input-icon input-icon-left">
+                        <input type="text" name="limit_51" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_52 input-icon input-icon-left">
+                        <input type="text" name="limit_52" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_53 input-icon input-icon-left">
+                        <input type="text" name="limit_53" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_54 input-icon input-icon-left">
+                        <input type="text" name="limit_54" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_55 input-icon input-icon-left">
+                        <input type="text" name="limit_55" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_56 input-icon input-icon-left">
+                        <input type="text" name="limit_56" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                          </tr>
+          </tbody>
+
+          <!-- Content -->
+          <tbody class="data" data-bet-type-group-id="5"></tbody>
+        </table>
+      </form>
+
+    </div>
+      <div class="tab-pane " id="bet_type_group_6">
+
+      <form method="POST" action="https://agent.superlot999.com/update-bet-limit" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form"><input name="_token" type="hidden" value="VE0U8lpB8pFrbxFHyLnWN4AUhCKdErLrG5yBD0sy">
+
+        <input name="game_type_id" type="hidden" value="1">
+        <input name="bet_type_group_id" type="hidden" value="6">
+        <table class="table table-bordered table-border-dark table-nano-compact table-fancy table-auto table-nowrap no-margin-bottom overall-table">
+          <!-- Bet Types -->
+          <thead class="thin-border-bottom">
+            <tr>
+              <th class="width-160">
+                              </th>
+                              <th class="align-center">หลักแสน</th>
+                              <th class="align-center">หลักหมื่น</th>
+                              <th class="align-center">หลักพัน</th>
+                              <th class="align-center">หลักร้อย</th>
+                              <th class="align-center">หลักสิบ</th>
+                              <th class="align-center">หลักหน่วย</th>
+                          </tr>
+          </thead>
+
+          <!-- Summary -->
+          <tbody class="summary">
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">ซื้อ</span>
+                  <span class="pull-right n2c sum-buy-6">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c buy-61">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-62">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-63">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-64">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-65">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-66">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">คอม</span>
+                  <span class="pull-right n2c sum-com-6">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c com-61">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-62">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-63">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-64">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-65">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-66">0.00</td>
+                              </tr>
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">รับ</span>
+                  <span class="pull-right n2c sum-take-6">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c take-61">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-62">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-63">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-64">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-65">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-66">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">จ่าย</span>
+                  <span class="pull-right n2c sum-pay-6">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c pay-61">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-62">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-63">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-64">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-65">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-66">0.00</td>
+                              </tr>
+                      </tbody>
+
+          <!-- Bet Limit -->
+          <tbody class="control">
+            <tr class="odd">
+              <td class="align-middle bolder">
+                <span class="pull-left">ตั้งสู้</span>
+                                  <span class="pull-right">
+                    <button type="text" class="btn btn-primary btn-xs bigger-110" id="btn-update-bet-limit" data-game-type-id="1">
+                      บันทึก
+                    </button>
+                  </span>
+                              </td>
+                                                <td>
+                                          <div class="input-group-limit_61 input-icon input-icon-left">
+                        <input type="text" name="limit_61" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_62 input-icon input-icon-left">
+                        <input type="text" name="limit_62" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_63 input-icon input-icon-left">
+                        <input type="text" name="limit_63" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_64 input-icon input-icon-left">
+                        <input type="text" name="limit_64" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_65 input-icon input-icon-left">
+                        <input type="text" name="limit_65" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_66 input-icon input-icon-left">
+                        <input type="text" name="limit_66" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                          </tr>
+          </tbody>
+
+          <!-- Content -->
+          <tbody class="data" data-bet-type-group-id="6"></tbody>
+        </table>
+      </form>
+
+    </div>
+      <div class="tab-pane " id="bet_type_group_7">
+
+      <form method="POST" action="https://agent.superlot999.com/update-bet-limit" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form"><input name="_token" type="hidden" value="VE0U8lpB8pFrbxFHyLnWN4AUhCKdErLrG5yBD0sy">
+
+        <input name="game_type_id" type="hidden" value="1">
+        <input name="bet_type_group_id" type="hidden" value="7">
+        <table class="table table-bordered table-border-dark table-nano-compact table-fancy table-auto table-nowrap no-margin-bottom overall-table">
+          <!-- Bet Types -->
+          <thead class="thin-border-bottom">
+            <tr>
+              <th class="width-160">
+                              </th>
+                              <th class="align-center">4 ตัวตรง</th>
+                              <th class="align-center">5 ตัวตรง</th>
+                              <th class="align-center">6 ตัวตรง</th>
+                          </tr>
+          </thead>
+
+          <!-- Summary -->
+          <tbody class="summary">
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">ซื้อ</span>
+                  <span class="pull-right n2c sum-buy-7">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c buy-71">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-72">0.00</td>
+                                  <td class="align-center bg-yellow n2c buy-73">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">คอม</span>
+                  <span class="pull-right n2c sum-com-7">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c com-71">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-72">0.00</td>
+                                  <td class="align-center bg-yellow n2c com-73">0.00</td>
+                              </tr>
+                          <tr class="odd">
+                <td class="bolder">
+                  <span class="pull-left">รับ</span>
+                  <span class="pull-right n2c sum-take-7">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c take-71">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-72">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-73">0.00</td>
+                              </tr>
+                          <tr class="even">
+                <td class="bolder">
+                  <span class="pull-left">จ่าย</span>
+                  <span class="pull-right n2c sum-pay-7">0.00</span>
+                </td>
+                                  <td class="align-center bg-yellow n2c pay-71">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-72">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-73">0.00</td>
+                              </tr>
+                      </tbody>
+
+          <!-- Bet Limit -->
+          <tbody class="control">
+            <tr class="odd">
+              <td class="align-middle bolder">
+                <span class="pull-left">ตั้งสู้</span>
+                                  <span class="pull-right">
+                    <button type="text" class="btn btn-primary btn-xs bigger-110" id="btn-update-bet-limit" data-game-type-id="1">
+                      บันทึก
+                    </button>
+                  </span>
+                              </td>
+                                                <td>
+                                          <div class="input-group-limit_71 input-icon input-icon-left">
+                        <input type="text" name="limit_71" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_72 input-icon input-icon-left">
+                        <input type="text" name="limit_72" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                                                <td>
+                                          <div class="input-group-limit_73 input-icon input-icon-left">
+                        <input type="text" name="limit_73" value="0" class="form-control input-sm input-small align-right width-110">
+                        <i class="ace-icon fa fa-check green success hidden"></i>
+                        <i class="ace-icon fa fa-times red error hidden"></i>
+                      </div>
+                                      </td>
+                                          </tr>
+          </tbody>
+
+          <!-- Content -->
+          <tbody class="data" data-bet-type-group-id="7"></tbody>
+        </table>
+      </form>
+
+    </div>
+  
+
+<script>
+  getOverallData();
+
+  $('table .summary, table .control').each(function(key, value) {
+    $(value).find('tr').each(function(key, value) {
+      $(this).addClass(key % 2 == 0 ? 'odd' : 'even');
+    });
+  });
+</script>
+</div></div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>
+
+
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->

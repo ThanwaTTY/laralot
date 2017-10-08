@@ -1,205 +1,176 @@
 @extends('master')
 @section('head')
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="/plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="/plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="/plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-{{--   <style>
-  .row {
-    margin-right: -8px;
-    margin-left: -15px;
-    padding-top: 3px;
-}
-  .info-boxcreate {
-    display: block;
-    min-height: 40px;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    border-radius: 2px;
-    margin-bottom: 15px;
-    
-}
-  #size{
-    height: 49px;
-    width: 55px;
-    line-height: 0px;
-    min-height: 0px;
-  }
-
-  </style> --}}
-  <style>
-.sidebar .sidebar-shortcuts-large {
-    line-height: 45px;
-}
-.bot-margin-3 {
-    margin-bottom: 13px !important;
-    margin-left: 18px !important;
-    border-button: 2px;
-}
-
-.bot-margin-3 i {
-    font-size: 28px;
-}
-  </style>
+  <link rel="stylesheet" href="/css/custom2.css">
 @endsection
 @section('content')
-      <section class="sidebar-shortcuts-large bot-margin-3">
-      {{--  <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>  --}}
-      <div class="row">
-        {{--  <div class="pull-left">  --}}
-          <ol class="breadcrumb">
-            <li class="active"><i class="fa fa-home"></i></li>
-            <li class="active">ยินดีต้อนรับ</li>
-            <li class="active">รอผลเดิมพัน</li>
-          </ol>
-        {{--  </div>  --}}
-      </div>
-    </section>
+    <div class="breadcrumbs">
+        <ul id="breadcrumbs" class="breadcrumb">
+            <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <!-- <a href="#">Home</a> -->
+            </li>
+        <li>
+            รายการแทง 
+        </li>
+        <li>
+            รอผลเดิมพัน
+        </li>
+        </ul><!-- /.breadcrumb -->
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="modal-content">
-            <div class="box box-info">      
-                <br>
-                <form class="form-horizontal" action="" method="post">
-                    {{ csrf_field() }}
-                    <div class="box-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                     <h2 class="text-aqua">รอผลเดิมพัน [3M3K]</h2>                            
-                                </div>                                  
-                            </div>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                     <h4 class="text-primary">>รัฐบาลไทย,</h4>                            
-                                </div>                                  
-                            </div>
-                            <br>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                     <div style="background-color:#b3e6ff;color:black;padding:5px;border: 3px solid #006699; ">
-                                        <p>เเสดงข้อมูลงวดที่ยังไม่ถูกรางวัล</p>
-                                       
-                                     </div>                           
-                                </div>                                  
-                            </div>
-                            <br>
-                           
-                              <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                <table class="table table-bordered"style="background-color:#f2f2f2;">
-                                    <thead>
-                                        <tr style="background-color:#e6e6e6;">
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
-                                        <input type="checkbox" name="vehicle" value="Bike">เเสดงชื่อ
-                                        </th>
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ระดับชั้น</th>
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
-                                        <th class="text-center" colspan="3">สมาชิก</th>
-                                        <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
-                                        <th class="text-center" colspan="3">บริษัท</th>
-                                        </tr>
-                                        <tr> 
-                                            <th class="text-center">ยอดส่งออก</th>
-                                            <th class="text-center">ค่าคอม</th>
-                                            <th class="text-center">รวม</th>
-                                            <th class="text-center">ถือหุ้น</th>
-                                            <th class="text-center">คอม</th>
-                                            <th class="text-center">รวม</th>
-                                            <th class="text-center">ถือหุ้น</th>
-                                            <th class="text-center">คอม</th>
-                                            <th class="text-center">รวม</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                           
-                                        </tr>
-                                    
-                                    </tbody>
-                                </table>
-                            </div>
-                    
-                            <br><br>
-                              <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                <table class="table table-bordered"style="background-color:#f2f2f2;">
-                                    <thead>
-                                        <tr style="background-color:#e6e6e6;">
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
-                                        <input type="checkbox" name="vehicle" value="Bike">เเสดงชื่อ
-                                        </th>
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ระดับชั้น</th>
-                                        <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
-                                        <th class="text-center" colspan="3">สมาชิก</th>
-                                        <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
-                                        <th class="text-center" colspan="3">บริษัท</th>
-                                        </tr>
-                                        <tr> 
-                                            <th class="text-center">ยอดส่งออก</th>
-                                            <th class="text-center">ค่าคอม</th>
-                                            <th class="text-center">รวม</th>
-                                            <th class="text-center">ถือหุ้น</th>
-                                            <th class="text-center">คอม</th>
-                                            <th class="text-center">รวม</th>
-                                            <th class="text-center">ถือหุ้น</th>
-                                            <th class="text-center">คอม</th>
-                                            <th class="text-center">รวม</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td  colspan="2">รวม :</td>
-                                            <td class="text-right">0.00</td>
-                                            {{-- สมาชิก --}}
-                                            <td class="text-right">0.00</td>
-                                            <td class="text-right">0.00</td>
-                                            <td class="text-right">0.00</td>
-                                            {{-- เอเย่นต์ --}}
-                                            <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                            <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                            <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                            {{-- บรษัท --}}
-                                            <td class="text-right">0.00</td>
-                                            <td class="text-right">0.00</td>
-                                            <td class="text-right">0.00</td>
-                                        </tr>
-                                    
-                                    </tbody>
-                                </table>
-                            </div>
-                </form>
-            
-            </div>    
-    </div> 
-</section>
-    <!-- /.content -->
+        <span id="global-clock" class="pull-right"></span>
+    </div>
+    <div class="page-content" id="user-content">
+            <div class="row">
+            <div id="content" class="col-xs-12"> <div class="page-header">
+    <h1>
+        รอผลเดิมพัน
+        <small>
+                        <i class="ace-icon fa fa-angle-double-right"></i>
+                    3M3K
+                    </small>
+    </h1>
+    </div>
+
+
+    <div class="alert alert-info">แสดงข้อมูลงวดที่ <b>ยังไม่ออกรางวัล</b></div>
+
+    <div class="space-4"></div>
+
+
+    <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap" id="by-member-table">
+    <thead class="thin-border-bottom">
+        <tr>
+        <th rowspan="2" class="align-center width-90px">
+            ชื่อผู้ใช้<br>
+            <label class="inline">
+            <input class="" type="checkbox" id="input-checkbox-name">
+            <span class="lbl"> แสดงชื่อ</span>
+            </label>
+        </th>
+        <th rowspan="2" class="align-center width-90px">ระดับชั้น</th>
+        <th rowspan="2" class="align-center width-90px">ยอดทั้งหมด</th>
+        <th colspan="3" class="align-center">สมาชิก</th>
+        <th colspan="3" class="align-center">เอเย่นต์ [3M3K]</th>
+                <th colspan="3" class="align-center">บริษัท</th>
+            </tr>
+
+        <tr>
+        <th class="align-center width-90px">ยอดส่งออก</th>
+        <th class="align-center width-90px">ค่าคอม</th>
+        <th class="align-center width-90px">รวม</th>
+        <th class="align-center width-90px">ถือหุ้น</th>
+        <th class="align-center width-90px">คอม</th>
+        <th class="align-center width-90px">รวม</th>
+                <th class="align-center width-90px">ถือหุ้น</th>
+            <th class="align-center width-90px">คอม</th>
+            <th class="align-center width-90px">รวม</th>
+            </tr>
+    </thead>
+
+    </table>
+
+    <h3>รวมทั้งหมด</h3>
+
+    <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap" id="by-member-table">
+    <thead class="thin-border-bottom">
+        <tr>
+        <th rowspan="2" class="align-center width-90px">
+            ชื่อผู้ใช้<br>
+            <label class="inline">
+            <input class="" type="checkbox" id="input-checkbox-name">
+            <span class="lbl"> แสดงชื่อ</span>
+            </label>
+        </th>
+        <th rowspan="2" class="align-center width-90px">ระดับชั้น</th>
+        <th rowspan="2" class="align-center width-90px">ยอดทั้งหมด</th>
+        <th colspan="3" class="align-center">สมาชิก</th>
+        <th colspan="3" class="align-center">เอเย่นต์ [3M3K]</th>
+                <th colspan="3" class="align-center">บริษัท</th>
+            </tr>
+
+        <tr>
+        <th class="align-center width-90px">ยอดส่งออก</th>
+        <th class="align-center width-90px">ค่าคอม</th>
+        <th class="align-center width-90px">รวม</th>
+        <th class="align-center width-90px">ถือหุ้น</th>
+        <th class="align-center width-90px">คอม</th>
+        <th class="align-center width-90px">รวม</th>
+                <th class="align-center width-90px">ถือหุ้น</th>
+            <th class="align-center width-90px">คอม</th>
+            <th class="align-center width-90px">รวม</th>
+            </tr>
+    </thead>
+
+    <tbody>
+                </tbody>
+
+    <tfoot class="thin-border-bottom">
+        <tr>
+        <td colspan="2" class="bolder">รวม :</td>
+        <td class="align-right dark-blue bolder n2 bg-blue">0.00</td>
+        <td class="align-right n2c">0.00</td>
+        <td class="align-right n2c">0.00</td>
+        <td class="align-right n2c">0.00</td>
+        <td class="align-right n2c bg-yellow">0.00</td>
+        <td class="align-right n2c bg-yellow">0.00</td>
+        <td class="align-right n2c bg-yellow">0.00</td>
+                <td class="align-right n2c">0.00</td>
+            <td class="align-right n2c">0.00</td>
+            <td class="align-right n2c">0.00</td>
+            </tr>
+    </tfoot>
+    </table>
+
+    <script>
+    $.each($('#by-member-table').find('tbody tr, tfoot tr'), function(key, value) {
+        $(this).addClass(key % 2 == 0 ? 'odd' : 'even');
+    });
+    $.each($('.n2'), function(key, value) {
+        $(this).html(n2($(this).text()));
+    });
+    $.each($('.n2c'), function(key, value) {
+        $(this).html(n2c($(this).text()));
+    });
+    $('.date-mask').datepicker({
+        autoclose: true,
+        todayHighlight: true,
+        format: 'dd-mm-yyyy'
+    });
+    var list = '';
+    if (list == '') {
+        $('#game-type-checkboxes input:checkbox').attr('checked', true);
+    } else {
+        $.each(list.split(','), function(key, value){
+        $('#game-type-checkboxes input.item[value="'+value+'"]').attr('checked', true);
+        });
+    }
+    </script>
+    </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->

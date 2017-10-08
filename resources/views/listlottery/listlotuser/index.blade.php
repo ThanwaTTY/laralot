@@ -1,354 +1,145 @@
 @extends('master')
 @section('head')
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="/plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="/plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="/plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-{{--   <style>
-  .row {
-    margin-right: -8px;
-    margin-left: -15px;
-    padding-top: 3px;
-}
-  .info-boxcreate {
-    display: block;
-    min-height: 40px;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    border-radius: 2px;
-    margin-bottom: 15px;
-    
-}
-  #size{
-    height: 49px;
-    width: 55px;
-    line-height: 0px;
-    min-height: 0px;
-  }
+  <link rel="stylesheet" href="/css/custom2.css">
 
-  </style> --}}
-  <style>
-.sidebar .sidebar-shortcuts-large {
-    line-height: 45px;
-}
-.bot-margin-3 {
-    margin-bottom: 13px !important;
-    margin-left: 18px !important;
-    border-button: 2px;
-}
-
-.bot-margin-3 i {
-    font-size: 28px;
-}
-  </style>
 @endsection
 @section('content')
-    <!-- Content Header (Page header) -->
-      <section class="sidebar-shortcuts-large bot-margin-3">
-      {{--  <h1>
-        Dashboard
-        <xsall>Control panel</xsall>
-      </h1>  --}}
-      <div class="row">
-        {{--  <div class="pull-left">  --}}
-          <ol class="breadcrumb">
-            <li class="active"><i class="fa fa-home"></i></li>
-            <li class="active">ยินดีต้อนรับ</li>
-            <li class="active">ดูของ สมาชิก/ประเภท</li>
-          </ol>
-        {{--  </div>  --}}
-      </div>
-    </section>
+    <div class="breadcrumbs">
+        <ul id="breadcrumbs" class="breadcrumb">
+            <li>
+            <i class="ace-icon fa fa-home home-icon"></i>
+            <!-- <a href="#">Home</a> -->
+            </li>
+        <li>
+            รายการแทง 
+        </li>
+        <li>
+            ดูของ สมาชิก/ประเภท
+        </li>
+        </ul><!-- /.breadcrumb -->
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="modal-content">
-            <div class="box box-info">      
-                <br>
-                <form class="form-horizontal" action="" method="post">
-                {{ csrf_field() }}
-                    <div class="row">
-                        <div class="col-xs-12">
-                                <h2 class="text-aqua">ดูของสมาชิก สมาชิก/ประเภท</h2>                            
-                        </div>                                  
-                        <!-- Left col -->
-                        <section class="col-lg-12 connectedSortable">
-                        <!-- Custom tabs (Charts with tabs)-->
-                        <div class="nav-tabs-custom">
-                            <!-- Tabs within a box -->
-                            <ul class="nav nav-tabs pull-left">
-                            <li class="active" style=""><a href="#tab1" data-toggle="tab">เเยกตามสมาชิก</a></li>
-                            <li><a href="#tab2" data-toggle="tab">เเยกตามประเภท</a></li>
-                            </ul>
-                            <div class="tab-content no-padding">
-                            <!-- Morris chart - Sales -->
-                            <div class="chart tab-pane active" id="tab1" style="position: relative; height: 300px;">
-                                    <div class="table-responsive col-xs-10">
-                                        <table class="table table-bordered bg-gray">
-                                            <thead>
-                                                <tr style="background-color:#e6e6e6;">
-                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
-                                                <input type="checkbox" name="" value="">เเสดงชื่อ
-                                                </th>
-                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ระดับชั้น</th>
-                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
-                                                <th class="text-center" colspan="3">สมาชิก</th>
-                                                <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
-                                                <th class="text-center" colspan="3">บริษัท</th>
-                                                </tr>
-                                                <tr> 
-                                                    <th class="text-center">ยอดส่งออก</th>
-                                                    <th class="text-center">ค่าคอม</th>
-                                                    <th class="text-center">รวม</th>
-                                                    <th class="text-center">ถือหุ้น</th>
-                                                    <th class="text-center">คอม</th>
-                                                    <th class="text-center">รวม</th>
-                                                    <th class="text-center">ถือหุ้น</th>
-                                                    <th class="text-center">คอม</th>
-                                                    <th class="text-center">รวม</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center" colspan="2"><b>รวม :</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right"></td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td style="background-color:#ffe6cc;">0.00</td>
-                                                    <td style="background-color:#ffe6cc;">0.00</td>
-                                                    <td style="background-color:#ffe6cc;">0.00</td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table> 
-                                    </div>
-                            </div>
-                            <br>
-                            <div class="chart tab-pane" id="tab2" style="position: relative; height: 300px;">
-                                    <div class="form-inline col-xs-2">
-                                        <label class="col-sm-6 form-control">เเยกอัตราจ่าย</label>
-                                        <select class="form-control col-sm-6">
-                                            <option></option>
-                                            <option>หวยรัฐ70</option>
-                                            <option>หวย70</option>
-                                        </select>
-                                     </div>
-                                     <br>
-                                      <br>
-                                    <div class="table-responsive col-xs-12">
-                                        <table class="table table-bordered bg-gray">
-                                            <thead>
-                                                <tr style="background-color:#e6e6e6;">
-                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ประเภท <br>                                               </th>
-                                                <th class="text-center" rowspan="2" style="padding-top:20px;">ยอดทั้งหมด</th>
-                                                <th class="text-center" colspan="3">สมาชิก</th>
-                                                <th class="text-center" colspan="3">เอเย่นต์[3M3K]</th>
-                                                <th class="text-center" colspan="3">บริษัท</th>
-                                                </tr>
-                                                <tr> 
-                                                    <th class="text-center">ยอดส่งออก</th>
-                                                    <th class="text-center">ค่าคอม</th>
-                                                    <th class="text-center">รวม</th>
-                                                    <th class="text-center">ถือหุ้น</th>
-                                                    <th class="text-center">คอม</th>
-                                                    <th class="text-center">รวม</th>
-                                                    <th class="text-center">ถือหุ้น</th>
-                                                    <th class="text-center">คอม</th>
-                                                    <th class="text-center">รวม</th>
-                                                </tr>
-                                            </thead>
-                                            <tr>
-                                            <th class="text-center bg-green" colspan="11">3 ตัวท้าย</th>
-                                        </tr>   
-                                            <tbody>
-                                                <tr>
-                                                    <td class="text-center"><b>3 ตัวบน</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><b>3 ตัวล่าง</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><b>3 ตัวโต๊ด</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><b>2 ตัวบน</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><b>2 ตัวล่าง</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><b>2 ตัวโต๊ด</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><b>วิ่งบน</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><b>วิ่งล่าง</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                                <tr>
-                                                    <td class="text-center"><b>รวม :</b></td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- สมาชิก --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                    {{-- เอเย่นต์ --}}
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" style="background-color:#ffe6cc;">0.00</td>
-                                                    <td class="text-right" ></td>
-                                                    {{-- บรษัท --}}
-                                                    <td class="text-right">0.00</td>
-                                                    <td class="text-right">0.00</td>
-                                                </tr>
-                                            </tbody>
-                                        </table> 
-                                    </div>
-                               </div>
-                            </div>
-                        </div>
-                        </section>
-                    </div>
-              </form>            
-        </div>    
-    </div> 
-</section>
-    <!-- /.content -->
+        <span id="global-clock" class="pull-right"></span>
+    </div>
+    <div class="page-content" id="user-content">
+        <div class="row">
+          <div id="content" class="col-xs-12"> <div class="page-header">
+  <h1>
+    ดูของ สมาชิก/ประเภท
+    <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                  3M3K
+                  </small>
+  </h1>
+  <h4 class="sub">
+    <i class="fa fa-angle-right orange"></i>
+    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 ตุลาคม 2560
+    <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
+  </h4>
+</div>
+
+
+
+
+<ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
+  <li class="active">
+    <a href="https://agent.superlot999.com/items/by-member" class="ajax">แยกตามสมาชิก</a>
+  </li>
+
+  <li>
+    <a href="https://agent.superlot999.com/items/by-type" class="ajax">แยกตามประเภท</a>
+  </li>
+</ul>
+
+<div class="space-4"></div>
+
+<table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap enable-check-all" id="by-member-table">
+  <thead class="thin-border-bottom">
+    <tr>
+      <th rowspan="2" class="align-center width-90px">
+        ชื่อผู้ใช้<br>
+        <label class="inline">
+          <input class="check-all" type="checkbox" id="input-checkbox-name">
+          <span class="lbl"> แสดงชื่อ</span>
+        </label>
+      </th>
+      <th rowspan="2" class="align-center width-90px">ระดับชั้น</th>
+      <th rowspan="2" class="align-center width-90px">ยอดทั้งหมด</th>
+      <th colspan="3" class="align-center">สมาชิก</th>
+      <th colspan="3" class="align-center">เอเย่นต์ [3M3K]</th>
+              <th colspan="3" class="align-center">บริษัท</th>
+          </tr>
+
+    <tr>
+      <th class="align-center width-90px">ยอดส่งออก</th>
+      <th class="align-center width-90px">ค่าคอม</th>
+      <th class="align-center width-90px">รวม</th>
+      <th class="align-center width-90px">ถือหุ้น</th>
+      <th class="align-center width-90px">คอม</th>
+      <th class="align-center width-90px">รวม</th>
+              <th class="align-center width-90px">ถือหุ้น</th>
+        <th class="align-center width-90px">คอม</th>
+        <th class="align-center width-90px">รวม</th>
+          </tr>
+  </thead>
+
+  <tbody>
+    
+                                    </tbody>
+
+  <tfoot class="thin-border-bottom">
+    <tr class="odd">
+      <td colspan="2" class="bolder">รวม :</td>
+      <td class="align-right dark-blue bolder n2 bg-blue">0.00</td>
+      <td class="align-right n2c">0.00</td>
+      <td class="align-right n2c">0.00</td>
+      <td class="align-right n2c">0.00</td>
+      <td class="align-right n2c bg-yellow">0.00</td>
+      <td class="align-right n2c bg-yellow">0.00</td>
+      <td class="align-right n2c bg-yellow">0.00</td>
+              <td class="align-right n2c">0.00</td>
+        <td class="align-right n2c">0.00</td>
+        <td class="align-right n2c">0.00</td>
+          </tr>
+  </tfoot>
+</table>
+
+<script>
+  $.each($('tbody tr, tfoot tr'), function(key, value) {
+    $(this).addClass(key % 2 == 0 ? 'odd' : 'even');
+  });
+  $.each($('.n2'), function(key, value) {
+    $(this).html(n2($(this).text()));
+  });
+  $.each($('.n2c'), function(key, value) {
+    $(this).html(n2c($(this).text()));
+  });
+</script>
+</div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->
