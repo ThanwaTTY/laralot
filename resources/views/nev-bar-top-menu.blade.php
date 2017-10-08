@@ -29,18 +29,18 @@
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="game-type-select" style="transform: translate(-50%, 0);">
             <li>
-                            <table class="table" id="select-game-type-table">
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
-                                  <tbody><tr class="odd"><th colspan="6" class="bg-blue2">รัฐบาล</th></tr>                                      <tr class="even">
-                  
-                  
-                  <td>
-                    <a href="#" class="game-type-item" data-id="1">รัฐบาลไทย</a>
-                  </td>
+                <table class="table" id="select-game-type-table">
+                  <tbody><tr class="odd"><th colspan="6" class="bg-blue2">รัฐบาล</th></tr>                                      
+                  <tr class="even">
+                    <td>
+                      <a href="#" class="game-type-item" data-id="1">รัฐบาลไทย</a>
+                    </td>
+                  </tr>
+                  <tr class="odd">
+                    <th colspan="6" class="bg-blue2">หวย ธกส.</th>
+                  </tr>                                      
+                  <tr class="even">
 
-                                                                      </tr><tr class="odd"><th colspan="6" class="bg-blue2">หวย ธกส.</th></tr>                                      <tr class="even">
-                  
-                  
                   <td>
                     <a href="#" class="game-type-item" data-id="39">หวย ธกส. (BAAC1)</a>
                   </td>
