@@ -1,129 +1,150 @@
 @extends('master')
 @section('head')
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="/plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="/plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="/plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
-{{--   <style>
-  .row {
-    margin-right: -8px;
-    margin-left: -15px;
-    padding-top: 3px;
-}
-  .info-boxcreate {
-    display: block;
-    min-height: 40px;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    border-radius: 2px;
-    margin-bottom: 15px;
-    
-}
-  #size{
-    height: 49px;
-    width: 55px;
-    line-height: 0px;
-    min-height: 0px;
-  }
 
-  </style> --}}
+    {{-- <style>
+    .sidebar .sidebar-shortcuts-large {
+        line-height: 45px;
+    }
+    .bot-margin-3 {
+        margin-bottom: 13px !important;
+        margin-left: 18px !important;
+        border-button: 2px;
+    }
 
-  <style>
-.sidebar .sidebar-shortcuts-large {
-    line-height: 45px;
-}
-.bot-margin-3 {
-    margin-bottom: 13px !important;
-    margin-left: 18px !important;
-    border-button: 2px;
-}
+    .bot-margin-3 i {
+        font-size: 28px;
+    }
 
-.bot-margin-3 i {
-    font-size: 28px;
-}
+    .one {
+    border-style: solid;
+    border-color: #006699;
+    padding: 15px;
+    background: #b3e6ff;
+    }
 
-  </style>
+    p.bold {
+    font-weight: bold;
+    }
+.nav-tabs-custom>.nav-tabs>li>a {
+    color: #fff;
+    border-radius: 0;
+}
+    </style> --}}
+    <link rel="stylesheet" href="/css/custom2.css">
 @endsection
-@section('content')
-    <!-- Content Header (Page header) -->
-      <section class="sidebar-shortcuts-large bot-margin-3">
-      {{--  <h1>
-        Dashboard
-        <small>Control panel</small>
-      </h1>  --}}
-      <div class="row">
-        {{--  <div class="pull-left">  --}}
-          <ol class="breadcrumb">
-            <li class="active"><i class="fa fa-home"></i></li>
-            <li class="active">เเพ้ ชนะ</li>
-            <li class="active">การออกรางวัล</li>
-          </ol>
-        {{--  </div>  --}}
-      </div>
-    </section>
+@section('footer')
+<!-- jQuery 2.2.3 -->
+<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- Bootstrap 3.3.6 -->
+<script src="../../bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
+<!-- SlimScroll -->
+<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../../plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/app.min.js"></script>
+<!-- AdminLTE for demo purposes -->
+<script src="../../dist/js/demo.js"></script>
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="modal-content">
-            <div class="box box-info">      
-                <br>
-                <form class="form-horizontal" action="" method="post">
-                    {{ csrf_field() }}
-                    <div class="box-body">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                     <h2 class="text-aqua">ผลการออกรางวัล</h2>                            
-                                </div>  
-                               
-                                <div class="col-xs-12">
-                                     <h3 style="color:#0000ff">><b style="color:#1a1a1a"> หวยรัฐ</b> 5 งวดล่าสุด</h3> 
-                                                            
-                                </div>                                  
-                            </div>
-                            <br>
-                             <div class="row">
-                                <div class="col-xs-12">
-                                  <div class="table-responsive col-xs-5"><!-- มี tab เลื่อนข้างล่าง  -->
-                                    <table class="table table-bordered bg-gray">
-                                        <thead>
-                                            <tr style="background-color:#4d4d4d;color:#ffffff">
-                                                <th class="text-center" style="padding-top:40px;" rowspan="2" colspan="2">ชื่อ งวด</th>
-                                                <th class="text-center" style="padding-top:10px;" colspan="4">3 ตัวท้าย</th>
-                                            
-                                            </tr>
-                                            <tr style="background-color:#4d4d4d;color:#ffffff">
-                                                <th class="text-center" style="padding-top:20px;">3 ตัวบน</th>
-                                                <th class="text-center" style="padding-top:20px;">2 ตัวบน</th>
-                                                <th class="text-center" style="padding-top:20px;">2ตัวล่าง</th>
-                                                <th class="text-center" style="padding-top:20px;"  colspan="2">3ตัวล่าง</th>
-                                            </tr>
-                                        </thead> 
-                                        <body>
+@endsection
+
+@section('content')
+    
+        
+    @if($errors->all())
+        <div class="box-body">
+            <div class="alert alert-warning alert-dismissible">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>            
+                    <h4><i class="icon fa fa-warning"></i> Alert!</h4>
+                @foreach($errors->all() as $message)
+                    {{ $message }}. <br>
+                @endforeach
+            </div>
+        </div>        
+    @endif
+
+<div class="main-content">
+      <!-- #section:basics/content.breadcrumbs -->
+    <div class="breadcrumbs">
+        <ul id="breadcrumbs" class="breadcrumb">
+            <li>
+                <i class="ace-icon fa fa-home home-icon"></i>
+            <!-- <a href="#">Home</a> -->
+            </li>
+                <li>
+                    รายการเเพ้ชนะ 
+                </li>
+                <li>
+                     ผลการออกรางวัล
+                </li>
+        </ul><!-- /.breadcrumb -->
+        <span id="global-clock" class="pull-right"></span>
+    </div>
+
+<!-- /section:basics/content.breadcrumbs -->
+    <div class="page-content" id="user-content">
+        <div class="row">
+            <div id="content" class="col-xs-12">
+                    <div class="page-header">
+                        <h1>
+                             ผลการออกรางวัล
+                            <small>
+                                <i class="ace-icon fa fa-angle-double-right"></i>
+                                <a href="#" class="ajax">3M3K</a>
+                            </small>
+                        </h1>
+                    </div>
+
+               
+
+             </div>
+                   <h4 class="sub">
+                    <i class="fa fa-angle-right orange"></i>
+                    <span class="deep-blue">รัฐบาลไทยงวดที่</span><span class="smaller near-white">16 กันยายน 2560 (เปลี่ยนเเถบเมนูได้ด้านบน)</span>
+                   </h4>
+                                   
+                            <div class="col-sm-6">
+                                <table class="table table-bordered bg-gray">
+                                    <thead>
+                                        <tr style="background-color:#e6e6e6;">
+                                            <th class="text-center" style="padding-top:40px;" rowspan="2" colspan="2">ชื่อ งวด</th>
+                                            <th class="text-center" style="padding-top:10px;" colspan="4">3 ตัวท้าย</th>
+                                        </tr>
+                                        <tr style="background-color:#e6e6e6;">
+                                            <th class="text-center" style="padding-top:20px;">3 ตัวบน</th>
+                                            <th class="text-center" style="padding-top:20px;">2 ตัวบน</th>
+                                            <th class="text-center" style="padding-top:20px;">2ตัวล่าง</th>
+                                            <th class="text-center" style="padding-top:20px;"  colspan="2">3ตัวล่าง</th>
+                                        </tr>
+                                       
+                                    </thead>
+                                    <body>
                                             <tr>
                                                 <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>16</b> กันยา<b>2560</b></td>
                                                 <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
@@ -159,35 +180,19 @@
                                                 <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
                                                 <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
                                             </tr>
-                                        <body>   
-                                    </table>
-                                 </div>                                                                   
-                             </div>
+                                        <body>
+                                </table> 
                             </div> 
-                            <br>
-                            <div class="row">
-                                <div class="col-xs-12">
-                                     <h3 style="color:#0000ff">><b style="color:#1a1a1a"> หวยหุ้น วันที่ 17-09-2017</h3> 
-                                      <div class="col-xs-4">
-                                            <div class="form-group">
-                                                <label for="" class="col-sm-4 control-label">เลือกวันที่:</label>
-                                                <div class="col-sm-8">
-                                                <input type="" class="form-control" id="" placeholder="">
-                                                </div>
-                                      </div>                           
-                                </div>
-                             </div>                                 
-                            </div>
-                            <div class="table-responsive col-xs-7"><!-- มี tab เลื่อนข้างล่าง  -->
+                            <div class="col-sm-10">
                                 <table class="table table-bordered bg-gray">
                                     <thead>
-                                        <tr style="background-color:#4d4d4d;color:#ffffff">
+                                        <tr>
                                             <th class="text-center" style="padding-top:40px;" rowspan="2">ชนิดหวย</th>
                                             <th class="text-center" style="padding-top:40px;" rowspan="2">ชื่อ งวด</th>
                                             <th class="text-center" style="padding-top:10px;" colspan="3">3 ตัวท้าย</th>
                                            
                                         </tr>
-                                        <tr style="background-color:#4d4d4d;color:#ffffff">
+                                        <tr>
                                             <th class="text-center" style="padding-top:20px;">3 ตัวบน</th>
                                             <th class="text-center" style="padding-top:20px;">2 ตัวบน</th>
                                             <th class="text-center" style="padding-top:20px;">2ตัวล่าง</th>
@@ -959,50 +964,26 @@
                                            
                                         </tr>  
                                     </tbody>
-                                </table>
-                            </div>
-            </form>
-      </div>    
-    </div> 
-</section>
-    <!-- /.content -->
+                                </table> 
+                            </div>    
+                
+                <script>
+                $(document).ready(function() {
+                    $('#content > .tab-content > .tab-pane').each(function (key, val) {
+                    if ($(val).find('.tab-pane.active').length == 0) {
+                        $(val).find('.nav-tabs li:first').addClass('active');
+                        $(val).find('.tab-content .tab-pane:first').addClass('in active');
+                    }
+                    });
+                });
+                </script>
+            </div><!-- /.col -->
+        </div><!-- /.row -->
+    </div><!-- /.page-content -->
+</div>
 @endsection
-@section('footer')
-<!-- jQuery 2.2.3 -->
-<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
-</script>
-<!-- Bootstrap 3.3.6 -->
-<script src="bootstrap/js/bootstrap.min.js"></script>
-<!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="/plugins/morris/morris.min.js"></script>
-<!-- Sparkline -->
-<script src="/plugins/sparkline/jquery.sparkline.min.js"></script>
-<!-- jvectormap -->
-<script src="/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
-<script src="/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-<!-- jQuery Knob Chart -->
-<script src="/plugins/knob/jquery.knob.js"></script>
-<!-- daterangepicker -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
-<script src="/plugins/daterangepicker/daterangepicker.js"></script>
-<!-- datepicker -->
-<script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
-<!-- Bootstrap WYSIHTML5 -->
-<script src="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
-<!-- Slimscroll -->
-<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="/dist/js/app.min.js"></script>
-<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-{{-- <script src="/dist/js/pages/dashboard.js"></script> --}}
-<!-- AdminLTE for demo purposes -->
-<script src="/dist/js/demo.js"></script>
-@endsection
+
+ 
+         
+
+    
