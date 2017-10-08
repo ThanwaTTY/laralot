@@ -147,43 +147,43 @@
                                     <body>
                                             <tr>
                                                 <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>16</b> กันยา<b>2560</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>1</b> กันยา<b>2560</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>16</b> สิงหาคม<b>2560</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>1</b> สิงหาคม<b>2560</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
                                             </tr>
                                             <tr>
                                                 <td class="text-center" style="padding-top:20px;" colspan="2">งวดที่ <b>1</b> กรกฎาคม<b>2560</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>22</b></td>
-                                                <td class="text-center" style="padding-top:20px; color:#66b3ff"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>22</b></td>
+                                                <td class="text-center deep-blue"><b>333</b></td>
                                             </tr>
                                         <body>
                                 </table> 
                             </div> 
-                            <div class="col-sm-10">
+                            <div class="col-sm-8">
                                 <table class="table table-bordered bg-gray">
                                     <thead>
                                         <tr>
