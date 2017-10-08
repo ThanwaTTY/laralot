@@ -70,11 +70,11 @@
 																													@endif
 																								</span>
 						</li>
-						<li><span class="prop">เครดิต:</span><span id="max_credit">0</span></li>
+						<li><span class="prop">เครดิต:</span><span id="max_credit">{{ number_format(auth()->user()->credit, '2' )}}</span></li>
 						<li><span class="prop">ใช้ไป:</span><span id="used_credit">0</span></li>
 						<li><span class="prop">เหลือ:</span><span id="credit_balance">0</span></li>
 						<li><span class="prop">ได้เสีย:</span><span id="cash_balance">0</span></li>
-						<li><span class="prop">สมาชิก:</span><span id="member_count">5</span></li>
+						<li><span class="prop">สมาชิก:</span><span id="member_count"></span></li>
 						<li><span class="prop">ออนไลน์:</span><span id="member_online">0</span></li>
 					</ul>
 				</div><!-- /#account-summary -->

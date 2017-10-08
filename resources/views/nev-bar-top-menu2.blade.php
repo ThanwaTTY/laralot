@@ -19,8 +19,8 @@
                 <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                   <i class="fa fa-book"></i>
                   <span id="navbar-game-type-title">
-                                    รัฐบาลไทย
-                                </span>
+                      รัฐบาลไทย
+                  </span>
                 </a>
 
                 <style>
