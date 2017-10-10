@@ -29,6 +29,8 @@
   <!-- bootstrap wysihtml5 - text editor -->
   <link rel="stylesheet" href="plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
   <link rel="stylesheet" href="/css/custom2.css">
+
+  
   {{-- <style>
   table, td, th {
 
@@ -67,100 +69,106 @@
 
 <div class="main-content">
       <!-- #section:basics/content.breadcrumbs -->
-<div class="breadcrumbs">
-  <ul id="breadcrumbs" class="breadcrumb">
-    <li>
-      <i class="ace-icon fa fa-home home-icon"></i>
-      <!-- <a href="#">Home</a> -->
-    </li>
-  <li>ยินดีต้อนรับ</li></ul><!-- /.breadcrumb -->
+  <div class="breadcrumbs">
+    <ul id="breadcrumbs" class="breadcrumb">
+      <li>
+        <i class="ace-icon fa fa-home home-icon"></i>
+        <!-- <a href="#">Home</a> -->
+      </li>
+    <li>ยินดีต้อนรับ</li></ul><!-- /.breadcrumb -->
 
-  <span id="global-clock" class="pull-right"></span>
-</div>
+    <span id="global-clock" class="pull-right"></span>
+  </div>
 
 <!-- /section:basics/content.breadcrumbs -->
-      <div class="page-content" id="user-content">
-        <div class="row">
-          <div id="content" class="col-xs-12"><div class="page-header">
-  <h1>ยินดีต้อนรับเอเย่นต์ [3M3K]</h1>
+  <div class="page-content" id="user-content">
+    <div class="row">
+      <div id="content" class="col-xs-12">
+        <div class="page-header">
+            <h1>ยินดีต้อนรับเอเย่นต์ [3M3K]</h1>
+        </div>
+
+            <style>#content table * {font-family: Arial}</style>
+
+
+            <div class="alert alert-danger">
+              <h4><i class="fa fa-warning"></i> เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
+              <span class="black">กรุณาตั้งจำนวนการรับของต่อตัวในหน้า <a href="https://agent.superlot999.com/items/settings">ตั้งค่าการรับของ</a> เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้</span>
+            </div>
+
+            <!-- <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap">
+              <thead class="thin-border-bottom">
+                      <th class="align-center bigger-125">เอเย่นต์</th>
+                    <th class="align-center bigger-125">สมาชิก</th>
+              </thead>
+              <tbody>
+                <tr>
+                          <td>
+                      <h3 class="align-center no-margin padding-10"><b><span class="n2c">0.00</span></b><br>บาท</h3>
+                                        </td>
+                        <td>
+                    <h3 class="align-center no-margin padding-10"><b><span class="n2c">-0</span></b><br>บาท</h3>
+                                  </td>
+                </tr>
+              </tbody>
+            </table> -->
+
+            <h3><i class="fa fa-angle-right blue"></i> จำนวนสมาชิก</h3>
+
+            <table class="table table-bordered table-border-dark table-auto table-nowrap">
+              <thead class="thin-border-bottom">
+                <tr>
+                  <th class="align-center bigger-125">เมมเบอร์</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="align-center">
+                    <b class="bigger-150">
+                      4<br>
+                    </b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h3><i class="fa fa-angle-right blue"></i> ข้อความประกาศ</h3>
+
+            <table class="table table-bordered table-nowrap table-border-dark">
+              <thead class="thin-border-bottom">
+                <tr>
+                  <th class="align-center">ชนิดหวย</th>
+                  <th class="align-center">วันที่</th>
+                  <th>ประกาศ</th>
+                </tr></thead>
+              <tbody>
+                <tr>
+                  <td class="align-center bigger-110 width-1">ประกาศระบบ</td>
+                  <td class="bigger-110 width-1">25-08-2017 09:49:00</td>
+                  <td class="bigger-110"><b>ประกาศข่าว...หวยลาว<br>
+                    <br>
+                    หวยลาวจะเปลี่ยนการออกผลรางวัล จากเดิมสัปดาห์ละ 2 ครั้ง <br>
+                    วันจันทร์ และพฤหัส จะเปลี่ยนเป็น สัปดาห์ละ 1 ครั้ง คือวัน พุธ วันเดียว<br>
+                    เริ่มงวดแรกวันพุธที่ 30 ส.ค. 60  <br>
+                    <br>
+                    โดยบริษัทขอเลื่อนเวลาปิดรับเร็วขึ้นชั่วคราว เฉพาะงวดแรก เป็นเวลา 19.45 น. หลังจากนั้นหากตรวจสอบแล้วว่า <br>
+                    สามารถปิดรับเวลาเดิมได้ก็จะทำการปรับเวลาให้ปิดตามเดิม คือ 20.10 น. <br>
+                    <br>
+                    แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+
+            <script>
+              $.each($('.n2c'), function(key, value) {
+                $(this).html(n2c($(this).text()));
+              });
+            </script>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+  </div><!-- /.page-content -->
 </div>
-
-<style>#content table * {font-family: Arial}</style>
-
-
-<div class="alert alert-danger">
-  <h4><i class="fa fa-warning"></i> เรียนท่านที่ต้องการ หุ้น หรือ เก็บของ</h4>
-  <span class="black">กรุณาตั้งจำนวนการรับของต่อตัวในหน้า <a href="https://agent.superlot999.com/items/settings">ตั้งค่าการรับของ</a> เพื่อกำหนดว่าท่านจะรับของสูงสุดต่อตัวตัวละเท่าไร หากไม่มีการตั้ง ระบบจะถือว่าท่านไม่ต้องการสู้</span>
-</div>
-
-<!-- <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap">
-  <thead class="thin-border-bottom">
-          <th class="align-center bigger-125">เอเย่นต์</th>
-        <th class="align-center bigger-125">สมาชิก</th>
-  </thead>
-  <tbody>
-    <tr>
-              <td>
-          <h3 class="align-center no-margin padding-10"><b><span class="n2c">0.00</span></b><br>บาท</h3>
-                            </td>
-            <td>
-        <h3 class="align-center no-margin padding-10"><b><span class="n2c">-0</span></b><br>บาท</h3>
-                      </td>
-    </tr>
-  </tbody>
-</table> -->
-
-<h3><i class="fa fa-angle-right blue"></i> จำนวนสมาชิก</h3>
-
-<table class="table table-bordered table-border-dark table-auto table-nowrap">
-  <thead class="thin-border-bottom">
-          <tr><th class="align-center bigger-125">เมมเบอร์</th>
-      </tr></thead>
-  <tbody>
-          <tr><td class="align-center">
-        <b class="bigger-150">
-          4<br>
-        </b>
-                      </td>
-      
-</tr></tbody></table>
-
-<h3><i class="fa fa-angle-right blue"></i> ข้อความประกาศ</h3>
-
-<table class="table table-bordered table-nowrap table-border-dark">
-  <thead class="thin-border-bottom">
-    <tr><th class="align-center">ชนิดหวย</th>
-    <th class="align-center">วันที่</th>
-    <th>ประกาศ</th>
-  </tr></thead>
-
-  <tbody>
-          <tr>
-        <td class="align-center bigger-110 width-1">ประกาศระบบ</td>
-        <td class="bigger-110 width-1">25-08-2017 09:49:00</td>
-        <td class="bigger-110">         <b>ประกาศข่าว...หวยลาว<br>
-<br>
-หวยลาวจะเปลี่ยนการออกผลรางวัล จากเดิมสัปดาห์ละ 2 ครั้ง <br>
-วันจันทร์ และพฤหัส จะเปลี่ยนเป็น สัปดาห์ละ 1 ครั้ง คือวัน พุธ วันเดียว<br>
-เริ่มงวดแรกวันพุธที่ 30 ส.ค. 60  <br>
-<br>
-โดยบริษัทขอเลื่อนเวลาปิดรับเร็วขึ้นชั่วคราว เฉพาะงวดแรก เป็นเวลา 19.45 น. หลังจากนั้นหากตรวจสอบแล้วว่า <br>
-สามารถปิดรับเวลาเดิมได้ก็จะทำการปรับเวลาให้ปิดตามเดิม คือ 20.10 น. <br>
-<br>
-แนะนำเอเย่นต์ ให้เข้าไปเช็คการตั้งค่ารับของต่างๆด้วย เพื่อความถูกต้อง ขออภัยในความไม่สะดวก</b></td>
-      </tr>
-      </tbody>
-</table>
-
-<script>
-  $.each($('.n2c'), function(key, value) {
-    $(this).html(n2c($(this).text()));
-  });
-</script>
-</div><!-- /.col -->
-        </div><!-- /.row -->
-      </div><!-- /.page-content -->
-    </div>
 
 @endsection
 @section('footer')
