@@ -85,7 +85,7 @@
                 2. ข้อมูลทั่วไป/เก็บของ
                 <small>
                   <i class="ace-icon fa fa-angle-double-right"></i>
-                  <a href="https://agent.superlot999.com/users/edit1/9306?tab1=general&amp;order=username_asc" class="ajax">3M3K</a>
+                  <a href="" class="ajax">3M3K</a>
                 </small>
               </h1>
           </div>
@@ -111,10 +111,10 @@
                 </select>
                 <span class="bolder">เรียง</span>
                 <select id="users-edit-order">
-                  <option value="https://agent.superlot999.com/users/edit1/9306?tab1=general&amp;order=username_asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
-                  <option value="https://agent.superlot999.com/users/edit1/9306?tab1=general&amp;order=username_desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-                  <option value="https://agent.superlot999.com/users/edit1/9306?tab1=general&amp;order=id_asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-                  <option value="https://agent.superlot999.com/users/edit1/9306?tab1=general&amp;order=id_desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+                  <option value="" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+                  <option value="">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+                  <option value="">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+                  <option value="">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
                 </select>
               </li>
             </ul>
