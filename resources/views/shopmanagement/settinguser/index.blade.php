@@ -107,7 +107,6 @@
                 - เพิ่ม<b>ผู้ช่วย</b>หน้าร้าน ได้ที่เมนู <a href="">เพิ่มผู้ช่วย</a>
             </div>
         <div class="tab-content no-border no-padding max-width-1100 col-xs-4">
-
             <form class="js-ajax-form" action="" method="POST" accept-charset="UTF-8" data-after="reset" data-before="validateUserEdit" data-feedback="mixed" data-method="put"><input name="_token" type="hidden" value="szNgCSRnfuwaFrsgOoev7n3eOmzojSKZaMoJI5qG">
                 <table class="table table-bordered table-hc enable-check-all users__edit">
                     <thead class="thin-border-bottom">
