@@ -180,44 +180,44 @@
                     </table>
                 </div>
 
-                    <div class="widget-toolbox padding-8 clearfix">
+                  
                         <button class="btn btn-primary btn-sm">
                         <i class="fa fa-search"></i>
                         <span class="bigger-110">ค้นหา</span>
                         </button>
-                    </div>
+                  
             </div>
             </div>
         </form>
 
-<div class="max-width-1100">
-  <ul class="nav nav-tabs thick-border" id="tab-financial-requests">
-    <li class="bigger-110 bolder active">
-      <a class="width-110 center" href="#" data-toggle="tab" data-url="https://agent.superlot999.com/financial/transactions/show/9306/balance/date">ได้เสียสุทธิ</a>
-    </li>
-    <li class="bigger-110 bolder ">
-      <a class="width-110 center" href="#" data-toggle="tab" data-url="https://agent.superlot999.com/financial/transactions/show/9306/credit/date">เครดิต</a>
-    </li>
-  </ul>
-</div>
+    <div class="max-width-1100">
+        <ul class="nav nav-tabs thick-border" id="tab-financial-requests">
+            <li class="bigger-110 bolder active">
+            <a class="width-110 center" href="#" data-toggle="tab" data-url="">ได้เสียสุทธิ</a>
+            </li>
+            <li class="bigger-110 bolder ">
+            <a class="width-110 center" href="#" data-toggle="tab" data-url="">เครดิต</a>
+            </li>
+        </ul>
+    </div>
 
-<div class="tab-content no-border no-padding width-800 max-width-1100" id="tab-content-financial-requests">
-  <div class="tab-pane active">
-    <table class="table table-bordered table-ks table-nowrap table-vertical-border-0 top-margin-10">
-      <thead class="thin-border-bottom">
-        <tr>
-          <th width="150" class="align-center">วันที่-เวลา</th>
-          <th class="align-center">รายละเอียด</th>
-          <th width="150" class="align-center">เงินออก</th>
-          <th width="150" class="align-center">เงินเข้า</th>
-          <th width="150" class="align-center">คงเหลือ</th>
-        </tr>
-      </thead>
-      <tbody>
-              </tbody>
-    </table>
-  </div>
-</div>
+    <div class="tab-content no-border no-padding width-800 max-width-1100" id="tab-content-financial-requests">
+        <div class="tab-pane active">
+            <table class="table table-bordered table-ks table-nowrap table-vertical-border-0 top-margin-10">
+            <thead class="thin-border-bottom">
+                <tr>
+                <th width="150" class="align-center">วันที่-เวลา</th>
+                <th class="align-center">รายละเอียด</th>
+                <th width="150" class="align-center">เงินออก</th>
+                <th width="150" class="align-center">เงินเข้า</th>
+                <th width="150" class="align-center">คงเหลือ</th>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+            </table>
+        </div>
+    </div>
 
 <script>
   $('.date-mask').datepicker({
@@ -238,9 +238,9 @@
   });
 </script>
 
-</div><!-- /.col -->
+            </div><!-- /.col -->
         </div><!-- /.row -->
-      </div>             
+    </div>             
 </div>
 @endsection
 
