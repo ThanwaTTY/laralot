@@ -1,3 +1,8 @@
+.skin-blue .main-header .logo {
+    background-color: #3c8dbc;
+    color: #fff;
+    border-bottom: 0 solid transparent;
+}
 .main-sidebar, .left-side {
     position: absolute;
     top: 0;
@@ -21,6 +26,7 @@
     text-align: center;
     min-height: 40px;
     margin-bottom: 0;
+    margin-top: 51px;
     overflow: hidden;
     position: relative;
     border: 0 solid;
