@@ -90,56 +90,61 @@
     @endif
 
 <div class="main-content">
-    <div class="col-xs-12" id="content"><div class="page-header">
-    <h1>
-        ตั้งค่าสมาชิก
-        <small>
-                <i class="ace-icon fa fa-angle-double-right"></i>
-            <a class="ajax" href="https://agent.superlot999.com/shop/members/9306">3M3K</a>
-            </small>
-    </h1>
-    </div>
+  <div class="page-content" id="user-content">
+    <div class="col-xs-12" id="content">
+        <div class="page-header">
+                <h1>
+                     ตั้งค่าสมาชิก
+                </h1>
+                <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                    <a class="ajax" href="">3M3K</a>
+                </small>
+            </div>
+            <div class="alert alert-info">
+                <h4 class="text-info"><i class="fa fa-info-circle"></i> คำแนะนำ</h4>
+                - เพิ่ม<b>สมาชิก</b>หน้าร้าน ได้ที่เมนู <a href="">เพิ่มสมาชิก</a><br>
+                - เพิ่ม<b>ผู้ช่วย</b>หน้าร้าน ได้ที่เมนู <a href="">เพิ่มผู้ช่วย</a>
+            </div>
+        <div class="tab-content no-border no-padding max-width-1100 col-xs-4">
 
-        <div class="alert alert-info">
-        <h4 class="text-info"><i class="fa fa-info-circle"></i> คำแนะนำ</h4>
-        - เพิ่ม<b>สมาชิก</b>หน้าร้าน ได้ที่เมนู <a href="https://agent.superlot999.com/users/create">เพิ่มสมาชิก</a><br>
-        - เพิ่ม<b>ผู้ช่วย</b>หน้าร้าน ได้ที่เมนู <a href="https://agent.superlot999.com/aliases/create">เพิ่มผู้ช่วย</a>
-        </div>
-
-
-        <div class="tab-content no-border no-padding max-width-1100">
-
-            <form class="js-ajax-form" action="https://agent.superlot999.com/users/edit/9306" method="POST" accept-charset="UTF-8" data-after="reset" data-before="validateUserEdit" data-feedback="mixed" data-method="put"><input name="_token" type="hidden" value="szNgCSRnfuwaFrsgOoev7n3eOmzojSKZaMoJI5qG">
+            <form class="js-ajax-form" action="" method="POST" accept-charset="UTF-8" data-after="reset" data-before="validateUserEdit" data-feedback="mixed" data-method="put"><input name="_token" type="hidden" value="szNgCSRnfuwaFrsgOoev7n3eOmzojSKZaMoJI5qG">
                 <table class="table table-bordered table-hc enable-check-all users__edit">
-                <thead class="thin-border-bottom">
-                    <tr><th colspan="3">
-                    <input name="action" type="hidden" value="shop">
-                    <button class="btn btn-primary btn-xs" type="submit">แก้ไข</button>
-                    <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
-                    </th>
-
-                    <th><input class="check-all" type="checkbox" value="0"></th>
-
-                    <th>
-                    ระบบหน้าร้าน<br>
-                    <select name="shop_status"><option value="-1"></option><option value="1">เปิด</option><option value="0">ปิด</option></select><br>
-                    &nbsp;
-                    </th>
-
-                    <th>
-                    อายุโพย<br>
-                    <input name="bill_lifespan" class="form-control input-sm max-width-75" type="text" value="">
-                    &lt;= <a class="fill-input" href="#">0</a> นาที
-                    </th>
-                </tr></thead>
-
-                <tbody>
-                                                                            </tbody>
+                    <thead class="thin-border-bottom">
+                        <tr>
+                            <th colspan="3">
+                                <input name="action" type="hidden" value="shop">
+                                    <button class="btn btn-primary btn-xs" type="submit">แก้ไข</button>
+                                <a class="btn btn-primary btn-xs btn-cancel">ยกเลิก</a>
+                            </th>
+                            <th>
+                                <input class="check-all" type="checkbox" value="0">
+                            </th>
+                            <th>
+                            ระบบหน้าร้าน<br>
+                                <select name="">
+                                    <option value=""></option>
+                                    <option value="">เปิด</option>
+                                    <option value="">ปิด</option>
+                                </select>
+                                <br>
+                                &nbsp;
+                            </th>
+                            <th>
+                                อายุโพย<br>
+                                <input name="bill_lifespan" class="form-control input-sm max-width-75" type="text" value="">
+                                &lt;= <a class="fill-input" href="#">0</a> นาที
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
                 </table>
             </form>
 
         </div>
-    </div>               
+    </div> 
+  </div>              
 </div>
 @endsection
 
