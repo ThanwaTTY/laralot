@@ -12,6 +12,7 @@
   {{-- <link rel="stylesheet" href="/css/custom.css"> --}}
   <link rel="stylesheet" href="/css/top-custom.css">
   <link rel="stylesheet" href="/css/menu-custom.css">
+    <link rel="stylesheet" href="/css/customtopmenu.css">
 
   <script language="JavaScript" type="text/javascript">
     function sivamtime() {
@@ -61,8 +62,9 @@
 
 <body class="hold-transition skin-blue sidebar-mini">
 @include('nev-bar-top-menu')
-<div class="wrapper">
 
+<div class="wrapper">
+{{-- @include('nev-bar-top-menu') --}}
 {{-- 
 @include('nev-bar-top') --}}
   <!-- Left side column. contains the logo and sidebar -->
