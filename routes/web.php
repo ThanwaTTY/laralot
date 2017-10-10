@@ -14,6 +14,7 @@
 Route::get('/login', 'AuthController@getlogin')->name('login');
 Route::post('/login', 'AuthController@postLogin');
 Route::get('/logout', 'AuthController@logout');
+Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberController@register');
 
 
 
@@ -108,7 +109,7 @@ Route::group(['middleware'=>['auth']], function () {
         Route::get('/index2', function () {
             return view('index2');
         });
-    });
+});
 
 
 
