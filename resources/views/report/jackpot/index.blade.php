@@ -23,37 +23,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-
-    {{-- <style>
-    .sidebar .sidebar-shortcuts-large {
-        line-height: 45px;
-    }
-    .bot-margin-3 {
-        margin-bottom: 13px !important;
-        margin-left: 18px !important;
-        border-button: 2px;
-    }
-
-    .bot-margin-3 i {
-        font-size: 28px;
-    }
-
-    .one {
-    border-style: solid;
-    border-color: #006699;
-    padding: 15px;
-    background: #b3e6ff;
-    }
-
-    p.bold {
-    font-weight: bold;
-    }
-.nav-tabs-custom>.nav-tabs>li>a {
-    color: #fff;
-    border-radius: 0;
-}
-    </style> --}}
-    <link rel="stylesheet" href="/css/custom2.css">
+  <link rel="stylesheet" href="/css/custom2.css">
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->
@@ -88,97 +58,28 @@
             </div>
         </div>        
     @endif
+    
 
-<div class="main-content">
-      <!-- #section:basics/content.breadcrumbs -->
-    <div class="breadcrumbs">
-        <ul id="breadcrumbs" class="breadcrumb">
-            <li>
-                <i class="ace-icon fa fa-home home-icon"></i>
-            <!-- <a href="#">Home</a> -->
-            </li>
-                <li>
-                    รายการเเพ้ชนะ 
-                </li>
-                <li>
-                     รายการที่ถูกรางวัล
-                </li>
-        </ul><!-- /.breadcrumb -->
-        <span id="global-clock" class="pull-right"></span>
-    </div>
-
-<!-- /section:basics/content.breadcrumbs -->
-    <div class="page-content" id="user-content">
+<div class="page-content" id="user-content">
         <div class="row">
-            <div id="content" class="col-xs-12">
-                    <div class="page-header">
-                        <h1>
-                             รายการที่ถูกรางวัล
-                            <small>
-                                <i class="ace-icon fa fa-angle-double-right"></i>
-                                <a href="#" class="ajax">3M3K</a>
-                            </small>
-                        </h1>
-                    </div>
-
-               
-
-             </div>
-                   <h4 class="sub">
-                    <i class="fa fa-angle-right orange"></i>
-                    <span class="deep-blue">รัฐบาลไทยงวดที่</span><span class="smaller near-white">16 กันยายน 2560 (เปลี่ยนเเถบเมนูได้ด้านบน)</span>
-                   </h4>
-                                   
-                            <div class="col-sm-10">
-                                <table class="table table-bordered bg-gray">
-                                    <thead>
-                                        <tr style="background-color:#e6e6e6;">
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">#</th>
-                                            <th class="text-center" rowspan="2" style="padding-top:20px;">ชื่อผู้ใช้ <br>
-                                            <input type="checkbox" name="" value="">เเสดงชื่อ
-                                            </th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">โพย#</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">Bet#</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">อัตราจ่าย</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">เวลา</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">การเเทง</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">รายการ</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">จ่าย</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">ยอดเเทง</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">เมมเบอร์</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">เอเย่นต์ถือ</th>
-                                            <th class="text-center" rowspan="1" style="padding-top:20px;">บริษัทถือ</th>
-                                        </tr>
-                                       
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="text-center" colspan="9"><b>รวม :</b></td>
-                                           
-                                            {{-- บรษัท --}}
-                                            <td class="text-right">0.00</td>
-                                            <td class="text-right">0.00</td>
-                                            <td class="text-right">0.00</td>
-                                            <td class="text-right">0.00</td>
-                                        </tr>
-                                    </tbody>
-                                </table> 
-                            </div>      
-                
-                <script>
-                $(document).ready(function() {
-                    $('#content > .tab-content > .tab-pane').each(function (key, val) {
-                    if ($(val).find('.tab-pane.active').length == 0) {
-                        $(val).find('.nav-tabs li:first').addClass('active');
-                        $(val).find('.tab-content .tab-pane:first').addClass('in active');
-                    }
-                    });
-                });
-                </script>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.page-content -->
+          <div id="content" class="col-xs-12"><div class="page-header">
+  <h1>
+    รายการที่ถูกรางวัล
+  </h1>
+  <h4 class="sub">
+    <i class="fa fa-angle-right orange"></i>
+    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 ตุลาคม 2560
+    <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
+  </h4>
 </div>
+
+
+  <div class="alert alert-info">
+    <h3 class="no-margin">ยังไม่ประกาศผลรางวัล</h3>
+  </div>
+  </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>
 @endsection
 
  
