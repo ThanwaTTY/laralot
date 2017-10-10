@@ -175,11 +175,11 @@ padding: 8px 20px 24px;
 h5.bigger {
     font-size: 16px;
 }
-.input-group .input-group-addon {
+/*.input-group .input-group-addon {
     border-radius: 0;
     border-color: #d2d6de;
     background-color: #fff; 
-}
+}*/
 label {
     font-weight: normal;
     font-size: 14px;
@@ -699,4 +699,148 @@ select.input-sm {
 }
 .even .bg-yellow {
     background-color: #fefde2 !important;
+}
+.width-90px {
+    min-width: 90px !important;
+}
+.input-small {
+    width: 90px;
+    max-width: 100%;
+}
+.width-110 {
+    min-width: 110px !important;
+}
+.input-sm {
+    height: 30px;
+    padding: 5px 10px;
+    font-size: 12px;
+    line-height: 1.5;
+    border-radius: 3px;
+}
+.input-icon>input {
+    padding-left: 24px;
+    padding-right: 6px;
+}
+
+/*  */
+.inline {
+    display: inline-block !important;
+}
+.deep-red {
+    color: #ff0000 !important;
+}
+.align-top {
+    vertical-align: top !important;
+}
+.max-width-40 {
+    width: 40px;
+    max-width: 40px !important;
+}
+.lighter {
+    font-weight: lighter;
+}
+.max-width-75 {
+    width: 75px;
+    max-width: 75px !important;
+}
+.widget-toolbox {
+    background-color: #EEE;
+}
+.padding-8 {
+    padding: 8px !important;
+}
+.widget-toolbox:last-child {
+    padding: 2px;
+    border-top: 1px solid #CCC;
+}
+.widget-toolbox.padding-8 {
+    padding: 8px;
+}
+
+
+/* cancellot */
+.table-hc, .table-hc thead > tr > th, .table-hc.table-bordered thead > tr > th:first-child, .table-hc tbody > tr > td, .table-hc tfoot > tr > td {
+    border-color: #999;
+}
+.table-hc {
+    color: #333;
+    width: auto;
+}
+.width-800 {
+    min-width: 800px !important;
+}
+.bg-blue {
+    background: #cae3f0 !important;
+}
+.dark-blue {
+    color: #1a83db !important;
+}
+.table-fancy > tfoot > tr > td {
+    color: #333;
+    padding: 10px 4px;
+}
+.bg-yellow {
+    color: #333 !important;
+}
+.green {
+    color: #69aa46 !important;
+}
+.red {
+    color: #dd5a43 !important;
+}
+.table-hc th, .table-hc td {
+    white-space: nowrap;
+    vertical-align: middle !important;
+    text-align: center;
+}
+.alert-info > h4 {
+    color: #428bca;
+}
+.align-middle {
+    vertical-align: middle !important;
+}
+
+/* winlossreport */
+.max-width-110 {
+    max-width: 110px !important;
+}
+
+.left-padding-5 {
+    padding-left: 5px !important;
+}
+.padding-5 {
+    padding: 5px !important;
+}
+.deep-green {
+    color: #009900 !important;
+}
+/* history */
+.table-ks th {
+    background: #666;
+    color: white;
+}
+.btn-sm {
+    border-width: 4px;
+    font-size: 13px;
+    padding: 4px 9px;
+    line-height: 1.39;
+}
+.widget-box {
+    padding: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    margin: 3px 0;
+    border: 1px solid #CCC;
+}
+.widget-color-blue2 {
+    border-color: #5090c1;
+}
+.bot-margin-20 {
+    margin-bottom: 20px !important;
+}
+.nav-tabs {
+    border-color: #999 !important;
+}
+.nav-tabs {
+    border-bottom: 1px solid #ddd !important;
 }

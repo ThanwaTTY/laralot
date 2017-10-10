@@ -23,37 +23,7 @@
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-
-    {{-- <style>
-    .sidebar .sidebar-shortcuts-large {
-        line-height: 45px;
-    }
-    .bot-margin-3 {
-        margin-bottom: 13px !important;
-        margin-left: 18px !important;
-        border-button: 2px;
-    }
-
-    .bot-margin-3 i {
-        font-size: 28px;
-    }
-
-    .one {
-    border-style: solid;
-    border-color: #006699;
-    padding: 15px;
-    background: #b3e6ff;
-    }
-
-    p.bold {
-    font-weight: bold;
-    }
-.nav-tabs-custom>.nav-tabs>li>a {
-    color: #fff;
-    border-radius: 0;
-}
-    </style> --}}
-    <link rel="stylesheet" href="/css/custom2.css">
+  <link rel="stylesheet" href="/css/custom2.css">
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->
@@ -75,8 +45,19 @@
 @endsection
 
 @section('content')
-    
-        
+<div class="breadcrumbs">
+  <ul id="breadcrumbs" class="breadcrumb">
+    <li>
+      <i class="ace-icon fa fa-home home-icon"></i>
+      <!-- <a href="#">Home</a> -->
+    </li>
+    <li>			
+    รายงานแพ้ชนะ 
+    </li><li>
+        แพ้-ชนะ สมาชิก/ประเภท
+    </li></ul><!-- /.breadcrumb -->
+  <span id="global-clock" class="pull-right"></span>
+</div> 
     @if($errors->all())
         <div class="box-body">
             <div class="alert alert-warning alert-dismissible">
@@ -89,64 +70,30 @@
         </div>        
     @endif
 
-<div class="main-content">
-      <!-- #section:basics/content.breadcrumbs -->
-    <div class="breadcrumbs">
-        <ul id="breadcrumbs" class="breadcrumb">
-            <li>
-                <i class="ace-icon fa fa-home home-icon"></i>
-            <!-- <a href="#">Home</a> -->
-            </li>
-                <li>
-                    รายการเเพ้ชนะ 
-                </li>
-                <li>
-                     ได้เสีย สมาชิก/ประเภท
-                </li>
-        </ul><!-- /.breadcrumb -->
-        <span id="global-clock" class="pull-right"></span>
-    </div>
-
-<!-- /section:basics/content.breadcrumbs -->
-    <div class="page-content" id="user-content">
+<div class="page-content" id="user-content">
         <div class="row">
-            <div id="content" class="col-xs-12">
-                    <div class="page-header">
-                        <h1>
-                             ได้เสีย สมาชิก/ประเภท
-                            <small>
-                                <i class="ace-icon fa fa-angle-double-right"></i>
-                                <a href="#" class="ajax">3M3K</a>
-                            </small>
-                        </h1>
-                        <h4>รัฐบาลไทย, งวดวันที่ 16 กันยายน 2560 (เปลี่ยนได้ที่แถบเมนูด้านบน)</h4>
-                    </div>
-
-                    <div class="min-width-800 max-width-1100">
-                        <div class="alert alert-info">
-                           ยังไม่ประกาศผลรางวัล กรุณาไปที่ รายการแทง</span>
-                        </div>
-                    </div>
-
-                   
-
-                   
-
-                
-                <script>
-                $(document).ready(function() {
-                    $('#content > .tab-content > .tab-pane').each(function (key, val) {
-                    if ($(val).find('.tab-pane.active').length == 0) {
-                        $(val).find('.nav-tabs li:first').addClass('active');
-                        $(val).find('.tab-content .tab-pane:first').addClass('in active');
-                    }
-                    });
-                });
-                </script>
-            </div><!-- /.col -->
-        </div><!-- /.row -->
-    </div><!-- /.page-content -->
+          <div id="content" class="col-xs-12"><div class="page-header">
+  <h1>
+    ได้เสีย สมาชิก/ประเภท
+    <small>
+                    <i class="ace-icon fa fa-angle-double-right"></i>
+                  3M3K
+                  </small>
+  </h1>
+  <h4 class="sub">
+    <i class="fa fa-angle-right orange"></i>
+    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 ตุลาคม 2560
+    <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
+  </h4>
 </div>
+
+
+  <div class="alert alert-info">
+    <h3 class="no-margin">ยังไม่ประกาศผลรางวัล กรุณาไปที่ <a href="https://agent.superlot999.com/items/by-member" class="ajax">รายการแทง</a></h3>
+  </div>
+  </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>
 @endsection
 
  

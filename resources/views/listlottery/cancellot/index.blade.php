@@ -1,204 +1,160 @@
 @extends('master')
 @section('head')
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>AdminLTE 2 | Dashboard</title>
-  <!-- Tell the browser to be responsive to screen width -->
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.6 -->
   <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- daterange picker -->
+  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+  <!-- bootstrap datepicker -->
+  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+  <!-- iCheck for checkboxes and radio inputs -->
+  <link rel="stylesheet" href="/plugins/iCheck/all.css">
+  <!-- Bootstrap Color Picker -->
+  <link rel="stylesheet" href="/plugins/colorpicker/bootstrap-colorpicker.min.css">
+  <!-- Bootstrap time Picker -->
+  <link rel="stylesheet" href="/plugins/timepicker/bootstrap-timepicker.min.css">
+  <!-- Select2 -->
+  <link rel="stylesheet" href="../../plugins/select2/select2.min.css">
   <!-- Theme style -->
-  <link rel="stylesheet" href="/dist/css/AdminLTE.min.css">
+  <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
   <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="/plugins/iCheck/flat/blue.css">
-  <!-- Morris chart -->
-  <link rel="stylesheet" href="/plugins/morris/morris.css">
-  <!-- jvectormap -->
-  <link rel="stylesheet" href="/plugins/jvectormap/jquery-jvectormap-1.2.2.css">
-  <!-- Date Picker -->
-  <link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
-  <!-- bootstrap wysihtml5 - text editor -->
-  <link rel="stylesheet" href="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+  <link rel="stylesheet" href="/css/custom2.css">
   <style>
-    .form-group label{
-        margin-top:5px;
+    .widget-color-blue2 {
+        border-color: #5090c1 !IMPORTANT;
     }
-    .form-group input{
-        margin-top:5px;
-    }
-   
-  </style>
-{{--   <style>
-  .row {
-    margin-right: -8px;
-    margin-left: -15px;
-    padding-top: 3px;
-}
-  .info-boxcreate {
-    display: block;
-    min-height: 40px;
-    background: #fff;
-    width: 100%;
-    box-shadow: 0 1px 1px rgba(0,0,0,0.1);
-    border-radius: 2px;
-    margin-bottom: 15px;
-    
-}
-  #size{
-    height: 49px;
-    width: 55px;
-    line-height: 0px;
-    min-height: 0px;
-  }
-
-  </style> --}}
-  <style>
-        .sidebar .sidebar-shortcuts-large {
-            line-height: 45px;
-        }
-        .bot-margin-3 {
-            margin-bottom: 13px !important;
-            margin-left: 18px !important;
-            border-button: 2px;
-        }
-
-        .bot-margin-3 i {
-            font-size: 28px;
-        }
   </style>
 @endsection
 @section('content')
-    <!-- Content Header (Page header) -->
-      <section class="sidebar-shortcuts-large bot-margin-3">
-      {{--  <h1>
-        Dashboard
-        <xsall>Control panel</xsall>
-      </h1>  --}}
-      <div class="row">
-        {{--  <div class="pull-left">  --}}
-          <ol class="breadcrumb">
-            <li class="active"><i class="fa fa-home"></i></li>
-            <li class="active">ยินดีต้อนรับ</li>
-            <li class="active">รายการที่ถูกยกเลิก</li>
-          </ol>
-        {{--  </div>  --}}
-      </div>
-    </section>
 
-    <!-- Main content -->
-    <section class="content">
-        <div class="modal-content">
-        <div class="col-xs-10"> 
-            <div class="box box-info">
-                            <div class="row">
-                                <div class="col-xs-12">
-                                     <h2 class="text-aqua">รายการที่ถูกยกเลิก</h2>                            
-                                </div>                                  
-                            </div>
-                <div class="box-header bg-aqua">
-                <h3 class="box-title">
-                    ค้นหาโพย
-                </h3>
-                <!-- tools box -->
-                <div class="pull-right box-tools">
-                    {{-- <button type="button" class="btn btn-info btn-xs" data-widget="collapse" data-toggle="tooltip" title="" data-original-title="Collapse">
-                    <i class="fa fa-minus"></i></button>
-                    <button type="button" class="btn btn-info btn-xs" data-widget="remove" data-toggle="tooltip" title="" data-original-title="Remove">
-                    <i class="fa fa-times"></i></button> --}}
-                </div>
-                <!-- /. tools -->
-                </div>     
-                
-                    <form action="form-horizontal" method="post">
-                        {{ csrf_field() }}
-                        
-                        <div class="box-body">
-                                <div class="row">
-                                        <div class="col-xs-12">
-                                            <p>ลำดับโพย เเละ หมายเลข สามารถกรอกได้หลายตัว คั่นด้วยคอมม่า เช่น 123,456</p>                            
-                                        </div>                                  
-                                    <br>
-                                    <div class="col-xs-12">
-                                        <div class="col-xs-4">
-                                            <div class="form-group">
-                                                <label for="" class="col-xs-4 control-label">วันที่เเทง</label>
-                                                <div class="col-xs-8">
-                                                <input type="" class="form-control" id="" placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="" class="col-xs-4 control-label">ลำดับโพย</label>
-                                                <div class="col-xs-8">
-                                                <input type="" class="form-control" id="" placeholder="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xs-4">
-                                            <div class="form-group">
-                                                <label for="" class="col-xs-5 control-label">ชื่อผู้ใช้</label>
-                                                <div class="col-xs-7">
-                                                <input type="" class="form-control" id="" placeholder="">
-                                                </div>
-                                            </div>
-                                            <div class="form-group">
-                                                <label for="" class="col-xs-5 control-label">หมายเลขที่เเทง</label>
-                                                <div class="col-xs-7">
-                                                <input type="" class="form-control" id="" placeholder="">
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>    
-                                 <button class="btn btn-primary">บันทึก</button>
-                        </div>
-                        {{-- <div class="modal-footer">
-                        
-                        <button type="submit" class="btn btn-primary">บันทึก</button>
-                        </div> --}}
-                    </form>
-                    
-                    <div class="col-xs-9">
-                    <br>
-                        <div class="table-responsive"><!-- มี tab เลื่อนข้างล่าง  -->
-                                <table class="table table-bordered bg-gray">
-                                    <thead>
-                                        <tr> 
-                                            <th rowspan="2" class="text-center">#</th>
-                                            <th rowspan="2" class="text-center">เวลา</th>
-                                            <th rowspan="2" class="text-center">ชื่อผู้ใช้</th>
-                                            <th rowspan="2" class="text-center">ชนิดหวย</th>
-                                            <th rowspan="2" class="text-center">งวดหวย</th>
-                                            <th rowspan="2" class="text-center">รหัสโพส</th>
-                                            <th rowspan="2" class="text-center">ลำดับโพย</th>
-                                            <th rowspan="2" class="text-center">Bet#</th>
-                                            <th rowspan="2" class="text-center">อัตราจ่าย</th>
-                                            <th rowspan="2" class="text-center">รายการ</th>
-                                            <th rowspan="2" class="text-center">ยอดเเทง</th>
-                                            <th rowspan="2" class="text-center">หมายเหตุ</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                        </tr>                                                     
-                                    </tbody>                                  
-                                </table>
-                            </div>
-                    </div>
-              </div>
-         </div> 
-        </div>   
-    </div> 
-</section>
-    <!-- /.content -->
+    <div class="breadcrumbs">
+    <ul id="breadcrumbs" class="breadcrumb">
+        <li>
+        <i class="ace-icon fa fa-home home-icon"></i>
+        <!-- <a href="#">Home</a> -->
+        </li>
+    </ul><!-- /.breadcrumb -->
+
+    <span id="global-clock" class="pull-right"></span>
+    </div>
+
+    <div class="page-content" id="user-content">
+        <div class="row">
+          <div id="content" class="col-xs-12"> <div class="page-header">
+    <h1>รายการที่ถูกยกเลิก</h1>
+  </div>
+
+
+  <ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
+          <li class="active">
+        <a href="https://agent.superlot999.com/items/cancelled" class="ajax">รายการที่ถูกยกเลิก</a>
+      </li>
+      </ul>
+
+<style>
+  #search-table td {
+    padding: 0 10px 4px 0;
+  }
+</style>
+
+<div class="space-4"></div>
+
+  <form method="GET" action="https://agent.superlot999.com/items/cancelled" accept-charset="UTF-8" class="form-inline js-form-submit">
+  <div class="widget-box widget-color-blue2 width-800 max-width-800">
+    <div class="widget-header">
+      <h5 class="widget-title bigger">
+        ค้นหาโพย
+      </h5>
+    </div>
+
+    <div class="widget-body">
+      <div class="widget-main">
+        <span class="grey"><b>ลำดับโพย และ หมายเลข</b> สามารถกรอกหลายตัว คั่นด้วยคอมม่า เช่น 13,4,555</span>
+        <div class="space-4"></div>
+
+        <table id="search-table">
+          <tbody>
+            <tr>
+              <td><label for="daterange" class="bolder">วันที่แทง :</label></td>
+              <td><input class="form-control width-100 bigger-110 date-range-picker" name="daterange" type="text" value="10/10/2017 - 10/10/2017" id="daterange"></td>
+
+              <td><label for="username" class="bolder">ชื่อผู้ใช้ :</label></td>
+                              <td><input class="form-control bigger-110" id="username" name="username" type="text"></td>
+                          </tr>
+
+            <tr>
+              <td><label for="game_bill_numbers" class="bolder">ลำดับโพย :</label></td>
+              <td><input class="form-control bigger-110" id="game_bill_numbers" name="game_bill_numbers" type="text"></td>
+
+              <td><label for="numbers" class="bolder">หมายเลขที่แทง :</label></td>
+              <td><input class="form-control bigger-110" id="number" name="numbers" type="text"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="widget-toolbox padding-8 clearfix">
+      <button type="submit" class="btn btn-primary btn-sm" id="btn-search-cancel">ค้นหา</button>
+    </div>
+  </div>
+</form>
+
+<div class="space-4"></div>
+
+<table class="table table-bordered table-hc">
+  <thead class="thin-border-bottom">
+    <tr>
+      <th class="align-center">&nbsp;#&nbsp;</th>
+      <th class="align-center">เวลา</th>
+      <th class="align-center">ชื่อผู้ใช้</th>
+      <th class="align-center">ชนิดหวย</th>
+      <th class="align-center">งวดหวย</th>
+      <th class="align-center">รหัสโพย</th>
+      <th class="align-center">ลำดับโพย</th>
+      <th class="align-center">Bet#</th>
+      <th class="align-center">อัตราจ่าย</th>
+      <th class="align-center">รายการ</th>
+      <th class="align-center">ยอดแทง</th>
+      <th class="align-center">หมายเหตุ</th>
+    </tr>
+  </thead>
+
+  <tbody>
+          </tbody>
+</table>
+
+<script>
+  $.each($('#by-member-tabletbody tr, #by-member-table tfoot tr'), function(key, value) {
+    $(this).addClass(key % 2 == 0 ? 'odd' : 'even');
+  });
+  $.each($('.n0'), function(key, value) {
+    $(this).html(n0($(this).text()));
+  });
+  $.each($('.n2'), function(key, value) {
+    $(this).html(n2($(this).text()));
+  });
+  $.each($('.n2c'), function(key, value) {
+    $(this).html(n2c($(this).text()));
+  });
+  $.each($('.clear0'), function(key, value) {
+    if ($(this).text() == 0)
+      $(this).text('');
+  });
+
+  $(document).ready(function() {
+    $('.date-range-picker').daterangepicker(dateRangeOptions);
+  });
+</script>
+</div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>
+
 @endsection
 @section('footer')
 <!-- jQuery 2.2.3 -->
