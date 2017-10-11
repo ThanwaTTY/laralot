@@ -53,9 +53,11 @@
     </li>
     <li>			
     รายงานแพ้ชนะ 
-    </li><li>
+    </li>
+    <li>
         แพ้-ชนะ สมาชิก/ประเภท
-    </li></ul><!-- /.breadcrumb -->
+    </li>
+  </ul><!-- /.breadcrumb -->
   <span id="global-clock" class="pull-right"></span>
 </div> 
     @if($errors->all())
@@ -70,30 +72,29 @@
         </div>        
     @endif
 
-<div class="page-content" id="user-content">
-        <div class="row">
-          <div id="content" class="col-xs-12"><div class="page-header">
-  <h1>
-    ได้เสีย สมาชิก/ประเภท
-    <small>
-                    <i class="ace-icon fa fa-angle-double-right"></i>
-                  3M3K
-                  </small>
-  </h1>
-  <h4 class="sub">
-    <i class="fa fa-angle-right orange"></i>
-    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 ตุลาคม 2560
-    <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
-  </h4>
-</div>
+    <div class="page-content" id="user-content">
+      <div class="row">
+        <div id="content" class="col-xs-12"><div class="page-header">
+          <h1>
+            ได้เสีย สมาชิก/ประเภท
+            <small>
+              <i class="ace-icon fa fa-angle-double-right"></i>
+              3M3K
+            </small>
+          </h1>
+          <h4 class="sub">
+            <i class="fa fa-angle-right orange"></i>
+            <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 ตุลาคม 2560
+            <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
+          </h4>
+        </div>
 
-
-  <div class="alert alert-info">
-    <h3 class="no-margin">ยังไม่ประกาศผลรางวัล กรุณาไปที่ <a href="https://agent.superlot999.com/items/by-member" class="ajax">รายการแทง</a></h3>
-  </div>
-  </div><!-- /.col -->
-        </div><!-- /.row -->
-      </div>
+        <div class="alert alert-info">
+          <h3 class="no-margin">ยังไม่ประกาศผลรางวัล กรุณาไปที่ <a href="https://agent.superlot999.com/items/by-member" class="ajax">รายการแทง</a></h3>
+        </div>
+      </div><!-- /.col -->
+    </div><!-- /.row -->
+{{-- </div> --}}
 @endsection
 
  
