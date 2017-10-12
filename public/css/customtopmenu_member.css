@@ -421,7 +421,8 @@ table {
 }
 .main-content {
     margin-left: 190px;
-    min-height: 100%;
+    /*scroll-right*/
+    /*min-height: 100%;*/
     padding: 0;
 }
 .page-content {
@@ -867,4 +868,66 @@ a:hover, a:focus {
 .no-skin .nav-list>li:hover>a {
     background-color: #fff;
     color: #266cad;
+}
+@media (min-width: 768px)
+{
+    .main-container.container:before {
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.1);
+        width: inherit;
+    }
+}
+.main-container:before {
+    display: block;
+    content: "";
+    position: absolute;
+    z-index: -2;
+    width: 100%;
+    max-width: inherit;
+    bottom: 0;
+    top: 0;
+    background-color: #FFF;
+}
+.btn-sm {
+    border-width: 4px;
+    font-size: 13px;
+    padding: 4px 9px;
+    line-height: 1.39;
+}
+.btn-scroll-up {
+    border-width: 0;
+    position: fixed;
+    right: 2px;
+    z-index: 99;
+    -webkit-transition-duration: .3s;
+    transition-duration: .3s;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    bottom: -24px;
+    visibility: hidden;
+}
+.btn-inverse, .btn-inverse:focus {
+    background-color: #555 !important;
+    border-color: #555;
+}
+
+.btn-scroll-up.display {
+    opacity: .7;
+    filter: alpha(opacity=70);
+    bottom: 2px;
+    visibility: visible;
+}
+.btn>.ace-icon {
+    margin-right: 4px;
+}
+.btn-sm>.ace-icon {
+    margin-right: 3px;
+}
+.btn>.icon-only.ace-icon {
+    margin: 0 !important;
+    text-align: center;
+    padding: 0;
+}
+.bigger-300 {
+    font-size: 300% !important;
 }

@@ -800,7 +800,7 @@
     </div><!-- /.main-content -->
   </div><!-- /.main-container -->
 
-  <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse" style="right: 20px; bottom: 20px;">
+  <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse display" style="right: 20px; bottom: 20px;">
     <i class="ace-icon fa fa-angle-double-up icon-only bigger-300"></i>
   </a>
 
@@ -912,17 +912,6 @@ $(function(){
 })
 </script>
 
-  <script>
-$(function(){
-  var li = $('a[href="'+location.pathname+'"]').parent();
-  li.addClass('active');
-
-  li.parent().parent().addClass('active');
-
-  li.parent().parent().parent().parent().addClass('active');
-  li.parent().parent().parent().parent().parent().parent().addClass('active');
-})
-</script>
 
 
 </body></html>
