@@ -31,6 +31,7 @@
   {{-- <link rel="stylesheet" href="/css/custom2.css"> --}}
   {{-- <link rel="stylesheet" href="/css/top-custom.css"> --}}
   <link rel="stylesheet" href="/css/customtopmenu_member.css">
+  <link rel="stylesheet" href="/css/custom_member.css">
 
 </head>
 <body class="no-skin">
@@ -664,13 +665,13 @@
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/bet-results">
+		<a href="/play/reportlot" data-url="https://www.superlot999.com/bet-results">
 			<i class="menu-icon fa fa-credit-card"></i>
 			<span class="menu-text">สรุปงวดหวย</span>
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/reports/game-results">
+		<a href="/play/checklot" data-url="https://www.superlot999.com/reports/game-results">
 			<i class="menu-icon fa fa-bar-chart-o"></i>
 			<span class="menu-text">ตรวจผลรางวัล</span>
 		</a>

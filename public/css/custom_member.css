@@ -1,0 +1,17 @@
+.blue {
+    color: #478fca !important;
+}
+.max-width-180 {
+    max-width: 180px !important;
+}
+.table-auto {
+    width: auto;
+}
+table {
+    font-size: 13px;
+}
+h3 {
+    font-size: 22px;
+    font-weight: normal;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}

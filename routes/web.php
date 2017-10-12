@@ -21,6 +21,12 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
         Route::get('/play/bet', function () {
             return view('play.bet.index');
         });
+        Route::get('/play/reportlot', function () {
+            return view('play.reportlot.index');
+        });
+        Route::get('/play/checklot', function () {
+            return view('play.checklot.index');
+        });
         
 
 
