@@ -652,7 +652,7 @@
 	
 	<ul class="nav nav-list">
 			<li class="">
-		<a href="https://www.superlot999.com/games?game_type_id=1" data-url="https://www.superlot999.com/games">
+		<a href="#" data-url="https://www.superlot999.com/games">
 			<i class="menu-icon fa fa-book"></i>
 			<span class="menu-text">เลือกชนิดหวย</span>
 		</a>
@@ -664,43 +664,43 @@
 		</a>
 	</li>
 	<li class="">
-		<a href="https://www.superlot999.com/bet-results?game_type_id=1" data-url="https://www.superlot999.com/bet-results">
+		<a href="#" data-url="https://www.superlot999.com/bet-results">
 			<i class="menu-icon fa fa-credit-card"></i>
 			<span class="menu-text">สรุปงวดหวย</span>
 		</a>
 	</li>
 	<li class="">
-		<a href="https://www.superlot999.com/reports/game-results?game_type_id=1" data-url="https://www.superlot999.com/reports/game-results">
+		<a href="#" data-url="https://www.superlot999.com/reports/game-results">
 			<i class="menu-icon fa fa-bar-chart-o"></i>
 			<span class="menu-text">ตรวจผลรางวัล</span>
 		</a>
 	</li>
 	<li class="">
-		<a href="https://www.superlot999.com/info?game_type_id=1" data-url="https://www.superlot999.com/info">
+		<a href="#" data-url="https://www.superlot999.com/info">
 			<i class="menu-icon fa fa-user"></i>
 			<span class="menu-text">ข้อมูลผู้ใช้</span>
 		</a>
 	</li>
 	<li class="">
-		<a href="https://www.superlot999.com/financial/transactions/11240/balance?game_type_id=1" data-url="https://www.superlot999.com/financial/transactions">
+		<a href="#" data-url="https://www.superlot999.com/financial/transactions">
 			<i class="menu-icon fa fa-refresh"></i>
 			<span class="menu-text">สรุปการเงิน</span>
 		</a>
 	</li>
 	<li class="">
-		<a href="https://www.superlot999.com/cancel?game_type_id=1" data-url="https://www.superlot999.com/cancel">
+		<a href="#" data-url="https://www.superlot999.com/cancel">
 			<i class="menu-icon fa fa-times"></i>
 			<span class="menu-text">ยกเลิกโพย</span>
 		</a>
 	</li>
 	<li class="visible-xs visible-sm">
-		<a href="https://www.superlot999.com/logout?game_type_id=1" data-url="https://www.superlot999.com/logout">
+		<a href="#" data-url="https://www.superlot999.com/logout">
 			<i class="menu-icon fa fa-sign-out"></i>
 			<span class="menu-text">ออกจากระบบ</span>
 		</a>
 	</li>
 	<li class="pull-right visible-md visible-lg">
-		<a href="https://www.superlot999.com/logout?game_type_id=1" data-url="https://www.superlot999.com/logout">
+		<a href="#" data-url="https://www.superlot999.com/logout">
 			<i class="menu-icon fa fa-sign-out"></i>
 			<span class="menu-text">ออกจากระบบ</span>
 		</a>
