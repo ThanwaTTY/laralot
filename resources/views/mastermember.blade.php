@@ -653,12 +653,12 @@
 	
 	<ul class="nav nav-list">
 			<li class="">
-		<a href="#" data-url="https://www.superlot999.com/games">
+		<a href="/play/typelot" data-url="https://www.superlot999.com/games">
 			<i class="menu-icon fa fa-book"></i>
 			<span class="menu-text">เลือกชนิดหวย</span>
 		</a>
 	</li>
-	<li class="active">
+	<li class="">
 		<a href="/play/bet" data-url="https://www.superlot999.com/home" class="active">
 			<i class="menu-icon fa fa-dashboard"></i>
 			<span class="menu-text">ทายผล</span>
@@ -677,7 +677,7 @@
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/info">
+		<a href="/play/datauser" data-url="https://www.superlot999.com/info">
 			<i class="menu-icon fa fa-user"></i>
 			<span class="menu-text">ข้อมูลผู้ใช้</span>
 		</a>
@@ -801,7 +801,7 @@
     </div><!-- /.main-content -->
   </div><!-- /.main-container -->
 
-  <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse" style="right: 20px; bottom: 20px;">
+  <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse display" style="right: 20px; bottom: 20px;">
     <i class="ace-icon fa fa-angle-double-up icon-only bigger-300"></i>
   </a>
 
@@ -913,17 +913,6 @@ $(function(){
 })
 </script>
 
-  <script>
-$(function(){
-  var li = $('a[href="'+location.pathname+'"]').parent();
-  li.addClass('active');
-
-  li.parent().parent().addClass('active');
-
-  li.parent().parent().parent().parent().addClass('active');
-  li.parent().parent().parent().parent().parent().parent().addClass('active');
-})
-</script>
 
 
 </body></html>
