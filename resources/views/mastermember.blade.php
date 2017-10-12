@@ -676,7 +676,7 @@
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/info">
+		<a href="/play/datauser" data-url="https://www.superlot999.com/info">
 			<i class="menu-icon fa fa-user"></i>
 			<span class="menu-text">ข้อมูลผู้ใช้</span>
 		</a>

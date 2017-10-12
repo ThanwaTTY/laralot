@@ -17,104 +17,57 @@
                             หากมีการปรับเปลี่ยนอะไรเพิ่มเติม ทางบริษัทจะรีบแจ้งข่าวให้ทราบต่อไป ขอบคุณครับ<br>
                             <br>
                             </b><br>
-            </div>
-
-            
-            
-            <div id="content"><!-- <div class="widget-box widget-color-dark">
-    <div class="widget-header">
-      <h5 class="widget-title bigger">
-        ตัวกรองกลุ่มหวย
-      </h5>
-    </div>
-    <div class="widget-body clearfix">
-      <div class="checkbox">
-                  <label class="col-xs-3">
-            <input type="checkbox" value="1" class="toggle-game-group" data-id="1" checked="checked">
-            <span class="lbl">รัฐบาล</span>
-          </label>
-                  <label class="col-xs-3">
-            <input type="checkbox" value="16" class="toggle-game-group" data-id="16" checked="checked">
-            <span class="lbl">หวย ธกส.</span>
-          </label>
-                  <label class="col-xs-3">
-            <input type="checkbox" value="2" class="toggle-game-group" data-id="2" checked="checked">
-            <span class="lbl">หวยหุ้นไทย</span>
-          </label>
-                  <label class="col-xs-3">
-            <input type="checkbox" value="6" class="toggle-game-group" data-id="6" checked="checked">
-            <span class="lbl">หวยลาว</span>
-          </label>
-                  <label class="col-xs-3">
-            <input type="checkbox" value="5" class="toggle-game-group" data-id="5" checked="checked">
-            <span class="lbl">หวยมาเลย์ (Magnum4D)</span>
-          </label>
-                  <label class="col-xs-3">
-            <input type="checkbox" value="3" class="toggle-game-group" data-id="3" checked="checked">
-            <span class="lbl">หวยหุ้นต่างประเทศ</span>
-          </label>
-                  <label class="col-xs-3">
-            <input type="checkbox" value="15" class="toggle-game-group" data-id="15" checked="checked">
-            <span class="lbl">หวยเวียดนาม</span>
-          </label>
-              </div>
-    </div>
-  </div> -->
-
-<table class="table table-bordered table-border-dark table-nowrap no-padding-left no-margin-bottom" id="">
-  <tbody>
-  <tr class="bg-black">
-    <th class="align-center white">ประเภทหวย</th>
-    <th class="align-center white">งวดประจำวันที่</th>
-    <th class="align-center white">เวลาเปิด</th>
-    <th class="align-center white">เวลาปิด</th>
-    <th class="align-center white">สถานะ</th>
-    <th class="align-center white">กติกา</th>
-  </tr>
-                <tr><td colspan="6" class="bolder bg-blue2">
-        รัฐบาล
-        <div class="pull-right">
-          <a href="#" class="white"><i class="fa fa-minus toggle-game-group" data-id="1"></i></a>
-        </div>
-      </td>
-          <!--
-            -->
-
-                    
-                    
+            </div>     
+<div id="content">
+        <table class="table table-bordered table-border-dark table-nowrap no-padding-left no-margin-bottom" id="">
+            <tbody>
+            <tr class="bg-black">
+                <th class="align-center white">ประเภทหวย</th>
+                <th class="align-center white">งวดประจำวันที่</th>
+                <th class="align-center white">เวลาเปิด</th>
+                <th class="align-center white">เวลาปิด</th>
+                <th class="align-center white">สถานะ</th>
+                <th class="align-center white">กติกา</th>
+            </tr>
+            <tr><td colspan="6" class="bolder bg-blue2">
+                    รัฐบาล
+                    <div class="pull-right">
+                    <a href="#" class="white"><i class="fa fa-minus toggle-game-group" data-id="1"></i></a>
+                    </div>
+                </td>               
             </tr><tr class="bg-success" data-href="/games?game_type_id=1" data-game-group-id="1">
-        <td>รัฐบาลไทย</td>
-                  <td>
-            <a href="/home?game_type_id=1" class="btn btn-block btn-xs btn-success">
-              งวดวันที่ 16 ตุลาคม 2560
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">11/10</span>
-            –
-            12:00
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">16/10</span>
-            –
-            14:45
-          </td>
-          <td>
-                          <b>ปิดรับใน</b>
-                        <span class="countdown" data-seconds="347678">4 วัน 00:34:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="http://news.sanook.com/lotto/" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-                <tr><td colspan="6" class="bolder bg-blue2">
-        หวย ธกส.
-        <div class="pull-right">
-          <a href="#" class="white"><i class="fa fa-minus toggle-game-group" data-id="16"></i></a>
-        </div>
-      </td>
-          <!--
-            -->
+            <td>รัฐบาลไทย</td>
+            <td>
+                <a href="/home?game_type_id=1" class="btn btn-block btn-xs btn-success">
+                งวดวันที่ 16 ตุลาคม 2560
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">11/10</span>
+                –
+                12:00
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">16/10</span>
+                –
+                14:45
+            </td>
+            <td>
+                <b>ปิดรับใน</b>
+                <span class="countdown" data-seconds="347678">4 วัน 00:34:38</span>
+            </td>
+            <td class="align-center bolder">
+                            <a class="btn btn-block btn-xs btn-primary" href="http://news.sanook.com/lotto/" target="_blank">กติกา</a>
+                        </td>
+                </tr>
+                    <tr><td colspan="6" class="bolder bg-blue2">
+            หวย ธกส.
+            <div class="pull-right">
+            <a href="#" class="white"><i class="fa fa-minus toggle-game-group" data-id="16"></i></a>
+            </div>
+        </td>
+            <!--
+                -->
 
       
                     
@@ -1799,247 +1752,215 @@
                           <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
                       </td>
               </tr>
-          <!--
-            -->
+          
+        <tr class="bg-danger" data-href="/games?game_type_id=99" data-game-group-id="15">
+            <td>ด่งนาย Đồng Nai</td>
+            <td>
+                <a href="/home?game_type_id=99" class="btn btn-block btn-xs btn-primary">
+                งวดวันที่ 18-10-2017
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">18/10</span>
+                –
+                00:05
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">18/10</span>
+                –
+                16:00
+            </td>
+            <td>
+                    <b>เปิดรับใน</b>
+                <span class="countdown" data-seconds="467678">5 วัน 09:54:38</span>
+            </td>
+            <td class="align-center bolder">
+                <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
+            </td>
+        </tr>
+  
+        <tr class="bg-danger" data-href="/games?game_type_id=100" data-game-group-id="15">
+            <td>ซ้อกจัง Sóc Trăng</td>
+            <td>
+                <a href="/home?game_type_id=100" class="btn btn-block btn-xs btn-primary">
+                งวดวันที่ 18-10-2017
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">18/10</span>
+                –
+                00:05
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">18/10</span>
+                –
+                16:00
+            </td>
+            <td>
+                    <b>เปิดรับใน</b>
+                <span class="countdown" data-seconds="467678">5 วัน 09:54:38</span>
+            </td>
+            <td class="align-center bolder">
+                <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
+            </td>
+        </tr>
+                
+        <tr class="bg-danger" data-href="/games?game_type_id=104" data-game-group-id="15">
+            <td>บิ่ญเชือง Bình Dương</td>
+            <td>
+                <a href="/home?game_type_id=104" class="btn btn-block btn-xs btn-primary">
+                งวดวันที่ 13-10-2017
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">13/10</span>
+                –
+                00:05
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">13/10</span>
+                –
+                16:00
+            </td>
+            <td>
+                    <b>เปิดรับใน</b>
+                <span class="countdown" data-seconds="35678">09:54:38</span>
+            </td>
+            <td class="align-center bolder">
+                <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
+            </td>
+        </tr>
+           
+        <tr class="bg-danger" data-href="/games?game_type_id=105" data-game-group-id="15">
+            <td>จ่าวิญ Trà Vinh</td>
+            <td>
+                <a href="/home?game_type_id=105" class="btn btn-block btn-xs btn-primary">
+                งวดวันที่ 13-10-2017
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">13/10</span>
+                –
+                00:05
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">13/10</span>
+                –
+                16:00
+            </td>
+            <td>
+                    <b>เปิดรับใน</b>
+                <span class="countdown" data-seconds="35678">09:54:38</span>
+            </td>
+            <td class="align-center bolder">
+                <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
+            </td>
+        </tr>
 
-      
-                    
-            <tr class="bg-danger" data-href="/games?game_type_id=99" data-game-group-id="15">
-        <td>ด่งนาย Đồng Nai</td>
-                  <td>
-            <a href="/home?game_type_id=99" class="btn btn-block btn-xs btn-primary">
-              งวดวันที่ 18-10-2017
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">18/10</span>
-            –
-            00:05
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">18/10</span>
-            –
-            16:00
-          </td>
-          <td>
-                          <b>เปิดรับใน</b>
-                        <span class="countdown" data-seconds="467678">5 วัน 09:54:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-          <!--
-            -->
-
-      
-                    
-            <tr class="bg-danger" data-href="/games?game_type_id=100" data-game-group-id="15">
-        <td>ซ้อกจัง Sóc Trăng</td>
-                  <td>
-            <a href="/home?game_type_id=100" class="btn btn-block btn-xs btn-primary">
-              งวดวันที่ 18-10-2017
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">18/10</span>
-            –
-            00:05
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">18/10</span>
-            –
-            16:00
-          </td>
-          <td>
-                          <b>เปิดรับใน</b>
-                        <span class="countdown" data-seconds="467678">5 วัน 09:54:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-          <!--
-            -->
-
-      
-                    
-            <tr class="bg-danger" data-href="/games?game_type_id=104" data-game-group-id="15">
-        <td>บิ่ญเชือง Bình Dương</td>
-                  <td>
-            <a href="/home?game_type_id=104" class="btn btn-block btn-xs btn-primary">
-              งวดวันที่ 13-10-2017
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">13/10</span>
-            –
-            00:05
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">13/10</span>
-            –
-            16:00
-          </td>
-          <td>
-                          <b>เปิดรับใน</b>
-                        <span class="countdown" data-seconds="35678">09:54:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-          <!--
-            -->
-
-      
-                    
-            <tr class="bg-danger" data-href="/games?game_type_id=105" data-game-group-id="15">
-        <td>จ่าวิญ Trà Vinh</td>
-                  <td>
-            <a href="/home?game_type_id=105" class="btn btn-block btn-xs btn-primary">
-              งวดวันที่ 13-10-2017
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">13/10</span>
-            –
-            00:05
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">13/10</span>
-            –
-            16:00
-          </td>
-          <td>
-                          <b>เปิดรับใน</b>
-                        <span class="countdown" data-seconds="35678">09:54:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-          <!--
-            -->
-
-      
-                    
-            <tr class="bg-danger" data-href="/games?game_type_id=106" data-game-group-id="15">
-        <td>หวิญล็อง Vĩnh Long</td>
-                  <td>
-            <a href="/home?game_type_id=106" class="btn btn-block btn-xs btn-primary">
-              งวดวันที่ 13-10-2017
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">13/10</span>
-            –
-            00:05
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">13/10</span>
-            –
-            16:00
-          </td>
-          <td>
-                          <b>เปิดรับใน</b>
-                        <span class="countdown" data-seconds="35678">09:54:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-          <!--
-            -->
-
-      
-                    
-            <tr class="bg-danger" data-href="/games?game_type_id=107" data-game-group-id="15">
-        <td>บิ่ญเฟื้อก Bình Phước</td>
-                  <td>
-            <a href="/home?game_type_id=107" class="btn btn-block btn-xs btn-primary">
-              งวดวันที่ 14-10-2017
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">14/10</span>
-            –
-            00:05
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">14/10</span>
-            –
-            16:00
-          </td>
-          <td>
-                          <b>เปิดรับใน</b>
-                        <span class="countdown" data-seconds="122078">1 วัน 09:54:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-          <!--
-            -->
-
-      
-                    
-            <tr class="bg-danger" data-href="/games?game_type_id=108" data-game-group-id="15">
-        <td>เหิ่วชาง Hậu Giang</td>
-                  <td>
-            <a href="/home?game_type_id=108" class="btn btn-block btn-xs btn-primary">
-              งวดวันที่ 14-10-2017
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">14/10</span>
-            –
-            00:05
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">14/10</span>
-            –
-            16:00
-          </td>
-          <td>
-                          <b>เปิดรับใน</b>
-                        <span class="countdown" data-seconds="122078">1 วัน 09:54:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-          <!--
-            -->
-
-      
-                    
-            <tr class="bg-danger" data-href="/games?game_type_id=109" data-game-group-id="15">
-        <td>ล็องอาน Long An</td>
-                  <td>
-            <a href="/home?game_type_id=109" class="btn btn-block btn-xs btn-primary">
-              งวดวันที่ 14-10-2017
-            </a>
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">14/10</span>
-            –
-            00:05
-          </td>
-          <td class="align-center">
-            <span class="deep-blue">14/10</span>
-            –
-            16:00
-          </td>
-          <td>
-                          <b>เปิดรับใน</b>
-                        <span class="countdown" data-seconds="122078">1 วัน 09:54:38</span>
-          </td>
-          <td class="align-center bolder">
-                          <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
-                      </td>
-              </tr>
-</tbody></table>
+        <tr class="bg-danger" data-href="/games?game_type_id=106" data-game-group-id="15">
+            <td>หวิญล็อง Vĩnh Long</td>
+            <td>
+                <a href="/home?game_type_id=106" class="btn btn-block btn-xs btn-primary">
+                งวดวันที่ 13-10-2017
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">13/10</span>
+                –
+                00:05
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">13/10</span>
+                –
+                16:00
+            </td>
+            <td>
+                <b>เปิดรับใน</b>
+                <span class="countdown" data-seconds="35678">09:54:38</span>
+            </td>
+            <td class="align-center bolder">
+                <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
+            </td>
+        </tr>
+        
+        <tr class="bg-danger" data-href="/games?game_type_id=107" data-game-group-id="15">
+            <td>บิ่ญเฟื้อก Bình Phước</td>
+            <td>
+                <a href="/home?game_type_id=107" class="btn btn-block btn-xs btn-primary">
+                งวดวันที่ 14-10-2017
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">14/10</span>
+                –
+                00:05
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">14/10</span>
+                –
+                16:00
+            </td>
+            <td>
+                <b>เปิดรับใน</b>
+                <span class="countdown" data-seconds="122078">1 วัน 09:54:38</span>
+            </td>
+            <td class="align-center bolder">
+                <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
+            </td>
+        </tr>
+          
+        <tr class="bg-danger" data-href="/games?game_type_id=108" data-game-group-id="15">
+            <td>เหิ่วชาง Hậu Giang</td>
+            <td>
+                <a href="/home?game_type_id=108" class="btn btn-block btn-xs btn-primary">
+                งวดวันที่ 14-10-2017
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">14/10</span>
+                –
+                00:05
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">14/10</span>
+                –
+                16:00
+            </td>
+            <td>
+                <b>เปิดรับใน</b>
+                <span class="countdown" data-seconds="122078">1 วัน 09:54:38</span>
+            </td>
+            <td class="align-center bolder">
+                <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
+            </td>
+        </tr>          
+        <tr class="bg-danger" data-href="/games?game_type_id=109" data-game-group-id="15">
+            <td>ล็องอาน Long An</td>
+            <td>
+                <a href="/home?game_type_id=109" class="btn btn-block btn-xs btn-primary">
+                งวดวันที่ 14-10-2017
+                </a>
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">14/10</span>
+                –
+                00:05
+            </td>
+            <td class="align-center">
+                <span class="deep-blue">14/10</span>
+                –
+                16:00
+            </td>
+            <td>
+                <b>เปิดรับใน</b>
+                <span class="countdown" data-seconds="122078">1 วัน 09:54:38</span>
+            </td>
+            <td class="align-center bolder">
+                <a class="btn btn-block btn-xs btn-primary" href="https://superlot999.com/vietnam/vietnam.html" target="_blank">กติกา</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
 
 <script>
   clearTimeout(countdownTimeout);

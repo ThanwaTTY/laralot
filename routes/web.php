@@ -24,6 +24,9 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
          Route::get('/play/typelot', function () {
             return view('play.typelot.index');
         });
+        Route::get('/play/datauser', function () {
+            return view('play.datauser.index');
+        });
         
 
 
