@@ -1,6 +1,31 @@
 @extends('mastermember')
 @section('content')
- <div class="col-sm-12 col-md-5 no-padding-left">
+
+            <div class="alert alert-info invert-select-game-hide mobile-bet-hide hidden" id="news">
+              <button type="button" class="close" data-dismiss="alert">
+                <i class="ace-icon fa fa-times"></i>
+              </button>
+                            <b>ประกาศระบบ:</b> <b>***ประกาศข่าว*** หวยรัฐงวดวันที่ 16 ตุลาคม 2560<br>
+บริษัทจะเปิดรับแทงหวยเร็วขึ้นโดยเริ่ม วันที่ 11 ตุลาคม 2560 เวลา 12.00 น. และปิดรับวันที่ 16 ตุลาคม 2560 เวลา 14.45 น. <br>
+<br>
+และหวยรัฐงวดต่อไปจากนี้จะเปิดรับแทงทันทีหลังผลออก 7 วัน เช่น<br>
+งวดวันที่ 1 พ.ย. 60 เริ่มเปิดรับวันที่ 23 ต.ค. 60<br>
+งวดวันที่ 16 พ.ย. 60 เริ่มเปิดรับวันที่ 8 พ.ย. 60  <br>
+<br>
+ระบบลบโพย หลังจากแทงเข้ามาแล้วจะสามารถลบโพยหรือรายการได้ไม่เกินอย่างละ 10 ครั้ง และภายในเวลา 180 นาที นับจากที่แทงเข้ามาแล้ว เกินจากนี้จะไม่สามารถทำการลบได้<br>
+<br>
+หากมีการปรับเปลี่ยนอะไรเพิ่มเติม ทางบริษัทจะรีบแจ้งข่าวให้ทราบต่อไป ขอบคุณครับ<br>
+<br>
+ </b><br>
+            </div>
+
+            
+            
+            <div id="content"><div id="bet-div">
+  <input id="merge-import" name="" type="hidden" value="">
+
+  
+  <div class="col-sm-12 col-md-5 no-padding-left">
     
     <div class="alert-info padding-10">
       <label class="deep-blue bolder bot-margin-10">
@@ -29,7 +54,7 @@
         <div class="checkbox clearfix">
       <label for="down3-tode2">
         <input name="down3_tode2" type="checkbox" class="" id="down3-tode2" checked="checked">
-        <span class="lbl">  2 ตัวโต๊ด</span>
+        <span class="lbl"> 3 ตัวล่าง, 2 ตัวโต๊ด</span>
       </label>
 
       <div class="pull-right">
@@ -48,7 +73,7 @@
     
     
     <div id="bet-table-wrapper" class="clearfix">
-      <table class="table table-bordered table-border-dark no-margin jquery-hide" id="special-bet-table" style="display: table;">
+      <table class="table table-bordered table-border-dark no-margin jquery-hide" id="special-bet-table">
         <thead class="thin-border-bottom">
           <tr class="bg-blue">
             <th colspan="5" class="ac bigger-120">6 ประตู / 19 ประตู กรอกข้อมูลแล้วกดถูก <i class="fa fa-check"></i></th>
@@ -68,7 +93,7 @@
         </tbody>
       </table>
 
-      <table class="table table-bordered table-border-dark no-margin jquery-hide" id="bulk-table" style="display: table;">
+      <table class="table table-bordered table-border-dark no-margin jquery-hide" id="bulk-table">
         <thead class="thin-border-bottom">
           <tr class="bg-blue">
             <th colspan="5" class="align-center bigger-120">
@@ -3084,4 +3109,15 @@
     </div>
   </div>
 </div>
+
+<script>
+  
+  update_bet_list();
+
+  $('#bet-table input:first').focus();
+</script>
+
+
+</div>
+
 @endsection
