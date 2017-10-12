@@ -33,6 +33,12 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
         Route::get('/play/datauser', function () {
             return view('play.datauser.index');
         });
+        Route::get('/play/reportmoney', function () {
+            return view('play.reportmoney.index');
+        });
+        Route::get('/play/cancellist', function () {
+            return view('play.cancellist.index');
+        });
         
 
 

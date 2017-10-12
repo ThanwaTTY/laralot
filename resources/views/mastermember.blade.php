@@ -684,13 +684,13 @@
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/financial/transactions">
+		<a href="/play/reportmoney" data-url="https://www.superlot999.com/financial/transactions">
 			<i class="menu-icon fa fa-refresh"></i>
 			<span class="menu-text">สรุปการเงิน</span>
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/cancel">
+		<a href="/play/cancellist" data-url="https://www.superlot999.com/cancel">
 			<i class="menu-icon fa fa-times"></i>
 			<span class="menu-text">ยกเลิกโพย</span>
 		</a>
