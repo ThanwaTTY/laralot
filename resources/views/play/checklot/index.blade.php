@@ -88,9 +88,9 @@
   <i class="fa fa-angle-right blue"></i>
   หวยหุ้น <span class="deep-blue" id="stock-date">วันที่ 12-10-2017</span>
   <div class="space-4"></div>
-  <button class="btn btn-primary btn-sm no-border no-margin" id="select-date-prev"><i class="fa fa-chevron-left"></i></button>
+  <button class="btn btn-primary btn-sm no-border no-margin padding-6-8" id="select-date-prev"><i class="fa fa-chevron-left"></i></button>
   <input type="button" class="btn btn-primary btn-sm no-border no-margin" id="select-date" value="12-10-2017" data-date="12-10-2017">
-  <button class="btn btn-primary btn-sm no-border no-margin" id="select-date-next"><i class="fa fa-chevron-right"></i></button>
+  <button class="btn btn-primary btn-sm no-border no-margin padding-6-8" id="select-date-next"><i class="fa fa-chevron-right"></i></button>
 </h3>
 
 <div class="space-4"></div>

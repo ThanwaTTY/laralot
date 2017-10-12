@@ -29,7 +29,7 @@
        folder instead of downloading all of them to reduce the load. -->
   <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
   {{-- <link rel="stylesheet" href="/css/custom2.css"> --}}
-  {{-- <link rel="stylesheet" href="/css/top-custom.css"> --}}
+  <link rel="stylesheet" href="/css/top-custom.css">
   <link rel="stylesheet" href="/css/customtopmenu_member.css">
   <link rel="stylesheet" href="/css/custom_member.css">
   <link rel="stylesheet" href="/css/custom_member2.css">

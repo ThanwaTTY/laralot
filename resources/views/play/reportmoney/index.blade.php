@@ -1,9 +1,30 @@
 @extends('mastermember')
 @section('content')
-    <div id="content"><h3 class="no-margin-top"><i class="fa fa-angle-right blue"></i> ประวัติการเงิน</h3>
+
+            <div class="alert alert-info invert-select-game-hide mobile-bet-hide hidden" id="news">
+              <button type="button" class="close" data-dismiss="alert">
+                <i class="ace-icon fa fa-times"></i>
+              </button>
+                            <b>ประกาศระบบ:</b> <b>***ประกาศข่าว*** หวยรัฐงวดวันที่ 16 ตุลาคม 2560<br>
+บริษัทจะเปิดรับแทงหวยเร็วขึ้นโดยเริ่ม วันที่ 11 ตุลาคม 2560 เวลา 12.00 น. และปิดรับวันที่ 16 ตุลาคม 2560 เวลา 14.45 น. <br>
+<br>
+และหวยรัฐงวดต่อไปจากนี้จะเปิดรับแทงทันทีหลังผลออก 7 วัน เช่น<br>
+งวดวันที่ 1 พ.ย. 60 เริ่มเปิดรับวันที่ 23 ต.ค. 60<br>
+งวดวันที่ 16 พ.ย. 60 เริ่มเปิดรับวันที่ 8 พ.ย. 60  <br>
+<br>
+ระบบลบโพย หลังจากแทงเข้ามาแล้วจะสามารถลบโพยหรือรายการได้ไม่เกินอย่างละ 10 ครั้ง และภายในเวลา 180 นาที นับจากที่แทงเข้ามาแล้ว เกินจากนี้จะไม่สามารถทำการลบได้<br>
+<br>
+หากมีการปรับเปลี่ยนอะไรเพิ่มเติม ทางบริษัทจะรีบแจ้งข่าวให้ทราบต่อไป ขอบคุณครับ<br>
+<br>
+ </b><br>
+            </div>
+
+            
+            
+            <div id="content"><h3 class="no-margin-top"><i class="fa fa-angle-right blue"></i> ประวัติการเงิน</h3>
 
 
-<form method="GET" action="https://www.superlot999.com/financial/transactions/11239/balance" id="filter-form" class="form-inline bot-margin-20">
+<form method="GET" action="https://www.superlot999.com/financial/transactions/11240/balance" id="filter-form" class="form-inline bot-margin-20">
   <div class="widget-box widget-color-blue2 width-800 max-width-1100">
     <div class="widget-header">
       <h5 class="widget-title bigger">
@@ -70,10 +91,10 @@
 <div class="max-width-1100">
   <ul class="nav nav-tabs thick-border" id="tab-financial-requests">
     <li class="bigger-110 bolder active">
-      <a href="#" class="width-110 center" data-toggle="tab" data-url="https://www.superlot999.com/financial/transactions/11239/balance/date">ได้เสียสุทธิ</a>
+      <a href="#" class="width-110 center" data-toggle="tab" data-url="https://www.superlot999.com/financial/transactions/11240/balance/date">ได้เสียสุทธิ</a>
     </li>
     <li class="bigger-110 bolder ">
-      <a href="#" class="width-110 center" data-toggle="tab" data-url="https://www.superlot999.com/financial/transactions/11239/credit/date">เครดิต</a>
+      <a href="#" class="width-110 center" data-toggle="tab" data-url="https://www.superlot999.com/financial/transactions/11240/credit/date">เครดิต</a>
     </li>
   </ul>
 </div>
@@ -116,4 +137,5 @@
 </script>
 
 </div>
+
 @endsection

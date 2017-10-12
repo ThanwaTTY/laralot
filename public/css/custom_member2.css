@@ -30,3 +30,28 @@
 .even .bg-blue {
     background-color: #e8f2fb !important;
 }
+.no-border {
+    border: 0 !important;
+}
+
+.open>.dropdown-menu {
+    display: block;
+    width: max-content;
+}
+.hr-4, .hr4 {
+    margin: 4px 0;
+}
+.padding-6-8 {
+    padding: 6.5 8;
+}
+.form-control, select {
+    border-radius: 0;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    color: #858585;
+    background-color: #fff;
+    border: 1px solid #d5d5d5;
+}
+.no-skin .sidebar.h-sidebar .nav-list>li.active:before {
+    background-color: #2b7dbc;
+}
