@@ -868,3 +868,11 @@ a:hover, a:focus {
     background-color: #fff;
     color: #266cad;
 }
+
+.bg-dark {
+    background: #cccccc !important;
+}
+
+.bg-black {
+    background: #595959 !important;
+}

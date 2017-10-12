@@ -652,19 +652,19 @@
 	
 	<ul class="nav nav-list">
 			<li class="">
-		<a href="#" data-url="https://www.superlot999.com/games">
+		<a href="/play/typelot" data-url="https://www.superlot999.com/games">
 			<i class="menu-icon fa fa-book"></i>
 			<span class="menu-text">เลือกชนิดหวย</span>
 		</a>
 	</li>
-	<li class="active">
+	<li class="">
 		<a href="/play/bet" data-url="https://www.superlot999.com/home" class="active">
 			<i class="menu-icon fa fa-dashboard"></i>
 			<span class="menu-text">ทายผล</span>
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/bet-results">
+		<a href="" data-url="https://www.superlot999.com/bet-results">
 			<i class="menu-icon fa fa-credit-card"></i>
 			<span class="menu-text">สรุปงวดหวย</span>
 		</a>
@@ -758,28 +758,10 @@
             </div>
           </div>
 
-          <div class="col-xs-12 col-sm-12 col-md-10" id="user-content">
-            <div class="alert alert-info invert-select-game-hide mobile-bet-hide hidden" id="news">
-              <button type="button" class="close" data-dismiss="alert">
-                <i class="ace-icon fa fa-times"></i>
-              </button>
-                            <b>ประกาศระบบ:</b> <b>***ประกาศข่าว*** หวยรัฐงวดวันที่ 16 ตุลาคม 2560<br>
-                          บริษัทจะเปิดรับแทงหวยเร็วขึ้นโดยเริ่ม วันที่ 11 ตุลาคม 2560 เวลา 12.00 น. และปิดรับวันที่ 16 ตุลาคม 2560 เวลา 14.45 น. <br>
-                          <br>
-                          และหวยรัฐงวดต่อไปจากนี้จะเปิดรับแทงทันทีหลังผลออก 7 วัน เช่น<br>
-                          งวดวันที่ 1 พ.ย. 60 เริ่มเปิดรับวันที่ 23 ต.ค. 60<br>
-                          งวดวันที่ 16 พ.ย. 60 เริ่มเปิดรับวันที่ 8 พ.ย. 60  <br>
-                          <br>
-                          ระบบลบโพย หลังจากแทงเข้ามาแล้วจะสามารถลบโพยหรือรายการได้ไม่เกินอย่างละ 10 ครั้ง และภายในเวลา 180 นาที นับจากที่แทงเข้ามาแล้ว เกินจากนี้จะไม่สามารถทำการลบได้<br>
-                          <br>
-                          หากมีการปรับเปลี่ยนอะไรเพิ่มเติม ทางบริษัทจะรีบแจ้งข่าวให้ทราบต่อไป ขอบคุณครับ<br>
-                          <br>
-                          </b><br>
-            </div>
+            
 
             
             
-            <div id="content"><div id="bet-div">
   <input id="merge-import" name="" type="hidden" value="">
 
 @yield('content')
