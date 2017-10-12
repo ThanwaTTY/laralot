@@ -18,8 +18,8 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
         Route::get('/index2', function () {
             return view('index2');
         });
-        Route::get('/mastermember', function () {
-            return view('mastermember');
+        Route::get('/play/bet', function () {
+            return view('play.bet.index');
         });
         
 
