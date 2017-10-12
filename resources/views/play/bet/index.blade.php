@@ -1,6 +1,5 @@
 @extends('mastermember')
 @section('content')
-<div id="content"><div id="bet-div">
  <div class="col-sm-12 col-md-5 no-padding-left">
     
     <div class="alert-info padding-10">
