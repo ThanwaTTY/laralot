@@ -931,3 +931,11 @@ a:hover, a:focus {
 .bigger-300 {
     font-size: 300% !important;
 }
+
+.bg-dark {
+    background: #cccccc !important;
+}
+
+.bg-black {
+    background: #595959 !important;
+}

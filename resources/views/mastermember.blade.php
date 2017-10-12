@@ -652,19 +652,19 @@
 	
 	<ul class="nav nav-list">
 			<li class="">
-		<a href="#" data-url="https://www.superlot999.com/games">
+		<a href="/play/typelot" data-url="https://www.superlot999.com/games">
 			<i class="menu-icon fa fa-book"></i>
 			<span class="menu-text">เลือกชนิดหวย</span>
 		</a>
 	</li>
-	<li class="active">
+	<li class="">
 		<a href="/play/bet" data-url="https://www.superlot999.com/home" class="active">
 			<i class="menu-icon fa fa-dashboard"></i>
 			<span class="menu-text">ทายผล</span>
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/bet-results">
+		<a href="" data-url="https://www.superlot999.com/bet-results">
 			<i class="menu-icon fa fa-credit-card"></i>
 			<span class="menu-text">สรุปงวดหวย</span>
 		</a>
@@ -676,7 +676,7 @@
 		</a>
 	</li>
 	<li class="">
-		<a href="#" data-url="https://www.superlot999.com/info">
+		<a href="/play/datauser" data-url="https://www.superlot999.com/info">
 			<i class="menu-icon fa fa-user"></i>
 			<span class="menu-text">ข้อมูลผู้ใช้</span>
 		</a>
