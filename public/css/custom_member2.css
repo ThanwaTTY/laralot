@@ -55,3 +55,42 @@
 .no-skin .sidebar.h-sidebar .nav-list>li.active:before {
     background-color: #2b7dbc;
 }
+input.form-control, .input-group-addon, select, select:focus, select.form-control, .form-control {
+    font-family: Arial;
+    color: #333;
+    border: 1px solid #999;
+}
+.input-group .input-group-addon {
+    border-radius: 0 !important;
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:hover, .nav-tabs>li>a:focus {
+    border-top-color: #999;
+    border-bottom-color: #999;
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:hover, .nav-tabs>li>a:focus, .nav-tabs>li.active>a, .nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus {
+    border-left-color: #999;
+    border-right-color: #999;
+}
+.btn-default:hover, .btn:active, .btn-default:active, .open .btn.dropdown-toggle, .open .btn-default.dropdown-toggle {
+    background-color: #8b9aa3 !important;
+    border-color: #abbac3;
+}
+.btn-default, .btn-default:focus {
+    background-color: #abbac3 !important;
+    border-color: #abbac3;
+}
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+
+.datepicker td.active, .daterangepicker td.active, .datepicker td.active:hover, .daterangepicker td.active:hover {
+    background: #2283c5 !important;
+}
+
+td, th {
+    padding: 1px;
+}

@@ -1,4 +1,32 @@
 @extends('mastermember')
+@section('footer')
+<script> 
+$(function () {
+var show = 0;
+    $("#door").click(function(){
+        if (show == "0"){
+          $("#special-bet-table").show();
+          show = 1;
+        } else {
+          $("#special-bet-table").hide();
+          show = 0;
+        }
+    });
+
+var quick = 0;
+    $("#bulk").click(function(){
+        if (quick == "0"){
+          $("#bulk-table").show();
+          quick = 1;
+        } else {
+          $("#bulk-table").hide();
+          quick = 0;
+        }
+    });
+
+});
+</script>
+@endsection
 @section('content')
 
             <div class="alert alert-info invert-select-game-hide mobile-bet-hide hidden" id="news">
