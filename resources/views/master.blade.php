@@ -17,7 +17,7 @@
   <script language="JavaScript" type="text/javascript">
     function sivamtime() {
     now=new Date();
-    day=(now.getDay()+1);
+    day=(now.getDate());
     mounths = new Array(12);
       mounths[0] = "มกราคม";
       mounths[1] = "กุมภาพันธ์";

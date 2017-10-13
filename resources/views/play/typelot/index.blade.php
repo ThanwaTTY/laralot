@@ -1,4 +1,38 @@
 @extends('mastermember')
+@section('footer')
+<script>
+$(function () {
+  $(".select-game-hide").addClass("hidden");
+  //alert("Active");
+});
+
+
+/*
+    $(document).ready(function(){
+    if( document.location.href == 'http://127.0.0.1:8000/play/typelot'||document.location.href == 'http://128.199.77.135/' )
+        {
+            alert("Hiden");
+        }
+    else if( document.location.href == 'http://127.0.0.1:8000/product'||document.location.href == 'http://128.199.77.135/product' )
+        {
+            $("#menu2").addClass("active");
+        }
+    else if( document.location.href == 'http://127.0.0.1:8000/promotion'||document.location.href == 'http://128.199.77.135/promotion' )
+        {
+            $("#menu3").addClass("active");
+        }
+    else if( document.location.href == 'http://127.0.0.1:8000/register'||document.location.href == 'http://128.199.77.135/register' )
+        {
+            $("#menu4").addClass("active");
+        }
+    else if( document.location.href == 'http://127.0.0.1:8000/login'||document.location.href == 'http://128.199.77.135/login' )
+        {
+            $("#menu5").addClass("active");
+        }
+  });
+*/
+</script>
+@endsection
 @section('content')
           <div class="alert alert-info invert-select-game-hide mobile-bet-hide" id="news">
               <button type="button" class="close" data-dismiss="alert">
