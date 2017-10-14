@@ -4,16 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AuthController extends Controller
+class MemberLoginController extends Controller
 {
     public function getlogin()
     {
-        return view('login.login');
+        return view('login.memberlogin');
     }
 
     public function postLogin(Request $request)
     {
-        // dd('postlogin');
         $rules = [
             'username' => 'required',
             'password' => 'required'
@@ -22,9 +21,9 @@ class AuthController extends Controller
         $inputs = request()->except(['_token']);
         $this->validate($request, $rules);
         if (auth()->attempt($inputs)) {
-            if (auth()->user()->level != 7) {
+            if (auth()->user()->level == 7) {
                 if (auth()->user()->status == 0) {
-                    return redirect()->intended('/');
+                    return redirect()->intended('/play/bet');
                 } elseif (auth()->user()->status == 1) {
                     session()->flash('massage', 'username ของคุณถูกระงับ');
                     return redirect('/admin/login');
@@ -33,18 +32,12 @@ class AuthController extends Controller
                     return redirect()->intended('/');
                 }
             } else {
-                session()->flash('massage', 'User ไม่มีสิทธิ์เข้าใช้งานหน้านี้');
-                return redirect('/admin/login');
+                session()->flash('massage', 'สำหรับ Member เท่านั้น');
+                return redirect('/login');
             }
         } else {
             session()->flash('massage', 'E-mail or Password not Correct');
-            return redirect('/admin/login');
+            return redirect('/login');
         }
-    }
-
-    public function logout()
-    {
-        auth()->logout();
-        return redirect('/admin/login');
     }
 }
