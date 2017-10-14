@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/login', 'AuthController@getlogin')->name('login');
-Route::post('/login', 'AuthController@postLogin');
-Route::get('/logout', 'AuthController@logout');
+Route::get('/admin/login', 'AuthController@getlogin')->name('login');
+Route::post('/admin/login', 'AuthController@postLogin');
+Route::get('/admin/logout', 'AuthController@logout');
 Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberController@register');
         Route::get('/index2', function () {
             return view('index2');
@@ -29,22 +29,22 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
         });
          Route::get('/play/typelot', function () {
             return view('play.typelot.index');
-        });
-        Route::get('/play/datauser', function () {
+         });
+         Route::get('/play/datauser', function () {
             return view('play.datauser.index');
-        });
-        Route::get('/play/reportmoney', function () {
+         });
+         Route::get('/play/reportmoney', function () {
             return view('play.reportmoney.index');
-        });
-        Route::get('/play/cancellist', function () {
+         });
+         Route::get('/play/cancellist', function () {
             return view('play.cancellist.index');
-        });
+         });
         
 
 
 
 
-        Route::group(['middleware'=>['auth']], function () {
+         Route::group(['middleware'=>['auth']], function () {
 
                 Route::get('/members/create', 'Members\MemberController@create');
                 Route::post('/members', 'Members\MemberController@store')->name('members.store');
@@ -130,7 +130,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
                 Route::get('/money/history', function () {
                     return view('money.history.index');
                 });
-        });
+         });
 
 
 
@@ -162,18 +162,18 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
 
 
 
-        Route::get('/report/userreport', function () {
+         Route::get('/report/userreport', function () {
             return view('report.userreport.index');
-        });
+         });
 
-        Route::get('/report/winlossreport', function () {
+         Route::get('/report/winlossreport', function () {
             return view('report.winlossreport.index');
-        });
+         });
 
-        Route::get('/report/jackpot', function () {
+         Route::get('/report/jackpot', function () {
             return view('report.jackpot.index');
-        });
+         });
 
-        Route::get('/report/resultjackpot', function () {
+         Route::get('/report/resultjackpot', function () {
             return view('report.resultjackpot.index');
-        });
+         });

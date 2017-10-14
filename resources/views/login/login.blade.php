@@ -50,7 +50,7 @@
   <div class="login-box-body">
     <p class="login-box-msg">Sign in to start your session</p>
 
-    <form action="/login" method="post">
+    <form action="/admin/login" method="post">
     {{ csrf_field() }}
       <div class="form-group has-feedback {{ $errors->has('username') ? ' has-error' : '' }}">
         <input type="username" class="form-control" placeholder="Username" name="username" value="{{ Old('username') }}">

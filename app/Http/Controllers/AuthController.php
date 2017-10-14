@@ -11,7 +11,8 @@ class AuthController extends Controller
         return view('login.login');
     }
 
-    public function postLogin(Request $request){
+    public function postLogin(Request $request)
+    {
         // dd('postlogin');
         $rules = [
             'username' => 'required',
@@ -20,28 +21,25 @@ class AuthController extends Controller
 
         $inputs = request()->except(['_token']);
         $this->validate($request, $rules);
-        if(auth()->attempt($inputs)) {
-            if(auth()->user()->status == 0){
-             return redirect()->intended('/');
-             }
-             elseif(auth()->user()->status == 1){
+        if (auth()->attempt($inputs)) {
+            if (auth()->user()->status == 0) {
+                return redirect()->intended('/');
+            } elseif (auth()->user()->status == 1) {
                 session()->flash('massage', 'username ของคุณถูกระงับ');
-                return redirect('/login');
-             }
-             elseif(auth()->user()->status == 2){
+                return redirect('/admin/login');
+            } elseif (auth()->user()->status == 2) {
             // session()->flash('massage', 'username ของคุณไม่สามารถเล่นได้');
-             return redirect()->intended('/');
-             
-             }
+                return redirect()->intended('/');
+            }
         } else {
             session()->flash('massage', 'E-mail or Password not Correct');
-            return redirect('/login');
+            return redirect('/admin/login');
         }
     }
 
-      public function logout(){
-            auth()->logout();
-        return redirect('/login');
+    public function logout()
+    {
+        auth()->logout();
+        return redirect('/admin/login');
     }
-
 }
