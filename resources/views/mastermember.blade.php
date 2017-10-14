@@ -687,7 +687,26 @@
               </li>
                                       <li class="bg-light-blue side-padding-10">
           <span class="white dropdown-toggle">
-            <i class="ace-icon fa fa-user"></i> 3M3KTOR
+            <i class="ace-icon fa fa-user"></i>
+              {{ auth()->user()->username }}
+            
+              @if(auth()->user()->level == '7')
+                [Member]
+              @elseif(auth()->user()->level == '6')
+                [Agent]
+              @elseif(auth()->user()->level == '5')
+                [Master]
+              @elseif(auth()->user()->level == '4')
+                [Senior]
+              @elseif(auth()->user()->level == '3')
+                [Super Senior]
+              @elseif(auth()->user()->level == '2')
+                [Pathner]
+              @elseif(auth()->user()->level == '1')    
+                [Admin]
+              @else
+                  
+              @endif
           </span>
         </li>
         <li>
@@ -752,7 +771,7 @@
 		</a>
 	</li>
 	<li class="pull-right visible-md visible-lg">
-		<a href="#" data-url="https://www.superlot999.com/logout">
+		<a href="/logout" data-url="https://www.superlot999.com/logout">
 			<i class="menu-icon fa fa-sign-out"></i>
 			<span class="menu-text">ออกจากระบบ</span>
 		</a>
