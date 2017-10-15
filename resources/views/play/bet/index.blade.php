@@ -55,7 +55,7 @@ var quick = 0;
                   <select name="payout_id" id="payout" class="ac">
                     <option value="5">หวยรัฐ 70</option>
                   </select>
-                  <a href="/info" target="_blank" class="bigger-110">ดูรายละเอียด</a>
+                  <a href="/play/datauser" target="_blank" class="bigger-110">ดูรายละเอียด</a>
               </td>
             </tr>
           </tbody>
