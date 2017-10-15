@@ -90,9 +90,9 @@
 				{{-- <a href="#">Register</a> --}}
 			</div>
 		</form><!-- form -->
-		<div class="button">
+		{{-- <div class="button">
 			<a href="#" width="100px">Download source file</a>
-		</div><!-- button -->
+		</div><!-- button --> --}}
 	</section><!-- content -->
 </div><!-- container -->
 </body>
