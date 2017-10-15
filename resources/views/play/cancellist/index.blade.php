@@ -100,11 +100,11 @@
             <div id="content"><h3 class="no-margin-top"><i class="fa fa-angle-right blue"></i> ยกเลิก โพย/รายการแทง</h3>
           <ul class="nav nav-tabs padding-12 tab-color-blue background-blue">
             <li class="active">
-              <a href="https://www.superlot999.com/cancel" class="ajax">ยกเลิก โพย/รายการแทง</a>
+              <a href="/play/cancellist" class="ajax">ยกเลิก โพย/รายการแทง</a>
             </li>
 
             <li>
-              <a href="https://www.superlot999.com/items/cancelled" class="ajax">รายการที่ถูกยกเลิก</a>
+              <a href="/play/cancellist/cancellist" class="ajax">รายการที่ถูกยกเลิก</a>
             </li>
           </ul>
 
@@ -115,7 +115,7 @@
 </style>
 
 <div class="space-4"></div>
-  <form method="GET" action="https://www.superlot999.com/cancel/search" accept-charset="UTF-8" class="form-inline form-cancel-search">
+  <form method="GET" action="" accept-charset="UTF-8" class="form-inline form-cancel-search">
   <div class="widget-box widget-color-blue2 width-800 max-width-800">
     <div class="widget-header">
       <h5 class="widget-title bigger">
@@ -148,7 +148,7 @@
               <td><label for="search_type" class="deep-blue bolder">ค้นหา :</label></td>
               <td><select class="form-control width-100 bigger-110" id="search_type" name="search_type"><option value="gb" selected="selected">โพย</option><option value="gbbl">รายการแทง</option></select></td>
               <td><label for="username" class="deep-blue bolder">ชื่อผู้ใช้ :</label></td>
-              <td><input class="form-control bigger-110" id="username" readonly="readonly" name="username" type="text" value="3M3KTOR"></td>
+              <td><input class="form-control bigger-110" id="username" readonly="readonly" name="username" type="text" value="{{auth()->user()->username}}"></td>
             </tr>
             <tr>
               <td><label for="game_bill_numbers" class="bolder">ลำดับโพย :</label></td>

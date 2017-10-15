@@ -47,6 +47,10 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
          Route::get('/play/cancellist', function () {
             return view('play.cancellist.index');
          });
+
+        Route::get('/play/cancellist/cancellist', function () {
+            return view('play.cancellist.index2');
+         }); 
     });
         
 
