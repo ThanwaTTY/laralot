@@ -26,7 +26,7 @@ class MemberLoginController extends Controller
                     return redirect()->intended('/play/bet');
                 } elseif (auth()->user()->status == 1) {
                     session()->flash('massage', 'username ของคุณถูกระงับ');
-                    return redirect('/admin/login');
+                    return redirect('/login');
                 } elseif (auth()->user()->status == 2) {
                     // session()->flash('massage', 'username ของคุณไม่สามารถเล่นได้');
                     return redirect()->intended('/');
