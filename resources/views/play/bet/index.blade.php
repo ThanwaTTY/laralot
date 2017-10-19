@@ -1,31 +1,33 @@
 @extends('mastermember')
 @section('footer')
-<script> 
-$(function () {
-var show = 0;
-    $("#door").click(function(){
-        if (show == "0"){
-          $("#special-bet-table").show();
-          show = 1;
-        } else {
-          $("#special-bet-table").hide();
-          show = 0;
-        }
-    });
+<script src="/js/user.main.js"></script>
+{{-- user.main.js ทำให้ js อื่นๆ ไม่ทำงาน --}}
+{{-- <script> 
+    $(function () {
+    var show = 0;
+        $("#door").click(function(){
+            if (show == "0"){
+            $("#special-bet-table").show();
+            show = 1;
+            } else {
+            $("#special-bet-table").hide();
+            show = 0;
+            }
+        });
 
-var quick = 0;
-    $("#bulk").click(function(){
-        if (quick == "0"){
-          $("#bulk-table").show();
-          quick = 1;
-        } else {
-          $("#bulk-table").hide();
-          quick = 0;
-        }
-    });
+    var quick = 0;
+        $("#bulk").click(function(){
+            if (quick == "0"){
+            $("#bulk-table").show();
+            quick = 1;
+            } else {
+            $("#bulk-table").hide();
+            quick = 0;
+            }
+        });
 
-});
-</script>
+    });
+</script> --}}
 @endsection
 @section('content')
 

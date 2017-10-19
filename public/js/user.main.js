@@ -359,6 +359,12 @@ function btnOk_clicked(e) {
         d_type = 6;
     }
 
+    // check duplicate digits: 123 -> 12, 13, 23
+    // if (d_type == 6 && (d_num[0] == d_num[1] || d_num[0] == d_num[2] || d_num[1] == d_num[2])) {
+    //     alert('เลขห้ามซ้ำกัน');
+    //     return;
+    // }
+
     var start = 1;
     var count = 0;
     for (var i = 1; i <= num_rows; i++) {
@@ -484,6 +490,27 @@ function btnBulkOk_clicked(e) {
         alert('ไม่มีช่องว่างติดกัน ' + row + ' แถว');
         return;
     }
+
+    // list = [];
+    // if (d_type == 6) {
+    //     list.push(d_num[0] + d_num[1] + d_num[2]);
+    //     list.push(d_num[0] + d_num[2] + d_num[1]);
+    //     list.push(d_num[1] + d_num[0] + d_num[2]);
+    //     list.push(d_num[1] + d_num[2] + d_num[0]);
+    //     list.push(d_num[2] + d_num[0] + d_num[1]);
+    //     list.push(d_num[2] + d_num[1] + d_num[0]);
+    // } else if (d_type == 19) {
+    //     for (var i = 0; i < 10; i++) {
+    //         list.push(d_num[0] +  i);
+    //     }
+    //     for (var i = 0; i < 10; i++) {
+    //         if (i == d_num[0]) {
+    //             continue;
+    //         }
+
+    //         list.push(i + d_num[0]);
+    //     }
+    // }
 
     var key = 0;
     for (var i = start; i < start + row; i++) {

@@ -35,7 +35,7 @@
   <link rel="stylesheet" href="/css/custom_member.css">
   <link rel="stylesheet" href="/css/custom_member2.css">
   
-  <script language="JavaScript" type="text/javascript">
+  {{-- <script language="JavaScript" type="text/javascript">
     function sivamtime() {
     now=new Date();
     day=(now.getDate());
@@ -77,7 +77,7 @@
     }
     window.onload = sivamtime;
 
-  </script>
+  </script> --}}
   
 
   @yield('head')
@@ -582,7 +582,7 @@
                   <table class="table no-margin white bolder" id="summary-table" style="border: 0;">
                     <tbody>
                       <tr><th><span class="bolder bigger-110">ยอดรวม</span></th></tr>
-                      <tr><th>เครดิต</th><td id="member-credit" class="align-right">0</td></tr>
+                      <tr><th>เครดิต</th><td id="member-credit" class="align-right">1000</td></tr>
                       <tr><th>ได้เสียสุทธิ</th><td id="member-bet" class="align-right">0</td></tr>
                       <tr><th>ยอดคงเหลือ</th><td id="member-available" class="align-right">0</td></tr>
                       <tr class="select-game-hide"><th>&nbsp;</th><td></td></tr>
@@ -737,7 +737,27 @@
 <script src="../../dist/js/demo.js"></script>
 
 {{-- <script src="/js/inspect.js"></script> --}}
+{{-- <script src="/js/jquery.numeric.js"></script> --}}
 {{-- <script src="/js/customjs.js"></script> --}}
+
+  {{-- <script src="/js/jquery.history.js"></script>
+  <script src="/js/jquery.numeric.js"></script>
+  <script src="/js/moment.min.js"></script>
+  <script src="/js/daterangepicker.js"></script>
+  <script src="/js/cookies.min.js"></script>
+  <script src="/js/spin.js"></script>
+  <script src="/js/jquery.spin.js"></script> --}}
+  {{-- <script src="/js/main.js"></script> --}}
+  {{-- <script src="/js/main.js?t=201504112248"></script> --}}
+
+  {{-- <script src="/js/user.main.js"></script> --}}
+
+  {{-- <script src="/js/user.main.js?t=201504112248"></script> --}}
+
+  {{-- <script src="/js/jquery.maskedinput.min.js"></script> --}}
+
+
+
 <!-- Page script -->
 {{-- <script>
   $(function () {
