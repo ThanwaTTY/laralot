@@ -1277,12 +1277,14 @@ function renderSummary(list, bet_cols) {
     if (col_count > 5) $('#sum-6').html(n0(col_6));
 }
 
-function loadBets(e) {
-    e.preventDefault();
 
-    $.get('/bets/' + $(this).attr('data-id'), function (data) {
-        if (data.success) {
-            $('#bets').html(data.html);
-        }
-    });
-}
+//ปุ่มสถานะ ปิดรับ (สีส้ม)
+// function loadBets(e) {
+//     e.preventDefault();
+
+//     $.get('/bets/' + $(this).attr('data-id'), function (data) {
+//         if (data.success) {
+//             $('#bets').html(data.html);
+//         }
+//     });
+// }
