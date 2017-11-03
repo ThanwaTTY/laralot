@@ -385,25 +385,7 @@
         <li class="light-blue dropdown-fix">
           <a data-toggle="dropdown" href="#" class="dropdown-toggle">
             <i class="ace-icon fa fa-user"></i>
-            {{ auth()->user()->username }}
-            
-              @if(auth()->user()->level == '7')
-                [Member]
-              @elseif(auth()->user()->level == '6')
-                [Agent]
-              @elseif(auth()->user()->level == '5')
-                [Master]
-              @elseif(auth()->user()->level == '4')
-                [Senior]
-              @elseif(auth()->user()->level == '3')
-                [Super Senior]
-              @elseif(auth()->user()->level == '2')
-                [Pathner]
-              @elseif(auth()->user()->level == '1')    
-                [Admin]
-              @else
-                  
-              @endif
+                MyUsername [LevelName]
           </a>
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="user-toggle-list">

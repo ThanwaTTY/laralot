@@ -145,9 +145,6 @@
                             <label for="level" class="control-label col-xs-1" autofill="false">ระดับ:</label>
                               <div class="col-xs-3">
                               <select class="form-control" id="level" name="level">
-                            {{-- @foreach($member as $members) --}}
-                              
-                              @if(auth()->user()->level == 1)                                                              
                                   <option value="7">Member</option>
                                   <option value="6">agent</option>
                                   <option value="5">Master</option>
@@ -155,34 +152,7 @@
                                   <option value="3">Super Senior</option>
                                   <option value="2">Pathner</option>
                                   <option value="1">Admin</option>
-                              @elseif(auth()->user()->level == 2)
-                                  <option value="7">Member</option>
-                                  <option value="6">agent</option>
-                                  <option value="5">Master</option>
-                                  <option value="4">Senior</option>
-                                  <option value="3">Super Senior</option>
-                                  <option value="2">Pathner</option>
-                              @elseif(auth()->user()->level == 3)
-                                  <option value="7">Member</option>
-                                  <option value="6">agent</option>
-                                  <option value="5">Master</option>
-                                  <option value="4">Senior</option>
-                                  <option value="3">Super Senior</option>
-                              @elseif(auth()->user()->level ==  4)
-                                  <option value="7">Member</option>
-                                  <option value="6">agent</option>
-                                  <option value="5">Master</option>
-                                  <option value="4">Senior</option>
-                              @elseif(auth()->user()->level == 5)
-                                  <option value="7">Member</option>
-                                  <option value="6">agent</option>
-                                  <option value="5">Master</option>
-                              @elseif(auth()->user()->level == 6)
-                                  <option value="7">Member</option>
-                                  <option value="6">agent</option>
-                              @endif
-                             
-                            {{-- @endforeach --}}
+
                                </select>
                                <p style="color:red">{{ $errors->first('level') }}</p>
                               </div>
@@ -207,8 +177,8 @@
                               <label for="username" class="control-label col-xs-1" =""="">ชื่อผู้ใช้:</label>
                               <div class="col-xs-3">
                                 <div class="input-group has-feedback{{ $errors->has('username') ? ' has-error' : '' }}">
-                                    <span class="input-group-addon">{{ auth()->user()->username }}</span>
-                                    <input type="hidden" name="useradd" value="{{ auth()->user()->username }}">
+                                    <span class="input-group-addon">MyUsername</span>
+                                    <input type="hidden" name="useradd" value="MyUsername">
                                     <input id="username" class="form-control" name="username" type="text" value="{{ old('username') }}">
                                 </div>
                                 <p style="color:red">{{ $errors->first('username') }}</p>

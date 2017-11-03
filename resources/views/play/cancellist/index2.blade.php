@@ -127,7 +127,7 @@
               <td><input name="daterange" class="form-control width-100 bigger-110 date-range-picker" id="daterange" type="text" value="15/10/2017 - 15/10/2017"></td>
 
               <td><label class="bolder" for="username">ชื่อผู้ใช้ :</label></td>
-              <td><input name="username" class="form-control bigger-110" id="username" type="text" readonly="readonly" value="{{ auth()->user()->username }}"></td>
+              <td><input name="username" class="form-control bigger-110" id="username" type="text" readonly="readonly" value="MyUsername"></td>
             </tr>
 
             <tr>

@@ -51,26 +51,11 @@
 				<!-- #account-summary -->
 				<div id="account-summary">
 					<ul>
-						<li><span class="prop">ชื่อ:</span><span id="">{{ auth()->user()->id }}{{ auth()->user()->username }}</span></li>
-						<li><span class="prop">ระดับ:</span><span id="">@if(auth()->user()->level == 7)
-																															Member
-																													@elseif(auth()->user()->level == 6)
-																															Agent
-																													@elseif(auth()->user()->level == 5)
-																															Master
-																													@elseif(auth()->user()->level == 4)
-																															Senior
-																													@elseif(auth()->user()->level == 3)
-																															Super Senior
-																													@elseif(auth()->user()->level == 2)
-																															Pathner
-																													@elseif(auth()->user()->level == 1)
-																															Admin
-																																							
-																													@endif
+						<li><span class="prop">ชื่อ:</span><span id="">Name</span></li>
+						<li><span class="prop">ระดับ:</span><span id="">ลำดับชั้น
 																								</span>
 						</li>
-						<li><span class="prop">เครดิต:</span><span id="max_credit">{{ number_format(auth()->user()->credit, '2' )}}</span></li>
+						<li><span class="prop">เครดิต:</span><span id="max_credit">99999.99</span></li>
 						<li><span class="prop">ใช้ไป:</span><span id="used_credit">0</span></li>
 						<li><span class="prop">เหลือ:</span><span id="credit_balance">0</span></li>
 						<li><span class="prop">ได้เสีย:</span><span id="cash_balance">0</span></li>
@@ -80,56 +65,6 @@
 				</div><!-- /#account-summary -->
 			</div>
 
-      {{-- <div class="row" style="padding-top: 20px;padding-bottom: 20px;">
-        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-xs-5"><span style="float:right;color:white;">ชื่อ:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">{{ auth()->user()->name }}</span></div>
-        </div>
-        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-xs-5"><span style="float:right;color:white;">ระดับ:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">@if(auth()->user()->level == 1)
-																																					Member
-																																			@elseif(auth()->user()->level == 2)
-																																					Agent
-																																			@elseif(auth()->user()->level == 3)
-																																					Master
-																																			@elseif(auth()->user()->level == 4)
-																																					Senior
-																																			@elseif(auth()->user()->level == 5)
-																																					Super Senior
-																																			@elseif(auth()->user()->level == 6)
-																																					Pathner
-																																			@elseif(auth()->user()->level == 7)
-																																					บริษัท
-																																													
-																																			@endif</span>
-					</div>
-        </div>
-        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-xs-5"><span style="float:right;color:white;">เครดิต:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
-        </div>
-        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-xs-5"><span style="float:right;color:white;">ใช้ไป:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
-        </div>
-        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-xs-5"><span style="float:right;color:white;">เหลือ:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
-        </div>
-        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-xs-5"><span style="float:right;color:white;">ได้เสีย:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
-        </div>
-        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-xs-5"><span style="float:right;color:white;">สมาชิก:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
-        </div>
-        <div class="col-xs-12"style="padding-left: 0px;padding: 6px -1px;">
-          <div class="col-xs-5"><span style="float:right;color:white;">ออนไลน์:</span></div>
-          <div class="col-xs-7"><span style="float:left;color:white;">0</span></div>
-        </div>
-      </div> --}}
       <ul class="sidebar-menu">
         <li class="treeview">
           <a href="#">
