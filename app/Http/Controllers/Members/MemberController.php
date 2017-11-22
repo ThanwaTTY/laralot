@@ -79,7 +79,7 @@ class MemberController extends Controller
             'phone' => request('phone'),
             'useradd' => auth()->user()->id
             ]);
-        
+            session()->flash('massagesuccess','เพิ่มสมาชิกเรียบร้อยเเล้ว');
             return redirect('/members/create');
         } else {
             session()->flash('massage', 'เครติดเกินจำนวนเงิน');

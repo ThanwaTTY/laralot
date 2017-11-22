@@ -66,8 +66,11 @@
      </div> 
      <div class="alert alert-success hidden" id="success"></div> 
      <div class="alert alert-danger hidden" id="error"></div> 
-     <form method="POST" action="https://agent.superlot999.com/aliases/store" accept-charset="UTF-8" id="create-alias-form" class="form-horizontal" autocomplete="off">
+
+     <form method="POST" action="{{ route('helper.store')}}" accept-charset="UTF-8" id="create-alias-form" class="form-horizontal" autocomplete="off">
+       
       <input name="_token" type="hidden" value="I6bkzJrZfFnls3Cm0X0FpwGf69D45NgdvbtnRdgL" /> 
+      {{ csrf_field() }}
       <div class="widget-box widget-color-blue2 width-800 max-width-1100"> 
        <div class="widget-header"> 
         <h5 class="widget-title bigger"> ข้อมูลผู้ช่วย </h5> 
@@ -78,8 +81,9 @@
           <label for="username" class="control-label col-xs-2">ชื่อผู้ใช้:</label> 
           <div class="col-xs-4"> 
            <div class="input-group"> 
-            <input class="form-control" name="username" type="text" value="" id="username" /> 
-            <span class="input-group-addon">@002@3M3K</span> 
+            <input type="hidden" name="useradd" value="{{ auth()->user()->username }}">
+            <input id="username" class="form-control" name="username" type="text" value="{{ old('username') }}">
+            <span class="input-group-addon">{{ auth()->user()->username}}</span> 
            </div> 
           </div> 
           <label for="password" class="control-label col-xs-2">รหัสผ่าน:</label> 
@@ -100,6 +104,8 @@
         </div> 
        </div> 
       </div> 
+
+
       <div class="space-8"></div> 
       <b>ไม่อนุญาต</b> = ทำอะไรไม่ได้เลย
       <br /> 
@@ -116,7 +122,11 @@
          <div class="form-group"> 
           <label for="perm_items" class="control-label col-xs-2">รายการแทง:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_items" name="perm_items"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_items" name="listplay">
+            <option value="0">ไม่อนุญาต</option>
+            <option value="1">ดูอย่างเดียว</option>
+            <option value="2" selected="selected">อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             ดูของรวม / คาดคะเนได้เสีย, ดูของแยกตามประเภท, ดูของแยกตามสมาชิก, รายการที่ถูกยกเลิก, ตั้งค่าการรับของ 
@@ -125,7 +135,11 @@
          <div class="form-group"> 
           <label for="perm_users" class="control-label col-xs-2">สมาชิก:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_users" name="perm_users"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_users" name="member">
+            <option value="0">ไม่อนุญาต</option>
+            <option value="1">ดูอย่างเดียว</option>
+            <option value="2" selected="selected">อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             เพิ่มสมาชิก, รายชื่อสมาชิก, แก้ไขสมาชิก, สมาชิกออนไลน์ 
@@ -134,7 +148,11 @@
          <div class="form-group"> 
           <label for="perm_user_take_list" class="control-label col-xs-2">รายการเก็บของ:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_user_take_list" name="perm_user_take_list"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_user_take_list" name="listkeep">
+            <option value="0">ไม่อนุญาต</option>
+            <option value="1">ดูอย่างเดียว</option>
+            <option value="2" selected="selected">อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             รายการเก็บของ / อั้น 
@@ -143,7 +161,11 @@
          <div class="form-group"> 
           <label for="perm_reports" class="control-label col-xs-2">รายงานแพ้ชนะ:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_reports" name="perm_reports"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_reports" name="winlose">
+            <option value="0">ไม่อนุญาต</option>
+            <option value="1">ดูอย่างเดียว</option>
+            <option value="2" selected="selected">อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             ได้เสียตามสมาชิก, ได้เสียตามประเภท, รายการที่ถูกรางวัล, ผลการออกรางวัล 
@@ -152,7 +174,11 @@
          <div class="form-group"> 
           <label for="perm_transfers" class="control-label col-xs-2">โอนเงิน:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_transfers" name="perm_transfers"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_transfers" name="transfer">
+            <option value="0">ไม่อนุญาต</option>
+            <option value="1">ดูอย่างเดียว</option>
+            <option value="2" selected="selected">อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             โอนเงิน 
@@ -161,7 +187,11 @@
          <div class="form-group"> 
           <label for="perm_shop" class="control-label col-xs-2">จัดการหน้าร้าน:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_shop" name="perm_shop"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_shop" name="manage">
+            <option value="0">ไม่อนุญาต</option>
+            <option value="1">ดูอย่างเดียว</option>
+            <option value="2" selected="selected">อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             จัดการหน้าร้าน 
@@ -170,7 +200,11 @@
          <div class="form-group"> 
           <label for="perm_cancel" class="control-label col-xs-2">ยกเลิกการแทง:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_cancel" name="perm_cancel"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_cancel" name="cancelplay">
+            <option value="0">ไม่อนุญาต</option>
+            <option value="1">ดูอย่างเดียว</option>
+            <option value="2" selected="selected">อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             ยกเลิกการแทง 

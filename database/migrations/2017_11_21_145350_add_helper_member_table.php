@@ -14,7 +14,7 @@ class AddHelperMemberTable extends Migration
     public function up()
     {
          Schema::table('members', function (Blueprint $table) {
-            $table->integer('helper')->default('0');;
+            $table->integer('helper')->default('0');
         });
     }
 

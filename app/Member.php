@@ -21,4 +21,10 @@ class Member extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function helperset()
+    {
+        return $this->hasMany(Helperset::class, 'helper_id', 'id');
+    }
+
 }
