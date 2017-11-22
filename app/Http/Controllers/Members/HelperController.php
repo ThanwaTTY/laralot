@@ -47,6 +47,28 @@ class HelperController extends Controller
             'manage' => request('manage'),
             'cancelplay' => request('cancelplay')
         ]);
+         session()->flash('massagesuccess','เพิ่มผู้ช่วยรียบร้อยเเล้ว');
          return redirect('/helper/create');
+    }
+
+    public function edit()
+    {
+        $id = auth()->user()->id;
+        //dump($id);
+        $useradd = auth()->user()->useradd;
+  
+        // $member = Member::get();
+        //dd($member2);
+        //$helperSet = Helperset::get();
+        $members = Member::where('helper', 1 )->where('useradd', $id)->get();
+        // dd($members);
+        // foreach ($members as $key => $member) {
+        //     $helperSets[$key] = Helperset::where('helper_id',$member[$key]->id)->first();
+        // }
+        //dd($helperSets);
+        //$helperSets = Helperset::where('helper_id')->get();
+        //dd($member[0]->id);
+        //dd();
+        return view('helper.managehelper', compact('members','helperSets'));
     }
 }

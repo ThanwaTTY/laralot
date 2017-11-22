@@ -224,7 +224,7 @@
       </div> 
       <div class="space-8"></div> 
       <button type="submit" class="btn btn-primary">เพิ่มผู้ช่วย</button> 
-      <a href="https://agent.superlot999.com/aliases/manage" class="btn btn-default ajax">กลับ</a> 
+      <a href="/helper/managehelper" class="btn btn-default ajax">กลับ</a> 
      </form> 
      <script src="/cdn-cgi/scripts/0e574bed/cloudflare-static/email-decode.min.js"></script>
     </div>

@@ -24,7 +24,7 @@ class Member extends Authenticatable
 
     public function helperset()
     {
-        return $this->hasMany(Helperset::class, 'helper_id', 'id');
+        return $this->hasOne(Helperset::class, 'helper_id', 'id');
     }
 
 }

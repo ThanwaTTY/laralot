@@ -72,6 +72,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              ////////////////////////////////////////////////////////////////////////
              Route::get('/helper/create' , 'Members\HelperController@create');
              Route::post('/helper' , 'Members\HelperController@store')->name('helper.store');
+             Route::get('/helper/managehelper', 'Members\HelperController@edit');
              ////////////////////////////////////////////////////////////////////////
              Route::get('/test', function () {
                 return view('portest');

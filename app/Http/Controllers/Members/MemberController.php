@@ -99,7 +99,7 @@ class MemberController extends Controller
         // $member = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
         // dd($member);
         
-
+       
         return view('members/edit', compact('member') );
     }
     public function update(Request $request, $id)
