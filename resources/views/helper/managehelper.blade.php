@@ -79,7 +79,7 @@
             <td class="ac align-middle">{{ $member->username }}</td> 
             <td class="ac align-middle">{{ $member->name }}</td> 
             <td class="ac align-middle">{{ $member->phone }}</td> 
-            <td class="ac align-middle"><span class="label label-success">ปกติ</span></td> 
+            <td class="ac align-middle"><span class="label label-success">ปกติ</span></td>
             <td class="ac align-middle alert-success">{{ $member->helperset->listplay }}</td> 
             <td class="ac align-middle alert-success">{{ $member->helperset->member }}</td> 
             <td class="ac align-middle alert-success">{{ $member->helperset->listkeep }}</td> 
@@ -87,7 +87,10 @@
             <td class="ac align-middle alert-success">{{ $member->helperset->transfer }}</td> 
             <td class="ac align-middle alert-success">{{ $member->helperset->manage }}</td> 
             <td class="ac align-middle alert-success">{{ $member->helperset->cancelplay }}</td> 
-            <td> <a href="https://agent.superlot999.com/aliases/edit/9475" class="btn-edit ajax btn btn-success no-border btn-xs bigger-120"> <i class="ace-icon fa fa-pencil"></i> </a> <a href="#" class="btn-delete btn btn-danger btn-xs no-border bigger-120"><i class="ace-icon fa fa-trash-o"></i></a> </td> 
+            <td> <a href="/helper/{$member->helperset->helper_id}/edit" class="btn-edit ajax btn btn-success no-border btn-xs bigger-120"> 
+            <i class="ace-icon fa fa-pencil"></i> </a> 
+            <a href="#" class="btn-delete btn btn-danger btn-xs no-border bigger-120">
+            <i class="ace-icon fa fa-trash-o"></i></a> </td> 
             </tr> 
         </tbody> 
        @endforeach

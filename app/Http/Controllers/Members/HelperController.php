@@ -71,4 +71,11 @@ class HelperController extends Controller
         //dd();
         return view('helper.managehelper', compact('members','helperSets'));
     }
+
+    public function editin($id)
+    {
+        
+        return view('helper.edit');
+
+    }
 }

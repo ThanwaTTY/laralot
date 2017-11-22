@@ -95,7 +95,7 @@ class MemberController extends Controller
         // dd($username);
         // $member = Member::where('level','>',$level)->get();
 
-        $member = Member::where('id', '!=', $id)->where('useradd', $id)->get();
+        $member = Member::where('id', '!=', $id)->where('helper', 0 )->where('useradd', $id)->get();
         // $member = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
         // dd($member);
         
