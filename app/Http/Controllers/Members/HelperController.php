@@ -31,7 +31,7 @@ class HelperController extends Controller
             'password' => bcrypt(request('password')),
             'level' => auth()->user()->level,
             'name' => request('name'),
-            'credit' => auth()->user()->credit,
+            'credit' => '0',
             'phone' => request('phone'),
             'useradd' => auth()->user()->id,
             'helper' => '1'
