@@ -149,6 +149,11 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::get('/money/history', function () {
                 return view('money.history.index');
              });
+
+             Route::get('/helper/create', function(){
+                return view('helper.create');
+             });
+
          });
 
 

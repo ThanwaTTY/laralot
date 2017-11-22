@@ -87,8 +87,8 @@
 
 <div class="alert alert-info">
   <h4 class="text-info"><i class="fa fa-info-circle"></i> คำแนะนำ</h4>
-  - เพิ่ม<b>สมาชิก</b>หน้าร้าน ได้ที่เมนู <a href="https://agent.superlot999.com/users/create">เพิ่มสมาชิก</a><br>
-  - เพิ่ม<b>ผู้ช่วย</b>หน้าร้าน ได้ที่เมนู <a href="https://agent.superlot999.com/aliases/create">เพิ่มผู้ช่วย</a>
+  - เพิ่ม<b>สมาชิก</b>หน้าร้าน ได้ที่เมนู <a href="/members/create">เพิ่มสมาชิก</a><br>
+  - เพิ่ม<b>ผู้ช่วย</b>หน้าร้าน ได้ที่เมนู <a  href="/helper/create">เพิ่มผู้ช่วย</a>
 </div>
 
 

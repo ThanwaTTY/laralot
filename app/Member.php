@@ -9,7 +9,7 @@ class Member extends Authenticatable
 {
     use Notifiable;
     //
-    protected $fillable = ['level','username','password','credit','name','phone','status','latest_use','latest_login','latest_ip','online','useradd'];
+    protected $fillable = ['level','username','password','credit','name','phone','status','latest_use','latest_login','latest_ip','online','useradd','helper'];
 
     // protected $guarded = [];
 
