@@ -26,7 +26,7 @@ class HelperController extends Controller
         ];
             $this->validate($request, $rules);
         
-        Member::create([
+        $member = Member::create([
             'username' => request('useradd').request('username'),
             'password' => bcrypt(request('password')),
             'level' => auth()->user()->level,
@@ -34,10 +34,11 @@ class HelperController extends Controller
             'credit' => auth()->user()->credit,
             'phone' => request('phone'),
             'useradd' => auth()->user()->id,
+            'helper' => '1'
         ]);
 
         Helperset::create([
-            'helper_id'=> auth()->user()->id ,
+            'helper_id'=> $member->id ,
             'listplay' => request('listplay'),
             'member' => request('member'),
             'listkeep' => request('listkeep'),
