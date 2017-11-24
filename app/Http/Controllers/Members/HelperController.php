@@ -107,6 +107,9 @@ class HelperController extends Controller
 
     public function show()
     {
-        return view('helper.show');
+        $id = auth()->user()->id;
+        $member = Member::where('helper',1)->where('useradd',$id)->get();
+        // dd($member);
+        return view('helper.show' , compact('member'));
     }
 }

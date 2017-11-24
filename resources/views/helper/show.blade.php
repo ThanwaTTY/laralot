@@ -71,31 +71,19 @@
          <th class="align-center">ชื่อ</th> 
          <th class="align-center">เบอร์</th> 
          <th class="align-center">ใช้งานล่าสุด</th> 
-        </tr>
+        </tr>  
        </thead> 
-       <tbody> 
+      @foreach($member as $members)
+       <tbody>    
         <tr> 
-         <td class="align-center align-middle">1</td> 
-         <td class="align-center align-middle">001@3M3K</td> 
-         <td class="align-center align-middle">asdasd</td> 
-         <td class="align-center align-middle">4132132</td> 
+         <td class="align-center align-middle">{{$members->helperset->id}}</td> 
+         <td class="align-center align-middle">{{$members->username}}</td> 
+         <td class="align-center align-middle">{{$members->name}}</td> 
+         <td class="align-center align-middle">{{$members->phone}}</td> 
          <td class="align-center align-middle">2017-09-17 11:31:39</td> 
         </tr> 
-        <tr> 
-         <td class="align-center align-middle">2</td> 
-         <td class="align-center align-middle">002@3M3K</td> 
-         <td class="align-center align-middle"></td> 
-         <td class="align-center align-middle"></td> 
-         <td class="align-center align-middle">2017-11-22 09:50:11</td> 
-        </tr> 
-        <tr> 
-         <td class="align-center align-middle">3</td> 
-         <td class="align-center align-middle">POR@3M3K</td> 
-         <td class="align-center align-middle">thachapong</td> 
-         <td class="align-center align-middle">0999999999</td> 
-         <td class="align-center align-middle">0000-00-00 00:00:00</td> 
-        </tr> 
-       </tbody> 
+       </tbody>
+       @endforeach 
       </table> 
      </div> 
      <script src="/cdn-cgi/scripts/0e574bed/cloudflare-static/email-decode.min.js"></script>
