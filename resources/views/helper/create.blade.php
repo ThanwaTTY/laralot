@@ -78,7 +78,6 @@
 
      <form method="POST" action="{{ route('helper.store')}}" accept-charset="UTF-8" id="create-alias-form" class="form-horizontal" autocomplete="off">
        
-      <input name="_token" type="hidden" value="I6bkzJrZfFnls3Cm0X0FpwGf69D45NgdvbtnRdgL" /> 
       {{ csrf_field() }}
       <div class="widget-box widget-color-blue2 width-800 max-width-1100"> 
        <div class="widget-header"> 

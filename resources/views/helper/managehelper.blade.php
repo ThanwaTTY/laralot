@@ -79,7 +79,13 @@
             <td class="ac align-middle">{{ $member->username }}</td> 
             <td class="ac align-middle">{{ $member->name }}</td> 
             <td class="ac align-middle">{{ $member->phone }}</td> 
-            <td class="ac align-middle"><span class="label label-success">ปกติ</span></td>
+            <td class="ac align-middle">
+                @if($member->status == 0)
+                <span class="label label-success">ปกติ</span>
+                @elseif($member->status == 2)
+                <span class="label label-danger">ล๊อก</span>
+                @endif 
+            </td>
             <td class="ac align-middle alert-success">{{ $member->helperset->listplay }}</td> 
             <td class="ac align-middle alert-success">{{ $member->helperset->member }}</td> 
             <td class="ac align-middle alert-success">{{ $member->helperset->listkeep }}</td> 

@@ -77,10 +77,31 @@ class HelperController extends Controller
 
         // dd($id);
         $member = Member::where('id' , $id)->first();
+        // dd($member->id);
         return view('helper.edit' , compact('member'));
 
     }
 
+    public function update(Request $request, $id)
+    {
+        $member = Member::find($id);
+        $member->name = request('name');
+        $member->password = bcrypt(request('password'));
+        $member->phone = request('phone');
+        $member->status = request('status');
+        $member->helperset->listplay = request('listplay');
+        $member->helperset->member = request('member');
+        $member->helperset->listkeep = request('listkeep');
+        $member->helperset->winlose = request('winlose');
+        $member->helperset->transfer = request('transfer');
+        $member->helperset->manage = request('manage');
+        $member->helperset->cancelplay = request('cancelplay');
+        // dd($member->helperset->listplay);
+        // dd($member->status);
+        $member->update();
+        $member->helperset->update();
+        return back()->withInput();
+    }
 
 
     public function show()
