@@ -76,6 +76,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::get('/helper/{id}/edit', 'Members\HelperController@editin');
              Route::post('/helper/{id}/update', 'Members\HelperController@update');
              Route::get('/show/helper', 'Members\HelperController@show');
+             Route::get('/helper/{id}/del','Members\HelperController@destroy');
              ////////////////////////////////////////////////////////////////////////
              Route::get('/test', function () {
                 return view('portest');

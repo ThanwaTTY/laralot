@@ -143,7 +143,7 @@
                 @endif 
             <td> <a href="/helper/{{$member->helperset->helper_id}}/edit" class="btn-edit ajax btn btn-success no-border btn-xs bigger-120"> 
             <i class="ace-icon fa fa-pencil"></i> </a> 
-            <a href="#" class="btn-delete btn btn-danger btn-xs no-border bigger-120">
+            <a href="/helper/{{$member->helperset->helper_id}}/del" class="btn-delete btn btn-danger btn-xs no-border bigger-120">
             <i class="ace-icon fa fa-trash-o"></i></a> </td> 
             </tr> 
         </tbody> 

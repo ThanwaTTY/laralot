@@ -112,4 +112,13 @@ class HelperController extends Controller
         // dd($member);
         return view('helper.show' , compact('member'));
     }
+
+    public function destroy($id)
+    {
+        $member = Member::find($id);
+        $helper = Helperset::where('helper_id' , $id)->first();
+        $member->delete();
+        $helper->delete();
+        return back();
+    }
 }
