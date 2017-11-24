@@ -45,55 +45,57 @@
 @endsection
 
 @section('content')
+  <div class="breadcrumbs"> 
+   <ul id="breadcrumbs" class="breadcrumb"> 
+    <li> <i class="ace-icon fa fa-home home-icon"></i> 
+     <!-- <a href="#">Home</a> --> </li> 
+    <li> ผู้ช่วย </li>
+    <li> ผู้ช่วย </li>
+   </ul>
+   <!-- /.breadcrumb --> 
+   <span id="global-clock" class="pull-right"></span> 
+  </div>
+
 <div class="page-content" id="user-content"> 
    <div class="row"> 
     <div id="content" class="col-xs-12">
      <div class="page-header"> 
-      <h1>จัดการผู้ช่วย</h1> 
+      <h1>ผู้ช่วย</h1> 
      </div> 
-     <a href="/helper/create" class="ajax btn btn-primary btn-sm">เพิ่มผู้ช่วย</a> 
-     <div class="space-4"></div> 
      <div id="alias-table-container"> 
       <table class="table table-bordered table-border-dark table-auto table-nowrap" id="alias-table"> 
        <thead class="thin-border-bottom"> 
         <tr>
-         <th class="ac width-1">#</th> 
-         <th class="ac">Username</th> 
-         <th class="ac">ชื่อ</th> 
-         <th class="ac">เบอร์</th> 
-         <th class="ac">สถานะ</th> 
-         <th class="ac">รายการแทง</th> 
-         <th class="ac">จัดการสมาชิก</th> 
-         <th class="ac">รายการเก็บของสมาชิก</th> 
-         <th class="ac">รายงานแพ้ชนะ</th> 
-         <th class="ac">โอนเงิน</th> 
-         <th class="ac">จัดการหน้าร้าน</th> 
-         <th class="ac">ยกเลิกรายการแทง</th> 
-         <th></th> 
+         <th class="align-center width-1">#</th> 
+         <th class="align-center">Username</th> 
+         <th class="align-center">ชื่อ</th> 
+         <th class="align-center">เบอร์</th> 
+         <th class="align-center">ใช้งานล่าสุด</th> 
         </tr>
        </thead> 
-       @foreach($members as $key => $member)
-        <tbody> 
-            <tr> 
-            <td class="ac align-middle">{{ $member->helperset->helper_id }}</td> 
-            <td class="ac align-middle">{{ $member->username }}</td> 
-            <td class="ac align-middle">{{ $member->name }}</td> 
-            <td class="ac align-middle">{{ $member->phone }}</td> 
-            <td class="ac align-middle"><span class="label label-success">ปกติ</span></td>
-            <td class="ac align-middle alert-success">{{ $member->helperset->listplay }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->member }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->listkeep }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->winlose }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->transfer }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->manage }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->cancelplay }}</td> 
-            <td> <a href="/helper/{{$member->helperset->helper_id}}/edit" class="btn-edit ajax btn btn-success no-border btn-xs bigger-120"> 
-            <i class="ace-icon fa fa-pencil"></i> </a> 
-            <a href="#" class="btn-delete btn btn-danger btn-xs no-border bigger-120">
-            <i class="ace-icon fa fa-trash-o"></i></a> </td> 
-            </tr> 
-        </tbody> 
-       @endforeach
+       <tbody> 
+        <tr> 
+         <td class="align-center align-middle">1</td> 
+         <td class="align-center align-middle">001@3M3K</td> 
+         <td class="align-center align-middle">asdasd</td> 
+         <td class="align-center align-middle">4132132</td> 
+         <td class="align-center align-middle">2017-09-17 11:31:39</td> 
+        </tr> 
+        <tr> 
+         <td class="align-center align-middle">2</td> 
+         <td class="align-center align-middle">002@3M3K</td> 
+         <td class="align-center align-middle"></td> 
+         <td class="align-center align-middle"></td> 
+         <td class="align-center align-middle">2017-11-22 09:50:11</td> 
+        </tr> 
+        <tr> 
+         <td class="align-center align-middle">3</td> 
+         <td class="align-center align-middle">POR@3M3K</td> 
+         <td class="align-center align-middle">thachapong</td> 
+         <td class="align-center align-middle">0999999999</td> 
+         <td class="align-center align-middle">0000-00-00 00:00:00</td> 
+        </tr> 
+       </tbody> 
       </table> 
      </div> 
      <script src="/cdn-cgi/scripts/0e574bed/cloudflare-static/email-decode.min.js"></script>

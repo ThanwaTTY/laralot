@@ -78,4 +78,11 @@ class HelperController extends Controller
         return view('helper.edit');
 
     }
+
+
+
+    public function show()
+    {
+        return view('helper.show');
+    }
 }

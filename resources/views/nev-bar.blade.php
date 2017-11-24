@@ -140,6 +140,18 @@
             <li><a href="/money/history"><i class="fa fa-circle-o"></i> ประวัติการเงิน</a></li>
           </ul>
         </li>
+				 <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i> <span>ผู้ช่วย</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/helper/managehelper"><i class="fa fa-circle-o"></i> จัดการผู้ช่วย</a></li>
+            <li><a href="/show/helper"><i class="fa fa-circle-o"></i> ผู้ช่วย</a></li>
+          </ul>
+        </li>
         <li class="treeview">
           <a href="#">
             <i class="fa fa-question"></i> <span>คู่มือการใช้งาน</span>
