@@ -80,7 +80,7 @@
          <div class="form-group"> 
           <label for="username" class="control-label col-xs-2">ชื่อผู้ใช้:</label> 
           <div class="col-xs-4"> 
-           <input class="form-control" disabled="disabled" name="username" type="text" value="001@3M3K" id="username" /> 
+           <input class="form-control" disabled="disabled" name="username" type="text" value="{{$member->username}}" id="username" /> 
           </div> 
           <label for="password" class="control-label col-xs-2">รหัสผ่าน:</label> 
           <div class="col-xs-4"> 
@@ -90,17 +90,20 @@
          <div class="form-group"> 
           <label for="name" class="control-label col-xs-2">ชื่อ-สกุล:</label> 
           <div class="col-xs-4"> 
-           <input class="form-control" name="name" type="text" value="asdasd" id="name" /> 
+           <input class="form-control" name="name" type="text" value="{{$member->name}}" id="name" /> 
           </div> 
           <label for="phone" class="control-label col-xs-2">เบอร์โทร:</label> 
           <div class="col-xs-4"> 
-           <input class="form-control" name="phone" type="text" value="4132132" id="phone" /> 
+           <input class="form-control" name="phone" type="text" value="{{$member->phone}}" id="phone" /> 
           </div> 
          </div> 
          <div class="form-group"> 
           <label for="status" class="control-label col-xs-2">สถานะ:</label> 
           <div class="col-xs-4"> 
-           <select class="form-control" id="status" name="status"><option value="1" selected="selected">ปกติ</option><option value="3">ล็อค</option></select> 
+           <select class="form-control" id="status" name="status">
+            <option value="0"{{ ($member->status == 0) ? 'selected="selected"' : ''}}>ปกติ</option>
+            <option value="2"{{ ($member->status == 2) ? 'selected="selected"' : ''}}>ล็อค</option>
+           </select> 
           </div> 
          </div> 
         </div> 
@@ -122,7 +125,11 @@
          <div class="form-group"> 
           <label for="perm_items" class="control-label col-xs-2">รายการแทง:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_items" name="perm_items"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_items" name="perm_items">
+            <option value="0"{{ ($member->helperset->listplay == 0) ? 'selected="selected"' : ''}}>ไม่อนุญาต</option>
+            <option value="1"{{ ($member->helperset->listplay == 1) ? 'selected="selected"' : ''}}>ดูอย่างเดียว</option>
+            <option value="2"{{ ($member->helperset->listplay == 2) ? 'selected="selected"' : ''}}>อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             ดูของรวม / คาดคะเนได้เสีย, ดูของแยกตามประเภท, ดูของแยกตามสมาชิก, รายการที่ถูกยกเลิก, ตั้งค่าการรับของ 
@@ -131,7 +138,11 @@
          <div class="form-group"> 
           <label for="perm_users" class="control-label col-xs-2">สมาชิก:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_users" name="perm_users"><option value="0">ไม่อนุญาต</option><option value="1" selected="selected">ดูอย่างเดียว</option><option value="2">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_users" name="perm_users">
+            <option value="0"{{ ($member->helperset->member == 0) ? 'selected="selected"' : ''}}>ไม่อนุญาต</option>
+            <option value="1"{{ ($member->helperset->member == 1) ? 'selected="selected"' : ''}}>ดูอย่างเดียว</option>
+            <option value="2"{{ ($member->helperset->member == 2) ? 'selected="selected"' : ''}}>อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             เพิ่มสมาชิก, รายชื่อสมาชิก, แก้ไขสมาชิก, สมาชิกออนไลน์ 
@@ -140,7 +151,11 @@
          <div class="form-group"> 
           <label for="perm_user_take_list" class="control-label col-xs-2">รายการเก็บของ:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_user_take_list" name="perm_user_take_list"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_user_take_list" name="perm_user_take_list">
+            <option value="0"{{ ($member->helperset->listkeep == 0) ? 'selected="selected"' : ''}}>ไม่อนุญาต</option>
+            <option value="1"{{ ($member->helperset->listkeep == 1) ? 'selected="selected"' : ''}}>ดูอย่างเดียว</option>
+            <option value="2"{{ ($member->helperset->listkeep == 2) ? 'selected="selected"' : ''}}>อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             รายการเก็บของ / อั้น 
@@ -149,7 +164,11 @@
          <div class="form-group"> 
           <label for="perm_reports" class="control-label col-xs-2">รายงานแพ้ชนะ:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_reports" name="perm_reports"><option value="0" selected="selected">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_reports" name="perm_reports">
+            <option value="0"{{ ($member->helperset->winlose == 0) ? 'selected="selected"' : ''}}>ไม่อนุญาต</option>
+            <option value="1"{{ ($member->helperset->winlose == 1) ? 'selected="selected"' : ''}}>ดูอย่างเดียว</option>
+            <option value="2"{{ ($member->helperset->winlose == 2) ? 'selected="selected"' : ''}}>อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             ได้เสียตามสมาชิก, ได้เสียตามประเภท, รายการที่ถูกรางวัล, ผลการออกรางวัล 
@@ -158,7 +177,11 @@
          <div class="form-group"> 
           <label for="perm_transfers" class="control-label col-xs-2">โอนเงิน:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_transfers" name="perm_transfers"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_transfers" name="perm_transfers">
+            <option value="0"{{ ($member->helperset->transfer == 0) ? 'selected="selected"' : ''}}>ไม่อนุญาต</option>
+            <option value="1"{{ ($member->helperset->transfer == 1) ? 'selected="selected"' : ''}}>ดูอย่างเดียว</option>
+            <option value="2"{{ ($member->helperset->transfer == 2) ? 'selected="selected"' : ''}}>อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             โอนเงิน 
@@ -167,7 +190,11 @@
          <div class="form-group"> 
           <label for="perm_shop" class="control-label col-xs-2">จัดการหน้าร้าน:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_shop" name="perm_shop"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_shop" name="perm_shop">
+            <option value="0"{{ ($member->helperset->manage == 0) ? 'selected="selected"' : ''}}>ไม่อนุญาต</option>
+            <option value="1"{{ ($member->helperset->manage == 1) ? 'selected="selected"' : ''}}>ดูอย่างเดียว</option>
+            <option value="2"{{ ($member->helperset->manage == 2) ? 'selected="selected"' : ''}}>อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             จัดการหน้าร้าน 
@@ -176,7 +203,11 @@
          <div class="form-group"> 
           <label for="perm_cancel" class="control-label col-xs-2">ยกเลิกการแทง:</label> 
           <div class="col-xs-2"> 
-           <select class="form-control" id="perm_cancel" name="perm_cancel"><option value="0">ไม่อนุญาต</option><option value="1">ดูอย่างเดียว</option><option value="2" selected="selected">อนุญาตทั้งหมด</option></select> 
+           <select class="form-control" id="perm_cancel" name="perm_cancel">
+            <option value="0"{{ ($member->helperset->cancelplay == 0) ? 'selected="selected"' : ''}}>ไม่อนุญาต</option>
+            <option value="1"{{ ($member->helperset->cancelplay == 1) ? 'selected="selected"' : ''}}>ดูอย่างเดียว</option>
+            <option value="2"{{ ($member->helperset->cancelplay == 2) ? 'selected="selected"' : ''}}>อนุญาตทั้งหมด</option>
+           </select> 
           </div> 
           <div class="col-xs-8 help-block">
             ยกเลิกการแทง 
@@ -187,7 +218,7 @@
       </div> 
       <div class="space-8"></div> 
       <button type="submit" class="btn btn-primary">แก้ไขผู้ช่วย</button> 
-      <a href="https://agent.superlot999.com/aliases/manage" class="btn btn-default ajax">กลับ</a> 
+      <a href="/helper/managehelper" class="btn btn-default ajax">กลับ</a> 
      </form> 
     </div>
     <!-- /.col --> 

@@ -75,7 +75,7 @@
        @foreach($members as $key => $member)
         <tbody> 
             <tr> 
-            <td class="ac align-middle">{{ $member->helperset->helper_id }}</td> 
+            <td class="ac align-middle">{{ $member->helperset->id }}</td> 
             <td class="ac align-middle">{{ $member->username }}</td> 
             <td class="ac align-middle">{{ $member->name }}</td> 
             <td class="ac align-middle">{{ $member->phone }}</td> 

@@ -74,8 +74,10 @@ class HelperController extends Controller
 
     public function editin($id)
     {
-        
-        return view('helper.edit');
+
+        // dd($id);
+        $member = Member::where('id' , $id)->first();
+        return view('helper.edit' , compact('member'));
 
     }
 
