@@ -62,16 +62,16 @@
       <h1>เพิ่มผู้ช่วย</h1> 
      </div> 
      @if(session()->get('massagesuccess'))
-                <div class="box">
-                      <div class="box-tools pull-right">
-                        <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
-                          <i class="fa fa-times"></i></button>
-                      </div>
-                      <div class="callout callout-success">
-                        <h4>success!</h4>
-                        <p>{{ session()->get('massagesuccess') }}</p>
-                    </div>
-                  </div>
+        <div class="box">
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                  <i class="fa fa-times"></i></button>
+              </div>
+              <div class="callout callout-success">
+                <h4>success!</h4>
+                <p>{{ session()->get('massagesuccess') }}</p>
+            </div>
+        </div>
       @endif
      <div class="alert alert-success hidden" id="success"></div> 
      <div class="alert alert-danger hidden" id="error"></div> 

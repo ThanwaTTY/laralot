@@ -100,6 +100,7 @@ class HelperController extends Controller
         // dd($member->status);
         $member->update();
         $member->helperset->update();
+        session()->flash('massagesuccess','เเก้ไขข้อมูลผู้ช่วยเรียบร้อยเเล้ว');
         return back()->withInput();
     }
 
