@@ -86,13 +86,61 @@
                 <span class="label label-danger">ล๊อก</span>
                 @endif 
             </td>
-            <td class="ac align-middle alert-success">{{ $member->helperset->listplay }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->member }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->listkeep }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->winlose }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->transfer }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->manage }}</td> 
-            <td class="ac align-middle alert-success">{{ $member->helperset->cancelplay }}</td> 
+                @if($member->helperset->listplay == 0)
+                <td class="ac align-middle"style="background-color:#ff4d4d;">ไม่อนุญาต</td>
+                @elseif($member->helperset->listplay == 1) 
+                <td class="ac align-middle alert-warning">ดูอย่างเดียว</td>
+                @elseif($member->helperset->listplay == 2)
+                <td class="ac align-middle alert-success">อนุญาตทั้งหมด</td>
+                @endif 
+
+                @if($member->helperset->member == 0)
+                <td class="ac align-middle"style="background-color:#ff4d4d;">ไม่อนุญาต</td>
+                @elseif($member->helperset->member == 1) 
+                <td class="ac align-middle alert-warning">ดูอย่างเดียว</td>
+                @elseif($member->helperset->member == 2)
+                <td class="ac align-middle alert-success">อนุญาตทั้งหมด</td>
+                @endif 
+
+                @if($member->helperset->listkeep == 0)
+                <td class="ac align-middle"style="background-color:#ff4d4d;">ไม่อนุญาต</td>
+                @elseif($member->helperset->listkeep == 1) 
+                <td class="ac align-middle alert-warning">ดูอย่างเดียว</td>
+                @elseif($member->helperset->listkeep == 2)
+                <td class="ac align-middle alert-success">อนุญาตทั้งหมด</td>
+                @endif 
+
+                @if($member->helperset->winlose == 0)
+                <td class="ac align-middle"style="background-color:#ff4d4d;">ไม่อนุญาต</td>
+                @elseif($member->helperset->winlose == 1) 
+                <td class="ac align-middle alert-warning">ดูอย่างเดียว</td>
+                @elseif($member->helperset->winlose == 2)
+                <td class="ac align-middle alert-success">อนุญาตทั้งหมด</td>
+                @endif 
+
+                @if($member->helperset->transfer == 0)
+                <td class="ac align-middle"style="background-color:#ff4d4d;">ไม่อนุญาต</td>
+                @elseif($member->helperset->transfer == 1) 
+                <td class="ac align-middle alert-warning">ดูอย่างเดียว</td>
+                @elseif($member->helperset->transfer == 2)
+                <td class="ac align-middle alert-success">อนุญาตทั้งหมด</td>
+                @endif 
+
+                @if($member->helperset->manage == 0)
+                <td class="ac align-middle"style="background-color:#ff4d4d;">ไม่อนุญาต</td>
+                @elseif($member->helperset->manage == 1) 
+                <td class="ac align-middle alert-warning">ดูอย่างเดียว</td>
+                @elseif($member->helperset->manage == 2)
+                <td class="ac align-middle alert-success">อนุญาตทั้งหมด</td>
+                @endif 
+
+                @if($member->helperset->cancelplay == 0)
+                <td class="ac align-middle"style="background-color:#ff4d4d;">ไม่อนุญาต</td>
+                @elseif($member->helperset->cancelplay == 1) 
+                <td class="ac align-middle alert-warning">ดูอย่างเดียว</td>
+                @elseif($member->helperset->cancelplay == 2)
+                <td class="ac align-middle alert-success">อนุญาตทั้งหมด</td>
+                @endif 
             <td> <a href="/helper/{{$member->helperset->helper_id}}/edit" class="btn-edit ajax btn btn-success no-border btn-xs bigger-120"> 
             <i class="ace-icon fa fa-pencil"></i> </a> 
             <a href="#" class="btn-delete btn btn-danger btn-xs no-border bigger-120">
