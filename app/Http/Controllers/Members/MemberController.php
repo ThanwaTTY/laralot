@@ -35,14 +35,18 @@ class MemberController extends Controller
         // $levels = DB::table('levels')->where('id' , '<' , auth()->user()->level)->get();
          $id = auth()->user()->id;
          $useradd = auth()->user()->useradd;
+         $helper = auth()->user()->helper;
         //  $username = $username. '%';
          $credit_auths = Member::find($id);
          $totalcredit = Member::where('id', '!=', $id)->where('useradd', $id)->sum('credit');
          $credit = $credit_auths->credit-$totalcredit;
         // dd($totalcredit);
+            $member = Member::get();
+            $members = Member::where('id','!=',$id)->where('helper', 0)->where('id', $useradd)->first();
 
-        $member = Member::get();
-        return view('members.create', compact('member', 'credit', 'totalcredit'));
+        // dd($members);
+
+        return view('members.create', compact('member', 'credit', 'totalcredit','members'));
     }
 
     public function store(Request $request)
@@ -50,7 +54,14 @@ class MemberController extends Controller
          $id = auth()->user()->id;
          $useradd = auth()->user()->useradd;
         //  $username = $username. '%';
-         
+        $member = Member::get();
+        $members = Member::where('id','!=',$id)->where('helper', 0)->where('id', $useradd)->first();
+        if(auth()->user()->helper ==1){
+            $memberid = $members->id;
+        }else{
+            $memberid = auth()->user()->id;
+        }
+        // dd($memberid);
          $totalcredit = Member::where('id', '!=', $id)->where('useradd', $id)->sum('credit');
         //  dd($totalcredit);
         $rules =[
@@ -77,7 +88,7 @@ class MemberController extends Controller
             'credit' => request('credit'),
             'name' => request('name'),
             'phone' => request('phone'),
-            'useradd' => auth()->user()->id
+            'useradd' => $memberid
             ]);
             session()->flash('massagesuccess','เพิ่มสมาชิกเรียบร้อยเเล้ว');
             return redirect('/members/create');
