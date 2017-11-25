@@ -89,7 +89,7 @@
           <label for="username" class="control-label col-xs-2">ชื่อผู้ใช้:</label> 
           <div class="col-xs-4"> 
            <div class="input-group"> 
-            <input type="hidden" name="useradd" value="{{ auth()->user()->username }}">
+            <input type="hidden" name="useradd" value="{{ auth()->user()->username }}@">
             <input id="username" class="form-control" name="username" type="text" value="{{ old('username') }}">
             <span class="input-group-addon">{{ auth()->user()->username}}</span> 
            </div> 

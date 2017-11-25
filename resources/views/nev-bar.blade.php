@@ -140,6 +140,7 @@
             <li><a href="/money/history"><i class="fa fa-circle-o"></i> ประวัติการเงิน</a></li>
           </ul>
         </li>
+				@if(auth()->user()->helper == 0)
 				 <li class="treeview">
           <a href="#">
             <i class="fa fa-user"></i> <span>ผู้ช่วย</span>
@@ -152,6 +153,13 @@
             <li><a href="/show/helper"><i class="fa fa-circle-o"></i> ผู้ช่วย</a></li>
           </ul>
         </li>
+				@elseif(auth()->user()->helper == 1)
+				 <li class="treeview">
+          <a href="#">
+            <i class="fa fa-user"></i> <span>ไม่มีสิทธิ์ใช้งานหน้าผู้ช่วย</span>
+          </a>
+        </li>
+				@endif
         <li class="treeview">
           <a href="#">
             <i class="fa fa-question"></i> <span>คู่มือการใช้งาน</span>
