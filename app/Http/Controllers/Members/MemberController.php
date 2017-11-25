@@ -51,11 +51,11 @@ class MemberController extends Controller
         // dd($totalcredit);
             $member = Member::get();
             $members = Member::where('id','!=',$id)->where('helper', 0)->where('id', $useradd)->first();
-            // $credithelper = Member::where('id','!=',$id)->where('helper', 1)->where('id', $useradd)->first();
+            // $credithelper = Member::where('id','!=',$id)->where('id', $useradd)->sum('credit');
 
-        // dd($members);
+        // dd($credithelper);
 
-        return view('members.create', compact('member', 'credit', 'totalcredit','members'));
+        return view('members.create', compact('member', 'credit', 'totalcredit','members','credithelper'));
     }
 
     public function store(Request $request)
@@ -73,7 +73,9 @@ class MemberController extends Controller
         }
         // dd($memberid);
          $totalcredit = Member::where('id', '!=', $id)->where('useradd', $id)->sum('credit');
-        //  dd($totalcredit);
+         $credithelper = Member::where('id','!=',$id)->where('id', $useradd)->sum('credit');
+         $sumcredit = Member::where('id', '!=',$id)->where('useradd', $useradd)->sum('credit');
+        //  dd($sumcredit);
         $rules =[
             'username' => 'required',
             'password' => 'required',
@@ -82,12 +84,23 @@ class MemberController extends Controller
             'name' => 'required',
             'phone' => 'required'
         ];
+       
+         $useradd = auth()->user()->id;
+
+        if(auth()->user()->helper == 1)
+        {
+         $credits = $credithelper - $sumcredit;
+        //  dd($credits);
+         $credit = request('credit');
+         $total = $credit + $totalcredit;
+
+        }else{
          $credits = auth()->user()->credit;
          $credit = request('credit');
          $total = $credit + $totalcredit;
-         $useradd = auth()->user()->id;
-        //  dd($total);
-    //    dd($useradd);
+        }
+
+
         $this->validate($request, $rules);
         // dd($credits);
         if ($credits >= $total) {

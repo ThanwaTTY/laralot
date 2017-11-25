@@ -385,7 +385,7 @@
         <li class="light-blue dropdown-fix">
           <a data-toggle="dropdown" href="#" class="dropdown-toggle">
             <i class="ace-icon fa fa-user"></i>
-                MyUsername [LevelName]
+                {{auth()->user()->username}}
           </a>
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="user-toggle-list">
