@@ -8,25 +8,33 @@ use App\Member;
 
 class MemberController extends Controller
 {
-    public function register($user, $pass, $credit)
+    
+    public function register()
     {
-        // return $user.$pass.$credit;
-        $Member = Member::find('1');
-        if ($Member) {
-            # code...
-        } else {
-            Member::create([
-            'username' => $user,
-            'password' => bcrypt($pass),
-            'level' => '1',
-            'credit' => $credit,
-            'name' => 'Big boss',
-            'phone' => '0000000000',
-            'useradd' => '0'
+       return view('register.register');
+    }
+    public function registerstore(Request $request)
+    {
+        $rules =[
+            'username' => 'required',
+            'password' => 'required',
+            'level' => 'required',
+            'credit' => 'required',
+            'name' => 'required',
+            'phone' => 'required'
+        ];
+
+         Member::create([
+            'username' => request('useradd').request('username'),
+            'password' => bcrypt(request('password')),
+            'level' => request('level'),
+            'credit' => request('credit'),
+            'name' => request('name'),
+            'phone' => request('phone'),
+            'useradd' => 0 
             ]);
-            session()->flash('massage', 'เพิ่ม Boss เรียบร้อยแล้ว');
-            return redirect('/login');
-        }
+        session()->flash('massagesuccess', "สมัคสมาชิกสำหรับ TEST ระบบเรียบร้อยเเล้ว");
+        return redirect('/admin/login');
     }
     //
     public function create()
@@ -43,6 +51,7 @@ class MemberController extends Controller
         // dd($totalcredit);
             $member = Member::get();
             $members = Member::where('id','!=',$id)->where('helper', 0)->where('id', $useradd)->first();
+            // $credithelper = Member::where('id','!=',$id)->where('helper', 1)->where('id', $useradd)->first();
 
         // dd($members);
 
@@ -56,6 +65,7 @@ class MemberController extends Controller
         //  $username = $username. '%';
         $member = Member::get();
         $members = Member::where('id','!=',$id)->where('helper', 0)->where('id', $useradd)->first();
+
         if(auth()->user()->helper ==1){
             $memberid = $members->id;
         }else{

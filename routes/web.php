@@ -14,6 +14,8 @@
 Route::get('/login', 'MemberLoginController@getlogin')->name('login');
 Route::post('/login', 'MemberLoginController@postLogin');
 Route::get('/logout', 'MemberLoginController@logout');
+Route::get('/register', 'Members\MemberController@register');
+Route::post('/register', 'Members\MemberController@registerstore');
 
 Route::group(['middleware'=>['auth']], function () {
     Route::post('/placebet/{lotto}', 'Bets\PlacebetController@store');

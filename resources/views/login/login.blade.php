@@ -30,7 +30,18 @@
         <b>LARALOT</b>
   </div>
 
-
+  @if(session()->get('massagesuccess'))
+      <div class="box">
+            <div class="box-tools pull-right">
+              <button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                <i class="fa fa-times"></i></button>
+            </div>
+            <div class="callout callout-success">
+              <h4>success!</h4>
+              <p>{{ session()->get('massagesuccess') }}</p>
+          </div>
+        </div>
+  @endif
   @if(session()->get('massage'))
         <div class="box">
             <div class="box-tools pull-right">
@@ -68,8 +79,10 @@
         <!-- /.col -->
         <div class="col-xs-4">
           <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
+          <a href="/register" class="btn btn-warning btn-block btn-flat">register</a>
         </div>
         <!-- /.col -->
+        
       </div>
     </form>
 
