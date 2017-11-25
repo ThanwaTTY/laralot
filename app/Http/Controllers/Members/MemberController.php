@@ -90,16 +90,15 @@ class MemberController extends Controller
     public function edit()
     {
         $id = auth()->user()->id;
+        $helper = auth()->user()->helper;
         $useradd = auth()->user()->useradd;
-        // $username = $username.'%';
-        // dd($username);
-        // $member = Member::where('level','>',$level)->get();
 
-        $member = Member::where('id', '!=', $id)->where('helper', 0 )->where('useradd', $id)->get();
-        // $member = Member::where('id','!=',$id)->where('username','like',$username)->sum('credit');
-        // dd($member);
-        
-       
+        if ($helper==1) {
+            $member = Member::where('id', '!=', $id)->where('helper', 0 )->where('useradd', $useradd)->get();
+        } else {
+            $member = Member::where('id', '!=', $id)->where('helper', $helper )->where('useradd', $id)->get();
+        }
+                
         return view('members/edit', compact('member') );
     }
     public function update(Request $request, $id)
