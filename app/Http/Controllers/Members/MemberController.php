@@ -116,7 +116,7 @@ class MemberController extends Controller
             'useradd' => $memberid
             ]);
             Playset::create([
-            'member_id' => auth()->user()->id,
+            'member_id' => $memberid,
             'min_1' => request('min_1'),'max_1' => request('max_1'),'max_per_num1' => request('max_per_num1'),
             'min_2' => request('min_2'),'max_2' => request('max_2'),'max_per_num2' => request('max_per_num2'),
             'min_3' => request('min_3'),'max_3' => request('max_3'),'max_per_num3' => request('max_per_num3'),
