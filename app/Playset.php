@@ -14,4 +14,9 @@ class Playset extends Model
                                           'min_6','max_6','max_per_num6',
                                           'min_7','max_7','max_per_num7',
                                           'min_8','max_8','max_per_num8'];
+    
+        public function member()
+        {
+            return $this->belongTo(Member::class, 'member_id','id');
+        }
 }

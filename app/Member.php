@@ -27,4 +27,9 @@ class Member extends Authenticatable
         return $this->hasOne(Helperset::class, 'helper_id', 'id');
     }
 
+    public function playset()
+    {
+        return $this->hasOne(Playset::class, 'member_id', 'id');
+    }
+
 }

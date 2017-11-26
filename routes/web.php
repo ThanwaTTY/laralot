@@ -80,6 +80,9 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::get('/show/helper', 'Members\HelperController@show');
              Route::get('/helper/{id}/del','Members\HelperController@destroy');
              ////////////////////////////////////////////////////////////////////////
+             Route::get('/user/high-low-number','Members\PlaysetController@index');
+
+             });
              Route::get('/test', function () {
                 return view('portest');
             //return view('welcome');
@@ -132,9 +135,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
                 return view('user.listkeep.index');
              });
 
-             Route::get('/user/high-low-number', function () {
-                return view('user.high-low-number.index');
-             });
+            
 
              Route::get('/user/open-close-lottery', function () {
                 return view('user.open-close-lottery.index');
@@ -162,7 +163,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
 
              
 
-         });
+       
 
 
          Route::get('/report/userreport', function () {
