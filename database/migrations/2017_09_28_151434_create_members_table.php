@@ -20,6 +20,7 @@ class CreateMembersTable extends Migration
             $table->string('password', 100);
             $table->decimal('credit', 20, 7);
             $table->string('name');
+            $table->integer('useradd');
             $table->string('phone');
             $table->integer('status')->default(0);
             $table->rememberToken();

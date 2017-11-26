@@ -361,49 +361,49 @@
                                         <td class="ac am bolder">3 ตัวบน</td>
                                         <td class="am"><input class="form-control inline width-50 deep-blue" name="min_1" type="text" value="5">/ 5</td>
                                         <td class="am"><input class="form-control inline width-50 deep-blue" name="max_1" type="text" value="3000">/ 3,000</td>
-                                        <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num_1" type="text" value="10000">/ 10,000</td>
+                                        <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num1" type="text" value="10000">/ 10,000</td>
                                     </tr>
                                     <tr>
                                         <td class="ac am bolder">3 ตัวล่าง</td>
                                         <td class="am"><input class="form-control inline width-50 deep-blue" name="min_2" type="text" value="5">/ 5</td>
                                         <td class="am"><input class="form-control inline width-50 deep-blue" name="max_2" type="text" value="3000">/ 3,000</td>
-                                        <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num_2" type="text" value="100000">/ 100,000</td>
+                                        <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num2" type="text" value="100000">/ 100,000</td>
                                     </tr>
                                     <tr>
                                       <td class="ac am bolder">3 ตัวโต๊ด</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="min_3" type="text" value="5">/ 5</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="max_3" type="text" value="3000">/ 3,000</td>
-                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num_3" type="text" value="30000">/ 30,000</td>
+                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num3" type="text" value="30000">/ 30,000</td>
                                     </tr>
                                     <tr>
                                       <td class="ac am bolder">2 ตัวบน</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="min_4" type="text" value="5">/ 5</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="max_4" type="text" value="10000">/ 10,000</td>
-                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num_4" type="text" value="100000">/ 100,000</td>
+                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num4" type="text" value="100000">/ 100,000</td>
                                     </tr>
                                     <tr>
                                       <td class="ac am bolder">2 ตัวล่าง</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="min_5" type="text" value="5">/ 5</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="max_5" type="text" value="10000">/ 10,000</td>
-                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num_5" type="text" value="100000">/ 100,000</td>
+                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num5" type="text" value="100000">/ 100,000</td>
                                     </tr>
                                     <tr>
                                       <td class="ac am bolder">2 ตัวโต๊ด</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="min_6" type="text" value="5">/ 5</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="max_6" type="text" value="10000">/ 10,000</td>
-                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num_6" type="text" value="100000">/ 100,000</td>
+                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num6" type="text" value="100000">/ 100,000</td>
                                     </tr>
                                     <tr>
                                       <td class="ac am bolder">วิ่งบน</td><td class="am">
                                         <input class="form-control inline width-50 deep-blue" name="min_7" type="text" value="5">/ 5</td>
                                         <td class="am"><input class="form-control inline width-50 deep-blue" name="max_7" type="text" value="100000">/ 100,000</td>
-                                        <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num_7" type="text" value="300000">/ 300,000</td>
+                                        <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num7" type="text" value="300000">/ 300,000</td>
                                     </tr>
                                     <tr>
                                       <td class="ac am bolder">วิ่งล่าง</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="min_8" type="text" value="5">/ 5</td>
                                       <td class="am"><input class="form-control inline width-50 deep-blue" name="max_8" type="text" value="100000">/ 100,000</td>
-                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num_8" type="text" value="300000">/ 300,000</td>
+                                      <td class="am"><input class="form-control inline width-50 deep-blue" name="max_per_num8" type="text" value="300000">/ 300,000</td>
                                     </tr>
                                 </tbody>
                             </table>

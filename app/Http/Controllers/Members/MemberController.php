@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Members;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Member;
+use App\Playset;
 
 class MemberController extends Controller
 {
@@ -60,6 +61,7 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
+        // dd($request->max_per_num_1);
          $id = auth()->user()->id;
          $useradd = auth()->user()->useradd;
         //  $username = $username. '%';
@@ -112,6 +114,17 @@ class MemberController extends Controller
             'name' => request('name'),
             'phone' => request('phone'),
             'useradd' => $memberid
+            ]);
+            Playset::create([
+            'member_id' => auth()->user()->id,
+            'min_1' => request('min_1'),'max_1' => request('max_1'),'max_per_num1' => request('max_per_num1'),
+            'min_2' => request('min_2'),'max_2' => request('max_2'),'max_per_num2' => request('max_per_num2'),
+            'min_3' => request('min_3'),'max_3' => request('max_3'),'max_per_num3' => request('max_per_num3'),
+            'min_4' => request('min_4'),'max_4' => request('max_4'),'max_per_num4' => request('max_per_num4'),
+            'min_5' => request('min_5'),'max_5' => request('max_5'),'max_per_num5' => request('max_per_num5'),
+            'min_6' => request('min_6'),'max_6' => request('max_6'),'max_per_num6' => request('max_per_num6'),
+            'min_7' => request('min_7'),'max_7' => request('max_7'),'max_per_num7' => request('max_per_num7'),
+            'min_8' => request('min_8'),'max_8' => request('max_8'),'max_per_num8' => request('max_per_num8')
             ]);
             session()->flash('massagesuccess','เพิ่มสมาชิกเรียบร้อยเเล้ว');
             return redirect('/members/create');
