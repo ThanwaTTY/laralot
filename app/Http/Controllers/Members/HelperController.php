@@ -109,7 +109,8 @@ class HelperController extends Controller
     {
         $id = auth()->user()->id;
         $member = Member::where('helper',1)->where('useradd',$id)->get();
-        // dd($member);
+        
+        // dd($member->helperset->id);
         return view('helper.show' , compact('member'));
     }
 

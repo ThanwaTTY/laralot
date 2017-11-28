@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Member;
 use App\Playset;
+use Illuminate\Database\QueryException;
+use Illuminate\Database\PDOException;
+use Exception;
 
 class MemberController extends Controller
 {
@@ -61,7 +64,7 @@ class MemberController extends Controller
 
     public function store(Request $request)
     {
-        // dd($request->max_per_num_1);
+       
          $id = auth()->user()->id;
          $useradd = auth()->user()->useradd;
         //  $username = $username. '%';
@@ -84,9 +87,33 @@ class MemberController extends Controller
             'level' => 'required',
             'credit' => 'required',
             'name' => 'required',
-            'phone' => 'required'
+            'phone' => 'required',
+            'min_1' => 'required',
+            'min_2' => 'required',
+            'min_3' => 'required',
+            'min_4' => 'required',
+            'min_5' => 'required',
+            'min_6' => 'required',
+            'min_7' => 'required',
+            'min_8' => 'required',
+            'max_1' => 'required',
+            'max_2' => 'required',
+            'max_3' => 'required',
+            'max_4' => 'required',
+            'max_5' => 'required',
+            'max_6' => 'required',
+            'max_7' => 'required',
+            'max_8' => 'required',
+            'max_per_num1' => 'required',
+            'max_per_num2' => 'required',
+            'max_per_num3' => 'required',
+            'max_per_num4' => 'required',
+            'max_per_num5' => 'required',
+            'max_per_num6' => 'required',
+            'max_per_num7' => 'required',
+            'max_per_num8' => 'required',
         ];
-       
+        // dd(required->min_1);
          $useradd = auth()->user()->id;
 
         if(auth()->user()->helper == 1)
@@ -105,6 +132,79 @@ class MemberController extends Controller
 
         $this->validate($request, $rules);
         // dd($credits);
+        if($request->min_1 < 5){
+            session()->flash('massage', 'ขั้นต่ำ 3 ตัวบน ต้องมีค่าอย่างน้อย 5');
+            return redirect('/members/create');
+        }if($request->min_2 < 5){
+            session()->flash('massage', 'ขั้นต่ำ 3 ตัวล่าง ต้องมีค่าอย่างน้อย 5');
+            return redirect('/members/create');
+        }if($request->min_3 < 5){
+            session()->flash('massage', 'ขั้นต่ำ 3 ตัวโต๊ด ต้องมีค่าอย่างน้อย 5');
+            return redirect('/members/create');
+        }if($request->min_4 < 5){
+            session()->flash('massage', 'ขั้นต่ำ 2 ตัวบน ต้องมีค่าอย่างน้อย 5');
+            return redirect('/members/create');
+        }if($request->min_5 < 5){
+            session()->flash('massage', 'ขั้นต่ำ 2 ตัวล่าง ต้องมีค่าอย่างน้อย 5');
+            return redirect('/members/create');
+        }if($request->min_6 < 5){
+            session()->flash('massage', 'ขั้นต่ำ 2 ตัวโต๊ด ต้องมีค่าอย่างน้อย 5');
+            return redirect('/members/create');
+        }if($request->min_7 < 5){
+             session()->flash('massage', 'ขั้นต่ำ วิ่งบน ต้องมีค่าอย่างน้อย 5');
+            return redirect('/members/create');
+        }if($request->min_8 < 5){
+             session()->flash('massage', 'ขั้นต่ำ วิ่งล่าง ต้องมีค่าอย่างน้อย 5');
+            return redirect('/members/create');
+        }if($request->max_1 > 3000){
+            session()->flash('massage', 'สูงสุด 3 ตัวบน ต้องมีค่าไม่เกิน 3,000');
+            return redirect('/members/create');
+        }if($request->max_2 > 3000){
+            session()->flash('massage', 'สูงสุด 3 ตัวล่าง ต้องมีค่าไม่เกิน 3,000');
+            return redirect('/members/create');
+        }if($request->max_3 > 3000){
+            session()->flash('massage', 'สูงสุด 3 ตัวโต็ด ต้องมีค่าไม่เกิน 3,000');
+            return redirect('/members/create');
+        }if($request->max_4 > 10000){
+            session()->flash('massage', 'สูงสุด 2 ตัวบน ต้องมีค่าไม่เกิน 10,000');
+            return redirect('/members/create');
+        }if($request->max_5 > 10000){
+            session()->flash('massage', 'สูงสุด 2 ตัวล่าง ต้องมีค่าไม่เกิน 10,000');
+            return redirect('/members/create');
+        }if($request->max_6 > 10000){
+            session()->flash('massage', 'สูงสุด 2 ตัวโต๊ด ต้องมีค่าไม่เกิน 100,000');
+            return redirect('/members/create');
+        }if($request->max_7 > 100000){
+            session()->flash('massage', 'สูงสุด วิ่งบน ต้องมีค่าไม่เกิน 100,000');
+            return redirect('/members/create');
+        }if($request->max_8 > 100000){
+            session()->flash('massage', 'สูงสุด วิ่งล่าง ต้องมีค่าไม่เกิน 100,000');
+            return redirect('/members/create');
+        }if($request->max_per_num1 > 10000){
+            session()->flash('massage', 'สูงสุดต่อเลข 3 ตัวบน ต้องมีค่าไม่เกิน 10,000');
+            return redirect('/members/create');
+        }if($request->max_per_num2 > 100000){
+            session()->flash('massage', 'สูงสุดต่อเลข 3 ตัวล่าง ต้องมีค่าไม่เกิน 100,000');
+            return redirect('/members/create');
+        }if($request->max_per_num3 > 30000){
+            session()->flash('massage', 'สูงสุดต่อเลข 3 ตัวโต๊ด ต้องมีค่าไม่เกิน 30,000');
+            return redirect('/members/create');
+        }if($request->max_per_num4 > 100000){
+            session()->flash('massage', 'สูงสุดต่อเลข 2 ตัวบน ต้องมีค่าไม่เกิน 100,000');
+            return redirect('/members/create');
+        }if($request->max_per_num5 > 100000){
+            session()->flash('massage', 'สูงสุดต่อเลข 2 ตัวล่าง ต้องมีค่าไม่เกิน 100,000');
+            return redirect('/members/create');
+        }if($request->max_per_num6 > 100000){
+            session()->flash('massage', 'สูงสุดต่อเลข 2 ตัวโต๊ด ต้องมีค่าไม่เกิน 100,000');
+            return redirect('/members/create');
+        }if($request->max_per_num7 > 300000){
+            session()->flash('massage', 'สูงสุดต่อเลข วิ่งบน ต้องมีค่าไม่เกิน 300,000');
+            return redirect('/members/create');
+        }if($request->max_per_num8 > 300000){
+            session()->flash('massage', 'สูงสุดต่อเลข วิ่งบน ต้องมีค่าไม่เกิน 300,000');
+            return redirect('/members/create');
+        }
         if ($credits >= $total) {
            $membercreate = Member::create([
             'username' => request('useradd').request('username'),
@@ -115,7 +215,9 @@ class MemberController extends Controller
             'phone' => request('phone'),
             'useradd' => $memberid
             ]);
-            Playset::create([
+            
+           
+             Playset::create([
             'member_id' => $membercreate->id,
             'min_1' => request('min_1'),'max_1' => request('max_1'),'max_per_num1' => request('max_per_num1'),
             'min_2' => request('min_2'),'max_2' => request('max_2'),'max_per_num2' => request('max_per_num2'),
@@ -126,12 +228,16 @@ class MemberController extends Controller
             'min_7' => request('min_7'),'max_7' => request('max_7'),'max_per_num7' => request('max_per_num7'),
             'min_8' => request('min_8'),'max_8' => request('max_8'),'max_per_num8' => request('max_per_num8')
             ]);
+            
+           
             session()->flash('massagesuccess','เพิ่มสมาชิกเรียบร้อยเเล้ว');
             return redirect('/members/create');
         } else {
             session()->flash('massage', 'เครติดเกินจำนวนเงิน');
             return redirect('/members/create');
         }
+     
+
     }
 
     public function edit()
