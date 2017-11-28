@@ -81,6 +81,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::get('/helper/{id}/del','Members\HelperController@destroy');
              ////////////////////////////////////////////////////////////////////////
              Route::get('/user/high-low-number','Members\PlaysetController@index');
+             Route::post('/min', 'Members\PlaysetController@min');
 
              });
              Route::get('/test', function () {

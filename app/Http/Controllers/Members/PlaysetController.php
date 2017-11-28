@@ -35,4 +35,9 @@ class PlaysetController extends Controller
         // dd($member->playset->min_1);
         return view('user.high-low-number.index' , compact('playset','member'));
     }
+
+    public function min()
+    {
+      
+    }
 }

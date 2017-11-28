@@ -55,9 +55,12 @@
     }
     </style> --}}
     <link rel="stylesheet" href="/css/custom2.css">
+    <script src="../../js/main.js"></script>
+
 
 @endsection
 @section('footer')
+
 <!-- jQuery 2.2.3 -->
 <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -73,6 +76,7 @@
 <script src="../../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script src="../../js/main.js"></script>
 
 @endsection
 
@@ -149,10 +153,10 @@
                 </select>
                 <span class="bolder">เรียง</span>
                 <select id="users-edit-order">
-                  <option value="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=username_asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
-                  <option value="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=username_desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-                  <option value="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=id_asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-                  <option value="https://agent.superlot999.com/users/edit2/9306?tab1=min&amp;tab2=1&amp;order=id_desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+                  <option value="" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+                  <option value="">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+                  <option value="">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+                  <option value="">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
                 </select>
               </li>
             </ul>
@@ -169,7 +173,8 @@
               <div class="tab-content no-padding">
                 <div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 
-                  <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                  <form method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                  {{ csrf_field() }}
                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                       <thead clsss="thin-border-bottom">
                         <tr>
@@ -237,7 +242,7 @@
                       @foreach($member as $members)
                       <tbody>
                           <tr data-id="9474" data-status="1" class=" ">
-                            <td class="id">{{$members->id}}</td>
+                            <td class="id">{{$members->playset->id}}</td>
                             <td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
                             @if($members->level == 7)
                             <td class="type" nowrap="">Member</td>
@@ -283,7 +288,7 @@
 
                 <div class="tab-content no-padding">
                   <div id="max_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-                    <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                    <form method="POST" action="" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                       <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                         <thead clsss="thin-border-bottom">
                           <tr>
@@ -354,7 +359,7 @@
                          @foreach($member as $members)
                         <tbody>
                           <tr data-id="9474" data-status="1" class=" ">
-                              <td class="id">{{$members->id}}</td>
+                              <td class="id">{{$members->playset->id}}</td>
                               <td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
                                @if($members->level == 7)
                               <td class="type" nowrap="">Member</td>
@@ -398,7 +403,7 @@
 
               <div class="tab-content no-padding">
                 <div id="max_per_num_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-                  <form method="POST" action="https://agent.superlot999.com/users/edit/9306" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                  <form method="POST" action="" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                       <thead clsss="thin-border-bottom">
                         <tr>
@@ -470,9 +475,23 @@
                       @foreach($member as $members)
                       <tbody>
                         <tr data-id="9474" data-status="1" class=" ">
-                            <td class="id">{{$members->id}}</td>
+                            <td class="id">{{$members->playset->id}}</td>
                             <td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
-                            <td class="type" nowrap="">เมมเบอร์</td>
+                            @if($members->level == 7)
+                              <td class="type" nowrap="">Member</td>
+                              @elseif($members->level == 6)
+                              <td class="type" nowrap="">Agent</td>
+                              @elseif($members->level == 5)
+                              <td class="type" nowrap="">Master</td>
+                              @elseif($members->level == 4)
+                              <td class="type" nowrap="">Senior</td>
+                              @elseif($members->level == 3)
+                              <td class="type" nowrap="">Super Senior</td>
+                              @elseif($members->level == 2)
+                              <td class="type" nowrap="">Pathner</td>
+                              @elseif($members->level == 1)
+                              <td class="type" nowrap="">Admin</td>
+                              @endif
                             <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
                             <td class="table-max_per_num-1-row-9474-col-max_per_num_1">{{$members->playset->max_per_num1}}</td>
                             <td class="table-max_per_num-1-row-9474-col-max_per_num_2">{{$members->playset->max_per_num2}}</td>
@@ -497,7 +516,9 @@
         </div><!-- /.col -->
       </div><!-- /.row -->
 </div><!-- /.page-content -->
+<script type="text/javascript">
 
+</script>
 @endsection
 
  
