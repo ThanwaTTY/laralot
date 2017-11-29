@@ -132,6 +132,21 @@ class MemberController extends Controller
 
         $this->validate($request, $rules);
         // dd($credits);
+        // $names = ['min_1'=> ขั้นต่ำ 3 ตัวบน];
+        // $checks = ['min_1'=>5,
+        //     'min_2'=>5];
+
+        // foreach( $checks as $key=>$check)
+        // {
+        //     if( request($key) < 5)
+        //     {
+        //         session()->flash('massage', $names[$key].' ต้องมีค่าอย่างน้อย ' . $check);
+        //         return redirect('/members/create');          
+        //     }
+        // }
+
+
+        
         if($request->min_1 < 5){
             session()->flash('massage', 'ขั้นต่ำ 3 ตัวบน ต้องมีค่าอย่างน้อย 5');
             return redirect('/members/create');

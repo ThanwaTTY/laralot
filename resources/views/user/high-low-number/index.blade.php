@@ -77,7 +77,26 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 <script src="../../js/main.js"></script>
+{{-- <script type="text/javascript">
+  $(function(){
+    $('#editMin').on('click', function(){
+      $.post('/min', $('#form1').serialize()).done( function(data) {
+        console.log(data);
+        for(var i in data.success)
+        {
+          for( var j in data.success[i])
+          {
 
+            $('.table-min-8-row-'+ data.success[i][j]+'-col-' + i).addClass('bg-success');
+            console.log('.table-min-8-row-'+ data.success[i][j]+'-col-' + i);
+          }
+
+        }
+      });
+
+    });
+  });
+</script> --}}
 @endsection
 
 @section('content')
@@ -173,7 +192,7 @@
               <div class="tab-content no-padding">
                 <div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 
-                  <form method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                  <form id="form1" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
                   {{ csrf_field() }}
                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                       <thead clsss="thin-border-bottom">
@@ -187,7 +206,7 @@
                           <th colspan="3" class="vm text-center">
                             <input name="action" type="hidden" value="min">
                             <input name="bet_type_group_id" type="hidden" value="1">
-                            <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                            <button type="submit" id="editMin" class="btn btn-primary btn-xs">แก้ไข</button>
                             <a class="btn btn-primary btn-xs">ยกเลิก</a>
                           </th>
                           <th><input class="check-all" name="" type="checkbox" value="0"></th>
@@ -259,15 +278,15 @@
                             @elseif($members->level == 1)
                             <td class="type" nowrap="">Admin</td>
                             @endif
-                            <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                            <td class="table-min-1-row-9474-col-min_1">{{ $members->playset->min_1}}</td>
-                            <td class="table-min-1-row-9474-col-min_2">{{ $members->playset->min_2}}</td>
-                            <td class="table-min-1-row-9474-col-min_3">{{ $members->playset->min_3}}</td>
-                            <td class="table-min-1-row-9474-col-min_4">{{ $members->playset->min_4}}</td>
-                            <td class="table-min-1-row-9474-col-min_5">{{ $members->playset->min_5}}</td>
-                            <td class="table-min-1-row-9474-col-min_6">{{ $members->playset->min_6}}</td>
-                            <td class="table-min-1-row-9474-col-min_7">{{ $members->playset->min_7}}</td>
-                            <td class="table-min-1-row-9474-col-min_8">{{ $members->playset->min_8}}</td>
+                            <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $members->playset->id }}"></td>
+                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_1">{{ $members->playset->min_1}}</td>
+                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_2">{{ $members->playset->min_2}}</td>
+                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_3">{{ $members->playset->min_3}}</td>
+                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_4">{{ $members->playset->min_4}}</td>
+                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_5">{{ $members->playset->min_5}}</td>
+                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_6">{{ $members->playset->min_6}}</td>
+                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_7">{{ $members->playset->min_7}}</td>
+                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_8">{{ $members->playset->min_8}}</td>
                           </tr>
                       </tbody>
                     @endforeach
@@ -288,7 +307,8 @@
 
                 <div class="tab-content no-padding">
                   <div id="max_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-                    <form method="POST" action="" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                    <form method="POST" action="/max" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                      {{ csrf_field() }}
                       <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                         <thead clsss="thin-border-bottom">
                           <tr>
@@ -301,7 +321,7 @@
                               <th colspan="3" class="vm text-center">
                                 <input name="action" type="hidden" value="max">
                                 <input name="bet_type_group_id" type="hidden" value="1">
-                                <button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+                                <button type="submit" id="editMax" class="btn btn-primary btn-xs">แก้ไข</button>
                                 <a class="btn btn-primary btn-xs">ยกเลิก</a>
                               </th>
 
@@ -376,15 +396,15 @@
                               @elseif($members->level == 1)
                               <td class="type" nowrap="">Admin</td>
                               @endif
-                              <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                              <td class="table-max-1-row-9474-col-max_1">{{$members->playset->max_1}}</td>
-                              <td class="table-max-1-row-9474-col-max_2">{{$members->playset->max_2}}</td>
-                              <td class="table-max-1-row-9474-col-max_3">{{$members->playset->max_3}}</td>
-                              <td class="table-max-1-row-9474-col-max_4">{{$members->playset->max_4}}</td>
-                              <td class="table-max-1-row-9474-col-max_5">{{$members->playset->max_5}}</td>
-                              <td class="table-max-1-row-9474-col-max_6">{{$members->playset->max_6}}</td>
-                              <td class="table-max-1-row-9474-col-max_7">{{$members->playset->max_7}}</td>
-                              <td class="table-max-1-row-9474-col-max_8">{{$members->playset->max_8}}</td>
+                              <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $members->playset->id }}"></td>
+                              <td class="table-max-1-row-{{ $members->playset->id }}-col-max_1">{{$members->playset->max_1}}</td>
+                              <td class="table-max-1-row-{{ $members->playset->id }}-col-max_2">{{$members->playset->max_2}}</td>
+                              <td class="table-max-1-row-{{ $members->playset->id }}-col-max_3">{{$members->playset->max_3}}</td>
+                              <td class="table-max-1-row-{{ $members->playset->id }}-col-max_4">{{$members->playset->max_4}}</td>
+                              <td class="table-max-1-row-{{ $members->playset->id }}-col-max_5">{{$members->playset->max_5}}</td>
+                              <td class="table-max-1-row-{{ $members->playset->id }}-col-max_6">{{$members->playset->max_6}}</td>
+                              <td class="table-max-1-row-{{ $members->playset->id }}-col-max_7">{{$members->playset->max_7}}</td>
+                              <td class="table-max-1-row-{{ $members->playset->id }}-col-max_8">{{$members->playset->max_8}}</td>
                           </tr>
                          @endforeach
                         </tbody>
@@ -403,7 +423,8 @@
 
               <div class="tab-content no-padding">
                 <div id="max_per_num_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-                  <form method="POST" action="" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                  <form method="POST" action="/max_per_num" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                    {{ csrf_field() }}
                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                       <thead clsss="thin-border-bottom">
                         <tr>
@@ -492,15 +513,15 @@
                               @elseif($members->level == 1)
                               <td class="type" nowrap="">Admin</td>
                               @endif
-                            <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                            <td class="table-max_per_num-1-row-9474-col-max_per_num_1">{{$members->playset->max_per_num1}}</td>
-                            <td class="table-max_per_num-1-row-9474-col-max_per_num_2">{{$members->playset->max_per_num2}}</td>
-                            <td class="table-max_per_num-1-row-9474-col-max_per_num_3">{{$members->playset->max_per_num3}}</td>
-                            <td class="table-max_per_num-1-row-9474-col-max_per_num_4">{{$members->playset->max_per_num4}}</td>
-                            <td class="table-max_per_num-1-row-9474-col-max_per_num_5">{{$members->playset->max_per_num5}}</td>
-                            <td class="table-max_per_num-1-row-9474-col-max_per_num_6">{{$members->playset->max_per_num6}}</td>
-                            <td class="table-max_per_num-1-row-9474-col-max_per_num_7">{{$members->playset->max_per_num7}}</td>
-                            <td class="table-max_per_num-1-row-9474-col-max_per_num_8">{{$members->playset->max_per_num8}}</td>
+                            <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $members->playset->id }}"></td>
+                            <td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_1">{{$members->playset->max_per_num1}}</td>
+                            <td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_2">{{$members->playset->max_per_num2}}</td>
+                            <td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_3">{{$members->playset->max_per_num3}}</td>
+                            <td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_4">{{$members->playset->max_per_num4}}</td>
+                            <td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_5">{{$members->playset->max_per_num5}}</td>
+                            <td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_6">{{$members->playset->max_per_num6}}</td>
+                            <td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_7">{{$members->playset->max_per_num7}}</td>
+                            <td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_8">{{$members->playset->max_per_num8}}</td>
                         </tr>    
                       </tbody>
                       @endforeach
@@ -516,9 +537,6 @@
         </div><!-- /.col -->
       </div><!-- /.row -->
 </div><!-- /.page-content -->
-<script type="text/javascript">
 
-</script>
 @endsection
-
  

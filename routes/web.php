@@ -82,6 +82,8 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              ////////////////////////////////////////////////////////////////////////
              Route::get('/user/high-low-number','Members\PlaysetController@index');
              Route::post('/min', 'Members\PlaysetController@min');
+             Route::post('/max', 'Members\PlaysetController@max');
+             Route::post('/max_per_num', 'Members\PlaysetController@max_per_num');
 
              });
              Route::get('/test', function () {
