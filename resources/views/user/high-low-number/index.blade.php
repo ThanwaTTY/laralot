@@ -105,6 +105,7 @@
 
       minmin += isNaN(parseInt( $('#minmin').val() )) ? 0 : parseInt( $('#minmin').val() );
       if(minmin < 5 ){
+        alert("ขั้นต่ำ 3 ตัวบน ต้องมีค่าอย่างน้อย 5");
         $(this).val('');
       }else{
          $(this).val(minmin);
@@ -118,6 +119,7 @@
 
       minmin2 += isNaN(parseInt( $('#minmin2').val() )) ? 0 : parseInt( $('#minmin2').val() );
       if(minmin2 < 5 ){
+        alert("ขั้นต่ำ 3 ตัวล่าง ต้องมีค่าอย่างน้อย 5");
         $(this).val('');
       }else{
          $(this).val(minmin2);
@@ -131,6 +133,7 @@
 
       minmin3 += isNaN(parseInt( $('#minmin3').val() )) ? 0 : parseInt( $('#minmin3').val() );
       if(minmin3 < 5 ){
+        alert("ขั้นต่ำ 3 ตัวโต๊ด ต้องมีค่าอย่างน้อย 5");
         $(this).val('');
       }else{
          $(this).val(minmin3);
@@ -144,6 +147,7 @@
 
       minmin4 += isNaN(parseInt( $('#minmin4').val() )) ? 0 : parseInt( $('#minmin4').val() );
       if(minmin4 < 5 ){
+        alert("ขั้นต่ำ 2 ตัวบน ต้องมีค่าอย่างน้อย 5");
         $(this).val('');
       }else{
          $(this).val(minmin4);
@@ -157,6 +161,7 @@
 
       minmin5 += isNaN(parseInt( $('#minmin5').val() )) ? 0 : parseInt( $('#minmin5').val() );
       if(minmin5 < 5 ){
+        alert("ขั้นต่ำ 2 ตัวล่าง ต้องมีค่าอย่างน้อย 5");
         $(this).val('');
       }else{
          $(this).val(minmin5);
@@ -170,6 +175,7 @@
 
       minmin6 += isNaN(parseInt( $('#minmin6').val() )) ? 0 : parseInt( $('#minmin6').val() );
       if(minmin6 < 5 ){
+        alert("ขั้นต่ำ 2 ตัวโต๊ด ต้องมีค่าอย่างน้อย 5");
         $(this).val('');
       }else{
          $(this).val(minmin6);
@@ -183,6 +189,7 @@
 
       minmin7 += isNaN(parseInt( $('#minmin7').val() )) ? 0 : parseInt( $('#minmin7').val() );
       if(minmin7 < 5 ){
+        alert("ขั้นต่ำ วิ่งบน ต้องมีค่าอย่างน้อย 5");
         $(this).val('');
       }else{
          $(this).val(minmin7);
@@ -196,6 +203,7 @@
 
       minmin8 += isNaN(parseInt( $('#minmin8').val() )) ? 0 : parseInt( $('#minmin8').val() );
       if(minmin8 < 5 ){
+        alert("ขั้นต่ำ วิ่งล่าง ต้องมีค่าอย่างน้อย 5");
         $(this).val('');
       }else{
          $(this).val(minmin8);
@@ -212,6 +220,7 @@
 
       maxmax1 += isNaN(parseInt( $('#maxmax1').val() )) ? 0 : parseInt( $('#maxmax1').val() );
       if(maxmax1 > 3000 ){
+        alert("สูงสุด 3 ตัวบน ต้องมีค่าไม่เกิน 3000");
         $(this).val('');
       }else{
          $(this).val(maxmax1);
@@ -225,6 +234,7 @@
 
       maxmax2 += isNaN(parseInt( $('#maxmax2').val() )) ? 0 : parseInt( $('#maxmax2').val() );
       if(maxmax2 > 3000 ){
+        alert("สูงสุด 3 ตัวล่าง ต้องมีค่าไม่เกิน 3000");
         $(this).val('');
       }else{
          $(this).val(maxmax2);
@@ -238,6 +248,7 @@
 
       maxmax3 += isNaN(parseInt( $('#maxmax3').val() )) ? 0 : parseInt( $('#maxmax3').val() );
       if(maxmax3 > 3000  ){
+        alert("สูงสุด 3 ตัวโต๊ด ต้องมีค่าไม่เกิน 3000");
         $(this).val('');
       }else{
          $(this).val(maxmax3);
@@ -251,6 +262,7 @@
 
       maxmax4 += isNaN(parseInt( $('#maxmax4').val() )) ? 0 : parseInt( $('#maxmax4').val() );
       if(maxmax4 > 10000 ){
+        alert("สูงสุด 2 ตัวบน ต้องมีค่าไม่เกิน 10000");
         $(this).val('');
       }else{
          $(this).val(maxmax4);
@@ -264,6 +276,7 @@
 
       maxmax5 += isNaN(parseInt( $('#maxmax5').val() )) ? 0 : parseInt( $('#maxmax5').val() );
       if(maxmax5 > 10000 ){
+        alert("สูงสุด 2 ตัวล่าง ต้องมีค่าไม่เกิน 10000");
         $(this).val('');
       }else{
          $(this).val(maxmax5);
@@ -277,6 +290,7 @@
 
       maxmax6 += isNaN(parseInt( $('#maxmax6').val() )) ? 0 : parseInt( $('#maxmax6').val() );
       if(maxmax6 > 10000 ){
+        alert("สูงสุด 2 ตัวโต๊ด ต้องมีค่าไม่เกิน 10000");
         $(this).val('');
       }else{
          $(this).val(maxmax6);
@@ -290,6 +304,7 @@
 
       maxmax7 += isNaN(parseInt( $('#maxmax7').val() )) ? 0 : parseInt( $('#maxmax7').val() );
       if(maxmax7 > 100000 ){
+        alert("สูงสุด วิ่งบน ต้องมีค่าไม่เกิน 100000");
         $(this).val('');
       }else{
          $(this).val(maxmax7);
@@ -303,6 +318,7 @@
 
       maxmax8 += isNaN(parseInt( $('#maxmax8').val() )) ? 0 : parseInt( $('#maxmax8').val() );
       if(maxmax8 > 100000 ){
+        alert("สูงสุด วิ่งล่าง ต้องมีค่าไม่เกิน 100000");
         $(this).val('');
       }else{
          $(this).val(maxmax8);
@@ -319,6 +335,7 @@
 
       numpermax1 += isNaN(parseInt( $('#numpermax1').val() )) ? 0 : parseInt( $('#numpermax1').val() );
       if(numpermax1 > 10000 ){
+        alert("สูงสุดต่อเลข 3 ตัวบน ต้องมีค่าไม่เกิน 10000");
         $(this).val('');
       }else{
          $(this).val(numpermax1);
@@ -332,6 +349,7 @@
 
       numpermax2 += isNaN(parseInt( $('#numpermax2').val() )) ? 0 : parseInt( $('#numpermax2').val() );
       if(numpermax2 > 100000 ){
+        alert("สูงสุดต่อเลข 3 ตัวล่าง ต้องมีค่าไม่เกิน 100000");
         $(this).val('');
       }else{
          $(this).val(numpermax2);
@@ -345,6 +363,7 @@
 
       numpermax3 += isNaN(parseInt( $('#numpermax3').val() )) ? 0 : parseInt( $('#numpermax3').val() );
       if(numpermax3 > 30000  ){
+        alert("สูงสุดต่อเลข 3 ตัวโต๊ด ต้องมีค่าไม่เกิน 30000");
         $(this).val('');
       }else{
          $(this).val(numpermax3);
@@ -358,6 +377,7 @@
 
       numpermax4 += isNaN(parseInt( $('#numpermax4').val() )) ? 0 : parseInt( $('#numpermax4').val() );
       if(numpermax4 > 100000 ){
+        alert("สูงสุดต่อเลข 2 ตัวบน ต้องมีค่าไม่เกิน 100000");
         $(this).val('');
       }else{
          $(this).val(numpermax4);
@@ -371,6 +391,7 @@
 
       numpermax5 += isNaN(parseInt( $('#numpermax5').val() )) ? 0 : parseInt( $('#numpermax5').val() );
       if(numpermax5 > 100000 ){
+        alert("สูงสุดต่อเลข 2 ตัวล่าง ต้องมีค่าไม่เกิน 100000");
         $(this).val('');
       }else{
          $(this).val(numpermax5);
@@ -384,6 +405,7 @@
 
       numpermax6 += isNaN(parseInt( $('#numpermax6').val() )) ? 0 : parseInt( $('#numpermax6').val() );
       if(numpermax6 > 100000 ){
+        alert("สูงสุดต่อเลข 2 ตัวโตด ต้องมีค่าไม่เกิน 100000");
         $(this).val('');
       }else{
          $(this).val(numpermax6);
@@ -397,6 +419,7 @@
 
       numpermax7 += isNaN(parseInt( $('#numpermax7').val() )) ? 0 : parseInt( $('#numpermax7').val() );
       if(numpermax7 > 300000 ){
+        alert("สูงสุดต่อเลข วิ่งบน ต้องมีค่าไม่เกิน 300000");
         $(this).val('');
       }else{
          $(this).val(numpermax7);
@@ -410,6 +433,7 @@
 
       numpermax8 += isNaN(parseInt( $('#numpermax8').val() )) ? 0 : parseInt( $('#numpermax8').val() );
       if(numpermax8 > 300000 ){
+        alert("สูงสุดต่อเลข วิ่งล่าง ต้องมีค่าไม่เกิน 300000");
         $(this).val('');
       }else{
          $(this).val(numpermax8);
@@ -419,6 +443,43 @@
   });
 </script>
 {{--  --}}
+<script type="text/javascript">
+ $(function(){
+   $(".showname").hide();//แสดงชื่อเล่น ปิดไว้ตั้งแต่เริ่มต้น
+
+    $('#mastercheck').change(function() {
+      var val = $('#mastercheck').val();
+        if(this.checked == true){
+            $(".showname").show();
+        }else{
+          $(".showname").hide();
+        }
+    });
+
+    $('.check-all').change(function() {
+      //alert('check-all');
+        if(this.checked == true){
+            $("input[name='member_ids[]']").prop( "checked", true );
+        }else{
+          $("input[name='member_ids[]']").prop( "checked", false );
+        }
+    });
+ });
+
+ //function fncShowHideInput(value){
+    //var namebox = document.getElementById('showname');
+    //var namebox = $('.showname').html('OK!!');
+    //if(value.checked){
+      
+    //  namebox.style.display='';
+      
+    //}else{
+    //  namebox.style.display='none';
+    //}
+ //}
+
+
+</script>
 @endsection
 
 @section('content')
@@ -475,7 +536,8 @@
           </div>
 
           <label class="inline">
-            <input type="checkbox" id="input-checkbox-name" data-target="page">
+            {{-- <input type="checkbox" value="Y" OnClick="JavaScript:fncShowHideInput(this);"> --}}
+            <input type="checkbox" value="Y" id="mastercheck">
             <span class="lbl"> แสดงชื่อ</span>
           </label>
 
@@ -584,7 +646,7 @@
                       <tbody>
                           <tr data-id="9474" data-status="1" class=" ">
                             <td class="id">{{$members->playset->id}}</td>
-                            <td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
+                            <td>{{$members->username}} <span class="showname" name="showname" >({{$members->name}})</span></td>
                             @if($members->level == 7)
                             <td class="type" nowrap="">Member</td>
                             @elseif($members->level == 6)
@@ -600,7 +662,7 @@
                             @elseif($members->level == 1)
                             <td class="type" nowrap="">Admin</td>
                             @endif
-                            <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $members->playset->id }}"></td>
+                            <td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $members->playset->id }}"></td>
                             <td class="table-min-1-row-{{ $members->playset->id }}-col-min_1">{{ $members->playset->min_1}}</td>
                             <td class="table-min-1-row-{{ $members->playset->id }}-col-min_2">{{ $members->playset->min_2}}</td>
                             <td class="table-min-1-row-{{ $members->playset->id }}-col-min_3">{{ $members->playset->min_3}}</td>
