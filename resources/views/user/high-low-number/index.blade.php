@@ -56,6 +56,15 @@
     </style> --}}
     <link rel="stylesheet" href="/css/custom2.css">
     <script src="../../js/main.js"></script>
+    <style>
+    input[type=checkbox], input[type=radio] {
+        /* -webkit-box-sizing: border-box; */
+        -moz-box-sizing: border-box;
+        /* box-sizing: border-box; */
+        /* padding: 0; */
+        margin: 0;
+    }
+</style>
 
 
 @endsection
@@ -446,6 +455,8 @@
 <script type="text/javascript">
  $(function(){
    $(".showname").hide();//แสดงชื่อเล่น ปิดไว้ตั้งแต่เริ่มต้น
+   $('.jquery-hide.bg-warning').hide();
+   $('.jquery-hide.bg-danger').hide();
 
     $('#mastercheck').change(function() {
       var val = $('#mastercheck').val();
@@ -462,6 +473,23 @@
             $("input[name='member_ids[]']").prop( "checked", true );
         }else{
           $("input[name='member_ids[]']").prop( "checked", false );
+        }
+    });
+
+    $('#users-edit-filter').change(function() {
+        var val = $('#users-edit-filter').val();
+        //alert(val);
+        if(val==1){
+          $('.jquery-hide').hide();
+          $('.jquery-hide.nomal').show();
+        }else if(val==2){
+          $('.jquery-hide').hide();
+          $('.jquery-hide.bg-warning').show();
+        }else if(val==3){
+          $('.jquery-hide').hide();
+          $('.jquery-hide.bg-danger').show();
+        }else if(val==4){
+          $('.jquery-hide').show();
         }
     });
  });
@@ -642,38 +670,48 @@
                           </th>
                         </tr>
                       </thead>
-                      @foreach($member as $members)
-                      <tbody>
-                          <tr data-id="9474" data-status="1" class=" ">
-                            <td class="id">{{$members->playset->id}}</td>
-                            <td>{{$members->username}} <span class="showname" name="showname" >({{$members->name}})</span></td>
-                            @if($members->level == 7)
-                            <td class="type" nowrap="">Member</td>
-                            @elseif($members->level == 6)
-                            <td class="type" nowrap="">Agent</td>
-                            @elseif($members->level == 5)
-                            <td class="type" nowrap="">Master</td>
-                            @elseif($members->level == 4)
-                            <td class="type" nowrap="">Senior</td>
-                            @elseif($members->level == 3)
-                            <td class="type" nowrap="">Super Senior</td>
-                            @elseif($members->level == 2)
-                            <td class="type" nowrap="">Pathner</td>
-                            @elseif($members->level == 1)
-                            <td class="type" nowrap="">Admin</td>
-                            @endif
-                            <td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $members->playset->id }}"></td>
-                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_1">{{ $members->playset->min_1}}</td>
-                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_2">{{ $members->playset->min_2}}</td>
-                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_3">{{ $members->playset->min_3}}</td>
-                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_4">{{ $members->playset->min_4}}</td>
-                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_5">{{ $members->playset->min_5}}</td>
-                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_6">{{ $members->playset->min_6}}</td>
-                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_7">{{ $members->playset->min_7}}</td>
-                            <td class="table-min-1-row-{{ $members->playset->id }}-col-min_8">{{ $members->playset->min_8}}</td>
-                          </tr>
+                        <tbody>
+                          @foreach($member as $members)
+                          
+                              <tr data-id="9474" data-status="1" 
+                              @if($members->status == 0)
+                                class="jquery-hide nomal"
+                              @elseif($members->status == 1)
+                                class="jquery-hide bg-warning"
+                              @else
+                                class="jquery-hide bg-danger"
+                              @endif
+                              >
+                                <td class="id">{{$members->playset->id}}</td>
+                                <td>{{$members->username}} <span class="showname" name="showname" >({{$members->name}})</span></td>
+                                @if($members->level == 7)
+                                <td class="type" nowrap="">Member</td>
+                                @elseif($members->level == 6)
+                                <td class="type" nowrap="">Agent</td>
+                                @elseif($members->level == 5)
+                                <td class="type" nowrap="">Master</td>
+                                @elseif($members->level == 4)
+                                <td class="type" nowrap="">Senior</td>
+                                @elseif($members->level == 3)
+                                <td class="type" nowrap="">Super Senior</td>
+                                @elseif($members->level == 2)
+                                <td class="type" nowrap="">Pathner</td>
+                                @elseif($members->level == 1)
+                                <td class="type" nowrap="">Admin</td>
+                                @endif
+                                <td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $members->playset->id }}"></td>
+                                <td class="table-min-1-row-{{ $members->playset->id }}-col-min_1">{{ $members->playset->min_1}}</td>
+                                <td class="table-min-1-row-{{ $members->playset->id }}-col-min_2">{{ $members->playset->min_2}}</td>
+                                <td class="table-min-1-row-{{ $members->playset->id }}-col-min_3">{{ $members->playset->min_3}}</td>
+                                <td class="table-min-1-row-{{ $members->playset->id }}-col-min_4">{{ $members->playset->min_4}}</td>
+                                <td class="table-min-1-row-{{ $members->playset->id }}-col-min_5">{{ $members->playset->min_5}}</td>
+                                <td class="table-min-1-row-{{ $members->playset->id }}-col-min_6">{{ $members->playset->min_6}}</td>
+                                <td class="table-min-1-row-{{ $members->playset->id }}-col-min_7">{{ $members->playset->min_7}}</td>
+                                <td class="table-min-1-row-{{ $members->playset->id }}-col-min_8">{{ $members->playset->min_8}}</td>
+                              </tr>
+                          
+                        @endforeach
                       </tbody>
-                    @endforeach
                     </table>
                   </form>
 
@@ -762,7 +800,15 @@
                         </thead>
                          @foreach($member as $members)
                         <tbody>
-                          <tr data-id="9474" data-status="1" class=" ">
+                          <tr data-id="9474" data-status="1"
+                              @if($members->status == 0)
+                                class="jquery-hide nomal"
+                              @elseif($members->status == 1)
+                                class="jquery-hide bg-warning"
+                              @else
+                                class="jquery-hide bg-danger"
+                              @endif
+                              >
                               <td class="id">{{$members->playset->id}}</td>
                               <td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
                                @if($members->level == 7)
@@ -879,7 +925,15 @@
                       </thead>
                       @foreach($member as $members)
                       <tbody>
-                        <tr data-id="9474" data-status="1" class=" ">
+                        <tr data-id="9474" data-status="1"
+                              @if($members->status == 0)
+                                class="jquery-hide nomal"
+                              @elseif($members->status == 1)
+                                class="jquery-hide bg-warning"
+                              @else
+                                class="jquery-hide bg-danger"
+                              @endif
+                              >
                             <td class="id">{{$members->playset->id}}</td>
                             <td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
                             @if($members->level == 7)
