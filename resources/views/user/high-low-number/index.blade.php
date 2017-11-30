@@ -97,6 +97,328 @@
     });
   });
 </script> --}}
+{{-- min --}}
+<script type="text/javascript">
+  $(function(){
+    $('#minmin').on('keyup', function(){
+      var minmin = 0;
+
+      minmin += isNaN(parseInt( $('#minmin').val() )) ? 0 : parseInt( $('#minmin').val() );
+      if(minmin < 5 ){
+        $(this).val('');
+      }else{
+         $(this).val(minmin);
+      }
+    });
+
+  });
+  $(function(){
+    $('#minmin2').on('keyup', function(){
+      var minmin2 = 0;
+
+      minmin2 += isNaN(parseInt( $('#minmin2').val() )) ? 0 : parseInt( $('#minmin2').val() );
+      if(minmin2 < 5 ){
+        $(this).val('');
+      }else{
+         $(this).val(minmin2);
+      }
+
+    });
+  });
+  $(function(){
+    $('#minmin3').on('keyup', function(){
+      var minmin3 = 0;
+
+      minmin3 += isNaN(parseInt( $('#minmin3').val() )) ? 0 : parseInt( $('#minmin3').val() );
+      if(minmin3 < 5 ){
+        $(this).val('');
+      }else{
+         $(this).val(minmin3);
+      }
+
+    });
+  });
+  $(function(){
+    $('#minmin4').on('keyup', function(){
+      var minmin4 = 0;
+
+      minmin4 += isNaN(parseInt( $('#minmin4').val() )) ? 0 : parseInt( $('#minmin4').val() );
+      if(minmin4 < 5 ){
+        $(this).val('');
+      }else{
+         $(this).val(minmin4);
+      }
+
+    });
+  });
+  $(function(){
+    $('#minmin5').on('keyup', function(){
+      var minmin5 = 0;
+
+      minmin5 += isNaN(parseInt( $('#minmin5').val() )) ? 0 : parseInt( $('#minmin5').val() );
+      if(minmin5 < 5 ){
+        $(this).val('');
+      }else{
+         $(this).val(minmin5);
+      }
+
+    });
+  });
+  $(function(){
+    $('#minmin6').on('keyup', function(){
+      var minmin6 = 0;
+
+      minmin6 += isNaN(parseInt( $('#minmin6').val() )) ? 0 : parseInt( $('#minmin6').val() );
+      if(minmin6 < 5 ){
+        $(this).val('');
+      }else{
+         $(this).val(minmin6);
+      }
+
+    });
+  });
+  $(function(){
+    $('#minmin7').on('keyup', function(){
+      var minmin7 = 0;
+
+      minmin7 += isNaN(parseInt( $('#minmin7').val() )) ? 0 : parseInt( $('#minmin7').val() );
+      if(minmin7 < 5 ){
+        $(this).val('');
+      }else{
+         $(this).val(minmin7);
+      }
+
+    });
+  });
+  $(function(){
+    $('#minmin8').on('keyup', function(){
+      var minmin8 = 0;
+
+      minmin8 += isNaN(parseInt( $('#minmin8').val() )) ? 0 : parseInt( $('#minmin8').val() );
+      if(minmin8 < 5 ){
+        $(this).val('');
+      }else{
+         $(this).val(minmin8);
+      }
+
+    });
+  });
+</script>
+{{-- max --}}
+<script type="text/javascript">
+  $(function(){
+    $('#maxmax1').on('keyup', function(){
+      var maxmax1 = 0;
+
+      maxmax1 += isNaN(parseInt( $('#maxmax1').val() )) ? 0 : parseInt( $('#maxmax1').val() );
+      if(maxmax1 > 3000 ){
+        $(this).val('');
+      }else{
+         $(this).val(maxmax1);
+      }
+    });
+
+  });
+  $(function(){
+    $('#maxmax2').on('keyup', function(){
+      var maxmax2 = 0;
+
+      maxmax2 += isNaN(parseInt( $('#maxmax2').val() )) ? 0 : parseInt( $('#maxmax2').val() );
+      if(maxmax2 > 3000 ){
+        $(this).val('');
+      }else{
+         $(this).val(maxmax2);
+      }
+
+    });
+  });
+  $(function(){
+    $('#maxmax3').on('keyup', function(){
+      var maxmax3 = 0;
+
+      maxmax3 += isNaN(parseInt( $('#maxmax3').val() )) ? 0 : parseInt( $('#maxmax3').val() );
+      if(maxmax3 > 3000  ){
+        $(this).val('');
+      }else{
+         $(this).val(maxmax3);
+      }
+
+    });
+  });
+  $(function(){
+    $('#maxmax4').on('keyup', function(){
+      var maxmax4 = 0;
+
+      maxmax4 += isNaN(parseInt( $('#maxmax4').val() )) ? 0 : parseInt( $('#maxmax4').val() );
+      if(maxmax4 > 10000 ){
+        $(this).val('');
+      }else{
+         $(this).val(maxmax4);
+      }
+
+    });
+  });
+  $(function(){
+    $('#maxmax5').on('keyup', function(){
+      var maxmax5 = 0;
+
+      maxmax5 += isNaN(parseInt( $('#maxmax5').val() )) ? 0 : parseInt( $('#maxmax5').val() );
+      if(maxmax5 > 10000 ){
+        $(this).val('');
+      }else{
+         $(this).val(maxmax5);
+      }
+
+    });
+  });
+  $(function(){
+    $('#maxmax6').on('keyup', function(){
+      var maxmax6 = 0;
+
+      maxmax6 += isNaN(parseInt( $('#maxmax6').val() )) ? 0 : parseInt( $('#maxmax6').val() );
+      if(maxmax6 > 10000 ){
+        $(this).val('');
+      }else{
+         $(this).val(maxmax6);
+      }
+
+    });
+  });
+  $(function(){
+    $('#maxmax7').on('keyup', function(){
+      var maxmax7 = 0;
+
+      maxmax7 += isNaN(parseInt( $('#maxmax7').val() )) ? 0 : parseInt( $('#maxmax7').val() );
+      if(maxmax7 > 100000 ){
+        $(this).val('');
+      }else{
+         $(this).val(maxmax7);
+      }
+
+    });
+  });
+  $(function(){
+    $('#maxmax8').on('keyup', function(){
+      var maxmax8 = 0;
+
+      maxmax8 += isNaN(parseInt( $('#maxmax8').val() )) ? 0 : parseInt( $('#maxmax8').val() );
+      if(maxmax8 > 100000 ){
+        $(this).val('');
+      }else{
+         $(this).val(maxmax8);
+      }
+
+    });
+  });
+</script>
+{{-- num_per_max --}}
+<script type="text/javascript">
+  $(function(){
+    $('#numpermax1').on('keyup', function(){
+      var numpermax1 = 0;
+
+      numpermax1 += isNaN(parseInt( $('#numpermax1').val() )) ? 0 : parseInt( $('#numpermax1').val() );
+      if(numpermax1 > 10000 ){
+        $(this).val('');
+      }else{
+         $(this).val(numpermax1);
+      }
+    });
+
+  });
+  $(function(){
+    $('#numpermax2').on('keyup', function(){
+      var numpermax2 = 0;
+
+      numpermax2 += isNaN(parseInt( $('#numpermax2').val() )) ? 0 : parseInt( $('#numpermax2').val() );
+      if(numpermax2 > 100000 ){
+        $(this).val('');
+      }else{
+         $(this).val(numpermax2);
+      }
+
+    });
+  });
+  $(function(){
+    $('#numpermax3').on('keyup', function(){
+      var numpermax3 = 0;
+
+      numpermax3 += isNaN(parseInt( $('#numpermax3').val() )) ? 0 : parseInt( $('#numpermax3').val() );
+      if(numpermax3 > 30000  ){
+        $(this).val('');
+      }else{
+         $(this).val(numpermax3);
+      }
+
+    });
+  });
+  $(function(){
+    $('#numpermax4').on('keyup', function(){
+      var numpermax4 = 0;
+
+      numpermax4 += isNaN(parseInt( $('#numpermax4').val() )) ? 0 : parseInt( $('#numpermax4').val() );
+      if(numpermax4 > 100000 ){
+        $(this).val('');
+      }else{
+         $(this).val(numpermax4);
+      }
+
+    });
+  });
+  $(function(){
+    $('#numpermax5').on('keyup', function(){
+      var numpermax5 = 0;
+
+      numpermax5 += isNaN(parseInt( $('#numpermax5').val() )) ? 0 : parseInt( $('#numpermax5').val() );
+      if(numpermax5 > 100000 ){
+        $(this).val('');
+      }else{
+         $(this).val(numpermax5);
+      }
+
+    });
+  });
+  $(function(){
+    $('#numpermax6').on('keyup', function(){
+      var numpermax6 = 0;
+
+      numpermax6 += isNaN(parseInt( $('#numpermax6').val() )) ? 0 : parseInt( $('#numpermax6').val() );
+      if(numpermax6 > 100000 ){
+        $(this).val('');
+      }else{
+         $(this).val(numpermax6);
+      }
+
+    });
+  });
+  $(function(){
+    $('#numpermax7').on('keyup', function(){
+      var numpermax7 = 0;
+
+      numpermax7 += isNaN(parseInt( $('#numpermax7').val() )) ? 0 : parseInt( $('#numpermax7').val() );
+      if(numpermax7 > 300000 ){
+        $(this).val('');
+      }else{
+         $(this).val(numpermax7);
+      }
+
+    });
+  });
+  $(function(){
+    $('#numpermax8').on('keyup', function(){
+      var numpermax8 = 0;
+
+      numpermax8 += isNaN(parseInt( $('#numpermax8').val() )) ? 0 : parseInt( $('#numpermax8').val() );
+      if(numpermax8 > 300000 ){
+        $(this).val('');
+      }else{
+         $(this).val(numpermax8);
+      }
+
+    });
+  });
+</script>
+{{--  --}}
 @endsection
 
 @section('content')
@@ -211,48 +533,48 @@
                           </th>
                           <th><input class="check-all" name="" type="checkbox" value="0"></th>
                           <th>3 ตัวบน<br>
-                            <input class="form-control input-sm ac" name="min_1" type="text" value="">
+                            <input class="form-control input-sm ac" name="min_1"  id="minmin" type="text" value="">
                             &gt;=
                             <a href="#" class="fill-input" tabindex="-1">5</a>
                           </th>
                           <th>3 ตัวล่าง<br>
-                            <input class="form-control input-sm ac" name="min_2" type="text" value="">
+                            <input class="form-control input-sm ac" name="min_2" id="minmin2" type="text" value="">
                             &gt;=
                             <a href="#" class="fill-input" tabindex="-1">5</a>
                           </th>
                           <th>
                             3 ตัวโต๊ด<br>
-                            <input class="form-control input-sm ac" name="min_3" type="text" value="">
+                            <input class="form-control input-sm ac" name="min_3" id="minmin3" type="text" value="">
                             &gt;=
                             <a href="#" class="fill-input" tabindex="-1">5</a>
                           </th>
                           <th>
                             2 ตัวบน<br>
-                            <input class="form-control input-sm ac" name="min_4" type="text" value="">
+                            <input class="form-control input-sm ac" name="min_4" id="minmin4" type="text" value="">
                             &gt;=
                             <a href="#" class="fill-input" tabindex="-1">5</a>
                           </th>
                           <th>
                             2 ตัวล่าง<br>
-                            <input class="form-control input-sm ac" name="min_5" type="text" value="">
+                            <input class="form-control input-sm ac" name="min_5" id="minmin5" type="text" value="">
                             &gt;=
                             <a href="#" class="fill-input" tabindex="-1">5</a>
                           </th>
                           <th>
                             2 ตัวโต๊ด<br>
-                            <input class="form-control input-sm ac" name="min_6" type="text" value="">
+                            <input class="form-control input-sm ac" name="min_6" id="minmin6" type="text" value="">
                             &gt;=
                             <a href="#" class="fill-input" tabindex="-1">5</a>
                           </th>
                           <th>
                             วิ่งบน<br>
-                            <input class="form-control input-sm ac" name="min_7" type="text" value="">
+                            <input class="form-control input-sm ac" name="min_7" id="minmin7" type="text" value="">
                             &gt;=
                             <a href="#" class="fill-input" tabindex="-1">5</a>
                           </th>
                           <th>
                             วิ่งล่าง<br>
-                            <input class="form-control input-sm ac" name="min_8" type="text" value="">
+                            <input class="form-control input-sm ac" name="min_8" id="minmin8" type="text" value="">
                             &gt;=
                             <a href="#" class="fill-input" tabindex="-1">5</a>
                           </th>
@@ -328,49 +650,49 @@
                               <th><input class="check-all" name="" type="checkbox" value="0"></th>
                               <th>
                                 3 ตัวบน<br>
-                                <input class="form-control input-sm ac" name="max_1" type="text" value="">
+                                <input class="form-control input-sm ac" name="max_1" id="maxmax1" type="text" value="">
                                 &lt;=
                                 <a href="#" class="fill-input" tabindex="-1">3000</a>
                               </th>
                               <th>
                                 3 ตัวล่าง<br>
-                                <input class="form-control input-sm ac" name="max_2" type="text" value="">
+                                <input class="form-control input-sm ac" name="max_2" id="maxmax2" type="text" value="">
                                 &lt;=
                                 <a href="#" class="fill-input" tabindex="-1">3000</a>
                               </th>
                               <th>
                                 3 ตัวโต๊ด<br>
-                                <input class="form-control input-sm ac" name="max_3" type="text" value="">
+                                <input class="form-control input-sm ac" name="max_3" id="maxmax3" type="text" value="">
                                 &lt;=
                                 <a href="#" class="fill-input" tabindex="-1">3000</a>
                               </th>
                               <th>
                                 2 ตัวบน<br>
-                                <input class="form-control input-sm ac" name="max_4" type="text" value="">
+                                <input class="form-control input-sm ac" name="max_4" id="maxmax4" type="text" value="">
                                 &lt;=
                                 <a href="#" class="fill-input" tabindex="-1">10000</a>
                               </th>
                               <th>
                                 2 ตัวล่าง<br>
-                                <input class="form-control input-sm ac" name="max_5" type="text" value="">
+                                <input class="form-control input-sm ac" name="max_5" id="maxmax5" type="text" value="">
                                 &lt;=
                                 <a href="#" class="fill-input" tabindex="-1">10000</a>
                               </th>
                               <th>
                                 2 ตัวโต๊ด<br>
-                                <input class="form-control input-sm ac" name="max_6" type="text" value="">
+                                <input class="form-control input-sm ac" name="max_6" id="maxmax6" type="text" value="">
                                 &lt;=
                                 <a href="#" class="fill-input" tabindex="-1">10000</a>
                               </th>
                               <th>
                                 วิ่งบน<br>
-                                <input class="form-control input-sm ac" name="max_7" type="text" value="">
+                                <input class="form-control input-sm ac" name="max_7" id="maxmax7" type="text" value="">
                                 &lt;=
                                 <a href="#" class="fill-input" tabindex="-1">100000</a>
                               </th>
                               <th>
                                 วิ่งล่าง<br>
-                                <input class="form-control input-sm ac" name="max_8" type="text" value="">
+                                <input class="form-control input-sm ac" name="max_8" id="maxmax8" type="text" value="">
                                 &lt;=
                                 <a href="#" class="fill-input" tabindex="-1">100000</a>
                               </th>
@@ -445,49 +767,49 @@
 
                             <th>
                               3 ตัวบน<br>
-                              <input class="form-control input-sm ac" name="max_per_num_1" type="text" value="">
+                              <input class="form-control input-sm ac" name="max_per_num_1" id="numpermax1" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">10000</a>
                             </th>
                             <th>
                               3 ตัวล่าง<br>
-                              <input class="form-control input-sm ac" name="max_per_num_2" type="text" value="">
+                              <input class="form-control input-sm ac" name="max_per_num_2" id="numpermax2" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">100000</a>
                             </th>
                             <th>
                               3 ตัวโต๊ด<br>
-                              <input class="form-control input-sm ac" name="max_per_num_3" type="text" value="">
+                              <input class="form-control input-sm ac" name="max_per_num_3" id="numpermax3" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">30000</a>
                             </th>
                             <th>
                               2 ตัวบน<br>
-                              <input class="form-control input-sm ac" name="max_per_num_4" type="text" value="">
+                              <input class="form-control input-sm ac" name="max_per_num_4" id="numpermax4" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">100000</a>
                             </th>
                             <th>
                               2 ตัวล่าง<br>
-                              <input class="form-control input-sm ac" name="max_per_num_5" type="text" value="">
+                              <input class="form-control input-sm ac" name="max_per_num_5" id="numpermax5" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">100000</a>
                             </th>
                             <th>
                               2 ตัวโต๊ด<br>
-                              <input class="form-control input-sm ac" name="max_per_num_6" type="text" value="">
+                              <input class="form-control input-sm ac" name="max_per_num_6" id="numpermax6" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">100000</a>
                             </th>
                             <th>
                               วิ่งบน<br>
-                              <input class="form-control input-sm ac" name="max_per_num_7" type="text" value="">
+                              <input class="form-control input-sm ac" name="max_per_num_7" id="numpermax7" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">300000</a>
                             </th>
                             <th>
                               วิ่งล่าง<br>
-                              <input class="form-control input-sm ac" name="max_per_num_8" type="text" value="">
+                              <input class="form-control input-sm ac" name="max_per_num_8" id="numpermax8" type="text" value="">
                               &lt;=
                               <a href="#" class="fill-input" tabindex="-1">300000</a>
                             </th>
