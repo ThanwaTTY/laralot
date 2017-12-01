@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Member;
 use App\Playset;
+use App\Ratepay;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\PDOException;
 use Exception;
@@ -88,30 +89,30 @@ class MemberController extends Controller
             'credit' => 'required',
             'name' => 'required',
             'phone' => 'required',
-            'min_1' => 'required',
-            'min_2' => 'required',
-            'min_3' => 'required',
-            'min_4' => 'required',
-            'min_5' => 'required',
-            'min_6' => 'required',
-            'min_7' => 'required',
-            'min_8' => 'required',
-            'max_1' => 'required',
-            'max_2' => 'required',
-            'max_3' => 'required',
-            'max_4' => 'required',
-            'max_5' => 'required',
-            'max_6' => 'required',
-            'max_7' => 'required',
-            'max_8' => 'required',
-            'max_per_num1' => 'required',
-            'max_per_num2' => 'required',
-            'max_per_num3' => 'required',
-            'max_per_num4' => 'required',
-            'max_per_num5' => 'required',
-            'max_per_num6' => 'required',
-            'max_per_num7' => 'required',
-            'max_per_num8' => 'required',
+            // 'min_1' => 'required',
+            // 'min_2' => 'required',
+            // 'min_3' => 'required',
+            // 'min_4' => 'required',
+            // 'min_5' => 'required',
+            // 'min_6' => 'required',
+            // 'min_7' => 'required',
+            // 'min_8' => 'required',
+            // 'max_1' => 'required',
+            // 'max_2' => 'required',
+            // 'max_3' => 'required',
+            // 'max_4' => 'required',
+            // 'max_5' => 'required',
+            // 'max_6' => 'required',
+            // 'max_7' => 'required',
+            // 'max_8' => 'required',
+            // 'max_per_num1' => 'required',
+            // 'max_per_num2' => 'required',
+            // 'max_per_num3' => 'required',
+            // 'max_per_num4' => 'required',
+            // 'max_per_num5' => 'required',
+            // 'max_per_num6' => 'required',
+            // 'max_per_num7' => 'required',
+            // 'max_per_num8' => 'required',
         ];
         // dd(required->min_1);
          $useradd = auth()->user()->id;
@@ -287,6 +288,29 @@ class MemberController extends Controller
             'min_6' => request('min_6'),'max_6' => request('max_6'),'max_per_num6' => request('max_per_num6'),
             'min_7' => request('min_7'),'max_7' => request('max_7'),'max_per_num7' => request('max_per_num7'),
             'min_8' => request('min_8'),'max_8' => request('max_8'),'max_per_num8' => request('max_per_num8')
+            ]);
+
+            Ratepay::create([
+            'ratepay_id' => $membercreate->id,
+            'payoutg_1' => request('payoutg_1'),'comg_1' => request('comg_1'),
+            'payoutg_2' => request('payoutg_2'),'comg_2' => request('comg_2'),
+            'payoutg_3' => request('payoutg_3'),'comg_3' => request('comg_3'),
+            'payoutg_4' => request('payoutg_4'),'comg_4' => request('comg_4'),
+            'payoutg_5' => request('payoutg_5'),'comg_5' => request('comg_5'),
+            'payoutg_6' => request('payoutg_6'),'comg_6' => request('comg_6'),
+            'payoutg_7' => request('payoutg_7'),'comg_7' => request('comg_7'),
+            'payoutg_8' => request('payoutg_8'),'comg_8' => request('comg_8'),
+
+            'payout_1' => request('payout_1'),'com_1' => request('com_1'),
+            'payout_2' => request('payout_2'),'com_2' => request('com_2'),
+            'payout_3' => request('payout_3'),'com_3' => request('com_3'),
+            'payout_4' => request('payout_4'),'com_4' => request('com_4'),
+            'payout_5' => request('payout_5'),'com_5' => request('com_5'),
+            'payout_6' => request('payout_6'),'com_6' => request('com_6'),
+            'payout_7' => request('payout_7'),'com_7' => request('com_7'),
+            'payout_8' => request('payout_8'),'com_8' => request('com_8')          
+
+
             ]);
             
            
