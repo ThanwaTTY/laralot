@@ -34,6 +34,6 @@ class CreateHelpersetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('helperset');
+        Schema::dropIfExists('helpersets');
     }
 }

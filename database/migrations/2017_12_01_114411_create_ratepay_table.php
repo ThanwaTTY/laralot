@@ -62,6 +62,6 @@ class CreateRatepayTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ratepay');
+        Schema::dropIfExists('ratepays');
     }
 }

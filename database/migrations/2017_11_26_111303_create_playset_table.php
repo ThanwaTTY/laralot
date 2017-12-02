@@ -51,6 +51,6 @@ class CreatePlaysetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('playset');
+        Schema::dropIfExists('playsets');
     }
 }
