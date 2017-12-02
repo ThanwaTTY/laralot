@@ -90,6 +90,13 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::post('/min', 'Members\PlaysetController@min');
              Route::post('/max', 'Members\PlaysetController@max');
              Route::post('/max_per_num', 'Members\PlaysetController@max_per_num');
+             ///////////////////////////////////////////////////////////////////////
+             Route::get('/user/commission', 'Members\RateController@index');
+             Route::post('/payoutg','Members\RateController@payoutg');
+             Route::post('/payout','Members\RateController@payout');
+             Route::post('/comg','Members\RateController@comg');
+             Route::post('/com','Members\RateController@com');
+
 
              });
              Route::get('/test', function () {
@@ -150,7 +157,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
                 return view('user.open-close-lottery.index');
              });
 
-             Route::get('/user/commission', 'Members\RateController@index');
+             
             //  Route::get('/user/commission/tab1={tab1}&tab2={tab2}&tab3={tab3}&order={order}', function () {
             //     return view('user.commission.index',compact('tab1','tab2','tab3','order'));
             //  });

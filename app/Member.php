@@ -32,4 +32,9 @@ class Member extends Authenticatable
         return $this->hasOne(Playset::class, 'member_id', 'id');
     }
 
+    public function ratepay()
+    {
+        return $this->hasOne(Ratepay::class, 'ratepay_id', 'id');
+    }
+
 }

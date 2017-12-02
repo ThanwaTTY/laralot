@@ -175,11 +175,11 @@
 									</ul>
 
 									<div class="tab-content no-padding">
-										อัตราจ่าย / หวยรัฐ 70 / 3 ตัวท้าย {{--
+										อัตราจ่าย / หวยรัฐ 70 / 3 ตัวท้าย 
 										<div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="form1" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+											<form id="form1" method="POST" action="/payoutg" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
-												<input type="hidden" name="_token" value="WLusuV9LfUHdBelHVtha3xp48vEan0D6BbnRmEbB">
+                                             {{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
 														<tr>
@@ -197,163 +197,82 @@
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="min_1" id="minmin" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payoutg_1" id="minmin" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">550</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="min_2" id="minmin2" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payoutg_2" id="minmin2" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">125</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="min_3" id="minmin3" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payoutg_3" id="minmin3" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">105</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="min_4" id="minmin4" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payoutg_4" id="minmin4" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="min_5" id="minmin5" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payoutg_5" id="minmin5" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="min_6" id="minmin6" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payoutg_6" id="minmin6" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="min_7" id="minmin7" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payoutg_7" id="minmin7" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">3</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="min_8" id="minmin8" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payoutg_8" id="minmin8" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">4</a>
 															</th>
 														</tr>
 													</thead>
 													<tbody>
-
+                                                    @foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">1</td>
-															<td>Master@001 <span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="1"></td>
-															<td class="table-min-1-row-1-col-min_1">5</td>
-															<td class="table-min-1-row-1-col-min_2">5</td>
-															<td class="table-min-1-row-1-col-min_3">5</td>
-															<td class="table-min-1-row-1-col-min_4">5</td>
-															<td class="table-min-1-row-1-col-min_5">5</td>
-															<td class="table-min-1-row-1-col-min_6">5</td>
-															<td class="table-min-1-row-1-col-min_7">5</td>
-															<td class="table-min-1-row-1-col-min_8">5</td>
+															<td class="id">{{$member->ratepay->id}}</td>
+															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
+															 @if($member->level == 7)
+                                                            <td class="type" nowrap="">Member</td>
+                                                            @elseif($member->level == 6)
+                                                            <td class="type" nowrap="">Agent</td>
+                                                            @elseif($member->level == 5)
+                                                            <td class="type" nowrap="">Master</td>
+                                                            @elseif($member->level == 4)
+                                                            <td class="type" nowrap="">Senior</td>
+                                                            @elseif($member->level == 3)
+                                                            <td class="type" nowrap="">Super Senior</td>
+                                                            @elseif($member->level == 2)
+                                                            <td class="type" nowrap="">Pathner</td>
+                                                            @elseif($member->level == 1)
+                                                            <td class="type" nowrap="">Admin</td>
+                                                            @endif
+															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
+															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->payoutg_1}}</td>
+															<td class="table-min-1-row-1-col-min_2">{{$member->ratepay->payoutg_2}}</td>
+															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->payoutg_3}}</td>
+															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->payoutg_4}}</td>
+															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->payoutg_5}}</td>
+															<td class="table-min-1-row-1-col-min_6">{{$member->ratepay->payoutg_6}}</td>
+															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->payoutg_7}}</td>
+															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->payoutg_8}}</td>
 														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-warning" style="display: none;">
-															<td class="id">2</td>
-															<td>Master@002 <span class="showname" name="showname" style="display: none;">(Jone)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="2"></td>
-															<td class="table-min-1-row-2-col-min_1">5</td>
-															<td class="table-min-1-row-2-col-min_2">5</td>
-															<td class="table-min-1-row-2-col-min_3">5</td>
-															<td class="table-min-1-row-2-col-min_4">5</td>
-															<td class="table-min-1-row-2-col-min_5">5</td>
-															<td class="table-min-1-row-2-col-min_6">5</td>
-															<td class="table-min-1-row-2-col-min_7">5</td>
-															<td class="table-min-1-row-2-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-danger" style="display: none;">
-															<td class="id">3</td>
-															<td>Master@003 <span class="showname" name="showname" style="display: none;">(Lulu)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="3"></td>
-															<td class="table-min-1-row-3-col-min_1">5</td>
-															<td class="table-min-1-row-3-col-min_2">5</td>
-															<td class="table-min-1-row-3-col-min_3">5</td>
-															<td class="table-min-1-row-3-col-min_4">5</td>
-															<td class="table-min-1-row-3-col-min_5">5</td>
-															<td class="table-min-1-row-3-col-min_6">5</td>
-															<td class="table-min-1-row-3-col-min_7">5</td>
-															<td class="table-min-1-row-3-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-danger" style="display: none;">
-															<td class="id">4</td>
-															<td>Master@004 <span class="showname" name="showname" style="display: none;">(Nami)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="4"></td>
-															<td class="table-min-1-row-4-col-min_1">5</td>
-															<td class="table-min-1-row-4-col-min_2">5</td>
-															<td class="table-min-1-row-4-col-min_3">5</td>
-															<td class="table-min-1-row-4-col-min_4">5</td>
-															<td class="table-min-1-row-4-col-min_5">5</td>
-															<td class="table-min-1-row-4-col-min_6">5</td>
-															<td class="table-min-1-row-4-col-min_7">5</td>
-															<td class="table-min-1-row-4-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-warning" style="display: none;">
-															<td class="id">5</td>
-															<td>Master@005 <span class="showname" name="showname" style="display: none;">(Katalina)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="5"></td>
-															<td class="table-min-1-row-5-col-min_1">5</td>
-															<td class="table-min-1-row-5-col-min_2">5</td>
-															<td class="table-min-1-row-5-col-min_3">5</td>
-															<td class="table-min-1-row-5-col-min_4">5</td>
-															<td class="table-min-1-row-5-col-min_5">5</td>
-															<td class="table-min-1-row-5-col-min_6">5</td>
-															<td class="table-min-1-row-5-col-min_7">5</td>
-															<td class="table-min-1-row-5-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">6</td>
-															<td>Master@006 <span class="showname" name="showname" style="display: none;">(Kalista)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="6"></td>
-															<td class="table-min-1-row-6-col-min_1">5</td>
-															<td class="table-min-1-row-6-col-min_2">5</td>
-															<td class="table-min-1-row-6-col-min_3">5</td>
-															<td class="table-min-1-row-6-col-min_4">5</td>
-															<td class="table-min-1-row-6-col-min_5">5</td>
-															<td class="table-min-1-row-6-col-min_6">5</td>
-															<td class="table-min-1-row-6-col-min_7">5</td>
-															<td class="table-min-1-row-6-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">7</td>
-															<td>Master@007 <span class="showname" name="showname" style="display: none;">(Mordekaiser)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="7"></td>
-															<td class="table-min-1-row-7-col-min_1">5</td>
-															<td class="table-min-1-row-7-col-min_2">5</td>
-															<td class="table-min-1-row-7-col-min_3">5</td>
-															<td class="table-min-1-row-7-col-min_4">5</td>
-															<td class="table-min-1-row-7-col-min_5">5</td>
-															<td class="table-min-1-row-7-col-min_6">5</td>
-															<td class="table-min-1-row-7-col-min_7">5</td>
-															<td class="table-min-1-row-7-col-min_8">5</td>
-														</tr>
+                                                    @endforeach
 
 													</tbody>
 												</table>
 											</form>
 										</div>
-										--}}
+										
 
 									</div>
 								</div>
@@ -365,11 +284,11 @@
 									</ul>
 
 									<div class="tab-content no-padding">
-										อัตราจ่าย / หวย 70 / 3 ตัวท้าย {{--
+										อัตราจ่าย / หวย 70 / 3 ตัวท้าย 
 										<div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="form1" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+											<form id="form1" method="POST" action="/payout" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
-												<input type="hidden" name="_token" value="WLusuV9LfUHdBelHVtha3xp48vEan0D6BbnRmEbB">
+												 {{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
 														<tr>
@@ -387,162 +306,80 @@
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="min_1" id="minmin" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payout_1" id="minmin" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">550</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="min_2" id="minmin2" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="" id="minmin2" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">125</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="min_3" id="minmin3" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payout_3" id="minmin3" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">105</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="min_4" id="minmin4" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payout_4" id="minmin4" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="min_5" id="minmin5" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payout_5" id="minmin5" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="min_6" id="minmin6" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payout_6" id="minmin6" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="min_7" id="minmin7" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payout_7" id="minmin7" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">3</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="min_8" id="minmin8" type="text" value=""> &gt;=
-																<a href="#" class="fill-input" tabindex="-1">5</a>
+																<input class="form-control input-sm ac" name="payout_8" id="minmin8" type="text" value="">  &lt;= 
+																<a href="#" class="fill-input" tabindex="-1">4</a>
 															</th>
 														</tr>
 													</thead>
 													<tbody>
-
+                                                    @foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">1</td>
-															<td>Master@001 <span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="1"></td>
-															<td class="table-min-1-row-1-col-min_1">5</td>
-															<td class="table-min-1-row-1-col-min_2">5</td>
-															<td class="table-min-1-row-1-col-min_3">5</td>
-															<td class="table-min-1-row-1-col-min_4">5</td>
-															<td class="table-min-1-row-1-col-min_5">5</td>
-															<td class="table-min-1-row-1-col-min_6">5</td>
-															<td class="table-min-1-row-1-col-min_7">5</td>
-															<td class="table-min-1-row-1-col-min_8">5</td>
+															<td class="id">{{$member->ratepay->id}}</td>
+															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
+															@if($member->level == 7)
+                                                            <td class="type" nowrap="">Member</td>
+                                                            @elseif($member->level == 6)
+                                                            <td class="type" nowrap="">Agent</td>
+                                                            @elseif($member->level == 5)
+                                                            <td class="type" nowrap="">Master</td>
+                                                            @elseif($member->level == 4)
+                                                            <td class="type" nowrap="">Senior</td>
+                                                            @elseif($member->level == 3)
+                                                            <td class="type" nowrap="">Super Senior</td>
+                                                            @elseif($member->level == 2)
+                                                            <td class="type" nowrap="">Pathner</td>
+                                                            @elseif($member->level == 1)
+                                                            <td class="type" nowrap="">Admin</td>
+                                                            @endif
+															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
+															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->payout_1}}</td>
+															<td class="table-min-1-row-1-col-min_2" disabled></td>
+															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->payout_3}}</td>
+															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->payout_4}}</td>
+															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->payout_5}}</td>
+															<td class="table-min-1-row-1-col-min_6">{{$member->ratepay->payout_6}}</td>
+															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->payout_7}}</td>
+															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->payout_8}}</td>
 														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-warning" style="display: none;">
-															<td class="id">2</td>
-															<td>Master@002 <span class="showname" name="showname" style="display: none;">(Jone)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="2"></td>
-															<td class="table-min-1-row-2-col-min_1">5</td>
-															<td class="table-min-1-row-2-col-min_2">5</td>
-															<td class="table-min-1-row-2-col-min_3">5</td>
-															<td class="table-min-1-row-2-col-min_4">5</td>
-															<td class="table-min-1-row-2-col-min_5">5</td>
-															<td class="table-min-1-row-2-col-min_6">5</td>
-															<td class="table-min-1-row-2-col-min_7">5</td>
-															<td class="table-min-1-row-2-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-danger" style="display: none;">
-															<td class="id">3</td>
-															<td>Master@003 <span class="showname" name="showname" style="display: none;">(Lulu)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="3"></td>
-															<td class="table-min-1-row-3-col-min_1">5</td>
-															<td class="table-min-1-row-3-col-min_2">5</td>
-															<td class="table-min-1-row-3-col-min_3">5</td>
-															<td class="table-min-1-row-3-col-min_4">5</td>
-															<td class="table-min-1-row-3-col-min_5">5</td>
-															<td class="table-min-1-row-3-col-min_6">5</td>
-															<td class="table-min-1-row-3-col-min_7">5</td>
-															<td class="table-min-1-row-3-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-danger" style="display: none;">
-															<td class="id">4</td>
-															<td>Master@004 <span class="showname" name="showname" style="display: none;">(Nami)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="4"></td>
-															<td class="table-min-1-row-4-col-min_1">5</td>
-															<td class="table-min-1-row-4-col-min_2">5</td>
-															<td class="table-min-1-row-4-col-min_3">5</td>
-															<td class="table-min-1-row-4-col-min_4">5</td>
-															<td class="table-min-1-row-4-col-min_5">5</td>
-															<td class="table-min-1-row-4-col-min_6">5</td>
-															<td class="table-min-1-row-4-col-min_7">5</td>
-															<td class="table-min-1-row-4-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-warning" style="display: none;">
-															<td class="id">5</td>
-															<td>Master@005 <span class="showname" name="showname" style="display: none;">(Katalina)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="5"></td>
-															<td class="table-min-1-row-5-col-min_1">5</td>
-															<td class="table-min-1-row-5-col-min_2">5</td>
-															<td class="table-min-1-row-5-col-min_3">5</td>
-															<td class="table-min-1-row-5-col-min_4">5</td>
-															<td class="table-min-1-row-5-col-min_5">5</td>
-															<td class="table-min-1-row-5-col-min_6">5</td>
-															<td class="table-min-1-row-5-col-min_7">5</td>
-															<td class="table-min-1-row-5-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">6</td>
-															<td>Master@006 <span class="showname" name="showname" style="display: none;">(Kalista)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="6"></td>
-															<td class="table-min-1-row-6-col-min_1">5</td>
-															<td class="table-min-1-row-6-col-min_2">5</td>
-															<td class="table-min-1-row-6-col-min_3">5</td>
-															<td class="table-min-1-row-6-col-min_4">5</td>
-															<td class="table-min-1-row-6-col-min_5">5</td>
-															<td class="table-min-1-row-6-col-min_6">5</td>
-															<td class="table-min-1-row-6-col-min_7">5</td>
-															<td class="table-min-1-row-6-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">7</td>
-															<td>Master@007 <span class="showname" name="showname" style="display: none;">(Mordekaiser)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="7"></td>
-															<td class="table-min-1-row-7-col-min_1">5</td>
-															<td class="table-min-1-row-7-col-min_2">5</td>
-															<td class="table-min-1-row-7-col-min_3">5</td>
-															<td class="table-min-1-row-7-col-min_4">5</td>
-															<td class="table-min-1-row-7-col-min_5">5</td>
-															<td class="table-min-1-row-7-col-min_6">5</td>
-															<td class="table-min-1-row-7-col-min_7">5</td>
-															<td class="table-min-1-row-7-col-min_8">5</td>
-														</tr>
-
+                                                    @endforeach
 													</tbody>
 												</table>
 											</form>
-										</div> --}}
+										</div> 
 
 									</div>
 								</div>
@@ -572,11 +409,11 @@
 									</ul>
 
 									<div class="tab-content no-padding">
-										คอมมิชชั่น / หวยรัฐ 70 / 3 ตัวท้าย {{--
+										คอมมิชชั่น / หวยรัฐ 70 / 3 ตัวท้าย 
 										<div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="form1" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+											<form id="form1" method="POST" action="/comg" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
-												<input type="hidden" name="_token" value="WLusuV9LfUHdBelHVtha3xp48vEan0D6BbnRmEbB">
+												 {{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
 														<tr>
@@ -634,123 +471,41 @@
 														</tr>
 													</thead>
 													<tbody>
-
+                                                    @foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">1</td>
-															<td>Master@001 <span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="1"></td>
-															<td class="table-min-1-row-1-col-min_1">5</td>
-															<td class="table-min-1-row-1-col-min_2">5</td>
-															<td class="table-min-1-row-1-col-min_3">5</td>
-															<td class="table-min-1-row-1-col-min_4">5</td>
-															<td class="table-min-1-row-1-col-min_5">5</td>
-															<td class="table-min-1-row-1-col-min_6">5</td>
-															<td class="table-min-1-row-1-col-min_7">5</td>
-															<td class="table-min-1-row-1-col-min_8">5</td>
+															<td class="id">{{$member->ratepay->id}}</td>
+															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
+															@if($member->level == 7)
+                                                            <td class="type" nowrap="">Member</td>
+                                                            @elseif($member->level == 6)
+                                                            <td class="type" nowrap="">Agent</td>
+                                                            @elseif($member->level == 5)
+                                                            <td class="type" nowrap="">Master</td>
+                                                            @elseif($member->level == 4)
+                                                            <td class="type" nowrap="">Senior</td>
+                                                            @elseif($member->level == 3)
+                                                            <td class="type" nowrap="">Super Senior</td>
+                                                            @elseif($member->level == 2)
+                                                            <td class="type" nowrap="">Pathner</td>
+                                                            @elseif($member->level == 1)
+                                                            <td class="type" nowrap="">Admin</td>
+                                                            @endif
+															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
+															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->comg_1}}</td>
+															<td class="table-min-1-row-1-col-min_2">{{$member->ratepay->comg_2}}</td>
+															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->comg_3}}</td>
+															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->comg_4}}</td>
+															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->comg_5}}</td>
+															<td class="table-min-1-row-1-col-min_6">{{$member->ratepay->comg_6}}</td>
+															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->comg_7}}</td>
+															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->comg_8}}</td>
 														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-warning" style="display: none;">
-															<td class="id">2</td>
-															<td>Master@002 <span class="showname" name="showname" style="display: none;">(Jone)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="2"></td>
-															<td class="table-min-1-row-2-col-min_1">5</td>
-															<td class="table-min-1-row-2-col-min_2">5</td>
-															<td class="table-min-1-row-2-col-min_3">5</td>
-															<td class="table-min-1-row-2-col-min_4">5</td>
-															<td class="table-min-1-row-2-col-min_5">5</td>
-															<td class="table-min-1-row-2-col-min_6">5</td>
-															<td class="table-min-1-row-2-col-min_7">5</td>
-															<td class="table-min-1-row-2-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-danger" style="display: none;">
-															<td class="id">3</td>
-															<td>Master@003 <span class="showname" name="showname" style="display: none;">(Lulu)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="3"></td>
-															<td class="table-min-1-row-3-col-min_1">5</td>
-															<td class="table-min-1-row-3-col-min_2">5</td>
-															<td class="table-min-1-row-3-col-min_3">5</td>
-															<td class="table-min-1-row-3-col-min_4">5</td>
-															<td class="table-min-1-row-3-col-min_5">5</td>
-															<td class="table-min-1-row-3-col-min_6">5</td>
-															<td class="table-min-1-row-3-col-min_7">5</td>
-															<td class="table-min-1-row-3-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-danger" style="display: none;">
-															<td class="id">4</td>
-															<td>Master@004 <span class="showname" name="showname" style="display: none;">(Nami)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="4"></td>
-															<td class="table-min-1-row-4-col-min_1">5</td>
-															<td class="table-min-1-row-4-col-min_2">5</td>
-															<td class="table-min-1-row-4-col-min_3">5</td>
-															<td class="table-min-1-row-4-col-min_4">5</td>
-															<td class="table-min-1-row-4-col-min_5">5</td>
-															<td class="table-min-1-row-4-col-min_6">5</td>
-															<td class="table-min-1-row-4-col-min_7">5</td>
-															<td class="table-min-1-row-4-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-warning" style="display: none;">
-															<td class="id">5</td>
-															<td>Master@005 <span class="showname" name="showname" style="display: none;">(Katalina)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="5"></td>
-															<td class="table-min-1-row-5-col-min_1">5</td>
-															<td class="table-min-1-row-5-col-min_2">5</td>
-															<td class="table-min-1-row-5-col-min_3">5</td>
-															<td class="table-min-1-row-5-col-min_4">5</td>
-															<td class="table-min-1-row-5-col-min_5">5</td>
-															<td class="table-min-1-row-5-col-min_6">5</td>
-															<td class="table-min-1-row-5-col-min_7">5</td>
-															<td class="table-min-1-row-5-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">6</td>
-															<td>Master@006 <span class="showname" name="showname" style="display: none;">(Kalista)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="6"></td>
-															<td class="table-min-1-row-6-col-min_1">5</td>
-															<td class="table-min-1-row-6-col-min_2">5</td>
-															<td class="table-min-1-row-6-col-min_3">5</td>
-															<td class="table-min-1-row-6-col-min_4">5</td>
-															<td class="table-min-1-row-6-col-min_5">5</td>
-															<td class="table-min-1-row-6-col-min_6">5</td>
-															<td class="table-min-1-row-6-col-min_7">5</td>
-															<td class="table-min-1-row-6-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">7</td>
-															<td>Master@007 <span class="showname" name="showname" style="display: none;">(Mordekaiser)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="7"></td>
-															<td class="table-min-1-row-7-col-min_1">5</td>
-															<td class="table-min-1-row-7-col-min_2">5</td>
-															<td class="table-min-1-row-7-col-min_3">5</td>
-															<td class="table-min-1-row-7-col-min_4">5</td>
-															<td class="table-min-1-row-7-col-min_5">5</td>
-															<td class="table-min-1-row-7-col-min_6">5</td>
-															<td class="table-min-1-row-7-col-min_7">5</td>
-															<td class="table-min-1-row-7-col-min_8">5</td>
-														</tr>
-
+                                                    @endforeach
 													</tbody>
 												</table>
 											</form>
 										</div>
-										--}}
+										
 
 									</div>
 								</div>
@@ -762,11 +517,11 @@
 									</ul>
 
 									<div class="tab-content no-padding">
-										คอมมิชชั่น / หวย 70 / 3 ตัวท้าย {{--
+										คอมมิชชั่น / หวย 70 / 3 ตัวท้าย 
 										<div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="form1" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+											<form id="form1" method="POST" action="/com" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
-												<input type="hidden" name="_token" value="WLusuV9LfUHdBelHVtha3xp48vEan0D6BbnRmEbB">
+												 {{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
 														<tr>
@@ -824,122 +579,42 @@
 														</tr>
 													</thead>
 													<tbody>
-
+                                                    @foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">1</td>
-															<td>Master@001 <span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="1"></td>
-															<td class="table-min-1-row-1-col-min_1">5</td>
-															<td class="table-min-1-row-1-col-min_2">5</td>
-															<td class="table-min-1-row-1-col-min_3">5</td>
-															<td class="table-min-1-row-1-col-min_4">5</td>
-															<td class="table-min-1-row-1-col-min_5">5</td>
-															<td class="table-min-1-row-1-col-min_6">5</td>
-															<td class="table-min-1-row-1-col-min_7">5</td>
-															<td class="table-min-1-row-1-col-min_8">5</td>
+															<td class="id">{{$member->ratepay->id}}</td>
+															<td>{{$member->username}} <span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
+															@if($member->level == 7)
+                                                            <td class="type" nowrap="">Member</td>
+                                                            @elseif($member->level == 6)
+                                                            <td class="type" nowrap="">Agent</td>
+                                                            @elseif($member->level == 5)
+                                                            <td class="type" nowrap="">Master</td>
+                                                            @elseif($member->level == 4)
+                                                            <td class="type" nowrap="">Senior</td>
+                                                            @elseif($member->level == 3)
+                                                            <td class="type" nowrap="">Super Senior</td>
+                                                            @elseif($member->level == 2)
+                                                            <td class="type" nowrap="">Pathner</td>
+                                                            @elseif($member->level == 1)
+                                                            <td class="type" nowrap="">Admin</td>
+                                                            @endif
+															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
+															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->com_1}}</td>
+															<td class="table-min-1-row-1-col-min_2">{{$member->ratepay->com_2}}</td>
+															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->com_3}}</td>
+															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->com_4}}</td>
+															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->com_5}}</td>
+															<td class="table-min-1-row-1-col-min_6">{{$member->ratepay->com_6}}</td>
+															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->com_7}}</td>
+															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->com_8}}</td>
 														</tr>
+                                                    @endforeach
 
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-warning" style="display: none;">
-															<td class="id">2</td>
-															<td>Master@002 <span class="showname" name="showname" style="display: none;">(Jone)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="2"></td>
-															<td class="table-min-1-row-2-col-min_1">5</td>
-															<td class="table-min-1-row-2-col-min_2">5</td>
-															<td class="table-min-1-row-2-col-min_3">5</td>
-															<td class="table-min-1-row-2-col-min_4">5</td>
-															<td class="table-min-1-row-2-col-min_5">5</td>
-															<td class="table-min-1-row-2-col-min_6">5</td>
-															<td class="table-min-1-row-2-col-min_7">5</td>
-															<td class="table-min-1-row-2-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-danger" style="display: none;">
-															<td class="id">3</td>
-															<td>Master@003 <span class="showname" name="showname" style="display: none;">(Lulu)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="3"></td>
-															<td class="table-min-1-row-3-col-min_1">5</td>
-															<td class="table-min-1-row-3-col-min_2">5</td>
-															<td class="table-min-1-row-3-col-min_3">5</td>
-															<td class="table-min-1-row-3-col-min_4">5</td>
-															<td class="table-min-1-row-3-col-min_5">5</td>
-															<td class="table-min-1-row-3-col-min_6">5</td>
-															<td class="table-min-1-row-3-col-min_7">5</td>
-															<td class="table-min-1-row-3-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-danger" style="display: none;">
-															<td class="id">4</td>
-															<td>Master@004 <span class="showname" name="showname" style="display: none;">(Nami)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="4"></td>
-															<td class="table-min-1-row-4-col-min_1">5</td>
-															<td class="table-min-1-row-4-col-min_2">5</td>
-															<td class="table-min-1-row-4-col-min_3">5</td>
-															<td class="table-min-1-row-4-col-min_4">5</td>
-															<td class="table-min-1-row-4-col-min_5">5</td>
-															<td class="table-min-1-row-4-col-min_6">5</td>
-															<td class="table-min-1-row-4-col-min_7">5</td>
-															<td class="table-min-1-row-4-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide bg-warning" style="display: none;">
-															<td class="id">5</td>
-															<td>Master@005 <span class="showname" name="showname" style="display: none;">(Katalina)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="5"></td>
-															<td class="table-min-1-row-5-col-min_1">5</td>
-															<td class="table-min-1-row-5-col-min_2">5</td>
-															<td class="table-min-1-row-5-col-min_3">5</td>
-															<td class="table-min-1-row-5-col-min_4">5</td>
-															<td class="table-min-1-row-5-col-min_5">5</td>
-															<td class="table-min-1-row-5-col-min_6">5</td>
-															<td class="table-min-1-row-5-col-min_7">5</td>
-															<td class="table-min-1-row-5-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">6</td>
-															<td>Master@006 <span class="showname" name="showname" style="display: none;">(Kalista)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="6"></td>
-															<td class="table-min-1-row-6-col-min_1">5</td>
-															<td class="table-min-1-row-6-col-min_2">5</td>
-															<td class="table-min-1-row-6-col-min_3">5</td>
-															<td class="table-min-1-row-6-col-min_4">5</td>
-															<td class="table-min-1-row-6-col-min_5">5</td>
-															<td class="table-min-1-row-6-col-min_6">5</td>
-															<td class="table-min-1-row-6-col-min_7">5</td>
-															<td class="table-min-1-row-6-col-min_8">5</td>
-														</tr>
-
-
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">7</td>
-															<td>Master@007 <span class="showname" name="showname" style="display: none;">(Mordekaiser)</span></td>
-															<td class="type" nowrap="">Member</td>
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="7"></td>
-															<td class="table-min-1-row-7-col-min_1">5</td>
-															<td class="table-min-1-row-7-col-min_2">5</td>
-															<td class="table-min-1-row-7-col-min_3">5</td>
-															<td class="table-min-1-row-7-col-min_4">5</td>
-															<td class="table-min-1-row-7-col-min_5">5</td>
-															<td class="table-min-1-row-7-col-min_6">5</td>
-															<td class="table-min-1-row-7-col-min_7">5</td>
-															<td class="table-min-1-row-7-col-min_8">5</td>
-														</tr>
 
 													</tbody>
 												</table>
 											</form>
-										</div> --}}
+										</div> 
 
 									</div>
 								</div>
