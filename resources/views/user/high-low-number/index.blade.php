@@ -259,7 +259,7 @@
               </ul>
 
               <div class="tab-content no-padding">
-                <div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+                <div id="min1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 
                   <form id="form1" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
                   {{ csrf_field() }}
