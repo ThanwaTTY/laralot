@@ -222,41 +222,41 @@ $(function(){
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="payoutg_1" id="minmin" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_1" id="payoutg1" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">550</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="payoutg_2" id="minmin2" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_2" id="payoutg2" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">125</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="payoutg_3" id="minmin3" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_3" id="payoutg3" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">105</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="payoutg_4" id="minmin4" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_4" id="payoutg4" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="payoutg_5" id="minmin5" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_5" id="payoutg5" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="payoutg_6" id="minmin6" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_6" id="payoutg6" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="payoutg_7" id="minmin7" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_7" id="payoutg7" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">3</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="payoutg_8" id="minmin8" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_8" id="payoutg8" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">4</a>
 															</th>
 														</tr>
