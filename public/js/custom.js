@@ -1,4 +1,4 @@
-
+/////////////////////////////////////////////หน้าเพิ่มข้อมูลตั่งค่าการเล่น//////////////////////////////////////////
   $('#min_1').on('change', function(){
     var min_1 = 0;
     min_1 += isNaN(parseInt( $('#min_1').val() )) ? 0 : parseInt( $('#min_1').val() );
@@ -241,7 +241,9 @@
       $(this).val(max_per_num8);
     }
   });
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////หน้าเพิ่มข้อมูล อันตราจ่ายเเละ เเละคอมมิชชั่น////////////////////////////////////////////
+ /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   $('#payoutg_1').on('change', function(){
     var payoutg_1 = 0;
     payoutg_1 += isNaN(parseInt( $('#payoutg_1').val() )) ? 0 : parseInt( $('#payoutg_1').val() );
@@ -322,7 +324,6 @@
       $(this).val(payoutg_8);
     }
   });
-  //////หวยรัฐคอมมิชชั้น////////////////////////////////////////////////////
   $('#comg_1').on('change', function(){
     var comg_1 = 0;
     comg_1 += isNaN(parseInt( $('#comg_1').val() )) ? 0 : parseInt( $('#comg_1').val() );
@@ -403,7 +404,6 @@
       $(this).val(comg_8);
     }
   });
-  /////////////////////////////////////////////////////////////////////////////
   $('#payout_1').on('change', function(){
     var payout_1 = 0;
     payout_1 += isNaN(parseInt( $('#payout_1').val() )) ? 0 : parseInt( $('#payout_1').val() );
@@ -475,7 +475,6 @@
       $(this).val(payout_8);
     }
   });
-  //////////////////////////////////////////////////////////////////////////////
  $('#com_1').on('change', function(){
     var com_1 = 0;
     com_1 += isNaN(parseInt( $('#com_1').val() )) ? 0 : parseInt( $('#com_1').val() );
@@ -546,15 +545,8 @@
       $(this).val(com_8);
     }
   });
-
-
-
-  //////////////////////////////////////hightLownumber//////////////////////////////////////////////////////////////
-  //////////////////////////////////////hightLownumber//////////////////////////////////////////////////////////////
-  //////////////////////////////////////hightLownumber//////////////////////////////////////////////////////////////
-  //////////////////////////////////////hightLownumber//////////////////////////////////////////////////////////////
-  //////////////////////////////////////hightLownumber//////////////////////////////////////////////////////////////
-  //////////////////////////////////////hightLownumber//////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////หน้าเเก้ไขตั่งค่าการเล่น hightLow number////////////////////////////////////////////////////////////
 
   $(function(){
     $('#minmin').on('change', function(){
@@ -895,9 +887,298 @@
     });
   });
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////////หน้าเเก้ไขอัตราจ่าเเละค่าคอมมิชชั้น/////////////////////////////////////////////////
+    $(function(){
+        $('#payoutg1').on('change', function(){
+            var payoutg1 = 0;
+            payoutg1 += isNaN(parseInt( $('#payoutg1').val() )) ? 0 : parseInt( $('#payoutg1').val() );
+            if(payoutg1 > 550){
+                alert("อัตราจ่าย 3 ตัวบนต้องมีค่าไม่เกิน 550");
+                $(this).val('');
+            }else{
+                $(this).val(payoutg1)
+            }
+        });
+    });
+    $(function(){
+        $('#payoutg2').on('change', function(){
+            var payoutg2 = 0;
+            payoutg2 += isNaN(parseInt( $('#payoutg2').val() )) ? 0 : parseInt( $('#payoutg2').val() );
+            if(payoutg2 > 125){
+                alert("อัตราจ่าย 3 ตัวล่างต้องมีค่าไม่เกิน 125");
+                $(this).val('');
+            }else{
+                $(this).val(payoutg2)
+            }
+        });
+    });
+    $(function(){
+        $('#payoutg3').on('change', function(){
+            var payoutg3 = 0;
+            payoutg3 += isNaN(parseInt( $('#payoutg3').val() )) ? 0 : parseInt( $('#payoutg3').val() );
+            if(payoutg3 > 105){
+                alert("อัตราจ่าย 3 ตัวโต๊ดต้องมีค่าไม่เกิน 105");
+                $(this).val('');
+            }else{
+                $(this).val(payoutg3)
+            }
+        });
+    });
+    $(function(){
+        $('#payoutg4').on('change', function(){
+            var payoutg4 = 0;
+            payoutg4 += isNaN(parseInt( $('#payoutg4').val() )) ? 0 : parseInt( $('#payoutg4').val() );
+            if(payoutg4 > 70){
+                alert("อัตราจ่าย 2 ตัวบนต้องมีค่าไม่เกิน 70");
+                $(this).val('');
+            }else{
+                $(this).val(payoutg4)
+            }
+        });
+    });
+    $(function(){
+        $('#payoutg5').on('change', function(){
+            var payoutg5 = 0;
+            payoutg5 += isNaN(parseInt( $('#payoutg5').val() )) ? 0 : parseInt( $('#payoutg5').val() );
+            if(payoutg5 > 70){
+                alert("อัตราจ่าย 2 ตัวล่างต้องมีค่าไม่เกิน 70");
+                $(this).val('');
+            }else{
+                $(this).val(payoutg5)
+            }
+        });
+    });
+    $(function(){
+        $('#payoutg6').on('change', function(){
+            var payoutg6 = 0;
+            payoutg6 += isNaN(parseInt( $('#payoutg6').val() )) ? 0 : parseInt( $('#payoutg6').val() );
+            if(payoutg6 > 12){
+                alert("อัตราจ่าย 2ตัวโต๊ด ต้องมีค่าไม่เกิน 12");
+                $(this).val('');
+            }else{
+                $(this).val(payoutg6)
+            }
+        });
+    });
+    $(function(){
+        $('#payoutg7').on('change', function(){
+            var payoutg7 = 0;
+            payoutg7 += isNaN(parseInt( $('#payoutg7').val() )) ? 0 : parseInt( $('#payoutg7').val() );
+            if(payoutg7 > 3){
+                alert("อัตราจ่าย วิ่งบนต้องมีค่าไม่เกิน 3");
+                $(this).val('');
+            }else{
+                $(this).val(payoutg7)
+            }
+        });
+    });
+    $(function(){
+        $('#payoutg8').on('change', function(){
+            var payoutg8 = 0;
+            payoutg8 += isNaN(parseInt( $('#payoutg8').val() )) ? 0 : parseInt( $('#payoutg8').val() );
+            if(payoutg8 > 4){
+                alert("อัตราจ่าย วิ่งล่างต้องมีค่าไม่เกิน 4");
+                $(this).val('');
+            }else{
+                $(this).val(payoutg8)
+            }
+        });
+    });
+    $(function(){
+        $('#payout1').on('change', function(){
+            var payout1 = 0;
+            payout1 += isNaN(parseInt( $('#payout1').val() )) ? 0 : parseInt( $('#payout1').val() );
+            if(payout1 > 550){
+                alert("อัตราจ่าย 3 ตัวบนต้องมีค่าไม่เกิน 550");
+                $(this).val('');
+            }else{
+                $(this).val(payout1)
+            }
+        });
+    });
+
+    $(function(){
+        $('#payout3').on('change', function(){
+            var payout3 = 0;
+            payout3 += isNaN(parseInt( $('#payout3').val() )) ? 0 : parseInt( $('#payout3').val() );
+            if(payout3 > 105){
+                alert("อัตราจ่าย 3 ตัวโต๊ดต้องมีค่าไม่เกิน 105");
+                $(this).val('');
+            }else{
+                $(this).val(payout3)
+            }
+        });
+    });
+    $(function(){
+        $('#payout4').on('change', function(){
+            var payout4 = 0;
+            payout4 += isNaN(parseInt( $('#payout4').val() )) ? 0 : parseInt( $('#payout4').val() );
+            if(payout4 > 70){
+                alert("อัตราจ่าย 2 ตัวบนต้องมีค่าไม่เกิน 70");
+                $(this).val('');
+            }else{
+                $(this).val(payout4)
+            }
+        });
+    });
+    $(function(){
+        $('#payout5').on('change', function(){
+            var payout5 = 0;
+            payout5 += isNaN(parseInt( $('#payout5').val() )) ? 0 : parseInt( $('#payout5').val() );
+            if(payout5 > 70){
+                alert("อัตราจ่าย 2 ตัวล่างต้องมีค่าไม่เกิน 70");
+                $(this).val('');
+            }else{
+                $(this).val(payout5)
+            }
+        });
+    });
+    $(function(){
+        $('#payout6').on('change', function(){
+            var payout6 = 0;
+            payout6 += isNaN(parseInt( $('#payout6').val() )) ? 0 : parseInt( $('#payout6').val() );
+            if(payout6 > 12){
+                alert("อัตราจ่าย 2ตัวโต๊ด ต้องมีค่าไม่เกิน 12");
+                $(this).val('');
+            }else{
+                $(this).val(payout6)
+            }
+        });
+    });
+    $(function(){
+        $('#payout7').on('change', function(){
+            var payout7 = 0;
+            payout7 += isNaN(parseInt( $('#payout7').val() )) ? 0 : parseInt( $('#payout7').val() );
+            if(payout7 > 3){
+                alert("อัตราจ่าย วิ่งบนต้องมีค่าไม่เกิน 3");
+                $(this).val('');
+            }else{
+                $(this).val(payout7)
+            }
+        });
+    });
+    $(function(){
+        $('#payout8').on('change', function(){
+            var payout8 = 0;
+            payout8 += isNaN(parseInt( $('#payout8').val() )) ? 0 : parseInt( $('#payout8').val() );
+            if(payout8 > 4){
+                alert("อัตราจ่าย วิ่งล่างต้องมีค่าไม่เกิน 4");
+                $(this).val('');
+            }else{
+                $(this).val(payout8)
+            }
+        });
+    });
+    $(function(){
+        $('#comg1').on('change', function(){
+            var comg1 = 0;
+            comg1 += isNaN(parseInt( $('#comg1').val() )) ? 0 : parseInt( $('#comg1').val() ); 
+            if(comg1 > 33){
+                alert("คอมมิชชั่น 3 ตัวบน ต้องมีค่าไม่เกิน 33");
+                $(this).val('');
+            }else{
+                $(this).val(comg1);
+            }
+        });
+    });
+    $(function(){
+        $('#comg1').on('change', function(){
+            var comg1 = 0;
+            comg1 += isNaN(parseInt( $('#comg1').val() )) ? 0 : parseInt( $('#comg1').val() ); 
+            if(comg1 > 33){
+                alert("คอมมิชชั่น 3 ตัวบน ต้องมีค่าไม่เกิน 33");
+                $(this).val('');
+            }else{
+                $(this).val(comg1);
+            }
+        });
+    });
+    $(function(){
+        $('#comg2').on('change', function(){
+            var comg2 = 0;
+            comg2 += isNaN(parseInt( $('#comg2').val() )) ? 0 : parseInt( $('#comg2').val() ); 
+            if(comg2 > 33){
+                alert("คอมมิชชั่น 3 ตัวล่าง ต้องมีค่าไม่เกิน 33");
+                $(this).val('');
+            }else{
+                $(this).val(comg2);
+            }
+        });
+    });
+    $(function(){
+        $('#comg3').on('change', function(){
+            var comg3 = 0;
+            comg3 += isNaN(parseInt( $('#comg3').val() )) ? 0 : parseInt( $('#comg3').val() ); 
+            if(comg3 > 33){
+                alert("คอมมิชชั่น 3 ตัวโต๊ด ต้องมีค่าไม่เกิน 33");
+                $(this).val('');
+            }else{
+                $(this).val(comg3);
+            }
+        });
+    });
+    $(function(){
+        $('#comg4').on('change', function(){
+            var comg4 = 0;
+            comg4 += isNaN(parseInt( $('#comg4').val() )) ? 0 : parseInt( $('#comg4').val() ); 
+            if(comg4 > 28){
+                alert("คอมมิชชั่น 2 ตัวบน ต้องมีค่าไม่เกิน 28");
+                $(this).val('');
+            }else{
+                $(this).val(comg4);
+            }
+        });
+    });
+    $(function(){
+        $('#comg5').on('change', function(){
+            var comg5 = 0;
+            comg5 += isNaN(parseInt( $('#comg5').val() )) ? 0 : parseInt( $('#comg5').val() ); 
+            if(comg5 > 28){
+                alert("คอมมิชชั่น 2 ตัวล่าง ต้องมีค่าไม่เกิน 28");
+                $(this).val('');
+            }else{
+                $(this).val(comg5);
+            }
+        });
+    });
+    $(function(){
+        $('#comg6').on('change', function(){
+            var comg6 = 0;
+            comg6 += isNaN(parseInt( $('#comg6').val() )) ? 0 : parseInt( $('#comg6').val() ); 
+            if(comg6 > 28){
+                alert("คอมมิชชั่น 2 ตัวโต๊ด ต้องมีค่าไม่เกิน 28");
+                $(this).val('');
+            }else{
+                $(this).val(comg6);
+            }
+        });
+    });
+    $(function(){
+        $('#comg7').on('change', function(){
+            var comg7 = 0;
+            comg7 += isNaN(parseInt( $('#comg7').val() )) ? 0 : parseInt( $('#comg7').val() ); 
+            if(comg7 > 33){
+                alert("คอมมิชชั่น วิ่งบน ต้องมีค่าไม่เกิน 12");
+                $(this).val('');
+            }else{
+                $(this).val(comg7);
+            }
+        });
+    });
+    $(function(){
+        $('#comg8').on('change', function(){
+            var comg8 = 0;
+            comg8 += isNaN(parseInt( $('#comg8').val() )) ? 0 : parseInt( $('#comg8').val() ); 
+            if(comg8 > 12){
+                alert("คอมมิชชั่น วิ่งล่าง ต้องมีค่าไม่เกิน 12");
+                $(this).val('');
+            }else{
+                $(this).val(comg8);
+            }
+        });
+    });
+
+
   //////////////////////////////////////Commistion//////////////////////////////////////////////////////////////
-  //////////////////////////////////////Commistion//////////////////////////////////////////////////////////////
-  //////////////////////////////////////Commistion//////////////////////////////////////////////////////////////
-  //////////////////////////////////////Commistion//////////////////////////////////////////////////////////////
-  //////////////////////////////////////Commistion//////////////////////////////////////////////////////////////
-  //////////////////////////////////////Commistion//////////////////////////////////////////////////////////////
+

@@ -69,6 +69,7 @@
 <script src="../../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
+<script src="/js/custom.js"></script>
 <script>
 	$(function(){
         $('a[href="#payout"]').click(function(){
@@ -201,7 +202,7 @@ $(function(){
 
 									<div class="tab-content no-padding">
 										อัตราจ่าย / หวยรัฐ 70 / 3 ตัวท้าย 
-										<div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+										<div  class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 											<form id="form1" method="POST" action="/payoutg" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
                                              {{ csrf_field() }}
@@ -310,7 +311,7 @@ $(function(){
 
 									<div class="tab-content no-padding">
 										อัตราจ่าย / หวย 70 / 3 ตัวท้าย 
-										<div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+										<div  class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 											<form id="form1" method="POST" action="/payout" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
 												 {{ csrf_field() }}
@@ -331,41 +332,41 @@ $(function(){
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="payout_1" id="minmin" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_1" id="payout1" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">550</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="" id="minmin2" type="text" value="" disabled>  &lt;= 
+																<input class="form-control input-sm ac" name="" id="payout2"  type="text" value="" disabled>  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">125</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="payout_3" id="minmin3" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_3" id="payout3" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">105</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="payout_4" id="minmin4" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_4" id="payout4" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="payout_5" id="minmin5" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_5" id="payout5" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="payout_6" id="minmin6" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_6" id="payout6" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="payout_7" id="minmin7" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_7" id="payout7" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">3</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="payout_8" id="minmin8" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_8" id="payout8" type="text" value="">  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">4</a>
 															</th>
 														</tr>
@@ -435,7 +436,7 @@ $(function(){
 
 									<div class="tab-content no-padding">
 										คอมมิชชั่น / หวยรัฐ 70 / 3 ตัวท้าย 
-										<div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+										<div  class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 											<form id="form1" method="POST" action="/comg" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
 												 {{ csrf_field() }}
@@ -456,41 +457,41 @@ $(function(){
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="comg_1" id="minmin" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_1" id="comg1" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">33</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="comg_2" id="minmin2" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_2" id="comg2" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">33</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="comg_3" id="minmin3" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_3" id="comg3" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">33</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="comg_4" id="minmin4" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_4" id="comg4" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">28</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="comg_5" id="minmin5" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_5" id="comg5" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">28</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="comg_6" id="minmin6" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_6" id="comg6" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">28</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="comg_7" id="minmin7" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_7" id="comg7" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="comg_8" id="minmin8" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_8" id="comg8" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 														</tr>
@@ -543,7 +544,7 @@ $(function(){
 
 									<div class="tab-content no-padding">
 										คอมมิชชั่น / หวย 70 / 3 ตัวท้าย 
-										<div id="min_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+										<div  class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 											<form id="form1" method="POST" action="/com" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
 												 {{ csrf_field() }}
@@ -564,41 +565,41 @@ $(function(){
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="com_1" id="minmin" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_1" id="com1" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">33</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="com_2" id="minmin2" type="text" value="" disabled> &gt;=
+																<input class="form-control input-sm ac" name="com_2" id="com2" type="text" value="" disabled> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">33</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="com_3" id="minmin3" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_3" id="com3" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">33</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="com_4" id="minmin4" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_4" id="com4" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">28</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="com_5" id="minmin5" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_5" id="com5" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">28</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="com_6" id="minmin6" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_6" id="com6" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">28</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="com_7" id="minmin7" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_7" id="com7" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="com_8" id="minmin8" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_8" id="com8" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 														</tr>
