@@ -100,11 +100,80 @@ class RateController extends Controller
 
     public function comg(Request $request)
     {
-        dd(request('member_ids'));
+        foreach(request('member_ids') as $ratepay_id){
+
+
+            $ratepay = Ratepay::find($ratepay_id);
+            //dd($ratepay->payoutg_1);
+            if(request('comg_1')){
+                $ratepay->comg_1 = request('comg_1');
+            }
+            if(request('comg_2')){
+                $ratepay->comg_2 = request('comg_2');
+            }
+            if(request('comg_3')){
+                $ratepay->comg_3 = request('comg_3');
+            }
+            if(request('comg_4')){
+                $ratepay->comg_4 = request('comg_4');
+            }
+            if(request('comg_5')){
+                $ratepay->comg_5 = request('comg_5');
+            }
+            if(request('comg_6')){
+                $ratepay->comg_6 = request('comg_6');
+            }
+            if(request('comg_7')){
+                $ratepay->comg_7 = request('comg_7');
+            }
+            if(request('comg_8')){
+                $ratepay->comg_8 = request('comg_8');
+            }
+
+            $ratepay->update();
+
+
+        }
+
+         return back()->withInput();
     }
 
     public function com(Request $request)
     {
-        dd(request('member_ids'));
+          foreach(request('member_ids') as $ratepay_id){
+
+
+            $ratepay = Ratepay::find($ratepay_id);
+            //dd($ratepay->payoutg_1);
+            if(request('com_1')){
+                $ratepay->com_1 = request('com_1');
+            }
+            if(request('com_2')){
+                $ratepay->com_2 = request('com_2');
+            }
+            if(request('com_3')){
+                $ratepay->com_3 = request('com_3');
+            }
+            if(request('com_4')){
+                $ratepay->com_4 = request('com_4');
+            }
+            if(request('com_5')){
+                $ratepay->com_5 = request('com_5');
+            }
+            if(request('com_6')){
+                $ratepay->com_6 = request('com_6');
+            }
+            if(request('com_7')){
+                $ratepay->com_7 = request('com_7');
+            }
+            if(request('com_8')){
+                $ratepay->com_8 = request('com_8');
+            }
+
+            $ratepay->update();
+
+
+        }
+         return back()->withInput();
     }
 }

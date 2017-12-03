@@ -72,6 +72,314 @@
     $("[data-mask]").inputmask();
   });
 </script> --}}
+
+{{-- อัตราจ่ายเเละคอมมิชชั่น --}}
+<script type="text/javascript">
+  $('#payoutg_1').on('keyup', function(){
+    var payoutg_1 = 0;
+    payoutg_1 += isNaN(parseInt( $('#payoutg_1').val() )) ? 0 : parseInt( $('#payoutg_1').val() );
+    if(payoutg_1 > 550){
+      alert("หวยรัฐ อัตราจ่าย 3 ตัวบนต้องไม่เกิน 550");
+      $(this).val('550');
+    }else{
+      $(this).val(payoutg_1);
+    }
+  });
+  $('#payoutg_2').on('keyup', function(){
+    var payoutg_2 = 0;
+    payoutg_2 += isNaN(parseInt( $('#payoutg_2').val() )) ? 0 : parseInt( $('#payoutg_2').val() );
+    if(payoutg_2 > 125){
+      alert("หวยรัฐ อัตราจ่าย 3 ตัวล่างต้องไม่เกิน 125");
+      $(this).val('125');
+    }else{
+      $(this).val(payoutg_2);
+    }
+  });
+  $('#payoutg_3').on('keyup', function(){
+    var payoutg_3 = 0;
+    payoutg_3 += isNaN(parseInt( $('#payoutg_3').val() )) ? 0 : parseInt( $('#payoutg_3').val() );
+    if(payoutg_3 > 105){
+      alert("หวยรัฐ อัตราจ่าย 3 ตัวโต๊ดต้องไม่เกิน 105");
+      $(this).val('105');
+    }else{
+      $(this).val(payoutg_3);
+    }
+  });
+  $('#payoutg_4').on('keyup', function(){
+    var payoutg_4 = 0;
+    payoutg_4 += isNaN(parseInt( $('#payoutg_4').val() )) ? 0 : parseInt( $('#payoutg_4').val() );
+    if(payoutg_4 > 70){
+      alert("หวยรัฐ อัตราจ่าย 2 ตัวบนต้องไม่เกิน 70");
+      $(this).val('70');
+    }else{
+      $(this).val(payoutg_4);
+    }
+  });
+  $('#payoutg_5').on('keyup', function(){
+    var payoutg_5 = 0;
+    payoutg_5 += isNaN(parseInt( $('#payoutg_5').val() )) ? 0 : parseInt( $('#payoutg_5').val() );
+    if(payoutg_5 > 70){
+      alert("หวยรัฐ อัตราจ่าย 2 ตัวล่างต้องไม่เกิน 70");
+      $(this).val('70');
+    }else{
+      $(this).val(payoutg_5);
+    }
+  });
+  $('#payoutg_6').on('keyup', function(){
+    var payoutg_6 = 0;
+    payoutg_6 += isNaN(parseInt( $('#payoutg_6').val() )) ? 0 : parseInt( $('#payoutg_6').val() );
+    if(payoutg_6 > 12){
+      alert("หวยรัฐ อัตราจ่าย 2 ตัวโต๊ดต้องไม่เกิน 12");
+      $(this).val('12');
+    }else{
+      $(this).val(payoutg_6);
+    }
+  });
+  $('#payoutg_7').on('keyup', function(){
+    var payoutg_7 = 0;
+    payoutg_7 += isNaN(parseInt( $('#payoutg_7').val() )) ? 0 : parseInt( $('#payoutg_7').val() );
+    if(payoutg_7 > 3){
+      alert("หวยรัฐ อัตราจ่ายวิ่งบนต้องไม่เกิน 3");
+      $(this).val('3');
+    }else{
+      $(this).val(payoutg_7);
+    }
+  });
+  $('#payoutg_8').on('keyup', function(){
+    var payoutg_8 = 0;
+    payoutg_8 += isNaN(parseInt( $('#payoutg_8').val() )) ? 0 : parseInt( $('#payoutg_8').val() );
+    if(payoutg_8 > 4){
+      alert("หวยรัฐ อัตราจ่าย วิ่งล่างต้องไม่เกิน 4");
+      $(this).val('4');
+    }else{
+      $(this).val(payoutg_8);
+    }
+  });
+  //////หวยรัฐคอมมิชชั้น////////////////////////////////////////////////////
+  $('#comg_1').on('keyup', function(){
+    var comg_1 = 0;
+    comg_1 += isNaN(parseInt( $('#comg_1').val() )) ? 0 : parseInt( $('#comg_1').val() );
+    if(comg_1 > 33){
+      alert("หวยรัฐ คอมมิชชั่น 3 ตัวบนต้องไม่เกิน 33");
+      $(this).val('33');
+    }else{
+      $(this).val(comg_1);
+    }
+  });
+  $('#comg_2').on('keyup', function(){
+    var comg_2 = 0;
+    comg_2 += isNaN(parseInt( $('#comg_2').val() )) ? 0 : parseInt( $('#comg_2').val() );
+    if(comg_2 > 33){
+      alert("หวยรัฐ คอมมิชชั่น 3 ตัวล่างต้องไม่เกิน 33");
+      $(this).val('33');
+    }else{
+      $(this).val(comg_2);
+    }
+  });
+  $('#comg_3').on('keyup', function(){
+    var comg_3 = 0;
+    comg_3 += isNaN(parseInt( $('#comg_3').val() )) ? 0 : parseInt( $('#comg_3').val() );
+    if(comg_3 > 33){
+      alert("หวยรัฐ คอมมิชชั่น 3 ตัวโต๊ดต้องไม่เกิน 33");
+      $(this).val('33');
+    }else{
+      $(this).val(comg_3);
+    }
+  });
+  $('#comg_4').on('keyup', function(){
+    var comg_4 = 0;
+    comg_4 += isNaN(parseInt( $('#comg_4').val() )) ? 0 : parseInt( $('#comg_4').val() );
+    if(comg_4 > 28){
+      alert("หวยรัฐ คอมมิชชั่น 2 ตัวบนต้องไม่เกิน 28");
+      $(this).val('28');
+    }else{
+      $(this).val(comg_4);
+    }
+  });
+  $('#comg_5').on('keyup', function(){
+    var comg_5 = 0;
+    comg_5 += isNaN(parseInt( $('#comg_5').val() )) ? 0 : parseInt( $('#comg_5').val() );
+    if(comg_5 > 28){
+      alert("หวยรัฐ คอมมิชชั่น 2 ตัวล่างต้องไม่เกิน 28");
+      $(this).val('28');
+    }else{
+      $(this).val(comg_5);
+    }
+  });
+  $('#comg_6').on('keyup', function(){
+    var comg_6 = 0;
+    comg_6 += isNaN(parseInt( $('#comg_6').val() )) ? 0 : parseInt( $('#comg_6').val() );
+    if(comg_6 > 28){
+      alert("หวยรัฐ คอมมิชชั่น 2 ตัวโต๊ดต้องไม่เกิน 28");
+      $(this).val('28');
+    }else{
+      $(this).val(comg_6);
+    }
+  });
+  $('#comg_7').on('keyup', function(){
+    var comg_7 = 0;
+    comg_7 += isNaN(parseInt( $('#comg_7').val() )) ? 0 : parseInt( $('#comg_7').val() );
+    if(comg_7 > 12){
+      alert("หวยรัฐ คอมมิชชั่น วิ่งบนต้องไม่เกิน 12");
+      $(this).val('12');
+    }else{
+      $(this).val(comg_7);
+    }
+  });
+  $('#comg_8').on('keyup', function(){
+    var comg_8 = 0;
+    comg_8 += isNaN(parseInt( $('#comg_8').val() )) ? 0 : parseInt( $('#comg_8').val() );
+    if(comg_8 > 12){
+      alert("หวยรัฐ คอมมิชชั่น วิ่งล่างต้องไม่เกิน 12");
+      $(this).val('12');
+    }else{
+      $(this).val(comg_8);
+    }
+  });
+  /////////////////////////////////////////////////////////////////////////////
+  $('#payout_1').on('keyup', function(){
+    var payout_1 = 0;
+    payout_1 += isNaN(parseInt( $('#payout_1').val() )) ? 0 : parseInt( $('#payout_1').val() );
+    if(payout_1 > 550){
+      alert("หวย อัตราจ่าย 3 ตัวบนต้องไม่เกิน 550");
+      $(this).val('550');
+    }else{
+      $(this).val(payout_1);
+    }
+  });
+
+  $('#payout_3').on('keyup', function(){
+    var payout_3 = 0;
+    payout_3 += isNaN(parseInt( $('#payout_3').val() )) ? 0 : parseInt( $('#payout_3').val() );
+    if(payout_3 > 105){
+      alert("หวย อัตราจ่าย 3 ตัวโต๊ดต้องไม่เกิน 105");
+      $(this).val('105');
+    }else{
+      $(this).val(payout_3);
+    }
+  });
+  $('#payout_4').on('keyup', function(){
+    var payout_4 = 0;
+    payout_4 += isNaN(parseInt( $('#payout_4').val() )) ? 0 : parseInt( $('#payout_4').val() );
+    if(payout_4 > 70){
+      alert("หวย อัตราจ่าย 2 ตัวบนต้องไม่เกิน 70");
+      $(this).val('70');
+    }else{
+      $(this).val(payout_4);
+    }
+  });
+  $('#payout_5').on('keyup', function(){
+    var payout_5 = 0;
+    payout_5 += isNaN(parseInt( $('#payout_5').val() )) ? 0 : parseInt( $('#payout_5').val() );
+    if(payout_5 > 70){
+      alert("หวย อัตราจ่าย 2 ตัวล่างต้องไม่เกิน 70");
+      $(this).val('70');
+    }else{
+      $(this).val(payout_5);
+    }
+  });
+  $('#payout_6').on('keyup', function(){
+    var payout_6 = 0;
+    payout_6 += isNaN(parseInt( $('#payout_6').val() )) ? 0 : parseInt( $('#payout_6').val() );
+    if(payout_6 > 12){
+      alert("หวย อัตราจ่าย 2 ตัวโต๊ดต้องไม่เกิน 12");
+      $(this).val('12');
+    }else{
+      $(this).val(payout_6);
+    }
+  });
+  $('#payout_7').on('keyup', function(){
+    var payout_7 = 0;
+    payout_7 += isNaN(parseInt( $('#payout_7').val() )) ? 0 : parseInt( $('#payout_7').val() );
+    if(payout_7 > 3){
+      alert("หวย อัตราจ่ายวิ่งบนต้องไม่เกิน 3");
+      $(this).val('3');
+    }else{
+      $(this).val(payout_7);
+    }
+  });
+  $('#payout_8').on('keyup', function(){
+    var payout_8 = 0;
+    payout_8 += isNaN(parseInt( $('#payout_8').val() )) ? 0 : parseInt( $('#payout_8').val() );
+    if(payout_8 > 4){
+      alert("หวย อัตราจ่าย วิ่งล่างต้องไม่เกิน 4");
+      $(this).val('4');
+    }else{
+      $(this).val(payout_8);
+    }
+  });
+  //////////////////////////////////////////////////////////////////////////////
+ $('#com_1').on('keyup', function(){
+    var com_1 = 0;
+    com_1 += isNaN(parseInt( $('#com_1').val() )) ? 0 : parseInt( $('#com_1').val() );
+    if(com_1 > 33){
+      alert("หวยรัฐ คอมมิชชั่น 3 ตัวบนต้องไม่เกิน 33");
+      $(this).val('33');
+    }else{
+      $(this).val(com_1);
+    }
+  });
+  $('#com_3').on('keyup', function(){
+    var com_3 = 0;
+    com_3 += isNaN(parseInt( $('#com_3').val() )) ? 0 : parseInt( $('#com_3').val() );
+    if(com_3 > 33){
+      alert("หวยรัฐ คอมมิชชั่น 3 ตัวโต๊ดต้องไม่เกิน 33");
+      $(this).val('33');
+    }else{
+      $(this).val(com_3);
+    }
+  });
+  $('#com_4').on('keyup', function(){
+    var com_4 = 0;
+    com_4 += isNaN(parseInt( $('#com_4').val() )) ? 0 : parseInt( $('#com_4').val() );
+    if(com_4 > 28){
+      alert("หวยรัฐ คอมมิชชั่น 2 ตัวบนต้องไม่เกิน 28");
+      $(this).val('28');
+    }else{
+      $(this).val(com_4);
+    }
+  });
+  $('#com_5').on('keyup', function(){
+    var com_5 = 0;
+    com_5 += isNaN(parseInt( $('#com_5').val() )) ? 0 : parseInt( $('#com_5').val() );
+    if(com_5 > 28){
+      alert("หวยรัฐ คอมมิชชั่น 2 ตัวล่างต้องไม่เกิน 28");
+      $(this).val('28');
+    }else{
+      $(this).val(com_5);
+    }
+  });
+  $('#com_6').on('keyup', function(){
+    var com_6 = 0;
+    com_6 += isNaN(parseInt( $('#com_6').val() )) ? 0 : parseInt( $('#com_6').val() );
+    if(com_6 > 28){
+      alert("หวยรัฐ คอมมิชชั่น 2 ตัวโต๊ดต้องไม่เกิน 28");
+      $(this).val('28');
+    }else{
+      $(this).val(com_6);
+    }
+  });
+  $('#com_7').on('keyup', function(){
+    var com_7 = 0;
+    com_7 += isNaN(parseInt( $('#com_7').val() )) ? 0 : parseInt( $('#com_7').val() );
+    if(com_7 > 12){
+      alert("หวยรัฐ คอมมิชชั่น วิ่งบนต้องไม่เกิน 12");
+      $(this).val('12');
+    }else{
+      $(this).val(com_7);
+    }
+  });
+  $('#com_8').on('keyup', function(){
+    var com_8 = 0;
+    com_8 += isNaN(parseInt( $('#com_8').val() )) ? 0 : parseInt( $('#com_8').val() );
+    if(com_8 > 12){
+      alert("หวยรัฐ คอมมิชชั่น วิ่งล่างต้องไม่เกิน 12");
+      $(this).val('12');
+    }else{
+      $(this).val(com_8);
+    }
+  });
+</script>
 @endsection
 
 @section('content')
@@ -542,70 +850,70 @@
                                             </td>
                                             <td class="ac am bolder">อัตราจ่าย</td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payoutg_1" type="text" value="550">
+                                              <input class="form-control inline width-50 deep-blue" name="payoutg_1" id="payoutg_1" type="text" value="550">
                                               / 550
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payoutg_2" type="text" value="125">
+                                              <input class="form-control inline width-50 deep-blue" name="payoutg_2" id="payoutg_2" type="text" value="125">
                                               / 125
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payoutg_3" type="text" value="105">
+                                              <input class="form-control inline width-50 deep-blue" name="payoutg_3" id="payoutg_3" type="text" value="105">
                                               / 105
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payoutg_4" type="text" value="70">
+                                              <input class="form-control inline width-50 deep-blue" name="payoutg_4" id="payoutg_4" type="text" value="70">
                                               / 70
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payoutg_5" type="text" value="70">
+                                              <input class="form-control inline width-50 deep-blue" name="payoutg_5" id="payoutg_5" type="text" value="70">
                                               / 70
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payoutg_6" type="text" value="12">
+                                              <input class="form-control inline width-50 deep-blue" name="payoutg_6" id="payoutg_6" type="text" value="12">
                                               / 12
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payoutg_7" type="text" value="3">
+                                              <input class="form-control inline width-50 deep-blue" name="payoutg_7" id="payoutg_7" type="text" value="3">
                                               / 3
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payoutg_8" type="text" value="4">
+                                              <input class="form-control inline width-50 deep-blue" name="payoutg_8" id="payoutg_8" type="text" value="4">
                                               / 4
                                             </td>
                                         </tr>
                                         <tr class=" ">
                                             <td class="ac am bolder">คอมมิชชั่น</td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="comg_1" type="text" value="33">
+                                              <input class="form-control inline width-50 deep-blue" name="comg_1" id="comg_1" type="text" value="33">
                                                 / 33
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="comg_2" type="text" value="33">
+                                              <input class="form-control inline width-50 deep-blue" name="comg_2" id="comg_2" type="text" value="33">
                                               / 33
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="comg_3" type="text" value="33">
+                                              <input class="form-control inline width-50 deep-blue" name="comg_3" id="comg_3" type="text" value="33">
                                               / 33
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="comg_4" type="text" value="28">
+                                              <input class="form-control inline width-50 deep-blue" name="comg_4" id="comg_4" type="text" value="28">
                                               / 28
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="comg_5" type="text" value="28">
+                                              <input class="form-control inline width-50 deep-blue" name="comg_5" id="comg_5" type="text" value="28">
                                               / 28
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="comg_6" type="text" value="28">
+                                              <input class="form-control inline width-50 deep-blue" name="comg_6" id="comg_6" type="text" value="28">
                                               / 28
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="comg_7" type="text" value="12">
+                                              <input class="form-control inline width-50 deep-blue" name="comg_7" id="comg_7" type="text" value="12">
                                               / 12
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="comg_8" type="text" value="12">
+                                              <input class="form-control inline width-50 deep-blue" name="comg_8" id="comg_8" type="text" value="12">
                                               / 12
                                             </td>
                                         </tr>
@@ -616,70 +924,70 @@
                                             </td>
                                             <td class="ac am bolder">อัตราจ่าย</td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payout_1" type="text" value="550">
+                                              <input class="form-control inline width-50 deep-blue" name="payout_1" id="payout_1" type="text" value="550">
                                               / 550
                                             </td>
-                                            <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payout_2" type="text" value="1">
-                                              / 1
+                                            <td class="am" >
+                                              <input type="hidden" class="form-control inline width-50 deep-blue" id="payout_2" name="payout_2" type="text" value="0">
+                                            
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payout_3" type="text" value="105">
+                                              <input class="form-control inline width-50 deep-blue" name="payout_3" id="payout_3" type="text" value="105">
                                               / 105
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payout_4" type="text" value="70">
+                                              <input class="form-control inline width-50 deep-blue" name="payout_4" id="payout_4" type="text" value="70">
                                               / 70
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payout_5" type="text" value="70">
+                                              <input class="form-control inline width-50 deep-blue" name="payout_5" id="payout_5" type="text" value="70">
                                               / 70
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payout_6" type="text" value="12">
+                                              <input class="form-control inline width-50 deep-blue" name="payout_6" id="payout_6" type="text" value="12">
                                               / 12
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payout_7" type="text" value="3">
+                                              <input class="form-control inline width-50 deep-blue" name="payout_7" id="payout_7" type="text" value="3">
                                               / 3
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="payout_8" type="text" value="4">
+                                              <input class="form-control inline width-50 deep-blue" name="payout_8" id="payout_8" type="text" value="4">
                                               / 4
                                             </td>
                                         </tr>
                                         <tr class=" ">
                                             <td class="ac am bolder">คอมมิชชั่น</td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="com_1" type="text" value="33">
+                                              <input class="form-control inline width-50 deep-blue" name="com_1" id="com_1" type="text" value="33">
                                               / 33
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="com_2" type="text" value="0">
-                                              / 0
+                                              <input type="hidden" class="form-control inline width-50 deep-blue" name="com_2" id="com_2" type="text" value="0">
+                                             
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="com_3" type="text" value="33">
+                                              <input class="form-control inline width-50 deep-blue" name="com_3" id="com_3"  type="text" value="33">
                                               / 33
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="com_4" type="text" value="28">
+                                              <input class="form-control inline width-50 deep-blue" name="com_4" id="com_4" type="text" value="28">
                                               / 28
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="com_5" type="text" value="28">
+                                              <input class="form-control inline width-50 deep-blue" name="com_5" id="com_5" type="text" value="28">
                                               / 28
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="com_6" type="text" value="28">
+                                              <input class="form-control inline width-50 deep-blue" name="com_6" id="com_6" type="text" value="28">
                                               / 28
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="com_7" type="text" value="12">
+                                              <input class="form-control inline width-50 deep-blue" name="com_7" id="com_7" type="text" value="12">
                                               / 12
                                             </td>
                                             <td class="am">
-                                              <input class="form-control inline width-50 deep-blue" name="com_8" type="text" value="12">
+                                              <input class="form-control inline width-50 deep-blue" name="com_8" id="com_8" type="text" value="12">
                                               / 12
                                             </td>
                                         </tr>

@@ -310,7 +310,7 @@
 																<a href="#" class="fill-input" tabindex="-1">550</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="" id="minmin2" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="" id="minmin2" type="text" value="" disabled>  &lt;= 
 																<a href="#" class="fill-input" tabindex="-1">125</a>
 															</th>
 															<th>
@@ -367,7 +367,7 @@
                                                             @endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
 															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->payout_1}}</td>
-															<td class="table-min-1-row-1-col-min_2" disabled></td>
+															<td class="table-min-1-row-1-col-min_2"></td>
 															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->payout_3}}</td>
 															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->payout_4}}</td>
 															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->payout_5}}</td>
@@ -431,41 +431,41 @@
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="min_1" id="minmin" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_1" id="minmin" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="min_2" id="minmin2" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_2" id="minmin2" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="min_3" id="minmin3" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_3" id="minmin3" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="min_4" id="minmin4" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_4" id="minmin4" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="min_5" id="minmin5" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_5" id="minmin5" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="min_6" id="minmin6" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_6" id="minmin6" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="min_7" id="minmin7" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_7" id="minmin7" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="min_8" id="minmin8" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="comg_8" id="minmin8" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 														</tr>
@@ -539,41 +539,41 @@
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="min_1" id="minmin" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_1" id="minmin" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="min_2" id="minmin2" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_2" id="minmin2" type="text" value="" disabled> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="min_3" id="minmin3" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_3" id="minmin3" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="min_4" id="minmin4" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_4" id="minmin4" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="min_5" id="minmin5" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_5" id="minmin5" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="min_6" id="minmin6" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_6" id="minmin6" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="min_7" id="minmin7" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_7" id="minmin7" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="min_8" id="minmin8" type="text" value=""> &gt;=
+																<input class="form-control input-sm ac" name="com_8" id="minmin8" type="text" value=""> &gt;=
 																<a href="#" class="fill-input" tabindex="-1">5</a>
 															</th>
 														</tr>
@@ -600,7 +600,7 @@
                                                             @endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
 															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->com_1}}</td>
-															<td class="table-min-1-row-1-col-min_2">{{$member->ratepay->com_2}}</td>
+															<td class="table-min-1-row-1-col-min_2"></td>
 															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->com_3}}</td>
 															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->com_4}}</td>
 															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->com_5}}</td>
