@@ -39,7 +39,10 @@ class Member extends Authenticatable
     {
         return $this->hasOne(Ratepay::class, 'ratepay_id', 'id');
     }
-
+    public function openclose()
+    {
+        return $this->hasOne(Opencloselot::class, 'openclose_id','id');
+    }
    
 
 }

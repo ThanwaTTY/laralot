@@ -72,6 +72,15 @@
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
 
+<script type="text/javascript">
+    $('.check-all').change(function(){
+		if(this.checked == true){
+			 $("input[name='member_ids[]']").prop( "checked", true );
+		}else{
+          $("input[name='member_ids[]']").prop( "checked", false );
+        }
+	});
+</script>
 @endsection
 
 @section('content')
@@ -248,7 +257,8 @@
 
                         <div class="tab-content no-padding">
                             <div class="tab-pane in active" id="gtg_status_1">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/govlot" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                 {{ csrf_field() }}   
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -268,8 +278,8 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th> การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected"></option>
-                                                        <option value="1">เปิด</option><option value="0">ปิด</option>
+                                                        <option value="" selected="selected"></option>
+                                                        <option value="1">เปิด</option><option value="2">ปิด</option>
                                                     </select><br>
                                                     &nbsp;
                                                 </th>
@@ -277,35 +287,33 @@
                                         </thead>
 
                                         <tbody>
+                                        @foreach($members as $member)
                                             <tr data-id="9474" data-status="1" class=" ">
-                                                <td class="id">1</td>
-
-                                                <td>3M3K001 <span class="span-name jquery-hide">()</span> </td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                                <td class="id">{{$member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span> </td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{$member->openclose->id}}"></td>
+                                                @if($member->openclose->govlot == 1)
                                                 <td class="ac table-gtg1-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->govlot == 2)
+                                                <td class="ac table-gtg1-row-9474-col-active">ปิด</td>
+                                                @endif
                                             </tr>
-                                                <tr data-id="10230" data-status="1" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-gtg1-row-10230-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11239" data-status="1" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-gtg1-row-11239-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11240" data-status="1" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-gtg1-row-11240-col-active">เปิด</td>
-                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </form>
