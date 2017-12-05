@@ -10,7 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/testjs', function(){
+Route::get('/testjs', function () {
     return view('testjs');
 });
 
@@ -78,27 +78,25 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::get('/members/edit', 'Members\MemberController@edit');
              Route::post('/members/{id}/edit', 'Members\MemberController@update');
              ////////////////////////////////////////////////////////////////////////
-             Route::get('/helper/create' , 'Members\HelperController@create');
-             Route::post('/helper' , 'Members\HelperController@store')->name('helper.store');
+             Route::get('/helper/create', 'Members\HelperController@create');
+             Route::post('/helper', 'Members\HelperController@store')->name('helper.store');
              Route::get('/helper/managehelper', 'Members\HelperController@edit');
              Route::get('/helper/{id}/edit', 'Members\HelperController@editin');
              Route::post('/helper/{id}/update', 'Members\HelperController@update');
              Route::get('/show/helper', 'Members\HelperController@show');
-             Route::get('/helper/{id}/del','Members\HelperController@destroy');
+             Route::get('/helper/{id}/del', 'Members\HelperController@destroy');
              ////////////////////////////////////////////////////////////////////////
-             Route::get('/user/high-low-number','Members\PlaysetController@index');
+             Route::get('/user/high-low-number', 'Members\PlaysetController@index');
              Route::post('/min', 'Members\PlaysetController@min');
              Route::post('/max', 'Members\PlaysetController@max');
              Route::post('/max_per_num', 'Members\PlaysetController@max_per_num');
              ///////////////////////////////////////////////////////////////////////
              Route::get('/user/commission', 'Members\RateController@index');
-             Route::post('/payoutg','Members\RateController@payoutg');
-             Route::post('/payout','Members\RateController@payout');
-             Route::post('/comg','Members\RateController@comg');
-             Route::post('/com','Members\RateController@com');
-
-
-             });
+             Route::post('/payoutg', 'Members\RateController@payoutg');
+             Route::post('/payout', 'Members\RateController@payout');
+             Route::post('/comg', 'Members\RateController@comg');
+             Route::post('/com', 'Members\RateController@com');
+         });
              Route::get('/test', function () {
                 return view('portest');
             //return view('welcome');
@@ -183,18 +181,18 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
        
 
 
-         Route::get('/report/userreport', function () {
-            return view('report.userreport.index');
-         });
+             Route::get('/report/userreport', function () {
+                return view('report.userreport.index');
+             });
 
-         Route::get('/report/winlossreport', function () {
-            return view('report.winlossreport.index');
-         });
+             Route::get('/report/winlossreport', function () {
+                return view('report.winlossreport.index');
+             });
 
-         Route::get('/report/jackpot', function () {
-            return view('report.jackpot.index');
-         });
+             Route::get('/report/jackpot', function () {
+                return view('report.jackpot.index');
+             });
 
-         Route::get('/report/resultjackpot', function () {
-            return view('report.resultjackpot.index');
-         });
+             Route::get('/report/resultjackpot', function () {
+                return view('report.resultjackpot.index');
+             });

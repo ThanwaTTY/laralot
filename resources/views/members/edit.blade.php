@@ -22,7 +22,13 @@
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-<link rel="stylesheet" href="/css/custom2.css"> @endsection @section('footer')
+<link rel="stylesheet" href="/css/custom2.css">
+<style>
+	.hiddenButton {
+		display: none;
+	}
+</style>
+@endsection @section('footer')
 <!-- jQuery 2.2.3 -->
 <script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -41,8 +47,70 @@
 
 <script>
 	$(function(){
-      alert('active !!');
-  });
+		/*$('.membername').on('keydown', function(){
+			var memberid = $(this).data('memberid');
+
+			$('#button_' + memberid).removeClass('hiddenButton')
+			//alert( $(this).data('memberid'));
+		});*/
+
+		$('input[name="name"]').on('keyup', function(){
+			var memberid = $(this).data('memberid');
+			var name_new = $(this).val();
+			var name_old = $(this).data('old');
+			if(name_old!=name_new){
+				$('#button_' + memberid).removeClass('hiddenButton');
+				$('tr[data-member-id="'+memberid+'"]').addClass('bg-info');
+			}else{
+				$('#button_' + memberid).addClass('hiddenButton');
+				$('tr[data-member-id="'+memberid+'"]').removeClass('bg-info');
+			}
+		});
+
+
+		$('input[name="phone"]').on('keyup', function(){
+			var memberid = $(this).data('memberid');
+			var name_new = $(this).val();
+			var name_old = $(this).data('old');
+			if(name_old!=name_new){
+				$('#button_' + memberid).removeClass('hiddenButton');
+				$('tr[data-member-id="'+memberid+'"]').addClass('bg-info');
+			}else{
+				$('#button_' + memberid).addClass('hiddenButton');
+				$('tr[data-member-id="'+memberid+'"]').removeClass('bg-info');
+			}
+		});
+
+		$('select[name="status"]').on('change', function(){
+			//alert('change');
+			var memberid = $(this).data('memberid');
+			var name_new = $(this).val();
+			var name_old = $(this).data('old');
+			//alert('name_new:'+name_new+' name_old:'+name_old);
+			if(name_old!=name_new){
+				$('#button_' + memberid).removeClass('hiddenButton');
+				$('tr[data-member-id="'+memberid+'"]').addClass('bg-info');
+			}else{
+				$('#button_' + memberid).addClass('hiddenButton');
+				$('tr[data-member-id="'+memberid+'"]').removeClass('bg-info');
+			}
+		});
+
+		$('input[name="password"]').on('keyup', function(){
+			var memberid = $(this).data('memberid');
+			var name_new = $(this).val();
+			var name_old = $(this).data('old');
+			//alert('name_new:'+name_new+' name_old:'+name_old);
+			if(name_old!=name_new){
+				$('#btn-password_' + memberid).removeClass('hiddenButton');
+				$('tr[data-member-password-id="'+memberid+'"]').addClass('bg-info');
+			}else{
+				$('#btn-password_' + memberid).addClass('hiddenButton');
+				$('tr[data-member-password-id="'+memberid+'"]').removeClass('bg-info');
+			}
+		});
+
+	});
 
 </script>
 @endsection @section('content') @if($errors->all())
@@ -151,10 +219,12 @@
 											== 4) Senior @elseif($members->level == 3) Super Senior @elseif($members->level == 2) Pathner @elseif($members->level
 											== 1) Admin @endif
 										</td>
-										<td class="name"><input class="form-control input-sm" data-old="" name="name" type="text" value="{{$members->name}}"></td>
-										<td class="phone"><input class="form-control input-sm" data-old="" name="phone" type="text" value="{{$members->phone}}"></td>
+										<td class="name"><input data-memberid="{{ $members->id }}" id="name_{{ $members->id }}" class="form-control input-sm membername"
+											 data-old="{{$members->name}}" name="name" type="text" value="{{$members->name}}"></td>
+										<td class="phone"><input data-memberid="{{ $members->id }}" id="phone_{{ $members->id }}" class="form-control input-sm" data-old="{{$members->phone}}"
+											 name="phone" type="text" value="{{$members->phone}}"></td>
 										<td class="status">
-											<select data-old="1" name="status">
+											<select data-memberid="{{ $members->id }}" data-old="{{ $members->status }}" name="status">
                                     {{-- @if($members->status == 0) --}}
                                       <option value="0" {{ ($members->status == 0) ? 'selected="selected"' : ''}}>ปกติ</option>
                                       <option value="1" {{ ($members->status == 1) ? 'selected="selected"' : ''}}>ระงับ</option>
@@ -171,8 +241,10 @@
                                     </select>
 										</td>
 										<td class="control child-hidden">
-											<button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
-											<button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
+											<div id="button_{{ $members->id }}" class="hiddenButton">
+												<button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
+												<button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
+											</div>
 										</td>
 										<td class="ar">{{ number_format($members->credit,'2')}}</td>
 										<td class="ar n2c">0</td>
@@ -202,17 +274,20 @@
 							<form action="/members/{{$members->id}}/edit" method="post">
 								{{ csrf_field() }}
 								<tbody>
-									<tr data-parent-id="9306" data-member-id="9474" class=" ">
+									<tr data-parent-id="9306" data-member-password-id="{{$members->id}}" class=" ">
 										<td class="ac">{{$members->id}}</td>
 										<td class="ac">{{ $members->username}}</td>
 										<td class="type ac">@if($members->level == 7) Member @elseif($members->level == 6) Agent @elseif($members->level == 5) Master @elseif($members->level
 											== 4) Senior @elseif($members->level == 3) Super Senior @elseif($members->level == 2) Pathner @elseif($members->level
 											== 1) Admin @endif
 										</td>
-										<td class="password"><input class="form-control input-sm" data-old="" name="password" type="password" value=""></td>
+										<td class="password"><input data-memberid="{{ $members->id }}" class="form-control input-sm" id="password_{{ $members->id }}" data-old=""
+											 name="password" type="password" value=""></td>
 										<td class="control child-hidden">
-											<button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
-											<button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
+											<div id="btn-password_{{ $members->id }}" class="hiddenButton">
+												<button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
+												<button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
+											</div>
 										</td>
 									</tr>
 								</tbody>
