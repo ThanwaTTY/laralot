@@ -265,7 +265,7 @@ $(function(){
 													<tbody>
                                                     @foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">{{$member->ratepay->id}}</td>
+															<td class="id">{{$member->ratepaygov->id}}</td>
 															<td>{{$member->username}}<span class="showname" name="showname">({{$member->name}})</span></td>
 															 @if($member->level == 7)
                                                             <td class="type" nowrap="">Member</td>
@@ -282,15 +282,15 @@ $(function(){
                                                             @elseif($member->level == 1)
                                                             <td class="type" nowrap="">Admin</td>
                                                             @endif
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
-															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->payoutg_1}}</td>
-															<td class="table-min-1-row-1-col-min_2">{{$member->ratepay->payoutg_2}}</td>
-															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->payoutg_3}}</td>
-															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->payoutg_4}}</td>
-															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->payoutg_5}}</td>
-															<td class="table-min-1-row-1-col-min_6">{{$member->ratepay->payoutg_6}}</td>
-															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->payoutg_7}}</td>
-															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->payoutg_8}}</td>
+															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepaygov->id }}"></td>
+															<td class="table-min-1-row-1-col-min_1">{{$member->ratepaygov->payoutg_1}}</td>
+															<td class="table-min-1-row-1-col-min_2">{{$member->ratepaygov->payoutg_2}}</td>
+															<td class="table-min-1-row-1-col-min_3">{{$member->ratepaygov->payoutg_3}}</td>
+															<td class="table-min-1-row-1-col-min_4">{{$member->ratepaygov->payoutg_4}}</td>
+															<td class="table-min-1-row-1-col-min_5">{{$member->ratepaygov->payoutg_5}}</td>
+															<td class="table-min-1-row-1-col-min_6">{{$member->ratepaygov->payoutg_6}}</td>
+															<td class="table-min-1-row-1-col-min_7">{{$member->ratepaygov->payoutg_7}}</td>
+															<td class="table-min-1-row-1-col-min_8">{{$member->ratepaygov->payoutg_8}}</td>
 														</tr>
                                                     @endforeach
 
@@ -499,7 +499,7 @@ $(function(){
 													<tbody>
                                                     @foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
-															<td class="id">{{$member->ratepay->id}}</td>
+															<td class="id">{{$member->ratepaygov->id}}</td>
 															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
 															@if($member->level == 7)
                                                             <td class="type" nowrap="">Member</td>
@@ -516,15 +516,15 @@ $(function(){
                                                             @elseif($member->level == 1)
                                                             <td class="type" nowrap="">Admin</td>
                                                             @endif
-															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
-															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->comg_1}}</td>
-															<td class="table-min-1-row-1-col-min_2">{{$member->ratepay->comg_2}}</td>
-															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->comg_3}}</td>
-															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->comg_4}}</td>
-															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->comg_5}}</td>
-															<td class="table-min-1-row-1-col-min_6">{{$member->ratepay->comg_6}}</td>
-															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->comg_7}}</td>
-															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->comg_8}}</td>
+															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepaygov->id }}"></td>
+															<td class="table-min-1-row-1-col-min_1">{{$member->ratepaygov->comg_1}}</td>
+															<td class="table-min-1-row-1-col-min_2">{{$member->ratepaygov->comg_2}}</td>
+															<td class="table-min-1-row-1-col-min_3">{{$member->ratepaygov->comg_3}}</td>
+															<td class="table-min-1-row-1-col-min_4">{{$member->ratepaygov->comg_4}}</td>
+															<td class="table-min-1-row-1-col-min_5">{{$member->ratepaygov->comg_5}}</td>
+															<td class="table-min-1-row-1-col-min_6">{{$member->ratepaygov->comg_6}}</td>
+															<td class="table-min-1-row-1-col-min_7">{{$member->ratepaygov->comg_7}}</td>
+															<td class="table-min-1-row-1-col-min_8">{{$member->ratepaygov->comg_8}}</td>
 														</tr>
                                                     @endforeach
 													</tbody>

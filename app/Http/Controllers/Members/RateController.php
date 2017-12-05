@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Ratepay;
 use App\Member;
+use App\Ratepaygov;
 
 
 class RateController extends Controller
@@ -20,14 +21,16 @@ class RateController extends Controller
         $id = auth()->user()->id;
         $useradd = auth()->user()->useradd;
         $members = Member::where('id','!=' ,$id)->where('helper',0)->where('useradd',$id)->get();
-
+        // dd($members->ratepay);
+        // $rate = Ratepaygov::get();
+        // dd($rate->member->id);
          return view('user.commission.index',compact('members'));
     }
 
     public function payoutg(Request $request)
     {
-        foreach(request('member_ids') as $ratepay_id){
-            $ratepay = Ratepay::find($ratepay_id);
+        foreach(request('member_ids') as $ratepaygov_id){
+            $ratepay = Ratepaygov::find($ratepaygov_id);
             //dd($ratepay->payoutg_1);
             if(request('payoutg_1')){
                 $ratepay->payoutg_1 = request('payoutg_1');
@@ -100,10 +103,10 @@ class RateController extends Controller
 
     public function comg(Request $request)
     {
-        foreach(request('member_ids') as $ratepay_id){
+        foreach(request('member_ids') as $ratepaygov_id){
 
 
-            $ratepay = Ratepay::find($ratepay_id);
+            $ratepay = Ratepaygov::find($ratepaygov_id);
             //dd($ratepay->payoutg_1);
             if(request('comg_1')){
                 $ratepay->comg_1 = request('comg_1');

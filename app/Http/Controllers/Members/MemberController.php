@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Member;
 use App\Playset;
 use App\Ratepay;
+use App\Ratepaygov;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\PDOException;
 use Exception;
@@ -157,8 +158,8 @@ class MemberController extends Controller
             'min_8' => request('min_8'),'max_8' => request('max_8'),'max_per_num8' => request('max_per_num8')
             ]);
 
-            Ratepay::create([
-            'ratepay_id' => $membercreate->id,
+            Ratepaygov::create([
+            'ratepaygov_id' => $membercreate->id,
             'payoutg_1' => request('payoutg_1'),'comg_1' => request('comg_1'),
             'payoutg_2' => request('payoutg_2'),'comg_2' => request('comg_2'),
             'payoutg_3' => request('payoutg_3'),'comg_3' => request('comg_3'),
@@ -167,7 +168,10 @@ class MemberController extends Controller
             'payoutg_6' => request('payoutg_6'),'comg_6' => request('comg_6'),
             'payoutg_7' => request('payoutg_7'),'comg_7' => request('comg_7'),
             'payoutg_8' => request('payoutg_8'),'comg_8' => request('comg_8'),
+            ]);
 
+            Ratepay::create([
+            'ratepay_id' => $membercreate->id,
             'payout_1' => request('payout_1'),'com_1' => request('com_1'),
             'payout_2' => request('payout_2'),'com_2' => request('com_2'),
             'payout_3' => request('payout_3'),'com_3' => request('com_3'),
