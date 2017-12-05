@@ -8,6 +8,7 @@ use App\Member;
 use App\Playset;
 use App\Ratepay;
 use App\Ratepaygov;
+use App\Opencloselot;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\PDOException;
 use Exception;
@@ -180,9 +181,24 @@ class MemberController extends Controller
             'payout_6' => request('payout_6'),'com_6' => request('com_6'),
             'payout_7' => request('payout_7'),'com_7' => request('com_7'),
             'payout_8' => request('payout_8'),'com_8' => request('com_8')          
-
-
             ]);
+
+            Opencloselot::create([
+            'openclose_id' => $membercreate->id,
+            'govlot' => 1,
+            'tkslot' => 1,
+            'setlot' => 1,
+            'loaslot' => 1,
+            'malalot' => 1,
+            'setabroad' => 1,
+            'vnlot' => 1,
+            'typebet' => 1,        
+            'lotgovuse' => 1,
+            'lotgov3' => 1,
+            'lotuse' => 1,
+            'lot3' => 1
+            ]);
+
             
            
             session()->flash('massagesuccess','เพิ่มสมาชิกเรียบร้อยเเล้ว');
