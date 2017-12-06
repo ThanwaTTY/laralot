@@ -159,17 +159,8 @@ class MemberController extends Controller
             'min_8' => request('min_8'),'max_8' => request('max_8'),'max_per_num8' => request('max_per_num8')
             ]);
 
-            Ratepaygov::create([
-            'ratepaygov_id' => $membercreate->id,
-            'payoutg_1' => request('payoutg_1'),'comg_1' => request('comg_1'),
-            'payoutg_2' => request('payoutg_2'),'comg_2' => request('comg_2'),
-            'payoutg_3' => request('payoutg_3'),'comg_3' => request('comg_3'),
-            'payoutg_4' => request('payoutg_4'),'comg_4' => request('comg_4'),
-            'payoutg_5' => request('payoutg_5'),'comg_5' => request('comg_5'),
-            'payoutg_6' => request('payoutg_6'),'comg_6' => request('comg_6'),
-            'payoutg_7' => request('payoutg_7'),'comg_7' => request('comg_7'),
-            'payoutg_8' => request('payoutg_8'),'comg_8' => request('comg_8'),
-            ]);
+
+            Ratepaygov::create( array_merge(request()->all(),['ratepaygov_id' => $membercreate->id]) );
 
             Ratepay::create([
             'ratepay_id' => $membercreate->id,
@@ -211,20 +202,36 @@ class MemberController extends Controller
 
     }
 
-    public function edit()
+    public function edit(Request $request)
     {
-        $id = auth()->user()->id;
+        $member = $this->memberList();
+        
+        if( request()->ajax() )
+        {
+            return view('members/table', compact('member'));
+        }
+
+        return view('members/edit', compact('member') );
+
+    }
+
+    // helper function
+    protected function memberList()
+    {
         $helper = auth()->user()->helper;
-        $useradd = auth()->user()->useradd;
+        $id = auth()->user()->id;
+
+        $query = Member::where('id', '!=', $id)->orderBy( request('order', 'name'), request('type','asc'));
 
         if ($helper==1) {
-            $member = Member::where('id', '!=', $id)->where('helper', 0 )->where('useradd', $useradd)->get();
+            $query->where('helper', 0 )->where('useradd', auth()->user()->useradd );
         } else {
-            $member = Member::where('id', '!=', $id)->where('helper', $helper )->where('useradd', $id)->get();
+            $query->where('helper', $helper )->where('useradd', $id );        
         }
-                
-        return view('members/edit', compact('member') );
+
+        return $query->get();        
     }
+
     public function update(Request $request, $id)
     {
             $members = Member::find($id);

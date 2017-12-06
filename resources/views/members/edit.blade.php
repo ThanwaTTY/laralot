@@ -115,32 +115,43 @@
 		$('#users-edit-filter').on('change', function(){
 			//var status = $(this).data('status');
 			//alert($(this).val());
-			var filter = $(this).val();
-			
-			if(filter==0){
-				$('tr[data-status]').css("display", "none");
-				$('tr[data-status="0"]').css("display", "table-row");
-			}else if(filter==1){
-				$('tr[data-status]').css("display", "none");
-				$('tr[data-status="1"]').css("display", "table-row");
-			}else if(filter==2){
-				$('tr[data-status]').css("display", "none");
-				$('tr[data-status="2"]').css("display", "table-row");
-			}else{
-				$('tr[data-status]').css("display", "table-row");
-			}
+			displayOption();
 
 		});
 
 
-		/*$('#users-edit-order').on('change', function(){
+		$('#users-edit-order').on('change', function(){
 
-			var order = $(this).val();
-			alert(order);
-			console.log(order);
-		}*/
+			var route = $(this).val();
+			alert(route);
+			//console.log(order);
+			$.get(route, function(data) {
+
+				$('#general').html(data);
+				displayOption();
+
+			});
+		});
 
 	});
+
+	function displayOption()
+	{
+		var filter = $('#users-edit-filter').val();
+		
+		if(filter==0){
+			$('tr[data-status]').css("display", "none");
+			$('tr[data-status="0"]').css("display", "table-row");
+		}else if(filter==1){
+			$('tr[data-status]').css("display", "none");
+			$('tr[data-status="1"]').css("display", "table-row");
+		}else if(filter==2){
+			$('tr[data-status]').css("display", "none");
+			$('tr[data-status="2"]').css("display", "table-row");
+		}else{
+			$('tr[data-status]').css("display", "table-row");
+		}		
+	}
 
 </script>
 @endsection @section('content') @if($errors->all())
@@ -207,10 +218,10 @@
                 </select>
 							<span class="bolder">เรียง</span>
 							<select id="users-edit-order">
-                  <option value="/members/edit?order=username_asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
-                  <option value="/members/edit?order=username_desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-                  <option value="/members/edit?order=id_asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-                  <option value="/members/edit?order=id_desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+                  <option value="/members/edit?order=name&type=asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+                  <option value="/members/edit?order=name&type=desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+                  <option value="/members/edit?order=id&type=asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+                  <option value="/members/edit?order=id&type=desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
                 </select>
 						</li>
 					</ul>
@@ -255,20 +266,20 @@
 											 name="phone" type="text" value="{{$members->phone}}"></td>
 										<td class="status">
 											<select data-memberid="{{ $members->id }}" data-old="{{ $members->status }}" name="status">
-                                    {{-- @if($members->status == 0) --}}
-                                      <option value="0" {{ ($members->status == 0) ? 'selected="selected"' : ''}}>ปกติ</option>
-                                      <option value="1" {{ ($members->status == 1) ? 'selected="selected"' : ''}}>ระงับ</option>
-                                      <option value="2" {{ ($members->status == 2) ? 'selected="selected"' : ''}}>ล็อค</option>
-                                    {{-- @elseif( $members->status == 1)
-                                      <option value="0">ปกติ</option>
-                                      <option value="1" selected="selected">ระงับ</option>
-                                      <option value="2">ล็อค</option>
-                                    @elseif( $members->status == 2)
-                                      <option value="0">ปกติ</option>
-                                      <option value="1">ระงับ</option>
-                                      <option value="2"  selected="selected">ล็อค</option>
-                                    @endif --}}
-                                    </select>
+															{{-- @if($members->status == 0) --}}
+															<option value="0" {{ ($members->status == 0) ? 'selected="selected"' : ''}}>ปกติ</option>
+															<option value="1" {{ ($members->status == 1) ? 'selected="selected"' : ''}}>ระงับ</option>
+															<option value="2" {{ ($members->status == 2) ? 'selected="selected"' : ''}}>ล็อค</option>
+															{{-- @elseif( $members->status == 1)
+															<option value="0">ปกติ</option>
+															<option value="1" selected="selected">ระงับ</option>
+															<option value="2">ล็อค</option>
+															@elseif( $members->status == 2)
+															<option value="0">ปกติ</option>
+															<option value="1">ระงับ</option>
+															<option value="2"  selected="selected">ล็อค</option>
+															@endif --}}
+															</select>
 										</td>
 										<td class="control child-hidden">
 											<div id="button_{{ $members->id }}" class="hiddenButton">
