@@ -109,7 +109,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
 
              Route::get('/', function () {
                 return view('index');
-            //return view('welcome');
+            // return view('welcome');
             // return 'welcome';
              });
 

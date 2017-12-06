@@ -47,6 +47,8 @@
 
 <script>
 	$(function(){
+		$('tr[data-status]').css("display", "none");
+		$('tr[data-status="0"]').css("display", "table-row");
 		/*$('.membername').on('keydown', function(){
 			var memberid = $(this).data('memberid');
 
@@ -110,6 +112,34 @@
 			}
 		});
 
+		$('#users-edit-filter').on('change', function(){
+			//var status = $(this).data('status');
+			//alert($(this).val());
+			var filter = $(this).val();
+			
+			if(filter==0){
+				$('tr[data-status]').css("display", "none");
+				$('tr[data-status="0"]').css("display", "table-row");
+			}else if(filter==1){
+				$('tr[data-status]').css("display", "none");
+				$('tr[data-status="1"]').css("display", "table-row");
+			}else if(filter==2){
+				$('tr[data-status]').css("display", "none");
+				$('tr[data-status="2"]').css("display", "table-row");
+			}else{
+				$('tr[data-status]').css("display", "table-row");
+			}
+
+		});
+
+
+		/*$('#users-edit-order').on('change', function(){
+
+			var order = $(this).val();
+			alert(order);
+			console.log(order);
+		}*/
+
 	});
 
 </script>
@@ -170,17 +200,17 @@
 						<li class="pull-right right-padding-10 users__edit-options">
 							<span class="bolder">แสดง</span>
 							<select id="users-edit-filter">
-                    <option value="4">ทั้งหมด</option>
-                    <option value="1" selected="selected">ปกติ</option>
-                    <option value="2">ระงับ</option>
-                    <option value="3">ล็อค</option>
+                    <option value="3">ทั้งหมด</option>
+                    <option value="0" selected="selected">ปกติ</option>
+                    <option value="1">ระงับ</option>
+                    <option value="2">ล็อค</option>
                 </select>
 							<span class="bolder">เรียง</span>
 							<select id="users-edit-order">
-                  <option value="" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
-                  <option value="">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-                  <option value="">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-                  <option value="">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+                  <option value="/members/edit?order=username_asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+                  <option value="/members/edit?order=username_desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+                  <option value="/members/edit?order=id_asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+                  <option value="/members/edit?order=id_desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
                 </select>
 						</li>
 					</ul>
@@ -212,7 +242,7 @@
 								@foreach($member as $members)
 								<form action="/members/{{$members->id}}/edit" method="post">
 									{{ csrf_field() }}
-									<tr data-parent-id="9306" data-member-id="{{$members->id}}" data-status="1" class=" ">
+									<tr data-parent-id="9306" data-member-id="{{$members->id}}" data-status="{{ $members->status }}" class="@if($members->status==1) {{'jquery-hide bg-warning'}} @elseif($members->status==2) {{'jquery-hide bg-danger'}} @endif">
 										<td class="ac">{{$members->id}}</td>
 										<td class="ac">{{ $members->username }} </td>
 										<td class="type ac">@if($members->level == 7) Member @elseif($members->level == 6) Agent @elseif($members->level == 5) Master @elseif($members->level
@@ -274,7 +304,7 @@
 							<form action="/members/{{$members->id}}/edit" method="post">
 								{{ csrf_field() }}
 								<tbody>
-									<tr data-parent-id="9306" data-member-password-id="{{$members->id}}" class=" ">
+									<tr data-parent-id="9306" data-member-password-id="{{$members->id}}" data-status="{{ $members->status }}" class="@if($members->status==1) {{'jquery-hide bg-warning'}} @elseif($members->status==2) {{'jquery-hide bg-danger'}} @endif">
 										<td class="ac">{{$members->id}}</td>
 										<td class="ac">{{ $members->username}}</td>
 										<td class="type ac">@if($members->level == 7) Member @elseif($members->level == 6) Agent @elseif($members->level == 5) Master @elseif($members->level
@@ -310,7 +340,7 @@
 							</thead>
 							@foreach($member as $members)
 							<tbody>
-								<tr data-parent-id="9306" data-member-id="9474" data-user-type-id="1" class=" ">
+								<tr data-parent-id="9306" data-member-id="9474" data-user-type-id="1" data-status="{{ $members->status }}" class="@if($members->status==1) {{'jquery-hide bg-warning'}} @elseif($members->status==2) {{'jquery-hide bg-danger'}} @endif">
 									<td class="id">{{$members->id}}</td>
 									<td>{{$members->username}}</td>
 									<td class="type">@if($members->level == 7) Member @elseif($members->level == 6) Agent @elseif($members->level == 5) Master @elseif($members->level
