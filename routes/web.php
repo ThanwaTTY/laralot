@@ -99,6 +99,15 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              //////////////////////////////////////////////////////////////////////
              Route::get('/user/open-close-lottery','Members\OpencloseController@index');
              Route::post('/govlot','Members\OpencloseController@govlot');
+             Route::post('/tkslot','Members\OpencloseController@tkslot');
+             Route::post('/setlot','Members\OpencloseController@setlot');
+             Route::post('/loaslot','Members\OpencloseController@loaslot');
+             Route::post('/malalot','Members\OpencloseController@malalot');
+             Route::post('/setabroad','Members\OpencloseController@setabroad');
+             Route::post('/vnlot','Members\OpencloseController@vnlot');
+             Route::post('/typebet','Members\OpencloseController@typebet');
+             Route::post('/lotgovuse','Members\OpencloseController@lotgovuse');
+             Route::post('/lotuse','Members\OpencloseController@lotuse');
 
              });
              Route::get('/test', function () {

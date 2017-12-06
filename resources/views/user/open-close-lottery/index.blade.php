@@ -320,7 +320,8 @@
                             </div>
 
                             <div class="tab-pane " id="gtg_status_16">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/tkslot" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                    {{csrf_field()}}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -338,50 +339,50 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="" selected="selected"></option>
                                                         <option value="1">เปิด</option>
-                                                        <option value="0">ปิด</option>
+                                                        <option value="2">ปิด</option>
                                                     </select><br>
                                                     &nbsp;
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="9474" data-status="1" class=" ">
-                                                <td class="id">1</td>
-                                                <td> 3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
+                                        @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->tkslot == 1)
                                                 <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->tkslot == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                             </tr>
-                                            <tr data-id="10230" data-status="1" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-gtg16-row-10230-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11239" data-status="1" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-gtg16-row-11239-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11240" data-status="1" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-gtg16-row-11240-col-active">เปิด</td>
-                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </form>
                             </div>
 
                             <div class="tab-pane " id="gtg_status_2">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/setlot" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                 {{csrf_field()}}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -399,50 +400,50 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected">
+                                                        <option value="" selected="selected">
                                                         </option><option value="1">เปิด</option>
-                                                        <option value="0">ปิด</option>
+                                                        <option value="2">ปิด</option>
                                                     </select><br>
                                                     &nbsp;
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="9474" data-status="1" class=" ">
-                                                <td class="id">1</td>
-                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                                <td class="ac table-gtg2-row-9474-col-active">เปิด</td>
+                                        @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->setlot == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->setlot == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                             </tr>
-                                            <tr data-id="10230" data-status="1" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-gtg2-row-10230-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11239" data-status="1" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-gtg2-row-11239-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11240" data-status="1" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-gtg2-row-11240-col-active">เปิด</td>
-                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </form>
                             </div>
 
                             <div class="tab-pane " id="gtg_status_6">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/loaslot" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                    {{ csrf_field()}}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -460,9 +461,9 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="" selected="selected"></option>
                                                         <option value="1">เปิด</option>
-                                                        <option value="0">ปิด</option>
+                                                        <option value="2">ปิด</option>
                                                     </select><br>
                                                     &nbsp;
                                                 </th>
@@ -470,41 +471,41 @@
                                         </thead>
 
                                         <tbody>
-                                            <tr data-id="9474" data-status="1" class=" ">
-                                                <td class="id">1</td>
-                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                                <td class="ac table-gtg6-row-9474-col-active">เปิด</td>
+                                            @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->loaslot == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->loaslot == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                             </tr>
-                                            <tr data-id="10230" data-status="1" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-gtg6-row-10230-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11239" data-status="1" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-gtg6-row-11239-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11240" data-status="1" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-gtg6-row-11240-col-active">เปิด</td>
-                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </form>
                             </div>
 
                             <div class="tab-pane " id="gtg_status_5">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/malalot" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                {{ csrf_field()}}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -522,49 +523,49 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected"></option>
-                                                        <option value="1">เปิด</option><option value="0">ปิด</option>
+                                                        <option value="" selected="selected"></option>
+                                                        <option value="1">เปิด</option><option value="2">ปิด</option>
                                                     </select><br>
                                                     &nbsp;
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="9474" data-status="1" class=" ">
-                                                <td class="id">1</td>
-                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                                <td class="ac table-gtg5-row-9474-col-active">เปิด</td>
+                                            @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->malalot == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->malalot == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                             </tr>
-                                            <tr data-id="10230" data-status="1" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-gtg5-row-10230-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11239" data-status="1" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-gtg5-row-11239-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11240" data-status="1" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-gtg5-row-11240-col-active">เปิด</td>
-                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </form>
                             </div>
 
                             <div class="tab-pane " id="gtg_status_3">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/setabroad" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                {{csrf_field()}}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -582,50 +583,51 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="" selected="selected"></option>
                                                         <option value="1">เปิด</option>
-                                                        <option value="0">ปิด</option>
+                                                        <option value="2">ปิด</option>
                                                     </select><br>
                                                     &nbsp;
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="9474" data-status="1" class=" ">
-                                                <td class="id">1</td>
-                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                                <td class="ac table-gtg3-row-9474-col-active">เปิด</td>
+                                            @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->setabroad == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->setabroad == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                             </tr>
-                                            <tr data-id="10230" data-status="1" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-gtg3-row-10230-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11239" data-status="1" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-gtg3-row-11239-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11240" data-status="1" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-gtg3-row-11240-col-active">เปิด</td>
-                                            </tr>
+                                        @endforeach
+
                                         </tbody>
                                     </table>
                                 </form>
                             </div>
 
                             <div class="tab-pane " id="gtg_status_15">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/vnlot" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                 {{csrf_field()}}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -643,42 +645,41 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected"></option>
-                                                        <option value="1">เปิด</option><option value="0">ปิด</option>
+                                                        <option value="" selected="selected"></option>
+                                                        <option value="1">เปิด</option><option value="2">ปิด</option>
                                                     </select><br>
                                                     &nbsp;
                                                 </th>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="9474" data-status="1" class=" ">
-                                                <td class="id">1</td>
-                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                                <td class="ac table-gtg15-row-9474-col-active">เปิด</td>
+                                            @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->vnlot == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->vnlot == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                             </tr>
-                                            <tr data-id="10230" data-status="1" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-gtg15-row-10230-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11239" data-status="1" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-gtg15-row-11239-col-active">เปิด</td>
-                                            </tr>
-                                            <tr data-id="11240" data-status="1" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-gtg15-row-11240-col-active">เปิด</td>
-                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </form>
@@ -689,7 +690,8 @@
                     <div class="tab-pane " id="btg_visibility">
                         <div class="tab-content no-padding">
                             <div class="tab-pane in active" id="btg_visibility">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/typebet" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                {{csrf_field()}}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -706,43 +708,42 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>3 ตัวท้าย<br>
                                                     <select class="vh" name="btg_visible_1">
-                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="" selected="selected"></option>
                                                         <option value="1">เปิด</option>
-                                                        <option value="0">ปิด</option>
+                                                        <option value="2">ปิด</option>
                                                     </select>
                                                     <br>
                                                     &nbsp;
                                                 </th>                                                                                                                                                                                                                                                                                           </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="9474" data-status="1" class=" ">
-                                                <td class="id">1</td>
-                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                                <td class="ac table-btg_visibility-row-9474-col-btg_visible_1">เปิด</td>
-                                            </tr>                                                                                                                                                                                                                                                                                                                          </tr>
-                                            <tr data-id="10230" data-status="1" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-btg_visibility-row-10230-col-btg_visible_1">เปิด</td>
-                                            </tr>                                                                                                                                                                                                                                                                       </tr>
-                                            <tr data-id="11239" data-status="1" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-btg_visibility-row-11239-col-btg_visible_1">เปิด</td>  
-                                            </tr>                                                                                                                                                                                                                                                                  </tr>
-                                            <tr data-id="11240" data-status="1" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-btg_visibility-row-11240-col-btg_visible_1">เปิด</td>
-                                            </tr>                                                                                                                                                                                                                                                                                                 </tr>
+                                            @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->typebet == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->typebet == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
+                                            </tr>
+                                        @endforeach                                                                                                                                                                                                                                                                                                                          </tr>
                                         </tbody>
                                     </table>
                                 </form>
@@ -761,7 +762,8 @@
                         </ul>
                         <div class="tab-content no-padding">
                             <div class="tab-pane in active" id="payout_status_5">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/lotgovuse" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                {{ csrf_field() }}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -779,64 +781,62 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected"></option>
-                                                        <option value="1">เปิด</option><option value="0">ปิด</option>
+                                                        <option value="" selected="selected"></option>
+                                                        <option value="1">เปิด</option><option value="2">ปิด</option>
                                                     </select>
                                                     <br>&nbsp;
                                                 </th>
                                                 <th>&nbsp;</th>
                                                 <th>3 ตัวท้าย<br>
                                                     <select name="btg_active_1">
-                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="" selected="selected"></option>
                                                         <option value="1">เปิด</option>
-                                                        <option value="0">ปิด</option>
+                                                        <option value="2">ปิด</option>
                                                     </select><br> &nbsp;
                                                 </th>                                                                                                                                                                                                                                                                                                                                                    </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="9474" class=" ">
-                                                <td class="id">1</td>
-                                                <td>M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                                <td class="ac table-p5-row-9474-col-active">เปิด</td>
+                                            @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->lotgovuse == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->lotgovuse == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                                 <td></td>
-                                                <td class="ac table-p5-row-9474-col-btg_active_1">เปิด</td>
+                                                @if($member->openclose->lotgov3 == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->lotgov3 == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                             </tr>
-                                            <tr data-id="10230" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-p5-row-10230-col-active">เปิด</td>
-                                                <td></td>
-                                                <td class="ac table-p5-row-10230-col-btg_active_1">เปิด</td>  
-                                            </tr>                                                                                                                                                                                                                                                                                                                                                 </tr>
-                                            <tr data-id="11239" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-p5-row-11239-col-active">เปิด</td>
-                                                <td></td>
-                                                <td class="ac table-p5-row-11239-col-btg_active_1">เปิด</td>   
-                                            </tr>                                                                                                                                                                                                                                                                                                                                                     </tr>
-                                            <tr data-id="11240" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-p5-row-11240-col-active">เปิด</td>
-                                                <td></td>
-                                                <td class="ac table-p5-row-11240-col-btg_active_1">เปิด</td> 
-                                            </tr>                                                                                                                                                                                                                                                                                                                                               </tr>
+                                        @endforeach                                                                                                                                                                                                                                                                                                                                       </tr>
                                         </tbody>
                                     </table>
                                 </form>
                             </div>
 
                             <div class="tab-pane " id="payout_status_11">
-                                <form method="POST" action="#" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7">
+                                <form method="POST" action="/lotuse" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+                                {{ csrf_field() }}
                                     <table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
                                         <thead>
                                             <tr>
@@ -856,57 +856,55 @@
                                                 <th><input class="check-all" name="" type="checkbox" value="0"></th>
                                                 <th>การใช้งาน<br>
                                                     <select name="active">
-                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="" selected="selected"></option>
                                                         <option value="1">เปิด</option>
-                                                        <option value="0">ปิด</option>
+                                                        <option value="2">ปิด</option>
                                                     </select><br> &nbsp;
                                                 </th>
                                                 <th>&nbsp;</th>
                                                 <th>3 ตัวท้าย<br>
                                                     <select name="btg_active_1">
-                                                        <option value="-1" selected="selected"></option>
+                                                        <option value="" selected="selected"></option>
                                                         <option value="1">เปิด</option>
-                                                        <option value="0">ปิด</option>
+                                                        <option value="2">ปิด</option>
                                                     </select><br>
                                                     &nbsp;
                                                 </th>                                                                                                                                                                                                                                                                                                                                               </tr>
                                         </thead>
                                         <tbody>
-                                            <tr data-id="9474" class=" ">
-                                                <td class="id">1</td>
-                                                <td>3M3K001 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="9474"></td>
-                                                <td class="ac table-p11-row-9474-col-active">เปิด</td>
+                                            @foreach($members as $member)
+                                            <tr data-id="" data-status="1" class=" ">
+                                                <td class="id">{{ $member->id}}</td>
+                                                <td>{{$member->username}}<span class="span-name jquery-hide">()</span></td>
+                                                @if($member->level == 7)
+                                                <td class="type" nowrap="">Member</td>
+                                                @elseif($member->level == 6)
+                                                <td class="type" nowrap="">Agent</td>
+                                                @elseif($member->level == 5)
+                                                <td class="type" nowrap="">Master</td>
+                                                @elseif($member->level == 4)
+                                                <td class="type" nowrap="">Senior</td>
+                                                @elseif($member->level == 3)
+                                                <td class="type" nowrap="">Super Senior</td>
+                                                @elseif($member->level == 2)
+                                                <td class="type" nowrap="">Pathner</td>
+                                                @elseif($member->level == 1)
+                                                <td class="type" nowrap="">Admin</td>
+                                                @endif
+                                                <td class="check"><input name="member_ids[]" type="checkbox" value="{{ $member->openclose->id }}"></td>
+                                                @if($member->openclose->lotuse == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->lotuse == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
                                                 <td></td>
-                                                <td class="ac table-p11-row-9474-col-btg_active_1">เปิด</td>
-                                            </tr>                                                                                                                                                                                                                                                                                                                                                             </tr>
-                                            <tr data-id="10230" class=" ">
-                                                <td class="id">2</td>
-                                                <td>3M3K002 <span class="span-name jquery-hide">()</span></td>
-                                                <td class="type">เมมเบอร์</td><td class="check"><input name="member_ids[]" type="checkbox" value="10230"></td>
-                                                <td class="ac table-p11-row-10230-col-active">เปิด</td>
-                                                <td></td>
-                                                <td class="ac table-p11-row-10230-col-btg_active_1">เปิด</td>
-                                            </tr>  
-                                            <tr data-id="11239" class=" ">
-                                                <td class="id">3</td>
-                                                <td>3M3KPALM <span class="span-name jquery-hide">(ปัทนพงษ์)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11239"></td>
-                                                <td class="ac table-p11-row-11239-col-active">เปิด</td>
-                                                <td></td>
-                                                <td class="ac table-p11-row-11239-col-btg_active_1">เปิด</td> 
-                                            </tr>                                                                                                                                                                                                                                                                                                                                                      </tr>
-                                            <tr data-id="11240" class=" ">
-                                                <td class="id">4</td>
-                                                <td>3M3KTOR <span class="span-name jquery-hide">(thanwa)</span></td>
-                                                <td class="type">เมมเบอร์</td>
-                                                <td class="check"><input name="member_ids[]" type="checkbox" value="11240"></td>
-                                                <td class="ac table-p11-row-11240-col-active">เปิด</td>
-                                                <td></td>
-                                                <td class="ac table-p11-row-11240-col-btg_active_1">เปิด</td> 
-                                            </tr>                                                                                                                                                                                                                                                                                                                                                        </tr>
+                                                @if($member->openclose->lot3 == 1)
+                                                <td class="ac table-gtg16-row-9474-col-active">เปิด</td>
+                                                @elseif($member->openclose->lot3 == 2)
+                                                <td class="ac table-gtg16-row-9474-col-active">ปิด</td>
+                                                @endif
+                                            </tr>
+                                        @endforeach                                                                                                                                                                                                                                                                                                                                                         </tr>
                                         </tbody>
                                     </table>
                                 </form>
