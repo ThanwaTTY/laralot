@@ -167,6 +167,19 @@
  //}
 
 </script>
+
+<script>
+	$(function(){
+		$('#users-edit-order').on('change', function(){
+			var route = $(this).val();
+			alert(route);
+			$.get(route, function(data){
+				$('#general').html(data);
+			});
+		});
+
+	});
+</script>
 @endsection @section('content') @if($errors->all())
 <div class="box-body">
 	<div class="alert alert-warning alert-dismissible">
@@ -238,10 +251,10 @@
                 </select>
 							<span class="bolder">เรียง</span>
 							<select id="users-edit-order">
-                  <option value="" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
-                  <option value="">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-                  <option value="">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-                  <option value="">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+                  <option value="/user/high-low-number?order=name&type=asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
+                  <option value="/user/high-low-number?order=name&type=desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
+                  <option value="/user/high-low-number?order=id&type=asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+                  <option value="/user/high-low-number?order=id&type=desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
                 </select>
 						</li>
 					</ul>
@@ -261,6 +274,7 @@
 								<form id="form1" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 								 data-after="reset" class="js-ajax-form">
 									{{ csrf_field() }}
+								 <div id="general">
 									<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 										<thead clsss="thin-border-bottom">
 											<tr>
@@ -353,6 +367,7 @@
 											@endforeach
 										</tbody>
 									</table>
+							   	 </div>
 								</form>
 
 							</div>

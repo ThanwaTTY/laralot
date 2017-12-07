@@ -3,7 +3,7 @@
     var min_1 = 0;
     min_1 += isNaN(parseInt( $('#min_1').val() )) ? 0 : parseInt( $('#min_1').val() );
     if(min_1 < 5){
-    alert("ขั้นต่ำ 3 ตัวบนต้องมีค่าอย่างน้อย 55");
+    alert("ขั้นต่ำ 3 ตัวบนต้องมีค่าอย่างน้อย 5");
     $(this).val('5');
     }else{
       $(this).val(min_1);

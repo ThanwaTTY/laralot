@@ -11,29 +11,24 @@ class PlaysetController extends Controller
 {
     public function index()
     {
+        $member = $this->userHightlow();
+        if(request()->ajax() )
+        {
+            return view('user.high-low-number.table1', compact('member'));
+        }
+        return view('user.high-low-number.index', compact('member'));
+    }
+    protected function userHightlow()
+    {
         $id = auth()->user()->id;
         $helper = auth()->user()->helper;
         $useradd = auth()->user()->useradd;
-        $member = Member::find($id)->get();
-
-        $playset = Playset::where('member_id', '!=', $id)->where('member_id', $useradd)->get();
-        // $member = Member::where('id', '!=', $id)->where('id', $playset->member_id)->get();
+        $query = Member::where('id','!=',$id)->orderBy( request('order','name'), request('type','asc'));
         
-        // $playset = Playset::where('member_id', $member)->get();
-        // dd($playset);
+        $query->where('helper', 0)->where('useradd', $id);
 
-        // if ($helper==1) {
-        // $member = Member::where('id', '!=', $id)->where('helper', 0 )->where('useradd', $useradd)->get();
-        $member = Member::where('helper', 0)->where('useradd', $id)->get();
-          
-        // } else {
-        //     $member = Member::where('id', '!=', $id)->where('helper', $helper )->where('useradd', $id)->get();
-        // }
-        // foreach ($member as $key => $loop) {
-        //     $playset[$key] = Playset::where('member_id',$loop->id)->get();
-        // }
-        // dd($member->playset->min_1);
-        return view('user.high-low-number.index', compact('playset', 'member'));
+        return $query->get();
+
     }
 
     public function min(Request $request)
