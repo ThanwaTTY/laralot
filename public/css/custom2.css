@@ -844,3 +844,10 @@ select.input-sm {
 .nav-tabs {
     border-bottom: 1px solid #ddd !important;
 }
+
+
+.users__edit td {
+    font-size: 13px;
+    height: 39px;
+    vertical-align: middle !important;
+}
