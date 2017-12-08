@@ -44,116 +44,7 @@
 <script src="../../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-
-<script>
-	$(function(){
-		$('tr[data-status]').css("display", "none");
-		$('tr[data-status="0"]').css("display", "table-row");
-		/*$('.membername').on('keydown', function(){
-			var memberid = $(this).data('memberid');
-
-			$('#button_' + memberid).removeClass('hiddenButton')
-			//alert( $(this).data('memberid'));
-		});*/
-
-		$('input[name="name"]').on('keyup', function(){
-			var memberid = $(this).data('memberid');
-			var name_new = $(this).val();
-			var name_old = $(this).data('old');
-			if(name_old!=name_new){
-				$('#button_' + memberid).removeClass('hiddenButton');
-				$('tr[data-member-id="'+memberid+'"]').addClass('bg-info');
-			}else{
-				$('#button_' + memberid).addClass('hiddenButton');
-				$('tr[data-member-id="'+memberid+'"]').removeClass('bg-info');
-			}
-		});
-
-
-		$('input[name="phone"]').on('keyup', function(){
-			var memberid = $(this).data('memberid');
-			var name_new = $(this).val();
-			var name_old = $(this).data('old');
-			if(name_old!=name_new){
-				$('#button_' + memberid).removeClass('hiddenButton');
-				$('tr[data-member-id="'+memberid+'"]').addClass('bg-info');
-			}else{
-				$('#button_' + memberid).addClass('hiddenButton');
-				$('tr[data-member-id="'+memberid+'"]').removeClass('bg-info');
-			}
-		});
-
-		$('select[name="status"]').on('change', function(){
-			//alert('change');
-			var memberid = $(this).data('memberid');
-			var name_new = $(this).val();
-			var name_old = $(this).data('old');
-			//alert('name_new:'+name_new+' name_old:'+name_old);
-			if(name_old!=name_new){
-				$('#button_' + memberid).removeClass('hiddenButton');
-				$('tr[data-member-id="'+memberid+'"]').addClass('bg-info');
-			}else{
-				$('#button_' + memberid).addClass('hiddenButton');
-				$('tr[data-member-id="'+memberid+'"]').removeClass('bg-info');
-			}
-		});
-
-		$('input[name="password"]').on('keyup', function(){
-			var memberid = $(this).data('memberid');
-			var name_new = $(this).val();
-			var name_old = $(this).data('old');
-			//alert('name_new:'+name_new+' name_old:'+name_old);
-			if(name_old!=name_new){
-				$('#btn-password_' + memberid).removeClass('hiddenButton');
-				$('tr[data-member-password-id="'+memberid+'"]').addClass('bg-info');
-			}else{
-				$('#btn-password_' + memberid).addClass('hiddenButton');
-				$('tr[data-member-password-id="'+memberid+'"]').removeClass('bg-info');
-			}
-		});
-
-		$('#users-edit-filter').on('change', function(){
-			//var status = $(this).data('status');
-			//alert($(this).val());
-			displayOption();
-
-		});
-
-
-		$('#users-edit-order').on('change', function(){
-
-			var route = $(this).val();
-			alert(route);
-			//console.log(order);
-			$.get(route, function(data) {
-
-				$('#general').html(data);
-				displayOption();
-
-			});
-		});
-
-	});
-
-	function displayOption()
-	{
-		var filter = $('#users-edit-filter').val();
-		
-		if(filter==0){
-			$('tr[data-status]').css("display", "none");
-			$('tr[data-status="0"]').css("display", "table-row");
-		}else if(filter==1){
-			$('tr[data-status]').css("display", "none");
-			$('tr[data-status="1"]').css("display", "table-row");
-		}else if(filter==2){
-			$('tr[data-status]').css("display", "none");
-			$('tr[data-status="2"]').css("display", "table-row");
-		}else{
-			$('tr[data-status]').css("display", "table-row");
-		}		
-	}
-
-</script>
+<script src="../../js/jscustom.js"></script>
 @endsection @section('content') @if($errors->all())
 <div class="box-body">
 	<div class="alert alert-warning alert-dismissible">
@@ -220,8 +111,8 @@
 							<select id="users-edit-order">
                   <option value="/members/edit?order=name&type=asc" selected="selected">ชื่อสมาชิก ก่อน -&gt; หลัง</option>
                   <option value="/members/edit?order=name&type=desc">ชื่อสมาชิก หลัง -&gt; ก่อน</option>
-                  <option value="/members/edit?order=id&type=asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
-                  <option value="/members/edit?order=id&type=desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
+                  <option value="/members/edit?order=created_at&type=asc">เวลาที่สร้าง ก่อน -&gt; หลัง</option>
+                  <option value="/members/edit?order=created_at&type=desc">เวลาที่สร้าง หลัง -&gt; ก่อน</option>
                 </select>
 						</li>
 					</ul>
@@ -233,7 +124,7 @@
 						<table class="table table-bordered table-border-dark table-nowrap no-margin-bottom min-width-800 max-width-1100 users__edit users__edit--larger">
 							<thead>
 								<tr>
-									<th>Id</th>
+									<th>#</th>
 									<th class="ac">ชื่อผู้ใช้</th>
 									<th class="ac">ระดับ</th>
 									<th class="ac">ชื่อ</th>
@@ -304,17 +195,17 @@
 						<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom min-width-800 max-width-1100 users__edit users__edit--larger">
 							<thead>
 								<tr>
-									<th>Id</th>
+									<th>#</th>
 									<th class="ac">ชื่อผู้ใช้</th>
 									<th class="ac">ระดับ</th>
 									<th class="ac">รหัสผ่าน</th>
 									<th>บันทึก</th>
 								</tr>
 							</thead>
-							@foreach($member as $members)
 							<form action="/members/{{$members->id}}/edit" method="post">
 								{{ csrf_field() }}
 								<tbody>
+									@foreach($member as $members)
 									<tr data-parent-id="9306" data-member-password-id="{{$members->id}}" data-status="{{ $members->status }}" class="@if($members->status==1) {{'jquery-hide bg-warning'}} @elseif($members->status==2) {{'jquery-hide bg-danger'}} @endif">
 										<td class="ac">{{$members->id}}</td>
 										<td class="ac">{{ $members->username}}</td>
@@ -331,9 +222,10 @@
 											</div>
 										</td>
 									</tr>
+									@endforeach
 								</tbody>
 							</form>
-							@endforeach
+
 						</table>
 					</div>
 					<!-- Tab 3 Credit -->
@@ -349,8 +241,9 @@
 									<th>บันทึก</th>
 								</tr>
 							</thead>
-							@foreach($member as $members)
+
 							<tbody>
+								@foreach($member as $members)
 								<tr data-parent-id="9306" data-member-id="9474" data-user-type-id="1" data-status="{{ $members->status }}" class="@if($members->status==1) {{'jquery-hide bg-warning'}} @elseif($members->status==2) {{'jquery-hide bg-danger'}} @endif">
 									<td class="id">{{$members->id}}</td>
 									<td>{{$members->username}}</td>
@@ -383,8 +276,9 @@
 										<button class="btn-cancel btn btn-xs btn-danger no-border"><i class="ace-icon fa fa-times"></i></button>
 									</td>
 								</tr>
+								@endforeach
 							</tbody>
-							@endforeach
+
 						</table>
 					</div>
 				</div>

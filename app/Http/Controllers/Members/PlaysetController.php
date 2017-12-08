@@ -87,6 +87,26 @@ class PlaysetController extends Controller
             if (request('min_3') > 0) {
                 $successes['min_3'][] = $member_id;
             }
+
+            if (request('min_4') > 0) {
+                $successes['min_4'][] = $member_id;
+            }
+
+            if (request('min_5') > 0) {
+                $successes['min_5'][] = $member_id;
+            }
+
+            if (request('min_6') > 0) {
+                $successes['min_6'][] = $member_id;
+            }
+
+            if (request('min_7') > 0) {
+                $successes['min_7'][] = $member_id;
+            }
+
+            if (request('min_8') > 0) {
+                $successes['min_8'][] = $member_id;
+            }
         }
 
 
