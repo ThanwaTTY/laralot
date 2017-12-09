@@ -34,14 +34,10 @@ class PlaysetController extends Controller
     public function min(Request $request)
     {
 
-        // $name = $request->all();
          $id = $request->input('member_ids');
          $playset = Playset::find($id)->first();
-        // dd($playset->min_1);
-        // dd(request('member_ids'));
         foreach (request('member_ids') as $playset_id) {
             $playset = Playset::find($playset_id);
-            // dd($playset->min_1);
             if (request('min_1')) {
                 $playset->min_1 = request('min_1');
             }if (request('min_2')) {
@@ -63,14 +59,6 @@ class PlaysetController extends Controller
             $playset->update();
         }
 
-        //$playset->update();
-        // if (request('min_1')) {
-        //     $playset->min_1 = request('min_1');
-        // }
-       
-        //$playset->update();
-        
-        //dd($id);
         $position = [];
         $successes = [];
         $fails = [];
@@ -111,16 +99,18 @@ class PlaysetController extends Controller
 
 
         return response()->json(['success'=>$successes, 'fails'=>$fails, 'playset'=>$playset, 'id'=>$id]);
-        //return ;
-        //return back()->withInput();
     }
 
     public function max(Request $request)
     {
+
+         $id = $request->input('member_ids');
+         //dd(request('max_1'));
+         $playset = Playset::find($id)->first();
         foreach (request('member_ids') as $playset_id) {
             $playset = Playset::find($playset_id);
-            // dd($playset->max_1);
             if (request('max_1')) {
+
                 $playset->max_1 = request('max_1');
             }if (request('max_2')) {
                 $playset->max_2 = request('max_2');
@@ -137,40 +127,121 @@ class PlaysetController extends Controller
             }if (request('max_8')) {
                 $playset->max_8 = request('max_8');
             }
-
+            
             $playset->update();
         }
 
-        return back()->withInput();
+        $position = [];
+        $successes = [];
+        $fails = [];
+        foreach (request('member_ids') as $member_id) {
+            if (request('max_1') > 0) {
+                $successes['max_1'][] = $member_id;
+                $position[]='max_1';
+            }
+
+            if (request('max_2') > 0) {
+                $successes['max_2'][] = $member_id;
+            }
+
+            if (request('max_3') > 0) {
+                $successes['max_3'][] = $member_id;
+            }
+
+            if (request('max_4') > 0) {
+                $successes['max_4'][] = $member_id;
+            }
+
+            if (request('max_5') > 0) {
+                $successes['max_5'][] = $member_id;
+            }
+
+            if (request('max_6') > 0) {
+                $successes['max_6'][] = $member_id;
+            }
+
+            if (request('max_7') > 0) {
+                $successes['max_7'][] = $member_id;
+            }
+
+            if (request('max_8') > 0) {
+                $successes['max_8'][] = $member_id;
+            }
+        }
+
+
+        return response()->json(['success'=>$successes, 'fails'=>$fails, 'playset'=>$playset, 'id'=>$id]);
     }
 
     public function max_per_num(Request $request)
     {
-        // dd();
+
+         $id = $request->input('member_ids');
+         //dd(request('max_per_num1'));
+         $playset = Playset::find($id)->first();
         foreach (request('member_ids') as $playset_id) {
             $playset = Playset::find($playset_id);
-            // dd($playset->max_1);
-            if (request('max_per_num_1')) {
-                $playset->max_per_num1 = request('max_per_num_1');
-            }if (request('max_per_num_2')) {
-                $playset->max_per_num2 = request('max_per_num_2');
-            }if (request('max_per_num_3')) {
-                $playset->max_per_num3 = request('max_per_num_3');
-            }if (request('max_per_num_4')) {
-                $playset->max_per_num4 = request('max_per_num_4');
-            }if (request('max_per_num_5')) {
-                $playset->max_per_num5 = request('max_per_num_5');
-            }if (request('max_per_num_6')) {
-                $playset->max_per_num6 = request('max_per_num_6');
-            }if (request('max_per_num_7')) {
-                $playset->max_per_num7 = request('max_per_num_7');
-            }if (request('max_per_num_8')) {
-                $playset->max_per_num8 = request('max_per_num_8');
+            if (request('max_per_num1')) {
+                
+                $playset->max_per_num1 = request('max_per_num1');
+            }if (request('max_per_num2')) {
+                $playset->max_per_num2 = request('max_per_num2');
+            }if (request('max_per_num3')) {
+                $playset->max_per_num3 = request('max_per_num3');
+            }if (request('max_per_num4')) {
+                $playset->max_per_num4 = request('max_per_num4');
+            }if (request('max_per_num5')) {
+                $playset->max_per_num5 = request('max_per_num5');
+            }if (request('max_per_num6')) {
+                $playset->max_per_num6 = request('max_per_num6');
+            }if (request('max_per_num7')) {
+                $playset->max_per_num7 = request('max_per_num7');
+            }if (request('max_per_num8')) {
+                $playset->max_per_num8 = request('max_per_num8');
             }
-
+            
             $playset->update();
         }
 
-        return back()->withInput();
+        $position = [];
+        $successes = [];
+        $fails = [];
+        foreach (request('member_ids') as $member_id) {
+            if (request('max_per_num1') > 0) {
+                $successes['max_per_num1'][] = $member_id;
+                $position[]='max_per_num1';
+            }
+
+            if (request('max_per_num2') > 0) {
+                $successes['max_per_num2'][] = $member_id;
+            }
+
+            if (request('max_per_num3') > 0) {
+                $successes['max_per_num3'][] = $member_id;
+            }
+
+            if (request('max_per_num4') > 0) {
+                $successes['max_per_num4'][] = $member_id;
+            }
+
+            if (request('max_per_num5') > 0) {
+                $successes['max_per_num5'][] = $member_id;
+            }
+
+            if (request('max_per_num6') > 0) {
+                $successes['max_per_num6'][] = $member_id;
+            }
+
+            if (request('max_per_num7') > 0) {
+                $successes['max_per_num7'][] = $member_id;
+            }
+
+            if (request('max_per_num8') > 0) {
+                $successes['max_per_num8'][] = $member_id;
+            }
+        }
+
+
+        return response()->json(['success'=>$successes, 'fails'=>$fails, 'playset'=>$playset, 'id'=>$id]);
     }
 }

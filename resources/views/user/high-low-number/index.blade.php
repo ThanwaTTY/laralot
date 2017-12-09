@@ -53,8 +53,8 @@
 		border-radius: 0;
 	}
 </style> --}}
-<link rel="stylesheet" href="/css/custom2.css">
-<script src="../../js/main.js"></script>
+<link rel="stylesheet" href="/css/custom2.css"> {{--
+<script src="../../js/main.js"></script> --}}
 <style>
 	input[type=checkbox],
 	input[type=radio] {
@@ -84,96 +84,97 @@
 <script src="../../dist/js/app.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="../../dist/js/demo.js"></script>
-<script src="../../js/main.js"></script>
+{{--
+<script src="../../js/main.js"></script> --}}
 <script src="/js/custom.js"></script>
 <script type="text/javascript">
 	$(function(){
-    $('#editMin').on('click', function(){
-      $.post('/min', $('#form1').serialize()).done( function(data) {
-        console.log(data);
-        //console.log(data.success.length);
-        for(var i in data.success)
-		//for(var i;i<=data.length; i++)
-        {
-			//console.log(data.success);
-			
-				//console.log(i);
-				//console.log(data.success[i].length);
-			
-        //for( var j in data.success[i])
-		    $.each(data.success[i], function(eventID,eventData) {
-            	//console.log('<p>'+eventData+'</p>');
-				$('.table-min-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
-				$('.table-min-1-row-'+ eventData+'-col-' + i).html(data.playset[i]);
-				console.log('.table-min-1-row-'+ eventData+'-col-' + i);
-     		});
-		//for(var j;j<=8;j++)
-			//{
-		  //console.log(data.success[i]);
-		  
-		  //console.log(data.success[i].length);
-		  //console.log(data.id);
-		  //console.log(j);
+		$(".span-name.jquery-hide").hide();//แสดงชื่อเล่น ปิดไว้ตั้งแต่เริ่มต้น
+		$('.jquery-hide.bg-warning').hide();
+		$('.jquery-hide.bg-danger').hide();
+
+		$('#input-checkbox-name').change(function() {
+			input_checkbox_name();
+		});
+
+		$('.check-all').change(function() {
+			console.log($('.check-all').prop( "checked"));
+				if(this.checked == true){
+					$("input[name='member_ids[]']").prop( "checked", true );
+					//$(".member-check").prop( "checked", true );
+					$(".check-all").prop( "checked", true );
+				}else{
+				$("input[name='member_ids[]']").prop( "checked", false );
+				//$(".member-check").prop( "checked", false );
+				$(".check-all").prop( "checked", false );
+				}
+		});
+
+		
+		$('#users-edit-filter').change(function() {
+			displayOption();
+		});
 
 
-		  //console.log('.table-min-1-row-'+'XXX'+'-col-' + i);
-		  //$('.table-min-1-row-'+ data.success[i][j]+'-col-' + i).addClass('bg-success');
-		/*$.each(data.success, function(key,val) {
-			$.each(data.success[i], function(key,val) {
-				console.log(key+" "+val+" "+i);
-				//console.log('.table-min-1-row-'+'XX'+'-col-' + i);
+		$('#editMin').on('click', function(){
+			$.post('/min', $('#formnin').serialize()).done( function(data) {
+				$('td').removeClass('bg-success');
+				console.log(data);
+				for(var i in data.success)
+				{
+					console.log(i);
+					$('input[name='+i+']').val("");
+					$.each(data.success[i], function(eventID,eventData) {
+						//console.log('<p>'+eventData+'</p>');
+						$('.table-min-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
+						$('.table-min-1-row-'+ eventData+'-col-' + i).html(data.playset[i]);
+						console.log('.table-min-1-row-'+ eventData+'-col-' + i);
+					});
+				}
 			});
-		});*/
-		  /*for(var j;j<=data.success[i].length;j++)
-          {
+		});
 
-            //$('.table-min-1-row-'+ data.success[i][j]+'-col-' + i).addClass('bg-success');
-            //$('.table-min-1-row-'+ data.success[i][j]+'-col-' + i).html(data.playset[i]);
-            console.log('.table-min-1-row-'+ data.success[i][j]+'-col-' + i);
-            //console.log('.table-min-1-row-'+ data.success[i][j]+'-col-' + i);
-          }*/
-			//}
-		}
+		$('#editMax').on('click', function(){
+			$.post('/max', $('#formmax').serialize()).done( function(data) {
+				$('td').removeClass('bg-success');
+				console.log(data);
+				for(var i in data.success)
+				{
+					console.log(i);
+					$('input[name='+i+']').val("");
+					$.each(data.success[i], function(eventID,eventData) {
+						//console.log('<p>'+eventData+'</p>');
+						$('.table-max-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
+						$('.table-max-1-row-'+ eventData+'-col-' + i).html(data.playset[i]);
+						console.log('.table-max-1-row-'+ eventData+'-col-' + i);
+					});
+				}
+			});
+		});
 
-        
-      });
+		$('#editmax_per_num').on('click', function(){
+			$.post('/max_per_num', $('#form_max_per_num').serialize()).done( function(data) {
+				$('td').removeClass('bg-success');
+				console.log(data);
+				for(var i in data.success)
+				{
+					console.log(i);
+					$('input[name='+i+']').val("");
+					$.each(data.success[i], function(eventID,eventData) {
+						//console.log('<p>'+eventData+'</p>');
+						$('.table-max_per_num-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
+						$('.table-max_per_num-1-row-'+ eventData+'-col-' + i).html(data.playset[i]);
+						console.log('.table-max_per_num-1-row-'+ eventData+'-col-' + i);
+						console.log(i);
+						console.log(data.playset);
+					});
+				}
+			});
+		});
 
-    });
-  });
-
-</script>
-
-{{-- --}}
-<script type="text/javascript">
-	$(function(){
-   $(".span-name.jquery-hide").hide();//แสดงชื่อเล่น ปิดไว้ตั้งแต่เริ่มต้น
-   $('.jquery-hide.bg-warning').hide();
-   $('.jquery-hide.bg-danger').hide();
-
-    $('#input-checkbox-name').change(function() {
-		input_checkbox_name();
-    });
-
-    $('.check-all').change(function() {
-      //alert('check-all');
-        if(this.checked == true){
-            $("input[name='member_ids[]']").prop( "checked", true );
-        }else{
-          $("input[name='member_ids[]']").prop( "checked", false );
-        }
-    });
-
-	
-    $('#users-edit-filter').change(function() {
-		displayOption();
-    });
- });
-
-</script>
-
-<script>
-	$(function(){
 		$('#users-edit-order').on('change', function(){
+			$('li.js-change-tab').removeClass(' active');
+			$('li.js-change-tab').first().addClass(' active');
 			var route = $(this).val();
 			//alert(route);
 			$.get(route, function(data){
@@ -209,6 +210,21 @@
         }else{
           $(".span-name.jquery-hide").hide();
         }
+	}
+
+	function click_all(){
+		$('.check-all').change(function() {
+		console.log($('.check-all').prop( "checked"));
+			if(this.checked == true){
+				$("input[name='member_ids[]']").prop( "checked", true );
+				//$(".member-check").prop( "checked", true );
+				$(".check-all").prop( "checked", true );
+			}else{
+			$("input[name='member_ids[]']").prop( "checked", false );
+			//$(".member-check").prop( "checked", false );
+			$(".check-all").prop( "checked", false );
+			}
+		});
 	}
 
 </script>
@@ -303,7 +319,7 @@
 						<div class="tab-content no-padding">
 							<div id="min1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 
-								<form id="form1" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+								<form id="formnin" method="POST" action="/min" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 								 data-after="reset" class="js-ajax-form">
 									{{ csrf_field() }}
 									<div id="general">
@@ -312,6 +328,7 @@
 												<tr>
 													<th colspan="99" class="deep-blue caption">
 														ขั้นต่ำ 3 ตัวท้าย
+
 													</th>
 												</tr>
 
@@ -416,13 +433,14 @@
 
 						<div class="tab-content no-padding">
 							<div id="max_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-								<form method="POST" action="/max" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+								<form method="POST" id="formmax" action="/max" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 								 data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7"> {{ csrf_field() }}
 									<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 										<thead clsss="thin-border-bottom">
 											<tr>
 												<th colspan="99" class="deep-blue caption">
 													สูงสุด 3 ตัวท้าย
+
 												</th>
 											</tr>
 
@@ -430,7 +448,7 @@
 												<th colspan="3" class="vm text-center">
 													<input name="action" type="hidden" value="max">
 													<input name="bet_type_group_id" type="hidden" value="1">
-													<button type="submit" id="editMax" class="btn btn-primary btn-xs">แก้ไข</button>
+													<button type="button" id="editMax" class="btn btn-primary btn-xs">แก้ไข</button>
 													<a class="btn btn-primary btn-xs">ยกเลิก</a>
 												</th>
 
@@ -482,7 +500,7 @@
 											<tr data-id="9474" data-status="{{$members->status}}" @if($members->status == 0) class="jquery-hide nomal" @elseif($members->status == 1) class="jquery-hide bg-warning" @else class="jquery-hide
 												bg-danger" @endif >
 												<td class="id">{{$members->playset->id}}</td>
-												<td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
+												<td>{{$members->username}} <span class="span-name jquery-hide">({{$members->name}})</span></td>
 												@if($members->level == 7)
 												<td class="type" nowrap="">Member</td>
 												@elseif($members->level == 6)
@@ -525,13 +543,14 @@
 
 						<div class="tab-content no-padding">
 							<div id="max_per_num_1" class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-								<form method="POST" action="/max_per_num" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
-								 data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7"> {{ csrf_field() }}
+								<form method="POST" id="form_max_per_num" action="/max_per_num" accept-charset="UTF-8" data-method="put" data-feedback="mixed"
+								 data-before="validateUserEdit" data-after="reset" class="js-ajax-form"><input name="_token" type="hidden" value="IeCQoUcrA0DJ5LqlVQc5nt1EhjE70qQG4BtBIlu7"> {{ csrf_field() }}
 									<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 										<thead clsss="thin-border-bottom">
 											<tr>
 												<th colspan="99" class="deep-blue caption">
 													สูงสุดต่อเลข 3 ตัวท้าย
+
 												</th>
 											</tr>
 
@@ -539,7 +558,7 @@
 												<th colspan="3" class="vm text-center">
 													<input name="action" type="hidden" value="max_per_num">
 													<input name="bet_type_group_id" type="hidden" value="1">
-													<button type="submit" class="btn btn-primary btn-xs">แก้ไข</button>
+													<button type="button" id="editmax_per_num" class="btn btn-primary btn-xs">แก้ไข</button>
 													<a class="btn btn-primary btn-xs">ยกเลิก</a>
 												</th>
 
@@ -547,42 +566,42 @@
 
 												<th>
 													3 ตัวบน<br>
-													<input class="form-control input-sm ac" name="max_per_num_1" id="numpermax1" type="text" value=""> &lt;=
+													<input class="form-control input-sm ac" name="max_per_num1" id="numpermax1" type="text" value=""> &lt;=
 													<a href="#" class="fill-input" tabindex="-1">10000</a>
 												</th>
 												<th>
 													3 ตัวล่าง<br>
-													<input class="form-control input-sm ac" name="max_per_num_2" id="numpermax2" type="text" value=""> &lt;=
+													<input class="form-control input-sm ac" name="max_per_num2" id="numpermax2" type="text" value=""> &lt;=
 													<a href="#" class="fill-input" tabindex="-1">100000</a>
 												</th>
 												<th>
 													3 ตัวโต๊ด<br>
-													<input class="form-control input-sm ac" name="max_per_num_3" id="numpermax3" type="text" value=""> &lt;=
+													<input class="form-control input-sm ac" name="max_per_num3" id="numpermax3" type="text" value=""> &lt;=
 													<a href="#" class="fill-input" tabindex="-1">30000</a>
 												</th>
 												<th>
 													2 ตัวบน<br>
-													<input class="form-control input-sm ac" name="max_per_num_4" id="numpermax4" type="text" value=""> &lt;=
+													<input class="form-control input-sm ac" name="max_per_num4" id="numpermax4" type="text" value=""> &lt;=
 													<a href="#" class="fill-input" tabindex="-1">100000</a>
 												</th>
 												<th>
 													2 ตัวล่าง<br>
-													<input class="form-control input-sm ac" name="max_per_num_5" id="numpermax5" type="text" value=""> &lt;=
+													<input class="form-control input-sm ac" name="max_per_num5" id="numpermax5" type="text" value=""> &lt;=
 													<a href="#" class="fill-input" tabindex="-1">100000</a>
 												</th>
 												<th>
 													2 ตัวโต๊ด<br>
-													<input class="form-control input-sm ac" name="max_per_num_6" id="numpermax6" type="text" value=""> &lt;=
+													<input class="form-control input-sm ac" name="max_per_num6" id="numpermax6" type="text" value=""> &lt;=
 													<a href="#" class="fill-input" tabindex="-1">100000</a>
 												</th>
 												<th>
 													วิ่งบน<br>
-													<input class="form-control input-sm ac" name="max_per_num_7" id="numpermax7" type="text" value=""> &lt;=
+													<input class="form-control input-sm ac" name="max_per_num7" id="numpermax7" type="text" value=""> &lt;=
 													<a href="#" class="fill-input" tabindex="-1">300000</a>
 												</th>
 												<th>
 													วิ่งล่าง<br>
-													<input class="form-control input-sm ac" name="max_per_num_8" id="numpermax8" type="text" value=""> &lt;=
+													<input class="form-control input-sm ac" name="max_per_num8" id="numpermax8" type="text" value=""> &lt;=
 													<a href="#" class="fill-input" tabindex="-1">300000</a>
 												</th>
 											</tr>
@@ -592,7 +611,7 @@
 											<tr data-id="9474" data-status="{{ $members->status }}" @if($members->status == 0) class="jquery-hide nomal" @elseif($members->status == 1) class="jquery-hide bg-warning" @else class="jquery-hide
 												bg-danger" @endif >
 												<td class="id">{{$members->playset->id}}</td>
-												<td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
+												<td>{{$members->username}} <span class="span-name jquery-hide">({{$members->name}})</span></td>
 												@if($members->level == 7)
 												<td class="type" nowrap="">Member</td>
 												@elseif($members->level == 6)
@@ -609,14 +628,14 @@
 												<td class="type" nowrap="">Admin</td>
 												@endif
 												<td class="check"><input name="member_ids[]" type="checkbox" value="{{ $members->playset->id }}"></td>
-												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_1">{{$members->playset->max_per_num1}}</td>
-												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_2">{{$members->playset->max_per_num2}}</td>
-												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_3">{{$members->playset->max_per_num3}}</td>
-												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_4">{{$members->playset->max_per_num4}}</td>
-												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_5">{{$members->playset->max_per_num5}}</td>
-												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_6">{{$members->playset->max_per_num6}}</td>
-												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_7">{{$members->playset->max_per_num7}}</td>
-												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num_8">{{$members->playset->max_per_num8}}</td>
+												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num1">{{$members->playset->max_per_num1}}</td>
+												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num2">{{$members->playset->max_per_num2}}</td>
+												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num3">{{$members->playset->max_per_num3}}</td>
+												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num4">{{$members->playset->max_per_num4}}</td>
+												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num5">{{$members->playset->max_per_num5}}</td>
+												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num6">{{$members->playset->max_per_num6}}</td>
+												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num7">{{$members->playset->max_per_num7}}</td>
+												<td class="table-max_per_num-1-row-{{ $members->playset->id }}-col-max_per_num8">{{$members->playset->max_per_num8}}</td>
 											</tr>
 										</tbody>
 										@endforeach

@@ -73,7 +73,8 @@ $(function () {
 
 
     $('#users-edit-order').on('change', function () {
-
+        $('li.js-change-tab').removeClass(' active');
+        $('li.js-change-tab').first().addClass(' active');
         var route = $(this).val();
         //alert(route);
         //console.log(order);

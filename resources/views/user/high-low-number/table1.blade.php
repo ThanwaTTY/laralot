@@ -1,3 +1,20 @@
+<script>
+	$(function(){
+		$('.check-all').change(function() {
+			console.log($('.check-all').prop( "checked"));
+			if(this.checked == true){
+					$("input[name='member_ids[]']").prop( "checked", true );
+					//$(".member-check").prop( "checked", true );
+					$(".check-all").prop( "checked", true );
+			}else{
+				$("input[name='member_ids[]']").prop( "checked", false );
+				//$(".member-check").prop( "checked", false );
+				$(".check-all").prop( "checked", false );
+			}
+		});
+	});
+
+</script>
 <div class="tab-pane active" id="min" data-action="update-min" data-parent-id="9306">
 	<ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
 		<li class="js-change-tab active" data-tab2="1">
@@ -17,6 +34,7 @@
 							<tr>
 								<th colspan="99" class="deep-blue caption">
 									ขั้นต่ำ 3 ตัวท้าย
+
 								</th>
 							</tr>
 
@@ -128,6 +146,7 @@
 						<tr>
 							<th colspan="99" class="deep-blue caption">
 								สูงสุด 3 ตัวท้าย
+
 							</th>
 						</tr>
 
@@ -187,7 +206,7 @@
 						<tr data-id="9474" data-status="{{$members->status}}" @if($members->status == 0) class="jquery-hide nomal" @elseif($members->status == 1) class="jquery-hide bg-warning" @else class="jquery-hide
 							bg-danger" @endif >
 							<td class="id">{{$members->playset->id}}</td>
-							<td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
+							<td>{{$members->username}} <span class="span-name jquery-hide">({{$members->name}})</span></td>
 							@if($members->level == 7)
 							<td class="type" nowrap="">Member</td>
 							@elseif($members->level == 6)
@@ -237,6 +256,7 @@
 						<tr>
 							<th colspan="99" class="deep-blue caption">
 								สูงสุดต่อเลข 3 ตัวท้าย
+
 							</th>
 						</tr>
 
@@ -297,7 +317,7 @@
 						<tr data-id="9474" data-status="{{ $members->status }}" @if($members->status == 0) class="jquery-hide nomal" @elseif($members->status == 1) class="jquery-hide bg-warning" @else class="jquery-hide
 							bg-danger" @endif >
 							<td class="id">{{$members->playset->id}}</td>
-							<td>{{$members->username}} <span class="span-name jquery-hide"></span></td>
+							<td>{{$members->username}} <span class="span-name jquery-hide">({{$members->name}})</span></td>
 							@if($members->level == 7)
 							<td class="type" nowrap="">Member</td>
 							@elseif($members->level == 6)
