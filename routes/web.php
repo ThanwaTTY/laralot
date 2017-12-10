@@ -36,13 +36,14 @@ Route::post('/admin/login', 'AuthController@postLogin');
 Route::get('/admin/logout', 'AuthController@logout');
 Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberController@register');
 
+        Route::get('/play/bet', 'UserbetController@index');
+        Route::post('/storebet', 'UserbetController@store');
+
     // Route::group(['middleware'=>['auth']], function () {
         Route::get('/index2', function () {
             return view('index2');
         });
-        Route::get('/play/bet', function () {
-            return view('play.bet.index');
-        });
+        
         Route::get('/play/reportlot', function () {
             return view('play.reportlot.index');
         });
