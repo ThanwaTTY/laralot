@@ -298,15 +298,15 @@
 								<input id="sum-share-take" name="" type="hidden" value="90">
 								<label for="share" class="control-label col-xs-1">แบ่งหุ้น:</label>
 								<div class="col-xs-2">
-									<select class="form-control" id="share" name="share">
+									<select class="form-control" id="share" name="keep">
                                 <option value="0.0" selected="selected">0.0%</option>
                               </select>
 								</div>
 								<label for="take" class="control-label col-xs-1">เก็บของ:</label>
 								<div class="col-xs-2">
-									<select class="form-control" id="take" name="take">
+									<select class="form-control" id="take" name="keepset">
                               @for($i = 90; $i >= 0; $i -= 0.5)
-                                  <option value="{{ number_format($i, 1, '.', ',') }}">{{ number_format($i, 1, '.', ',') }}%</option>
+                                  <option  value="{{ number_format($i, 1, '.', ',') }}">{{ number_format($i, 1, '.', ',') }}%</option>
                               @endfor
                                 {{-- <option value="90.0" selected="selected">90.0%</option>
                                 <option value="89.5">89.5%</option>
@@ -316,7 +316,7 @@
 								<div class="col-xs-3 left-margin-10" style="margin-top: 5px">
 									<input name="take_remain" type="hidden" value="0">
 									<label class="width-100">
-                                <input class="" name="take_remain" type="checkbox" value="1">
+                                <input class="" name="keepover" type="checkbox" value="1">
                                 <span class="lbl"> เก็บของที่เกิน</span>
                                 <a href="#" target="_blank"><i class="fa fa-question-circle"></i></a>
                               </label>

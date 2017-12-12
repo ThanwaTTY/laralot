@@ -9,6 +9,7 @@ use App\Playset;
 use App\Ratepay;
 use App\Ratepaygov;
 use App\Opencloselot;
+use App\Keep;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\PDOException;
 use Exception;
@@ -180,6 +181,7 @@ class MemberController extends Controller
             Playset::create( array_merge(request()->all(),['member_id'=> $membercreate->id]) );
             Ratepaygov::create( array_merge(request()->all(),['ratepaygov_id' => $membercreate->id]) );
             Ratepay::create( array_merge(request()->all(), ['ratepay_id' => $membercreate->id]) );
+            Keep::create( array_merge(request()->all(), ['keep_id' => $membercreate->id]) );
             Opencloselot::create([
             'openclose_id' => $membercreate->id,
             'govlot' => 1,
