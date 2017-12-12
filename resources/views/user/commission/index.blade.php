@@ -83,7 +83,7 @@
 
 </script>
 <script type="text/javascript">
-$(function(){
+	$(function(){
 	$(".showname").hide();
 	
 	$('#mastercheck').change(function(){
@@ -104,18 +104,41 @@ $(function(){
         }
 	});
 });
+
 </script>
-@endsection
-@section('content')
-  
-	@if($errors->all())
-	<div class="box-body">
-		<div class="alert alert-warning alert-dismissible">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-			<h4><i class="icon fa fa-warning"></i> Alert!</h4>
-			@foreach($errors->all() as $message) {{ $message }}. <br> @endforeach
-		</div>
+<script>
+	$(function(){
+		$('#editpaycot_g').on('click', function(){
+			console.log("active");
+			$.post('/payoutg', $('#formeditpaycot_g').serialize()).done( function(data) {
+				//$('td').removeClass('bg-success');
+				console.log(data);
+				/*for(var i in data.success)
+				{
+					console.log(i);
+					$('input[name='+i+']').val("");
+					$.each(data.success[i], function(eventID,eventData) {
+						//console.log('<p>'+eventData+'</p>');
+						$('.table-max_per_num-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
+						$('.table-max_per_num-1-row-'+ eventData+'-col-' + i).html(data.playset[i]);
+						console.log('.table-max_per_num-1-row-'+ eventData+'-col-' + i);
+						console.log(i);
+						console.log(data.playset);
+					});
+				}*/
+			});
+		});
+	});
+
+</script>
+@endsection @section('content') @if($errors->all())
+<div class="box-body">
+	<div class="alert alert-warning alert-dismissible">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+		<h4><i class="icon fa fa-warning"></i> Alert!</h4>
+		@foreach($errors->all() as $message) {{ $message }}. <br> @endforeach
 	</div>
+</div>
 @endif
 
 
@@ -201,11 +224,11 @@ $(function(){
 									</ul>
 
 									<div class="tab-content no-padding">
-										อัตราจ่าย / หวยรัฐ 70 / 3 ตัวท้าย 
-										<div  class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="form1" method="POST" action="/payoutg" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
-											 data-after="reset" class="js-ajax-form">
-                                             {{ csrf_field() }}
+										อัตราจ่าย / หวยรัฐ 70 / 3 ตัวท้าย
+										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+											<form id="formeditpaycot_g" method="POST" action="/payoutg" accept-charset="UTF-8" data-method="put" data-feedback="mixed"
+											 data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
 														<tr>
@@ -216,72 +239,72 @@ $(function(){
 
 														<tr>
 															<th colspan="3" class="vm text-center">
-																<input name="action" type="hidden" value="min">
-																<input name="bet_type_group_id" type="hidden" value="1">
-																<button type="submit" id="editMin" class="btn btn-primary btn-xs">แก้ไข</button>
+																{{-- <input name="action" type="hidden" value="min"> --}} {{-- <input name="bet_type_group_id" type="hidden"
+																 value="1"> --}}
+																<button type="button" id="editpaycot_g" class="btn btn-primary btn-xs">แก้ไข</button>
 																<a class="btn btn-primary btn-xs">ยกเลิก</a>
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="payoutg_1" id="payoutg1" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_1" id="payoutg1" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">550</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="payoutg_2" id="payoutg2" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_2" id="payoutg2" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">125</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="payoutg_3" id="payoutg3" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_3" id="payoutg3" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">105</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="payoutg_4" id="payoutg4" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_4" id="payoutg4" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="payoutg_5" id="payoutg5" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_5" id="payoutg5" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="payoutg_6" id="payoutg6" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_6" id="payoutg6" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="payoutg_7" id="payoutg7" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_7" id="payoutg7" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">3</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="payoutg_8" id="payoutg8" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payoutg_8" id="payoutg8" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">4</a>
 															</th>
 														</tr>
 													</thead>
 													<tbody>
-                                                    @foreach($members as $member)
+														@foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
 															<td class="id">{{$member->ratepaygov->id}}</td>
 															<td>{{$member->username}}<span class="showname" name="showname">({{$member->name}})</span></td>
-															 @if($member->level == 7)
-                                                            <td class="type" nowrap="">Member</td>
-                                                            @elseif($member->level == 6)
-                                                            <td class="type" nowrap="">Agent</td>
-                                                            @elseif($member->level == 5)
-                                                            <td class="type" nowrap="">Master</td>
-                                                            @elseif($member->level == 4)
-                                                            <td class="type" nowrap="">Senior</td>
-                                                            @elseif($member->level == 3)
-                                                            <td class="type" nowrap="">Super Senior</td>
-                                                            @elseif($member->level == 2)
-                                                            <td class="type" nowrap="">Pathner</td>
-                                                            @elseif($member->level == 1)
-                                                            <td class="type" nowrap="">Admin</td>
-                                                            @endif
+															@if($member->level == 7)
+															<td class="type" nowrap="">Member</td>
+															@elseif($member->level == 6)
+															<td class="type" nowrap="">Agent</td>
+															@elseif($member->level == 5)
+															<td class="type" nowrap="">Master</td>
+															@elseif($member->level == 4)
+															<td class="type" nowrap="">Senior</td>
+															@elseif($member->level == 3)
+															<td class="type" nowrap="">Super Senior</td>
+															@elseif($member->level == 2)
+															<td class="type" nowrap="">Pathner</td>
+															@elseif($member->level == 1)
+															<td class="type" nowrap="">Admin</td>
+															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepaygov->id }}"></td>
 															<td class="table-min-1-row-1-col-min_1">{{$member->ratepaygov->payoutg_1}}</td>
 															<td class="table-min-1-row-1-col-min_2">{{$member->ratepaygov->payoutg_2}}</td>
@@ -292,13 +315,13 @@ $(function(){
 															<td class="table-min-1-row-1-col-min_7">{{$member->ratepaygov->payoutg_7}}</td>
 															<td class="table-min-1-row-1-col-min_8">{{$member->ratepaygov->payoutg_8}}</td>
 														</tr>
-                                                    @endforeach
+														@endforeach
 
 													</tbody>
 												</table>
 											</form>
 										</div>
-										
+
 
 									</div>
 								</div>
@@ -310,11 +333,11 @@ $(function(){
 									</ul>
 
 									<div class="tab-content no-padding">
-										อัตราจ่าย / หวย 70 / 3 ตัวท้าย 
-										<div  class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+										อัตราจ่าย / หวย 70 / 3 ตัวท้าย
+										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 											<form id="form1" method="POST" action="/payout" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
-												 {{ csrf_field() }}
+												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
 														<tr>
@@ -332,65 +355,65 @@ $(function(){
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
 															<th>3 ตัวบน<br>
-																<input class="form-control input-sm ac" name="payout_1" id="payout1" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_1" id="payout1" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">550</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="" id="payout2"  type="text" value="" disabled>  &lt;= 
+																<input class="form-control input-sm ac" name="" id="payout2" type="text" value="" disabled> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">125</a>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="payout_3" id="payout3" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_3" id="payout3" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">105</a>
 															</th>
 															<th>
 																2 ตัวบน<br>
-																<input class="form-control input-sm ac" name="payout_4" id="payout4" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_4" id="payout4" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="payout_5" id="payout5" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_5" id="payout5" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">70</a>
 															</th>
 															<th>
 																2 ตัวโต๊ด<br>
-																<input class="form-control input-sm ac" name="payout_6" id="payout6" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_6" id="payout6" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">12</a>
 															</th>
 															<th>
 																วิ่งบน<br>
-																<input class="form-control input-sm ac" name="payout_7" id="payout7" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_7" id="payout7" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">3</a>
 															</th>
 															<th>
 																วิ่งล่าง<br>
-																<input class="form-control input-sm ac" name="payout_8" id="payout8" type="text" value="">  &lt;= 
+																<input class="form-control input-sm ac" name="payout_8" id="payout8" type="text" value=""> &lt;=
 																<a href="#" class="fill-input" tabindex="-1">4</a>
 															</th>
 														</tr>
 													</thead>
 													<tbody>
-                                                    @foreach($members as $member)
+														@foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
 															<td class="id">{{$member->ratepay->id}}</td>
 															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
 															@if($member->level == 7)
-                                                            <td class="type" nowrap="">Member</td>
-                                                            @elseif($member->level == 6)
-                                                            <td class="type" nowrap="">Agent</td>
-                                                            @elseif($member->level == 5)
-                                                            <td class="type" nowrap="">Master</td>
-                                                            @elseif($member->level == 4)
-                                                            <td class="type" nowrap="">Senior</td>
-                                                            @elseif($member->level == 3)
-                                                            <td class="type" nowrap="">Super Senior</td>
-                                                            @elseif($member->level == 2)
-                                                            <td class="type" nowrap="">Pathner</td>
-                                                            @elseif($member->level == 1)
-                                                            <td class="type" nowrap="">Admin</td>
-                                                            @endif
+															<td class="type" nowrap="">Member</td>
+															@elseif($member->level == 6)
+															<td class="type" nowrap="">Agent</td>
+															@elseif($member->level == 5)
+															<td class="type" nowrap="">Master</td>
+															@elseif($member->level == 4)
+															<td class="type" nowrap="">Senior</td>
+															@elseif($member->level == 3)
+															<td class="type" nowrap="">Super Senior</td>
+															@elseif($member->level == 2)
+															<td class="type" nowrap="">Pathner</td>
+															@elseif($member->level == 1)
+															<td class="type" nowrap="">Admin</td>
+															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
 															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->payout_1}}</td>
 															<td class="table-min-1-row-1-col-min_2"></td>
@@ -401,11 +424,11 @@ $(function(){
 															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->payout_7}}</td>
 															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->payout_8}}</td>
 														</tr>
-                                                    @endforeach
+														@endforeach
 													</tbody>
 												</table>
 											</form>
-										</div> 
+										</div>
 
 									</div>
 								</div>
@@ -435,11 +458,11 @@ $(function(){
 									</ul>
 
 									<div class="tab-content no-padding">
-										คอมมิชชั่น / หวยรัฐ 70 / 3 ตัวท้าย 
-										<div  class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+										คอมมิชชั่น / หวยรัฐ 70 / 3 ตัวท้าย
+										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 											<form id="form1" method="POST" action="/comg" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
-												 {{ csrf_field() }}
+												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
 														<tr>
@@ -497,25 +520,25 @@ $(function(){
 														</tr>
 													</thead>
 													<tbody>
-                                                    @foreach($members as $member)
+														@foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
 															<td class="id">{{$member->ratepaygov->id}}</td>
 															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
 															@if($member->level == 7)
-                                                            <td class="type" nowrap="">Member</td>
-                                                            @elseif($member->level == 6)
-                                                            <td class="type" nowrap="">Agent</td>
-                                                            @elseif($member->level == 5)
-                                                            <td class="type" nowrap="">Master</td>
-                                                            @elseif($member->level == 4)
-                                                            <td class="type" nowrap="">Senior</td>
-                                                            @elseif($member->level == 3)
-                                                            <td class="type" nowrap="">Super Senior</td>
-                                                            @elseif($member->level == 2)
-                                                            <td class="type" nowrap="">Pathner</td>
-                                                            @elseif($member->level == 1)
-                                                            <td class="type" nowrap="">Admin</td>
-                                                            @endif
+															<td class="type" nowrap="">Member</td>
+															@elseif($member->level == 6)
+															<td class="type" nowrap="">Agent</td>
+															@elseif($member->level == 5)
+															<td class="type" nowrap="">Master</td>
+															@elseif($member->level == 4)
+															<td class="type" nowrap="">Senior</td>
+															@elseif($member->level == 3)
+															<td class="type" nowrap="">Super Senior</td>
+															@elseif($member->level == 2)
+															<td class="type" nowrap="">Pathner</td>
+															@elseif($member->level == 1)
+															<td class="type" nowrap="">Admin</td>
+															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepaygov->id }}"></td>
 															<td class="table-min-1-row-1-col-min_1">{{$member->ratepaygov->comg_1}}</td>
 															<td class="table-min-1-row-1-col-min_2">{{$member->ratepaygov->comg_2}}</td>
@@ -526,12 +549,12 @@ $(function(){
 															<td class="table-min-1-row-1-col-min_7">{{$member->ratepaygov->comg_7}}</td>
 															<td class="table-min-1-row-1-col-min_8">{{$member->ratepaygov->comg_8}}</td>
 														</tr>
-                                                    @endforeach
+														@endforeach
 													</tbody>
 												</table>
 											</form>
 										</div>
-										
+
 
 									</div>
 								</div>
@@ -543,11 +566,11 @@ $(function(){
 									</ul>
 
 									<div class="tab-content no-padding">
-										คอมมิชชั่น / หวย 70 / 3 ตัวท้าย 
-										<div  class="tab-pane in active" data-action="update-min" data-parent-id="9306">
+										คอมมิชชั่น / หวย 70 / 3 ตัวท้าย
+										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
 											<form id="form1" method="POST" action="/com" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
-												 {{ csrf_field() }}
+												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
 														<tr>
@@ -605,25 +628,25 @@ $(function(){
 														</tr>
 													</thead>
 													<tbody>
-                                                    @foreach($members as $member)
+														@foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
 															<td class="id">{{$member->ratepay->id}}</td>
 															<td>{{$member->username}} <span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
 															@if($member->level == 7)
-                                                            <td class="type" nowrap="">Member</td>
-                                                            @elseif($member->level == 6)
-                                                            <td class="type" nowrap="">Agent</td>
-                                                            @elseif($member->level == 5)
-                                                            <td class="type" nowrap="">Master</td>
-                                                            @elseif($member->level == 4)
-                                                            <td class="type" nowrap="">Senior</td>
-                                                            @elseif($member->level == 3)
-                                                            <td class="type" nowrap="">Super Senior</td>
-                                                            @elseif($member->level == 2)
-                                                            <td class="type" nowrap="">Pathner</td>
-                                                            @elseif($member->level == 1)
-                                                            <td class="type" nowrap="">Admin</td>
-                                                            @endif
+															<td class="type" nowrap="">Member</td>
+															@elseif($member->level == 6)
+															<td class="type" nowrap="">Agent</td>
+															@elseif($member->level == 5)
+															<td class="type" nowrap="">Master</td>
+															@elseif($member->level == 4)
+															<td class="type" nowrap="">Senior</td>
+															@elseif($member->level == 3)
+															<td class="type" nowrap="">Super Senior</td>
+															@elseif($member->level == 2)
+															<td class="type" nowrap="">Pathner</td>
+															@elseif($member->level == 1)
+															<td class="type" nowrap="">Admin</td>
+															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
 															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->com_1}}</td>
 															<td class="table-min-1-row-1-col-min_2"></td>
@@ -634,13 +657,13 @@ $(function(){
 															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->com_7}}</td>
 															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->com_8}}</td>
 														</tr>
-                                                    @endforeach
+														@endforeach
 
 
 													</tbody>
 												</table>
 											</form>
-										</div> 
+										</div>
 
 									</div>
 								</div>
