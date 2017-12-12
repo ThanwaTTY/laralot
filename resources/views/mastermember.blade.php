@@ -478,7 +478,7 @@
         </li>
         <li class="bg-light-blue side-padding-10">
           <span class="white dropdown-toggle">
-            <i class="ace-icon fa fa-user"></i>MyUsername
+            <i class="ace-icon fa fa-user"></i>{{auth()->user()->name}}
           </span>
         </li>
         <li>
