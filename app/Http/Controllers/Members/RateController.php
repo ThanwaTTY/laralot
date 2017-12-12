@@ -29,7 +29,39 @@ class RateController extends Controller
 
     public function payoutg(Request $request)
     {
-        foreach(request('member_ids') as $ratepaygov_id){
+        //$data_request = $request->all();
+        $id = $request->input('member_ids');
+         //dd(request('max_per_num1'));
+        $ratepay = Playset::find($id)->first();
+        foreach (request('member_ids') as $ratepay_id) {
+            $ratepay = Ratepaygov::find($ratepaygov_id);
+            if (request('max_per_num1')) {
+                
+                $ratepay->max_per_num1 = request('max_per_num1');
+            }if (request('max_per_num2')) {
+                $ratepay->max_per_num2 = request('max_per_num2');
+            }if (request('max_per_num3')) {
+                $ratepay->max_per_num3 = request('max_per_num3');
+            }if (request('max_per_num4')) {
+                $ratepay->max_per_num4 = request('max_per_num4');
+            }if (request('max_per_num5')) {
+                $ratepay->max_per_num5 = request('max_per_num5');
+            }if (request('max_per_num6')) {
+                $ratepay->max_per_num6 = request('max_per_num6');
+            }if (request('max_per_num7')) {
+                $ratepay->max_per_num7 = request('max_per_num7');
+            }if (request('max_per_num8')) {
+                $ratepay->max_per_num8 = request('max_per_num8');
+            }
+            
+            $ratepay->update();
+        }
+        return response()->json(['data_request'=>$data_request]);
+
+
+
+       /* foreach(request('member_ids') as $ratepaygov_id){
+
             $ratepay = Ratepaygov::find($ratepaygov_id);
             //dd($ratepay->payoutg_1);
             if(request('payoutg_1')){
@@ -62,6 +94,12 @@ class RateController extends Controller
         }
 
          return back()->withInput();
+    
+        */
+    
+        
+    
+        
     }
 
     public function payout(Request $request)
