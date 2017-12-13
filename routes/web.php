@@ -109,7 +109,8 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::post('/typebet','Members\OpencloseController@typebet');
              Route::post('/lotgovuse','Members\OpencloseController@lotgovuse');
              Route::post('/lotuse','Members\OpencloseController@lotuse');
-
+             ///////////////////////////////////////////////////////////////////////////
+             Route::get('/listlottery/listlotuser', 'Members\BetController@index');
              });
              Route::get('/test', function () {
                 return view('portest');
@@ -128,16 +129,6 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
                 return view('listlottery.listlotpoint.index');
              });
 
-             // Route::get('/user/adduser', function () {
-             //     return view('user.adduser.create');
-             // });
-
-             // Route::get('/user/general', function () {
-             //     return view('user.general.index');
-             // });
-             Route::get('/listlottery/listlotuser', function () {
-                return view('listlottery.listlotuser.index');
-             });
 
              Route::get('/listlottery/listresult', function () {
                 return view('listlottery.listresult.index');
@@ -208,3 +199,25 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::get('/report/resultjackpot', function () {
                 return view('report.resultjackpot.index');
              });
+
+
+Route::get('/closed-nums/1/1', function(){
+    return '{"success":true,"alive":true,"credit":"10002.00","used":"0.00","remain":"10003.00","max_credit":"10004.00","credit_balance":"10005.00","bet_balance":-474.8,"available":9526.2,"total_bet":620,"total_com":145.2,"bet_type_group_ids":[1],"bet_type_ids":{"1":[1,2,3,4,5,6,7,8]},"closed_nums":{"1":["123","456"],"2":["34"],"3":[],"4":[],"5":[],"6":[],"7":[],"8":[]}}';
+});
+
+Route::get('/check-num/1/{number}/1', function($number){
+
+    return '{"success":true,"n":"456","col":3,"0":10,"1":20,"2":30}';
+});
+
+Route::post('/store/{lotto}', function($lotto){
+    return request()->all();
+
+    return '{"success":true,"time":0.079425096511841,"error_inputs":{"1":{"n":"10","0":"-","1":"-","2":"-"},"col":3,"lines":["1"]},"tokens":{"1":[1]},"member_summary":{"credit":"10001.00","used":"0.00","remain":"10001.00","max_credit":"10001.00","credit_balance":"10001.00","bet_balance":-482,"available":9519,"total_bet":630,"total_com":148}}';
+});
+
+Route::get('/bet-list/{num1}/{num2}/{num3}', function($num1,$num2,$num3){
+    return '{"payout":{"1":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 A","2":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 B","3":"\u0e2b\u0e27\u0e22\u0e2b\u0e38\u0e49\u0e19 A","4":"\u0e2b\u0e27\u0e22\u0e2b\u0e38\u0e49\u0e19 B","5":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 70","6":"\u0e2b\u0e27\u0e22\u0e43\u0e15\u0e49","7":"\u0e2b\u0e27\u0e22\u0e43\u0e15\u0e492","8":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 N","9":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 D","10":"\u0e2b\u0e27\u0e22 \u0e18.\u0e01.\u0e2a.","11":"\u0e2b\u0e27\u0e22 70","12":"\u0e2b\u0e27\u0e22 80","13":"\u0e2b\u0e27\u0e22 90","14":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 T","15":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 80","16":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 90","17":"\u0e2b\u0e38\u0e49\u0e19","18":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e1065","19":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 B","20":"\u0e2b\u0e27\u0e22\u0e2b\u0e38\u0e49\u0e19 B","21":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10"},"max_bill_id":747216,"bills":[{"id":739976,"remark":"","deleted_at":null},{"id":739984,"remark":"","deleted_at":null},{"id":740053,"remark":"","deleted_at":null},{"id":741453,"remark":"","deleted_at":null},{"id":741628,"remark":"","deleted_at":null},{"id":744412,"remark":"","deleted_at":null},{"id":744413,"remark":"","deleted_at":null},{"id":747216,"remark":"","deleted_at":null}],"bill":{"number":8,"time":"14:36","payout":"\u0e2b\u0e27\u0e22\u0e23\u0e31\u0e10 70","btg_name":"3 \u0e15\u0e31\u0e27\u0e17\u0e49\u0e32\u0e22","remark":""},"brief_lines":[{"game_bill_id":747216,"number":8,"created_at":"2017-12-13 14:36:20","payout_id":5,"bet_type_id":4,"num":"10","qty":"10.00","com":"2.80","total":"-7.20","bundle":"1.00","deleted_at":null}],"sum_table_name":"3 \u0e15\u0e31\u0e27\u0e17\u0e49\u0e32\u0e22","is_bundle":0,"sum_lines":{"1":{"col_1":10,"col_2":0,"col_3":0},"10":{"col_1":20,"col_2":0,"col_3":0},"11":{"col_1":10,"col_2":10,"col_3":10},"111":{"col_1":10,"col_2":10,"col_3":10},"112":{"col_1":10,"col_2":10,"col_3":10},"113":{"col_1":0,"col_2":0,"col_3":60},"12":{"col_1":20,"col_2":30,"col_3":40},"124":{"col_1":0,"col_2":0,"col_3":60},"13":{"col_1":10,"col_2":20,"col_3":30},"131":{"col_1":40,"col_2":50,"col_3":0},"214":{"col_1":40,"col_2":50,"col_3":0},"223":{"col_1":0,"col_2":0,"col_3":20},"232":{"col_1":20,"col_2":20,"col_3":0}},"bet_cols":["\u0e1a\u0e19","\u0e25\u0e48\u0e32\u0e07","\u0e42\u0e15\u0e4a\u0e14"],"success":true}';
+});
+
+Route::get('/groupby', 'Members\BetController@index');

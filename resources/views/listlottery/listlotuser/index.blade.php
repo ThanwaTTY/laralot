@@ -114,14 +114,28 @@
 
 						<tbody>
 
-
+            @foreach($userbetall as $key => $userbet)
 							<tr class="odd">
 								<td>
-									<a href="https://agent.superlot999.com/items/of-member/14290" class="ajax">3M3KTESTPOR</a>
-									<span class="span-name jquery-hide">(thachapong)</span>
+									<a href="https://agent.superlot999.com/items/of-member/14290" class="ajax">{{$userbet->member->username}}</a>
+									<span class="span-name jquery-hide">()</span>
 								</td>
-								<td class="align-center">เมมเบอร์</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">620.00</td>
+								@if($userbet->member->level == 7)
+                <td class="type" nowrap="">Member</td>
+                @elseif($userbet->member->level == 6)
+                <td class="type" nowrap="">Agent</td>
+                @elseif($userbet->member->level == 5)
+                <td class="type" nowrap="">Master</td>
+                @elseif($userbet->member->level == 4)
+                <td class="type" nowrap="">Senior</td>
+                @elseif($userbet->member->level == 3)
+                <td class="type" nowrap="">Super Senior</td>
+                @elseif($userbet->member->level == 2)
+                <td class="type" nowrap="">Pathner</td>
+                @elseif($userbet->member->level == 1)
+                <td class="type" nowrap="">Admin</td>
+                @endif
+								<td class="align-right dark-blue bolder n2 bg-blue">610</td>
 								<td class="align-right n2c"><span class="negative">-620.00<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">145.22<span></span></span>
@@ -141,6 +155,7 @@
 								<td class="align-right n2c"><span class="positive">42.72<span></span></span>
 								</td>
 							</tr>
+            @endforeach
 						</tbody>
 
 						<tfoot class="thin-border-bottom">

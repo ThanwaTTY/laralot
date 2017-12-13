@@ -15,11 +15,12 @@ class CreateUserbetTable extends Migration
     {
         Schema::create('userbets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('userbet_id')->index();
-            $table->integer('num');
-            $table->integer('top');
-            $table->integer('bottom');
-            $table->integer('tod');
+            $table->integer('member_id')->index();
+            $table->integer('lotto_id')->default(0);
+            $table->integer('bet_num');
+            $table->integer('cal_num')->default(0);
+            $table->string('type');
+            $table->decimal('amount',16,2);
             $table->timestamps();
         });
     }

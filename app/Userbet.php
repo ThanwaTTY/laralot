@@ -6,8 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Userbet extends Model
 {
-     protected $fillable = [
-        'userbet_id', 'num', 'top','bottom','tod'
+    protected $fillable = [
+        'member_id', 'lotto_id', 'bet_num','cal_num','type','amount'
     ];
 
+    // public function member()
+    // {
+    //     return  $this->hasOne(Member::class, 'id', 'userbet_id');
+    // }
 }

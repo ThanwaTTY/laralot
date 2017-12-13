@@ -1,6 +1,8 @@
 var posInt = /^\d+$/;
 
 var num_rows = 100;
+var current_game_type_id = 1;
+var bet_types = {1: "3 ตัวบน", 2: "3 ตัวล่าง", 3: "3 ตัวโต๊ด", 4: "2 ตัวบน", 5: "2 ตัวล่าง", 6: "2 ตัวโต๊ด", 7: "วิ่งบน", 8: "วิ่งล่าง", 21: "3 ตัวบน", 22: "3 ตัวล่าง", 23: "3 ตัวโต๊ด", 24: "2 ตัวบน", 25: "2 ตัวล่าง", 26: "2 ตัวโต๊ด", 27: "วิ่งบน", 28: "วิ่งล่าง", 31: "3 ตัวบน", 32: "3 ตัวล่าง", 33: "3 ตัวโต๊ด", 34: "2 ตัวบน", 35: "2 ตัวล่าง", 36: "2 ตัวโต๊ด", 37: "วิ่งบน", 38: "วิ่งล่าง", 41: "3 ตัวบน", 42: "3 ตัวล่าง", 43: "3 ตัวโต๊ด", 44: "2 ตัวบน", 45: "2 ตัวล่าง", 46: "2 ตัวโต๊ด", 47: "วิ่งบน", 48: "วิ่งล่าง", 51: "หลักแสน", 52: "หลักหมื่น", 53: "หลักพัน", 54: "หลักร้อย", 55: "หลักสิบ", 56: "หลักหน่วย", 61: "หลักแสน", 62: "หลักหมื่น", 63: "หลักพัน", 64: "หลักร้อย", 65: "หลักสิบ", 66: "หลักหน่วย", 71: "4 ตัวตรง", 72: "5 ตัวตรง", 73: "6 ตัวตรง"};
 
 $(document).ready(function () {
     $('#navbar').on('click', '#user-game-type-select .game-type-item', userSelectGameType);
@@ -11,13 +13,13 @@ $(document).ready(function () {
     pageUserGame();
     pageHome();
     pageBets();
-    pageFinances();
+    //pageFinances();
 
     update_close_nums();
     setInterval('update_close_nums()', 66000);
 
-    updateGlobalClock();
-    setInterval('updateGlobalClock()', 1000);
+    // updateGlobalClock();
+    // setInterval('updateGlobalClock()', 1000);
 
     setInterval('loadGameTypes()', 66000);
 });
@@ -266,6 +268,7 @@ function btnCheckNum() {
 
 function checkNum(num) {
     var bet_type_group_id = $('#bet_type_group').val()
+    // var bet_type_group_id = 1;
 
     $.getJSON('/check-num/' + current_game_type_id + '/' + num + '/' + bet_type_group_id, function (data) {
         if (!data.success) {
@@ -636,7 +639,7 @@ function submitBet() {
     data.allow_dupe = $('#allow-dupe').val();
 
     $('#btn-submit-bet').html('กำลังประมวลผล...');
-    $('#bet-table-foot').spin({ color: '#428bca', radius: 42, length: 0, width: 16 });
+    //$('#bet-table-foot').spin({ color: '#428bca', radius: 42, length: 0, width: 16 });
 
     $.ajax({
         type: "POST",
@@ -680,7 +683,7 @@ function submitBet() {
                 renderTokens(data.tokens);
 
             $('#btn-submit-bet').html($('#btn-submit-bet').data('text'));
-            $('#bet-table-foot').spin(false);
+            //$('#bet-table-foot').spin(false);
 
             if (data.member_summary) {
                 renderMemberSummary(data.member_summary);
@@ -690,7 +693,7 @@ function submitBet() {
             alert('การเชื่อมต่อผิดพลาด โปรดยืนยันการแทงอีกครั้ง');
             $('#btn-submit-bet').html($('#btn-submit-bet').data('text'));
             freeze_all(false);
-            $('#bet-table-foot').spin(false);
+            //$('#bet-table-foot').spin(false);
         },
         complete: function () {
             $('#allow-dupe').val(0);

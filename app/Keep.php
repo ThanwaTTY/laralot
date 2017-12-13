@@ -10,4 +10,9 @@ class Keep extends Model
         'keep_id', 'keep', 'keepset','keepover'
     ];
 
+    public function member()
+    {
+        return $this->belongTo(Member::class, 'keep_id', 'id');
+    }
+
 }

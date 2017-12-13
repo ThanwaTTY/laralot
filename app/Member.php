@@ -43,6 +43,14 @@ class Member extends Authenticatable
     {
         return $this->hasOne(Opencloselot::class, 'openclose_id','id');
     }
+    public function keep()
+    {
+        return $this->hasOne(Keep::class, 'keep_id','id');
+    }
+    // public function userbet()
+    // {
+    //     return $this->belongTo(Userbet::class, 'id','userbet_id');
+    // }
    
 
 }

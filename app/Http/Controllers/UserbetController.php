@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Userbet;
+use App\Member;
 
 class UserbetController extends Controller
 {
@@ -18,18 +19,65 @@ class UserbetController extends Controller
         $data_request = $request->all();
         $nums = $request->num;
         foreach ($nums as $key => $num) {
-             if($num){
-                 $add[$key]=$num;
-                $userbets = Userbet::create([
-                    'userbet_id' => $id,
-                    'num' => $request->num[$key],
-                    'top' => $request->top[$key],
-                    'bottom' => $request->bottom[$key],
-                    'tod' => $request->tod[$key]
-                ]);
-            }
+                if($num){
+                    $type = $this->checktype($num);
+                        if($request->top[$key]){
+                            $userbet_top = $this->createTop($id,$request->num,$request->top,$key,$type);
+                        }
+
+                        if($request->bottom[$key]){
+                            $userbet_bottom = $this->createBottom($id,$request->num,$request->bottom,$key,$type);
+                        }
+                        if($request->tod[$key]){
+                            $userbet_tod = $this->createTod($id,$request->num,$request->tod,$key,$type);
+                        }
+                    //}
+                }
         }
 
-        return response()->json(['userbet_id'=>$id, 'data_request'=>$data_request, 'add'=>$add, 'userbets'=>$userbets]);
+        //return response()->json(['userbet_id'=>$id, 'data_request'=>$data_request, 'add'=>$add, 'userbets'=>$userbets]);
+        return response()->json([
+            'data_request'=>$data_request, 
+            //'userbet_top'=>$userbet_top, 
+            // 'userbet_bottom'=>$userbet_bottom, 
+            // 'userbet_tod'=>$userbet_tod,
+            'type'=>$request->num[0],
+            'type_count'=>$type
+            ]);
+    }
+
+    protected function checktype($num){
+         $datacheck = strlen($num);
+         return $datacheck;
+    }
+
+    protected function createTop($id,$num,$top,$key,$type){
+            $userbets = Userbet::create([
+                'member_id' => $id,
+                'bet_num' => $num[$key],
+                'type' => "top".$type,
+                'amount' => $top[$key]
+            ]); 
+        return $userbets;
+    }
+    
+    protected function createBottom($id,$num,$bottom,$key,$type){
+            $userbets = Userbet::create([
+                'member_id' => $id,
+                'bet_num' => $num[$key],
+                'type' => "bottom".$type,
+                'amount' => $bottom[$key]
+            ]); 
+        return $userbets;
+    }
+
+    protected function createTod($id,$num,$tod,$key,$type){
+            $userbets = Userbet::create([
+                'member_id' => $id,
+                'bet_num' => $num[$key],
+                'type' => "tod".$type,
+                'amount' => $tod[$key]
+            ]); 
+        return $userbets;
     }
 }

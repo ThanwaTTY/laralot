@@ -33,7 +33,7 @@
         $('#btn-submit-bet').on('click', function(){
             console.log('Active');
             $.post('/storebet', $('#formpatbet').serialize()).done( function(data) {
-				console.log(data);
+				  console.log(data);
 				/*for(var i in data.success)
 				{
 					console.log(i);
@@ -207,7 +207,7 @@
                 </td>
             </tr>
             @endfor
-
+            
           </tbody>
           <tfoot>
             <tr class="ac">
@@ -377,12 +377,12 @@
     </div>
   </div>
 
-  <script>
+  {{-- <script>
     
     update_bet_list();
 
     $('#bet-table input:first').focus();
-  </script>
+  </script> --}}
 
 
 {{-- </div> --}}
