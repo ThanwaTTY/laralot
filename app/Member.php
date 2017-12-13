@@ -47,10 +47,10 @@ class Member extends Authenticatable
     {
         return $this->hasOne(Keep::class, 'keep_id','id');
     }
-    // public function userbet()
-    // {
-    //     return $this->belongTo(Userbet::class, 'id','userbet_id');
-    // }
+    public function userbet()
+    {
+        return $this->belongTo(Userbet::class, 'id','member_id');
+    }
    
 
 }

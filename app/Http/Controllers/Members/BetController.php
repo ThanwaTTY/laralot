@@ -17,14 +17,14 @@ class BetController extends Controller
 
         $members = Member::get();
 
-        $userbets = Userbet::with('member')->select(DB::Raw('SUM(top) as sum_top, SUM(bottom) as sum_bottom, SUM(tod) as sum_tod, userbet_id'))
-                            ->orderBy('num', 'desc')
-                            ->groupBy('userbet_id')
+        $userbets = Userbet::with('member')->select(DB::Raw('SUM(amount) as sum_amount, member_id'))
+                            ->orderBy('bet_num', 'desc')
+                            ->groupBy('member_id')
                             ->get();
 
         foreach( $userbets as $userbet)
         {
-            echo "<li>". $userbet->member->name." sumtop=".$userbet->sum_top."</li>";
+            echo "<li>". $userbet->member->name." sumtop=".$userbet->sum_amount."</li>";
         }
         dd( $userbets );
         // $userbets = Userbet:://orderBy('id', 'desc')
