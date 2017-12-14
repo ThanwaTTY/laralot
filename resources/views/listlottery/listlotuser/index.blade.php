@@ -164,9 +164,9 @@
 								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sum,2)}}</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sum,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span>kuy</span></span>
+								<td class="align-right n2c"><span class="positive"><span>{{number_format($sum_com,2)}}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">{{number_format($alltotalmember,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($alltotalmember,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">558.00<span></span></span>
 								</td>

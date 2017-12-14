@@ -41,6 +41,7 @@ class BetController extends Controller
         //}
         // echo "<BR>";
         // echo "userbets_counts<BR>";
+        $sum_com = 0;
         foreach ($userbets_counts as $loop => $userbets_count) {
             // echo "== loop".$loop."==";
             // echo " ".$userbets_count."";
@@ -77,9 +78,13 @@ class BetController extends Controller
                 }
                 // echo "</li>";
             }
+
+            $sum_com += $com[$loop];
             // echo "</ul>";
         }
+        // echo $sum_com;
         /////////////////////sum Member////////////////////////////
+                    $alltotalmember = 0;
                     foreach($userbets_counts as $loop => $userbets_count){
                         $summember[$loop] = 0;
                         foreach ($userbets_count as $key => $userbets_C) {
@@ -97,21 +102,15 @@ class BetController extends Controller
                             $totalmember[$loop] = $summember[$loop] - $com[$loop];
                            
                         }
-                            $alltotalmember = 0;
-                            
-                            $alltotalmember +=  $alltotalmember + $totalmember[$loop]   ;
-                            $allsum = 0;
-                            $allsum += $alltotalmember;
-
-                            echo "<li>". $allsum." ";
-                            
+                           
+                        $alltotalmember += $totalmember[$loop];
                     }
                    
 
             ////////////////////////////////////////////////////////
                    
          
-        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom','alltotalmember'));
+        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom','alltotalmember','sum_com'));
     }
 
    
