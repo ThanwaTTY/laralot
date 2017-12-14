@@ -114,31 +114,31 @@
 
 						<tbody>
 
-            @foreach($userbetall as $key => $userbet)
+            	@foreach($userbets as $key => $userbet)
 							<tr class="odd">
 								<td>
 									<a href="https://agent.superlot999.com/items/of-member/14290" class="ajax">{{$userbet->member->username}}</a>
 									<span class="span-name jquery-hide">()</span>
 								</td>
 								@if($userbet->member->level == 7)
-                <td class="type" nowrap="">Member</td>
-                @elseif($userbet->member->level == 6)
-                <td class="type" nowrap="">Agent</td>
-                @elseif($userbet->member->level == 5)
-                <td class="type" nowrap="">Master</td>
-                @elseif($userbet->member->level == 4)
-                <td class="type" nowrap="">Senior</td>
-                @elseif($userbet->member->level == 3)
-                <td class="type" nowrap="">Super Senior</td>
-                @elseif($userbet->member->level == 2)
-                <td class="type" nowrap="">Pathner</td>
-                @elseif($userbet->member->level == 1)
-                <td class="type" nowrap="">Admin</td>
-                @endif
-								<td class="align-right dark-blue bolder n2 bg-blue">610</td>
-								<td class="align-right n2c"><span class="negative">-620.00<span></span></span>
+								<td class="type" nowrap="">Member</td>
+								@elseif($userbet->member->level == 6)
+								<td class="type" nowrap="">Agent</td>
+								@elseif($userbet->member->level == 5)
+								<td class="type" nowrap="">Master</td>
+								@elseif($userbet->member->level == 4)
+								<td class="type" nowrap="">Senior</td>
+								@elseif($userbet->member->level == 3)
+								<td class="type" nowrap="">Super Senior</td>
+								@elseif($userbet->member->level == 2)
+								<td class="type" nowrap="">Pathner</td>
+								@elseif($userbet->member->level == 1)
+								<td class="type" nowrap="">Admin</td>
+								@endif
+								<td class="align-right dark-blue bolder n2 bg-blue">{{$userbet->sum_amount}}</td>
+								<td class="align-right n2c"><span class="negative">-{{$userbet->sum_amount}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">145.22<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{$com[$key]}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-474.82<span></span></span>
 								</td>
@@ -161,8 +161,8 @@
 						<tfoot class="thin-border-bottom">
 							<tr class="even">
 								<td colspan="2" class="bolder">รวม :</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">620.00</td>
-								<td class="align-right n2c"><span class="negative">-620.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sum,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sum,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">145.22<span></span></span>
 								</td>
