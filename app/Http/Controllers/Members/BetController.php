@@ -31,6 +31,8 @@ class BetController extends Controller
             // echo "<li>".$userbet->member_id. "</li>";
             $ratepaygovs[$userbet->member_id] = Ratepaygov::where("ratepaygov_id",$userbet->member_id)->first();
             $userbets_counts[] = Userbet::where("member_id",$userbet->member_id)->get();
+            $amountmember = $userbet->sum_amount;
+            $sum += $userbet->sum_amount;
         }
         // echo "<BR></ul>";
         // echo "<li>ratepaygovs</li>";
@@ -77,32 +79,39 @@ class BetController extends Controller
             }
             // echo "</ul>";
         }
-        // echo "<BR>";
-        //dd($com);
-        // dd($ratepaygovs);
-        // foreach( $userbets as $userbet)
-        // {
-        //     
-        // }
-        // dd( $userbets );
-        
-        
-        // foreach($members as $member){
-        //     // echo "<li>". $member->ratepaygov->comg_1. "</li>";
-        //     //$ratepaygov_id = $member->id;
-        //     $ratepaygov_id = $member->ratepaygov->ratepaygov_id;
-        // }
-        //dd($ratepaygov_id);
-        // foreach($userbets as $userbet){
-        //     if($ratepaygov_id == $userbet->member_id){
-        //       $top3 = $member->ratepaygov->comg_1;
-              
-        //     }
-        //     echo "<li>". $top3. "</li>";
-        //     $sum += $userbet->sum_amount;
-        // }
-        // dd($comtop3);
-        return view('listlottery.listlotuser.index', compact('userbets','sum','com'));
+        /////////////////////sum Member////////////////////////////
+                    foreach($userbets_counts as $loop => $userbets_count){
+                        $summember[$loop] = 0;
+                        foreach ($userbets_count as $key => $userbets_C) {
+                            
+                            $summember[$loop] += ($userbets_C->amount);
+                        }
+                    }
+                        // echo "<li>". $com[$loop]." ";
+                        // echo "<li>". $summember[$loop]." ";
+                       
+                    foreach($userbets_counts as $loop => $userbets_count){
+                        
+                        $totalmember[$loop] = 0;
+                        foreach ($userbets_count as $key => $userbets_C) {
+                            $totalmember[$loop] = $summember[$loop] - $com[$loop];
+                           
+                        }
+                            $alltotalmember = 0;
+                            
+                            $alltotalmember +=  $alltotalmember + $totalmember[$loop]   ;
+                            $allsum = 0;
+                            $allsum += $alltotalmember;
+
+                            echo "<li>". $allsum." ";
+                            
+                    }
+                   
+
+            ////////////////////////////////////////////////////////
+                   
+         
+        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom','alltotalmember'));
     }
 
    
