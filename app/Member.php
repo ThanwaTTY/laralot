@@ -51,6 +51,10 @@ class Member extends Authenticatable
     {
         return $this->belongTo(Userbet::class, 'id','member_id');
     }
-   
+
+    public function userbetmem()
+    {
+        return $this->hasOne(Userbet::class, 'member_id','id');
+    }
 
 }

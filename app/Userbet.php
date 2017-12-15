@@ -14,4 +14,9 @@ class Userbet extends Model
     {
         return  $this->hasOne(Member::class, 'id', 'member_id');
     }
+
+    public function members()
+    {
+        return $this->belongTo(Member::class, 'member_id','id');
+    }
 }
