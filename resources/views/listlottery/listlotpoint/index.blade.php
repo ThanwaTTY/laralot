@@ -131,44 +131,108 @@
                           <tr class="odd">
                 <td class="bolder">
                   <span class="pull-left">ซื้อ</span>
-                  <span class="pull-right n2c sum-buy-1">0.00</span>
+                  <span class="pull-right n2c sum-buy-1"><span class="positive">{{number_format($allsumbuy,2)}}</span></span>
                 </td>
-                                  <td class="align-center bg-yellow n2c buy-1">0.00</td>
-                                  <td class="align-center bg-yellow n2c buy-2">0.00</td>
-                                  <td class="align-center bg-yellow n2c buy-3">0.00</td>
-                                  <td class="align-center bg-yellow n2c buy-4">0.00</td>
-                                  <td class="align-center bg-yellow n2c buy-5">0.00</td>
-                                  <td class="align-center bg-yellow n2c buy-6">0.00</td>
-                                  <td class="align-center bg-yellow n2c buy-7">0.00</td>
-                                  <td class="align-center bg-yellow n2c buy-8">0.00</td>
-                              </tr>
-                          <tr class="even">
+                      @if($sumtop3 != 0)
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtop3,2)}}</span></td>
+                        @else
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">0.00</span></td>
+                        @endif
+                      @if($sumbottom3 != 0)
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumbottom3,2)}}</span></td>
+                        @else
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">0.00</span></td>
+                        @endif
+                      @if($sumtod3 != 0)
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtod3,2)}}</span></td>
+                        @else
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">0.00</span></td>
+                        @endif
+                      @if($sumtop2 != 0)
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtop2,2)}}</span></td>
+                        @else
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">0.00</span></td>
+                        @endif
+                      @if($sumbottom2 != 0)
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumbottom2,2)}}</span></td>
+                        @else
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">0.00</span></td>
+                        @endif
+                      @if($sumtod2 != 0)
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtod2,2)}}</span></td>
+                        @else
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">0.00</span></td>
+                        @endif
+                      @if($sumtop1 != 0)
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtop1,2)}}</span></td>
+                        @else
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">0.00</span></td>
+                        @endif  
+                      @if($sumbottom1 != 0)
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumbottom1,2)}}</span></td>
+                        @else
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">0.00</span></td>
+                        @endif  
+                    </tr>
+                <tr class="even">
                 <td class="bolder">
                   <span class="pull-left">คอม</span>
-                  <span class="pull-right n2c sum-com-1">0.00</span>
+                  <span class="pull-right n2c sum-com-1"><span class="negative">-{{number_format($allcom,2)}}</span></span>
                 </td>
-                                  <td class="align-center bg-yellow n2c com-1">0.00</td>
-                                  <td class="align-center bg-yellow n2c com-2">0.00</td>
-                                  <td class="align-center bg-yellow n2c com-3">0.00</td>
-                                  <td class="align-center bg-yellow n2c com-4">0.00</td>
-                                  <td class="align-center bg-yellow n2c com-5">0.00</td>
-                                  <td class="align-center bg-yellow n2c com-6">0.00</td>
-                                  <td class="align-center bg-yellow n2c com-7">0.00</td>
-                                  <td class="align-center bg-yellow n2c com-8">0.00</td>
-                              </tr>
+                    @if($top3coms != 0)
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($top3coms,2)}}</span></td>
+                      @else
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-0.00</span></td>
+                      @endif
+                    @if($bottom3coms != 0)
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($bottom3coms,2)}}</span></td>
+                      @else
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-0.00</span></td>
+                      @endif
+                    @if($tod3coms != 0)
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($tod3coms,2)}}</span></td>
+                      @else
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-0.00</span></td>
+                      @endif
+                    @if($top2coms != 0)
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($top2coms,2)}}</span></td>
+                      @else
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-0.00</span></td>
+                      @endif
+                    @if($bottom2coms != 0)
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($bottom2coms,2)}}</span></td>
+                      @else
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-0.00</span></td>
+                      @endif
+                    @if($tod2coms != 0)
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($tod2coms,2)}}</span></td>
+                      @else
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-0.00</span></td>
+                      @endif
+                    @if($top1coms != 0)
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($top1coms,2)}}</span></td>
+                      @else
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-0.00</span></td>
+                      @endif
+                    @if($bottom1coms != 0)
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($bottom1coms,2)}}</span></td>
+                      @else
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-0.00</span></td>
+                      @endif
+                </tr>
                           <tr class="odd">
                 <td class="bolder">
                   <span class="pull-left">รับ</span>
-                  <span class="pull-right n2c sum-take-1">0.00</span>
+                  <span class="pull-right n2c sum-take-1"><span class="positive"><span class="positive">{{number_format($alltake,2)}}</span></span>
                 </td>
-                                  <td class="align-center bg-yellow n2c take-1">0.00</td>
-                                  <td class="align-center bg-yellow n2c take-2">0.00</td>
-                                  <td class="align-center bg-yellow n2c take-3">0.00</td>
-                                  <td class="align-center bg-yellow n2c take-4">0.00</td>
-                                  <td class="align-center bg-yellow n2c take-5">0.00</td>
-                                  <td class="align-center bg-yellow n2c take-6">0.00</td>
-                                  <td class="align-center bg-yellow n2c take-7">0.00</td>
-                                  <td class="align-center bg-yellow n2c take-8">0.00</td>
+                                  <td class="align-center bg-yellow n2c take-1"><span class="positive">{{number_format($sumtop3-$top3coms,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-2"><span class="positive">{{number_format($sumbottom3-$bottom3coms,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-3"><span class="positive">{{number_format($sumtod3-$tod3coms,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-4"><span class="positive">{{number_format($sumtop2-$top2coms,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-5"><span class="positive">{{number_format($sumbottom2-$bottom2coms,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-6"><span class="positive">{{number_format($sumtod2-$tod2coms,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-7"><span class="positive">{{number_format($sumtop1-$top1coms,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-8"><span class="positive">{{number_format($sumbottom1-$bottom1coms,2)}}</span></td>
                               </tr>
                           <tr class="even">
                 <td class="bolder">

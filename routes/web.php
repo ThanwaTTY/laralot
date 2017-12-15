@@ -110,8 +110,10 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::post('/lotgovuse','Members\OpencloseController@lotgovuse');
              Route::post('/lotuse','Members\OpencloseController@lotuse');
              ///////////////////////////////////////////////////////////////////////////
-             Route::get('/listlottery/listlotuser', 'Members\BetController@index');
-             });
+             Route::get('/listlottery/listlotpoint', 'Members\BetController@listlotpoint');
+             Route::get('/listlottery/listlotuser', 'Members\BetController@listlotuser');
+             
+            });
              Route::get('/test', function () {
                 return view('portest');
             //return view('welcome');
@@ -125,9 +127,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              });
 
              //รายการเเทง
-             Route::get('/listlottery/listlotpoint', function () {
-                return view('listlottery.listlotpoint.index');
-             });
+             
 
 
              Route::get('/listlottery/listresult', function () {
