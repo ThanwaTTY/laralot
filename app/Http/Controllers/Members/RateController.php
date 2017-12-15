@@ -29,34 +29,71 @@ class RateController extends Controller
 
     public function payoutg(Request $request)
     {
-        //$data_request = $request->all();
+        $data_request = $request->all();
+        //$id = auth()->user()->id;
         $id = $request->input('member_ids');
-         //dd(request('max_per_num1'));
-        $ratepay = Playset::find($id)->first();
-        foreach (request('member_ids') as $ratepay_id) {
-            $ratepay = Ratepaygov::find($ratepaygov_id);
-            if (request('max_per_num1')) {
-                
-                $ratepay->max_per_num1 = request('max_per_num1');
-            }if (request('max_per_num2')) {
-                $ratepay->max_per_num2 = request('max_per_num2');
-            }if (request('max_per_num3')) {
-                $ratepay->max_per_num3 = request('max_per_num3');
-            }if (request('max_per_num4')) {
-                $ratepay->max_per_num4 = request('max_per_num4');
-            }if (request('max_per_num5')) {
-                $ratepay->max_per_num5 = request('max_per_num5');
-            }if (request('max_per_num6')) {
-                $ratepay->max_per_num6 = request('max_per_num6');
-            }if (request('max_per_num7')) {
-                $ratepay->max_per_num7 = request('max_per_num7');
-            }if (request('max_per_num8')) {
-                $ratepay->max_per_num8 = request('max_per_num8');
+        foreach (request('member_ids') as $playset_id) {
+            $ratepaygovs = Ratepaygov::find($playset_id);
+            if (request('payoutg_1')) {
+                $ratepaygovs->payoutg_1 = request('payoutg_1');
+            }if (request('payoutg_2')) {
+                $ratepaygovs->payoutg_2 = request('payoutg_2');
+            }if (request('payoutg_3')) {
+                $ratepaygovs->payoutg_3 = request('payoutg_3');
+            }if (request('payoutg_4')) {
+                $ratepaygovs->payoutg_4 = request('payoutg_4');
+            }if (request('payoutg_5')) {
+                $ratepaygovs->payoutg_5 = request('payoutg_5');
+            }if (request('payoutg_6')) {
+                $ratepaygovs->payoutg_6 = request('payoutg_6');
+            }if (request('payoutg_7')) {
+                $ratepaygovs->payoutg_7 = request('payoutg_7');
+            }if (request('payoutg_8')) {
+                $ratepaygovs->payoutg_8 = request('payoutg_8');
             }
             
-            $ratepay->update();
+            $ratepaygovs->update();
         }
-        return response()->json(['data_request'=>$data_request]);
+
+
+        $position = [];
+        $successes = [];
+        $fails = [];
+        foreach (request('member_ids') as $member_id) {
+            if (request('payoutg_1') > 0) {
+                $successes['payoutg_1'][] = $member_id;
+                $position[]='payoutg_1';
+            }
+
+            if (request('payoutg_2') > 0) {
+                $successes['payoutg_2'][] = $member_id;
+            }
+
+            if (request('payoutg_3') > 0) {
+                $successes['payoutg_3'][] = $member_id;
+            }
+
+            if (request('payoutg_4') > 0) {
+                $successes['payoutg_4'][] = $member_id;
+            }
+
+            if (request('payoutg_5') > 0) {
+                $successes['payoutg_5'][] = $member_id;
+            }
+
+            if (request('payoutg_6') > 0) {
+                $successes['payoutg_6'][] = $member_id;
+            }
+
+            if (request('payoutg_7') > 0) {
+                $successes['payoutg_7'][] = $member_id;
+            }
+
+            if (request('payoutg_8') > 0) {
+                $successes['payoutg_8'][] = $member_id;
+            }
+        }
+        return response()->json(['success'=>$successes, 'fails'=>$fails,'data_request'=>$data_request, "id"=>$id, "ratepaygovs"=>$ratepaygovs]);
 
 
 

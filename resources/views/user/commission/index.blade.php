@@ -85,6 +85,8 @@
 <script type="text/javascript">
 	$(function(){
 	$(".showname").hide();
+	$('.jquery-hide.bg-warning').hide();
+	$('.jquery-hide.bg-danger').hide();
 	
 	$('#mastercheck').change(function(){
 		var val = $('mastercheck').val();
@@ -98,10 +100,16 @@
 
 	$('.check-all').change(function(){
 		if(this.checked == true){
-			 $("input[name='member_ids[]']").prop( "checked", true );
+			$(".check-all").prop( "checked", true );
+			$("input.member-check").prop( "checked", true );
 		}else{
-          $("input[name='member_ids[]']").prop( "checked", false );
+			$(".check-all").prop( "checked", false );
+        	$("input.member-check").prop( "checked", false );
         }
+	});
+	$('a[data-toggle="tab"]').on('click', function(){
+		console.log('a[data-toggle="tab"]');
+		//$('input[type="text"]').val("");
 	});
 });
 
@@ -110,25 +118,49 @@
 	$(function(){
 		$('#editpaycot_g').on('click', function(){
 			console.log("active");
-			$.post('/payoutg', $('#formeditpaycot_g').serialize()).done( function(data) {
-				//$('td').removeClass('bg-success');
+			$.post('/payoutg', $('#formeditpayout_g').serialize()).done( function(data) {
+				$('td').removeClass('bg-success');
 				console.log(data);
-				/*for(var i in data.success)
+				for(var i in data.success)
 				{
 					console.log(i);
 					$('input[name='+i+']').val("");
 					$.each(data.success[i], function(eventID,eventData) {
 						//console.log('<p>'+eventData+'</p>');
-						$('.table-max_per_num-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
-						$('.table-max_per_num-1-row-'+ eventData+'-col-' + i).html(data.playset[i]);
-						console.log('.table-max_per_num-1-row-'+ eventData+'-col-' + i);
-						console.log(i);
-						console.log(data.playset);
+						$('.table-payoutg-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
+						$('.table-payoutg-1-row-'+ eventData+'-col-' + i).html(data.ratepaygovs[i]);
+						console.log('.table-payoutg-1-row-'+ eventData+'-col-' + i);
+						//console.log('ratepaygovs:'+data.ratepaygovs[i]);
+						console.log('eventData:'+eventData);
+						//console.log(data.playset);
 					});
-				}*/
+				}
 			});
 		});
+
+
+		$('#users-edit-filter').change(function() {
+			displayOption();
+		});
 	});
+	
+	function displayOption() {
+		var filter = $('#users-edit-filter').val();
+		//alert(filter);
+
+		if (filter == 0) {
+			$('tr[data-status]').css("display", "none");
+			$('tr[data-status="0"]').css("display", "table-row");
+		} else if (filter == 1) {
+			$('tr[data-status]').css("display", "none");
+			$('tr[data-status="1"]').css("display", "table-row");
+		} else if (filter == 2) {
+			$('tr[data-status]').css("display", "none");
+			$('tr[data-status="2"]').css("display", "table-row");
+		} else {
+			$('tr[data-status]').css("display", "table-row");
+		}
+	}
 
 </script>
 @endsection @section('content') @if($errors->all())
@@ -187,10 +219,10 @@
 						<li class="pull-right right-padding-10 users__edit-options">
 							<span class="bolder">แสดง</span>
 							<select id="users-edit-filter">
-                  <option value="4">ทั้งหมด</option>
-                  <option value="1" selected="selected">ปกติ</option>
-                  <option value="2">ระงับ</option>
-                  <option value="3">ล็อค</option>
+                  <option value="3">ทั้งหมด</option>
+                  <option value="0" selected="selected">ปกติ</option>
+                  <option value="1">ระงับ</option>
+                  <option value="2">ล็อค</option>
                     </select>
 							<span class="bolder">เรียง</span>
 							<select id="users-edit-order">
@@ -226,7 +258,7 @@
 									<div class="tab-content no-padding">
 										อัตราจ่าย / หวยรัฐ 70 / 3 ตัวท้าย
 										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="formeditpaycot_g" method="POST" action="/payoutg" accept-charset="UTF-8" data-method="put" data-feedback="mixed"
+											<form id="formeditpayout_g" method="POST" action="/payoutg" accept-charset="UTF-8" data-method="put" data-feedback="mixed"
 											 data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
 												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
@@ -287,7 +319,8 @@
 													</thead>
 													<tbody>
 														@foreach($members as $member)
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
+														<tr data-id="9474" data-status="{{$member->status}}" @if($member->status == 0) class="jquery-hide nomal" @elseif($member->status == 1) class="jquery-hide bg-warning" @else class="jquery-hide
+															bg-danger" @endif >
 															<td class="id">{{$member->ratepaygov->id}}</td>
 															<td>{{$member->username}}<span class="showname" name="showname">({{$member->name}})</span></td>
 															@if($member->level == 7)
@@ -306,14 +339,14 @@
 															<td class="type" nowrap="">Admin</td>
 															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepaygov->id }}"></td>
-															<td class="table-min-1-row-1-col-min_1">{{$member->ratepaygov->payoutg_1}}</td>
-															<td class="table-min-1-row-1-col-min_2">{{$member->ratepaygov->payoutg_2}}</td>
-															<td class="table-min-1-row-1-col-min_3">{{$member->ratepaygov->payoutg_3}}</td>
-															<td class="table-min-1-row-1-col-min_4">{{$member->ratepaygov->payoutg_4}}</td>
-															<td class="table-min-1-row-1-col-min_5">{{$member->ratepaygov->payoutg_5}}</td>
-															<td class="table-min-1-row-1-col-min_6">{{$member->ratepaygov->payoutg_6}}</td>
-															<td class="table-min-1-row-1-col-min_7">{{$member->ratepaygov->payoutg_7}}</td>
-															<td class="table-min-1-row-1-col-min_8">{{$member->ratepaygov->payoutg_8}}</td>
+															<td class="table-payoutg-1-row-1-col-payoutg_1">{{$member->ratepaygov->payoutg_1}}</td>
+															<td class="table-payoutg-1-row-1-col-payoutg_2">{{$member->ratepaygov->payoutg_2}}</td>
+															<td class="table-payoutg-1-row-1-col-payoutg_3">{{$member->ratepaygov->payoutg_3}}</td>
+															<td class="table-payoutg-1-row-1-col-payoutg_4">{{$member->ratepaygov->payoutg_4}}</td>
+															<td class="table-payoutg-1-row-1-col-payoutg_5">{{$member->ratepaygov->payoutg_5}}</td>
+															<td class="table-payoutg-1-row-1-col-payoutg_6">{{$member->ratepaygov->payoutg_6}}</td>
+															<td class="table-payoutg-1-row-1-col-payoutg_7">{{$member->ratepaygov->payoutg_7}}</td>
+															<td class="table-payoutg-1-row-1-col-payoutg_8">{{$member->ratepaygov->payoutg_8}}</td>
 														</tr>
 														@endforeach
 
@@ -335,8 +368,8 @@
 									<div class="tab-content no-padding">
 										อัตราจ่าย / หวย 70 / 3 ตัวท้าย
 										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="form1" method="POST" action="/payout" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
-											 data-after="reset" class="js-ajax-form">
+											<form id="formeditpayout" method="POST" action="/payout" accept-charset="UTF-8" data-method="put" data-feedback="mixed"
+											 data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
 												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
@@ -398,7 +431,7 @@
 														@foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
 															<td class="id">{{$member->ratepay->id}}</td>
-															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
+															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">({{$member->name}})</span></td>
 															@if($member->level == 7)
 															<td class="type" nowrap="">Member</td>
 															@elseif($member->level == 6)
@@ -523,7 +556,7 @@
 														@foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
 															<td class="id">{{$member->ratepaygov->id}}</td>
-															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
+															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">({{$member->name}})</span></td>
 															@if($member->level == 7)
 															<td class="type" nowrap="">Member</td>
 															@elseif($member->level == 6)
@@ -631,7 +664,7 @@
 														@foreach($members as $member)
 														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
 															<td class="id">{{$member->ratepay->id}}</td>
-															<td>{{$member->username}} <span class="showname" name="showname" style="display: none;">(Mikael)</span></td>
+															<td>{{$member->username}} <span class="showname" name="showname" style="display: none;">({{$member->name}})</span></td>
 															@if($member->level == 7)
 															<td class="type" nowrap="">Member</td>
 															@elseif($member->level == 6)
