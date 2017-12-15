@@ -15,7 +15,7 @@ class CreateRatepayTable extends Migration
     {
         Schema::create('ratepays', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ratepay_id')->index();
+            $table->integer('member_id')->index();
             $table->integer('lot_id')->default('2');
             $table->integer('payout_1');
             $table->integer('com_1');

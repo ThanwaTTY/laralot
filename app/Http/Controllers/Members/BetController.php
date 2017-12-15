@@ -32,7 +32,7 @@ class BetController extends Controller
         $userbets_counts[0] = "";
         foreach($userbets as $key => $userbet)
         {
-            $ratepaygovs[$userbet->member_id] = Ratepaygov::where("ratepaygov_id",$userbet->member_id)->first();
+            $ratepaygovs[$userbet->member_id] = Ratepaygov::where("member_id",$userbet->member_id)->first();
             $userbets_counts[$key] = Userbet::where('member_id', $userbet->member_id)->get();
             // echo "<li>".$ratepaygovs[$userbet->member_id]."</li>";
         }
@@ -142,7 +142,7 @@ class BetController extends Controller
         $userbets_counts[0] = '';
         foreach ($userbets as $key => $userbet) {
             // echo "<li>".$userbet->member_id. "</li>";
-            $ratepaygovs[$userbet->member_id] = Ratepaygov::where("ratepaygov_id",$userbet->member_id)->first();
+            $ratepaygovs[$userbet->member_id] = Ratepaygov::where("member_id",$userbet->member_id)->first();
             $userbets_counts[$key] = Userbet::where("member_id",$userbet->member_id)->get();
             $amountmember = $userbet->sum_amount;
             $sum += $userbet->sum_amount;

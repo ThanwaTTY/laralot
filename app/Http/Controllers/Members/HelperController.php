@@ -38,7 +38,7 @@ class HelperController extends Controller
         ]);
 
         Helperset::create([
-            'helper_id'=> $member->id ,
+            'member_id'=> $member->id ,
             'listplay' => request('listplay'),
             'member' => request('member'),
             'listkeep' => request('listkeep'),
@@ -117,7 +117,7 @@ class HelperController extends Controller
     public function destroy($id)
     {
         $member = Member::find($id);
-        $helper = Helperset::where('helper_id' , $id)->first();
+        $helper = Helperset::where('member_id' , $id)->first();
         $member->delete();
         $helper->delete();
         return back();

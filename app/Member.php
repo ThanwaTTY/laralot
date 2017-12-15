@@ -24,7 +24,7 @@ class Member extends Authenticatable
 
     public function helperset()
     {
-        return $this->hasOne(Helperset::class, 'helper_id', 'id');
+        return $this->hasOne(Helperset::class, 'member_id', 'id');
     }
 
     public function playset()
@@ -33,19 +33,19 @@ class Member extends Authenticatable
     }
     public function ratepaygov()
     {
-        return $this->hasOne(Ratepaygov::class, 'ratepaygov_id', 'id');
+        return $this->hasOne(Ratepaygov::class, 'member_id', 'id');
     }
     public function ratepay()
     {
-        return $this->hasOne(Ratepay::class, 'ratepay_id', 'id');
+        return $this->hasOne(Ratepay::class, 'member_id', 'id');
     }
     public function openclose()
     {
-        return $this->hasOne(Opencloselot::class, 'openclose_id','id');
+        return $this->hasOne(Opencloselot::class, 'member_id','id');
     }
     public function keep()
     {
-        return $this->hasOne(Keep::class, 'keep_id','id');
+        return $this->hasOne(Keep::class, 'member_id','id');
     }
     public function userbet()
     {

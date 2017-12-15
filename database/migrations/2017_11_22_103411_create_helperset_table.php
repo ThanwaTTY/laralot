@@ -15,7 +15,7 @@ class CreateHelpersetTable extends Migration
     {
         Schema::create('helpersets', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('helper_id')->unsigned()->index();
+            $table->integer('member_id')->unsigned()->index();
             $table->integer('listplay');
             $table->integer('member');
             $table->integer('listkeep');

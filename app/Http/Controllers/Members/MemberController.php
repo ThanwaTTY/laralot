@@ -179,11 +179,11 @@ class MemberController extends Controller
             'useradd' => $memberid
             ]);
             Playset::create( array_merge(request()->all(),['member_id'=> $membercreate->id]) );
-            Ratepaygov::create( array_merge(request()->all(),['ratepaygov_id' => $membercreate->id]) );
-            Ratepay::create( array_merge(request()->all(), ['ratepay_id' => $membercreate->id]) );
-            Keep::create( array_merge(request()->all(), ['keep_id' => $membercreate->id]) );
+            Ratepaygov::create( array_merge(request()->all(),['member_id' => $membercreate->id]) );
+            Ratepay::create( array_merge(request()->all(), ['member_id' => $membercreate->id]) );
+            Keep::create( array_merge(request()->all(), ['member_id' => $membercreate->id]) );
             Opencloselot::create([
-            'openclose_id' => $membercreate->id,
+            'member_id' => $membercreate->id,
             'govlot' => 1,
             'tkslot' => 1,
             'setlot' => 1,

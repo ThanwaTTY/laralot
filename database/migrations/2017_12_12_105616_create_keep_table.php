@@ -15,7 +15,7 @@ class CreateKeepTable extends Migration
     {
         Schema::create('keeps', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('keep_id')->index();
+            $table->integer('member_id')->index();
             $table->decimal('keep')->default(0);
             $table->decimal('keepset');
             $table->integer('keepover')->default(0);

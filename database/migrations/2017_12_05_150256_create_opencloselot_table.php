@@ -15,7 +15,7 @@ class CreateOpencloselotTable extends Migration
     {
         Schema::create('opencloselots', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('openclose_id')->index();
+            $table->integer('member_id')->index();
             $table->integer('govlot')->default('0');
             $table->integer('tkslot')->default('0');
             $table->integer('setlot')->default('0');

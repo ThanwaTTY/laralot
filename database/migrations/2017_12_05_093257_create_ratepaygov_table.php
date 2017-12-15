@@ -15,7 +15,7 @@ class CreateRatepaygovTable extends Migration
     {
         Schema::create('ratepaygovs', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('ratepaygov_id')->index();
+            $table->integer('member_id')->index();
             $table->integer('lotgov_id')->default('1');
             $table->integer('payoutg_1');
             $table->integer('comg_1');
