@@ -135,32 +135,69 @@ class BetController extends Controller
         // $members = Member::get();
         $sum = 0;
         //$ratepaygovs = Ratepaygov::get();
+        $userbetkeeps = Userbet::where('useradd', $id)->with('member')->select(DB::Raw('SUM(amount) as sum_amount, useradd'))
+                            ->orderBy('bet_num', 'desc')
+                            ->groupBy('useradd')
+                            ->get();
         $userbets = Userbet::where('useradd', $id)->with('member')->select(DB::Raw('SUM(amount) as sum_amount, member_id'))
                             ->orderBy('bet_num', 'desc')
                             ->groupBy('member_id')
                             ->get();
-        //dd($userbets);
-        // echo "<ul>userbets";
+        // $keeps = Keep::where::('member_id',)
+        $sumtop3 = Userbet::where('useradd', $id)->where('type','top3')->sum('amount');
+        $sumtop2 = Userbet::where('useradd', $id)->where('type','top2')->sum('amount');
+        $sumbottom3 = Userbet::where('useradd', $id)->where('type','bottom3')->sum('amount');
+        $sumbottom2 = Userbet::where('useradd', $id)->where('type','bottom2')->sum('amount');
+        $sumtod3 = Userbet::where('useradd', $id)->where('type','tod3')->sum('amount');
+        $sumtod2 = Userbet::where('useradd', $id)->where('type','tod2')->sum('amount');
+        $sumtop1 = Userbet::where('useradd', $id)->where('type','top1')->sum('amount');
+        $sumbottom1 = Userbet::where('useradd', $id)->where('type','bottom1')->sum('amount');
         $userbets_counts[0] = '';
         foreach ($userbets as $key => $userbet) {
             // echo "<li>".$userbet->member_id. "</li>";
             $ratepaygovs[$userbet->member_id] = Ratepaygov::where("member_id",$userbet->member_id)->first();
-            $keep[$userbet->member_id] = Keep::where("member_id",$userbet->member_id)->first();
             $userbets_counts[$key] = Userbet::where("member_id",$userbet->member_id)->get();
             $amountmember = $userbet->sum_amount;
             $sum += $userbet->sum_amount;
         }
+        foreach ($userbetkeeps as $key => $userbet) {
+            // echo "<li>".$userbet->useradd. "</li>";
+            $keeps[$userbet->useradd] = Keep::where("member_id",$userbet->useradd)->first();
+            // echo "<li>". $keeps[$userbet->useradd]. "</li>";
+        }
 
-        dd($ratepaygovs[$userbet->member_id]);
-            $sumtop3 = Userbet::where('useradd', $id)->where('type','top3')->sum('amount');
-            $sumtop2 = Userbet::where('useradd', $id)->where('type','top2')->sum('amount');
-            $sumbottom3 = Userbet::where('useradd', $id)->where('type','bottom3')->sum('amount');
-            $sumbottom2 = Userbet::where('useradd', $id)->where('type','bottom2')->sum('amount');
-            $sumtod3 = Userbet::where('useradd', $id)->where('type','tod3')->sum('amount');
-            $sumtod2 = Userbet::where('useradd', $id)->where('type','tod2')->sum('amount');
-            $sumtop1 = Userbet::where('useradd', $id)->where('type','top1')->sum('amount');
-            $sumbottom1 = Userbet::where('useradd', $id)->where('type','bottom1')->sum('amount');
-            // dd($sumtop3*90/100);
+       $sumAll_keep = 0;
+        if($userbets_counts){
+            foreach($userbets_counts as $loop => $userbets_count){
+                $sum_keep[$loop] = 0;
+                if($userbets_count){
+                    foreach($userbets_count as $key => $userbets_C){
+                        if($userbets_C->type=="top3"){
+                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
+                        }elseif ($userbets_C->type=="bottom3") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
+                        }elseif ($userbets_C->type=="tod3") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
+                        }elseif ($userbets_C->type=="top2") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
+                        }elseif ($userbets_C->type=="bottom2") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
+                        }elseif ($userbets_C->type=="tod2") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
+                        }elseif ($userbets_C->type=="top1") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
+                        }elseif ($userbets_C->type=="bottom1") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
+                        }
+
+                    }
+
+                    
+                }
+                $sumAll_keep += $sum_keep[$loop];
+            }
+        }
+
         $sum_com = 0;
         if($userbets_counts){
             foreach ($userbets_counts as $loop => $userbets_count) {
@@ -243,7 +280,7 @@ class BetController extends Controller
                     }
                 }
             //////////////////////////////////////////////////////// 
-        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom','alltotalmember','sum_com'));
+        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom','alltotalmember','sum_com','sum_keep','sumAll_keep'));
     }
 
  

@@ -135,14 +135,14 @@
 								@elseif($userbet->member->level == 1)
 								<td class="type" nowrap="">Admin</td>
 								@endif
-								<td class="align-right dark-blue bolder n2 bg-blue">{{$userbet->sum_amount}}</td>
-								<td class="align-right n2c"><span class="negative">-{{$userbet->sum_amount}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($userbet->sum_amount,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($userbet->sum_amount,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{$com[$key]}}<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($com[$key],2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{$totalmember[$key]}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($totalmember[$key],2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">558.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sum_keep[$key],2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-125.90<span></span></span>
 								</td>
@@ -168,7 +168,7 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($alltotalmember,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">558.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumAll_keep,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-125.90<span></span></span>
 								</td>
