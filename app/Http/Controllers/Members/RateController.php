@@ -141,117 +141,318 @@ class RateController extends Controller
 
     public function payout(Request $request)
     {
-        foreach(request('member_ids') as $ratepay_id){
-            $ratepay = Ratepay::find($ratepay_id);
-            //dd($ratepay->payoutg_1);
-            if(request('payout_1')){
-                $ratepay->payout_1 = request('payout_1');
+        $data_request = $request->all();
+        //$id = auth()->user()->id;
+        $id = $request->input('member_ids');
+        foreach (request('member_ids') as $playset_id) {
+            $ratepays = Ratepay::find($playset_id);
+            if (request('payout_1')) {
+                $ratepays->payout_1 = request('payout_1');
             }
-            if(request('payout_2')){
-                $ratepay->payout_2 = request('payout_2');
+            // if (request('payout_2')) {
+            //     $ratepays->payout_2 = request('payout_2');
+            // }
+            if (request('payout_3')) {
+                $ratepays->payout_3 = request('payout_3');
+            }if (request('payout_4')) {
+                $ratepays->payout_4 = request('payout_4');
+            }if (request('payout_5')) {
+                $ratepays->payout_5 = request('payout_5');
+            }if (request('payout_6')) {
+                $ratepays->payout_6 = request('payout_6');
+            }if (request('payout_7')) {
+                $ratepays->payout_7 = request('payout_7');
+            }if (request('payout_8')) {
+                $ratepays->payout_8 = request('payout_8');
             }
-            if(request('payout_3')){
-                $ratepay->payout_3 = request('payout_3');
-            }
-            if(request('payout_4')){
-                $ratepay->payout_4 = request('payout_4');
-            }
-            if(request('payout_5')){
-                $ratepay->payout_5 = request('payout_5');
-            }
-            if(request('payout_6')){
-                $ratepay->payout_6 = request('payout_6');
-            }
-            if(request('payout_7')){
-                $ratepay->payout_7 = request('payout_7');
-            }
-            if(request('payout_8')){
-                $ratepay->payout_8 = request('payout_8');
-            }
-
-            $ratepay->update();
-           
+            
+            $ratepays->update();
         }
 
-         return back()->withInput();
+
+        $position = [];
+        $successes = [];
+        $fails = [];
+        foreach (request('member_ids') as $member_id) {
+            if (request('payout_1') > 0) {
+                $successes['payout_1'][] = $member_id;
+                $position[]='payout_1';
+            }
+
+            // if (request('payout_2') > 0) {
+            //     $successes['payout_2'][] = $member_id;
+            // }
+
+            if (request('payout_3') > 0) {
+                $successes['payout_3'][] = $member_id;
+            }
+
+            if (request('payout_4') > 0) {
+                $successes['payout_4'][] = $member_id;
+            }
+
+            if (request('payout_5') > 0) {
+                $successes['payout_5'][] = $member_id;
+            }
+
+            if (request('payout_6') > 0) {
+                $successes['payout_6'][] = $member_id;
+            }
+
+            if (request('payout_7') > 0) {
+                $successes['payout_7'][] = $member_id;
+            }
+
+            if (request('payout_8') > 0) {
+                $successes['payout_8'][] = $member_id;
+            }
+        }
+        return response()->json(['success'=>$successes, 'fails'=>$fails,'data_request'=>$data_request, "id"=>$id, "ratepays"=>$ratepays]);
+
+
+        // foreach(request('member_ids') as $ratepay_id){
+        //     $ratepay = Ratepay::find($ratepay_id);
+        //     //dd($ratepay->payoutg_1);
+        //     if(request('payout_1')){
+        //         $ratepay->payout_1 = request('payout_1');
+        //     }
+        //     if(request('payout_2')){
+        //         $ratepay->payout_2 = request('payout_2');
+        //     }
+        //     if(request('payout_3')){
+        //         $ratepay->payout_3 = request('payout_3');
+        //     }
+        //     if(request('payout_4')){
+        //         $ratepay->payout_4 = request('payout_4');
+        //     }
+        //     if(request('payout_5')){
+        //         $ratepay->payout_5 = request('payout_5');
+        //     }
+        //     if(request('payout_6')){
+        //         $ratepay->payout_6 = request('payout_6');
+        //     }
+        //     if(request('payout_7')){
+        //         $ratepay->payout_7 = request('payout_7');
+        //     }
+        //     if(request('payout_8')){
+        //         $ratepay->payout_8 = request('payout_8');
+        //     }
+
+        //     $ratepay->update();
+           
+        // }
+
+        // return back()->withInput();
     }
 
     public function comg(Request $request)
     {
-        foreach(request('member_ids') as $ratepaygov_id){
-
-
-            $ratepay = Ratepaygov::find($ratepaygov_id);
-            //dd($ratepay->payoutg_1);
-            if(request('comg_1')){
-                $ratepay->comg_1 = request('comg_1');
+        $data_request = $request->all();
+        //$id = auth()->user()->id;
+        $id = $request->input('member_ids');
+        foreach (request('member_ids') as $playset_id) {
+            $ratepays = Ratepaygov::find($playset_id);
+            if (request('comg_1')) {
+                $ratepays->comg_1 = request('comg_1');
+            }if (request('comg_2')) {
+                $ratepays->comg_2 = request('comg_2');
+            }if (request('comg_3')) {
+                $ratepays->comg_3 = request('comg_3');
+            }if (request('comg_4')) {
+                $ratepays->comg_4 = request('comg_4');
+            }if (request('comg_5')) {
+                $ratepays->comg_5 = request('comg_5');
+            }if (request('comg_6')) {
+                $ratepays->comg_6 = request('comg_6');
+            }if (request('comg_7')) {
+                $ratepays->comg_7 = request('comg_7');
+            }if (request('comg_8')) {
+                $ratepays->comg_8 = request('comg_8');
             }
-            if(request('comg_2')){
-                $ratepay->comg_2 = request('comg_2');
-            }
-            if(request('comg_3')){
-                $ratepay->comg_3 = request('comg_3');
-            }
-            if(request('comg_4')){
-                $ratepay->comg_4 = request('comg_4');
-            }
-            if(request('comg_5')){
-                $ratepay->comg_5 = request('comg_5');
-            }
-            if(request('comg_6')){
-                $ratepay->comg_6 = request('comg_6');
-            }
-            if(request('comg_7')){
-                $ratepay->comg_7 = request('comg_7');
-            }
-            if(request('comg_8')){
-                $ratepay->comg_8 = request('comg_8');
-            }
-
-            $ratepay->update();
-
-
+            
+            $ratepays->update();
         }
 
-         return back()->withInput();
+
+        $position = [];
+        $successes = [];
+        $fails = [];
+        foreach (request('member_ids') as $member_id) {
+            if (request('comg_1') > 0) {
+                $successes['comg_1'][] = $member_id;
+                $position[]='comg_1';
+            }
+
+            if (request('comg_2') > 0) {
+                $successes['comg_2'][] = $member_id;
+            }
+
+            if (request('comg_3') > 0) {
+                $successes['comg_3'][] = $member_id;
+            }
+
+            if (request('comg_4') > 0) {
+                $successes['comg_4'][] = $member_id;
+            }
+
+            if (request('comg_5') > 0) {
+                $successes['comg_5'][] = $member_id;
+            }
+
+            if (request('comg_6') > 0) {
+                $successes['comg_6'][] = $member_id;
+            }
+
+            if (request('comg_7') > 0) {
+                $successes['comg_7'][] = $member_id;
+            }
+
+            if (request('comg_8') > 0) {
+                $successes['comg_8'][] = $member_id;
+            }
+        }
+        return response()->json(['success'=>$successes, 'fails'=>$fails,'data_request'=>$data_request, "id"=>$id, "ratepays"=>$ratepays]);
+
+        // foreach(request('member_ids') as $ratepaygov_id){
+
+
+        //     $ratepay = Ratepaygov::find($ratepaygov_id);
+        //     //dd($ratepay->payoutg_1);
+        //     if(request('comg_1')){
+        //         $ratepay->comg_1 = request('comg_1');
+        //     }
+        //     if(request('comg_2')){
+        //         $ratepay->comg_2 = request('comg_2');
+        //     }
+        //     if(request('comg_3')){
+        //         $ratepay->comg_3 = request('comg_3');
+        //     }
+        //     if(request('comg_4')){
+        //         $ratepay->comg_4 = request('comg_4');
+        //     }
+        //     if(request('comg_5')){
+        //         $ratepay->comg_5 = request('comg_5');
+        //     }
+        //     if(request('comg_6')){
+        //         $ratepay->comg_6 = request('comg_6');
+        //     }
+        //     if(request('comg_7')){
+        //         $ratepay->comg_7 = request('comg_7');
+        //     }
+        //     if(request('comg_8')){
+        //         $ratepay->comg_8 = request('comg_8');
+        //     }
+
+        //     $ratepay->update();
+
+
+        // }
+
+        //  return back()->withInput();
     }
 
     public function com(Request $request)
     {
-          foreach(request('member_ids') as $ratepay_id){
-
-
-            $ratepay = Ratepay::find($ratepay_id);
-            //dd($ratepay->payoutg_1);
-            if(request('com_1')){
-                $ratepay->com_1 = request('com_1');
+        $data_request = $request->all();
+        //$id = auth()->user()->id;
+        $id = $request->input('member_ids');
+        foreach (request('member_ids') as $playset_id) {
+            $ratepays = Ratepay::find($playset_id);
+            if (request('com_1')) {
+                $ratepays->com_1 = request('com_1');
+            }if (request('com_2')) {
+                $ratepays->com_2 = request('com_2');
+            }if (request('com_3')) {
+                $ratepays->com_3 = request('com_3');
+            }if (request('com_4')) {
+                $ratepays->com_4 = request('com_4');
+            }if (request('com_5')) {
+                $ratepays->com_5 = request('com_5');
+            }if (request('com_6')) {
+                $ratepays->com_6 = request('com_6');
+            }if (request('com_7')) {
+                $ratepays->com_7 = request('com_7');
+            }if (request('com_8')) {
+                $ratepays->com_8 = request('com_8');
             }
-            if(request('com_2')){
-                $ratepay->com_2 = request('com_2');
-            }
-            if(request('com_3')){
-                $ratepay->com_3 = request('com_3');
-            }
-            if(request('com_4')){
-                $ratepay->com_4 = request('com_4');
-            }
-            if(request('com_5')){
-                $ratepay->com_5 = request('com_5');
-            }
-            if(request('com_6')){
-                $ratepay->com_6 = request('com_6');
-            }
-            if(request('com_7')){
-                $ratepay->com_7 = request('com_7');
-            }
-            if(request('com_8')){
-                $ratepay->com_8 = request('com_8');
-            }
-
-            $ratepay->update();
-
-
+            
+            $ratepays->update();
         }
-         return back()->withInput();
+
+
+        $position = [];
+        $successes = [];
+        $fails = [];
+        foreach (request('member_ids') as $member_id) {
+            if (request('com_1') > 0) {
+                $successes['com_1'][] = $member_id;
+                $position[]='com_1';
+            }
+
+            if (request('com_2') > 0) {
+                $successes['com_2'][] = $member_id;
+            }
+
+            if (request('com_3') > 0) {
+                $successes['com_3'][] = $member_id;
+            }
+
+            if (request('com_4') > 0) {
+                $successes['com_4'][] = $member_id;
+            }
+
+            if (request('com_5') > 0) {
+                $successes['com_5'][] = $member_id;
+            }
+
+            if (request('com_6') > 0) {
+                $successes['com_6'][] = $member_id;
+            }
+
+            if (request('com_7') > 0) {
+                $successes['com_7'][] = $member_id;
+            }
+
+            if (request('com_8') > 0) {
+                $successes['com_8'][] = $member_id;
+            }
+        }
+        return response()->json(['success'=>$successes, 'fails'=>$fails,'data_request'=>$data_request, "id"=>$id, "ratepays"=>$ratepays]);
+
+        // foreach(request('member_ids') as $ratepay_id){
+
+
+        //     $ratepay = Ratepay::find($ratepay_id);
+        //     //dd($ratepay->payoutg_1);
+        //     if(request('com_1')){
+        //         $ratepay->com_1 = request('com_1');
+        //     }
+        //     if(request('com_2')){
+        //         $ratepay->com_2 = request('com_2');
+        //     }
+        //     if(request('com_3')){
+        //         $ratepay->com_3 = request('com_3');
+        //     }
+        //     if(request('com_4')){
+        //         $ratepay->com_4 = request('com_4');
+        //     }
+        //     if(request('com_5')){
+        //         $ratepay->com_5 = request('com_5');
+        //     }
+        //     if(request('com_6')){
+        //         $ratepay->com_6 = request('com_6');
+        //     }
+        //     if(request('com_7')){
+        //         $ratepay->com_7 = request('com_7');
+        //     }
+        //     if(request('com_8')){
+        //         $ratepay->com_8 = request('com_8');
+        //     }
+
+        //     $ratepay->update();
+
+
+        // }
+        // return back()->withInput();
     }
 }

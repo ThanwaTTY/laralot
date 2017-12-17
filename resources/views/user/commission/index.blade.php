@@ -21,7 +21,13 @@
 <link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
 <!-- AdminLTE Skins. Choose a skin from the css/skins
        folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css"> {{--
+<link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
+<style>
+	.vh {
+		visibility: hidden !important;
+	}
+</style>
+{{--
 <style>
 	.sidebar .sidebar-shortcuts-large {
 		line-height: 45px;
@@ -138,6 +144,71 @@
 			});
 		});
 
+		$('#editPayout').on('click', function(){
+			console.log("active");
+			$.post('/payout', $('#formeditpayout').serialize()).done( function(data) {
+				$('td').removeClass('bg-success');
+				console.log(data);
+				for(var i in data.success)
+				{
+					console.log(i);
+					$('input[name='+i+']').val("");
+					$.each(data.success[i], function(eventID,eventData) {
+						//console.log('<p>'+eventData+'</p>');
+						$('.table-payout-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
+						$('.table-payout-1-row-'+ eventData+'-col-' + i).html(data.ratepays[i]);
+						console.log('.table-payout-1-row-'+ eventData+'-col-' + i);
+						//console.log('ratepays:'+data.ratepays[i]);
+						console.log('eventData:'+eventData);
+						//console.log(data.playset);
+					});
+				}
+			});
+		});
+
+		$('#editcomg').on('click', function(){
+			console.log("active");
+			$.post('/comg', $('#formeditcomg').serialize()).done( function(data) {
+				$('td').removeClass('bg-success');
+				console.log(data);
+				for(var i in data.success)
+				{
+					console.log(i);
+					$('input[name='+i+']').val("");
+					$.each(data.success[i], function(eventID,eventData) {
+						//console.log('<p>'+eventData+'</p>');
+						$('.table-comg-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
+						$('.table-comg-1-row-'+ eventData+'-col-' + i).html(data.ratepays[i]);
+						console.log('.table-comg-1-row-'+ eventData+'-col-' + i);
+						//console.log('ratepays:'+data.ratepays[i]);
+						console.log('eventData:'+eventData);
+						//console.log(data.playset);
+					});
+				}
+			});
+		});
+
+		$('#editcom').on('click', function(){
+			console.log("active");
+			$.post('/com', $('#formeditcom').serialize()).done( function(data) {
+				$('td').removeClass('bg-success');
+				console.log(data);
+				for(var i in data.success)
+				{
+					console.log(i);
+					$('input[name='+i+']').val("");
+					$.each(data.success[i], function(eventID,eventData) {
+						//console.log('<p>'+eventData+'</p>');
+						$('.table-com-1-row-'+ eventData+'-col-' + i).addClass('bg-success');
+						$('.table-com-1-row-'+ eventData+'-col-' + i).html(data.ratepays[i]);
+						console.log('.table-com-1-row-'+ eventData+'-col-' + i);
+						//console.log('ratepays:'+data.ratepays[i]);
+						console.log('eventData:'+eventData);
+						//console.log(data.playset);
+					});
+				}
+			});
+		});
 
 		$('#users-edit-filter').change(function() {
 			displayOption();
@@ -217,6 +288,23 @@
 						<li class="js-change-tab active" data-tab1="payout"><a href="#payout" data-toggle="tab">อัตราจ่าย</a></li>
 						<li class="js-change-tab " data-tab1="com"><a href="#com" data-toggle="tab">คอมมิชชั่น</a></li>
 						<li class="pull-right right-padding-10 users__edit-options">
+							<span class="bolder">คัดลอก</span>
+							<select class="js-users__copy-payout-settings" name="">
+			<option value="0"></option>
+			<option value="9306">สูงสุด</option>
+			<option value="9474">3M3K001</option>
+			<option value="10230">3M3K002</option>
+			<option value="12211">3M3K003</option>
+			<option value="11239">3M3KPALM</option>
+			<option value="14553">3M3KPALM2</option>
+			<option value="12692">3M3KPOR</option>
+			<option value="14501">3M3KPORTEST</option>
+			<option value="13989">3M3KTEST</option>
+			<option value="14025">3M3KTESTA</option>
+			<option value="14290">3M3KTESTPOR</option>
+			<option value="14294">3M3KTESTPOR2</option>
+			<option value="11240">3M3KTOR</option>
+		</select>
 							<span class="bolder">แสดง</span>
 							<select id="users-edit-filter">
                   <option value="3">ทั้งหมด</option>
@@ -339,14 +427,14 @@
 															<td class="type" nowrap="">Admin</td>
 															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepaygov->id }}"></td>
-															<td class="table-payoutg-1-row-1-col-payoutg_1">{{$member->ratepaygov->payoutg_1}}</td>
-															<td class="table-payoutg-1-row-1-col-payoutg_2">{{$member->ratepaygov->payoutg_2}}</td>
-															<td class="table-payoutg-1-row-1-col-payoutg_3">{{$member->ratepaygov->payoutg_3}}</td>
-															<td class="table-payoutg-1-row-1-col-payoutg_4">{{$member->ratepaygov->payoutg_4}}</td>
-															<td class="table-payoutg-1-row-1-col-payoutg_5">{{$member->ratepaygov->payoutg_5}}</td>
-															<td class="table-payoutg-1-row-1-col-payoutg_6">{{$member->ratepaygov->payoutg_6}}</td>
-															<td class="table-payoutg-1-row-1-col-payoutg_7">{{$member->ratepaygov->payoutg_7}}</td>
-															<td class="table-payoutg-1-row-1-col-payoutg_8">{{$member->ratepaygov->payoutg_8}}</td>
+															<td class="table-payoutg-1-row-{{ $member->ratepay->id }}-col-payoutg_1">{{$member->ratepaygov->payoutg_1}}</td>
+															<td class="table-payoutg-1-row-{{ $member->ratepay->id }}-col-payoutg_2">{{$member->ratepaygov->payoutg_2}}</td>
+															<td class="table-payoutg-1-row-{{ $member->ratepay->id }}-col-payoutg_3">{{$member->ratepaygov->payoutg_3}}</td>
+															<td class="table-payoutg-1-row-{{ $member->ratepay->id }}-col-payoutg_4">{{$member->ratepaygov->payoutg_4}}</td>
+															<td class="table-payoutg-1-row-{{ $member->ratepay->id }}-col-payoutg_5">{{$member->ratepaygov->payoutg_5}}</td>
+															<td class="table-payoutg-1-row-{{ $member->ratepay->id }}-col-payoutg_6">{{$member->ratepaygov->payoutg_6}}</td>
+															<td class="table-payoutg-1-row-{{ $member->ratepay->id }}-col-payoutg_7">{{$member->ratepaygov->payoutg_7}}</td>
+															<td class="table-payoutg-1-row-{{ $member->ratepay->id }}-col-payoutg_8">{{$member->ratepaygov->payoutg_8}}</td>
 														</tr>
 														@endforeach
 
@@ -368,8 +456,8 @@
 									<div class="tab-content no-padding">
 										อัตราจ่าย / หวย 70 / 3 ตัวท้าย
 										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="formeditpayout" method="POST" action="/payout" accept-charset="UTF-8" data-method="put" data-feedback="mixed"
-											 data-before="validateUserEdit" data-after="reset" class="js-ajax-form">
+											<form id="formeditpayout" method="POST" action="/payout" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+											 data-after="reset" class="js-ajax-form">
 												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
 													<thead clsss="thin-border-bottom">
@@ -381,9 +469,9 @@
 
 														<tr>
 															<th colspan="3" class="vm text-center">
-																<input name="action" type="hidden" value="min">
+																{{-- <input name="action" type="hidden" value="min"> --}}
 																<input name="bet_type_group_id" type="hidden" value="1">
-																<button type="submit" id="editMin" class="btn btn-primary btn-xs">แก้ไข</button>
+																<button type="button" id="editPayout" class="btn btn-primary btn-xs">แก้ไข</button>
 																<a class="btn btn-primary btn-xs">ยกเลิก</a>
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
@@ -392,8 +480,8 @@
 																<a href="#" class="fill-input" tabindex="-1">550</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="" id="payout2" type="text" value="" disabled> &lt;=
-																<a href="#" class="fill-input" tabindex="-1">125</a>
+																<input class="form-control input-sm ac" name="" id="payout2" type="text" value="" disabled>
+																<span class="vh">...</span>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
@@ -429,9 +517,10 @@
 													</thead>
 													<tbody>
 														@foreach($members as $member)
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
+														<tr data-id="9474" data-status="{{$member->status}}" @if($member->status == 0) class="jquery-hide nomal" @elseif($member->status == 1) class="jquery-hide bg-warning" @else class="jquery-hide
+															bg-danger" @endif >
 															<td class="id">{{$member->ratepay->id}}</td>
-															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">({{$member->name}})</span></td>
+															<td>{{$member->username}}<span class="showname" name="showname">({{$member->name}})</span></td>
 															@if($member->level == 7)
 															<td class="type" nowrap="">Member</td>
 															@elseif($member->level == 6)
@@ -448,14 +537,14 @@
 															<td class="type" nowrap="">Admin</td>
 															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
-															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->payout_1}}</td>
-															<td class="table-min-1-row-1-col-min_2"></td>
-															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->payout_3}}</td>
-															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->payout_4}}</td>
-															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->payout_5}}</td>
-															<td class="table-min-1-row-1-col-min_6">{{$member->ratepay->payout_6}}</td>
-															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->payout_7}}</td>
-															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->payout_8}}</td>
+															<td class="table-payout-1-row-{{ $member->ratepay->id }}-col-payout_1">{{$member->ratepay->payout_1}}</td>
+															<td class="bg-dark"></td>
+															<td class="table-payout-1-row-{{ $member->ratepay->id }}-col-payout_3">{{$member->ratepay->payout_3}}</td>
+															<td class="table-payout-1-row-{{ $member->ratepay->id }}-col-payout_4">{{$member->ratepay->payout_4}}</td>
+															<td class="table-payout-1-row-{{ $member->ratepay->id }}-col-payout_5">{{$member->ratepay->payout_5}}</td>
+															<td class="table-payout-1-row-{{ $member->ratepay->id }}-col-payout_6">{{$member->ratepay->payout_6}}</td>
+															<td class="table-payout-1-row-{{ $member->ratepay->id }}-col-payout_7">{{$member->ratepay->payout_7}}</td>
+															<td class="table-payout-1-row-{{ $member->ratepay->id }}-col-payout_8">{{$member->ratepay->payout_8}}</td>
 														</tr>
 														@endforeach
 													</tbody>
@@ -473,7 +562,7 @@
 					</div>
 					<div class="tab-pane " id="com" data-action="update-com" data-parent-id="9306">
 						<ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
-							<li class="js-change-tab " data-tab2="2-3">
+							<li class="js-change-tab active" data-tab2="2-3">
 								<a data-toggle="tab" href="#tab2-3">หวยรัฐ 70</a>
 							</li>
 							<li class="js-change-tab" data-tab2="2-4">
@@ -483,7 +572,7 @@
 
 						<div class="tab-content no-padding">
 							<div class="tab-content no-border no-margin-top no-padding width-800 max-width-1100" id="users-edit-tab-content">
-								<div class="tab-pane" id="tab2-3" data-action="active" data-parent-id="9306">
+								<div class="tab-pane active" id="tab2-3" data-action="active" data-parent-id="9306">
 									<ul class="nav nav-tabs padding-18 tab-color-blue background-blue">
 										<li class="js-change-tab3 active" data-tab3="3">
 											<a data-toggle="tab" href="#tab2-3">3 ตัวท้าย</a>
@@ -493,7 +582,7 @@
 									<div class="tab-content no-padding">
 										คอมมิชชั่น / หวยรัฐ 70 / 3 ตัวท้าย
 										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="form1" method="POST" action="/comg" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+											<form id="formeditcomg" method="POST" action="/comg" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
 												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
@@ -508,7 +597,7 @@
 															<th colspan="3" class="vm text-center">
 																<input name="action" type="hidden" value="min">
 																<input name="bet_type_group_id" type="hidden" value="1">
-																<button type="submit" id="editMin" class="btn btn-primary btn-xs">แก้ไข</button>
+																<button type="button" id="editcomg" class="btn btn-primary btn-xs">แก้ไข</button>
 																<a class="btn btn-primary btn-xs">ยกเลิก</a>
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
@@ -554,9 +643,10 @@
 													</thead>
 													<tbody>
 														@foreach($members as $member)
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
+														<tr data-id="9474" data-status="{{$member->status}}" @if($member->status == 0) class="jquery-hide nomal" @elseif($member->status == 1) class="jquery-hide bg-warning" @else class="jquery-hide
+															bg-danger" @endif >
 															<td class="id">{{$member->ratepaygov->id}}</td>
-															<td>{{$member->username}}<span class="showname" name="showname" style="display: none;">({{$member->name}})</span></td>
+															<td>{{$member->username}}<span class="showname" name="showname">({{$member->name}})</span></td>
 															@if($member->level == 7)
 															<td class="type" nowrap="">Member</td>
 															@elseif($member->level == 6)
@@ -573,14 +663,14 @@
 															<td class="type" nowrap="">Admin</td>
 															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepaygov->id }}"></td>
-															<td class="table-min-1-row-1-col-min_1">{{$member->ratepaygov->comg_1}}</td>
-															<td class="table-min-1-row-1-col-min_2">{{$member->ratepaygov->comg_2}}</td>
-															<td class="table-min-1-row-1-col-min_3">{{$member->ratepaygov->comg_3}}</td>
-															<td class="table-min-1-row-1-col-min_4">{{$member->ratepaygov->comg_4}}</td>
-															<td class="table-min-1-row-1-col-min_5">{{$member->ratepaygov->comg_5}}</td>
-															<td class="table-min-1-row-1-col-min_6">{{$member->ratepaygov->comg_6}}</td>
-															<td class="table-min-1-row-1-col-min_7">{{$member->ratepaygov->comg_7}}</td>
-															<td class="table-min-1-row-1-col-min_8">{{$member->ratepaygov->comg_8}}</td>
+															<td class="table-comg-1-row-{{ $member->ratepay->id }}-col-comg_1">{{$member->ratepaygov->comg_1}}</td>
+															<td class="table-comg-1-row-{{ $member->ratepay->id }}-col-comg_2">{{$member->ratepaygov->comg_2}}</td>
+															<td class="table-comg-1-row-{{ $member->ratepay->id }}-col-comg_3">{{$member->ratepaygov->comg_3}}</td>
+															<td class="table-comg-1-row-{{ $member->ratepay->id }}-col-comg_4">{{$member->ratepaygov->comg_4}}</td>
+															<td class="table-comg-1-row-{{ $member->ratepay->id }}-col-comg_5">{{$member->ratepaygov->comg_5}}</td>
+															<td class="table-comg-1-row-{{ $member->ratepay->id }}-col-comg_6">{{$member->ratepaygov->comg_6}}</td>
+															<td class="table-comg-1-row-{{ $member->ratepay->id }}-col-comg_7">{{$member->ratepaygov->comg_7}}</td>
+															<td class="table-comg-1-row-{{ $member->ratepay->id }}-col-comg_8">{{$member->ratepaygov->comg_8}}</td>
 														</tr>
 														@endforeach
 													</tbody>
@@ -601,7 +691,7 @@
 									<div class="tab-content no-padding">
 										คอมมิชชั่น / หวย 70 / 3 ตัวท้าย
 										<div class="tab-pane in active" data-action="update-min" data-parent-id="9306">
-											<form id="form1" method="POST" action="/com" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
+											<form id="formeditcom" method="POST" action="/com" accept-charset="UTF-8" data-method="put" data-feedback="mixed" data-before="validateUserEdit"
 											 data-after="reset" class="js-ajax-form">
 												{{ csrf_field() }}
 												<table class="table table-bordered table-border-dark table-auto table-nowrap no-margin-bottom enable-check-all users__edit">
@@ -616,7 +706,7 @@
 															<th colspan="3" class="vm text-center">
 																<input name="action" type="hidden" value="min">
 																<input name="bet_type_group_id" type="hidden" value="1">
-																<button type="submit" id="editMin" class="btn btn-primary btn-xs">แก้ไข</button>
+																<button type="button" id="editcom" class="btn btn-primary btn-xs">แก้ไข</button>
 																<a class="btn btn-primary btn-xs">ยกเลิก</a>
 															</th>
 															<th><input class="check-all" name="" type="checkbox" value="0"></th>
@@ -625,8 +715,8 @@
 																<a href="#" class="fill-input" tabindex="-1">33</a>
 															</th>
 															<th>3 ตัวล่าง<br>
-																<input class="form-control input-sm ac" name="com_2" id="com2" type="text" value="" disabled> &lt;=
-																<a href="#" class="fill-input" tabindex="-1">33</a>
+																<input class="form-control input-sm ac" name="com_2" id="com2" type="text" value="" disabled>
+																<span class="vh">...</span>
 															</th>
 															<th>
 																3 ตัวโต๊ด<br>
@@ -662,9 +752,10 @@
 													</thead>
 													<tbody>
 														@foreach($members as $member)
-														<tr data-id="9474" data-status="1" class="jquery-hide nomal">
+														<tr data-id="9474" data-status="1" @if($member->status == 0) class="jquery-hide nomal" @elseif($member->status == 1) class="jquery-hide bg-warning" @else class="jquery-hide
+															bg-danger" @endif >
 															<td class="id">{{$member->ratepay->id}}</td>
-															<td>{{$member->username}} <span class="showname" name="showname" style="display: none;">({{$member->name}})</span></td>
+															<td>{{$member->username}}<span class="showname" name="showname">({{$member->name}})</span></td>
 															@if($member->level == 7)
 															<td class="type" nowrap="">Member</td>
 															@elseif($member->level == 6)
@@ -681,14 +772,14 @@
 															<td class="type" nowrap="">Admin</td>
 															@endif
 															<td class="check"><input name="member_ids[]" class="member-check" type="checkbox" value="{{ $member->ratepay->id }}"></td>
-															<td class="table-min-1-row-1-col-min_1">{{$member->ratepay->com_1}}</td>
-															<td class="table-min-1-row-1-col-min_2"></td>
-															<td class="table-min-1-row-1-col-min_3">{{$member->ratepay->com_3}}</td>
-															<td class="table-min-1-row-1-col-min_4">{{$member->ratepay->com_4}}</td>
-															<td class="table-min-1-row-1-col-min_5">{{$member->ratepay->com_5}}</td>
-															<td class="table-min-1-row-1-col-min_6">{{$member->ratepay->com_6}}</td>
-															<td class="table-min-1-row-1-col-min_7">{{$member->ratepay->com_7}}</td>
-															<td class="table-min-1-row-1-col-min_8">{{$member->ratepay->com_8}}</td>
+															<td class="table-com-1-row-{{ $member->ratepay->id }}-col-com_1">{{$member->ratepay->com_1}}</td>
+															<td class="bg-dark"></td>
+															<td class="table-com-1-row-{{ $member->ratepay->id }}-col-com_3">{{$member->ratepay->com_3}}</td>
+															<td class="table-com-1-row-{{ $member->ratepay->id }}-col-com_4">{{$member->ratepay->com_4}}</td>
+															<td class="table-com-1-row-{{ $member->ratepay->id }}-col-com_5">{{$member->ratepay->com_5}}</td>
+															<td class="table-com-1-row-{{ $member->ratepay->id }}-col-com_6">{{$member->ratepay->com_6}}</td>
+															<td class="table-com-1-row-{{ $member->ratepay->id }}-col-com_7">{{$member->ratepay->com_7}}</td>
+															<td class="table-com-1-row-{{ $member->ratepay->id }}-col-com_8">{{$member->ratepay->com_8}}</td>
 														</tr>
 														@endforeach
 
