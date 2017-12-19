@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLottosTable extends Migration
+class CreateTicketTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateLottosTable extends Migration
      */
     public function up()
     {
-        Schema::create('lottos', function (Blueprint $table) {
+        Schema::create('tickets', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('namelotto')->index();
-            $table->datetime('day_on');
-            $table->datetime('day_off');
+            $table->integer('member_id')->index();
+            $table->integer('lotto_id')->index();
+            $table->decimal('balance',16,2);
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateLottosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lottos');
+        Schema::dropIfExists('tickets');
     }
 }

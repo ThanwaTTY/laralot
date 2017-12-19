@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Userbet;
 use App\Member;
 use App\Lotto;
+use App\Ticket;
+use Carbon\Carbon;
 
 class UserbetController extends Controller
 {
@@ -19,24 +21,32 @@ class UserbetController extends Controller
     {
         $id = auth()->user()->id;
         $useradd = auth()->user()->useradd;
+        $member = Member::find($id);
+        $dt = Carbon::now();
+        $datenow = $dt->format('Y-m-d h:i:s');  
        // $useradds = Member::where('useradd', $useradd)->first();
         // dd($useradds);
-       
+        //$lottos = Lotto::where('day_on','>=','2017-12-19 16:30:00')->where('day_off','<=','2017-12-19 16:30:00')->get();
+        $lottos = Lotto::where('day_on','<=',$datenow)->where('day_off','>=',$datenow)->first();
+
+        $tickets = $this->createTicket($id,$lottos,30);
+
         $data_request = $request->all();
+
         $nums = $request->num;
         foreach ($nums as $key => $num) {
                 if($num){
                     $type = $this->checktype($num);
                         if($request->top[$key]){
-                            $userbet_top = $this->createTop($id,$request->num,$request->top,$key,$type,$useradd);
+                            $userbet_top = $this->createTop($id,$request->num,$request->top,$key,$type,$useradd,$tickets,$datenow,$member);
                         }
 
-                        if($request->bottom[$key]){
-                            $userbet_bottom = $this->createBottom($id,$request->num,$request->bottom,$key,$type,$useradd);
-                        }
-                        if($request->tod[$key]){
-                            $userbet_tod = $this->createTod($id,$request->num,$request->tod,$key,$type,$useradd);
-                        }
+                        // if($request->bottom[$key]){
+                        //     $userbet_bottom = $this->createBottom($id,$request->num,$request->bottom,$key,$type,$useradd,$tickets,$datenow);
+                        // }
+                        // if($request->tod[$key]){
+                        //     $userbet_tod = $this->createTod($id,$request->num,$request->tod,$key,$type,$useradd,$tickets,$datenow);
+                        // }
                     //}
                 }
                
@@ -44,13 +54,23 @@ class UserbetController extends Controller
        
         //return response()->json(['userbet_id'=>$id, 'data_request'=>$data_request, 'add'=>$add, 'userbets'=>$userbets]);
         return response()->json([
-            'data_request'=>$data_request, 
+            'data_request'=>$data_request,
             //'userbet_top'=>$userbet_top, 
             // 'userbet_bottom'=>$userbet_bottom, 
             // 'userbet_tod'=>$userbet_tod,
-            'type'=>$request->num[0],
-            'type_count'=>$type
+            // 'type'=>$request->num[0],
+            // 'type_count'=>$type
+            'member'=>$member
             ]);
+    }
+
+    protected function createTicket($id,$lottos,$balance){
+        $tickets = Ticket::create([
+            'member_id' => $id,
+            'lotto_id' => $lottos->id,
+            'balance' => $balance
+        ]); 
+        return $tickets;
     }
 
     protected function checktype($num){
@@ -58,9 +78,28 @@ class UserbetController extends Controller
          return $datacheck;
     }
 
-    protected function createTop($id,$num,$top,$key,$type,$useradd){
+    protected function createTop($id,$num,$top,$key,$type,$useradd,$tickets,$datenow,$member){
+        if($type==3){
+            $typetop = $member->ratepaygov->comg_1;
+        }elseif($type==2){
+            $typetop = $member->ratepaygov->comg_4;
+        }elseif($type==1){
+            $typetop = $member->ratepaygov->comg_7;
+        }
             $userbets = Userbet::create([
                 'member_id' => $id,
+                'ticket_id'=>$tickets->id,
+                'latepay' => 'หวยรัฐ70',
+                'date_time' => $datenow,
+                'pay' => '0',
+                'com_mem' => $typetop,
+                'agent_amount' => '0',
+                'agent_keep' => '0',
+                'agent_com' => '0',
+                'company_amount' => '0',
+                'company_com' => '0',
+                'company_keep' => '0',
+                'note' => '0',
                 'useradd' => $useradd,
                 'bet_num' => $num[$key],
                 'type' => "top".$type,
@@ -69,9 +108,10 @@ class UserbetController extends Controller
         return $userbets;
     }
     
-    protected function createBottom($id,$num,$bottom,$key,$type,$useradd){
+    protected function createBottom($id,$num,$bottom,$key,$type,$useradd,$tickets){
             $userbets = Userbet::create([
                 'member_id' => $id,
+                'ticket_id'=>$tickets->id,
                 'useradd' => $useradd,
                 'bet_num' => $num[$key],
                 'type' => "bottom".$type,
@@ -80,9 +120,10 @@ class UserbetController extends Controller
         return $userbets;
     }
 
-    protected function createTod($id,$num,$tod,$key,$type,$useradd){
+    protected function createTod($id,$num,$tod,$key,$type,$useradd,$tickets){
             $userbets = Userbet::create([
                 'member_id' => $id,
+                'ticket_id'=>$tickets->id,
                 'useradd' => $useradd,
                 'bet_num' => $num[$key],
                 'type' => "tod".$type,

@@ -6,6 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Lotto extends Model
 {
-    protected $fillable = ['member_id','price_time'];
+    protected $fillable = ['namelotto','day_on','day_off'];
 
 }
