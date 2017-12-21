@@ -8,12 +8,22 @@ use App\Member;
 use App\Lotto;
 use App\Ticket;
 use App\Keep;
+use App\Ratepaygov;
 use Carbon\Carbon;
 
 class UserbetController extends Controller
 {
     public function index()
     {
+        $id = auth()->user()->id;
+        $useradd = auth()->user()->useradd;
+        $member = Member::find($id);
+        $dt = Carbon::now();
+        $datenow = $dt->format('Y-m-d h:i:s');  
+        $keepuseradd = $member->useradd;
+        $keep = Keep::where('member_id',$keepuseradd)->first();
+        $Agcoms = Member::where('id',$useradd)->first();
+        // $companykeep = Member::where();
         
         return view('play.bet.index');
     }
@@ -28,6 +38,8 @@ class UserbetController extends Controller
         $keepuseradd = $member->useradd;
         $keep = Keep::where('member_id',$keepuseradd)->first();
         $Agcoms = Member::where('id',$useradd)->first();
+
+        $companykeep = 100-$keep->keepset;
         // dd($Agcom);
         // dd($keep->keepset);
        // $useradds = Member::where('useradd', $useradd)->first();
@@ -44,14 +56,14 @@ class UserbetController extends Controller
                 if($num){
                     $type = $this->checktype($num);
                         if($request->top[$key]){
-                            $userbet_top = $this->createTop($id,$request->num,$request->top,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms);
+                            $userbet_top = $this->createTop($id,$request->num,$request->top,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms,$companykeep);
                         }
 
                         if($request->bottom[$key]){
-                            $userbet_bottom = $this->createBottom($id,$request->num,$request->bottom,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms);
+                            $userbet_bottom = $this->createBottom($id,$request->num,$request->bottom,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms,$companykeep);
                         }
                         if($request->tod[$key]){
-                            $userbet_tod = $this->createTod($id,$request->num,$request->tod,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms);
+                            $userbet_tod = $this->createTod($id,$request->num,$request->tod,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms,$companykeep);
                         }
                     }
                 
@@ -69,7 +81,7 @@ class UserbetController extends Controller
             'member'=>$member
             ]);
     }
-
+//////////////////////////////////////////////////////////////////////////////////////
     protected function createTicket($id,$lottos,$balance){
         $tickets = Ticket::create([
             'member_id' => $id,
@@ -84,23 +96,177 @@ class UserbetController extends Controller
          return $datacheck;
     }
 
-    protected function createTop($id,$num,$top,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms){
+    protected function createTop($id,$num,$top,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms,$companykeep){
+        $company_com = 0;
         if($type==3){
             $typetop = $member->ratepaygov->comg_1;
             $paytop = $member->ratepaygov->payoutg_1;
             $Agtopamount = $top[$key]*($keep->keepset/100);
             $Agcom = $Agcoms->ratepaygov->comg_1;
+            $companyamount = $top[$key]*($companykeep/100);
+                $masters = Member::find($useradd);//หาคนที่เพิ่มผู้เล่น
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $top[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_1/100);
+                $masters = Member::find($masters->useradd);
+                    if($masters){
+                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                        $keeps = Keep::where('member_id',$masters->id)->first();
+                        $company_keep = $top[$key]*($keeps->keepset/100);
+                        $company_com += $company_keep*($ratepaygovs->comg_1/100);
+                        $masters = Member::find($masters->useradd);
+                        if($masters){
+                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                            $keeps = Keep::where('member_id',$masters->id)->first();
+                            $company_keep = $top[$key]*($keeps->keepset/100);
+                            $company_com += $company_keep*($ratepaygovs->comg_1/100);
+                            $masters = Member::find($masters->useradd);
+                            if($masters){
+                                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                $keeps = Keep::where('member_id',$masters->id)->first();
+                                $company_keep = $top[$key]*($keeps->keepset/100);
+                                $company_com += $company_keep*($ratepaygovs->comg_1/100);
+                                $masters = Member::find($masters->useradd);
+                                if($masters){
+                                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                    $keeps = Keep::where('member_id',$masters->id)->first();
+                                    $company_keep = $top[$key]*($keeps->keepset/100);
+                                    $company_com += $company_keep*($ratepaygovs->comg_1/100);
+                                    $masters = Member::find($masters->useradd);
+                                    if($masters){
+                                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                        $keeps = Keep::where('member_id',$masters->id)->first();
+                                        $company_keep = $top[$key]*($keeps->keepset/100);
+                                        $company_com += $company_keep*($ratepaygovs->comg_1/100);
+                                        $masters = Member::find($masters->useradd);
+                                        if($masters){
+                                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                            $keeps = Keep::where('member_id',$masters->id)->first();
+                                            $company_keep = $top[$key]*($keeps->keepset/100);
+                                            $company_com += $company_keep*($ratepaygovs->comg_1/100);
+                                            $masters = Member::find($masters->useradd);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                //dd($masters);
         }elseif($type==2){
             $typetop = $member->ratepaygov->comg_4;
             $paytop = $member->ratepaygov->payoutg_4;
             $Agtopamount = $top[$key]*($keep->keepset/100);
             $Agcom = $Agcoms->ratepaygov->comg_4;
+            $companyamount = $top[$key]*($companykeep/100);
+                $masters = Member::find($useradd);//หาคนที่เพิ่มผู้เล่น
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $top[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_4/100);
+                $masters = Member::find($masters->useradd);
+                if($masters){
+                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                    $keeps = Keep::where('member_id',$masters->id)->first();
+                    $company_keep = $top[$key]*($keeps->keepset/100);
+                    $company_com += $company_keep*($ratepaygovs->comg_4/100);
+                    $masters = Member::find($masters->useradd);
+                    if($masters){
+                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                        $keeps = Keep::where('member_id',$masters->id)->first();
+                        $company_keep = $top[$key]*($keeps->keepset/100);
+                        $company_com += $company_keep*($ratepaygovs->comg_4/100);
+                        $masters = Member::find($masters->useradd);
+                        if($masters){
+                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                            $keeps = Keep::where('member_id',$masters->id)->first();
+                            $company_keep = $top[$key]*($keeps->keepset/100);
+                            $company_com += $company_keep*($ratepaygovs->comg_4/100);
+                            $masters = Member::find($masters->useradd);
+                            if($masters){
+                                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                $keeps = Keep::where('member_id',$masters->id)->first();
+                                $company_keep = $top[$key]*($keeps->keepset/100);
+                                $company_com += $company_keep*($ratepaygovs->comg_4/100);
+                                $masters = Member::find($masters->useradd);
+                                if($masters){
+                                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                    $keeps = Keep::where('member_id',$masters->id)->first();
+                                    $company_keep = $top[$key]*($keeps->keepset/100);
+                                    $company_com += $company_keep*($ratepaygovs->comg_4/100);
+                                    $masters = Member::find($masters->useradd);
+                                    if($masters){
+                                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                        $keeps = Keep::where('member_id',$masters->id)->first();
+                                        $company_keep = $top[$key]*($keeps->keepset/100);
+                                        $company_com += $company_keep*($ratepaygovs->comg_4/100);
+                                        $masters = Member::find($masters->useradd);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
         }elseif($type==1){
             $typetop = $member->ratepaygov->comg_7;
             $paytop = $member->ratepaygov->payoutg_7;
             $Agtopamount = $top[$key]*($keep->keepset/100);
             $Agcom = $Agcoms->ratepaygov->comg_7;
+            $companyamount = $top[$key]*($companykeep/100);
+                $masters = Member::find($useradd);//หาคนที่เพิ่มผู้เล่น
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $top[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_7/100);
+                $masters = Member::find($masters->useradd);
+                if($masters){
+                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                    $keeps = Keep::where('member_id',$masters->id)->first();
+                    $company_keep = $top[$key]*($keeps->keepset/100);
+                    $company_com += $company_keep*($ratepaygovs->comg_7/100);
+                    $masters = Member::find($masters->useradd);
+                    if($masters){
+                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                        $keeps = Keep::where('member_id',$masters->id)->first();
+                        $company_keep = $top[$key]*($keeps->keepset/100);
+                        $company_com += $company_keep*($ratepaygovs->comg_7/100);
+                        $masters = Member::find($masters->useradd);
+                        if($masters){
+                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                            $keeps = Keep::where('member_id',$masters->id)->first();
+                            $company_keep = $top[$key]*($keeps->keepset/100);
+                            $company_com += $company_keep*($ratepaygovs->comg_7/100);
+                            $masters = Member::find($masters->useradd);
+                            if($masters){
+                                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                $keeps = Keep::where('member_id',$masters->id)->first();
+                                $company_keep = $top[$key]*($keeps->keepset/100);
+                                $company_com += $company_keep*($ratepaygovs->comg_7/100);
+                                $masters = Member::find($masters->useradd);
+                                if($masters){
+                                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                    $keeps = Keep::where('member_id',$masters->id)->first();
+                                    $company_keep = $top[$key]*($keeps->keepset/100);
+                                    $company_com += $company_keep*($ratepaygovs->comg_7/100);
+                                    $masters = Member::find($masters->useradd);
+                                    if($masters){
+                                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                        $keeps = Keep::where('member_id',$masters->id)->first();
+                                        $company_keep = $top[$key]*($keeps->keepset/100);
+                                        $company_com += $company_keep*($ratepaygovs->comg_7/100);
+                                        $masters = Member::find($masters->useradd);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
         }
+
             $userbets = Userbet::create([
                 'member_id' => $id,
                 'ticket_id'=>$tickets->id,
@@ -111,9 +277,9 @@ class UserbetController extends Controller
                 'agent_amount' => $Agtopamount,
                 'agent_keep' => $keep->keepset,
                 'agent_com' => $Agcom,
-                'company_amount' => '0',
-                'company_com' => '0',
-                'company_keep' => '0',
+                'company_amount' => $companyamount,
+                'company_com' => $company_com,
+                'company_keep' => $companykeep,
                 'note' => '0',
                 'useradd' => $useradd,
                 'bet_num' => $num[$key],
@@ -125,22 +291,173 @@ class UserbetController extends Controller
    
 
     
-    protected function createBottom($id,$num,$bottom,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms){
+    protected function createBottom($id,$num,$bottom,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms,$companykeep){
+        $company_com = 0; 
         if($type==3){
             $typebottom = $member->ratepaygov->comg_2;
             $paybottom = $member->ratepaygov->payoutg_2;
             $Agbottomamount = $bottom[$key]*($keep->keepset/100);
             $Agcom = $Agcoms->ratepaygov->comg_2;
+            $companyamount = $bottom[$key]*($companykeep/100);
+                $masters = Member::find($useradd);//หาคนที่เพิ่มผู้เล่น
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_2/100);
+                $masters = Member::find($masters->useradd);
+            if($masters){
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_2/100);
+                $masters = Member::find($masters->useradd);
+                if($masters){
+                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                    $keeps = Keep::where('member_id',$masters->id)->first();
+                    $company_keep = $bottom[$key]*($keeps->keepset/100);
+                    $company_com += $company_keep*($ratepaygovs->comg_2/100);
+                    $masters = Member::find($masters->useradd);
+                    if($masters){
+                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                        $keeps = Keep::where('member_id',$masters->id)->first();
+                        $company_keep = $bottom[$key]*($keeps->keepset/100);
+                        $company_com += $company_keep*($ratepaygovs->comg_2/100);
+                        $masters = Member::find($masters->useradd);
+                        if($masters){
+                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                            $keeps = Keep::where('member_id',$masters->id)->first();
+                            $company_keep = $bottom[$key]*($keeps->keepset/100);
+                            $company_com += $company_keep*($ratepaygovs->comg_2/100);
+                            $masters = Member::find($masters->useradd);
+                            if($masters){
+                                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                $keeps = Keep::where('member_id',$masters->id)->first();
+                                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                                $company_com += $company_keep*($ratepaygovs->comg_2/100);
+                                $masters = Member::find($masters->useradd);
+                                if($masters){
+                                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                    $keeps = Keep::where('member_id',$masters->id)->first();
+                                    $company_keep = $bottom[$key]*($keeps->keepset/100);
+                                    $company_com += $company_keep*($ratepaygovs->comg_2/100);
+                                    $masters = Member::find($masters->useradd);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
         }elseif($type==2){
             $typebottom = $member->ratepaygov->comg_5;
             $paybottom = $member->ratepaygov->payoutg_5;
             $Agbottomamount = $bottom[$key]*($keep->keepset/100);
             $Agcom = $Agcoms->ratepaygov->comg_5;
+            $companyamount = $bottom[$key]*($companykeep/100);
+            $masters = Member::find($useradd);//หาคนที่เพิ่มผู้เล่น
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_5/100);
+                $masters = Member::find($masters->useradd);
+            if($masters){
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_5/100);
+                $masters = Member::find($masters->useradd);
+                if($masters){
+                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                    $keeps = Keep::where('member_id',$masters->id)->first();
+                    $company_keep = $bottom[$key]*($keeps->keepset/100);
+                    $company_com += $company_keep*($ratepaygovs->comg_5/100);
+                    $masters = Member::find($masters->useradd);
+                    if($masters){
+                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                        $keeps = Keep::where('member_id',$masters->id)->first();
+                        $company_keep = $bottom[$key]*($keeps->keepset/100);
+                        $company_com += $company_keep*($ratepaygovs->comg_5/100);
+                        $masters = Member::find($masters->useradd);
+                        if($masters){
+                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                            $keeps = Keep::where('member_id',$masters->id)->first();
+                            $company_keep = $bottom[$key]*($keeps->keepset/100);
+                            $company_com += $company_keep*($ratepaygovs->comg_5/100);
+                            $masters = Member::find($masters->useradd);
+                            if($masters){
+                                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                $keeps = Keep::where('member_id',$masters->id)->first();
+                                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                                $company_com += $company_keep*($ratepaygovs->comg_5/100);
+                                $masters = Member::find($masters->useradd);
+                                if($masters){
+                                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                    $keeps = Keep::where('member_id',$masters->id)->first();
+                                    $company_keep = $bottom[$key]*($keeps->keepset/100);
+                                    $company_com += $company_keep*($ratepaygovs->comg_5/100);
+                                    $masters = Member::find($masters->useradd);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
         }elseif($type==1){
             $typebottom = $member->ratepaygov->comg_8;
             $paybottom = $member->ratepaygov->payoutg_8;
             $Agbottomamount = $bottom[$key]*($keep->keepset/100);
             $Agcom = $Agcoms->ratepaygov->comg_8;
+            $companyamount = $bottom[$key]*($companykeep/100);
+            $masters = Member::find($useradd);//หาคนที่เพิ่มผู้เล่น
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_8/100);
+                $masters = Member::find($masters->useradd);
+            if($masters){
+                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                $keeps = Keep::where('member_id',$masters->id)->first();
+                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                $company_com += $company_keep*($ratepaygovs->comg_8/100);
+                $masters = Member::find($masters->useradd);
+                if($masters){
+                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                    $keeps = Keep::where('member_id',$masters->id)->first();
+                    $company_keep = $bottom[$key]*($keeps->keepset/100);
+                    $company_com += $company_keep*($ratepaygovs->comg_8/100);
+                    $masters = Member::find($masters->useradd);
+                    if($masters){
+                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                        $keeps = Keep::where('member_id',$masters->id)->first();
+                        $company_keep = $bottom[$key]*($keeps->keepset/100);
+                        $company_com += $company_keep*($ratepaygovs->comg_8/100);
+                        $masters = Member::find($masters->useradd);
+                        if($masters){
+                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                            $keeps = Keep::where('member_id',$masters->id)->first();
+                            $company_keep = $bottom[$key]*($keeps->keepset/100);
+                            $company_com += $company_keep*($ratepaygovs->comg_8/100);
+                            $masters = Member::find($masters->useradd);
+                            if($masters){
+                                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                $keeps = Keep::where('member_id',$masters->id)->first();
+                                $company_keep = $bottom[$key]*($keeps->keepset/100);
+                                $company_com += $company_keep*($ratepaygovs->comg_8/100);
+                                $masters = Member::find($masters->useradd);
+                                if($masters){
+                                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                    $keeps = Keep::where('member_id',$masters->id)->first();
+                                    $company_keep = $bottom[$key]*($keeps->keepset/100);
+                                    $company_com += $company_keep*($ratepaygovs->comg_8/100);
+                                    $masters = Member::find($masters->useradd);
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
         }
             $userbets = Userbet::create([
                 'member_id' => $id,
@@ -152,9 +469,9 @@ class UserbetController extends Controller
                 'agent_amount' => $Agbottomamount,
                 'agent_keep' => $keep->keepset,
                 'agent_com' => $Agcom,
-                'company_amount' => '0',
-                'company_com' => '0',
-                'company_keep' => '0',
+                'company_amount' => $companyamount,
+                'company_com' => $company_com,
+                'company_keep' => $companykeep,
                 'note' => '0',
                 'useradd' => $useradd,
                 'bet_num' => $num[$key],
@@ -164,18 +481,120 @@ class UserbetController extends Controller
         return $userbets;
     }
 
-    protected function createTod($id,$num,$tod,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms){
-        if($type==3){
-            $typetod = $member->ratepaygov->comg_3;
-            $paytod = $member->ratepaygov->payoutg_3;
-            $Agtodamount = $tod[$key]*($keep->keepset/100);
-            $Agcom = $Agcoms->ratepaygov->comg_3;
-        }elseif($type==2){
-            $typetod = $member->ratepaygov->comg_6;
-            $paytod = $member->ratepaygov->payoutg_6;
-            $Agtodamount = $tod[$key]*($keep->keepset/100);
-            $Agcom = $Agcoms->ratepaygov->comg_6;
-        }
+    protected function createTod($id,$num,$tod,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms,$companykeep)
+    {
+            $company_com =0;
+            if($type==3){
+                $typetod = $member->ratepaygov->comg_3;
+                $paytod = $member->ratepaygov->payoutg_3;
+                $Agtodamount = $tod[$key]*($keep->keepset/100);
+                $Agcom = $Agcoms->ratepaygov->comg_3;
+                $companyamount = $tod[$key]*($companykeep/100);
+                    $masters = Member::find($useradd);
+                    $ratepaygov = Ratepaygov::where('member_id', $masters->id)->first();
+                    $keep = Keep::where('member_id', $masters->id)->first();
+                    $company_keep = $tod[$key]*($keep->keepset/100);
+                    $company_com += $company_keep*($ratepaygov->comg_3/100);
+                    $masters = Member::find($masters->useradd);
+                    if($masters){
+                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                        $keeps = Keep::where('member_id',$masters->id)->first();
+                        $company_keep = $tod[$key]*($keeps->keepset/100);
+                        $company_com += $company_keep*($ratepaygovs->comg_3/100);
+                        $masters = Member::find($masters->useradd);
+                        if($masters){
+                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                            $keeps = Keep::where('member_id',$masters->id)->first();
+                            $company_keep = $tod[$key]*($keeps->keepset/100);
+                            $company_com += $company_keep*($ratepaygovs->comg_3/100);
+                            $masters = Member::find($masters->useradd);
+                            if($masters){
+                                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                $keeps = Keep::where('member_id',$masters->id)->first();
+                                $company_keep = $tod[$key]*($keeps->keepset/100);
+                                $company_com += $company_keep*($ratepaygovs->comg_3/100);
+                                $masters = Member::find($masters->useradd);
+                                if($masters){
+                                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                    $keeps = Keep::where('member_id',$masters->id)->first();
+                                    $company_keep = $tod[$key]*($keeps->keepset/100);
+                                    $company_com += $company_keep*($ratepaygovs->comg_3/100);
+                                    $masters = Member::find($masters->useradd);
+                                    if($masters){
+                                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                        $keeps = Keep::where('member_id',$masters->id)->first();
+                                        $company_keep = $tod[$key]*($keeps->keepset/100);
+                                        $company_com += $company_keep*($ratepaygovs->comg_3/100);
+                                        $masters = Member::find($masters->useradd);
+                                        if($masters){
+                                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                            $keeps = Keep::where('member_id',$masters->id)->first();
+                                            $company_keep = $tod[$key]*($keeps->keepset/100);
+                                            $company_com += $company_keep*($ratepaygovs->comg_3/100);
+                                            $masters = Member::find($masters->useradd);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+        
+                    }
+            }elseif($type==2){
+                $typetod = $member->ratepaygov->comg_6;
+                $paytod = $member->ratepaygov->payoutg_6;
+                $Agtodamount = $tod[$key]*($keep->keepset/100);
+                $Agcom = $Agcoms->ratepaygov->comg_6;
+                $companyamount = $tod[$key]*($companykeep/100);
+                $masters = Member::find($useradd);
+                    $ratepaygov = Ratepaygov::where('member_id', $masters->id)->first();
+                    $keep = Keep::where('member_id', $masters->id)->first();
+                    $company_keep = $tod[$key]*($keep->keepset/100);
+                    $company_com += $company_keep*($ratepaygov->comg_6/100);
+                    $masters = Member::find($masters->useradd);
+                    if($masters){
+                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                        $keeps = Keep::where('member_id',$masters->id)->first();
+                        $company_keep = $tod[$key]*($keeps->keepset/100);
+                        $company_com += $company_keep*($ratepaygovs->comg_6/100);
+                        $masters = Member::find($masters->useradd);
+                        if($masters){
+                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                            $keeps = Keep::where('member_id',$masters->id)->first();
+                            $company_keep = $tod[$key]*($keeps->keepset/100);
+                            $company_com += $company_keep*($ratepaygovs->comg_6/100);
+                            $masters = Member::find($masters->useradd);
+                            if($masters){
+                                $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                $keeps = Keep::where('member_id',$masters->id)->first();
+                                $company_keep = $tod[$key]*($keeps->keepset/100);
+                                $company_com += $company_keep*($ratepaygovs->comg_6/100);
+                                $masters = Member::find($masters->useradd);
+                                if($masters){
+                                    $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                    $keeps = Keep::where('member_id',$masters->id)->first();
+                                    $company_keep = $tod[$key]*($keeps->keepset/100);
+                                    $company_com += $company_keep*($ratepaygovs->comg_6/100);
+                                    $masters = Member::find($masters->useradd);
+                                    if($masters){
+                                        $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                        $keeps = Keep::where('member_id',$masters->id)->first();
+                                        $company_keep = $tod[$key]*($keeps->keepset/100);
+                                        $company_com += $company_keep*($ratepaygovs->comg_6/100);
+                                        $masters = Member::find($masters->useradd);
+                                        if($masters){
+                                            $ratepaygovs = Ratepaygov::where('member_id',$masters->id)->first();
+                                            $keeps = Keep::where('member_id',$masters->id)->first();
+                                            $company_keep = $tod[$key]*($keeps->keepset/100);
+                                            $company_com += $company_keep*($ratepaygovs->comg_6/100);
+                                            $masters = Member::find($masters->useradd);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+        
+                    }
+            }
             $userbets = Userbet::create([
                 'member_id' => $id,
                 'ticket_id'=>$tickets->id,
@@ -186,9 +605,9 @@ class UserbetController extends Controller
                 'agent_amount' => $Agtodamount,
                 'agent_keep' => $keep->keepset,
                 'agent_com' => $Agcom,
-                'company_amount' => '0',
-                'company_com' => '0',
-                'company_keep' => '0',
+                'company_amount' => $companyamount,
+                'company_com' => $company_com,
+                'company_keep' => $companykeep,
                 'note' => '0',
                 'useradd' => $useradd,
                 'bet_num' => $num[$key],
@@ -197,4 +616,6 @@ class UserbetController extends Controller
             ]); 
         return $userbets;
     }
+
+
 }

@@ -38,6 +38,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
 
         Route::get('/play/bet', 'UserbetController@index');
         Route::post('/storebet', 'UserbetController@store');
+        // Route::post('/storebet2', 'UserbetController@store2');
 
     // Route::group(['middleware'=>['auth']], function () {
         Route::get('/index2', function () {
