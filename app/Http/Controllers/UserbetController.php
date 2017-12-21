@@ -27,6 +27,8 @@ class UserbetController extends Controller
         $datenow = $dt->format('Y-m-d h:i:s');  
         $keepuseradd = $member->useradd;
         $keep = Keep::where('member_id',$keepuseradd)->first();
+        $Agcoms = Member::where('id',$useradd)->first();
+        // dd($Agcom);
         // dd($keep->keepset);
        // $useradds = Member::where('useradd', $useradd)->first();
 
@@ -42,14 +44,14 @@ class UserbetController extends Controller
                 if($num){
                     $type = $this->checktype($num);
                         if($request->top[$key]){
-                            $userbet_top = $this->createTop($id,$request->num,$request->top,$key,$type,$useradd,$tickets,$datenow,$member,$keep);
+                            $userbet_top = $this->createTop($id,$request->num,$request->top,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms);
                         }
 
                         if($request->bottom[$key]){
-                            $userbet_bottom = $this->createBottom($id,$request->num,$request->bottom,$key,$type,$useradd,$tickets,$datenow,$member,$keep);
+                            $userbet_bottom = $this->createBottom($id,$request->num,$request->bottom,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms);
                         }
                         if($request->tod[$key]){
-                            $userbet_tod = $this->createTod($id,$request->num,$request->tod,$key,$type,$useradd,$tickets,$datenow,$member,$keep);
+                            $userbet_tod = $this->createTod($id,$request->num,$request->tod,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms);
                         }
                     }
                 
@@ -82,16 +84,22 @@ class UserbetController extends Controller
          return $datacheck;
     }
 
-    protected function createTop($id,$num,$top,$key,$type,$useradd,$tickets,$datenow,$member,$keep){
+    protected function createTop($id,$num,$top,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms){
         if($type==3){
             $typetop = $member->ratepaygov->comg_1;
             $paytop = $member->ratepaygov->payoutg_1;
+            $Agtopamount = $top[$key]*($keep->keepset/100);
+            $Agcom = $Agcoms->ratepaygov->comg_1;
         }elseif($type==2){
             $typetop = $member->ratepaygov->comg_4;
             $paytop = $member->ratepaygov->payoutg_4;
+            $Agtopamount = $top[$key]*($keep->keepset/100);
+            $Agcom = $Agcoms->ratepaygov->comg_4;
         }elseif($type==1){
             $typetop = $member->ratepaygov->comg_7;
             $paytop = $member->ratepaygov->payoutg_7;
+            $Agtopamount = $top[$key]*($keep->keepset/100);
+            $Agcom = $Agcoms->ratepaygov->comg_7;
         }
             $userbets = Userbet::create([
                 'member_id' => $id,
@@ -100,9 +108,9 @@ class UserbetController extends Controller
                 'date_time' => $datenow,
                 'pay' => $paytop,
                 'com_mem' => $typetop,
-                'agent_amount' => '0',
+                'agent_amount' => $Agtopamount,
                 'agent_keep' => $keep->keepset,
-                'agent_com' => '0',
+                'agent_com' => $Agcom,
                 'company_amount' => '0',
                 'company_com' => '0',
                 'company_keep' => '0',
@@ -117,16 +125,22 @@ class UserbetController extends Controller
    
 
     
-    protected function createBottom($id,$num,$bottom,$key,$type,$useradd,$tickets,$datenow,$member,$keep){
+    protected function createBottom($id,$num,$bottom,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms){
         if($type==3){
             $typebottom = $member->ratepaygov->comg_2;
             $paybottom = $member->ratepaygov->payoutg_2;
+            $Agbottomamount = $bottom[$key]*($keep->keepset/100);
+            $Agcom = $Agcoms->ratepaygov->comg_2;
         }elseif($type==2){
             $typebottom = $member->ratepaygov->comg_5;
             $paybottom = $member->ratepaygov->payoutg_5;
+            $Agbottomamount = $bottom[$key]*($keep->keepset/100);
+            $Agcom = $Agcoms->ratepaygov->comg_5;
         }elseif($type==1){
             $typebottom = $member->ratepaygov->comg_8;
             $paybottom = $member->ratepaygov->payoutg_8;
+            $Agbottomamount = $bottom[$key]*($keep->keepset/100);
+            $Agcom = $Agcoms->ratepaygov->comg_8;
         }
             $userbets = Userbet::create([
                 'member_id' => $id,
@@ -135,9 +149,9 @@ class UserbetController extends Controller
                 'date_time' => $datenow,
                 'pay' => $paybottom,
                 'com_mem' => $typebottom,
-                'agent_amount' => '0',
+                'agent_amount' => $Agbottomamount,
                 'agent_keep' => $keep->keepset,
-                'agent_com' => '0',
+                'agent_com' => $Agcom,
                 'company_amount' => '0',
                 'company_com' => '0',
                 'company_keep' => '0',
@@ -150,13 +164,17 @@ class UserbetController extends Controller
         return $userbets;
     }
 
-    protected function createTod($id,$num,$tod,$key,$type,$useradd,$tickets,$datenow,$member,$keep){
+    protected function createTod($id,$num,$tod,$key,$type,$useradd,$tickets,$datenow,$member,$keep,$Agcoms){
         if($type==3){
             $typetod = $member->ratepaygov->comg_3;
             $paytod = $member->ratepaygov->payoutg_3;
+            $Agtodamount = $tod[$key]*($keep->keepset/100);
+            $Agcom = $Agcoms->ratepaygov->comg_3;
         }elseif($type==2){
             $typetod = $member->ratepaygov->comg_6;
             $paytod = $member->ratepaygov->payoutg_6;
+            $Agtodamount = $tod[$key]*($keep->keepset/100);
+            $Agcom = $Agcoms->ratepaygov->comg_6;
         }
             $userbets = Userbet::create([
                 'member_id' => $id,
@@ -165,9 +183,9 @@ class UserbetController extends Controller
                 'date_time' => $datenow,
                 'pay' => $paytod,
                 'com_mem' => $typetod,
-                'agent_amount' => '0',
+                'agent_amount' => $Agtodamount,
                 'agent_keep' => $keep->keepset,
-                'agent_com' => '0',
+                'agent_com' => $Agcom,
                 'company_amount' => '0',
                 'company_com' => '0',
                 'company_keep' => '0',
