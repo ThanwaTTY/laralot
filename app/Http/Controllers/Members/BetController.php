@@ -32,11 +32,10 @@ class BetController extends Controller
         $sumbottom1 = Userbet::where('useradd', $id)->where('type','bottom1')->sum('amount');
         $allsumbuy = $sumtop3+$sumtop2+$sumbottom3+$sumbottom2+$sumtod3+$sumtod2+$sumtop1+$sumbottom1;
         $userbets_counts[0] = "";
+
         foreach($userbets as $key => $userbet)
         {
-            $ratepaygovs[$userbet->member_id] = Ratepaygov::where("member_id",$userbet->member_id)->first();
             $userbets_counts[$key] = Userbet::where('useradd', $id)->where('member_id', $userbet->member_id)->get();
-            // echo "<li>".$ratepaygovs[$userbet->member_id]."</li>";
         }
         $top3coms = 0;
         $bottom3coms = 0;
@@ -46,15 +45,8 @@ class BetController extends Controller
         $tod2coms = 0;
         $top1coms = 0;
         $bottom1coms = 0;
-        //  if($userbets_counts){
-        //      dd($userbets_counts);
-        //  }else{
-        //      dd("null");
-        //  }
-        
         if($userbets_counts){
             foreach($userbets_counts as $loop => $userbets_count){
-
                 $top3com[$loop] = 0;
                 $bottom3com[$loop] = 0;
                 $tod3com[$loop] = 0;
@@ -67,35 +59,35 @@ class BetController extends Controller
                     foreach($userbets_count as $key => $userbet_C){
 
                         if($userbet_C->type == "top3"){
-                            $top3com[$loop]  += (($userbet_C->amount*$ratepaygovs[$userbet_C->member_id]->comg_1)/100);
+                            $top3com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
                         
                         }
                         if($userbet_C->type == "bottom3"){
-                            $bottom3com[$loop]  += (($userbet_C->amount*$ratepaygovs[$userbet_C->member_id]->comg_2)/100);
+                            $bottom3com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
                         
                         }
                         if($userbet_C->type == "tod3"){
-                            $tod3com[$loop]  += (($userbet_C->amount*$ratepaygovs[$userbet_C->member_id]->comg_3)/100);
+                            $tod3com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
                         
                         }
                         if($userbet_C->type == "top2"){
-                            $top2com[$loop]  += (($userbet_C->amount*$ratepaygovs[$userbet_C->member_id]->comg_4)/100);
+                            $top2com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
                         
                         }
                         if($userbet_C->type == "bottom2"){
-                            $bottom2com[$loop]  += (($userbet_C->amount*$ratepaygovs[$userbet_C->member_id]->comg_5)/100);
+                            $bottom2com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
                         
                         }
                         if($userbet_C->type == "tod2"){
-                            $tod2com[$loop]  += (($userbet_C->amount*$ratepaygovs[$userbet_C->member_id]->comg_6)/100);
+                            $tod2com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
                         
                         }
                         if($userbet_C->type == "top1"){
-                            $top1com[$loop]  += (($userbet_C->amount*$ratepaygovs[$userbet_C->member_id]->comg_7)/100);
+                            $top1com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
                         
                         }
                         if($userbet_C->type == "bottom1"){
-                            $bottom1com[$loop]  += (($userbet_C->amount*$ratepaygovs[$userbet_C->member_id]->comg_8)/100);
+                            $bottom1com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
             
                         }
                         
@@ -166,37 +158,7 @@ class BetController extends Controller
             // echo "<li>". $keeps[$userbet->useradd]. "</li>";
         }
 
-       $sumAll_keep = 0;
-        if($userbets_counts){
-            foreach($userbets_counts as $loop => $userbets_count){
-                $sum_keep[$loop] = 0;
-                if($userbets_count){
-                    foreach($userbets_count as $key => $userbets_C){
-                        if($userbets_C->type=="top3"){
-                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
-                        }elseif ($userbets_C->type=="bottom3") {
-                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
-                        }elseif ($userbets_C->type=="tod3") {
-                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
-                        }elseif ($userbets_C->type=="top2") {
-                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
-                        }elseif ($userbets_C->type=="bottom2") {
-                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
-                        }elseif ($userbets_C->type=="tod2") {
-                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
-                        }elseif ($userbets_C->type=="top1") {
-                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
-                        }elseif ($userbets_C->type=="bottom1") {
-                            $sum_keep[$loop] += (($userbets_C->amount*($keeps[$userbet->useradd]->keepset/100)));
-                        }
 
-                    }
-
-                    
-                }
-                $sumAll_keep += $sum_keep[$loop];
-            }
-        }
 
         $sum_com = 0;
         if($userbets_counts){
@@ -214,73 +176,173 @@ class BetController extends Controller
                         if($userbets_C->type=="top3"){
                             //echo $ratepaygovs[$userbets_C->member_id]->comg_1." %<BR>";
                             //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_1)/100);
-                            $com[$loop] += (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_1)/100);
+                            $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
+                            // echo ($com[$loop]);
                         }elseif ($userbets_C->type=="bottom3") {
                             //echo $ratepaygovs[$userbets_C->member_id]->comg_2." %<BR>";
                             //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_2)/100);
-                            $com[$loop] += (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_2)/100);
+                            $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="tod3") {
                             //echo $ratepaygovs[$userbets_C->member_id]->comg_3." %<BR>";
                             //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_3)/100);
-                            $com[$loop] += (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_3)/100);
+                            $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="top2") {
                             //echo $ratepaygovs[$userbets_C->member_id]->comg_4." %<BR>";
                             //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_4)/100);
-                            $com[$loop] += (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_4)/100);
+                            $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="bottom2") {
                             //echo $ratepaygovs[$userbets_C->member_id]->comg_5." %<BR>";
                             //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_5)/100);
-                            $com[$loop] += (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_5)/100);
+                            $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="tod2") {
                             //echo $ratepaygovs[$userbets_C->member_id]->comg_6." %<BR>";
                             //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_6)/100);
-                            $com[$loop] += (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_6)/100);
+                            $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="top1") {
                             //echo $ratepaygovs[$userbets_C->member_id]->comg_6." %<BR>";
                             // echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_7)/100);
-                            $com[$loop] += (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_7)/100); 
+                            $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100))); 
                         }elseif ($userbets_C->type=="bottom1") {
                             //echo $ratepaygovs[$userbets_C->member_id]->comg_6." %<BR>";
                             //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_6)/100);
-                            $com[$loop] += (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_8)/100);
+                            $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }
                         // echo "</li>";
                     }
                 }
                 $sum_com += $com[$loop];
-                // echo "</ul>";
+                // echo  $sum_com ."</ul>";
             }
         }
-        // echo $sum_com;
-        /////////////////////sum Member////////////////////////////
-                    $alltotalmember = 0;
-                if($userbets_counts){
-                    foreach($userbets_counts as $loop => $userbets_count){
-                        $summember[$loop] = 0;
-                        if($userbets_count){
-                            foreach ($userbets_count as $key => $userbets_C) {
-                                
-                                $summember[$loop] += ($userbets_C->amount);
-                            }
-                        }
-                    }
-                }        // echo "<li>". $com[$loop]." ";
-                        // echo "<li>". $summember[$loop]." ";
-                if($userbets_counts){
-                    foreach($userbets_counts as $loop => $userbets_count){
+        $alltotalmember = 0;
+        if($userbets_counts){
+            foreach($userbets_counts as $loop => $userbets_count){
+                $summember[$loop] = 0;
+                if($userbets_count){
+                    foreach ($userbets_count as $key => $userbets_C) {
                         
-                        $totalmember[$loop] = 0;
-                        if($userbets_count){
-                            foreach ($userbets_count as $key => $userbets_C) {
-                                $totalmember[$loop] = $summember[$loop] - $com[$loop];
-                            
-                            }
-                        }   
-                        $alltotalmember += $totalmember[$loop];
+                        $summember[$loop] += ($userbets_C->amount);
                     }
                 }
+            }
+        }        // echo "<li>". $com[$loop]." ";
+                // echo "<li>". $summember[$loop]." ";
+        if($userbets_counts){
+            foreach($userbets_counts as $loop => $userbets_count){
+                
+                $totalmember[$loop] = 0;
+                if($userbets_count){
+                    foreach ($userbets_count as $key => $userbets_C) {
+                        $totalmember[$loop] = $summember[$loop] - $com[$loop];
+                    
+                    }
+                }   
+                $alltotalmember += $totalmember[$loop];
+            }
+        }
+/////////////////////////////////Agen////////////////////////////////////////////////////////////////////
+        $sumAll_keep = 0;
+        $sumAll_comAg = 0;
+        if($userbets_counts){
+            foreach($userbets_counts as $loop => $userbets_count){
+                $sum_keep[$loop] = 0;
+                $sum_comAg[$loop] = 0;
+                if($userbets_count){
+                    foreach($userbets_count as $key => $userbets_C){
+                        if($userbets_C->type=="top3"){
+                            $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
+                            $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                             
+                        }elseif ($userbets_C->type=="bottom3") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
+                            $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                        }elseif ($userbets_C->type=="tod3") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
+                            $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                             
+                        }elseif ($userbets_C->type=="top2") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
+                            $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            
+                        }elseif ($userbets_C->type=="bottom2") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
+                            $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                        }elseif ($userbets_C->type=="tod2") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
+                            $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            
+                        }elseif ($userbets_C->type=="top1") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
+                            $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                        }elseif ($userbets_C->type=="bottom1") {
+                            $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
+                            $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                        }
+                    }  
+                                
+                }
+                // echo  $sum_comAg[$loop] ."</ul>";
+                $sumAll_comAg += $sum_comAg[$loop];
+                $sumAll_keep += $sum_keep[$loop];
+                $sumAll_sum = $sumAll_keep-$sumAll_comAg;
+            }
+        }
+
+
+
+        /////////////////////company////////////////////////////
+        $sumAllcompany_keep = 0;
+        $sumAllcompany_com = 0;
+        if($userbets_counts){
+            foreach($userbets_counts as $loop => $userbets_count){
+                $sumcompany_keep[$loop] = 0;
+                $sumcompany_com[$loop] = 0;
+                if($userbets_count){
+                    foreach($userbets_count as $key => $userbets_C){
+                        if($userbets_C->type=="top3"){
+                            $sumcompany_keep[$loop] += (($userbets_C->company_amount));                   
+                            $sumcompany_com[$loop] += ($userbets_C->company_com/10); 
+                        }elseif ($userbets_C->type=="bottom3") {
+                            $sumcompany_keep[$loop] += (($userbets_C->company_amount));  
+                            $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                        }elseif ($userbets_C->type=="tod3") {
+                            $sumcompany_keep[$loop] += (($userbets_C->company_amount));
+                            $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                        }elseif ($userbets_C->type=="top2") {
+                            $sumcompany_keep[$loop] += (($userbets_C->company_amount));
+                            $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                        }elseif ($userbets_C->type=="bottom2") {
+                            $sumcompany_keep[$loop] += (($userbets_C->company_amount));
+                            $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                        }elseif ($userbets_C->type=="tod2") {
+                            $sumcompany_keep[$loop] += (($userbets_C->company_amount));
+                            $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                        }elseif ($userbets_C->type=="top1") {
+                            $sumcompany_keep[$loop] += (($userbets_C->company_amount));
+                            $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                        }elseif ($userbets_C->type=="bottom1") {
+                            $sumcompany_keep[$loop] += (($userbets_C->company_amount));
+                            $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                        }
+                    }  
+                                
+                }
+                // echo  $sum_comAg[$loop] ."</ul>";
+                $sumAllcompany_com += $sumcompany_com[$loop];
+                $sumAllcompany_keep += $sumcompany_keep[$loop];
+                $sumAllcompany_sum = $sumAllcompany_keep-$sumAllcompany_com;
+            }
+        }    
             //////////////////////////////////////////////////////// 
-        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom','alltotalmember','sum_com','sum_keep','sumAll_keep'));
+        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom','alltotalmember','sum_com','sum_keep','sumAll_keep','sum_comAg','sumAll_comAg','sumAll_sum','sumcompany_com','sumAllcompany_com','sumcompany_keep','sumAllcompany_keep','sumAllcompany_sum'));
     }
 
  

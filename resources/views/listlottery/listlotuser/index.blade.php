@@ -144,15 +144,15 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sum_keep[$key],2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-125.90<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($sum_comAg[$key],2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">432.10<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{$sum_keep[$key]-$sum_comAg[$key]}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">62.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($sumcompany_keep[$key],2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-19.32<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumcompany_com[$key],2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">42.72<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($sumcompany_keep[$key]-$sumcompany_com[$key],2)}}<span></span></span>
 								</td>
 							</tr>
             @endforeach
@@ -170,15 +170,15 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumAll_keep,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-125.90<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($sumAll_comAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">432.10<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumAll_sum,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">62.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($sumAllcompany_keep,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-19.32<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumAllcompany_com,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">42.72<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($sumAllcompany_sum,2)}}<span></span></span>
 								</td>
 							</tr>
 						</tfoot>
