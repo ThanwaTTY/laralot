@@ -34,6 +34,8 @@
   <link rel="stylesheet" href="/css/customtopmenu_member.css">
   <link rel="stylesheet" href="/css/custom_member.css">
   <link rel="stylesheet" href="/css/custom_member2.css">
+  <link rel="stylesheet" href="/css/new_custom.css">
+  
   
   {{-- <script language="JavaScript" type="text/javascript">
     function sivamtime() {
@@ -88,7 +90,7 @@
 <body class="no-skin">
 {{-- @include('nev-bar-top-menu_member') --}}
   <!-- #section:basics/navbar.layout -->
-<div id="navbar" class="navbar navbar-default h-navbar" style="background: green;height: 10px;">
+{{-- <div id="navbar" class="navbar navbar-default h-navbar" style="background: #4897d8;height: 10px;">
   <div class="navbar-container container" id="navbar-container">
     <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler">
       <span class="sr-only">Toggle sidebar</span>
@@ -488,75 +490,40 @@
     </div>
 
   </div>
-</div>
+</div> --}}
 
 <div class="main-container container" id="main-container">
-  <div id="sidebar" class="sidebar h-sidebar responsive" style="margin-top: 0">
-	
-    <ul class="nav nav-list">
-      <li class="">
-        <a href="/play/typelot" data-url="https://www.superlot999.com/games">
-          <i class="menu-icon fa fa-book"></i>
-          <span class="menu-text">เลือกชนิดหวย</span>
-        </a>
-      </li>
-      <li class="">
-        <a href="/play/bet" data-url="https://www.superlot999.com/home" class="active">
-          <i class="menu-icon fa fa-dashboard"></i>
-          <span class="menu-text">ทายผล</span>
-        </a>
-      </li>
-      <li class="">
-        <a href="/play/reportlot" data-url="https://www.superlot999.com/bet-results">
-          <i class="menu-icon fa fa-credit-card"></i>
-          <span class="menu-text">สรุปงวดหวย</span>
-        </a>
-      </li>
-      <li class="">
-        <a href="/play/checklot" data-url="https://www.superlot999.com/reports/game-results">
-          <i class="menu-icon fa fa-bar-chart-o"></i>
-          <span class="menu-text">ตรวจผลรางวัล</span>
-        </a>
-      </li>
-      <li class="">
-        <a href="/play/datauser" data-url="https://www.superlot999.com/info">
-          <i class="menu-icon fa fa-user"></i>
-          <span class="menu-text">ข้อมูลผู้ใช้</span>
-        </a>
-      </li>
-      <li class="">
-        <a href="/play/reportmoney" data-url="https://www.superlot999.com/financial/transactions">
-          <i class="menu-icon fa fa-refresh"></i>
-          <span class="menu-text">สรุปการเงิน</span>
-        </a>
-      </li>
-      <li class="">
-        <a href="/play/cancellist" data-url="https://www.superlot999.com/cancel">
-          <i class="menu-icon fa fa-times"></i>
-          <span class="menu-text">ยกเลิกโพย</span>
-        </a>
-      </li>
-      <li class="visible-xs visible-sm">
-        <a href="#" data-url="https://www.superlot999.com/logout">
-          <i class="menu-icon fa fa-sign-out"></i>
-          <span class="menu-text">ออกจากระบบ</span>
-        </a>
-      </li>
-      <li class="pull-right visible-md visible-lg">
-        <a href="/logout" data-url="https://www.superlot999.com/logout">
-          <i class="menu-icon fa fa-sign-out"></i>
-          <span class="menu-text">ออกจากระบบ</span>
-        </a>
-      </li>
-    </ul>
-  </div>
+    <div id="sidebar" class="sidebar h-sidebar responsive" style="margin-top: 0">
+        <ul class="nav nav-list">
+        </ul>
+    </div>
 
     <div class="main-content">
 
       <div class="page-content">
-        <div class="space-4"></div>
+
         <div class="row">
           <div class="col-xs-12 col-sm-12 col-md-2" id="user-sidebar">
+              <div class="img-logo"><img src="http://via.placeholder.com/160x100/626d71" alt="..."></div>
+              <div id="sidebar-box" class="widget-box no-margin-top no-border col-xs-6 col-sm-6 col-md-12">
+                <div class="widget-body">
+                  <div class="widget-main mobile-bet-hide" id="summary-box">
+                    <table class="table no-margin white bolder" id="summary-table" style="border: 0;">
+                      <tbody>
+                        <tr>
+                          <th>
+                            <span class="member-credit">
+                              <i class="fa fa-calendar"></i>
+                                  วันที่ 16 ตุลาคม 2560
+                            </span>
+                          </th>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+    
             <div id="sidebar-box" class="widget-box no-margin-top no-border col-xs-6 col-sm-6 col-md-12">
               <div class="widget-body">
                 <div class="widget-main mobile-bet-hide" id="summary-box">
@@ -577,11 +544,24 @@
             </div>
 
             <div class="col-xs-6 col-sm-6 col-md-12 no-padding select-game-hide">
-              <div>
-                <select id="bet_type_group_id" class="form-control" name="bet_type_grop_id"><option value="1">3 ตัวท้าย</option></select>
+              <div class="widget-body">
+                <div class="widget-main mobile-bet-hide" id="summary-box">
+                  <table class="table no-margin white bolder" id="summary-table" style="border: 0;">
+                    <tbody>
+                      <tr><th><span class="bolder bigger-110">เลขปิดรับ</span></th></tr>
+                      <tr><td id="member-credit" class="align-left">3 ตัวบน</td></tr>
+                      <tr><td id="member-bet" class="align-left">123 456 789</td></tr>
+                      {{-- <tr><td id="member-available" class="align-left">456</td></tr> --}}
+                      <tr class="select-game-hide"><th>&nbsp;</th><td></td></tr>
+                      <tr class="select-game-hide"><td colspan="2"><span class="bolder bigger-110">3 ตัวล่าง</span></td></tr>
+                      <tr class="select-game-hide"><td id="member-total-bet" class="align-left">870</td></tr>
+                      {{-- <tr class="select-game-hide"><td id="member-total-com" class="align-right">0</td></tr> --}}
+                    </tbody>
+                  </table>
+                </div>
               </div>
 
-              <div id="close-box-container">
+              {{-- <div id="close-box-container">
                 <div id="close-box">
                   <h4 class="align-center">
                       หมายเลขปิดรับ<br>
@@ -598,93 +578,409 @@
                   </div>
                 </div>
                 
-              </div>
+              </div> --}}
             </div>
           </div>
 
           <div class="col-xs-12 col-sm-12 col-md-10" id="user-content">
             @yield('content')
-            <div id="content">
-              <div id="bet-div">
-                <input id="merge-import" name="" type="hidden" value="">
+            
+            <div id="content" class="col-md-12">
+              <div class="row">
+                <div class="col-md-9">
+                  <button class="btn btn-primary active">หวยรัฐบาล</button>
+                  <button class="btn btn-primary">หวยหุ้นไทย</button>
+                  <button class="btn btn-primary">หวยลาว</button>
+                  <button class="btn btn-primary">หวยมาเล</button>
+                  <button class="btn btn-primary">หวยต่างประเทศ</button>
+                  <button class="btn btn-primary">หวยเวียดนาม</button>
+                  <button class="btn btn-primary">ทายผล</button>
+                  <button class="btn btn-primary">รายการแทง</button>
+                  <button class="btn btn-primary">รายงานการเงิน</button>
+                  <button class="btn btn-primary">ตรวจผลรางวัล</button>
+                  <button class="btn btn-primary">อัตราจ่าย</button>
+                </div>
+                <div class="col-md-3 pull-left">
+                  <li>
+                    <button data-toggle="dropdown" href="#" id="user_dropdown" class="dropdown-toggle color-font btn btn-primary">
+                      <i class="ace-icon fa fa-user"></i>
+                          {{auth()->user()->username}}
+                    </button>
 
+                    <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="user_dropdown">
+                      <li>
+                        <a href="/" class="ajax">
+                          <i class="ace-icon fa fa-home"></i>
+                          หน้าแรก
+                        </a>
+                      </li>
 
- 
+                      <li>
+                        <a href="/password" class="ajax">
+                          <i class="ace-icon fa fa-cog"></i>
+                          เปลี่ยนรหัสผ่าน
+                        </a>
+                      </li>
 
-                {{-- <script>
-                  
-                  update_bet_list();
+                      <li class="divider"></li>
 
-                  $('#bet-table input:first').focus();
-                </script> --}}
-
-
+                      <li>
+                        <a href="/admin/logout">
+                          <i class="ace-icon fa fa-power-off"></i>
+                          Logout
+                        </a>
+                      </li>
+                    </ul>
+                  </li>
+                  {{-- <div class="row">
+                    <div class="col-md-6"><p>{{ auth()->user()->name }}</p> <a href="#">เปลี่ยนรหัสผ่า่น</a></div>
+                    <div class="col-md-6"><a href="#" class="btn btn-primary btn-sm pull-right" id="btn-logout">ออกจากระบบ</a></div>
+                  </div> --}}
+                </div>
               </div>
-            </div><!-- /.col -->
-          </div><!-- /.row -->
+                  <p></p>
+                  <p></p>
+                  <p></p>
+                  <p></p>
+              <div id="content"><div id="bet-div">
+                  <input id="merge-import" name="" type="hidden" value="">
+
+                
+                <div class="col-sm-12 col-md-5">
+                  <div class="alert-info padding-10">
+                    <label class="deep-blue bolder bot-margin-10">
+                      รัฐบาลไทย
+                    </label>
+                    <b>3 ตัวท้าย</b>
+                    <br>
+
+                    <input id="bet_type_group" name="bet_type_group" type="hidden" value="1">
+
+                    <table>
+                      <tbody>
+                        <tr>
+                          <td><label for="payout_id" class="bolder right-padding-5">อัตราจ่าย:</label></td>
+                          <td>
+                              <select name="payout_id" id="payout" class="ac">
+                                <option value="5">หวยรัฐ 70</option>
+                              </select>
+                              <a href="/play/datauser" target="_blank" class="bigger-110">ดูรายละเอียด</a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <div class="space-4"></div>
+                    <div class="checkbox clearfix">
+                      <label for="down3-tode2">
+                        <input name="down3_tode2" type="checkbox" class="" id="down3-tode2" checked="checked">
+                        <span class="lbl"> 3 ตัวล่าง, 2 ตัวโต๊ด</span>
+                      </label>
+
+                      <div class="pull-right">
+                        <label for="door">
+                          <input name="door" type="checkbox" class="" id="door">
+                          <span class="lbl"> 6 ประตู / 19 ประตู</span>
+                        </label>
+                        <br>
+
+                        <label for="bulk">
+                          <input name="bulk" type="checkbox" class="" id="bulk">
+                          <span class="lbl"> แทงเร็ว</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="input-group">
+                      <!-- <span class="input-group-addon"><i class="fa fa-chevron-left"></i></span> -->
+                      <select id="bill-number"><option value="0">โพยที่ 2 - รหัส 749461</option></select>
+                      <!-- <span class="input-group-addon"><i class="fa fa-chevron-right"></i></span> -->
+                    </div>
+                  
+                  <div id="bet-table-wrapper" class="clearfix">
+                    <table class="table table-bordered table-border-dark no-margin jquery-hide" id="special-bet-table">
+                      <thead class="thin-border-bottom">
+                        <tr class="bg-blue">
+                          <th colspan="5" class="ac bigger-120">6 ประตู / 19 ประตู กรอกข้อมูลแล้วกดถูก <i class="fa fa-check"></i></th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr class="bg-blue">
+                          <td><input type="text" class="form-control input-sm bolder" id="special-num" maxlength="3" placeholder="เลข"></td>
+                          <td><input type="text" class="form-control input-sm" id="special-up" maxlength="9" placeholder="บน"></td>
+                          <td><input type="text" class="form-control input-sm" id="special-down" maxlength="9" placeholder="ล่าง"></td>
+                          <td><input type="text" class="form-control input-sm" id="special-tode" maxlength="9" placeholder="โต๊ด"></td>
+                          <td class="ac am">
+                            <a href="#" class="btn-ok" tabindex="-1"><i class="fa fa-check green bigger-125"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+
+                    <table class="table table-bordered table-border-dark no-margin jquery-hide" id="bulk-table">
+                      <thead class="thin-border-bottom">
+                        <tr class="bg-blue">
+                          <th colspan="5" class="align-center bigger-120">
+                            กรอกเลขและราคา แล้วกด <i class="fa fa-check"></i><br>
+                            วิธีใช้: <a href="https://youtu.be/nlQv8Xjh7-Y" target="_blank">คลิก YouTube</a>
+                          </th>
+                        </tr>
+                      </thead>
+
+                      <tbody class="bg-blue">
+                        <tr>
+                          <td rowspan="2">
+                            <textarea class="form-control input-sm bolder" id="bulk-row" placeholder="1. กรอกเลขรายบรรทัด 2. หรือคั่นด้วยวรรค คอมม่า จุด ก็ได้เช่นกัน" rows="8"></textarea>
+                            <div class="invisible" style="width: 78px"></div>
+                          </td>
+                          <td><input type="text" class="form-control input-sm" id="bulk-col1" maxlength="9" placeholder="บน"></td>
+                          <td><input type="text" class="form-control input-sm" id="bulk-col2" maxlength="9" placeholder="ล่าง"></td>
+                          <td><input type="text" class="form-control input-sm" id="bulk-col3" maxlength="9" placeholder="โต๊ด"></td>
+                          <td class="align-center align-middle" height="40px">
+                            <div style="width: 50px !important;">
+                              <label for="close-bulk-ok"><input type="checkbox" id="close-bulk-ok"> ใช้ต่อ</label>
+                            </div><br>
+
+                            <a href="#" class="btn-bulk-ok" tabindex="-1"><i class="fa fa-check green bigger-125"></i></a>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                    <b class="bolder deep-blue">&lt;&lt; 3 ตัวท้าย &gt;&gt;</b>
+                <form id="formpatbet">
+                    {{ csrf_field() }}
+                    <table class="table table-bordered table-border-dark no-margin" id="bet-table" style="table-layout: fixed;">
+                      <thead class="thin-border-bottom">
+                        <tr>
+                          <th class="ac bigger-120">หมายเลข</th>
+                          <th class="ac bigger-120">บน</th>
+                          <th class="ac bigger-120">ล่าง</th>
+                          <th class="ac bigger-120">โต๊ด</th>
+                          <th class="ac bigger-120 last">ลบ</th>
+                        </tr>
+                      </thead>
+
+                      <tbody>
+                        <tr id="num-status">
+                          <!-- &#8211; -->
+                            <td class="ac am bigger-120 bolder" id="betable-number" data-clearable="1">–</td>
+                            <td class="ac am bigger-120" id="betable-0">–</td>
+                            <td class="ac am bigger-120" id="betable-1">–</td>
+                            <td class="ac am bigger-120" id="betable-2">–</td>
+                            <td></td>
+                        </tr>
+                        @for($i = 1; $i <=100; $i++)
+                            <tr id="tr-row-{{$i}}" class="all-tr {{($i<6)?'':' jquery-hide'}}" data-check-num="">
+                            <td><div class="line-number" style="color: #999; position: absolute; width: 75px; line-height: 32px; text-align: right; margin-left: -80px">
+                                  {{$i}}
+                                </div>
+                                <input type="text" name="num[]" class="input-all input-number form-control input-sm bolder" id="input-number-row-{{$i}}" maxlength="3">
+                            </td>
+                            <td class="input-icon input-icon-right" id="td-0-row-{{$i}}">
+                                <input type="text" name="top[]" id="input-0-row-{{$i}}" class="input-all input-0 form-control input-sm" maxlength="9">
+                                <i class="ace-icon fa fa-check green success hidden"></i>
+                                <i class="ace-icon fa fa-times red error hidden"></i>
+                            </td>
+                            <td class="input-icon input-icon-right" id="td-1-row-{{$i}}">
+                                <input type="text" name="bottom[]" id="input-1-row-{{$i}}" class="input-all input-1 form-control input-sm" maxlength="9">
+                                <i class="ace-icon fa fa-check green success hidden"></i>
+                                <i class="ace-icon fa fa-times red error hidden"></i>
+                            </td>
+                            <td class="input-icon input-icon-right" id="td-2-row-{{$i}}">
+                                <input type="text" name="tod[]" id="input-2-row-{{$i}}" class="input-all input-2 form-control input-sm" maxlength="9">
+                                <i class="ace-icon fa fa-check green success hidden"></i>
+                                <i class="ace-icon fa fa-times red error hidden"></i>
+                            </td>
+                            <td class="ac am">
+                              <a href="#" class="btn-delete" tabindex="-{{$i}}"><i class="fa fa-times red bigger-175"></i></a>
+                            </td>
+                        </tr>
+                        @endfor
+                        
+                      </tbody>
+                      <tfoot>
+                        <tr class="ac">
+                          <td colspan="99" id="bet-table-foot" style="position: relative">
+                            <div class="space-4"></div>
+
+                            <div class="form-group clearfix">
+                              <label for="remark" class="control-label col-xs-4 col-xs-push-1">หมายเหตุ:</label>
+                              <input type="text" id="remark" class="form-control col-xs-4 col-xs-push-1 max-width-150">
+                            </div>
+
+                            <div class="bigger-150">รวม <span id="bill-sum">0</span> บาท</div>
+
+                                          <input type="hidden" name="allow_dupe" value="0" id="allow-dupe">
+                            <button type="button" class="btn btn-primary no-border" id="btn-submit-bet" data-text="ยืนยันการแทง">ยืนยันการแทง</button>
+                            <button type="button" class="btn btn-danger no-border" id="btn-clear-bet">เริ่มต้นใหม่</button>
+
+                            <div class="space-4"></div>
+                          </td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                </form>
+                    <div class="space-8"></div>
+
+                    <div id="failed-table" class="jquery-hide">
+                      <div>
+                        <span class="red bigger-120 bolder pull-left">รายการที่แทงไม่ได้</span>
+                        <a href="#" class="bigger-120 bolder pull-right" id="copy">คัดลอก</a>
+                      </div>
+
+                      <table class="table table-bordered table-border-dark no-margin" id="bet-table">
+                        <thead class="thin-border-bottom">
+                          <tr>
+                            <th class="ac bigger-120">หมายเลข</th>
+                            <th class="ac bigger-120">บน</th>
+                            <th class="ac bigger-120">ล่าง</th>
+                            <th class="ac bigger-120">โต๊ด</th>
+                          </tr>
+                        </thead>
+
+                        <tbody></tbody>
+                      </table>
+                    </div>
+
+                    <div class="space-8"></div>
+                    <div class="space-8"></div>
+                  </div>
+                </div>
+              </div>
+
+              <script>
+                  var current_bet_type_group = 1;
+                var current_bet_types = {"3":[1,1,1],"2":[1,1,1],"1":[1,1]};
+              </script>
+
+              <script>
+              </script>
+
+              <div class="col-sm-12 col-md-5 no-padding-left">
+                <div class="tabbable">
+                  <ul class="nav nav-tabs tab-color-blue">
+                    <li class="active"><a data-toggle="tab" href="#brief">รายการอย่างย่อ</a></li>
+                    <li><a data-toggle="tab" href="#summary">รายการสรุปรวม</a></li>
+                    <li><a data-toggle="tab" href="#import-tool" id="tab-import">เครื่องมือนำเข้าข้อมูล</a></li>
+                  </ul>
+
+                  <div class="space-4"></div>
+
+                  <div class="tab-content no-border no-padding">
+                    <div id="brief" class="tab-pane in active">
+
+                      <div class="input-group">
+                        <!-- <span class="input-group-addon"><i class="fa fa-chevron-left"></i></span> -->
+                        <select id="bill-number"><option value="0">โพยที่ 2 - รหัส 749461</option></select>
+                        <!-- <span class="input-group-addon"><i class="fa fa-chevron-right"></i></span> -->
+                      </div>
+
+                      <div class="space-4"></div>
+
+                      <b>
+                        โพยที่ 2<span id="bill-id" class="deep-blue"></span>
+                        เวลา 19:32<span id="bill-time" class="deep-blue"></span>
+                        หมายเหตุ: <span id="bill-remark" class="deep-blue"></span><br>
+                        อัตราจ่าย หวย 70<span id="bill-payout" class="deep-blue"></span>
+                        การแทง 3 ตัวท้าย<span id="bill-btg-name" class="deep-blue"></span>
+                      </b>
+
+                      <table class="table table-bordered table-border-dark table-striped no-margin" id="brief-table">
+                        <thead class="thin-border-bottom">
+                          <tr>
+                            <!-- <th class="ac">โพย#</th>
+                            <th class="ac">เวลา</th>
+                            <th class="ac">อัตราจ่าย</th> -->
+                            <th class="ac">ประเภท</th>
+                            <th class="ac">หมายเลข</th>
+                            <th class="ac bundle-col" style="display: none;">จำนวน<br>(ตัว)</th>
+                            <th class="ac">จำนวน<br>(บาท)</th>
+                            <th class="ac">ส่วนลด</th>
+                            <th class="ac">สถานะ</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                          <tr>
+                            <td class="ac bolder" colspan="2">รวม</td>
+                            <td class="align-right bolder bundle-col" id="sum-bundle" style="display: none;">0.00</td>
+                            <td class="align-right bolder" id="sum-qty">0.00</td>
+                            <td class="align-right bolder" id="sum-com">0.00</td>
+                            <td class="align-right bolder" id="sum-total">0.00</td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+
+                    <div id="summary" class="tab-pane">
+                      <b>
+                        การแทง <span id="bill-sum-table-name" class="deep-blue"></span>
+                      </b>
+
+                      <table class="table table-bordered table-border-dark table-striped no-margin" id="sum-table">
+                        <thead class="thin-border-bottom">
+                          <tr>
+                            <th class="ac">ลำดับ</th>
+                            <th class="ac">หมายเลข</th>
+                            <!-- <th class="ac">บน</th>
+                            <th class="ac">ล่าง</th>
+                            <th class="ac">โต๊ด</th> -->
+                            <th class="ac dynamic">บน</th>
+                            <th class="ac dynamic">ล่าง</th>
+                            <th class="ac dynamic">โต๊ด</th>
+                          </tr>
+                        </thead>
+                        <tbody></tbody>
+                        <tfoot>
+                          <tr>
+                            <td class="ac bolder" colspan="2">รวม</td>
+                            <!-- <td class="ac bolder" id="sum-1">0</td>
+                            <td class="ac bolder" id="sum-2">0</td>
+                            <td class="ac bolder" id="sum-3">0</td> -->
+                            <td class="ac bolder dynamic" id="sum-1">0</td>
+                            <td class="ac bolder dynamic" id="sum-2">0</td>
+                            <td class="ac bolder dynamic" id="sum-3">0</td>
+                          </tr>
+                        </tfoot>
+                      </table>
+                    </div>
+
+                    <div id="import-tool" class="tab-pane">
+                      <div class="alert alert-success jquery-hide" id="import-success">นำเข้าเสร็จเรียบร้อย</div>
+                      <div class="alert alert-danger jquery-hide" id="import-error">ไม่สามารถนำเข้าข้อมูลได้ กรุณาตรวจสอบข้อมูลอีกครั้ง</div>
+                      <textarea name="import-text" id="import-text" rows="10" class="form-control width-100"></textarea>
+                      <div class="space-4"></div>
+                      <div>
+                        <button class="btn btn-primary btn-sm no-border" id="btn-submit-import">นำเข้าข้อมูล</button>
+                        <button class="btn btn-danger btn-sm no-border" id="btn-clear-import">ล้างข้อมูล</button>
+                      </div>
+                      <div class="space-4"></div>
+                      <p class="no-margin-bottom">
+                        <span class="red bolder">ข้อตกลง</span>
+                        เครื่องมือนำเข้าข้อมูล เป็นเพียงเครื่องมือช่วยในการกรอกข้อมูลลงฟอร์มการแทงเพื่อให้ผู้ใช้งานทำงานได้รวดเร็วขึ้น
+                        ผู้ใช้ต้องตรวจสอบข้อมูลทุกครั้ง ก่อนยืนยันการแทง วิธีการใช้เครื่องมือนำเข้าข้อมูล
+                        <a href="/import-help" target="_blank">ดูที่นี่</a>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+            <!-- /.col -->
+            </div><!-- /.row -->
         </div><!-- /.page-content -->
       </div><!-- /.main-content -->
-    </div><!-- /.main-container -->
+    </div>
+</div><!-- /.main-container -->
 
     <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse display" style="right: 20px; bottom: 20px;">
       <i class="ace-icon fa fa-angle-double-up icon-only bigger-300"></i>
     </a>
 
-      <!-- basic scripts -->
-    {{-- 
-      <!--[if !IE]> -->
-      <script type="text/javascript">
-        window.jQuery || document.write("<script src='/assets/js/jquery.min.js'>"+"<"+"/script>");
-      </script><script src="/assets/js/jquery.min.js"></script>
-
-      <!-- <![endif]-->
-
-      <!--[if IE]>
-      <script type="text/javascript">
-      window.jQuery || document.write("<script src='/assets/js/jquery1x.min.js'>"+"<"+"/script>");
-      </script>
-      <![endif]-->
-
-      <script type="text/javascript">
-        if('ontouchstart' in document.documentElement) document.write("<script src='/assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-      </script>
-      <script src="/assets/js/bootstrap.min.js"></script>
-
-      <!-- page specific plugin scripts -->
-
-      <!-- ace scripts -->
-      <script src="/assets/js/ace.min.js"></script>
-
-      <script type="text/javascript"> ace.vars['base'] = '..'; </script>
-
-      <script src="/assets/js/date-time/bootstrap-datepicker.min.js"></script>
-
-      <script src="/js/jquery.history.js"></script>
-      <script src="/js/jquery.numeric.js"></script>
-      <script src="/js/moment.min.js"></script>
-      <script src="/js/daterangepicker.js"></script>
-      <script src="/js/cookies.min.js"></script>
-      <script src="/js/spin.js"></script>
-      <script src="/js/jquery.spin.js"></script>
-      <script src="/js/main.js?t=201504112248"></script>
-      <script src="/js/user.main.js?t=201504112248"></script>
-
-      <script src="/js/jquery.maskedinput.min.js"></script>
-
-          <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-          ga('create', 'UA-47544296-2', 'auto');
-          ga('send', 'pageview');
-        </script>
-      
-      <script>
-        var bet_type_groups = [{"id":1,"btg_name":"3 \u0e15\u0e31\u0e27\u0e17\u0e49\u0e32\u0e22","btg_num_len":3,"btg_col":3,"btg_bundle":0,"btg_active":1,"btg_position":1,"msg":""},{"id":2,"btg_name":"3 \u0e15\u0e31\u0e27\u0e2b\u0e31\u0e27","btg_num_len":3,"btg_col":3,"btg_bundle":0,"btg_active":1,"btg_position":2,"msg":"<img src=\"\/img\/finish\u0e2a\u0e32\u0e21\u0e15\u0e31\u0e27\u0e2b\u0e31\u0e27.jpg\">"},{"id":3,"btg_name":"2 \u0e15\u0e31\u0e27\u0e17\u0e49\u0e32\u0e22 (\u0e2b\u0e27\u0e22\u0e15\u0e31\u0e27)","btg_num_len":3,"btg_col":3,"btg_bundle":1,"btg_active":1,"btg_position":3,"msg":"<img src=\"\/img\/finish \u0e2b\u0e27\u0e22\u0e15\u0e31\u0e272\u0e15\u0e31\u0e27\u0e17\u0e49\u0e32\u0e22.jpg\">"},{"id":4,"btg_name":"2 \u0e15\u0e31\u0e27\u0e2b\u0e31\u0e27 (\u0e2b\u0e27\u0e22\u0e15\u0e31\u0e27)","btg_num_len":3,"btg_col":3,"btg_bundle":1,"btg_active":1,"btg_position":4,"msg":"<img src=\"\/img\/finish \u0e2b\u0e27\u0e22\u0e15\u0e31\u0e272\u0e15\u0e31\u0e27\u0e2b\u0e31\u0e27.jpg\">"},{"id":5,"btg_name":"\u0e2a\u0e39\u0e07-\u0e15\u0e48\u0e33","btg_num_len":1,"btg_col":6,"btg_bundle":0,"btg_active":1,"btg_position":5,"msg":"<img src=\"\/img\/finish \u0e2a\u0e39\u0e07\u0e15\u0e48\u0e33.jpg\">"},{"id":6,"btg_name":"\u0e04\u0e39\u0e48-\u0e04\u0e35\u0e48","btg_num_len":1,"btg_col":6,"btg_bundle":0,"btg_active":1,"btg_position":6,"msg":"<img src=\"\/img\/finish \u0e04\u0e39\u0e48\u0e04\u0e35\u0e48.jpg\">"},{"id":7,"btg_name":"4-5-6 \u0e15\u0e31\u0e27\u0e15\u0e23\u0e07","btg_num_len":6,"btg_col":3,"btg_bundle":0,"btg_active":1,"btg_position":7,"msg":""}];
-        var bet_type_keys = [1,2,3,4,5,6,7,8,21,22,23,24,25,26,27,28,31,32,33,34,35,36,37,38,41,42,43,44,45,46,47,48,51,52,53,54,55,56,61,62,63,64,65,66,71,72,73];
-        var bet_types = {"1":"3 \u0e15\u0e31\u0e27\u0e1a\u0e19","2":"3 \u0e15\u0e31\u0e27\u0e25\u0e48\u0e32\u0e07","3":"3 \u0e15\u0e31\u0e27\u0e42\u0e15\u0e4a\u0e14","4":"2 \u0e15\u0e31\u0e27\u0e1a\u0e19","5":"2 \u0e15\u0e31\u0e27\u0e25\u0e48\u0e32\u0e07","6":"2 \u0e15\u0e31\u0e27\u0e42\u0e15\u0e4a\u0e14","7":"\u0e27\u0e34\u0e48\u0e07\u0e1a\u0e19","8":"\u0e27\u0e34\u0e48\u0e07\u0e25\u0e48\u0e32\u0e07","21":"3 \u0e15\u0e31\u0e27\u0e1a\u0e19","22":"3 \u0e15\u0e31\u0e27\u0e25\u0e48\u0e32\u0e07","23":"3 \u0e15\u0e31\u0e27\u0e42\u0e15\u0e4a\u0e14","24":"2 \u0e15\u0e31\u0e27\u0e1a\u0e19","25":"2 \u0e15\u0e31\u0e27\u0e25\u0e48\u0e32\u0e07","26":"2 \u0e15\u0e31\u0e27\u0e42\u0e15\u0e4a\u0e14","27":"\u0e27\u0e34\u0e48\u0e07\u0e1a\u0e19","28":"\u0e27\u0e34\u0e48\u0e07\u0e25\u0e48\u0e32\u0e07","31":"3 \u0e15\u0e31\u0e27\u0e1a\u0e19","32":"3 \u0e15\u0e31\u0e27\u0e25\u0e48\u0e32\u0e07","33":"3 \u0e15\u0e31\u0e27\u0e42\u0e15\u0e4a\u0e14","34":"2 \u0e15\u0e31\u0e27\u0e1a\u0e19","35":"2 \u0e15\u0e31\u0e27\u0e25\u0e48\u0e32\u0e07","36":"2 \u0e15\u0e31\u0e27\u0e42\u0e15\u0e4a\u0e14","37":"\u0e27\u0e34\u0e48\u0e07\u0e1a\u0e19","38":"\u0e27\u0e34\u0e48\u0e07\u0e25\u0e48\u0e32\u0e07","41":"3 \u0e15\u0e31\u0e27\u0e1a\u0e19","42":"3 \u0e15\u0e31\u0e27\u0e25\u0e48\u0e32\u0e07","43":"3 \u0e15\u0e31\u0e27\u0e42\u0e15\u0e4a\u0e14","44":"2 \u0e15\u0e31\u0e27\u0e1a\u0e19","45":"2 \u0e15\u0e31\u0e27\u0e25\u0e48\u0e32\u0e07","46":"2 \u0e15\u0e31\u0e27\u0e42\u0e15\u0e4a\u0e14","47":"\u0e27\u0e34\u0e48\u0e07\u0e1a\u0e19","48":"\u0e27\u0e34\u0e48\u0e07\u0e25\u0e48\u0e32\u0e07","51":"\u0e2b\u0e25\u0e31\u0e01\u0e41\u0e2a\u0e19","52":"\u0e2b\u0e25\u0e31\u0e01\u0e2b\u0e21\u0e37\u0e48\u0e19","53":"\u0e2b\u0e25\u0e31\u0e01\u0e1e\u0e31\u0e19","54":"\u0e2b\u0e25\u0e31\u0e01\u0e23\u0e49\u0e2d\u0e22","55":"\u0e2b\u0e25\u0e31\u0e01\u0e2a\u0e34\u0e1a","56":"\u0e2b\u0e25\u0e31\u0e01\u0e2b\u0e19\u0e48\u0e27\u0e22","61":"\u0e2b\u0e25\u0e31\u0e01\u0e41\u0e2a\u0e19","62":"\u0e2b\u0e25\u0e31\u0e01\u0e2b\u0e21\u0e37\u0e48\u0e19","63":"\u0e2b\u0e25\u0e31\u0e01\u0e1e\u0e31\u0e19","64":"\u0e2b\u0e25\u0e31\u0e01\u0e23\u0e49\u0e2d\u0e22","65":"\u0e2b\u0e25\u0e31\u0e01\u0e2a\u0e34\u0e1a","66":"\u0e2b\u0e25\u0e31\u0e01\u0e2b\u0e19\u0e48\u0e27\u0e22","71":"4 \u0e15\u0e31\u0e27\u0e15\u0e23\u0e07","72":"5 \u0e15\u0e31\u0e27\u0e15\u0e23\u0e07","73":"6 \u0e15\u0e31\u0e27\u0e15\u0e23\u0e07"};
-      </script> --}}
 
 
 <!-- jQuery 2.2.3 -->

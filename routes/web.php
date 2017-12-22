@@ -43,6 +43,10 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
         Route::get('/index2', function () {
             return view('index2');
         });
+
+        Route::get('/index', function () {
+        return view('playpage.index');
+        });
         
         Route::get('/play/reportlot', function () {
             return view('play.reportlot.index');
