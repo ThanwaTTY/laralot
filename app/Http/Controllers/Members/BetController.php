@@ -387,44 +387,129 @@ class BetController extends Controller
         /////////////////////company////////////////////////////
         $sumAllcompany_keep = 0;
         $sumAllcompany_com = 0;
+
+        ////////////KeppAg///////////////
+        $top3keepscompany = 0 ;
+        $bottom3keepscompany = 0 ;
+        $tod3keepscompany = 0 ;
+        $top2keepscompany = 0 ;
+        $bottom2keepscompany = 0 ;
+        $tod2keepscompany = 0;
+        $top1keepscompany = 0 ;
+        $bottom1keepscompany  = 0;
+        ///////////comcompany///////////////
+        $top3comscompany = 0 ;
+        $bottom3comscompany = 0 ;
+        $tod3comscompany = 0 ;
+        $top2comscompany = 0 ;
+        $bottom2comscompany = 0 ;
+        $tod2comscompany = 0;
+        $top1comscompany = 0 ;
+        $bottom1comscompany  = 0;
         if($userbets_counts){
             foreach($userbets_counts as $loop => $userbets_count){
                 $sumcompany_keep[$loop] = 0;
                 $sumcompany_com[$loop] = 0;
+
+                $top3keepcompany[$loop] = 0;
+                $bottom3keepcompany[$loop] = 0;
+                $tod3keepcompany[$loop] = 0;
+                $top2keepcompany[$loop] = 0;
+                $bottom2keepcompany[$loop] = 0;
+                $tod2keepcompany[$loop] = 0;
+                $top1keepcompany[$loop] = 0;
+                $bottom1keepcompany[$loop] = 0;
+                //////////////////////////////////////////////
+                $top3comcompany[$loop] = 0;
+                $bottom3comcompany[$loop] = 0;
+                $tod3comcompany[$loop] = 0;
+                $top2comcompany[$loop] = 0;
+                $bottom2comcompany[$loop] = 0;
+                $tod2comcompany[$loop] = 0;
+                $top1comcompany[$loop] = 0;
+                $bottom1comcompany[$loop] = 0;
                 if($userbets_count){
                     foreach($userbets_count as $key => $userbets_C){
                         if($userbets_C->type=="top3"){
                             $sumcompany_keep[$loop] += (($userbets_C->company_amount));                   
                             $sumcompany_com[$loop] += ($userbets_C->company_com/10); 
+                            $top3keepcompany[$loop] += (($userbets_C->company_amount)); 
+                            $top3comcompany[$loop] += ($userbets_C->company_com/10); 
+
                         }elseif ($userbets_C->type=="bottom3") {
                             $sumcompany_keep[$loop] += (($userbets_C->company_amount));  
                             $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                            $bottom3keepcompany[$loop] += (($userbets_C->company_amount)); 
+                            $bottom3comcompany[$loop] += ($userbets_C->company_com/10); 
+
                         }elseif ($userbets_C->type=="tod3") {
                             $sumcompany_keep[$loop] += (($userbets_C->company_amount));
                             $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                            $tod3keepcompany[$loop] += (($userbets_C->company_amount)); 
+                            $tod3comcompany[$loop] += ($userbets_C->company_com/10); 
+
                         }elseif ($userbets_C->type=="top2") {
                             $sumcompany_keep[$loop] += (($userbets_C->company_amount));
                             $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                            $top2keepcompany[$loop] += (($userbets_C->company_amount)); 
+                            $top2comcompany[$loop] += ($userbets_C->company_com/10); 
+
                         }elseif ($userbets_C->type=="bottom2") {
                             $sumcompany_keep[$loop] += (($userbets_C->company_amount));
                             $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                            $bottom2keepcompany[$loop] += (($userbets_C->company_amount)); 
+                            $bottom2comcompany[$loop] += ($userbets_C->company_com/10); 
+
                         }elseif ($userbets_C->type=="tod2") {
                             $sumcompany_keep[$loop] += (($userbets_C->company_amount));
                             $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                            $tod2keepcompany[$loop] += (($userbets_C->company_amount)); 
+                            $tod2comcompany[$loop] += ($userbets_C->company_com/10); 
+
                         }elseif ($userbets_C->type=="top1") {
                             $sumcompany_keep[$loop] += (($userbets_C->company_amount));
                             $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                            $top1keepcompany[$loop] += (($userbets_C->company_amount)); 
+                            $top1comcompany[$loop] += ($userbets_C->company_com/10); 
+
                         }elseif ($userbets_C->type=="bottom1") {
                             $sumcompany_keep[$loop] += (($userbets_C->company_amount));
                             $sumcompany_com[$loop] += ($userbets_C->company_com/10);
+                            $bottom1keepcompany[$loop] += (($userbets_C->company_amount)); 
+                            $bottom1comcompany[$loop] += ($userbets_C->company_com/10); 
+
                         }
                     }  
+
+
                                 
                 }
                 // echo  $sum_comAg[$loop] ."</ul>";
                 $sumAllcompany_com += $sumcompany_com[$loop];
                 $sumAllcompany_keep += $sumcompany_keep[$loop];
                 $sumAllcompany_sum = $sumAllcompany_keep-$sumAllcompany_com;
+
+                 ////////////KeppAg///////////////
+                $top3keepscompany += $top3keepcompany[$loop] ;
+                $bottom3keepscompany += $bottom3keepcompany[$loop] ;
+                $tod3keepscompany += $tod3keepcompany[$loop] ;
+                $top2keepscompany += $top2keepcompany[$loop] ;
+                $bottom2keepscompany += $bottom2keepcompany[$loop] ;
+                $tod2keepscompany += $tod2keepcompany[$loop];
+                $top1keepscompany += $top1keepcompany[$loop] ;
+                $bottom1keepscompany  += $bottom1keepcompany[$loop];
+                $sumAllkeepcompany = $top3keepscompany+$bottom3keepscompany+$tod3keepscompany+$top2keepscompany+$bottom2keepscompany+$tod2keepscompany+$top1keepscompany+$bottom1keepscompany;
+                /////////////Companycom///////////
+                $top3comscompany += $top3comcompany[$loop] ;
+                $bottom3comscompany += $bottom3comcompany[$loop] ;
+                $tod3comscompany += $tod3comcompany[$loop] ;
+                $top2comscompany += $top2comcompany[$loop] ;
+                $bottom2comscompany += $bottom2comcompany[$loop] ;
+                $tod2comscompany += $tod2comcompany[$loop];
+                $top1comscompany += $top1comcompany[$loop] ;
+                $bottom1comscompany  += $bottom1comcompany[$loop];
+                $sumAllcomcompany = $top3comscompany+$bottom3comscompany+$tod3comscompany+$top2comscompany+$bottom2comscompany+$tod2comscompany+$top1comscompany+$bottom1comscompany;
+
             }
         }    
    //////////////////////////////////////////Type///////////////////////////////////////////////////
@@ -443,7 +528,13 @@ class BetController extends Controller
                                                              'top1keepsAg','bottom1keepsAg','sumallkeepAg',
                                                              'top3comsAg','bottom3comsAg','tod3comsAg',
                                                              'top2comsAg','bottom2comsAg','tod2comsAg',
-                                                             'top1comsAg','bottom1comsAg','sumallcomAg'));
+                                                             'top1comsAg','bottom1comsAg','sumallcomAg',
+                                                             'top3keepscompany','bottom3keepscompany','tod3keepscompany',
+                                                             'top2keepscompany','bottom2keepscompany','tod2keepscompany',
+                                                             'top1keepscompany','bottom1keepscompany','sumAllkeepcompany',
+                                                             'top3comscompany','bottom3comscompany','tod3comscompany',
+                                                             'top2comscompany','bottom2comscompany','tod2comscompany',
+                                                             'top1comscompany','bottom1comscompany','sumAllcomcompany'));
     }
 
  

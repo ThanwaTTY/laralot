@@ -239,11 +239,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top3keepsAg-$top3comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">13.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top3keepscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-4.29<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($top3comscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">8.71<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top3keepscompany-$top3comscompany,2)}}<span></span></span>
 								</td>
 							</tr>
 
@@ -263,11 +263,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom3keepsAg-$bottom3comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">15.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom3keepscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-4.97<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($bottom3comscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">10.07<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom3keepscompany-$bottom3comscompany,2)}}<span></span></span>
 								</td>
 							</tr>
 
@@ -287,11 +287,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod3keepsAg-$tod3comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">17.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($tod3keepscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-5.61<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($tod3comscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">11.39<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($tod3keepscompany-$tod3comscompany,2)}}<span></span></span>
 								</td>
 							</tr>
 
@@ -311,11 +311,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top2keepsAg-$top2comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">6.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top2keepscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-1.68<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($top2comscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">4.32<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top2keepscompany-$top2comscompany,2)}}<span></span></span>
 								</td>
 							</tr>
 
@@ -335,11 +335,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom2keepsAg-$bottom2comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">7.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom2keepscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-1.96<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($bottom2comscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">5.04<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom2keepscompany-$bottom2comscompany,2)}}<span></span></span>
 								</td>
 							</tr>
 
@@ -359,11 +359,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod2keepsAg-$tod2comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">9.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($tod2keepscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-2.52<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($tod2comscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">6.48<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($tod2keepscompany-$tod2comscompany,2)}}<span></span></span>
 								</td>
 							</tr>
 
@@ -383,11 +383,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top1keepsAg-$top1comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">1.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top1keepscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-0.12<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($top1comscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">0.88<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top1keepscompany-$top1comscompany,2)}}<span></span></span>
 								</td>
 							</tr>
 
@@ -407,11 +407,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom1keepsAg-$bottom1comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">1.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom1keepscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-0.12<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($bottom1comscompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">0.88<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom1keepscompany-$bottom1comscompany,2)}}<span></span></span>
 								</td>
 							</tr>
 						</tbody>
@@ -432,11 +432,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumallkeepAg-$sumallcomAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">68.00<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($sumAllkeepcompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-21.15<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumAllcomcompany,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">46.89<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($sumAllkeepcompany-$sumAllcomcompany,2)}}<span></span></span>
 								</td>
 							</tr>
 						</tfoot>
