@@ -184,7 +184,7 @@
 						</tfoot>
 					</table>
 				</div>
-
+{{--  ////////////////////////////////////////////////////เเยกเเท๊ป/////////////////////////////////////////////////////////////////////////////////////////////////////  --}}
 				<!-- Tab 2 Password -->
 				<div class="tab-pane simple" id="password">
 					<div class="space-4"></div>
@@ -233,11 +233,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop3-$top3comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">117.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top3keepsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-23.01<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($top3comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">93.99<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top3keepsAg-$top3comsAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">13.00<span></span></span>
 								</td>
@@ -257,11 +257,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom3-$bottom3comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">135.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom3keepsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-12.35<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($bottom3comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">122.65<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom3keepsAg-$bottom3comsAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">15.00<span></span></span>
 								</td>
@@ -281,11 +281,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod3-$tod3comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">153.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod3keepsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-50.49<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($tod3comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">102.51<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod3keepsAg-$tod3comsAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">17.00<span></span></span>
 								</td>
@@ -305,11 +305,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop2-$top2comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">54.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top2keepsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-15.12<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($top2comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">38.88<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top2keepsAg-$top2comsAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">6.00<span></span></span>
 								</td>
@@ -329,11 +329,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom2-$bottom2comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">63.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom2keepsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-17.64<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($bottom2comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">45.36<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom2keepsAg-$bottom2comsAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">7.00<span></span></span>
 								</td>
@@ -353,11 +353,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod2-$tod3comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">81.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod2keepsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-22.68<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($tod2comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">58.32<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod2keepsAg-$tod2comsAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">9.00<span></span></span>
 								</td>
@@ -377,11 +377,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop1-$top1comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">9.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top1keepsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-1.08<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($top1comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">7.92<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top1keepsAg-$top1comsAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">1.00<span></span></span>
 								</td>
@@ -401,11 +401,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom1-$bottom1comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">9.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom1keepsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-1.08<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($bottom1comsAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">7.92<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom1keepsAg-$bottom1comsAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">1.00<span></span></span>
 								</td>
@@ -426,11 +426,11 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-{{number_format($allsummem-$allcommem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">612.00<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumallkeepAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-142.37<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($sumallcomAg,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">469.63<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumallkeepAg-$sumallcomAg,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive">68.00<span></span></span>
 								</td>

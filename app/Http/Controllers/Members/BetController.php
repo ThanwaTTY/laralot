@@ -124,9 +124,7 @@ class BetController extends Controller
         
         $useradd = auth()->user()->useradd;
         $members = Member::where('id','!=' ,$id)->where('helper',0)->get();
-        // $members = Member::get();
         $sum = 0;
-        //$ratepaygovs = Ratepaygov::get();
         $userbetkeeps = Userbet::where('useradd', $id)->with('member')->select(DB::Raw('SUM(amount) as sum_amount, useradd'))
                             ->orderBy('bet_num', 'desc')
                             ->groupBy('useradd')
@@ -135,7 +133,7 @@ class BetController extends Controller
                             ->orderBy('bet_num', 'desc')
                             ->groupBy('member_id')
                             ->get();
-        // $keeps = Keep::where::('member_id',)
+                            
         $sumtop3 = Userbet::where('useradd', $id)->where('type','top3')->sum('amount');
         $sumtop2 = Userbet::where('useradd', $id)->where('type','top2')->sum('amount');
         $sumbottom3 = Userbet::where('useradd', $id)->where('type','bottom3')->sum('amount');
@@ -144,22 +142,18 @@ class BetController extends Controller
         $sumtod2 = Userbet::where('useradd', $id)->where('type','tod2')->sum('amount');
         $sumtop1 = Userbet::where('useradd', $id)->where('type','top1')->sum('amount');
         $sumbottom1 = Userbet::where('useradd', $id)->where('type','bottom1')->sum('amount');
+        
         $allsummem = $sumtop3+$sumtop2+$sumbottom3+$sumbottom2+$sumtod3+$sumtod2+$sumtop1+$sumbottom1;
         $userbets_counts[0] = '';
         foreach ($userbets as $key => $userbet) {
-            // echo "<li>".$userbet->member_id. "</li>";
             $ratepaygovs[$userbet->member_id] = Ratepaygov::where("member_id",$userbet->member_id)->first();
             $userbets_counts[$key] = Userbet::where("member_id",$userbet->member_id)->get();
             $amountmember = $userbet->sum_amount;
             $sum += $userbet->sum_amount;
         }
         foreach ($userbetkeeps as $key => $userbet) {
-            // echo "<li>".$userbet->useradd. "</li>";
             $keeps[$userbet->useradd] = Keep::where("member_id",$userbet->useradd)->first();
-            // echo "<li>". $keeps[$userbet->useradd]. "</li>";
         }
-
-
         $top3comsmem = 0;
         $bottom3comsmem = 0;
         $tod3comsmem = 0;
@@ -171,8 +165,6 @@ class BetController extends Controller
         $sum_com = 0;
         if($userbets_counts){
             foreach ($userbets_counts as $loop => $userbets_count) {
-                // echo "== loop".$loop."==";
-                // echo " ".$userbets_count."";
                 $com[$loop] = 0;
                 $top3commem[$loop] = 0;
                 $bottom3commem[$loop] = 0;
@@ -258,48 +250,106 @@ class BetController extends Controller
 /////////////////////////////////Agen////////////////////////////////////////////////////////////////////
         $sumAll_keep = 0;
         $sumAll_comAg = 0;
+        ////////////KeppAg///////////////
+        $top3keepsAg = 0 ;
+        $bottom3keepsAg = 0 ;
+        $tod3keepsAg = 0 ;
+        $top2keepsAg = 0 ;
+        $bottom2keepsAg = 0 ;
+        $tod2keepsAg = 0;
+        $top1keepsAg = 0 ;
+        $bottom1keepsAg  = 0;
+        ///////////comAg///////////////
+        $top3comsAg = 0 ;
+        $bottom3comsAg = 0 ;
+        $tod3comsAg = 0 ;
+        $top2comsAg = 0 ;
+        $bottom2comsAg = 0 ;
+        $tod2comsAg = 0;
+        $top1comsAg = 0 ;
+        $bottom1comsAg  = 0;
+        ///////////////////////////////
+        
         if($userbets_counts){
             foreach($userbets_counts as $loop => $userbets_count){
                 $sum_keep[$loop] = 0;
                 $sum_comAg[$loop] = 0;
+
+                $top3keepAG[$loop] = 0;
+                $bottom3keepAG[$loop] = 0;
+                $tod3keepAG[$loop] = 0;
+                $top2keepAG[$loop] = 0;
+                $bottom2keepAG[$loop] = 0;
+                $tod2keepAG[$loop] = 0;
+                $top1keepAG[$loop] = 0;
+                $bottom1keepAG[$loop] = 0;
+                //////////////////////////////////////////////////////////////////////////
+                $top3comAG[$loop] = 0;
+                $bottom3comAG[$loop] = 0;
+                $tod3comAG[$loop] = 0;
+                $top2comAG[$loop] = 0;
+                $bottom2comAG[$loop] = 0;
+                $tod2comAG[$loop] = 0;
+                $top1comAG[$loop] = 0;
+                $bottom1comAG[$loop] = 0;
                 if($userbets_count){
                     foreach($userbets_count as $key => $userbets_C){
                         if($userbets_C->type=="top3"){
                             $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
                             $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
                             $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
-                             
+                            $top3keepAG[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $top3comAG[$loop] +=  ($keepAg*($userbets_C->agent_com/100));
+                            
                         }elseif ($userbets_C->type=="bottom3") {
                             $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
                             $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
                             $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            $bottom3keepAG[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $bottom3comAG[$loop] +=  ($keepAg*($userbets_C->agent_com/100));
+
                         }elseif ($userbets_C->type=="tod3") {
                             $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
                             $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
                             $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            $tod3keepAG[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $tod3comAG[$loop] +=  ($keepAg*($userbets_C->agent_com/100));
                              
                         }elseif ($userbets_C->type=="top2") {
                             $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
                             $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
                             $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            $top2keepAG[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $top2comAG[$loop] +=  ($keepAg*($userbets_C->agent_com/100));
                             
                         }elseif ($userbets_C->type=="bottom2") {
                             $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
                             $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
                             $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            $bottom2keepAG[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $bottom2comAG[$loop] +=  ($keepAg*($userbets_C->agent_com/100));
+
                         }elseif ($userbets_C->type=="tod2") {
                             $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
                             $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
                             $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            $tod2keepAG[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $tod2comAG[$loop] +=  ($keepAg*($userbets_C->agent_com/100));
                             
                         }elseif ($userbets_C->type=="top1") {
                             $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
                             $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
                             $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            $top1keepAG[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $top1comAG[$loop] +=  ($keepAg*($userbets_C->agent_com/100));
+
                         }elseif ($userbets_C->type=="bottom1") {
                             $sum_keep[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
                             $keepAg = ($userbets_C->amount*($userbets_C->agent_keep/100));
                             $sum_comAg[$loop] += ($keepAg*($userbets_C->agent_com/100));
+                            $bottom1keepAG[$loop] += (($userbets_C->amount*($userbets_C->agent_keep/100)));
+                            $bottom1comAG[$loop] +=  ($keepAg*($userbets_C->agent_com/100));
+
                         }
                     }  
                                 
@@ -308,6 +358,27 @@ class BetController extends Controller
                 $sumAll_comAg += $sum_comAg[$loop];
                 $sumAll_keep += $sum_keep[$loop];
                 $sumAll_sum = $sumAll_keep-$sumAll_comAg;
+            ////////////////////keepAg/////////////////////////////////////
+                $top3keepsAg += $top3keepAG[$loop];
+                $bottom3keepsAg += $bottom3keepAG[$loop];
+                $tod3keepsAg += $tod3keepAG[$loop];
+                $top2keepsAg += $top2keepAG[$loop];
+                $bottom2keepsAg += $bottom2keepAG[$loop];
+                $tod2keepsAg += $tod2keepAG[$loop];
+                $top1keepsAg += $top1keepAG[$loop];
+                $bottom1keepsAg  += $bottom1keepAG[$loop];
+                $sumallkeepAg = $top3keepsAg+$bottom3keepsAg+$tod3keepsAg+$top2keepsAg+$bottom2keepsAg+$tod2keepsAg+$top1keepsAg+$bottom1keepsAg;
+            ///////////////////AgCom/////////////////////////////////////
+                $top3comsAg += $top3comAG[$loop];
+                $bottom3comsAg += $bottom3comAG[$loop];
+                $tod3comsAg += $tod3comAG[$loop];
+                $top2comsAg += $top2comAG[$loop];
+                $bottom2comsAg += $bottom2comAG[$loop];
+                $tod2comsAg += $tod2comAG[$loop];
+                $top1comsAg += $top1comAG[$loop];
+                $bottom1comsAg  += $bottom1comAG[$loop];
+                $sumallcomAg = $top3comsAg+$bottom3comsAg+$tod3comsAg+$top2comsAg+$bottom2comsAg+$tod2comsAg+$top1comsAg+$bottom1comsAg;
+
             }
         }
 
@@ -366,7 +437,13 @@ class BetController extends Controller
                                                              'sumAllcompany_sum','sumtop3','sumbottom3','sumtod3',
                                                              'sumtop2','sumbottom2','sumtod2','sumtop1','sumbottom1','allsummem',
                                                              'allcommem','top3comsmem','bottom3comsmem','tod3comsmem','top2comsmem',
-                                                             'bottom2comsmem','tod2comsmem','top1comsmem','bottom1comsmem'));
+                                                             'bottom2comsmem','tod2comsmem','top1comsmem','bottom1comsmem',
+                                                             'top3keepsAg','bottom3keepsAg','tod3keepsAg',
+                                                             'top2keepsAg','bottom2keepsAg','tod2keepsAg',
+                                                             'top1keepsAg','bottom1keepsAg','sumallkeepAg',
+                                                             'top3comsAg','bottom3comsAg','tod3comsAg',
+                                                             'top2comsAg','bottom2comsAg','tod2comsAg',
+                                                             'top1comsAg','bottom1comsAg','sumallcomAg'));
     }
 
  
