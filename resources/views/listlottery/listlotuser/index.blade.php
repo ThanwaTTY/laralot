@@ -226,12 +226,12 @@
 
 							<tr class="even">
 								<td class="bolder">3 ตัวบน</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">130.00</td>
-								<td class="align-right n2c"><span class="negative">-130.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtop3,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop3,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">27.30<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top3comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-102.70<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop3-$top3comsmem,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">117.00<span></span></span>
 								</td>
@@ -250,12 +250,12 @@
 
 							<tr class="odd">
 								<td class="bolder">3 ตัวล่าง</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">150.00</td>
-								<td class="align-right n2c"><span class="negative">-150.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumbottom3,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom3,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">17.32<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom3comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-132.72<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom3-$bottom3comsmem,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">135.00<span></span></span>
 								</td>
@@ -274,12 +274,12 @@
 
 							<tr class="even">
 								<td class="bolder">3 ตัวโต๊ด</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">170.00</td>
-								<td class="align-right n2c"><span class="negative">-170.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtod3,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod3,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">56.10<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($tod3comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-113.90<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod3-$tod3comsmem,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">153.00<span></span></span>
 								</td>
@@ -298,12 +298,12 @@
 
 							<tr class="odd">
 								<td class="bolder">2 ตัวบน</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">60.00</td>
-								<td class="align-right n2c"><span class="negative">-60.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtop2,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop2,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">16.80<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top2comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-43.20<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop2-$top2comsmem,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">54.00<span></span></span>
 								</td>
@@ -322,12 +322,12 @@
 
 							<tr class="even">
 								<td class="bolder">2 ตัวล่าง</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">70.00</td>
-								<td class="align-right n2c"><span class="negative">-70.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumbottom2,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom2,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">19.60<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom2comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-50.40<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom2-$bottom2comsmem,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">63.00<span></span></span>
 								</td>
@@ -346,12 +346,12 @@
 
 							<tr class="odd">
 								<td class="bolder">2 ตัวโต๊ด</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">90.00</td>
-								<td class="align-right n2c"><span class="negative">-90.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtod2,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod2,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">25.20<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($tod3comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-64.80<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod2-$tod3comsmem,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">81.00<span></span></span>
 								</td>
@@ -370,12 +370,12 @@
 
 							<tr class="even">
 								<td class="bolder">วิ่งบน</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">10.00</td>
-								<td class="align-right n2c"><span class="negative">-10.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtop1,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop1,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">1.20<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($top1comsmem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-8.80<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop1-$top1comsmem,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">9.00<span></span></span>
 								</td>
@@ -394,28 +394,37 @@
 
 							<tr class="odd">
 								<td class="bolder">วิ่งล่าง</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">0.00</td>
-								<td class="align-right n2c">0.00</td>
-								<td class="align-right n2c">0.00</td>
-								<td class="align-right n2c">0.00</td>
-								<td class="align-right n2c bg-yellow">0.00</td>
-								<td class="align-right n2c bg-yellow">0.00</td>
-								<td class="align-right n2c bg-yellow">0.00</td>
-								<td class="align-right n2c">0.00</td>
-								<td class="align-right n2c">0.00</td>
-								<td class="align-right n2c">0.00</td>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumbottom1,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom1,2)}}<span></span></span>
+								</td>
+								<td class="align-right n2c"><span class="positive">{{number_format($bottom1comsmem,2)}}<span></span></span>
+								</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom1-$bottom1comsmem,2)}}<span></span></span>
+								</td>
+								<td class="align-right n2c bg-yellow"><span class="positive">9.00<span></span></span>
+								</td>
+								<td class="align-right n2c bg-yellow"><span class="negative">-1.08<span></span></span>
+								</td>
+								<td class="align-right n2c bg-yellow"><span class="positive">7.92<span></span></span>
+								</td>
+								<td class="align-right n2c"><span class="positive">1.00<span></span></span>
+								</td>
+								<td class="align-right n2c"><span class="negative">-0.12<span></span></span>
+								</td>
+								<td class="align-right n2c"><span class="positive">0.88<span></span></span>
+								</td>
 							</tr>
 						</tbody>
 
 						<tfoot class="thin-border-bottom">
 							<tr class="even">
 								<td class="bolder">รวม :</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">680.00</td>
-								<td class="align-right n2c"><span class="negative">-680.00<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($allsummem,2)}}</td>
+								<td class="align-right n2c"><span class="negative">-{{number_format($allsummem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">163.52<span></span></span>
+								<td class="align-right n2c"><span class="positive">{{number_format($allcommem,2)}}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-516.52<span></span></span>
+								<td class="align-right n2c"><span class="negative">-{{number_format($allsummem-$allcommem,2)}}<span></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive">612.00<span></span></span>
 								</td>

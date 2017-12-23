@@ -60,7 +60,7 @@ class BetController extends Controller
 
                         if($userbet_C->type == "top3"){
                             $top3com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
-                        
+                            // echo "<li>".$top3com[$loop]."</li>";
                         }
                         if($userbet_C->type == "bottom3"){
                             $bottom3com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
@@ -144,6 +144,7 @@ class BetController extends Controller
         $sumtod2 = Userbet::where('useradd', $id)->where('type','tod2')->sum('amount');
         $sumtop1 = Userbet::where('useradd', $id)->where('type','top1')->sum('amount');
         $sumbottom1 = Userbet::where('useradd', $id)->where('type','bottom1')->sum('amount');
+        $allsummem = $sumtop3+$sumtop2+$sumbottom3+$sumbottom2+$sumtod3+$sumtod2+$sumtop1+$sumbottom1;
         $userbets_counts[0] = '';
         foreach ($userbets as $key => $userbet) {
             // echo "<li>".$userbet->member_id. "</li>";
@@ -159,14 +160,28 @@ class BetController extends Controller
         }
 
 
-
+        $top3comsmem = 0;
+        $bottom3comsmem = 0;
+        $tod3comsmem = 0;
+        $top2comsmem = 0;
+        $bottom2comsmem = 0;
+        $tod2comsmem = 0;
+        $top1comsmem = 0;
+        $bottom1comsmem = 0;
         $sum_com = 0;
         if($userbets_counts){
             foreach ($userbets_counts as $loop => $userbets_count) {
                 // echo "== loop".$loop."==";
                 // echo " ".$userbets_count."";
                 $com[$loop] = 0;
-                
+                $top3commem[$loop] = 0;
+                $bottom3commem[$loop] = 0;
+                $tod3commem[$loop] = 0;
+                $top2commem[$loop] = 0;
+                $bottom2commem[$loop] = 0;
+                $tod2commem[$loop] = 0;
+                $top1commem[$loop] = 0;
+                $bottom1commem[$loop] = 0;
                 // echo "<ul>";
                 if($userbets_count){
                     foreach ($userbets_count as $key => $userbets_C) {
@@ -174,44 +189,44 @@ class BetController extends Controller
                         //$com[$userbets_C->member_id] = 0;
                         // echo "<li>".$userbets_C->amount." ";
                         if($userbets_C->type=="top3"){
-                            //echo $ratepaygovs[$userbets_C->member_id]->comg_1." %<BR>";
-                            //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_1)/100);
                             $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
-                            // echo ($com[$loop]);
+                            $top3commem[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="bottom3") {
-                            //echo $ratepaygovs[$userbets_C->member_id]->comg_2." %<BR>";
-                            //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_2)/100);
                             $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
+                            $bottom3commem[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="tod3") {
-                            //echo $ratepaygovs[$userbets_C->member_id]->comg_3." %<BR>";
-                            //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_3)/100);
                             $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
+                            $tod3commem[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="top2") {
-                            //echo $ratepaygovs[$userbets_C->member_id]->comg_4." %<BR>";
-                            //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_4)/100);
                             $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
+                            $top2commem[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="bottom2") {
-                            //echo $ratepaygovs[$userbets_C->member_id]->comg_5." %<BR>";
-                            //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_5)/100);
                             $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
+                            $bottom2commem[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="tod2") {
-                            //echo $ratepaygovs[$userbets_C->member_id]->comg_6." %<BR>";
-                            //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_6)/100);
                             $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
+                            $tod2commem[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="top1") {
-                            //echo $ratepaygovs[$userbets_C->member_id]->comg_6." %<BR>";
-                            // echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_7)/100);
                             $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100))); 
+                            $top1commem[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }elseif ($userbets_C->type=="bottom1") {
-                            //echo $ratepaygovs[$userbets_C->member_id]->comg_6." %<BR>";
-                            //echo (($userbets_C->amount*$ratepaygovs[$userbets_C->member_id]->comg_6)/100);
                             $com[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
+                            $bottom1commem[$loop] += (($userbets_C->amount*($userbets_C->com_mem/100)));
                         }
                         // echo "</li>";
                     }
                 }
+                $top3comsmem += $top3commem[$loop];
+                $bottom3comsmem += $bottom3commem[$loop];
+                $tod3comsmem += $tod3commem[$loop];
+                $top2comsmem += $top2commem[$loop];
+                $bottom2comsmem += $bottom2commem[$loop];
+                $tod2comsmem += $tod2commem[$loop];
+                $top1comsmem += $top1commem[$loop];
+                $bottom1comsmem  += $bottom1commem[$loop];
+                $allcommem = $top3comsmem+$bottom3comsmem+$tod3comsmem+$top2comsmem+$bottom2comsmem+$tod2comsmem+$top1comsmem+$bottom1comsmem;
                 $sum_com += $com[$loop];
-                // echo  $sum_com ."</ul>";
+                // echo  $top3comsmem ."</ul>";
             }
         }
         $alltotalmember = 0;
@@ -341,8 +356,17 @@ class BetController extends Controller
                 $sumAllcompany_sum = $sumAllcompany_keep-$sumAllcompany_com;
             }
         }    
-            //////////////////////////////////////////////////////// 
-        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom','alltotalmember','sum_com','sum_keep','sumAll_keep','sum_comAg','sumAll_comAg','sumAll_sum','sumcompany_com','sumAllcompany_com','sumcompany_keep','sumAllcompany_keep','sumAllcompany_sum'));
+   //////////////////////////////////////////Type///////////////////////////////////////////////////
+     
+
+        return view('listlottery.listlotuser.index', compact('userbets','sum','com','totalmember','sumcom',
+                                                             'alltotalmember','sum_com','sum_keep','sumAll_keep',
+                                                             'sum_comAg','sumAll_comAg','sumAll_sum','sumcompany_com',
+                                                             'sumAllcompany_com','sumcompany_keep','sumAllcompany_keep',
+                                                             'sumAllcompany_sum','sumtop3','sumbottom3','sumtod3',
+                                                             'sumtop2','sumbottom2','sumtod2','sumtop1','sumbottom1','allsummem',
+                                                             'allcommem','top3comsmem','bottom3comsmem','tod3comsmem','top2comsmem',
+                                                             'bottom2comsmem','tod2comsmem','top1comsmem','bottom1comsmem'));
     }
 
  
