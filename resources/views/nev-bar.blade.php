@@ -184,6 +184,17 @@
           <ul class="treeview-menu">
             <li><a href="#"><i class="fa fa-circle-o"></i> คู่มือการใช้งาน</a></li>
           </ul>
+				</li>
+				<li class="treeview">
+          <a href="#">
+            <i class="fa fa-question"></i> <span>เปิด/ปิด หวย</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a href="/datelotto/create"><i class="fa fa-circle-o"></i> เพิ่มงวดหวย</a></li>
+          </ul>
         </li>
       </ul>
     </section>

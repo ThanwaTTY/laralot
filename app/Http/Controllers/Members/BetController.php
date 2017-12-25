@@ -9,6 +9,7 @@ use App\Userbet;
 use App\Member;
 use App\Ratepaygov;
 use App\Keep;
+use App\Ticket;
 
 
 class BetController extends Controller
@@ -118,6 +119,132 @@ class BetController extends Controller
                                                               'bottom1coms','allcom','allsumbuy','alltake'));
     }
 
+
+    
+  // public function listlotpoint_whereid(Request $request,$lotto_id)
+    // {
+    //     $id = auth()->user()->id;
+    //     $id = 2;
+    //     $tickets = Ticket::where('lotto_id',$lotto_id)->get();
+    //     foreach ($tickets as $key => $ticket) {
+    //         $userbets = Userbet::with('member')->select(DB::Raw('SUM(amount) as sum_amount, member_id'))
+    //             ->orderBy('bet_num', 'desc')
+    //             ->groupBy('member_id')
+    //             ->where('ticket_id',$ticket->id)
+    //             ->get();
+    //     //$userbets[] = Userbet::where('ticket_id',$ticket->id);
+    //     }
+    //     //dd($id);
+    //     // $userbets = Userbet::with('member')->select(DB::Raw('SUM(amount) as sum_amount, member_id'))
+    //     // ->orderBy('bet_num', 'desc')
+    //     // ->groupBy('member_id')
+    //     // ->where('ticket_id',$ticket->id)
+    //     // ->get();
+
+        
+    //     $sumtop3 = Userbet::where('useradd', $id)->where('type','top3')->sum('amount');
+    //     $sumtop2 = Userbet::where('useradd', $id)->where('type','top2')->sum('amount');
+    //     $sumbottom3 = Userbet::where('useradd', $id)->where('type','bottom3')->sum('amount');
+    //     $sumbottom2 = Userbet::where('useradd', $id)->where('type','bottom2')->sum('amount');
+    //     $sumtod3 = Userbet::where('useradd', $id)->where('type','tod3')->sum('amount');
+    //     $sumtod2 = Userbet::where('useradd', $id)->where('type','tod2')->sum('amount');
+    //     $sumtop1 = Userbet::where('useradd', $id)->where('type','top1')->sum('amount');
+    //     $sumbottom1 = Userbet::where('useradd', $id)->where('type','bottom1')->sum('amount');
+    //     $allsumbuy = $sumtop3+$sumtop2+$sumbottom3+$sumbottom2+$sumtod3+$sumtod2+$sumtop1+$sumbottom1;
+    //     $userbets_counts[0] = "";
+    //     foreach ($userbets as $key => $userbet) {
+    //        //echo $userbet."<BR>";
+    //     }
+    //     //dd($userbets);
+    //     foreach($userbets as $key => $userbet)
+    //     {
+    //         //echo $userbet->id;
+    //         $userbets_counts[$key] = Userbet::where('useradd', $id)->where('member_id', $userbet->member_id)->get();
+    //     }
+    //     //dd();
+    //     $top3coms = 0;
+    //     $bottom3coms = 0;
+    //     $tod3coms = 0;
+    //     $top2coms = 0;
+    //     $bottom2coms = 0;
+    //     $tod2coms = 0;
+    //     $top1coms = 0;
+    //     $bottom1coms = 0;
+    //     if($userbets_counts){
+    //         foreach($userbets_counts as $loop => $userbets_count){
+    //             $top3com[$loop] = 0;
+    //             $bottom3com[$loop] = 0;
+    //             $tod3com[$loop] = 0;
+    //             $top2com[$loop] = 0;
+    //             $bottom2com[$loop] = 0;
+    //             $tod2com[$loop] = 0;
+    //             $top1com[$loop] = 0;
+    //             $bottom1com[$loop] = 0;
+    //             if($userbets_count){
+    //                 foreach($userbets_count as $key => $userbet_C){
+
+    //                     if($userbet_C->type == "top3"){
+    //                         $top3com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
+    //                         // echo "<li>".$top3com[$loop]."</li>";
+    //                     }
+    //                     if($userbet_C->type == "bottom3"){
+    //                         $bottom3com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
+                        
+    //                     }
+    //                     if($userbet_C->type == "tod3"){
+    //                         $tod3com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
+                        
+    //                     }
+    //                     if($userbet_C->type == "top2"){
+    //                         $top2com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
+                        
+    //                     }
+    //                     if($userbet_C->type == "bottom2"){
+    //                         $bottom2com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
+                        
+    //                     }
+    //                     if($userbet_C->type == "tod2"){
+    //                         $tod2com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
+                        
+    //                     }
+    //                     if($userbet_C->type == "top1"){
+    //                         $top1com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
+                        
+    //                     }
+    //                     if($userbet_C->type == "bottom1"){
+    //                         $bottom1com[$loop]  += ($userbet_C->amount*($userbet_C->com_mem/100));
+            
+    //                     }
+                        
+    //                     // echo "<li>".$top3coms[$loop]." ";
+    //                 }
+    //                 $top3coms += $top3com[$loop];
+    //                 $bottom3coms += $bottom3com[$loop];
+    //                 $tod3coms += $tod3com[$loop];
+    //                 $top2coms += $top2com[$loop];
+    //                 $bottom2coms += $bottom2com[$loop];
+    //                 $tod2coms += $tod2com[$loop];
+    //                 $top1coms += $top1com[$loop];
+    //                 $bottom1coms += $bottom1com[$loop];
+    //             }
+    //         }
+    //     }
+    //     $allcom = $top3coms + $bottom3coms + $tod3coms + 
+    //                 $top2coms + $bottom2coms + $tod2coms + 
+    //                 $top1coms +$bottom1coms;
+
+    //     $alltake = $allsumbuy-$allcom;
+    //     //dd();
+    //     return view('listlottery.listlotpoint.view', compact('sumtop3','sumtop2','sumbottom3',
+    //                                                           'sumbottom2','sumtod3','sumtod2',
+    //                                                           'sumtop1','sumbottom1','top3coms',
+    //                                                           'bottom3coms','tod3coms','top2coms',
+    //                                                           'bottom2coms','tod2coms','top1coms',
+    //                                                           'bottom1coms','allcom','allsumbuy','alltake'));
+    //     //dd($userbets);
+  // }
+
+
     public function listlotuser()
     {
         $id = auth()->user()->id;
@@ -125,6 +252,7 @@ class BetController extends Controller
         $useradd = auth()->user()->useradd;
         $members = Member::where('id','!=' ,$id)->where('helper',0)->get();
         $sum = 0;
+        
         $userbetkeeps = Userbet::where('useradd', $id)->with('member')->select(DB::Raw('SUM(amount) as sum_amount, useradd'))
                             ->orderBy('bet_num', 'desc')
                             ->groupBy('useradd')

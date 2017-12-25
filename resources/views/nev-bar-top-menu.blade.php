@@ -357,27 +357,10 @@
           </a>
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="game-select">
-              <li><a href="#" class="game-item" data-id="32401">งวดวันที่ 16 กันยายน 2560</a></li>
-              <li><a href="#" class="game-item" data-id="31624">งวดวันที่ 1 กันยายน 2560</a></li>
-              <li><a href="#" class="game-item" data-id="31064">งวดวันที่ 16 สิงหาคม 2560</a></li>
-              <li><a href="#" class="game-item" data-id="30664">งวดวันที่ 1 สิงหาคม 2560</a></li>
-              <li><a href="#" class="game-item" data-id="30301">งวดวันที่ 16 กรกฎาคม 2560</a></li>
-              <li><a href="#" class="game-item" data-id="29731">งวดวันที่ 1 กรกฎาคม 2560</a></li>
-              <li><a href="#" class="game-item" data-id="29340">งวดวันที่ 16 มิถุนายน 2560</a></li>
-              <li><a href="#" class="game-item" data-id="28559">งวดวันที่ 1 มิถุนายน 2560</a></li>
-              <li><a href="#" class="game-item" data-id="28166">งวดวันที่ 16 พฤษภาคม 2560</a></li>
-              <li><a href="#" class="game-item" data-id="27593">งวดวันที่ 2 พฤษภาคม 2560</a></li>
-              <li><a href="#" class="game-item" data-id="27207">งวดวันที่ 16 เมษายน 2560</a></li>
-              <li><a href="#" class="game-item" data-id="26657">งวดวันที่ 1 เมษายน 2560</a></li>
-              <li><a href="#" class="game-item" data-id="26268">งวดวันที่ 16 มีนาคม 2560</a></li>
-              <li><a href="#" class="game-item" data-id="25871">งวดวันที่ 1 มีนาคม 2560</a></li>
               <li><a href="#" class="game-item" data-id="25870">งวดทดสอบ</a></li>
-              <li><a href="#" class="game-item" data-id="25623">งวดวันที่ 16 กุมภาพันธ์ 2560	</a></li>
-              <li><a href="#" class="game-item" data-id="24993">งวดวันที่ 1 กุมภาพันธ์ 2560	</a></li>
-              <li><a href="#" class="game-item" data-id="24599">งวดวันที่ 17 มกราคม 2560	</a></li>
-              <li><a href="#" class="game-item" data-id="23856">งวดวันที่ 30 ธันวาคม 2559</a></li>
-              <li><a href="#" class="game-item" data-id="23485">งวดวันที่ 16 ธันวาคม 2559</a></li>
-              <li><a href="#" class="game-item" data-id="22914">งวดวันที่ 1 ธันวาคม 2559</a></li>
+              {{--  @foreach ($lottos as $lotto)
+              <li><a href="/listlottery/listlotpoint/lotto/{{$lotto->id}}" class="game-item" data-id="25870">{{$lotto->namelotto}}</a></li>
+              @endforeach  --}}
           </ul>
         </li>
 

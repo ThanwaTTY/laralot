@@ -112,8 +112,13 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::post('/lotuse','Members\OpencloseController@lotuse');
              ///////////////////////////////////////////////////////////////////////////
              Route::get('/listlottery/listlotpoint', 'Members\BetController@listlotpoint');
+             Route::get('/listlottery/listlotpoint/lotto/{lotid}', 'Members\BetController@listlotpoint_whereid');
              Route::get('/listlottery/listlotuser', 'Members\BetController@listlotuser');
              
+             //////////////////////////////////////////////////////////////////////////
+             Route::get('/datelotto/create', 'Members\DatelottoController@create');
+             Route::post('/dateon-off','Members\DatelottoController@store');
+
             });
              Route::get('/test', function () {
                 return view('portest');
