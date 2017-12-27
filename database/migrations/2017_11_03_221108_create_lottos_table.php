@@ -15,7 +15,9 @@ class CreateLottosTable extends Migration
     {
         Schema::create('lottos', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('namelotto')->index();
+            $table->string('name')->index();
+            $table->integer('type');
+            $table->datetime('day');
             $table->datetime('day_on');
             $table->datetime('day_off');
             $table->timestamps();

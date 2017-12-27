@@ -222,8 +222,9 @@
                 <div class="bigger-150">รวม <span id="bill-sum">0</span> บาท</div>
 
                               <input type="hidden" name="allow_dupe" value="0" id="allow-dupe">
-                <button type="button" class="btn btn-primary no-border" id="btn-submit-bet" data-text="ยืนยันการแทง">ยืนยันการแทง</button>
-                <button type="button" class="btn btn-danger no-border" id="btn-clear-bet">เริ่มต้นใหม่</button>
+                              <button type="button" class="btn btn-primary no-border" id="btn-submit-bet" data-text="ยืนยันการแทง">ยืนยันการแทง</button>
+                              {{--  <button type="sumbit" class="btn btn-primary no-border" id="btn-submit-bet" data-text="ยืนยันการแทง">ยืนยันการแทง</button>  --}}
+                              <button type="button" class="btn btn-danger no-border" id="btn-clear-bet">เริ่มต้นใหม่</button>
 
                 <div class="space-4"></div>
               </td>

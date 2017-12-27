@@ -359,7 +359,7 @@
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="game-select">
               <li><a href="#" class="game-item" data-id="25870">งวดทดสอบ</a></li>
               {{--  @foreach ($lottos as $lotto)
-              <li><a href="/listlottery/listlotpoint/lotto/{{$lotto->id}}" class="game-item" data-id="25870">{{$lotto->namelotto}}</a></li>
+              <li><a href="{{$lotto->id}}" class="game-item" data-id="25870">{{$lotto->namelotto}}</a></li>
               @endforeach  --}}
           </ul>
         </li>
