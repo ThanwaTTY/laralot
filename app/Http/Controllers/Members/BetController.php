@@ -36,8 +36,8 @@ class BetController extends Controller
         $buybottom1 = 0;
         $buybottom2 = 0;
         $buybottom3 = 0;
-        $buytod1 = 0;
         $buytod2 = 0;
+        $buytod3 = 0;
         foreach ($tickets as $key => $ticket) {
             $usebets[$key] = Userbet::where('ticket_id',$ticket->id)->get();
             foreach ($usebets[$key] as $key => $usebet) {
@@ -47,16 +47,16 @@ class BetController extends Controller
                     $buytop2 += $usebet->amount_7;
                 }if($usebet->type=="top1"){
                     $buytop1 += $usebet->amount_7;
-                }if($usebet->type=="bottom1"){
-                    $buytop1 += $usebet->amount_7;
-                }if($usebet->type=="bottom2"){
-                    $buytop1 += $usebet->amount_7;
                 }if($usebet->type=="bottom3"){
-                    $buytop1 += $usebet->amount_7;
-                }if($usebet->type=="tod1"){
-                    $buytop1 += $usebet->amount_7;
+                    $buybottom3 += $usebet->amount_7;
+                }if($usebet->type=="bottom2"){
+                    $buybottom2 += $usebet->amount_7;
+                }if($usebet->type=="bottom1"){
+                    $buybottom1 += $usebet->amount_7;
                 }if($usebet->type=="tod2"){
-                    $buytop1 += $usebet->amount_7;
+                    $buytod2 += $usebet->amount_7;
+                }if($usebet->type=="tod3"){
+                    $buytod3 += $usebet->amount_7;
                 }
             }
         }
@@ -66,8 +66,15 @@ class BetController extends Controller
             'tickets'=>$tickets,
             'usebets'=>$usebets,
             'buytop3'=>$buytop3,
+            'buybottom3'=>$buybottom3,
+            'buytod3' => $buytod3,  
             'buytop2'=>$buytop2,
-            'buytop1'=>$buytop1
+            'buybottom2'=>$buybottom2,
+            'buytod2' => $buytod2,
+            'buytop1'=>$buytop1,
+            'buybottom1'=>$buybottom1
+            
+            
         ]);
     }
 

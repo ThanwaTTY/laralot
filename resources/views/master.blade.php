@@ -123,8 +123,13 @@ $(function(){
         if(response.tickets){
           console.log(response.tickets[0].id);
           $("#buy_1").html(response.buytop3);
-          $("#buy_2").html(response.buytop2);
-          $("#buy_3").html(response.buytop1);
+          $("#buy_2").html(response.buybottom3);
+          $("#buy_3").html(response.buytod3);
+          $("#buy_4").html(response.buytop2);
+          $("#buy_5").html(response.buybottom2);
+          $("#buy_6").html(response.buytod2);
+          $("#buy_7").html(response.buytop1);
+          $("#buy_8").html(response.buybottom1);
         }
         console.log(response.lotto.name);
         $('#navbar-game-title').html(response.lotto.name);
