@@ -130,6 +130,7 @@ $(function(){
           $("#buy_6").html(response.buytod2);
           $("#buy_7").html(response.buytop1);
           $("#buy_8").html(response.buybottom1);
+          $("#com_1").html(response.comtop3);
         }
         console.log(response.lotto.name);
         $('#navbar-game-title').html(response.lotto.name);

@@ -147,7 +147,7 @@
                   <span class="pull-left">คอม</span>
                   <span class="pull-right n2c sum-com-1"><span class="negative">-</span></span>
                 </td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_1">-</span></td>
                       <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
                       <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
                       <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>

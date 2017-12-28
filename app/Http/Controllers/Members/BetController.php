@@ -27,6 +27,7 @@ class BetController extends Controller
 
     public function test()
     {
+        $loginId = auth()->user()->id;
         $id = request('id');
         $lotto = Lotto::find($id);
         $tickets = Ticket::where('lotto_id',$id)->get();
@@ -38,27 +39,129 @@ class BetController extends Controller
         $buybottom3 = 0;
         $buytod2 = 0;
         $buytod3 = 0;
+        /////////////////////////////////////////////////////////////////////////////
+        $comtop3 = 0;
+        $levellogin = Member::where('id',$loginId)->first();
         foreach ($tickets as $key => $ticket) {
             $usebets[$key] = Userbet::where('ticket_id',$ticket->id)->get();
             foreach ($usebets[$key] as $key => $usebet) {
-                if($usebet->type=="top3"){
-                    $buytop3 += $usebet->amount_7;
-                }if($usebet->type=="top2"){
-                    $buytop2 += $usebet->amount_7;
-                }if($usebet->type=="top1"){
-                    $buytop1 += $usebet->amount_7;
-                }if($usebet->type=="bottom3"){
-                    $buybottom3 += $usebet->amount_7;
-                }if($usebet->type=="bottom2"){
-                    $buybottom2 += $usebet->amount_7;
-                }if($usebet->type=="bottom1"){
-                    $buybottom1 += $usebet->amount_7;
-                }if($usebet->type=="tod2"){
-                    $buytod2 += $usebet->amount_7;
-                }if($usebet->type=="tod3"){
-                    $buytod3 += $usebet->amount_7;
-                }
+                if($levellogin->level == 6){
+                    if($usebet->type=="top3"){
+                        $buytop3 += $usebet->amount_6;
+                        $comtop3 += ($usebet->amount_6*($usebet->com_6/100));      
+                    }if($usebet->type=="top2"){
+                        $buytop2 += $usebet->amount_6;
+                    }if($usebet->type=="top1"){
+                        $buytop1 += $usebet->amount_6;
+                    }if($usebet->type=="bottom3"){
+                        $buybottom3 += $usebet->amount_6;
+                    }if($usebet->type=="bottom2"){
+                        $buybottom2 += $usebet->amount_6;
+                    }if($usebet->type=="bottom1"){
+                        $buybottom1 += $usebet->amount_6;
+                    }if($usebet->type=="tod2"){
+                        $buytod2 += $usebet->amount_6;
+                    }if($usebet->type=="tod3"){
+                        $buytod3 += $usebet->amount_6;
+                    }  
+                }elseif($levellogin->level == 5){
+                    if($usebet->type=="top3"){
+                        $buytop3 += $usebet->amount_5;
+                        $comtop3 += ($usebet->amount_5*($usebet->com_5/100));      
+                    }if($usebet->type=="top2"){
+                        $buytop2 += $usebet->amount_5;
+                    }if($usebet->type=="top1"){
+                        $buytop1 += $usebet->amount_5;
+                    }if($usebet->type=="bottom3"){
+                        $buybottom3 += $usebet->amount_5;
+                    }if($usebet->type=="bottom2"){
+                        $buybottom2 += $usebet->amount_5;
+                    }if($usebet->type=="bottom1"){
+                        $buybottom1 += $usebet->amount_5;
+                    }if($usebet->type=="tod2"){
+                        $buytod2 += $usebet->amount_5;
+                    }if($usebet->type=="tod3"){
+                        $buytod3 += $usebet->amount_5;
+                    }  
+                }elseif($levellogin->level == 4){
+                    if($usebet->type=="top3"){
+                        $buytop3 += $usebet->amount_4;
+                        $comtop3 += ($usebet->amount_4*($usebet->com_4/100));      
+                    }if($usebet->type=="top2"){
+                        $buytop2 += $usebet->amount_4;
+                    }if($usebet->type=="top1"){
+                        $buytop1 += $usebet->amount_4;
+                    }if($usebet->type=="bottom3"){
+                        $buybottom3 += $usebet->amount_4;
+                    }if($usebet->type=="bottom2"){
+                        $buybottom2 += $usebet->amount_4;
+                    }if($usebet->type=="bottom1"){
+                        $buybottom1 += $usebet->amount_4;
+                    }if($usebet->type=="tod2"){
+                        $buytod2 += $usebet->amount_4;
+                    }if($usebet->type=="tod3"){
+                        $buytod3 += $usebet->amount_4;
+                    }  
+                }elseif($levellogin->level == 3){
+                    if($usebet->type=="top3"){
+                        $buytop3 += $usebet->amount_3;
+                        $comtop3 += ($usebet->amount_3*($usebet->com_3/100));      
+                    }if($usebet->type=="top2"){
+                        $buytop2 += $usebet->amount_3;
+                    }if($usebet->type=="top1"){
+                        $buytop1 += $usebet->amount_3;
+                    }if($usebet->type=="bottom3"){
+                        $buybottom3 += $usebet->amount_3;
+                    }if($usebet->type=="bottom2"){
+                        $buybottom2 += $usebet->amount_3;
+                    }if($usebet->type=="bottom1"){
+                        $buybottom1 += $usebet->amount_3;
+                    }if($usebet->type=="tod2"){
+                        $buytod2 += $usebet->amount_3;
+                    }if($usebet->type=="tod3"){
+                        $buytod3 += $usebet->amount_3;
+                    }  
+                }elseif($levellogin->level == 2){
+                    if($usebet->type=="top3"){
+                        $buytop3 += $usebet->amount_2;
+                        $comtop3 += ($usebet->amount_2*($usebet->com_2/100));      
+                    }if($usebet->type=="top2"){
+                        $buytop2 += $usebet->amount_2;
+                    }if($usebet->type=="top1"){
+                        $buytop1 += $usebet->amount_2;
+                    }if($usebet->type=="bottom3"){
+                        $buybottom3 += $usebet->amount_2;
+                    }if($usebet->type=="bottom2"){
+                        $buybottom2 += $usebet->amount_2;
+                    }if($usebet->type=="bottom1"){
+                        $buybottom1 += $usebet->amount_2;
+                    }if($usebet->type=="tod2"){
+                        $buytod2 += $usebet->amount_2;
+                    }if($usebet->type=="tod3"){
+                        $buytod3 += $usebet->amount_2;
+                    }  
+                }elseif($levellogin->level == 1){
+                    if($usebet->type=="top3"){
+                        $buytop3 += $usebet->amount_1;
+                        $comtop3 += ($usebet->amount_1*($usebet->com_1/100));      
+                    }if($usebet->type=="top2"){
+                        $buytop2 += $usebet->amount_1;
+                    }if($usebet->type=="top1"){
+                        $buytop1 += $usebet->amount_1;
+                    }if($usebet->type=="bottom3"){
+                        $buybottom3 += $usebet->amount_1;
+                    }if($usebet->type=="bottom2"){
+                        $buybottom2 += $usebet->amount_1;
+                    }if($usebet->type=="bottom1"){
+                        $buybottom1 += $usebet->amount_1;
+                    }if($usebet->type=="tod2"){
+                        $buytod2 += $usebet->amount_1;
+                    }if($usebet->type=="tod3"){
+                        $buytod3 += $usebet->amount_1;
+                    }  
+                }                          
             }
+
         }
 
         return response()->json([
@@ -72,7 +175,8 @@ class BetController extends Controller
             'buybottom2'=>$buybottom2,
             'buytod2' => $buytod2,
             'buytop1'=>$buytop1,
-            'buybottom1'=>$buybottom1
+            'buybottom1'=>$buybottom1,
+            'comtop3' => $comtop3
             
             
         ]);
