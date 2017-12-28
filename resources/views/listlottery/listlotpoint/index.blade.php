@@ -105,7 +105,7 @@
 <div class="tab-content no-border no-padding">
       <div class="tab-pane in active" id="bet_type_group_1">
 
-      <form method="POST" action="https://agent.superlot999.com/update-bet-limit" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form"><input name="_token" type="hidden" value="VE0U8lpB8pFrbxFHyLnWN4AUhCKdErLrG5yBD0sy">
+      <form method="POST" action="" id="formlistpoint" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form"><input name="_token" type="hidden" value="VE0U8lpB8pFrbxFHyLnWN4AUhCKdErLrG5yBD0sy">
 
         <input name="game_type_id" type="hidden" value="1">
         <input name="bet_type_group_id" type="hidden" value="1">
@@ -131,44 +131,44 @@
                           <tr class="odd">
                 <td class="bolder">
                   <span class="pull-left">ซื้อ</span>
-                  <span class="pull-right n2c sum-buy-1"><span class="positive">{{number_format($allsumbuy,2)}}</span></span>
+                  <span class="pull-right n2c sum-buy-1"><span class="positive"></span></span>
                 </td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtop3,2)}}</span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumbottom3,2)}}</span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtod3,2)}}</span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtop2,2)}}</span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumbottom2,2)}}</span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtod2,2)}}</span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumtop1,2)}}</span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive">{{number_format($sumbottom1,2)}}</span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_1"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_2"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_3"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_4"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_5"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_6"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_7"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_8"></span></td>
                     </tr>
                 <tr class="even">
                 <td class="bolder">
                   <span class="pull-left">คอม</span>
-                  <span class="pull-right n2c sum-com-1"><span class="negative">-{{number_format($allcom,2)}}</span></span>
+                  <span class="pull-right n2c sum-com-1"><span class="negative">-</span></span>
                 </td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($top3coms,2)}}</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($bottom3coms,2)}}</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($tod3coms,2)}}</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($top2coms,2)}}</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($bottom2coms,2)}}</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($tod2coms,2)}}</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($top1coms,2)}}</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-{{number_format($bottom1coms,2)}}</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
                 </tr>
                           <tr class="odd">
                 <td class="bolder">
                   <span class="pull-left">รับ</span>
-                  <span class="pull-right n2c sum-take-1"><span class="positive"><span class="positive">{{number_format($alltake,2)}}</span></span>
+                  <span class="pull-right n2c sum-take-1"><span class="positive"><span class="positive"></span></span>
                 </td>
-                                  <td class="align-center bg-yellow n2c take-1"><span class="positive">{{number_format($sumtop3-$top3coms,2)}}</span></td>
-                                  <td class="align-center bg-yellow n2c take-2"><span class="positive">{{number_format($sumbottom3-$bottom3coms,2)}}</span></td>
-                                  <td class="align-center bg-yellow n2c take-3"><span class="positive">{{number_format($sumtod3-$tod3coms,2)}}</span></td>
-                                  <td class="align-center bg-yellow n2c take-4"><span class="positive">{{number_format($sumtop2-$top2coms,2)}}</span></td>
-                                  <td class="align-center bg-yellow n2c take-5"><span class="positive">{{number_format($sumbottom2-$bottom2coms,2)}}</span></td>
-                                  <td class="align-center bg-yellow n2c take-6"><span class="positive">{{number_format($sumtod2-$tod2coms,2)}}</span></td>
-                                  <td class="align-center bg-yellow n2c take-7"><span class="positive">{{number_format($sumtop1-$top1coms,2)}}</span></td>
-                                  <td class="align-center bg-yellow n2c take-8"><span class="positive">{{number_format($sumbottom1-$bottom1coms,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-1"><span class="positive"></span></td>
+                                  <td class="align-center bg-yellow n2c take-2"><span class="positive"></span></td>
+                                  <td class="align-center bg-yellow n2c take-3"><span class="positive"></span></td>
+                                  <td class="align-center bg-yellow n2c take-4"><span class="positive"></span></td>
+                                  <td class="align-center bg-yellow n2c take-5"><span class="positive"></span></td>
+                                  <td class="align-center bg-yellow n2c take-6"><span class="positive"></span></td>
+                                  <td class="align-center bg-yellow n2c take-7"><span class="positive"></span></td>
+                                  <td class="align-center bg-yellow n2c take-8"><span class="positive"></span></td>
                               </tr>
                           <tr class="even">
                 <td class="bolder">
@@ -264,15 +264,7 @@
     </div>
   
 
-<script>
-  getOverallData();
 
-  $('table .summary, table .control').each(function(key, value) {
-    $(value).find('tr').each(function(key, value) {
-      $(this).addClass(key % 2 == 0 ? 'odd' : 'even');
-    });
-  });
-</script>
 </div></div><!-- /.col -->
         </div><!-- /.row -->
       </div>
@@ -284,16 +276,13 @@
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-<script>
-  $.widget.bridge('uibutton', $.ui.button);
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip ridgn);
 </script>
 <!-- jQuery 2.2.3 -->
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="/bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
-<script src="/https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
 <script src="/plugins/morris/morris.min.js"></script>
 <!-- Sparkline -->
 <script src="/plugins/sparkline/jquery.sparkline.min.js"></script>

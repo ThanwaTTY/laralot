@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-default">
   {{-- <div class="container-fluid"> --}}
     <div class="navbar-header">
@@ -357,10 +358,10 @@
           </a>
 
           <ul class="user-menu dropdown-menu dropdown-yellow dropdown-caret" id="game-select">
-              <li><a href="#" class="game-item" data-id="25870">งวดทดสอบ</a></li>
-              {{--  @foreach ($lottos as $lotto)
-              <li><a href="{{$lotto->id}}" class="game-item" data-id="25870">{{$lotto->namelotto}}</a></li>
-              @endforeach  --}}
+              {{--  <li><a href="#" class="game-item" data-id="25870">งวดทดสอบ</a></li>  --}}
+              @foreach ($lottos as $lotto)
+              <li><a vaule="{{$lotto->id}}" class="getdatelot" id="getdatelot">{{$lotto->name}}</a></li>
+              @endforeach
           </ul>
         </li>
 

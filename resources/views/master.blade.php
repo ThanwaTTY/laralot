@@ -13,7 +13,7 @@
   <link rel="stylesheet" href="/css/top-custom.css">
   <link rel="stylesheet" href="/css/menu-custom.css">
   <link rel="stylesheet" href="/css/customtopmenu.css">
-
+  
   <script language="JavaScript" type="text/javascript">
     function sivamtime() {
     now=new Date();
@@ -57,7 +57,7 @@
     window.onload = sivamtime;
 
   </script>
-
+ 
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -111,5 +111,28 @@ $(function(){
   li.parent().parent().parent().parent().parent().parent().addClass('active');
 })
 </script>
+<script language="JavaScript" type="text/javascript">
+  $(function(){
+    $('.getdatelot').on('click', function(){    
+      
+      var id = $(this).attr("vaule");
+     // console.log(id);
+      $.get('/listlottery/test', {
+        id
+      }).done(function(response){
+        if(response.tickets){
+          console.log(response.tickets[0].id);
+          $("#buy_1").html(response.buytop3);
+          $("#buy_2").html(response.buytop2);
+          $("#buy_3").html(response.buytop1);
+        }
+        console.log(response.lotto.name);
+        $('#navbar-game-title').html(response.lotto.name);
+      });
+
+      });
+    });
+ 
+  </script>
 </body>
 </html>

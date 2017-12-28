@@ -372,14 +372,14 @@ class UserbetController extends Controller
                     }
                     if($request->bottom[$key]){
                         if($type==3){
-                            $paytop = $member->ratepaygov->payoutg_2;
+                            $paybottom = $member->ratepaygov->payoutg_2;
                             $com_7 = $member->ratepaygov->comg_2;
                             $master = Member::find($useradd);
                             if($master){
                                     if($master->level == 6){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_6 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_6 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_6 = $keep->keepset;
                                         $com_6 = $ratepaygov->comg_2;  
                                         $master = Member::find($master->useradd); 
@@ -394,7 +394,7 @@ class UserbetController extends Controller
                                 if($master->level == 5){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->top[$key]*($keep->keepset/100);
+                                    $amount_5 = $request->bottom[$key]*($keep->keepset/100);
                                     $keep_5 = $keep->keepset;
                                     $com_5 = $ratepaygov->comg_2; 
                                     $master = Member::find($master->useradd); 
@@ -410,7 +410,7 @@ class UserbetController extends Controller
                                     if($master->level == 4){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_4 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_4 = $keep->keepset;
                                         $com_4 = $ratepaygov->comg_2; 
                                         $master = Member::find($master->useradd);   
@@ -425,7 +425,7 @@ class UserbetController extends Controller
                                     if($master->level == 3){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_3 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_3 = $keep->keepset;
                                         $com_3 = $ratepaygov->comg_2; 
                                         $master = Member::find($master->useradd);   
@@ -440,7 +440,7 @@ class UserbetController extends Controller
                                     if($master->level == 2){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_2 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_2 = $keep->keepset;
                                         $com_2 = $ratepaygov->comg_2; 
                                         $master = Member::find($master->useradd);   
@@ -455,7 +455,7 @@ class UserbetController extends Controller
                                     if($master->level == 1){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_1 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_1 = $keep->keepset;
                                         $com_1 = $ratepaygov->comg_2; 
                                         $master = Member::find($master->useradd);   
@@ -470,14 +470,14 @@ class UserbetController extends Controller
                             //    dd($request->master[$key]);
                         }
                         elseif($type==2){
-                            $paytop = $member->ratepaygov->payoutg_5;
+                            $paybottom = $member->ratepaygov->payoutg_5;
                             $com_7 = $member->ratepaygov->comg_5;
                             $master = Member::find($useradd);
                             if($master){
                                 if($master->level == 6){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_6 = $request->top[$key]*($keep->keepset/100);
+                                    $amount_6 = $request->bottom[$key]*($keep->keepset/100);
                                     $keep_6 = $keep->keepset;
                                     $com_6 = $ratepaygov->comg_5;  
                                     $master = Member::find($master->useradd); 
@@ -492,7 +492,7 @@ class UserbetController extends Controller
                                 if($master->level == 5){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->top[$key]*($keep->keepset/100);
+                                    $amount_5 = $request->bottom[$key]*($keep->keepset/100);
                                     $keep_5 = $keep->keepset;
                                     $com_5 = $ratepaygov->comg_5; 
                                     $master = Member::find($master->useradd); 
@@ -508,7 +508,7 @@ class UserbetController extends Controller
                                     if($master->level == 4){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_4 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_4 = $keep->keepset;
                                         $com_4 = $ratepaygov->comg_5; 
                                         $master = Member::find($master->useradd);   
@@ -523,7 +523,7 @@ class UserbetController extends Controller
                                     if($master->level == 3){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_3 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_3 = $keep->keepset;
                                         $com_3 = $ratepaygov->comg_5; 
                                         $master = Member::find($master->useradd);   
@@ -538,7 +538,7 @@ class UserbetController extends Controller
                                     if($master->level == 2){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_2 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_2 = $keep->keepset;
                                         $com_2 = $ratepaygov->comg_5; 
                                         $master = Member::find($master->useradd);   
@@ -553,7 +553,7 @@ class UserbetController extends Controller
                                     if($master->level == 1){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_1 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_1 = $keep->keepset;
                                         $com_1 = $ratepaygov->comg_5; 
                                         $master = Member::find($master->useradd);   
@@ -567,14 +567,14 @@ class UserbetController extends Controller
                             }     
                         }
                         elseif($type==1){
-                            $paytop = $member->ratepaygov->payoutg_8;
+                            $paybottom = $member->ratepaygov->payoutg_8;
                             $com_7 = $member->ratepaygov->comg_8;
                             $master = Member::find($useradd);
                             if($master){
                                 if($master->level == 6){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_6 = $request->top[$key]*($keep->keepset/100);
+                                    $amount_6 = $request->bottom[$key]*($keep->keepset/100);
                                     $keep_6 = $keep->keepset;
                                     $com_6 = $ratepaygov->comg_8;  
                                     $master = Member::find($master->useradd); 
@@ -589,7 +589,7 @@ class UserbetController extends Controller
                                 if($master->level == 5){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->top[$key]*($keep->keepset/100);
+                                    $amount_5 = $request->bottom[$key]*($keep->keepset/100);
                                     $keep_5 = $keep->keepset;
                                     $com_5 = $ratepaygov->comg_8; 
                                     $master = Member::find($master->useradd); 
@@ -605,7 +605,7 @@ class UserbetController extends Controller
                                     if($master->level == 4){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_4 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_4 = $keep->keepset;
                                         $com_4 = $ratepaygov->comg_8; 
                                         $master = Member::find($master->useradd);   
@@ -620,7 +620,7 @@ class UserbetController extends Controller
                                     if($master->level == 3){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_3 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_3 = $keep->keepset;
                                         $com_3 = $ratepaygov->comg_8; 
                                         $master = Member::find($master->useradd);   
@@ -635,7 +635,7 @@ class UserbetController extends Controller
                                     if($master->level == 2){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_2 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_2 = $keep->keepset;
                                         $com_2 = $ratepaygov->comg_8; 
                                         $master = Member::find($master->useradd);   
@@ -650,7 +650,7 @@ class UserbetController extends Controller
                                     if($master->level == 1){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_1 = $request->bottom[$key]*($keep->keepset/100);
                                         $keep_1 = $keep->keepset;
                                         $com_1 = $ratepaygov->comg_8; 
                                         $master = Member::find($master->useradd);   
@@ -669,11 +669,11 @@ class UserbetController extends Controller
                             'ticket_id'=>$tickets->id,
                             'latepay' => 'หวยรัฐ70',
                             'date_time' => $datenow,
-                            'pay' => $paytop,
+                            'pay' => $paybottom,
                             'note' => '0',
                             'useradd' => $useradd,
                             'bet_num' => $request->num[$key],
-                            'type' => "top".$type,
+                            'type' => "bottom".$type,
                             'amount_1' => $amount_1,
                             'keep_1' => $keep_1,
                             'com_1' =>  $com_1,
@@ -692,7 +692,7 @@ class UserbetController extends Controller
                             'amount_6' => $amount_6,
                             'keep_6' => $keep_6,
                             'com_6' => $com_6,
-                            'amount_7' => $request->top[$key],
+                            'amount_7' => $request->bottom[$key],
                             'keep_7' => '0',
                             'com_7' => $com_7
                         
@@ -700,14 +700,14 @@ class UserbetController extends Controller
                     }
                     if($request->tod[$key]){
                         if($type==3){
-                            $paytop = $member->ratepaygov->payoutg_3;
+                            $paytod = $member->ratepaygov->payoutg_3;
                             $com_7 = $member->ratepaygov->comg_3;
                             $master = Member::find($useradd);
                             if($master){
                                     if($master->level == 6){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_6 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_6 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_6 = $keep->keepset;
                                         $com_6 = $ratepaygov->comg_3;  
                                         $master = Member::find($master->useradd); 
@@ -722,7 +722,7 @@ class UserbetController extends Controller
                                 if($master->level == 5){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->top[$key]*($keep->keepset/100);
+                                    $amount_5 = $request->tod[$key]*($keep->keepset/100);
                                     $keep_5 = $keep->keepset;
                                     $com_5 = $ratepaygov->comg_3; 
                                     $master = Member::find($master->useradd); 
@@ -738,7 +738,7 @@ class UserbetController extends Controller
                                     if($master->level == 4){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_4 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_4 = $keep->keepset;
                                         $com_4 = $ratepaygov->comg_3; 
                                         $master = Member::find($master->useradd);   
@@ -753,7 +753,7 @@ class UserbetController extends Controller
                                     if($master->level == 3){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_3 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_3 = $keep->keepset;
                                         $com_3 = $ratepaygov->comg_3; 
                                         $master = Member::find($master->useradd);   
@@ -768,7 +768,7 @@ class UserbetController extends Controller
                                     if($master->level == 2){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_2 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_2 = $keep->keepset;
                                         $com_2 = $ratepaygov->comg_3; 
                                         $master = Member::find($master->useradd);   
@@ -783,7 +783,7 @@ class UserbetController extends Controller
                                     if($master->level == 1){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_1 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_1 = $keep->keepset;
                                         $com_1 = $ratepaygov->comg_3; 
                                         $master = Member::find($master->useradd);   
@@ -798,14 +798,14 @@ class UserbetController extends Controller
                             //    dd($request->master[$key]);
                         }
                         elseif($type==2){
-                            $paytop = $member->ratepaygov->payoutg_6;
+                            $paytod = $member->ratepaygov->payoutg_6;
                             $com_7 = $member->ratepaygov->comg_6;
                             $master = Member::find($useradd);
                             if($master){
                                 if($master->level == 6){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_6 = $request->top[$key]*($keep->keepset/100);
+                                    $amount_6 = $request->tod[$key]*($keep->keepset/100);
                                     $keep_6 = $keep->keepset;
                                     $com_6 = $ratepaygov->comg_6;  
                                     $master = Member::find($master->useradd); 
@@ -820,7 +820,7 @@ class UserbetController extends Controller
                                 if($master->level == 5){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->top[$key]*($keep->keepset/100);
+                                    $amount_5 = $request->tod[$key]*($keep->keepset/100);
                                     $keep_5 = $keep->keepset;
                                     $com_5 = $ratepaygov->comg_6; 
                                     $master = Member::find($master->useradd); 
@@ -836,7 +836,7 @@ class UserbetController extends Controller
                                     if($master->level == 4){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_4 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_4 = $keep->keepset;
                                         $com_4 = $ratepaygov->comg_6; 
                                         $master = Member::find($master->useradd);   
@@ -851,7 +851,7 @@ class UserbetController extends Controller
                                     if($master->level == 3){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_3 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_3 = $keep->keepset;
                                         $com_3 = $ratepaygov->comg_6; 
                                         $master = Member::find($master->useradd);   
@@ -866,7 +866,7 @@ class UserbetController extends Controller
                                     if($master->level == 2){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_2 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_2 = $keep->keepset;
                                         $com_2 = $ratepaygov->comg_6; 
                                         $master = Member::find($master->useradd);   
@@ -881,7 +881,7 @@ class UserbetController extends Controller
                                     if($master->level == 1){
                                         $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                         $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->top[$key]*($keep->keepset/100);
+                                        $amount_1 = $request->tod[$key]*($keep->keepset/100);
                                         $keep_1 = $keep->keepset;
                                         $com_1 = $ratepaygov->comg_6; 
                                         $master = Member::find($master->useradd);   
@@ -900,11 +900,11 @@ class UserbetController extends Controller
                             'ticket_id'=>$tickets->id,
                             'latepay' => 'หวยรัฐ70',
                             'date_time' => $datenow,
-                            'pay' => $paytop,
+                            'pay' => $paytod,
                             'note' => '0',
                             'useradd' => $useradd,
                             'bet_num' => $request->num[$key],
-                            'type' => "top".$type,
+                            'type' => "tod".$type,
                             'amount_1' => $amount_1,
                             'keep_1' => $keep_1,
                             'com_1' =>  $com_1,
@@ -923,17 +923,14 @@ class UserbetController extends Controller
                             'amount_6' => $amount_6,
                             'keep_6' => $keep_6,
                             'com_6' => $com_6,
-                            'amount_7' => $request->top[$key],
+                            'amount_7' => $request->tod[$key],
                             'keep_7' => '0',
                             'com_7' => $com_7
                         
                         ]); 
                     }
-                }
-            
-           
-    }
-       
+                }      
+    }    
         //return response()->json(['userbet_id'=>$id, 'data_request'=>$data_request, 'add'=>$add, 'userbets'=>$userbets]);
         return response()->json([
             'data_request'=>$data_request,
