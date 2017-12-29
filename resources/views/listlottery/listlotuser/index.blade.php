@@ -114,71 +114,59 @@
 
 						<tbody>
 
-            	@foreach($userbets as $key => $userbet)
+            	
 							<tr class="odd">
 								<td>
-									<a href="https://agent.superlot999.com/items/of-member/14290" class="ajax">{{$userbet->member->username}}</a>
+									<a href="" class="ajax"></a>
 									<span class="span-name jquery-hide">()</span>
 								</td>
-								@if($userbet->member->level == 7)
-								<td class="type" nowrap="">Member</td>
-								@elseif($userbet->member->level == 6)
-								<td class="type" nowrap="">Agent</td>
-								@elseif($userbet->member->level == 5)
-								<td class="type" nowrap="">Master</td>
-								@elseif($userbet->member->level == 4)
-								<td class="type" nowrap="">Senior</td>
-								@elseif($userbet->member->level == 3)
-								<td class="type" nowrap="">Super Senior</td>
-								@elseif($userbet->member->level == 2)
-								<td class="type" nowrap="">Pathner</td>
-								@elseif($userbet->member->level == 1)
-								<td class="type" nowrap="">Admin</td>
-								@endif
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($userbet->sum_amount,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($userbet->sum_amount,2)}}<span></span></span>
+					
+								<td class="type" nowrap=""></td>
+	
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($com[$key],2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($totalmember[$key],2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sum_keep[$key],2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($sum_comAg[$key],2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{$sum_keep[$key]-$sum_comAg[$key]}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($sumcompany_keep[$key],2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumcompany_com[$key],2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($sumcompany_keep[$key]-$sumcompany_com[$key],2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
-            @endforeach
+          
 						</tbody>
 
 						<tfoot class="thin-border-bottom">
 							<tr class="even">
 								<td colspan="2" class="bolder">รวม :</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sum,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sum,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span>{{number_format($sum_com,2)}}</span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($alltotalmember,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumAll_keep,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($sumAll_comAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumAll_sum,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($sumAllcompany_keep,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumAllcompany_com,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($sumAllcompany_sum,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 						</tfoot>
@@ -226,192 +214,192 @@
 
 							<tr class="even">
 								<td class="bolder">3 ตัวบน</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtop3,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop3,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top3comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop3-$top3comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top3keepsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($top3comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top3keepsAg-$top3comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top3keepscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($top3comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top3keepscompany-$top3comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 
 
 							<tr class="odd">
 								<td class="bolder">3 ตัวล่าง</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumbottom3,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom3,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom3comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom3-$bottom3comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom3keepsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($bottom3comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom3keepsAg-$bottom3comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom3keepscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($bottom3comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom3keepscompany-$bottom3comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 
 
 							<tr class="even">
 								<td class="bolder">3 ตัวโต๊ด</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtod3,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod3,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($tod3comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod3-$tod3comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod3keepsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($tod3comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod3keepsAg-$tod3comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($tod3keepscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($tod3comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($tod3keepscompany-$tod3comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 
 
 							<tr class="odd">
 								<td class="bolder">2 ตัวบน</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtop2,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop2,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top2comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop2-$top2comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top2keepsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($top2comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-}<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top2keepsAg-$top2comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive">}<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top2keepscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($top2comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top2keepscompany-$top2comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 
 
 							<tr class="even">
 								<td class="bolder">2 ตัวล่าง</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumbottom2,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom2,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom2comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom2-$bottom2comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom2keepsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($bottom2comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom2keepsAg-$bottom2comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom2keepscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($bottom2comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom2keepscompany-$bottom2comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 
 
 							<tr class="odd">
 								<td class="bolder">2 ตัวโต๊ด</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtod2,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod2,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($tod3comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtod2-$tod3comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod2keepsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($tod2comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($tod2keepsAg-$tod2comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($tod2keepscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($tod2comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($tod2keepscompany-$tod2comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 
 
 							<tr class="even">
 								<td class="bolder">วิ่งบน</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumtop1,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop1,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top1comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumtop1-$top1comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top1keepsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($top1comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($top1keepsAg-$top1comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top1keepscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($top1comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($top1keepscompany-$top1comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 
 
 							<tr class="odd">
 								<td class="bolder">วิ่งล่าง</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($sumbottom1,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom1,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom1comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumbottom1-$bottom1comsmem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom1keepsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($bottom1comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($bottom1keepsAg-$bottom1comsAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom1keepscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($bottom1comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($bottom1keepscompany-$bottom1comscompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 						</tbody>
@@ -419,24 +407,24 @@
 						<tfoot class="thin-border-bottom">
 							<tr class="even">
 								<td class="bolder">รวม :</td>
-								<td class="align-right dark-blue bolder n2 bg-blue">{{number_format($allsummem,2)}}</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($allsummem,2)}}<span></span></span>
+								<td class="align-right dark-blue bolder n2 bg-blue"></td>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($allcommem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($allsummem-$allcommem,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumallkeepAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-{{number_format($sumallcomAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">{{number_format($sumallkeepAg-$sumallcomAg,2)}}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($sumAllkeepcompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-{{number_format($sumAllcomcompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive">{{number_format($sumAllkeepcompany-$sumAllcomcompany,2)}}<span></span></span>
+								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
 						</tfoot>
@@ -507,7 +495,7 @@
 				</tfoot>
 			</table> --}}
 
-			<script>
+			{{--  <script>
 				$.each($('tbody tr, tfoot tr'), function(key, value) {
     $(this).addClass(key % 2 == 0 ? 'odd' : 'even');
   });
@@ -517,7 +505,7 @@
   $.each($('.n2c'), function(key, value) {
     $(this).html(n2c($(this).text()));
   });
-			</script>
+			</script>  --}}
 		</div>
 		<!-- /.col -->
 	</div>
@@ -563,4 +551,57 @@
 <script src="/dist/js/pages/dashboard.js"></script> --}}
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
+<script language="JavaScript" type="text/javascript">
+	$(function(){
+	  $('.getdatelot').on('click', function(){    
+		
+		var id = $(this).attr("vaule");
+	   // console.log(id);
+		$.get('/listlottery/listlotuser2', {
+		  id
+		}).done(function(response){
+		  /*if(response.tickets){
+			//console.log(response.tickets[0].id);
+			//$("#buy_1").html(response.buytop3);
+			//////////////////////////////////////////////
+		  }*/
+		  //$.each(response.usebets, function(key, value) {
+			alert(response.usebets.length);
+			$("tr.odd").remove();
+			for(var i=0;i<response.usebets.length;i++){
+
+				$.each(response.usebets[i], function(key1, value1) {
+					console.log(value1.member.level);				
+				$("tbody").append('	<tr class="odd"><td><a href="'+value1.member.level
+					+'" class="ajax"><span class="span-name jquery-hide">'+response.member_name[i]
+					+'()</span></a></td><td class="type" nowrap="">'+value1.member.level
+					+'</td><td class="align-right dark-blue bolder n2 bg-blue">'+value1.sum_amount
+					+'</td><td class="align-right n2c"><span class="negative" id="out_1">'+value1.sum_amount
+					+'<span></span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.comtop3[i]
+					+'</span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
+				});
+				//$("#by-member-table").append('<tbody></tbody>');
+			}
+			
+			//$.each(value[key], function(key1, value1) {
+				//alert(value1);
+				//$("tbody").html('<tr class="odd"><td><a href="" class="ajax"></a><span class="span-name jquery-hide">()</span></td><td class="type" nowrap=""></td><td class="align-right dark-blue bolder n2 bg-blue"></td><td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr><tr class="odd"><td><a href="" class="ajax"></a><span class="span-name jquery-hide">()</span></td><td class="type" nowrap=""></td><td class="align-right dark-blue bolder n2 bg-blue"></td><td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
+				//$("tbody").html('<tr class="odd"><td><a href="" class="ajax"></a><span class="span-name jquery-hide">()</span></td><td class="type" nowrap=""></td><td class="align-right dark-blue bolder n2 bg-blue"></td><td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
+				//if(value1){
+				//alert(":"+value1);					
+				//}
+
+			  //$(this).html(n2($(this).text()));
+  
+			//});
+		  //});
+		 
+		  console.log(response);
+		  //$('#navbar-game-title').html(response.lotto.name);
+		});
+  
+		});
+	  });
+   
+  </script>
 @endsection

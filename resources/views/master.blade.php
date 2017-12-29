@@ -111,13 +111,13 @@ $(function(){
   li.parent().parent().parent().parent().parent().parent().addClass('active');
 })
 </script>
-<script language="JavaScript" type="text/javascript">
+{{--  <script language="JavaScript" type="text/javascript">
   $(function(){
     $('.getdatelot').on('click', function(){    
       
       var id = $(this).attr("vaule");
      // console.log(id);
-      $.get('/listlottery/test', {
+      $.get('/listlottery/listlotpoint2', {
         id
       }).done(function(response){
         if(response.tickets){
@@ -138,7 +138,19 @@ $(function(){
           $("#com_6").html(response.comtod2);
           $("#com_7").html(response.comtop1);
           $("#com_8").html(response.combottom1);
+          $("#take_1").html(response.taketop3);
+          $("#take_2").html(response.takebottom3);
+          $("#take_3").html(response.taketod3);
+          $("#take_4").html(response.taketop2);
+          $("#take_5").html(response.takebottom2);
+          $("#take_6").html(response.taketod2);
+          $("#take_7").html(response.taketop1);
+          $("#take_8").html(response.takebottom1);
+          //////////////////////////////////////////////
+
         }
+
+       
         console.log(response.lotto.name);
         $('#navbar-game-title').html(response.lotto.name);
       });
@@ -146,6 +158,6 @@ $(function(){
       });
     });
  
-  </script>
+</script>  --}}
 </body>
 </html>

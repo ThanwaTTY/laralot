@@ -49,7 +49,7 @@ class Member extends Authenticatable
     }
     public function userbet()
     {
-        return $this->belongTo(Userbet::class, 'id','member_id');
+        return $this->belongTo(Userbet::class, 'id','member_idid');
     }
 
     public function userbetmem()

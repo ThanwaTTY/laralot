@@ -161,14 +161,14 @@
                   <span class="pull-left">รับ</span>
                   <span class="pull-right n2c sum-take-1"><span class="positive"><span class="positive"></span></span>
                 </td>
-                                  <td class="align-center bg-yellow n2c take-1"><span class="positive"></span></td>
-                                  <td class="align-center bg-yellow n2c take-2"><span class="positive"></span></td>
-                                  <td class="align-center bg-yellow n2c take-3"><span class="positive"></span></td>
-                                  <td class="align-center bg-yellow n2c take-4"><span class="positive"></span></td>
-                                  <td class="align-center bg-yellow n2c take-5"><span class="positive"></span></td>
-                                  <td class="align-center bg-yellow n2c take-6"><span class="positive"></span></td>
-                                  <td class="align-center bg-yellow n2c take-7"><span class="positive"></span></td>
-                                  <td class="align-center bg-yellow n2c take-8"><span class="positive"></span></td>
+                                  <td class="align-center bg-yellow n2c take-1"><span class="positive" id="take_1"></span></td>
+                                  <td class="align-center bg-yellow n2c take-2"><span class="positive" id="take_2"></span></td>
+                                  <td class="align-center bg-yellow n2c take-3"><span class="positive" id="take_3"></span></td>
+                                  <td class="align-center bg-yellow n2c take-4"><span class="positive" id="take_4"></span></td>
+                                  <td class="align-center bg-yellow n2c take-5"><span class="positive" id="take_5"></span></td>
+                                  <td class="align-center bg-yellow n2c take-6"><span class="positive" id="take_6"></span></td>
+                                  <td class="align-center bg-yellow n2c take-7"><span class="positive" id="take_7"></span></td>
+                                  <td class="align-center bg-yellow n2c take-8"><span class="positive" id="take_8"></span></td>
                               </tr>
                           <tr class="even">
                 <td class="bolder">
@@ -308,4 +308,52 @@
 {{-- <script src="/dist/js/pages/dashboard.js"></script> --}}
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
+<script language="JavaScript" type="text/javascript">
+  $(function(){
+    $('.getdatelot').on('click', function(){    
+      
+      var id = $(this).attr("vaule");
+     // console.log(id);
+      $.get('/listlottery/listlotpoint2', {
+        id
+      }).done(function(response){
+        if(response.tickets){
+          console.log(response.tickets[0].id);
+          $("#buy_1").html(response.buytop3);
+          $("#buy_2").html(response.buybottom3);
+          $("#buy_3").html(response.buytod3);
+          $("#buy_4").html(response.buytop2);
+          $("#buy_5").html(response.buybottom2);
+          $("#buy_6").html(response.buytod2);
+          $("#buy_7").html(response.buytop1);
+          $("#buy_8").html(response.buybottom1);
+          $("#com_1").html(response.comtop3);
+          $("#com_2").html(response.combottom3);
+          $("#com_3").html(response.comtod3);
+          $("#com_4").html(response.comtop2);
+          $("#com_5").html(response.combottom2);
+          $("#com_6").html(response.comtod2);
+          $("#com_7").html(response.comtop1);
+          $("#com_8").html(response.combottom1);
+          $("#take_1").html(response.taketop3);
+          $("#take_2").html(response.takebottom3);
+          $("#take_3").html(response.taketod3);
+          $("#take_4").html(response.taketop2);
+          $("#take_5").html(response.takebottom2);
+          $("#take_6").html(response.taketod2);
+          $("#take_7").html(response.taketop1);
+          $("#take_8").html(response.takebottom1);
+          //////////////////////////////////////////////
+
+        }
+
+       
+        console.log(response.lotto.name);
+        $('#navbar-game-title').html(response.lotto.name);
+      });
+
+      });
+    });
+ 
+</script>
 @endsection

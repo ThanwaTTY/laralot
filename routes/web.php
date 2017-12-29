@@ -111,11 +111,11 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::post('/lotgovuse','Members\OpencloseController@lotgovuse');
              Route::post('/lotuse','Members\OpencloseController@lotuse');
              ///////////////////////////////////////////////////////////////////////////
-             Route::get('/listlottery/test', 'Members\BetController@test');
+             Route::get('/listlottery/listlotpoint2', 'Members\BetController@listlotpoint2');
              Route::get('/listlottery/listlotpoint', 'Members\BetController@listlotpoint');
 
-             Route::get('/listlottery/listlotpoint/lotto/{lotid}', 'Members\BetController@listlotpoint_whereid');
              Route::get('/listlottery/listlotuser', 'Members\BetController@listlotuser');
+             Route::get('/listlottery/listlotuser2', 'Members\BetController@listlotuser2');
              
              //////////////////////////////////////////////////////////////////////////
              Route::get('/datelotto/create', 'Members\DatelottoController@create');
