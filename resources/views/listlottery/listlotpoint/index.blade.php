@@ -148,13 +148,13 @@
                   <span class="pull-right n2c sum-com-1"><span class="negative">-</span></span>
                 </td>
                       <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_1">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_2">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_3">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_4">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_5">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_6">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_7">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_8">-</span></td>
                 </tr>
                           <tr class="odd">
                 <td class="bolder">

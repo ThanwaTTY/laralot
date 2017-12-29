@@ -131,6 +131,13 @@ $(function(){
           $("#buy_7").html(response.buytop1);
           $("#buy_8").html(response.buybottom1);
           $("#com_1").html(response.comtop3);
+          $("#com_2").html(response.combottom3);
+          $("#com_3").html(response.comtod3);
+          $("#com_4").html(response.comtop2);
+          $("#com_5").html(response.combottom2);
+          $("#com_6").html(response.comtod2);
+          $("#com_7").html(response.comtop1);
+          $("#com_8").html(response.combottom1);
         }
         console.log(response.lotto.name);
         $('#navbar-game-title').html(response.lotto.name);
