@@ -560,13 +560,6 @@
 		$.get('/listlottery/listlotuser2', {
 		  id
 		}).done(function(response){
-		  /*if(response.tickets){
-			//console.log(response.tickets[0].id);
-			//$("#buy_1").html(response.buytop3);
-			//////////////////////////////////////////////
-		  }*/
-		  //$.each(response.usebets, function(key, value) {
-			alert(response.usebets.length);
 			$("tr.odd").remove();
 			for(var i=0;i<response.usebets.length;i++){
 
@@ -577,8 +570,9 @@
 					+'()</span></a></td><td class="type" nowrap="">'+value1.member.level
 					+'</td><td class="align-right dark-blue bolder n2 bg-blue">'+value1.sum_amount
 					+'</td><td class="align-right n2c"><span class="negative" id="out_1">'+value1.sum_amount
-					+'<span></span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.comtop3[i]
-					+'</span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
+					+'<span></span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.usercom_s[i]
+					+'</span></span></td><td class="align-right n2c"><span class="negative">-'+response.usercom_s[i]<span>
+					+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
 				});
 				//$("#by-member-table").append('<tbody></tbody>');
 			}
@@ -596,8 +590,8 @@
 			//});
 		  //});
 		 
-		  console.log(response);
-		  //$('#navbar-game-title').html(response.lotto.name);
+		  //console.log(response.lotto.name);
+		  $('#navbar-game-title').html(response.lotto.name);
 		});
   
 		});
