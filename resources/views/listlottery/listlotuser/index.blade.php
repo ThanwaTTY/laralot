@@ -112,7 +112,7 @@
 							</tr>
 						</thead>
 
-						<tbody>
+						<tbody id="tbodyuser">
 
             	
 							<tr class="odd">
@@ -208,7 +208,7 @@
 						<tbody>
 
 
-							<tr class="odd">
+							<tr class="">
 								<td class="align-center bolder bg-green3" colspan="99">3 ตัวท้าย</td>
 							</tr>
 
@@ -236,7 +236,7 @@
 							</tr>
 
 
-							<tr class="odd">
+							<tr class="">
 								<td class="bolder">3 ตัวล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
@@ -284,7 +284,7 @@
 							</tr>
 
 
-							<tr class="odd">
+							<tr class="">
 								<td class="bolder">2 ตัวบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
@@ -308,7 +308,7 @@
 							</tr>
 
 
-							<tr class="even">
+							<tr class="">
 								<td class="bolder">2 ตัวล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
@@ -332,7 +332,7 @@
 							</tr>
 
 
-							<tr class="odd">
+							<tr class="">
 								<td class="bolder">2 ตัวโต๊ด</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
@@ -356,7 +356,7 @@
 							</tr>
 
 
-							<tr class="even">
+							<tr class="">
 								<td class="bolder">วิ่งบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
@@ -380,7 +380,7 @@
 							</tr>
 
 
-							<tr class="odd">
+							<tr class="">
 								<td class="bolder">วิ่งล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
@@ -565,7 +565,7 @@
 
 				$.each(response.usebets[i], function(key1, value1) {
 					console.log(value1.member.level);				
-				$("tbody").append('	<tr class="odd"><td><a href="'+value1.member.level
+				$("#tbodyuser").append('	<tr class="odd"><td><a href="'+value1.member.level
 					+'" class="ajax"><span class="span-name jquery-hide">'+response.member_name[i]
 					+'()</span></a></td><td class="type" nowrap="">'+value1.member.level
 					+'</td><td class="align-right dark-blue bolder n2 bg-blue">'+response.usersum_s[i]
