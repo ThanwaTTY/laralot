@@ -21,6 +21,7 @@ class CreateMembersTable extends Migration
             $table->decimal('credit', 20, 7);
             $table->string('name');
             $table->integer('useradd');
+            $table->text('useradddetail')->nullable();
             $table->string('phone');
             $table->integer('status')->default(0);
             $table->rememberToken();

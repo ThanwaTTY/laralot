@@ -22,6 +22,7 @@ class CreateUserbetTable extends Migration
             $table->decimal('pay');
             $table->string('note');
             $table->integer('useradd');
+            $table->text('useradddetail')->nullable();
             $table->integer('bet_num');
             $table->integer('cal_num')->default(0);
             $table->string('type');

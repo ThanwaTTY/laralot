@@ -150,7 +150,7 @@ class MemberController extends Controller
             'comg_8' => 'required'
         ];
         // dd(required->min_1);
-         $useradd = auth()->user()->id;
+        //$useradd = auth()->user()->id;
 
         if(auth()->user()->helper == 1)
         {
@@ -167,7 +167,7 @@ class MemberController extends Controller
 
 
         $this->validate($request, $rules);
-      
+        
         if ($credits >= $total) {
            $membercreate = Member::create([
             'username' => request('useradd').request('username'),
@@ -176,7 +176,8 @@ class MemberController extends Controller
             'credit' => request('credit'),
             'name' => request('name'),
             'phone' => request('phone'),
-            'useradd' => $memberid
+            'useradd' => $memberid,
+            'useradddetail' => $useradd." ".$id
             ]);
             Playset::create( array_merge(request()->all(),['member_id'=> $membercreate->id]) );
             Ratepaygov::create( array_merge(request()->all(),['member_id' => $membercreate->id]) );

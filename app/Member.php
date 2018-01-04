@@ -9,7 +9,7 @@ class Member extends Authenticatable
 {
     use Notifiable;
     //
-    protected $fillable = ['level','username','password','credit','name','phone','status','latest_use','latest_login','latest_ip','online','useradd','helper'];
+    protected $fillable = ['level','username','password','credit','name','phone','status','latest_use','latest_login','latest_ip','online','useradd','helper','useradddetail'];
 
     // protected $guarded = [];
 
@@ -49,7 +49,7 @@ class Member extends Authenticatable
     }
     public function userbet()
     {
-        return $this->belongTo(Userbet::class, 'id','member_idid');
+        return $this->belongTo(Userbet::class, 'id','member_id');
     }
 
     public function userbetmem()
