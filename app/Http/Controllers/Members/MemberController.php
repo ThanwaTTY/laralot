@@ -71,6 +71,9 @@ class MemberController extends Controller
        
          $id = auth()->user()->id;
          $useradd = auth()->user()->useradd;
+         $useradddetail = auth()->user()->useradddetail;
+         $useradd_detail = $useradddetail." ".$id;
+         //dd($useradd_detail);
         //  $username = $username. '%';
         $member = Member::get();
         $members = Member::where('id','!=',$id)->where('helper', 0)->where('id', $useradd)->first();
@@ -177,7 +180,7 @@ class MemberController extends Controller
             'name' => request('name'),
             'phone' => request('phone'),
             'useradd' => $memberid,
-            'useradddetail' => $useradd." ".$id
+            'useradddetail' => $useradd_detail
             ]);
             Playset::create( array_merge(request()->all(),['member_id'=> $membercreate->id]) );
             Ratepaygov::create( array_merge(request()->all(),['member_id' => $membercreate->id]) );
