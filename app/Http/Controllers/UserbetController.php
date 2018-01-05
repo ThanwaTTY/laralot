@@ -22,6 +22,8 @@ class UserbetController extends Controller
     {
         $id = auth()->user()->id;
         $useradd = auth()->user()->useradd;
+        $useradddetail = auth()->user()->useradddetail;
+        $useradd_detail = $useradddetail;
         $member = Member::find($id);
         $dt = Carbon::now();
         $datenow = $dt->format('Y-m-d h:i:s');  
@@ -344,6 +346,7 @@ class UserbetController extends Controller
                             'pay' => $paytop,
                             'note' => '0',
                             'useradd' => $useradd,
+                            'useradddetail' => $useradd_detail,
                             'bet_num' => $request->num[$key],
                             'type' => "top".$type,
                             'amount_1' => $amount_1,
@@ -672,6 +675,7 @@ class UserbetController extends Controller
                             'pay' => $paybottom,
                             'note' => '0',
                             'useradd' => $useradd,
+                            'useradddetail' => $useradd_detail,
                             'bet_num' => $request->num[$key],
                             'type' => "bottom".$type,
                             'amount_1' => $amount_1,
@@ -903,6 +907,7 @@ class UserbetController extends Controller
                             'pay' => $paytod,
                             'note' => '0',
                             'useradd' => $useradd,
+                            'useradddetail' => $useradd_detail,
                             'bet_num' => $request->num[$key],
                             'type' => "tod".$type,
                             'amount_1' => $amount_1,

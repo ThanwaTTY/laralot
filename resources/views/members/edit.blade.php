@@ -202,10 +202,11 @@
 									<th>บันทึก</th>
 								</tr>
 							</thead>
+							@foreach($member as $members)
 							<form action="/members/{{$members->id}}/edit" method="post">
 								{{ csrf_field() }}
 								<tbody>
-									@foreach($member as $members)
+									
 									<tr data-parent-id="9306" data-member-password-id="{{$members->id}}" data-status="{{ $members->status }}" class="@if($members->status==1) {{'jquery-hide bg-warning'}} @elseif($members->status==2) {{'jquery-hide bg-danger'}} @endif">
 										<td class="ac">{{$members->id}}</td>
 										<td class="ac">{{ $members->username}}</td>
@@ -213,7 +214,8 @@
 											== 4) Senior @elseif($members->level == 3) Super Senior @elseif($members->level == 2) Pathner @elseif($members->level
 											== 1) Admin @endif
 										</td>
-										<td class="password"><input data-memberid="{{ $members->id }}" class="form-control input-sm" id="password_{{ $members->id }}" data-old=""
+										<td class="password">
+											<input data-memberid="{{ $members->id }}" class="form-control input-sm" id="password_{{ $members->id }}" data-old=""
 											 name="password" type="password" value=""></td>
 										<td class="control child-hidden">
 											<div id="btn-password_{{ $members->id }}" class="hiddenButton">
@@ -222,10 +224,10 @@
 											</div>
 										</td>
 									</tr>
-									@endforeach
+									
 								</tbody>
 							</form>
-
+						@endforeach
 						</table>
 					</div>
 					<!-- Tab 3 Credit -->

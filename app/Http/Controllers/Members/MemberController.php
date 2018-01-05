@@ -249,19 +249,23 @@ class MemberController extends Controller
             $members = Member::find($id);
             // dd($members->name);
             // $members = Member::where('id', $members->id)->first();
+            //dd($members);
+            // dd(request('password'));
+            // dd($request->password);
         if (request('name')) {
             $members->name = request('name');
         }
         if (request('phone')) {
             $members->phone = request('phone');
         }
-        if (request('password')==null) {
-            $members->status = request('status');
-        }
-
         if (request('password')) {
             $members->password = bcrypt(request('password'));
         }
+        if (request('status')!=null) {
+            $members->status = request('status');
+        }
+
+        
 
 
             $members->update();
