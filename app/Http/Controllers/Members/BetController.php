@@ -381,7 +381,7 @@ class BetController extends Controller
                             //$userbets_[$key] = Userbet::where('id', $usebet[0]->id)->get();
                             $userbets_[$key] = Userbet::where('ticket_id', $usebet[0]->ticket_id)->get();
                                 foreach ($userbets_[$key] as $loop_i => $usebet_c) {
-                                    if($useradddetail==$id){
+                                   
                                             $data[] = $usebet_c;
                                             if($usebet_c->type=="top3"){
                                                 $sumtop3[$key] += number_format($usebet_c->amount_7,2);
@@ -409,7 +409,7 @@ class BetController extends Controller
                                                 $combottom1[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
                                             }
 
-                                    }
+                                    
                                     $usersum_s[$key] = number_format($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key],2);
                                     $usercom_s[$key] = number_format($comtop3[$key]+$combottom3[$key]+$comtod3[$key]+$comtop2[$key]+$combottom2[$key]+$comtod2[$key]+$comtop1[$key]+$combottom1[$key],2);
                                     $usersumall[$key] = number_format($usersum_s[$key]-$usercom_s[$key],2);
@@ -423,7 +423,7 @@ class BetController extends Controller
                 }
 
 
-           $data[] =$usebet[0]->id;
+        //    $data[] =$usebet[0]->id;
 
             // $usersum_s[$key] = number_format($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key],2);
             // $usercom_s[$key] = number_format($comtop3[$key]+$combottom3[$key]+$comtod3[$key]+$comtop2[$key]+$combottom2[$key]+$comtod2[$key]+$comtop1[$key]+$combottom1[$key],2);
