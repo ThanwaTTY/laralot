@@ -408,13 +408,11 @@ class BetController extends Controller
                                                 $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
                                                 $combottom1[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
                                             }
-
-                                    
+ 
+                                }
                                     $usersum_s[$key] = number_format($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key],2);
                                     $usercom_s[$key] = number_format($comtop3[$key]+$combottom3[$key]+$comtod3[$key]+$comtop2[$key]+$combottom2[$key]+$comtod2[$key]+$comtop1[$key]+$combottom1[$key],2);
                                     $usersumall[$key] = number_format($usersum_s[$key]-$usercom_s[$key],2);
-                                    
-                                }
 
                             // $usersum_s[$key] = 3;
                             // $usercom_s[$key] = 3;
