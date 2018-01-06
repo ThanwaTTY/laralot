@@ -561,19 +561,24 @@
 		  id
 		}).done(function(response){
 			$("tr.odd").remove();
+			console.log(response);
 			for(var i=0;i<response.usebets.length;i++){
 
 				$.each(response.usebets[i], function(key1, value1) {
-					console.log(value1.member.level);				
-				$("#tbodyuser").append('	<tr class="odd"><td><a href="'+value1.member.level
-					+'" class="ajax"><span class="span-name jquery-hide">'+response.member_name[i]
-					+'()</span></a></td><td class="type" nowrap="">'+value1.member.level
-					+'</td><td class="align-right dark-blue bolder n2 bg-blue">'+response.usersum_s[i]
-					+'</td><td class="align-right n2c"><span class="negative" id="out_1">'+response.usersum_s[i]
-					+'<span></span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.usercom_s[i]
-					+'</span></span></td><td class="align-right n2c"><span class="negative">-<span>'+response.usersumall[i]
-					+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
-				});
+					//console.log(value1.member.level);	
+					console.log(response.member_name[i]);	
+					if(response.member_name[i]){
+						$("#tbodyuser").append('	<tr class="odd"><td><a href="'+value1.member.level
+							+'" class="ajax"><span class="span-name jquery-hide">'+response.member_name[i]
+							+'()</span></a></td><td class="type" nowrap="">'+value1.member.level
+							+'</td><td class="align-right dark-blue bolder n2 bg-blue">'+response.usersum_s[i]
+							+'</td><td class="align-right n2c"><span class="negative" id="out_1">'+response.usersum_s[i]
+							+'<span></span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.usercom_s[i]
+							+'</span></span></td><td class="align-right n2c"><span class="negative">-<span>'+response.usersumall[i]
+							+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
+						}
+					}			
+				);	
 				//$("#by-member-table").append('<tbody></tbody>');
 			}
 			
