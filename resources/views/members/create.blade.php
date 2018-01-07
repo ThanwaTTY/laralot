@@ -171,33 +171,27 @@
 								<label for="level" class="control-label col-xs-1" autofill="false">ระดับ:</label>
 								<div class="col-xs-3">
 									<select class="form-control" id="level" name="level">
-                              @if(auth()->user()->level == 7)
+                              
+							  @if(auth()->user()->level ==6)
                                   <option value="7">Member</option>
-                              @elseif(auth()->user()->level ==6)
-                                  <option value="7">Member</option>
-                                  <option value="6">agent</option>
                               @elseif(auth()->user()->level ==5)
                                   <option value="7">Member</option>
                                   <option value="6">agent</option>
-                                  <option value="5">Master</option>
                               @elseif(auth()->user()->level ==4)
                                   <option value="7">Member</option>
                                   <option value="6">agent</option>
                                   <option value="5">Master</option>
-                                  <option value="4">Senior</option>
                                @elseif(auth()->user()->level ==3)
                                   <option value="7">Member</option>
                                   <option value="6">agent</option>
                                   <option value="5">Master</option>
                                   <option value="4">Senior</option>
-                                  <option value="3">Super Senior</option>
                                @elseif(auth()->user()->level ==2)
                                   <option value="7">Member</option>
                                   <option value="6">agent</option>
                                   <option value="5">Master</option>
                                   <option value="4">Senior</option>
                                   <option value="3">Super Senior</option>
-                                  <option value="2">Pathner</option>
                                @elseif(auth()->user()->level ==1)
                                   <option value="7">Member</option>
                                   <option value="6">agent</option>
@@ -205,7 +199,6 @@
                                   <option value="4">Senior</option>
                                   <option value="3">Super Senior</option>
                                   <option value="2">Pathner</option>
-                                  <option value="1">Admin</option>
                                @endif
                                </select>
 									<p style="color:red">{{ $errors->first('level') }}</p>

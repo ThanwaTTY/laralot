@@ -75,6 +75,18 @@ class MemberController extends Controller
          $useradd_detail = $useradddetail." ".$id;
          //dd($useradd_detail);
         //  $username = $username. '%';
+        $memberlogin = Member::where('id',$id)->first();
+        $memberkeep = Keep::where('member_id',$id)->first();
+        $keepgive =  request('keepset');
+        $keepsetting = $memberkeep->keepset-$keepgive;
+        $keepsetting2 = $memberkeep->keepset2-$keepgive;
+        $keepsetting3 = $memberkeep->keepset3-$keepgive;
+        $keepsetting4 = $memberkeep->keepset4-$keepgive;
+        $keepsetting5 = $memberkeep->keepset5-$keepgive;
+        $keepsetting6 = $memberkeep->keepset6-$keepgive;
+
+        // dd($memberkeep->keepset-$keepgive);
+
         $member = Member::get();
         $members = Member::where('id','!=',$id)->where('helper', 0)->where('id', $useradd)->first();
 
@@ -185,7 +197,144 @@ class MemberController extends Controller
             Playset::create( array_merge(request()->all(),['member_id'=> $membercreate->id]) );
             Ratepaygov::create( array_merge(request()->all(),['member_id' => $membercreate->id]) );
             Ratepay::create( array_merge(request()->all(), ['member_id' => $membercreate->id]) );
-            Keep::create( array_merge(request()->all(), ['member_id' => $membercreate->id]) );
+            if($memberlogin->level ==1){
+                if($membercreate->level == 2){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $keepsetting,
+                    'keepset2' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 3){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $keepsetting,
+                    'keepset3' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 4){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $keepsetting,
+                    'keepset4' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 5){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $keepsetting,
+                    'keepset5' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 6){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $keepsetting,
+                    'keepset6' => request('keepset'),
+                    ]);
+                }
+            }
+            if($memberlogin->level ==2){
+                if($membercreate->level == 3){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $keepsetting2,
+                    'keepset3' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 4){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $keepsetting2,
+                    'keepset4' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 5){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $keepsetting2,
+                    'keepset5' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 6){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $keepsetting2,
+                    'keepset6' => request('keepset'),
+                    ]);
+                }
+            }
+            if($memberlogin->level ==3){
+                if($membercreate->level == 4){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $memberkeep->keepset2,
+                    'keepset3' => $keepsetting3,
+                    'keepset4' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 5){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $memberkeep->keepset2,
+                    'keepset3' => $keepsetting3,
+                    'keepset5' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 6){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $memberkeep->keepset2,
+                    'keepset3' => $keepsetting3,
+                    'keepset6' => request('keepset'),
+                    ]);
+                }
+            }
+            if($memberlogin->level ==4){
+                if($membercreate->level == 5){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $memberkeep->keepset2,
+                    'keepset3' => $memberkeep->keepset3,
+                    'keepset4' => $keepsetting4,
+                    'keepset5' => request('keepset'),
+                    ]);
+                }if($membercreate->level == 6){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $memberkeep->keepset2,
+                    'keepset4' => $keepsetting4,
+                    'keepset6' => request('keepset'),
+                    ]);
+                }
+            }
+            if($memberlogin->level ==5){
+                if($membercreate->level == 6){
+                    Keep::create([    
+                    'member_id' => $membercreate->id,
+                    'keepset' => request('keepset'),
+                    'keepset1' => $memberkeep->keepset1,
+                    'keepset2' => $memberkeep->keepset2,
+                    'keepset5' => $keepsetting5,
+                    'keepset6' => request('keepset'),
+                    ]);
+                }
+            }
+
             Opencloselot::create([
             'member_id' => $membercreate->id,
             'govlot' => 1,
