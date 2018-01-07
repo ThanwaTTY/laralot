@@ -329,11 +329,14 @@ class MemberController extends Controller
                     'keepset' => request('keepset'),
                     'keepset1' => $memberkeep->keepset1,
                     'keepset2' => $memberkeep->keepset2,
+                    'keepset3' => $memberkeep->keepset3,
+                    'keepset4' => $memberkeep->keepset4,
                     'keepset5' => $keepsetting5,
                     'keepset6' => request('keepset'),
                     ]);
                 }
             }
+           
 
             Opencloselot::create([
             'member_id' => $membercreate->id,
