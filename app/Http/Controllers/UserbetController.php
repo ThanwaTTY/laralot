@@ -86,96 +86,32 @@ class UserbetController extends Controller
                                 $com_7 = $member->ratepaygov->comg_4;
                                 $master = Member::find($useradd);
                                 if($master){
-                                    if($master->level == 6){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_6 = $request->top[$key]*($keep->keepset/100);
-                                        $keep_6 = $keep->keepset;
-                                        $com_6 = $ratepaygov->comg_4;  
-                                        $master = Member::find($master->useradd); 
-                                    }else{
-                                        $amount_6 = 0;
-                                        $keep_6 = 0;
-                                        $com_6 = 0;
-                                        $master = $master; 
-                                    }
                                     
-                                    if($master){
-                                    if($master->level == 5){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_5 = $request->top[$key]*($keep->keepset/100);
-                                        $keep_5 = $keep->keepset;
-                                        $com_5 = $ratepaygov->comg_4; 
-                                        $master = Member::find($master->useradd); 
-                                    
-                                    }else{
-                                        $amount_5 = 0;
-                                        $keep_5 = 0;
-                                        $com_5 = 0;
-                                        $master = $master; 
-                                    }
-                                    }
-                                    if($master){
-                                        if($master->level == 4){
                                             $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                             $keep = Keep::where('member_id', $master->id)->first();
-                                            $amount_4 = $request->top[$key]*($keep->keepset/100);
-                                            $keep_4 = $keep->keepset;
+                                            $amount_6 = $request->top[$key]*($keep->keepset6/100);
+                                            $keep_6 = $keep->keepset6;
+                                            $com_6 = $ratepaygov->comg_4;  
+                                            
+                                            $amount_5 = $request->top[$key]*($keep->keepset5/100);
+                                            $keep_5 = $keep->keepset5;
+                                            $com_5 = $ratepaygov->comg_4; 
+                                           
+                                            $amount_4 = $request->top[$key]*($keep->keepset4/100);
+                                            $keep_4 = $keep->keepset4;
                                             $com_4 = $ratepaygov->comg_4; 
-                                            $master = Member::find($master->useradd);   
-                                        }else{
-                                            $amount_4 = 0;
-                                            $keep_4 = 0;
-                                            $com_4 = 0;
-                                            $master = $master ; 
-                                        }
-                                    }
-                                    if($master){
-                                        if($master->level == 3){
-                                            $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                            $keep = Keep::where('member_id', $master->id)->first();
-                                            $amount_3 = $request->top[$key]*($keep->keepset/100);
-                                            $keep_3 = $keep->keepset;
+                                           
+                                            $amount_3 = $request->top[$key]*($keep->keepset3/100);
+                                            $keep_3 = $keep->keepset3;
                                             $com_3 = $ratepaygov->comg_4; 
-                                            $master = Member::find($master->useradd);   
-                                        }else{
-                                            $amount_3 = 0;
-                                            $keep_3 = 0;
-                                            $com_3 = 0;
-                                            $master = $master ; 
-                                        }
-                                    }
-                                    if($master){
-                                        if($master->level == 2){
-                                            $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                            $keep = Keep::where('member_id', $master->id)->first();
-                                            $amount_2 = $request->top[$key]*($keep->keepset/100);
-                                            $keep_2 = $keep->keepset;
+                                           
+                                            $amount_2 = $request->top[$key]*($keep->keepset2/100);
+                                            $keep_2 = $keep->keepset2;
                                             $com_2 = $ratepaygov->comg_4; 
-                                            $master = Member::find($master->useradd);   
-                                        }else{
-                                            $amount_2 = 0;
-                                            $keep_2 = 0;
-                                            $com_2 = 0;
-                                            $master = $master ; 
-                                        }
-                                    }
-                                    if($master){
-                                        if($master->level == 1){
-                                            $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                            $keep = Keep::where('member_id', $master->id)->first();
-                                            $amount_1 = $request->top[$key]*($keep->keepset/100);
-                                            $keep_1 = $keep->keepset;
+                                          
+                                            $amount_1 = $request->top[$key]*($keep->keepset1/100);
+                                            $keep_1 = $keep->keepset1;
                                             $com_1 = $ratepaygov->comg_4; 
-                                            $master = Member::find($master->useradd);   
-                                        }else{
-                                            $amount_1 = 0;
-                                            $keep_1 = 0;
-                                            $com_1 = 0;
-                                            $master = $master ; 
-                                        }
-                                    }
                                 }     
                             }
                             elseif($type==1){
@@ -183,96 +119,31 @@ class UserbetController extends Controller
                                 $com_7 = $member->ratepaygov->comg_7;
                                 $master = Member::find($useradd);
                                 if($master){
-                                    if($master->level == 6){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_6 = $request->top[$key]*($keep->keepset/100);
-                                        $keep_6 = $keep->keepset;
-                                        $com_6 = $ratepaygov->comg_7;  
-                                        $master = Member::find($master->useradd); 
-                                    }else{
-                                        $amount_6 = 0;
-                                        $keep_6 = 0;
-                                        $com_6 = 0;
-                                        $master = $master; 
-                                    }
-                                    
-                                    if($master){
-                                    if($master->level == 5){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_5 = $request->top[$key]*($keep->keepset/100);
-                                        $keep_5 = $keep->keepset;
-                                        $com_5 = $ratepaygov->comg_7; 
-                                        $master = Member::find($master->useradd); 
-                                    
-                                    }else{
-                                        $amount_5 = 0;
-                                        $keep_5 = 0;
-                                        $com_5 = 0;
-                                        $master = $master; 
-                                    }
-                                    }
-                                    if($master){
-                                        if($master->level == 4){
                                             $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                             $keep = Keep::where('member_id', $master->id)->first();
-                                            $amount_4 = $request->top[$key]*($keep->keepset/100);
-                                            $keep_4 = $keep->keepset;
+                                            $amount_6 = $request->top[$key]*($keep->keepset6/100);
+                                            $keep_6 = $keep->keepset6;
+                                            $com_6 = $ratepaygov->comg_7;  
+                                            
+                                            $amount_5 = $request->top[$key]*($keep->keepset5/100);
+                                            $keep_5 = $keep->keepset5;
+                                            $com_5 = $ratepaygov->comg_7; 
+                                            
+                                            $amount_4 = $request->top[$key]*($keep->keepset4/100);
+                                            $keep_4 = $keep->keepset4;
                                             $com_4 = $ratepaygov->comg_7; 
-                                            $master = Member::find($master->useradd);   
-                                        }else{
-                                            $amount_4 = 0;
-                                            $keep_4 = 0;
-                                            $com_4 = 0;
-                                            $master = $master ; 
-                                        }
-                                    }
-                                    if($master){
-                                        if($master->level == 3){
-                                            $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                            $keep = Keep::where('member_id', $master->id)->first();
-                                            $amount_3 = $request->top[$key]*($keep->keepset/100);
-                                            $keep_3 = $keep->keepset;
+                                            
+                                            $amount_3 = $request->top[$key]*($keep->keepset3/100);
+                                            $keep_3 = $keep->keepset3;
                                             $com_3 = $ratepaygov->comg_7; 
-                                            $master = Member::find($master->useradd);   
-                                        }else{
-                                            $amount_3 = 0;
-                                            $keep_3 = 0;
-                                            $com_3 = 0;
-                                            $master = $master ; 
-                                        }
-                                    }
-                                    if($master){
-                                        if($master->level == 2){
-                                            $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                            $keep = Keep::where('member_id', $master->id)->first();
-                                            $amount_2 = $request->top[$key]*($keep->keepset/100);
-                                            $keep_2 = $keep->keepset;
+                                            
+                                            $amount_2 = $request->top[$key]*($keep->keepset2/100);
+                                            $keep_2 = $keep->keepset2;
                                             $com_2 = $ratepaygov->comg_7; 
-                                            $master = Member::find($master->useradd);   
-                                        }else{
-                                            $amount_2 = 0;
-                                            $keep_2 = 0;
-                                            $com_2 = 0;
-                                            $master = $master ; 
-                                        }
-                                    }
-                                    if($master){
-                                        if($master->level == 1){
-                                            $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                            $keep = Keep::where('member_id', $master->id)->first();
-                                            $amount_1 = $request->top[$key]*($keep->keepset/100);
-                                            $keep_1 = $keep->keepset;
+                                            
+                                            $amount_1 = $request->top[$key]*($keep->keepset1/100);
+                                            $keep_1 = $keep->keepset1;
                                             $com_1 = $ratepaygov->comg_7; 
-                                            $master = Member::find($master->useradd);   
-                                        }else{
-                                            $amount_1 = 0;
-                                            $keep_1 = 0;
-                                            $com_1 = 0;
-                                            $master = $master ; 
-                                        }
-                                    }
                                 }    
                             }
                        
@@ -317,96 +188,31 @@ class UserbetController extends Controller
                             $com_7 = $member->ratepaygov->comg_2;
                             $master = Member::find($useradd);
                             if($master){
-                                    if($master->level == 6){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_6 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_6 = $keep->keepset;
-                                        $com_6 = $ratepaygov->comg_2;  
-                                        $master = Member::find($master->useradd); 
-                                    }else{
-                                        $amount_6 = 0;
-                                        $keep_6 = 0;
-                                        $com_6 = 0;
-                                        $master = $master; 
-                                    }
-                                
-                                if($master){
-                                if($master->level == 5){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->bottom[$key]*($keep->keepset/100);
-                                    $keep_5 = $keep->keepset;
+                                    $amount_6 = $request->bottom[$key]*($keep->keepset6/100);
+                                    $keep_6 = $keep->keepset6;
+                                    $com_6 = $ratepaygov->comg_2;  
+                                    
+                                    $amount_5 = $request->bottom[$key]*($keep->keepset5/100);
+                                    $keep_5 = $keep->keepset5;
                                     $com_5 = $ratepaygov->comg_2; 
-                                    $master = Member::find($master->useradd); 
-                                
-                                }else{
-                                    $amount_5 = 0;
-                                    $keep_5 = 0;
-                                    $com_5 = 0;
-                                    $master = $master; 
-                                }
-                                }
-                                if($master){
-                                    if($master->level == 4){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_4 = $keep->keepset;
-                                        $com_4 = $ratepaygov->comg_2; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_4 = 0;
-                                        $keep_4 = 0;
-                                        $com_4 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 3){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_3 = $keep->keepset;
-                                        $com_3 = $ratepaygov->comg_2; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_3 = 0;
-                                        $keep_3 = 0;
-                                        $com_3 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 2){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_2 = $keep->keepset;
-                                        $com_2 = $ratepaygov->comg_2; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_2 = 0;
-                                        $keep_2 = 0;
-                                        $com_2 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 1){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_1 = $keep->keepset;
-                                        $com_1 = $ratepaygov->comg_2; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_1 = 0;
-                                        $keep_1 = 0;
-                                        $com_1 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
+                                    
+                                    $amount_4 = $request->bottom[$key]*($keep->keepset4/100);
+                                    $keep_4 = $keep->keepset4;
+                                    $com_4 = $ratepaygov->comg_2; 
+                                    
+                                    $amount_3 = $request->bottom[$key]*($keep->keepset3/100);
+                                    $keep_3 = $keep->keepset3;
+                                    $com_3 = $ratepaygov->comg_2; 
+                                    
+                                    $amount_2 = $request->bottom[$key]*($keep->keepset2/100);
+                                    $keep_2 = $keep->keepset2;
+                                    $com_2 = $ratepaygov->comg_2; 
+                                    
+                                    $amount_1 = $request->bottom[$key]*($keep->keepset1/100);
+                                    $keep_1 = $keep->keepset1;
+                                    $com_1 = $ratepaygov->comg_2; 
                             }  
                             //    dd($request->master[$key]);
                         }
@@ -415,96 +221,31 @@ class UserbetController extends Controller
                             $com_7 = $member->ratepaygov->comg_5;
                             $master = Member::find($useradd);
                             if($master){
-                                if($master->level == 6){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_6 = $request->bottom[$key]*($keep->keepset/100);
-                                    $keep_6 = $keep->keepset;
+                                    $amount_6 = $request->bottom[$key]*($keep->keepset6/100);
+                                    $keep_6 = $keep->keepset6;
                                     $com_6 = $ratepaygov->comg_5;  
-                                    $master = Member::find($master->useradd); 
-                                }else{
-                                    $amount_6 = 0;
-                                    $keep_6 = 0;
-                                    $com_6 = 0;
-                                    $master = $master; 
-                                }
-                                
-                                if($master){
-                                if($master->level == 5){
-                                    $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                    $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->bottom[$key]*($keep->keepset/100);
-                                    $keep_5 = $keep->keepset;
+                                    
+                                    $amount_5 = $request->bottom[$key]*($keep->keepset5/100);
+                                    $keep_5 = $keep->keepset5;
                                     $com_5 = $ratepaygov->comg_5; 
-                                    $master = Member::find($master->useradd); 
-                                
-                                }else{
-                                    $amount_5 = 0;
-                                    $keep_5 = 0;
-                                    $com_5 = 0;
-                                    $master = $master; 
-                                }
-                                }
-                                if($master){
-                                    if($master->level == 4){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_4 = $keep->keepset;
-                                        $com_4 = $ratepaygov->comg_5; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_4 = 0;
-                                        $keep_4 = 0;
-                                        $com_4 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 3){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_3 = $keep->keepset;
-                                        $com_3 = $ratepaygov->comg_5; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_3 = 0;
-                                        $keep_3 = 0;
-                                        $com_3 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 2){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_2 = $keep->keepset;
-                                        $com_2 = $ratepaygov->comg_5; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_2 = 0;
-                                        $keep_2 = 0;
-                                        $com_2 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 1){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_1 = $keep->keepset;
-                                        $com_1 = $ratepaygov->comg_5; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_1 = 0;
-                                        $keep_1 = 0;
-                                        $com_1 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
+                                    
+                                    $amount_4 = $request->bottom[$key]*($keep->keepset4/100);
+                                    $keep_4 = $keep->keepset4;
+                                    $com_4 = $ratepaygov->comg_5; 
+                                    
+                                    $amount_3 = $request->bottom[$key]*($keep->keepset3/100);
+                                    $keep_3 = $keep->keepset3;
+                                    $com_3 = $ratepaygov->comg_5; 
+                                    
+                                    $amount_2 = $request->bottom[$key]*($keep->keepset2/100);
+                                    $keep_2 = $keep->keepset2;
+                                    $com_2 = $ratepaygov->comg_5; 
+                                    
+                                    $amount_1 = $request->bottom[$key]*($keep->keepset1/100);
+                                    $keep_1 = $keep->keepset1;
+                                    $com_1 = $ratepaygov->comg_5; 
                             }     
                         }
                         elseif($type==1){
@@ -512,96 +253,31 @@ class UserbetController extends Controller
                             $com_7 = $member->ratepaygov->comg_8;
                             $master = Member::find($useradd);
                             if($master){
-                                if($master->level == 6){
                                     $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                     $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_6 = $request->bottom[$key]*($keep->keepset/100);
-                                    $keep_6 = $keep->keepset;
+                                    $amount_6 = $request->bottom[$key]*($keep->keepset6/100);
+                                    $keep_6 = $keep->keepset6;
                                     $com_6 = $ratepaygov->comg_8;  
-                                    $master = Member::find($master->useradd); 
-                                }else{
-                                    $amount_6 = 0;
-                                    $keep_6 = 0;
-                                    $com_6 = 0;
-                                    $master = $master; 
-                                }
-                                
-                                if($master){
-                                if($master->level == 5){
-                                    $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                    $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->bottom[$key]*($keep->keepset/100);
-                                    $keep_5 = $keep->keepset;
+                                    
+                                    $amount_5 = $request->bottom[$key]*($keep->keepset5/100);
+                                    $keep_5 = $keep->keepset5;
                                     $com_5 = $ratepaygov->comg_8; 
-                                    $master = Member::find($master->useradd); 
-                                
-                                }else{
-                                    $amount_5 = 0;
-                                    $keep_5 = 0;
-                                    $com_5 = 0;
-                                    $master = $master; 
-                                }
-                                }
-                                if($master){
-                                    if($master->level == 4){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_4 = $keep->keepset;
-                                        $com_4 = $ratepaygov->comg_8; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_4 = 0;
-                                        $keep_4 = 0;
-                                        $com_4 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 3){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_3 = $keep->keepset;
-                                        $com_3 = $ratepaygov->comg_8; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_3 = 0;
-                                        $keep_3 = 0;
-                                        $com_3 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 2){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_2 = $keep->keepset;
-                                        $com_2 = $ratepaygov->comg_8; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_2 = 0;
-                                        $keep_2 = 0;
-                                        $com_2 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 1){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->bottom[$key]*($keep->keepset/100);
-                                        $keep_1 = $keep->keepset;
-                                        $com_1 = $ratepaygov->comg_8; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_1 = 0;
-                                        $keep_1 = 0;
-                                        $com_1 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
+                                    
+                                    $amount_4 = $request->bottom[$key]*($keep->keepset4/100);
+                                    $keep_4 = $keep->keepset4;
+                                    $com_4 = $ratepaygov->comg_8; 
+                                    
+                                    $amount_3 = $request->bottom[$key]*($keep->keepset3/100);
+                                    $keep_3 = $keep->keepset3;
+                                    $com_3 = $ratepaygov->comg_8; 
+                                    
+                                    $amount_2 = $request->bottom[$key]*($keep->keepset2/100);
+                                    $keep_2 = $keep->keepset2;
+                                    $com_2 = $ratepaygov->comg_8; 
+                                    
+                                    $amount_1 = $request->bottom[$key]*($keep->keepset1/100);
+                                    $keep_1 = $keep->keepset1;
+                                    $com_1 = $ratepaygov->comg_8; 
                             }    
                         }
                    
@@ -646,96 +322,31 @@ class UserbetController extends Controller
                             $com_7 = $member->ratepaygov->comg_3;
                             $master = Member::find($useradd);
                             if($master){
-                                    if($master->level == 6){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_6 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_6 = $keep->keepset;
-                                        $com_6 = $ratepaygov->comg_3;  
-                                        $master = Member::find($master->useradd); 
-                                    }else{
-                                        $amount_6 = 0;
-                                        $keep_6 = 0;
-                                        $com_6 = 0;
-                                        $master = $master; 
-                                    }
+                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
+                                $keep = Keep::where('member_id', $master->id)->first();
+                                $amount_6 = $request->tod[$key]*($keep->keepset6/100);
+                                $keep_6 = $keep->keepset6;
+                                $com_6 = $ratepaygov->comg_3;  
                                 
-                                if($master){
-                                if($master->level == 5){
-                                    $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                    $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->tod[$key]*($keep->keepset/100);
-                                    $keep_5 = $keep->keepset;
-                                    $com_5 = $ratepaygov->comg_3; 
-                                    $master = Member::find($master->useradd); 
+                                $amount_5 = $request->tod[$key]*($keep->keepset5/100);
+                                $keep_5 = $keep->keepset5;
+                                $com_5 = $ratepaygov->comg_3; 
                                 
-                                }else{
-                                    $amount_5 = 0;
-                                    $keep_5 = 0;
-                                    $com_5 = 0;
-                                    $master = $master; 
-                                }
-                                }
-                                if($master){
-                                    if($master->level == 4){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_4 = $keep->keepset;
-                                        $com_4 = $ratepaygov->comg_3; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_4 = 0;
-                                        $keep_4 = 0;
-                                        $com_4 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 3){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_3 = $keep->keepset;
-                                        $com_3 = $ratepaygov->comg_3; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_3 = 0;
-                                        $keep_3 = 0;
-                                        $com_3 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 2){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_2 = $keep->keepset;
-                                        $com_2 = $ratepaygov->comg_3; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_2 = 0;
-                                        $keep_2 = 0;
-                                        $com_2 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 1){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_1 = $keep->keepset;
-                                        $com_1 = $ratepaygov->comg_3; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_1 = 0;
-                                        $keep_1 = 0;
-                                        $com_1 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
+                                $amount_4 = $request->tod[$key]*($keep->keepset4/100);
+                                $keep_4 = $keep->keepset4;
+                                $com_4 = $ratepaygov->comg_3; 
+                                
+                                $amount_3 = $request->tod[$key]*($keep->keepset3/100);
+                                $keep_3 = $keep->keepset3;
+                                $com_3 = $ratepaygov->comg_3; 
+                                
+                                $amount_2 = $request->tod[$key]*($keep->keepset2/100);
+                                $keep_2 = $keep->keepset2;
+                                $com_2 = $ratepaygov->comg_3; 
+                                
+                                $amount_1 = $request->tod[$key]*($keep->keepset1/100);
+                                $keep_1 = $keep->keepset1;
+                                $com_1 = $ratepaygov->comg_3; 
                             }  
                             //    dd($request->master[$key]);
                         }
@@ -744,96 +355,31 @@ class UserbetController extends Controller
                             $com_7 = $member->ratepaygov->comg_6;
                             $master = Member::find($useradd);
                             if($master){
-                                if($master->level == 6){
-                                    $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                    $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_6 = $request->tod[$key]*($keep->keepset/100);
-                                    $keep_6 = $keep->keepset;
-                                    $com_6 = $ratepaygov->comg_6;  
-                                    $master = Member::find($master->useradd); 
-                                }else{
-                                    $amount_6 = 0;
-                                    $keep_6 = 0;
-                                    $com_6 = 0;
-                                    $master = $master; 
-                                }
+                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
+                                $keep = Keep::where('member_id', $master->id)->first();
+                                $amount_6 = $request->tod[$key]*($keep->keepset6/100);
+                                $keep_6 = $keep->keepset6;
+                                $com_6 = $ratepaygov->comg_6;  
                                 
-                                if($master){
-                                if($master->level == 5){
-                                    $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                    $keep = Keep::where('member_id', $master->id)->first();
-                                    $amount_5 = $request->tod[$key]*($keep->keepset/100);
-                                    $keep_5 = $keep->keepset;
-                                    $com_5 = $ratepaygov->comg_6; 
-                                    $master = Member::find($master->useradd); 
+                                $amount_5 = $request->tod[$key]*($keep->keepset5/100);
+                                $keep_5 = $keep->keepset5;
+                                $com_5 = $ratepaygov->comg_6; 
                                 
-                                }else{
-                                    $amount_5 = 0;
-                                    $keep_5 = 0;
-                                    $com_5 = 0;
-                                    $master = $master; 
-                                }
-                                }
-                                if($master){
-                                    if($master->level == 4){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_4 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_4 = $keep->keepset;
-                                        $com_4 = $ratepaygov->comg_6; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_4 = 0;
-                                        $keep_4 = 0;
-                                        $com_4 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 3){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_3 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_3 = $keep->keepset;
-                                        $com_3 = $ratepaygov->comg_6; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_3 = 0;
-                                        $keep_3 = 0;
-                                        $com_3 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 2){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_2 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_2 = $keep->keepset;
-                                        $com_2 = $ratepaygov->comg_6; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_2 = 0;
-                                        $keep_2 = 0;
-                                        $com_2 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
-                                if($master){
-                                    if($master->level == 1){
-                                        $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
-                                        $keep = Keep::where('member_id', $master->id)->first();
-                                        $amount_1 = $request->tod[$key]*($keep->keepset/100);
-                                        $keep_1 = $keep->keepset;
-                                        $com_1 = $ratepaygov->comg_6; 
-                                        $master = Member::find($master->useradd);   
-                                    }else{
-                                        $amount_1 = 0;
-                                        $keep_1 = 0;
-                                        $com_1 = 0;
-                                        $master = $master ; 
-                                    }
-                                }
+                                $amount_4 = $request->tod[$key]*($keep->keepset4/100);
+                                $keep_4 = $keep->keepset4;
+                                $com_4 = $ratepaygov->comg_6; 
+                                
+                                $amount_3 = $request->tod[$key]*($keep->keepset3/100);
+                                $keep_3 = $keep->keepset3;
+                                $com_3 = $ratepaygov->comg_6; 
+                                
+                                $amount_2 = $request->tod[$key]*($keep->keepset2/100);
+                                $keep_2 = $keep->keepset2;
+                                $com_2 = $ratepaygov->comg_6; 
+                                
+                                $amount_1 = $request->tod[$key]*($keep->keepset1/100);
+                                $keep_1 = $keep->keepset1;
+                                $com_1 = $ratepaygov->comg_6; 
                             }     
                         }
                
