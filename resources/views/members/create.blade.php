@@ -298,7 +298,7 @@
 								<label for="take" class="control-label col-xs-1">เก็บของ:</label>
 								<div class="col-xs-2">
 									<select class="form-control" id="take" name="keepset">
-                              @for($i = 90; $i >= 0; $i -= 0.5)
+                              @for($i = auth()->user()->keep->keepset; $i >= 0; $i -= 0.5)
                                   <option  value="{{ number_format($i, 1, '.', ',') }}">{{ number_format($i, 1, '.', ',') }}%</option>
                               @endfor
                                 {{-- <option value="90.0" selected="selected">90.0%</option>

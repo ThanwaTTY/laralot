@@ -58,6 +58,16 @@ class BetController extends Controller
         $taketod2 = 0;
         $taketop1 = 0;
         $takebottom1 = 0;
+        ////////////////////////////////////////////////////////////////////////////
+        $paytop3 = 0;
+        $paybottom3 = 0;
+        $paytod3 = 0;
+        $paytop2 = 0;
+        $paybottom2 = 0;
+        $paytod2 = 0;
+        $paytop1 = 0;
+        $paybottom1 = 0;
+
         $levellogin = Member::where('id',$loginId)->first();
        
         
@@ -65,10 +75,10 @@ class BetController extends Controller
         foreach ($tickets as $key => $ticket) {
             
             $usebets[$key] = Userbet::where('ticket_id',$ticket->id)->get();
-
+            // return response()->json(['usebet'=>$usebet->pay]);
             foreach ($usebets[$key] as $key => $usebet) {
                 $useradddetails = explode(" ", $usebet->useradddetail);
-                //return response()->json(['useradddetail'=>$useradddetail]);
+                
                 foreach ($useradddetails as $key => $useradddetail) {
                     if($useradddetail==$loginId){
                         if($levellogin->level == 6){
@@ -76,6 +86,7 @@ class BetController extends Controller
                                 $buytop3 += $usebet->amount_6;
                                 $comtop3 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);     
                                 $taketop3 =  $buytop3-$comtop3;
+                                $paytop3 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
                             }if($usebet->type=="top2"){
                                 $buytop2 += $usebet->amount_6;
                                 $comtop2 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);
@@ -296,6 +307,7 @@ class BetController extends Controller
             'buytod2' => number_format($buytod2,2),
             'buytop1'=>number_format($buytop1,2),
             'buybottom1'=>number_format($buybottom1,2),
+            ///////////////////////////////////////////////////////
             'comtop3' => number_format($comtop3,2),
             'combottom3' =>number_format($combottom3,2),
             'comtod3' =>number_format($comtod3,2),
@@ -304,6 +316,7 @@ class BetController extends Controller
             'comtod2' =>number_format($comtod2,2),
             'comtop1' =>number_format($comtop1,2),
             'combottom1' =>number_format($combottom1,2),
+            ///////////////////////////////////////////////////////
             'taketop3' =>number_format($taketop3,2),
             'takebottom3' =>number_format($takebottom3,2),
             'taketod3' =>number_format($taketod3,2),
@@ -312,6 +325,8 @@ class BetController extends Controller
             'taketod2' =>number_format($taketod2,2),
             'taketop1' =>number_format($taketop1,2),
             'takebottom1' =>number_format($takebottom1,2),
+            //////////////////////////////////////////////////////
+            'paytop3' =>number_format($paytop3,2),
             
             
         ]);

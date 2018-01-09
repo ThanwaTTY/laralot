@@ -175,14 +175,14 @@
                   <span class="pull-left">จ่าย</span>
                   <span class="pull-right n2c sum-pay-1">0.00</span>
                 </td>
-                                  <td class="align-center bg-yellow n2c pay-1">0.00</td>
-                                  <td class="align-center bg-yellow n2c pay-2">0.00</td>
-                                  <td class="align-center bg-yellow n2c pay-3">0.00</td>
-                                  <td class="align-center bg-yellow n2c pay-4">0.00</td>
-                                  <td class="align-center bg-yellow n2c pay-5">0.00</td>
-                                  <td class="align-center bg-yellow n2c pay-6">0.00</td>
-                                  <td class="align-center bg-yellow n2c pay-7">0.00</td>
-                                  <td class="align-center bg-yellow n2c pay-8">0.00</td>
+                                  <td class="align-center bg-yellow n2c pay-1"><span class="positive" id="pay_1"></span></td>
+                                  <td class="align-center bg-yellow n2c pay-2"><span class="positive" id="pay_2"></span></td>
+                                  <td class="align-center bg-yellow n2c pay-3"><span class="positive" id="pay_3"></span></td>
+                                  <td class="align-center bg-yellow n2c pay-4"><span class="positive" id="pay_4"></span></td>
+                                  <td class="align-center bg-yellow n2c pay-5"><span class="positive" id="pay_5"></span></td>
+                                  <td class="align-center bg-yellow n2c pay-6"><span class="positive" id="pay_6"></span></td>
+                                  <td class="align-center bg-yellow n2c pay-7"><span class="positive" id="pay_7"></span></td>
+                                  <td class="align-center bg-yellow n2c pay-8"><span class="positive" id="pay_8"></span></td>
                               </tr>
                       </tbody>
 
@@ -327,6 +327,7 @@
           $("#buy_6").html(response.buytod2);
           $("#buy_7").html(response.buytop1);
           $("#buy_8").html(response.buybottom1);
+          //////////////////////////////////////////////
           $("#com_1").html(response.comtop3);
           $("#com_2").html(response.combottom3);
           $("#com_3").html(response.comtod3);
@@ -335,6 +336,7 @@
           $("#com_6").html(response.comtod2);
           $("#com_7").html(response.comtop1);
           $("#com_8").html(response.combottom1);
+          //////////////////////////////////////////////
           $("#take_1").html(response.taketop3);
           $("#take_2").html(response.takebottom3);
           $("#take_3").html(response.taketod3);
@@ -344,6 +346,7 @@
           $("#take_7").html(response.taketop1);
           $("#take_8").html(response.takebottom1);
           //////////////////////////////////////////////
+          $("#pay_1").html(response.paytop3);
 
         }
 
