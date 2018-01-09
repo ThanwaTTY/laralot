@@ -21,7 +21,7 @@ class BetController extends Controller
         $id = request('id');
         //return $id;
         // dd($id);
-        echo "<li>".$id."</li>";
+        // echo "<li>".$id."</li>";
         return view('listlottery.listlotpoint.index');
     }
 
@@ -67,7 +67,11 @@ class BetController extends Controller
         $paytod2 = 0;
         $paytop1 = 0;
         $paybottom1 = 0;
-
+        ////////////////////////////////////////////////////////////////////////////
+        $sumbuy = 0;
+        $sumcom =0;
+        $sumtake =0;
+        $sumpay =0;
         $levellogin = Member::where('id',$loginId)->first();
        
         
@@ -332,8 +336,17 @@ class BetController extends Controller
                                 $comtod3 += number_format(($usebet->amount_1*($usebet->com_1/100)),2);
                                 $taketod3 =  $buytod3-$comtod3;
                                 $paytod3 += ($usebet->amount_1*$usebet->pay)-($usebet->amount_1-($usebet->amount_1*($usebet->com_1/100)));
-                            }  
-                        }    
+                            } 
+                            
+                            
+                            
+                        } 
+                        
+                        $sumbuy = $buytop3+$buybottom3+$buytod3+$buytop2+$buybottom2+$buytod2+$buytop1+$buybottom1;
+                        $sumcom = $comtop3+$combottom3+$comtod3+$comtop2+$combottom2+$comtod2+$comtop1+$combottom1;
+                        $sumtake = $taketop3+$takebottom3+$taketod3+$taketop2+$takebottom2+$taketod2+$taketop1+$takebottom1;
+                        $sumpay = $paytop3+$paybottom3+$paytod3+$paytop2+$paybottom2+$paytod2+$paytop1+$paybottom1;
+                          
                     }
                 }
 
@@ -381,6 +394,11 @@ class BetController extends Controller
             'paytod2' =>number_format($paytod2,2),
             'paytop1' =>number_format($paytop1,2),
             'paybottom1' =>number_format($paybottom1,2),
+            //////////////////////////////////////////////////////
+            'sumbuy' =>number_format($sumbuy,2),
+            'sumcom' =>number_format($sumcom,2),
+            'sumtake' =>number_format($sumtake,2),
+            'sumpay' =>number_format($sumpay,2),
             
             
         ]);

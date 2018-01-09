@@ -131,7 +131,7 @@
                           <tr class="odd">
                 <td class="bolder">
                   <span class="pull-left">ซื้อ</span>
-                  <span class="pull-right n2c sum-buy-1"><span class="positive"></span></span>
+                  <span class="pull-right n2c sum-buy-1"><span class="positive" id="sumbuy"></span></span>
                 </td>
                           <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_1"></span></td>
                           <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_2"></span></td>
@@ -145,7 +145,7 @@
                 <tr class="even">
                 <td class="bolder">
                   <span class="pull-left">คอม</span>
-                  <span class="pull-right n2c sum-com-1"><span class="negative">-</span></span>
+                  <span class="pull-right n2c sum-com-1"><span class="negative" id="sumcom"></span></span>
                 </td>
                       <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_1">-</span></td>
                       <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_2">-</span></td>
@@ -159,7 +159,7 @@
                           <tr class="odd">
                 <td class="bolder">
                   <span class="pull-left">รับ</span>
-                  <span class="pull-right n2c sum-take-1"><span class="positive"><span class="positive"></span></span>
+                  <span class="pull-right n2c sum-take-1"><span class="positive"><span class="positive" id="sumtake"></span></span>
                 </td>
                                   <td class="align-center bg-yellow n2c take-1"><span class="positive" id="take_1"></span></td>
                                   <td class="align-center bg-yellow n2c take-2"><span class="positive" id="take_2"></span></td>
@@ -173,7 +173,7 @@
                           <tr class="even">
                 <td class="bolder">
                   <span class="pull-left">จ่าย</span>
-                  <span class="pull-right n2c sum-pay-1">0.00</span>
+                  <span class="pull-right n2c sum-pay-1"><span class="positive" id="sumpay"></span></span>
                 </td>
                                   <td class="align-center bg-yellow n2c pay-1"><span class="positive" id="pay_1"></span></td>
                                   <td class="align-center bg-yellow n2c pay-2"><span class="positive" id="pay_2"></span></td>
@@ -354,7 +354,11 @@
           $("#pay_6").html(response.paytod2);
           $("#pay_7").html(response.paytop1);
           $("#pay_8").html(response.paybottom1);
-
+          /////////////////////////////////////////////
+          $("#sumbuy").html(response.sumbuy);
+          $("#sumcom").html(response.sumcom);
+          $("#sumtake").html(response.sumtake);
+          $("#sumpay").html(response.sumpay);
         }
 
        
