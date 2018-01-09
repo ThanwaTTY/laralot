@@ -88,44 +88,44 @@ class BetController extends Controller
                         if($levellogin->level == 6){
                             if($usebet->type=="top3"){
                                 $buytop3 += $usebet->amount_6;
-                                $comtop3 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);     
+                                $comtop3 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);     
                                 $taketop3 =  $buytop3-$comtop3;
-                                $paytop3 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
+                                $paytop3 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }if($usebet->type=="top2"){
                                 $buytop2 += $usebet->amount_6;
-                                $comtop2 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);
+                                $comtop2 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);
                                 $taketop2 =  $buytop2-$comtop2;
-                                $paytop2 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
+                                $paytop2 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }if($usebet->type=="top1"){
                                 $buytop1 += $usebet->amount_6;
-                                $comtop1 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);
+                                $comtop1 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);
                                 $taketop1 =  $buytop1-$comtop1;
-                                $paytop1 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
+                                $paytop1 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }if($usebet->type=="bottom3"){
                                 $buybottom3 += $usebet->amount_6;
-                                $combottom3 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);
+                                $combottom3 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);
                                 $takebottom3 =  $buybottom3-$combottom3;
-                                $paybottom3 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
+                                $paybottom3 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }if($usebet->type=="bottom2"){
                                 $buybottom2 += $usebet->amount_6;
-                                $combottom2 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);
+                                $combottom2 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);
                                 $takebottom2 =  $buybottom2-$combottom2;
-                                $paybottom2 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
+                                $paybottom2 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }if($usebet->type=="bottom1"){
                                 $buybottom1 += $usebet->amount_6;
-                                $combottom1 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);
+                                $combottom1 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);
                                 $takebottom1 =  $buybottom1-$combottom1;
-                                $paybottom1 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
+                                $paybottom1 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }if($usebet->type=="tod2"){
                                 $buytod2 += $usebet->amount_6;
-                                $comtod2 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);
+                                $comtod2 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);
                                 $taketod2 =  $buytod2-$comtod2;
-                                $paytod2 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
+                                $paytod2 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }if($usebet->type=="tod3"){
                                 $buytod3 += $usebet->amount_6;
-                                $comtod3 += number_format(($usebet->amount_6*($usebet->com_6/100)),2);
+                                $comtod3 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);
                                 $taketod3 =  $buytod3-$comtod3;
-                                $paytod3 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-($usebet->amount_6*($usebet->com_6/100)));
+                                $paytod3 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }  
                         }elseif($levellogin->level == 5){
                             if($usebet->type=="top3"){

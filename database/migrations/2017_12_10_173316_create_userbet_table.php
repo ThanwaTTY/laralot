@@ -26,27 +26,14 @@ class CreateUserbetTable extends Migration
             $table->integer('bet_num');
             $table->integer('cal_num')->default(0);
             $table->string('type');
-            $table->decimal('amount_1',16,2)->default('0');
-            $table->decimal('keep_1',16,2)->default('0');
-            $table->decimal('com_1',16,2)->default('0');
-            $table->decimal('amount_2',16,2)->default('0');
-            $table->decimal('keep_2',16,2)->default('0');
-            $table->decimal('com_2',16,2)->default('0');
-            $table->decimal('amount_3',16,2)->default('0');
-            $table->decimal('keep_3',16,2)->default('0');
-            $table->decimal('com_3',16,2)->default('0');
-            $table->decimal('amount_4',16,2)->default('0');
-            $table->decimal('keep_4',16,2)->default('0');
-            $table->decimal('com_4',16,2)->default('0');
-            $table->decimal('amount_5',16,2)->default('0');
-            $table->decimal('keep_5',16,2)->default('0');
-            $table->decimal('com_5',16,2)->default('0');
-            $table->decimal('amount_6',16,2)->default('0');
-            $table->decimal('keep_6',16,2)->default('0');
-            $table->decimal('com_6',16,2)->default('0');
-            $table->decimal('amount_7',16,2)->default('0');
-            $table->decimal('keep_7',16,2)->default('0');
-            $table->decimal('com_7',16,2)->default('0');
+            for($i=1;$i<=7;$i++)
+            {
+                $table->decimal('amount_' . $i,16,2)->default('0');
+                $table->decimal('keep_' . $i,16,2)->default('0');
+                $table->decimal('com_' . $i,16,2)->default('0');
+                $table->decimal('pay_' . $i,16,2)->default('0');
+            }
+
 
             $table->timestamps();
         });
