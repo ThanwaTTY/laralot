@@ -347,6 +347,13 @@
           $("#take_8").html(response.takebottom1);
           //////////////////////////////////////////////
           $("#pay_1").html(response.paytop3);
+          $("#pay_2").html(response.paybottom3);
+          $("#pay_3").html(response.paytod3);
+          $("#pay_4").html(response.paytop2);
+          $("#pay_5").html(response.paybottom2);
+          $("#pay_6").html(response.paytod2);
+          $("#pay_7").html(response.paytop1);
+          $("#pay_8").html(response.paybottom1);
 
         }
 
