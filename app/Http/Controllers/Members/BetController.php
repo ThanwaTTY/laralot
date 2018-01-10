@@ -88,7 +88,7 @@ class BetController extends Controller
                         if($levellogin->level == 6){
                             if($usebet->type=="top3"){
                                 $buytop3 += $usebet->amount_6;
-                                $comtop3 += number_format(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100,2);     
+                                $comtop3 += number_format(($usebet->amount_7*($usebet->com_7/100))-($usebet->amount_7-$usebet->amount_6)*$usebet->com_6/100,2);     
                                 $taketop3 =  $buytop3-$comtop3;
                                 $paytop3 += ($usebet->amount_6*$usebet->pay)-($usebet->amount_6-(($usebet->amount_7*($usebet->com_7/100))-$usebet->com_6/100));
                             }if($usebet->type=="top2"){
