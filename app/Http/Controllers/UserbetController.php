@@ -1045,7 +1045,7 @@ class UserbetController extends Controller
                             'amount_7' => $request->tod[$key],
                             'keep_7' => '0',
                             'com_7' => $com_7,
-                            'pay_1' =>  $paytod,
+                            'pay_7' =>  $paytod,
                         
                         ]); 
                     }
