@@ -127,13 +127,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
             //return view('welcome');
             // return 'welcome';
              });
-
-             Route::get('/', function () {
-                return view('index');
-            // return view('welcome');
-            // return 'welcome';
-             });
-
+             Route::get('/', 'Members\FormController@index');
              //รายการเเทง
              
 

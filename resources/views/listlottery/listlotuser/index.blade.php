@@ -575,7 +575,10 @@
 							+'</td><td class="align-right n2c"><span class="negative" id="out_1">'+response.usersum_s[i]
 							+'<span></span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.usercom_s[i]
 							+'</span></span></td><td class="align-right n2c"><span class="negative">-<span>'+response.usersumall[i]
-							+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
+							+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span>'+response.agsum_s[i]
+							+'</span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span>'+response.agcom_s[i]
+							+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span>'+response.agsumall[i]
+							+'</span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
 						}
 					}			
 				);	
