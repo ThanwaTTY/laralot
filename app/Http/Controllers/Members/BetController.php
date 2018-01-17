@@ -647,6 +647,19 @@ class BetController extends Controller
         $idlotto = request("id");
         $lotto = Lotto::find($idlotto);
         $tickets = Ticket::where('lotto_id',$idlotto)->get();
+        if($level == 6){
+            $levellog = 'Agent';
+        }elseif($level == 5){
+            $levellog = 'Master';
+        }elseif($level == 4){
+            $levellog = 'Senior';
+        }elseif($level == 3){
+            $levellog = 'Super Senior';
+        }elseif($level == 2){
+            $levellog = 'Pathner';
+        }elseif($level == 1){
+            $levellog = 'Admin';
+        }
 
         foreach ($tickets as $key => $ticket) {
             $usebets[$key] = Userbet::where('ticket_id', $ticket->id)
@@ -1055,6 +1068,7 @@ class BetController extends Controller
             'lotto'=>$lotto,
             'tickets'=>$tickets,
             'usebets'=>$usebets,
+            'levellog'=>$levellog,
             'member_name'=>$member_name,
             'usebet_s'=>$usebet_s,
             'usersum_s'=>$usersum_s,

@@ -95,7 +95,7 @@
 								<th rowspan="2" class="align-center width-90px">ระดับชั้น</th>
 								<th rowspan="2" class="align-center width-90px">ยอดทั้งหมด</th>
 								<th colspan="3" class="align-center">สมาชิก</th>
-								<th colspan="3" class="align-center">เอเย่นต์ [3M3K]</th>
+								<th colspan="3" class="align-center"><span id="agent"></span></th>
 								<th colspan="3" class="align-center">บริษัท</th>
 							</tr>
 
@@ -600,6 +600,7 @@
 		 
 		  //console.log(response.lotto.name);
 		  $('#navbar-game-title').html(response.lotto.name);
+		  $('#agent').html(response.levellog);
 		});
   
 		});
