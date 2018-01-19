@@ -1107,10 +1107,14 @@ class BetController extends Controller
                                 $usersum_s[$key] = number_format($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key],2);
                                 $usercom_s[$key] = number_format($comtop3[$key]+$combottom3[$key]+$comtod3[$key]+$comtop2[$key]+$combottom2[$key]+$comtod2[$key]+$comtop1[$key]+$combottom1[$key],2);
                                 $usersumall[$key] = number_format($usersum_s[$key]-$usercom_s[$key],2);
-                                ////////////////////////////////////////////////////////////////////////////////////////////
+                                ///////////////////////////AG///////////////////////////////////////////////////////////////
                                 $agsum_s[$key] = number_format($sumagtop3[$key]+$sumagbottom3[$key]+$sumagtod3[$key]+$sumagtop2[$key]+$sumagbottom2[$key]+$sumagtod2[$key]+$sumagtop1[$key]+$sumagbottom1[$key],2);
                                 $agcom_s[$key] = number_format($comagtop3[$key]+$comagbottom3[$key]+$comagtod3[$key]+$comagtop2[$key]+$comagbottom2[$key]+$comagtod2[$key]+$comagtop1[$key]+$comagbottom1[$key],2);
                                 $agsumall[$key] = number_format($agsum_s[$key]-$agcom_s[$key],2);
+                                //////////////////////////COMPANY////////////////////////////////////////////////////////////////
+                                $companysum_s[$key] = number_format($sumcompanytop3[$key]+$sumcompanybottom3[$key]+$sumcompanytod3[$key]+$sumcompanytop2[$key]+$sumcompanybottom2[$key]+$sumcompanytod2[$key]+$sumcompanytop1[$key]+$sumcompanybottom1[$key],2);
+                                $companycom_s[$key] = number_format($comcompanytop3[$key]+$comcompanybottom3[$key]+$comcompanytod3[$key]+$comcompanytop2[$key]+$comcompanybottom2[$key]+$comcompanytod2[$key]+$comcompanytop1[$key]+$comcompanybottom1[$key],2);
+                                $companysumall[$key] = number_format($companysum_s[$key]-$companycom_s[$key],2); 
 
                             // $usersum_s[$key] = 3;
                             // $usercom_s[$key] = 3;
