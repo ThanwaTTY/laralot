@@ -729,6 +729,30 @@ class BetController extends Controller
                             $agsum_s[$key] =0;
                             $agsumall[$key] =0;
 
+                            //////COMPANY///////////////////
+                            $sumcompanytop3[$key] =0;
+                            $sumcompanybottom3[$key] =0;
+                            $sumcompanytod3[$key] =0;
+                            $sumcompanytop2[$key] =0;
+                            $sumcompanybottom2[$key] =0;
+                            $sumcompanytod2[$key] =0;
+                            $sumcompanytop1[$key] =0;
+                            $sumcompanybottom1[$key] =0;
+                            
+                            //////////////////////////////////
+                            $comcompanytop3[$key] =0;
+                            $comcompanybottom3[$key] =0;
+                            $comcompanytod3[$key] =0;
+                            $comcompanytop2[$key] =0;
+                            $comcompanybottom2[$key] =0;
+                            $comcompanytod2[$key] =0;
+                            $comcompanytop1[$key] =0;
+                            $comcompanybottom1[$key] =0;
+                            /////////////////////////////////
+                            $companycom_s[$key] =0;
+                            $companysum_s[$key] =0;
+                            $companysumall[$key] =0;
+
                             $member_name[$key] = $member->username;
                             $userbets_[$key] = $usebet[0]->ticket_id;
                             //$userbets_[$key] = Userbet::where('id', $usebet[0]->id)->get();
@@ -761,7 +785,7 @@ class BetController extends Controller
                                                 $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
                                                 $combottom1[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
                                             }
-
+                                            /////////////////////AG/////////////////////////////////
                                             if($level == 6){
                                                 if($usebet_c->type=="top3"){
                                                     $sumagtop3[$key] += number_format($usebet_c->amount_6,2);
@@ -919,6 +943,165 @@ class BetController extends Controller
                                                     $comagbottom1[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
                                                 }
                                             }
+                                            /////////////////////COMPANY//////////////////////////////
+                                            if($level == 6){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comcompanytop3[$key] += number_format($usebet_c->amount_6*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comcompanybottom3[$key] += number_format($usebet_c->amount_6*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comcompanytod3[$key] += number_format($usebet_c->amount_6*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comcompanytop2[$key] += number_format($usebet_c->amount_6*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comcompanybottom2[$key] += number_format($usebet_c->amount_6*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comcompanytod2[$key] += number_format($usebet_c->amount_6*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comcompanytop1[$key] += number_format($usebet_c->amount_6*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comcompanybottom1[$key] += number_format($usebet_c->amount_6*($usebet_c->com_6/100),2);
+                                                }
+                                            }elseif($level == 5){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_5,2);
+                                                    $comcompanytop3[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_5,2);
+                                                    $comcompanybottom3[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_5,2);
+                                                    $comcompanytod3[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_5,2);
+                                                    $comcompanytop2[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_5,2);
+                                                    $comcompanybottom2[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_5,2);
+                                                    $comcompanytod2[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_5,2);
+                                                    $comcompanytop1[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_5,2);
+                                                    $comcompanybottom1[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }
+                                            }elseif($level == 4){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_4,2);
+                                                    $comcompanytop3[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                    $comcompanybottom3[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_4,2);
+                                                    $comcompanytod3[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_4,2);
+                                                    $comcompanytop2[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                    $comcompanybottom2[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_4,2);
+                                                    $comcompanytod2[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_4,2);
+                                                    $comcompanytop1[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                    $comcompanybottom1[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }
+                                            }elseif($level == 3){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_3,2);
+                                                    $comcompanytop3[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                    $comcompanybottom3[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_3,2);
+                                                    $comcompanytod3[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_3,2);
+                                                    $comcompanytop2[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                    $comcompanybottom2[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_3,2);
+                                                    $comcompanytod2[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_3,2);
+                                                    $comcompanytop1[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                    $comcompanybottom1[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }
+                                            }elseif($level == 2){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_2,2);
+                                                    $comcompanytop3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_2,2);
+                                                    $comcompanybottom3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_2,2);
+                                                    $comcompanytod3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_2,2);
+                                                    $comcompanytop2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_2,2);
+                                                    $comcompanybottom2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_2,2);
+                                                    $comcompanytod2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_2,2);
+                                                    $comcompanytop1[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_2,2);
+                                                    $comcompanybottom1[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }
+                                            }elseif($level == 1){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop3[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom3[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytod3[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop2[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom2[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytod2[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop1[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom1[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }
+                                            }
+
  
                                 }
                                 $usersum_s[$key] = number_format($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key],2);
