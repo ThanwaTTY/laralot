@@ -65,7 +65,7 @@
 				</h1>
 				<h4 class="sub">
 					<i class="fa fa-angle-right orange"></i>
-					<span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 ตุลาคม 2560
+					<span class="deep-blue">รัฐบาลไทย</span>, <span id="namelotto">งวดวันที่ 16 ตุลาคม 2560</span>
 					<span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
 				</h4>
 			</div>
@@ -603,6 +603,7 @@
 		 
 		  //console.log(response.lotto.name);
 		  $('#navbar-game-title').html(response.lotto.name);
+		  $('#namelotto').html(response.lotto.name);
 		  $('#agent').html(response.levellog);
 		});
   
