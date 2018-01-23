@@ -667,12 +667,26 @@ class BetController extends Controller
                                         ->select(DB::Raw('member_id'))
                                         ->groupBy('member_id')
                                         ->get();
-            $usebet_s[$key] = Userbet::where('ticket_id', $ticket->id)->get();
+            //$usebet_s[$key] = Userbet::where('ticket_id', $ticket->id)->get();
             
 
             
         }
 
+        foreach ($usebets as $key => $usebet) {
+            foreach ($usebet as $key => $value) {
+                $datamember_id[] = $value->member_id;
+            }
+        }
+        foreach (array_unique( $datamember_id ) as $key => $member_id) {
+            $usebet_s[$member_id] = Userbet::where('lotto_id', $idlotto)->where('member_id', $member_id)->get();
+            $datamember_id[$member_id] = $member_id;
+            $member_lavel[$member_id] = Member::find($usebet[0]->member_id);
+        }
+        // return response()->json([
+        //     'usebets'=>$usebet_s,
+        //     'datamember_id'=>$datamember_id
+        // ]);
         
         foreach ($usebet_s as $key => $usebet) {
             $member = Member::find($usebet[0]->member_id);
@@ -756,36 +770,12 @@ class BetController extends Controller
                             $member_name[$key] = $member->username;
                             $userbets_[$key] = $usebet[0]->ticket_id;
                             //$userbets_[$key] = Userbet::where('id', $usebet[0]->id)->get();
-                            $userbets_[$key] = Userbet::where('ticket_id', $usebet[0]->ticket_id)->get();
+                            //$userbets_[$key] = Userbet::where('ticket_id', $usebet[0]->ticket_id)->get();
+                            $userbets_[$key] = $usebet_s[$key];
                                 foreach ($userbets_[$key] as $loop_i => $usebet_c) {
                                    
                                             $data[] = $usebet_c;
 
-                                            // if($usebet_c->type=="top3"){
-                                            //     $sumtop3[$key] += number_format($usebet_c->amount_7,2);
-                                            //     $comtop3[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
-                                            // }if($usebet_c->type=="bottom3"){
-                                            //     $sumbottom3[$key] += number_format($usebet_c->amount_7,2);
-                                            //     $combottom3[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
-                                            // }if($usebet_c->type=="tod3"){
-                                            //     $sumtod3[$key] += number_format($usebet_c->amount_7,2);
-                                            //     $comtod3[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
-                                            // }if($usebet_c->type=="top2"){
-                                            //     $sumtop2[$key] += number_format($usebet_c->amount_7,2);
-                                            //     $comtop2[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
-                                            // }if($usebet_c->type=="bottom2"){
-                                            //     $sumbottom2[$key] += number_format($usebet_c->amount_7,2);
-                                            //     $combottom2[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
-                                            // }if($usebet_c->type=="tod2"){
-                                            //     $sumtod2[$key] += number_format($usebet_c->amount_7,2);
-                                            //     $comtod2[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
-                                            // }if($usebet_c->type=="top1"){
-                                            //     $sumtop1[$key] += number_format($usebet_c->amount_7,2);
-                                            //     $comtop1[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
-                                            // }if($usebet_c->type=="bottom1"){
-                                            //     $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
-                                            //     $combottom1[$key] += number_format($usebet_c->amount_7*($usebet_c->com_7/100),2);
-                                            // }
                                             /////////////////////AG/////////////////////////////////
                                             if($level == 6){
                                                 if($usebet_c->type=="top3"){
@@ -1440,7 +1430,7 @@ class BetController extends Controller
                                                 }if($usebet_c->type=="bottom3"){
                                                     $sumagbottom3[$key] += number_format($usebet_c->amount_2,2);
                                                     if($usebet_c->amount_3 != 0){
-                                                        if($usebet_c->amount_3 != 0){
+                                                       
                                                             if($usebet_c->amount_4 != 0){
                                                                 $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
                                                                 $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
@@ -1490,7 +1480,7 @@ class BetController extends Controller
                                                 }if($usebet_c->type=="tod3"){
                                                     $sumagtod3[$key] += number_format($usebet_c->amount_2,2);
                                                     if($usebet_c->amount_3 != 0){
-                                                        if($usebet_c->amount_3 != 0){
+                                                        
                                                             if($usebet_c->amount_4 != 0){
                                                                 $sumtod3[$key] += number_format($usebet_c->amount_3,2);
                                                                 $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
@@ -1540,7 +1530,7 @@ class BetController extends Controller
                                                 }if($usebet_c->type=="top2"){
                                                     $sumagtop2[$key] += number_format($usebet_c->amount_2,2);
                                                     if($usebet_c->amount_3 != 0){
-                                                        if($usebet_c->amount_3 != 0){
+                                                       
                                                             if($usebet_c->amount_4 != 0){
                                                                 $sumtop2[$key] += number_format($usebet_c->amount_3,2);
                                                                 $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
@@ -1590,7 +1580,7 @@ class BetController extends Controller
                                                 }if($usebet_c->type=="bottom2"){
                                                     $sumagbottom2[$key] += number_format($usebet_c->amount_2,2);
                                                     if($usebet_c->amount_3 != 0){
-                                                        if($usebet_c->amount_3 != 0){
+                                                        
                                                             if($usebet_c->amount_4 != 0){
                                                                 $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
                                                                 $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
@@ -1640,7 +1630,7 @@ class BetController extends Controller
                                                 }if($usebet_c->type=="tod2"){
                                                     $sumagtod2[$key] += number_format($usebet_c->amount_2,2);
                                                     if($usebet_c->amount_3 != 0){
-                                                        if($usebet_c->amount_3 != 0){
+                                                       
                                                             if($usebet_c->amount_4 != 0){
                                                                 $sumtod2[$key] += number_format($usebet_c->amount_3,2);
                                                                 $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
@@ -1690,7 +1680,7 @@ class BetController extends Controller
                                                 }if($usebet_c->type=="top1"){
                                                     $sumagtop1[$key] += number_format($usebet_c->amount_2,2);
                                                     if($usebet_c->amount_3 != 0){
-                                                        if($usebet_c->amount_3 != 0){
+                                                        
                                                             if($usebet_c->amount_4 != 0){
                                                                 $sumtop1[$key] += number_format($usebet_c->amount_3,2);
                                                                 $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
@@ -1740,7 +1730,7 @@ class BetController extends Controller
                                                 }if($usebet_c->type=="bottom1"){
                                                     $sumagbottom1[$key] += number_format($usebet_c->amount_2,2);
                                                     if($usebet_c->amount_3 != 0){
-                                                        if($usebet_c->amount_3 != 0){
+                                                        
                                                             if($usebet_c->amount_4 != 0){
                                                                 $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
                                                                 $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
@@ -1987,6 +1977,9 @@ class BetController extends Controller
             'companysum_s'=>$companysum_s,
             'companycom_s'=>$companycom_s,
             'companysumall'=>$companysumall,
+            'data'=>array_unique( $datamember_id ),
+            'member_lavel'=>$member_lavel,
+            'userbets_'=>$userbets_
             
            
         ]);

@@ -562,10 +562,53 @@
 		}).done(function(response){
 			$("tr.odd").remove();
 			console.log(response);
-			for(var i=0;i<response.usebets.length;i++){
+			//console.log(response.usebet_s[20]);
+			//for(var i=0;i<response.usebet_s.length;i++){
+				//console.log("1111");
+				$.each(response.data, function(key1, i) {
+					console.log(response.agcom_s[i]);
+					console.log(i)
+					if(response.member_name[i]){
+					$("#tbodyuser").append('	<tr class="odd"><td><a href="'+"value1.member.level"
+						+'" class="ajax"><span class="span-name jquery-hide">'+response.member_name[i]
+						+'()</span></a></td><td class="type" nowrap="">'+response.member_lavel[i].level
+						+'</td><td class="align-right dark-blue bolder n2 bg-blue">'+response.usersum_s[i]
+						+'</td><td class="align-right n2c"><span class="negative" id="out_1">'+response.usersum_s[i]
+						+'<span></span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.usercom_s[i]
+						+'</span></span></td><td class="align-right n2c"><span class="negative">-<span>'+response.usersumall[i]
+						+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span>'+response.agsum_s[i]
+						+'</span></span></td><td class="align-right n2c bg-yellow"><span class="negative"><span>'+response.agcom_s[i]
+						+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span>'+response.agsumall[i]
+						+'</span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.companysum_s[i]
+						+'</span></span></td><td class="align-right n2c"><span class="negative">-<span>'+response.companycom_s[i]
+						+'</span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.companysumall[i]
+						+'</span></span></tr>');
+						}
+
+					//$.each(value1, function(key2, value2) {	
+					//console.log(value2);
+					/*if(response.member_name[i]){
+						$("#tbodyuser").append('	<tr class="odd"><td><a href="'+value1.member.level
+							+'" class="ajax"><span class="span-name jquery-hide">'+response.member_name[i]
+							+'()</span></a></td><td class="type" nowrap="">'+value1.member.level
+							+'</td><td class="align-right dark-blue bolder n2 bg-blue">'+response.usersum_s[i]
+							+'</td><td class="align-right n2c"><span class="negative" id="out_1">'+response.usersum_s[i]
+							+'<span></span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.usercom_s[i]
+							+'</span></span></td><td class="align-right n2c"><span class="negative">-<span>'+response.usersumall[i]
+							+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span>'+response.agsum_s[i]
+							+'</span></span></td><td class="align-right n2c bg-yellow"><span class="negative"><span>'+response.agcom_s[i]
+							+'</span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span>'+response.agsumall[i]
+							+'</span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.companysum_s[i]
+							+'</span></span></td><td class="align-right n2c"><span class="negative">-<span>'+response.companycom_s[i]
+							+'</span></span></td><td class="align-right n2c"><span class="positive"><span>'+response.companysumall[i]
+							+'</span></span></tr>');
+						}*/	
+					//});		
+				});	
+			//}
+			/*for(var i=0;i<response.usebets.length;i++){
 
 				$.each(response.usebets[i], function(key1, value1) {
-					//console.log(value1.member.level);	
 					console.log(response.member_name[i]);	
 					if(response.member_name[i]){
 						$("#tbodyuser").append('	<tr class="odd"><td><a href="'+value1.member.level
@@ -585,23 +628,7 @@
 						}
 					}			
 				);	
-				//$("#by-member-table").append('<tbody></tbody>');
-			}
-			
-			//$.each(value[key], function(key1, value1) {
-				//alert(value1);
-				//$("tbody").html('<tr class="odd"><td><a href="" class="ajax"></a><span class="span-name jquery-hide">()</span></td><td class="type" nowrap=""></td><td class="align-right dark-blue bolder n2 bg-blue"></td><td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr><tr class="odd"><td><a href="" class="ajax"></a><span class="span-name jquery-hide">()</span></td><td class="type" nowrap=""></td><td class="align-right dark-blue bolder n2 bg-blue"></td><td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
-				//$("tbody").html('<tr class="odd"><td><a href="" class="ajax"></a><span class="span-name jquery-hide">()</span></td><td class="type" nowrap=""></td><td class="align-right dark-blue bolder n2 bg-blue"></td><td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span></td><td class="align-right n2c bg-yellow"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></td><td class="align-right n2c"><span class="negative">-<span></span></span></td><td class="align-right n2c"><span class="positive"><span></span></span></tr>');
-				//if(value1){
-				//alert(":"+value1);					
-				//}
-
-			  //$(this).html(n2($(this).text()));
-  
-			//});
-		  //});
-		 
-		  //console.log(response.lotto.name);
+			}*/
 		  $('#navbar-game-title').html(response.lotto.name);
 		  $('#namelotto').html(response.lotto.name);
 		  $('#agent').html(response.levellog);
