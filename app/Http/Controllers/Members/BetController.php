@@ -938,8 +938,13 @@ class BetController extends Controller
                                                 if($usebet_c->type=="top3"){
                                                     $sumagtop3[$key] += number_format($usebet_c->amount_4,2);
                                                     if($usebet_c->amount_5 != 0){
-                                                        $sumtop3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
-                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
                                                         $comagtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
                                                     }elseif($usebet_c->amount_6 != 0){
                                                         $sumtop3[$key] += number_format($usebet_c->amount_6,2);
@@ -955,8 +960,13 @@ class BetController extends Controller
                                                 }if($usebet_c->type=="bottom3"){
                                                     $sumagbottom3[$key] += number_format($usebet_c->amount_4,2);
                                                     if($usebet_c->amount_5 != 0){
-                                                        $sumbottom3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
-                                                        $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
                                                         $comagbottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
                                                     }elseif($usebet_c->amount_6 != 0){
                                                         $sumbottom3[$key] += number_format($usebet_c->amount_6,2);
