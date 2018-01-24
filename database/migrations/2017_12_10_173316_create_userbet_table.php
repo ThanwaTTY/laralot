@@ -17,6 +17,7 @@ class CreateUserbetTable extends Migration
             $table->increments('id');
             $table->integer('member_id')->index();
             $table->integer('ticket_id')->index();
+            $table->integer('lotto_id')->index();
             $table->string('latepay');
             $table->datetime('date_time');
             $table->decimal('pay');

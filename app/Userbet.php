@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Userbet extends Model
 {
     protected $fillable = [
-        'member_id', 'ticket_id', 'latepay','date_time','pay'
+        'member_id', 'ticket_id','lotto_id','latepay','date_time','pay'
         ,'note','useradd','bet_num','cal_num','type','useradddetail',
         
         'amount_1','keep_1','com_1','pay_1',

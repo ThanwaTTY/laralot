@@ -379,6 +379,7 @@ class UserbetController extends Controller
                         $userbets = Userbet::create([
                             'member_id' => $id,
                             'ticket_id'=>$tickets->id,
+                            'lotto_id'=>$lottos->id,
                             'latepay' => 'หวยรัฐ70',
                             'date_time' => $datenow,
                             'pay' => $paytop,
@@ -749,6 +750,7 @@ class UserbetController extends Controller
                         $userbets = Userbet::create([
                             'member_id' => $id,
                             'ticket_id'=>$tickets->id,
+                            'lotto_id'=>$lottos->id,
                             'latepay' => 'หวยรัฐ70',
                             'date_time' => $datenow,
                             'pay' => $paybottom,
@@ -1010,6 +1012,7 @@ class UserbetController extends Controller
                         $userbets = Userbet::create([
                             'member_id' => $id,
                             'ticket_id'=>$tickets->id,
+                            'lotto_id'=>$lottos->id,
                             'latepay' => 'หวยรัฐ70',
                             'date_time' => $datenow,
                             'pay' => $paytod,
