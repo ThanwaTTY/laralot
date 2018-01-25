@@ -219,7 +219,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtop3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertop3"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
@@ -243,7 +243,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="combottom3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom3"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
@@ -267,7 +267,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtod3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertod3"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
@@ -291,7 +291,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtop2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertop2"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
@@ -315,7 +315,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="combottom2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom2"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
@@ -339,7 +339,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtod2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertod2"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
@@ -363,7 +363,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtop1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertop1"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
@@ -387,7 +387,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="combottom1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom1"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
 								</td>
@@ -652,6 +652,15 @@
 		  $('#comtod2').html(response.com_tod2);
 		  $('#comtop1').html(response.com_top1);
 		  $('#combottom1').html(response.com_bottom1);
+		  ////////////////////////////////////////////////////////
+		  $('#sumusertop3').html(response.sumusertop3);
+		  $('#sumuserbottom3').html(response.sumuserbottom3);
+		  $('#sumusertod3').html(response.sumusertod3);
+		  $('#sumusertop2').html(response.sumusertop2);
+		  $('#sumuserbottom2').html(response.sumuserbottom2);
+		  $('#sumusertod2').html(response.sumusertod2);
+		  $('#sumusertop1').html(response.sumusertop1);
+		  $('#sumuserbottom1').html(response.sumuserbottom1);
 		});
   
 		});

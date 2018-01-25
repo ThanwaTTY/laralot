@@ -2547,6 +2547,14 @@ class BetController extends Controller
                                     $com_bottom1 += $combottom1s;
                                 }
 
+                                $sumusertop3 =  $sum_top3+$com_top3;
+                                $sumuserbottom3 =  $sum_bottom3+$com_bottom3;
+                                $sumusertod3 =  $sum_tod3+$com_tod3;
+                                $sumusertop2 =  $sum_top2+$com_top2;
+                                $sumuserbottom2 =  $sum_bottom2+$com_bottom2;
+                                $sumusertod2 =  $sum_tod2+$com_tod2;
+                                $sumusertop1 =  $sum_top1+$com_top1;
+                                $sumuserbottom1 =  $sum_bottom1+$com_bottom1;
                                 
                     }  
                 }
@@ -2592,6 +2600,14 @@ class BetController extends Controller
             'com_top1'=>number_format($com_top1,2),
             'com_bottom1'=>number_format($com_bottom1,2),
 
+            'sumusertop3'=>number_format($sumusertop3,2),
+            'sumuserbottom3'=>number_format($sumuserbottom3,2),
+            'sumusertod3'=>number_format($sumusertod3,2),
+            'sumusertop2'=>number_format($sumusertop2,2),
+            'sumuserbottom2'=>number_format($sumuserbottom2,2),
+            'sumusertod2'=>number_format($sumusertod2,2),
+            'sumusertop1'=>number_format($sumusertop1,2),
+            'sumuserbottom1'=>number_format($sumuserbottom1,2),
 
            
         ]);
