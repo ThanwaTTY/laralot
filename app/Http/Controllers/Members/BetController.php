@@ -766,6 +766,15 @@ class BetController extends Controller
                             $companycom_s[$key] =0;
                             $companysum_s[$key] =0;
                             $companysumall[$key] =0;
+                            /////////////////////////////////
+                            $sum_top3 =0;
+                            $sum_bottom3 =0;
+                            $sum_tod3 =0;
+                            $sum_top2 =0;
+                            $sum_bottom2 =0;
+                            $sum_tod2 =0;
+                            $sum_top1 =0;
+                            $sum_bottom1 =0;
 
                             $member_name[$key] = $member->username;
                             $userbets_[$key] = $usebet[0]->ticket_id;
@@ -2479,7 +2488,7 @@ class BetController extends Controller
                                                 }
                                             }
 
- 
+                                            
                                 }
                                 $usersum_s[$key] = number_format($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key],2);
                                 $usercom_s[$key] = number_format($comtop3[$key]+$combottom3[$key]+$comtod3[$key]+$comtop2[$key]+$combottom2[$key]+$comtod2[$key]+$comtop1[$key]+$combottom1[$key],2);
@@ -2492,10 +2501,27 @@ class BetController extends Controller
                                 $companysum_s[$key] = number_format($sumcompanytop3[$key]+$sumcompanybottom3[$key]+$sumcompanytod3[$key]+$sumcompanytop2[$key]+$sumcompanybottom2[$key]+$sumcompanytod2[$key]+$sumcompanytop1[$key]+$sumcompanybottom1[$key],2);
                                 $companycom_s[$key] = number_format($comcompanytop3[$key]+$comcompanybottom3[$key]+$comcompanytod3[$key]+$comcompanytop2[$key]+$comcompanybottom2[$key]+$comcompanytod2[$key]+$comcompanytop1[$key]+$comcompanybottom1[$key],2);
                                 $companysumall[$key] = number_format($companysum_s[$key]-$companycom_s[$key],2); 
+                                /////////////////////////TAP2/////////////////////////////////////////////////////////////////////
+                                foreach($sumtop3 as $sumtop3s){
+                                    $sum_top3 += $sumtop3s;
+                                }foreach($sumbottom3 as $sumbottom3s){
+                                    $sum_bottom3 += $sumbottom3s;
+                                }foreach($sumtod3 as $sumtod3s){
+                                    $sum_tod3 += $sumtod3s;
+                                }foreach($sumtop2 as $sumtop2s){
+                                    $sum_top2 += $sumtop2s;
+                                }foreach($sumbottom2 as $sumbottom2s){
+                                    $sum_bottom2 += $sumbottom2s;
+                                }foreach($sumtod2 as $sumtod2s){
+                                    $sum_tod2 += $sumtod2s;
+                                }foreach($sumtop1 as $sumtop1s){
+                                    $sum_top1 += $sumtop1s;
+                                }foreach($sumbottom1 as $sumbottom1s){
+                                    $sum_bottom1 += $sumbottom1s;
+                                }
+                                
 
-                            // $usersum_s[$key] = 3;
-                            // $usercom_s[$key] = 3;
-                            // $usersumall[$key] = 3;
+                                
                     }  
                 }
           
@@ -2520,8 +2546,18 @@ class BetController extends Controller
             'companysumall'=>$companysumall,
             'data'=>array_unique( $datamember_id ),
             'member_lavel'=>$member_lavel,
-            'userbets_'=>$userbets_
-            
+            'userbets_'=>$userbets_,
+
+            'sum_top3'=>$sum_top3,
+            'sum_bottom3'=>$sum_bottom3,
+            'sum_tod3'=>$sum_tod3,
+            'sum_top2'=>$sum_top2,
+            'sum_bottom2'=>$sum_bottom2,
+            'sum_tod2'=>$sum_tod2,
+            'sum_top1'=>$sum_top1,
+            'sum_bottom1'=>$sum_bottom1,
+
+
            
         ]);
     }

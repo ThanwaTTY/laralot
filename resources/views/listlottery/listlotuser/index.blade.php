@@ -215,7 +215,7 @@
 							<tr class="even">
 								<td class="bolder">3 ตัวบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumtop3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -239,7 +239,7 @@
 							<tr class="">
 								<td class="bolder">3 ตัวล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumbottom3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -263,7 +263,7 @@
 							<tr class="even">
 								<td class="bolder">3 ตัวโต๊ด</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumtod3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -287,7 +287,7 @@
 							<tr class="">
 								<td class="bolder">2 ตัวบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumtop2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -311,7 +311,7 @@
 							<tr class="">
 								<td class="bolder">2 ตัวล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumbottom2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -335,7 +335,7 @@
 							<tr class="">
 								<td class="bolder">2 ตัวโต๊ด</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumtod2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -359,7 +359,7 @@
 							<tr class="">
 								<td class="bolder">วิ่งบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumtop1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -383,7 +383,7 @@
 							<tr class="">
 								<td class="bolder">วิ่งล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumbottom1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -408,7 +408,7 @@
 							<tr class="even">
 								<td class="bolder">รวม :</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="usersum_s"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -604,6 +604,8 @@
 							+'</span></span></tr>');
 						}*/	
 					//});		
+
+					
 				});	
 			//}
 			/*for(var i=0;i<response.usebets.length;i++){
@@ -632,6 +634,15 @@
 		  $('#navbar-game-title').html(response.lotto.name);
 		  $('#namelotto').html(response.lotto.name);
 		  $('#agent').html(response.levellog);
+		  ////////////////////////////////////////////////////////
+		  $('#sumtop3').html(response.sum_top3);
+		  $('#sumbottom3').html(response.sum_bottom3);
+		  $('#sumtod3').html(response.sum_tod3);
+		  $('#sumtop2').html(response.sum_top2);
+		  $('#sumbottom2').html(response.sum_bottom2);
+		  $('#sumtod2').html(response.sum_tod2);
+		  $('#sumtop1').html(response.sum_top1);
+		  $('#sumbottom1').html(response.sum_bottom1);
 		});
   
 		});
