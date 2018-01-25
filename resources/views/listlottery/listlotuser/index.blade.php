@@ -217,7 +217,7 @@
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumtop3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtop3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
@@ -241,7 +241,7 @@
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumbottom3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="combottom3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
@@ -265,7 +265,7 @@
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumtod3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtod3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
@@ -289,7 +289,7 @@
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumtop2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtop2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
@@ -313,7 +313,7 @@
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumbottom2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="combottom2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
@@ -337,7 +337,7 @@
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumtod2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtod2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
@@ -361,7 +361,7 @@
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumtop1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtop1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
@@ -385,7 +385,7 @@
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumbottom1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="combottom1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span></span></span>
 								</td>
@@ -643,6 +643,15 @@
 		  $('#sumtod2').html(response.sum_tod2);
 		  $('#sumtop1').html(response.sum_top1);
 		  $('#sumbottom1').html(response.sum_bottom1);
+		  ////////////////////////////////////////////////////////
+		  $('#comtop3').html(response.com_top3);
+		  $('#combottom3').html(response.com_bottom3);
+		  $('#comtod3').html(response.com_tod3);
+		  $('#comtop2').html(response.com_top2);
+		  $('#combottom2').html(response.com_bottom2);
+		  $('#comtod2').html(response.com_tod2);
+		  $('#comtop1').html(response.com_top1);
+		  $('#combottom1').html(response.com_bottom1);
 		});
   
 		});

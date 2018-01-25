@@ -775,6 +775,15 @@ class BetController extends Controller
                             $sum_tod2 =0;
                             $sum_top1 =0;
                             $sum_bottom1 =0;
+                            /////////////////////////////////
+                            $com_top3 =0;
+                            $com_bottom3 =0;
+                            $com_tod3 =0;
+                            $com_top2 =0;
+                            $com_bottom2 =0;
+                            $com_tod2 =0;
+                            $com_top1 =0;
+                            $com_bottom1 =0;
 
                             $member_name[$key] = $member->username;
                             $userbets_[$key] = $usebet[0]->ticket_id;
@@ -2519,7 +2528,24 @@ class BetController extends Controller
                                 }foreach($sumbottom1 as $sumbottom1s){
                                     $sum_bottom1 += $sumbottom1s;
                                 }
-                                
+                                //////////////////////////////////////////////////////////////////////
+                                foreach($comtop3 as $comtop3s){
+                                    $com_top3 += $comtop3s;
+                                }foreach($combottom3 as $combottom3s){
+                                    $com_bottom3 += $combottom3s;
+                                }foreach($comtod3 as $comtod3s){
+                                    $com_tod3 += $comtod3s;
+                                }foreach($comtop2 as $comtop2s){
+                                    $com_top2 += $comtop2s;
+                                }foreach($combottom2 as $combottom2s){
+                                    $com_bottom2 += $combottom2s;
+                                }foreach($comtod2 as $comtod2s){
+                                    $com_tod2 += $comtod2s;
+                                }foreach($comtop1 as $comtop1s){
+                                    $com_top1 += $comtop1s;
+                                }foreach($combottom1 as $combottom1s){
+                                    $com_bottom1 += $combottom1s;
+                                }
 
                                 
                     }  
@@ -2548,14 +2574,23 @@ class BetController extends Controller
             'member_lavel'=>$member_lavel,
             'userbets_'=>$userbets_,
 
-            'sum_top3'=>$sum_top3,
-            'sum_bottom3'=>$sum_bottom3,
-            'sum_tod3'=>$sum_tod3,
-            'sum_top2'=>$sum_top2,
-            'sum_bottom2'=>$sum_bottom2,
-            'sum_tod2'=>$sum_tod2,
-            'sum_top1'=>$sum_top1,
-            'sum_bottom1'=>$sum_bottom1,
+            'sum_top3'=>number_format($sum_top3,2),
+            'sum_bottom3'=>number_format($sum_bottom3,2),
+            'sum_tod3'=>number_format($sum_tod3,2),
+            'sum_top2'=>number_format($sum_top2,2),
+            'sum_bottom2'=>number_format($sum_bottom2,2),
+            'sum_tod2'=>number_format($sum_tod2,2),
+            'sum_top1'=>number_format($sum_top1,2),
+            'sum_bottom1'=>number_format($sum_bottom1,2),
+
+            'com_top3'=>number_format($com_top3,2),
+            'com_bottom3'=>number_format($com_bottom3,2),
+            'com_tod3'=>number_format($com_tod3,2),
+            'com_top2'=>number_format($com_top2,2),
+            'com_bottom2'=>number_format($com_bottom2,2),
+            'com_tod2'=>number_format($com_tod2,2),
+            'com_top1'=>number_format($com_top1,2),
+            'com_bottom1'=>number_format($com_bottom1,2),
 
 
            
