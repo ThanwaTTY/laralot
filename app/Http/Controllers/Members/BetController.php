@@ -784,6 +784,16 @@ class BetController extends Controller
                             $com_tod2 =0;
                             $com_top1 =0;
                             $com_bottom1 =0;
+                            /////////////////////////////////
+                            $sum_agtop3 =0;
+                            $sum_agbottom3 =0;
+                            $sum_agtod3 =0;
+                            $sum_agtop2 =0;
+                            $sum_agbottom2 =0;
+                            $sum_agtod2 =0;
+                            $sum_agtop1 =0;
+                            $sum_agbottom1 =0;
+
 
                             $member_name[$key] = $member->username;
                             $userbets_[$key] = $usebet[0]->ticket_id;
@@ -2555,6 +2565,10 @@ class BetController extends Controller
                                 $sumusertod2 =  $sum_tod2+$com_tod2;
                                 $sumusertop1 =  $sum_top1+$com_top1;
                                 $sumuserbottom1 =  $sum_bottom1+$com_bottom1;
+                                ///////////////////////AGENT///////////////////////////////////////////////
+                                foreach($sumagtop3 as $sumagtop3s){
+                                    $sum_agtop3 += $sumagtop3s;
+                                }
                                 
                     }  
                 }
@@ -2609,6 +2623,8 @@ class BetController extends Controller
             'sumusertop1'=>number_format($sumusertop1,2),
             'sumuserbottom1'=>number_format($sumuserbottom1,2),
 
+            'sum_agtop3'=>number_format($sum_agtop3,2),
+            
            
         ]);
     }

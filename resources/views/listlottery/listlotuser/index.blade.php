@@ -221,7 +221,7 @@
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumusertop3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop3"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
@@ -661,6 +661,8 @@
 		  $('#sumusertod2').html(response.sumusertod2);
 		  $('#sumusertop1').html(response.sumusertop1);
 		  $('#sumuserbottom1').html(response.sumuserbottom1);
+		  ////////////////////////////////////////////////////////
+		  $('#sum_agtop3').html(response.sum_agtop3);
 		});
   
 		});
