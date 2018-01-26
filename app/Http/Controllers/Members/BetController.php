@@ -793,6 +793,15 @@ class BetController extends Controller
                             $sum_agtod2 =0;
                             $sum_agtop1 =0;
                             $sum_agbottom1 =0;
+                            /////////////////////////////////
+                            $com_agtop3 =0;
+                            $com_agbottom3 =0;
+                            $com_agtod3 =0;
+                            $com_agtop2 =0;
+                            $com_agbottom2 =0;
+                            $com_agtod2 =0;
+                            $com_agtop1 =0;
+                            $com_agbottom1 =0;
 
 
                             $member_name[$key] = $member->username;
@@ -2538,7 +2547,7 @@ class BetController extends Controller
                                 }foreach($sumbottom1 as $sumbottom1s){
                                     $sum_bottom1 += $sumbottom1s;
                                 }
-                                //////////////////////////////////////////////////////////////////////
+                                //Com User
                                 foreach($comtop3 as $comtop3s){
                                     $com_top3 += $comtop3s;
                                 }foreach($combottom3 as $combottom3s){
@@ -2583,7 +2592,32 @@ class BetController extends Controller
                                 }foreach($sumagbottom1 as $sumagbottom1s){
                                     $sum_agbottom1 += $sumagbottom1s;
                                 }
-                                
+                                // Com AG
+                                foreach($comagtop3 as $comagtop3s){
+                                    $com_agtop3 += $comagtop3s;
+                                }foreach($comagbottom3 as $comagbottom3s){
+                                    $com_agbottom3 += $comagbottom3s;
+                                }foreach($comagtod3 as $comagtod3s){
+                                    $com_agtod3 += $comagtod3s;
+                                }foreach($comagtop2 as $comagtop2s){
+                                    $com_agtop2 += $comagtop2s;
+                                }foreach($comagbottom2 as $comagbottom2s){
+                                    $com_agbottom2 += $comagbottom2s;
+                                }foreach($comagtod2 as $comagtod2s){
+                                    $com_agtod2 += $comagtod2s;
+                                }foreach($comagtop1 as $comagtop1s){
+                                    $com_agtop1 += $comagtop1s;
+                                }foreach($comagbottom1 as $comagbottom1s){
+                                    $com_agbottom1 += $comagbottom1s;
+                                }
+                                $sumag_top3 = $sum_agtop3+$com_agtop3;
+                                $sumag_bottom3 = $sum_agbottom3+$com_agbottom3;
+                                $sumag_tod3 = $sum_agtod3+$com_agtod3;
+                                $sumag_top2 = $sum_agtop2+$com_agtop2;
+                                $sumag_bottom2 = $sum_agbottom2+$com_agbottom2;
+                                $sumag_tod2 = $sum_agtod2+$com_agtod2;
+                                $sumag_top1 = $sum_agtop1+$com_agtop1;
+                                $sumag_bottom1 = $sum_agbottom1+$com_agbottom1;
                     }  
                 }
           
@@ -2646,7 +2680,23 @@ class BetController extends Controller
             'sum_agtop1'=>number_format($sum_agtop1,2),
             'sum_agbottom1'=>number_format($sum_agbottom1,2),
             
-           
+            'com_agtop3'=>number_format($com_agtop3,2),
+            'com_agbottom3'=>number_format($com_agbottom3,2),
+            'com_agtod3'=>number_format($com_agtod3,2),
+            'com_agtop2'=>number_format($com_agtop2,2),
+            'com_agbottom2'=>number_format($com_agbottom2,2),
+            'com_agtod2'=>number_format($com_agtod2,2),
+            'com_agtop1'=>number_format($com_agtop1,2),
+            'com_agbottom1'=>number_format($com_agbottom1,2),
+
+            'sumag_top3'=>number_format($sumag_top3,2),
+            'sumag_bottom3'=>number_format($sumag_bottom3,2),
+            'sumag_tod3'=>number_format($sumag_tod3,2),
+            'sumag_top2'=>number_format($sumag_top2,2),
+            'sumag_bottom2'=>number_format($sumag_bottom2,2),
+            'sumag_tod2'=>number_format($sumag_tod2,2),
+            'sumag_top1'=>number_format($sumag_top1,2),
+            'sumag_bottom1'=>number_format($sumag_bottom1,2),
         ]);
     }
    

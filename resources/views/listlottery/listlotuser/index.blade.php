@@ -223,9 +223,9 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtop3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -234,7 +234,7 @@
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
 							</tr>
-
+ 
 
 							<tr class="">
 								<td class="bolder">3 ตัวล่าง</td>
@@ -247,9 +247,9 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -271,9 +271,9 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtod3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtod3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -295,9 +295,9 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtop2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive">}<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -319,9 +319,9 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -343,9 +343,9 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtod2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtod2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -367,9 +367,9 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop1"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span  id="com_agtop1"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -391,9 +391,9 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom1"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom1"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -670,6 +670,24 @@
 		  $('#sum_agtod2').html(response.sum_agtod2);
 		  $('#sum_agtop1').html(response.sum_agtop1);
 		  $('#sum_agbottom1').html(response.sum_agbottom1);
+		  ////////////////////////////////////////////////////////
+		  $('#com_agtop3').html(response.com_agtop3);
+		  $('#com_agbottom3').html(response.com_agbottom3);
+		  $('#com_agtod3').html(response.com_agtod3);
+		  $('#com_agtop2').html(response.com_agtop2);
+		  $('#com_agbottom2').html(response.com_agbottom2);
+		  $('#com_agtod2').html(response.com_agtod2);
+		  $('#com_agtop1').html(response.com_agtop1);
+		  $('#com_agbottom1').html(response.com_agbottom1);
+		  ////////////////////////////////////////////////////////
+		  $('#sumag_top3').html(response.sumag_top3);
+		  $('#sumag_bottom3').html(response.sumag_bottom3);
+		  $('#sumag_tod3').html(response.sumag_tod3);
+		  $('#sumag_top2').html(response.sumag_top2);
+		  $('#sumag_bottom2').html(response.sumag_bottom2);
+		  $('#sumag_tod2').html(response.sumag_tod2);
+		  $('#sumag_top1').html(response.sumag_top1);
+		  $('#sumag_bottom1').html(response.sumag_bottom1);
 		});
   
 		});
