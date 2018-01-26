@@ -2568,6 +2568,20 @@ class BetController extends Controller
                                 ///////////////////////AGENT///////////////////////////////////////////////
                                 foreach($sumagtop3 as $sumagtop3s){
                                     $sum_agtop3 += $sumagtop3s;
+                                }foreach($sumagbottom3 as $sumagbottom3s){
+                                    $sum_agbottom3 += $sumagbottom3s;
+                                }foreach($sumagtod3 as $sumagtod3s){
+                                    $sum_agtod3 += $sumagtod3s;
+                                }foreach($sumagtop2 as $sumagtop2s){
+                                    $sum_agtop2 += $sumagtop2s;
+                                }foreach($sumagbottom2 as $sumagbottom2s){
+                                    $sum_agbottom2 += $sumagbottom2s;
+                                }foreach($sumagtod2 as $sumagtod2s){
+                                    $sum_agtod2 += $sumagtod2s;
+                                }foreach($sumagtop1 as $sumagtop1s){
+                                    $sum_agtop1 += $sumagtop1s;
+                                }foreach($sumagbottom1 as $sumagbottom1s){
+                                    $sum_agbottom1 += $sumagbottom1s;
                                 }
                                 
                     }  
@@ -2624,6 +2638,13 @@ class BetController extends Controller
             'sumuserbottom1'=>number_format($sumuserbottom1,2),
 
             'sum_agtop3'=>number_format($sum_agtop3,2),
+            'sum_agbottom3'=>number_format($sum_agbottom3,2),
+            'sum_agtod3'=>number_format($sum_agtod3,2),
+            'sum_agtop2'=>number_format($sum_agtop2,2),
+            'sum_agbottom2'=>number_format($sum_agbottom2,2),
+            'sum_agtod2'=>number_format($sum_agtod2,2),
+            'sum_agtop1'=>number_format($sum_agtop1,2),
+            'sum_agbottom1'=>number_format($sum_agbottom1,2),
             
            
         ]);

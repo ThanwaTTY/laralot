@@ -215,7 +215,7 @@
 							<tr class="even">
 								<td class="bolder">3 ตัวบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumtop3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtop3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtop3"></span></span>
 								</td>
@@ -239,13 +239,13 @@
 							<tr class="">
 								<td class="bolder">3 ตัวล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumbottom3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumbottom3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="combottom3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom3"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
@@ -263,13 +263,13 @@
 							<tr class="even">
 								<td class="bolder">3 ตัวโต๊ด</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumtod3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtod3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtod3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumusertod3"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtod3"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
@@ -287,13 +287,13 @@
 							<tr class="">
 								<td class="bolder">2 ตัวบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumtop2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtop2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtop2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumusertop2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop2"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-}<span></span></span>
 								</td>
@@ -311,13 +311,13 @@
 							<tr class="">
 								<td class="bolder">2 ตัวล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumbottom2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumbottom2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="combottom2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom2"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
@@ -335,13 +335,13 @@
 							<tr class="">
 								<td class="bolder">2 ตัวโต๊ด</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumtod2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtod2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtod2"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumusertod2"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtod2"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
@@ -359,13 +359,13 @@
 							<tr class="">
 								<td class="bolder">วิ่งบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumtop1"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtop1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="comtop1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumusertop1"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop1"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
@@ -383,13 +383,13 @@
 							<tr class="">
 								<td class="bolder">วิ่งล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumbottom1"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumbottom1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="combottom1"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom1"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom1"></span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
 								</td>
@@ -408,7 +408,7 @@
 							<tr class="even">
 								<td class="bolder">รวม :</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span id="usersum_s"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="usersum_s"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span></span></span>
 								</td>
@@ -663,6 +663,13 @@
 		  $('#sumuserbottom1').html(response.sumuserbottom1);
 		  ////////////////////////////////////////////////////////
 		  $('#sum_agtop3').html(response.sum_agtop3);
+		  $('#sum_agbottom3').html(response.sum_agbottom3);
+		  $('#sum_agtod3').html(response.sum_agtod3);
+		  $('#sum_agtop2').html(response.sum_agtop2);
+		  $('#sum_agbottom2').html(response.sum_agbottom2);
+		  $('#sum_agtod2').html(response.sum_agtod2);
+		  $('#sum_agtop1').html(response.sum_agtop1);
+		  $('#sum_agbottom1').html(response.sum_agbottom1);
 		});
   
 		});
