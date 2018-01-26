@@ -189,7 +189,7 @@
 								<th rowspan="2" class="align-center width-90px">ประเภท</th>
 								<th rowspan="2" class="align-center width-90px">ยอดทั้งหมด</th>
 								<th colspan="3" class="align-center">สมาชิก</th>
-								<th colspan="3" class="align-center">เอเย่นต์ [3M3K]</th>
+								<th colspan="3" class="align-center"><span id="agent2"></span></th>
 								<th colspan="3" class="align-center">บริษัท</th>
 							</tr>
 							<tr>
@@ -227,11 +227,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_top3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtop3_company"></span></span>
 								</td>
 							</tr>
  
@@ -251,11 +251,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumbottom3_company"></span></span>
 								</td>
 							</tr>
 
@@ -275,11 +275,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_tod3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="comcompany_tod3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtod3_company"></span></span>
 								</td>
 							</tr>
 
@@ -299,11 +299,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_top2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtop2_company"></span></span>
 								</td>
 							</tr>
 
@@ -323,11 +323,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumbottom2_company"></span></span>
 								</td>
 							</tr>
 
@@ -347,11 +347,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_tod2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_tod2"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtod2_company"></span></span>
 								</td>
 							</tr>
 
@@ -371,11 +371,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_top1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtop1_company"></span></span>
 								</td>
 							</tr>
 
@@ -395,11 +395,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom1"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumbottom1_company"></span></span>
 								</td>
 							</tr>
 						</tbody>
@@ -634,6 +634,7 @@
 		  $('#navbar-game-title').html(response.lotto.name);
 		  $('#namelotto').html(response.lotto.name);
 		  $('#agent').html(response.levellog);
+		  $('#agent2').html(response.levellog);
 		  ////////////////////////////////////////////////////////
 		  $('#sumtop3').html(response.sum_top3);
 		  $('#sumbottom3').html(response.sum_bottom3);
@@ -688,6 +689,34 @@
 		  $('#sumag_tod2').html(response.sumag_tod2);
 		  $('#sumag_top1').html(response.sumag_top1);
 		  $('#sumag_bottom1').html(response.sumag_bottom1);
+
+		  $('#sumcompany_top3').html(response.sumcompany_top3);
+		  $('#sumcompany_bottom3').html(response.sumcompany_bottom3);
+		  $('#sumcompany_tod3').html(response.sumcompany_tod3);
+		  $('#sumcompany_top2').html(response.sumcompany_top2);
+		  $('#sumcompany_bottom2').html(response.sumcompany_bottom2);
+		  $('#sumcompany_tod2').html(response.sumcompany_tod2);
+		  $('#sumcompany_top1').html(response.sumcompany_top1);
+		  $('#sumcompany_bottom1').html(response.sumcompany_bottom1);
+
+		  $('#comcompany_top3').html(response.comcompany_top3);
+		  $('#comcompany_bottom3').html(response.comcompany_bottom3);
+		  $('#comcompany_tod3').html(response.comcompany_tod3);
+		  $('#comcompany_top2').html(response.comcompany_top2);
+		  $('#comcompany_bottom2').html(response.comcompany_bottom2);
+		  $('#comcompany_tod2').html(response.comcompany_tod2);
+		  $('#comcompany_top1').html(response.comcompany_top1);
+		  $('#comcompany_bottom1').html(response.comcompany_bottom1);
+		
+		  $('#sumtop3_company').html(response.sumtop3_company);
+		  $('#sumbottom3_company').html(response.sumbottom3_company);
+		  $('#sumtod3_company').html(response.sumtod3_company);
+		  $('#sumtop2_company').html(response.sumtop2_company);
+		  $('#sumbottom2_company').html(response.sumbottom2_company);
+		  $('#sumtod2_company').html(response.sumtod2_company);
+		  $('#sumtop1_company').html(response.sumtop1_company);
+		  $('#sumbottom1_company').html(response.sumbottom1_company);
+		
 		});
   
 		});

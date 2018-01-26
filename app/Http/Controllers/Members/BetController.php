@@ -802,7 +802,24 @@ class BetController extends Controller
                             $com_agtod2 =0;
                             $com_agtop1 =0;
                             $com_agbottom1 =0;
-
+                            //////COMPANY////////////////////
+                            $sumcompany_top3 =0;
+                            $sumcompany_bottom3 =0;
+                            $sumcompany_tod3 =0;
+                            $sumcompany_top2 =0;
+                            $sumcompany_bottom2 =0;
+                            $sumcompany_tod2 =0;
+                            $sumcompany_top1 =0;
+                            $sumcompany_bottom1 =0;
+                            /////////////////////////////////
+                            $comcompany_top3 =0;
+                            $comcompany_bottom3 =0;
+                            $comcompany_tod3 =0;
+                            $comcompany_top2 =0;
+                            $comcompany_bottom2 =0;
+                            $comcompany_tod2 =0;
+                            $comcompany_top1 =0;
+                            $comcompany_bottom1 =0;
 
                             $member_name[$key] = $member->username;
                             $userbets_[$key] = $usebet[0]->ticket_id;
@@ -2618,6 +2635,51 @@ class BetController extends Controller
                                 $sumag_tod2 = $sum_agtod2+$com_agtod2;
                                 $sumag_top1 = $sum_agtop1+$com_agtop1;
                                 $sumag_bottom1 = $sum_agbottom1+$com_agbottom1;
+                                /////////////////////COMPANY///////////////////////////////
+                                foreach($sumcompanytop3 as $sumcompanytop3s){
+                                    $sumcompany_top3 += $sumcompanytop3s;
+                                }foreach($sumcompanybottom3 as $sumcompanybottom3s){
+                                    $sumcompany_bottom3 += $sumcompanybottom3s;
+                                }foreach($sumcompanytod3 as $sumcompanytod3s){
+                                    $sumcompany_tod3 += $sumcompanytod3s;
+                                }foreach($sumcompanytop2 as $sumcompanytop2s){
+                                    $sumcompany_top2 += $sumcompanytop2s;
+                                }foreach($sumcompanybottom2 as $sumcompanybottom2s){
+                                    $sumcompany_bottom2 += $sumcompanybottom2s;
+                                }foreach($sumcompanytod2 as $sumcompanytod2s){
+                                    $sumcompany_tod2 += $sumcompanytod2s;
+                                }foreach($sumcompanytop1 as $sumcompanytop1s){
+                                    $sumcompany_top1 += $sumcompanytop1s;
+                                }foreach($sumcompanybottom1 as $sumcompanybottom1s){
+                                    $sumcompany_bottom1 += $sumcompanybottom1s;
+                                }
+                                // COMPANY AG
+                                foreach($comcompanytop3 as $comcompanytop3s){
+                                    $comcompany_top3 += $comcompanytop3s;
+                                }foreach($comcompanybottom3 as $comcompanybottom3s){
+                                    $comcompany_bottom3 += $comcompanybottom3s;
+                                }foreach($comcompanytod3 as $comcompanytod3s){
+                                    $comcompany_tod3 += $comcompanytod3s;
+                                }foreach($comcompanytop2 as $comcompanytop2s){
+                                    $comcompany_top2 += $comcompanytop2s;
+                                }foreach($comcompanybottom2 as $comcompanybottom2s){
+                                    $comcompany_bottom2 += $comcompanybottom2s;
+                                }foreach($comcompanytod2 as $comcompanytod2s){
+                                    $comcompany_tod2 += $comcompanytod2s;
+                                }foreach($comcompanytop1 as $comcompanytop1s){
+                                    $comcompany_top1 += $comcompanytop1s;
+                                }foreach($comcompanybottom1 as $comcompanybottom1s){
+                                    $comcompany_bottom1 += $comcompanybottom1s;
+                                }
+
+                                $sumtop3_company = $sumcompany_top3-$comcompany_top3;
+                                $sumbottom3_company = $sumcompany_bottom3-$comcompany_bottom3;
+                                $sumtod3_company = $sumcompany_tod3-$comcompany_tod3;
+                                $sumtop2_company = $sumcompany_top2-$comcompany_top2;
+                                $sumbottom2_company = $sumcompany_bottom2-$comcompany_bottom2;
+                                $sumtod2_company = $sumcompany_tod2-$comcompany_tod2;
+                                $sumtop1_company = $sumcompany_top1-$comcompany_top1;
+                                $sumbottom1_company = $sumcompany_bottom1-$comcompany_bottom1;
                     }  
                 }
           
@@ -2697,6 +2759,35 @@ class BetController extends Controller
             'sumag_tod2'=>number_format($sumag_tod2,2),
             'sumag_top1'=>number_format($sumag_top1,2),
             'sumag_bottom1'=>number_format($sumag_bottom1,2),
+
+            'sumcompany_top3'=>number_format($sumcompany_top3,2),
+            'sumcompany_bottom3'=>number_format($sumcompany_bottom3,2),
+            'sumcompany_tod3'=>number_format($sumcompany_tod3,2),
+            'sumcompany_top2'=>number_format($sumcompany_top2,2),
+            'sumcompany_bottom2'=>number_format($sumcompany_bottom2,2),
+            'sumcompany_tod2'=>number_format($sumcompany_tod2,2),
+            'sumcompany_top1'=>number_format($sumcompany_top1,2),
+            'sumcompany_bottom1'=>number_format($sumcompany_bottom1,2),
+
+            'comcompany_top3'=>number_format($comcompany_top3,2),
+            'comcompany_bottom3'=>number_format($comcompany_bottom3,2),
+            'comcompany_tod3'=>number_format($comcompany_tod3,2),
+            'comcompany_top2'=>number_format($comcompany_top2,2),
+            'comcompany_bottom2'=>number_format($comcompany_bottom2,2),
+            'comcompany_tod2'=>number_format($comcompany_tod2,2),
+            'comcompany_top1'=>number_format($comcompany_top1,2),
+            'comcompany_bottom1'=>number_format($comcompany_bottom1,2),
+
+            'sumtop3_company'=>number_format($sumtop3_company,2),
+            'sumbottom3_company'=>number_format($sumbottom3_company,2),
+            'sumtod3_company'=>number_format($sumtod3_company,2),
+            'sumtop2_company'=>number_format($sumtop2_company,2),
+            'sumbottom2_company'=>number_format($sumbottom2_company,2),
+            'sumtod2_company'=>number_format($sumtod2_company,2),
+            'sumtop1_company'=>number_format($sumtop1_company,2),
+            'sumbottom1_company'=>number_format($sumbottom1_company,2),
+
+
         ]);
     }
    
