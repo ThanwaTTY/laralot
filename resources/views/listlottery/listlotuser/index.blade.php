@@ -150,23 +150,23 @@
 							<tr class="even">
 								<td colspan="2" class="bolder">รวม :</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sum_allmember"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sum_allcommember"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sum_allcount"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_allag"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="sum_allcomag"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_allagcount"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sum_allcompany"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sum_allcomcompany"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sum_allcountcompany"></span></span>
 								</td>
 							</tr>
 						</tfoot>
@@ -277,7 +277,7 @@
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="sumcompany_tod3"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="comcompany_tod3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_tod3"></span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="sumtod3_company"></span></span>
 								</td>
@@ -408,23 +408,23 @@
 							<tr class="even">
 								<td class="bolder">รวม :</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="usersum_s"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumallmember"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumallcommember"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumallcount"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumallag"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="sumallcomag"></span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumallagcount"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumallcompany"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumallcomcompany"></span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumallcountcompany"></span></span>
 								</td>
 							</tr>
 						</tfoot>
@@ -717,6 +717,26 @@
 		  $('#sumtop1_company').html(response.sumtop1_company);
 		  $('#sumbottom1_company').html(response.sumbottom1_company);
 		
+		  $('#sum_allmember').html(response.sumallmember);
+		  $('#sum_allcommember').html(response.sumallcommember);
+		  $('#sum_allcount').html(response.sumallcount);
+		  $('#sum_allag').html(response.sumallag);
+		  $('#sum_allcomag').html(response.sumallcomag);
+		  $('#sum_allagcount').html(response.sumallagcount);
+		  $('#sum_allcompany').html(response.sumallcompany);
+		  $('#sum_allcomcompany').html(response.sumallcomcompany);
+		  $('#sum_allcountcompany').html(response.sumallcountcompany);
+
+		  $('#sumallmember').html(response.sumallmember);
+		  $('#sumallcommember').html(response.sumallcommember);
+		  $('#sumallcount').html(response.sumallcount);
+		  $('#sumallag').html(response.sumallag);
+		  $('#sumallcomag').html(response.sumallcomag);
+		  $('#sumallagcount').html(response.sumallagcount);
+		  $('#sumallcompany').html(response.sumallcompany);
+		  $('#sumallcomcompany').html(response.sumallcomcompany);
+		  $('#sumallcountcompany').html(response.sumallcountcompany);
+
 		});
   
 		});

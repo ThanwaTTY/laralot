@@ -2680,6 +2680,19 @@ class BetController extends Controller
                                 $sumtod2_company = $sumcompany_tod2-$comcompany_tod2;
                                 $sumtop1_company = $sumcompany_top1-$comcompany_top1;
                                 $sumbottom1_company = $sumcompany_bottom1-$comcompany_bottom1;
+
+                                $sumallmember = $sum_top3+$sum_bottom3+$sum_tod3+$sum_top2+$sum_bottom2+$sum_tod2+$sum_top1+$sum_bottom1;
+                                $sumallcommember = $com_top3+$com_bottom3+$com_tod3+$com_top2+$com_bottom2+$com_tod2+$com_top1+$com_bottom1;
+                                $sumallcount = $sumusertop3+$sumuserbottom3+$sumusertod3+$sumusertop2+$sumuserbottom2+$sumusertod2+$sumusertop1+$sumuserbottom1;
+
+                                $sumallag = $sum_agtop3+$sum_agbottom3+$sum_agtod3+$sum_agtop2+$sum_agbottom2+$sum_agtod2+$sum_agtop1+$sum_agbottom1;
+                                $sumallcomag = $com_agtop3+$com_agbottom3+$com_agtod3+$com_agtop2+$com_agbottom2+$com_agtod2+$com_agtop1+$com_agbottom1;
+                                $sumallagcount = $sumag_top3+$sumag_bottom3+$sumag_tod3+$sumag_top2+$sumag_bottom2+$sumag_tod2+$sumag_top1+$sumag_bottom1;
+
+                                $sumallcompany = $sumcompany_top3+$sumcompany_bottom3+$sumcompany_tod3+$sumcompany_top2+$sumcompany_bottom2+$sumcompany_tod2+$sumcompany_top1+$sumcompany_bottom1;
+                                $sumallcomcompany = $comcompany_top3+$comcompany_bottom3+$comcompany_tod3+$comcompany_top2+$comcompany_bottom2+$comcompany_tod2+$comcompany_top1+$comcompany_bottom1;
+                                $sumallcountcompany = $sumtop3_company+$sumbottom3_company+$sumtod3_company+$sumtop2_company+$sumbottom2_company+$sumtod2_company+$sumtop1_company+$sumbottom1_company;
+
                     }  
                 }
           
@@ -2787,7 +2800,15 @@ class BetController extends Controller
             'sumtop1_company'=>number_format($sumtop1_company,2),
             'sumbottom1_company'=>number_format($sumbottom1_company,2),
 
-
+            'sumallmember'=>number_format($sumallmember,2),
+            'sumallcommember'=>number_format($sumallcommember,2),
+            'sumallcount'=>number_format($sumallcount,2),
+            'sumallag'=>number_format($sumallag,2),
+            'sumallcomag'=>number_format($sumallcomag,2),
+            'sumallagcount'=>number_format($sumallagcount,2),
+            'sumallcompany'=>number_format($sumallcompany,2),
+            'sumallcomcompany'=>number_format($sumallcomcompany,2),
+            'sumallcountcompany'=>number_format($sumallcountcompany,2),
         ]);
     }
    
