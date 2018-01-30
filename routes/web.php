@@ -121,6 +121,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::get('/datelotto/create', 'Members\DatelottoController@create');
              Route::post('/dateon-off','Members\DatelottoController@store');
 
+             Route::get('/listlottery/settingof', 'Members\LimiteController@index');
             });
              Route::get('/test', function () {
                 return view('portest');
@@ -136,9 +137,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
                 return view('listlottery.listresult.index');
              });
 
-             Route::get('/listlottery/settingof', function () {
-                return view('listlottery.settingof.index');
-             });
+             
 
              Route::get('/listlottery/settingtype', function () {
                 return view('listlottery.settingtype.index');
