@@ -11,5 +11,13 @@ class LimiteController extends Controller
     return view('listlottery.settingof.index');
    }
 
-   
+   public function store(Request $request){
+
+    $data_request = $request->all();
+    // $data_request = "AAAAAA";
+
+    return response()->json([
+        'data_request'=>$data_request
+        ]);
+   }
 }

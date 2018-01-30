@@ -122,6 +122,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
              Route::post('/dateon-off','Members\DatelottoController@store');
 
              Route::get('/listlottery/settingof', 'Members\LimiteController@index');
+             Route::post('/limite_bet', 'Members\LimiteController@store');
             });
              Route::get('/test', function () {
                 return view('portest');

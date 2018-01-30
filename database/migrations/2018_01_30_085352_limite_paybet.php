@@ -15,6 +15,7 @@ class LimitePaybet extends Migration
     {
         Schema::create('limite_paybets', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('member_id')->index();
             $table->integer('lotto_id')->index();
             $table->integer('bet_num');
             $table->string('type');

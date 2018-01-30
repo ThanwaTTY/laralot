@@ -234,7 +234,8 @@
 
       <div class="space-4"></div>
 
-                      <form action="" class="specific-take-form inline align-top right-padding-10">
+                      <form action="form3top" id="form3top" class="specific-take-form inline align-top right-padding-10">
+                          {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
               <tr>
@@ -247,10 +248,10 @@
               <tr>
                 <th></th>
                 <th class="align-middle">
-                                      <input type="text" class="form-control input-sm max-width-40 inline lighter" id="number-limit-1">
+                                      <input type="text" name="num[]" class="form-control input-sm max-width-40 inline lighter">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" id="value-limit-1">
-                  <button class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" data-bet-type-id="1">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter"  name="top[]">
+                  <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet">
                     เพิ่ม
                   </button>
                 </th>
@@ -265,6 +266,7 @@
           </table>
         </form>
                       <form action="" class="specific-take-form inline align-top right-padding-10">
+                          {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
               <tr>
@@ -295,6 +297,7 @@
           </table>
         </form>
                       <form action="" class="specific-take-form inline align-top right-padding-10">
+                          {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
               <tr>
@@ -325,6 +328,7 @@
           </table>
         </form>
                       <form action="" class="specific-take-form inline align-top right-padding-10">
+                          {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
               <tr>
@@ -356,6 +360,7 @@
         </form>
                         <div class="space-8"></div>
                 <form action="" class="specific-take-form inline align-top right-padding-10">
+                    {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
               <tr>
@@ -386,6 +391,7 @@
           </table>
         </form>
                       <form action="" class="specific-take-form inline align-top right-padding-10">
+                          {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
               <tr>
@@ -416,6 +422,7 @@
           </table>
         </form>
                       <form action="" class="specific-take-form inline align-top right-padding-10">
+                          {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
               <tr>
@@ -446,6 +453,7 @@
           </table>
         </form>
                       <form action="" class="specific-take-form inline align-top right-padding-10">
+                          {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
               <tr>
@@ -506,7 +514,6 @@
 
 <script>
   
-  getClosedNumbers();
 </script>
 </div><!-- /.col -->
         </div><!-- /.row -->
@@ -550,4 +557,18 @@
 {{-- <script src="/dist/js/pages/dashboard.js"></script> --}}
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
+
+<script>
+    $(function(){
+      $('#btn-submit-bet').on('click', function(){
+        console.log('Active');
+        $.post('/limite_bet', $('#form3top').serialize()).done( function(data) {
+				  console.log(data);
+      });
+    });
+    });
+  
+  </script>
+
+  
 @endsection
