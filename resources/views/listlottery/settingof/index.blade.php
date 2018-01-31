@@ -279,9 +279,9 @@
               <tr>
                 <th></th>
                 <th class="align-middle">
-                                      <input type="text"  class="form-control input-sm max-width-40 inline lighter" name="num[]">
+                                      <input type="text"  class="form-control input-sm max-width-40 inline lighter" name="num">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="bottom[]">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="bottom">
                   <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet2">
                     เพิ่ม
                   </button>

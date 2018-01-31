@@ -22,22 +22,35 @@ class LimiteController extends Controller
     $data_request = $request->all();
     $nums = $request->num;
     $top = $request->top;
+    $bottom = $request->bottom;
     $lottos = Lotto::where('day_on','<=',$datenow)->where('day_off','>=',$datenow)->first();
    
     $type = $this->checktype($nums);
 
-        Limite_paybet::create([
-            'member_id' => $id,
-            'lotto_id' => $lottos->id,
-            'bet_num' => $nums,
-            'type' => "top".$type,
-            'limite_amount' => $top,
-        ]);
+        if($top){
+            Limite_paybet::create([
+                'member_id' => $id,
+                'lotto_id' => $lottos->id,
+                'bet_num' => $nums,
+                'type' => "top".$type,
+                'limite_amount' => $top,
+            ]);
+        }
+        if($bottom){
+            Limite_paybet::create([
+                'member_id' => $id,
+                'lotto_id' => $lottos->id,
+                'bet_num' => $nums,
+                'type' => "bottom".$type,
+                'limite_amount' => $bottom,
+            ]);
+        }
 
     return response()->json([
         'nums' => $nums,
         'type' => $type,
         'top' => $top,
+        'bottom' => $bottom,
         'data_request'=>$data_request,
         ]);
    }
