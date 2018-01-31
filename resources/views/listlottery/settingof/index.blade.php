@@ -250,7 +250,7 @@
                 <th class="align-middle">
                                       <input type="text" name="num" class="form-control input-sm max-width-40 inline lighter">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter"  name="top">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter"  name="top3">
                   <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet">
                     เพิ่ม
                   </button>
@@ -281,7 +281,7 @@
                 <th class="align-middle">
                                       <input type="text"  class="form-control input-sm max-width-40 inline lighter" name="num">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="bottom">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="bottom3">
                   <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet2">
                     เพิ่ม
                   </button>
@@ -296,7 +296,7 @@
             </tbody>
           </table>
         </form>
-                      <form action="" class="specific-take-form inline align-top right-padding-10">
+                      <form action="" id="form3tod" class="specific-take-form inline align-top right-padding-10">
                           {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
@@ -310,10 +310,10 @@
               <tr>
                 <th></th>
                 <th class="align-middle">
-                                      <input type="text" class="form-control input-sm max-width-40 inline lighter" id="number-limit-3">
+                                      <input type="text" class="form-control input-sm max-width-40 inline lighter" name="num">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" id="value-limit-3">
-                  <button class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" data-bet-type-id="3">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="tod3">
+                  <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet3" >
                     เพิ่ม
                   </button>
                 </th>
@@ -327,7 +327,7 @@
             </tbody>
           </table>
         </form>
-                      <form action="" class="specific-take-form inline align-top right-padding-10">
+                      <form action="" id="form2top" class="specific-take-form inline align-top right-padding-10">
                           {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
@@ -341,10 +341,10 @@
               <tr>
                 <th></th>
                 <th class="align-middle">
-                                      <input type="text" class="form-control input-sm max-width-40 inline lighter" id="number-limit-4">
+                                      <input type="text" name="num" class="form-control input-sm max-width-40 inline lighter" id="number-limit-4">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" id="value-limit-4">
-                  <button class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" data-bet-type-id="4">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="top2">
+                  <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet4">
                     เพิ่ม
                   </button>
                 </th>
@@ -359,7 +359,7 @@
           </table>
         </form>
                         <div class="space-8"></div>
-                <form action="" class="specific-take-form inline align-top right-padding-10">
+                <form action="" id="form2bottom" class="specific-take-form inline align-top right-padding-10">
                     {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
@@ -373,10 +373,10 @@
               <tr>
                 <th></th>
                 <th class="align-middle">
-                                      <input type="text" class="form-control input-sm max-width-40 inline lighter" id="number-limit-5">
+                                      <input type="text" name="num" class="form-control input-sm max-width-40 inline lighter" id="number-limit-5">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" id="value-limit-5">
-                  <button class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" data-bet-type-id="5">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="bottom2">
+                  <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet5">
                     เพิ่ม
                   </button>
                 </th>
@@ -390,7 +390,7 @@
             </tbody>
           </table>
         </form>
-                      <form action="" class="specific-take-form inline align-top right-padding-10">
+                      <form action="" id="form2tod" class="specific-take-form inline align-top right-padding-10">
                           {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
@@ -404,10 +404,10 @@
               <tr>
                 <th></th>
                 <th class="align-middle">
-                                      <input type="text" class="form-control input-sm max-width-40 inline lighter" id="number-limit-6">
+                                      <input type="text" name="num" class="form-control input-sm max-width-40 inline lighter" id="number-limit-6">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" id="value-limit-6">
-                  <button class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" data-bet-type-id="6">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter" id="value-limit-6" name="tod2">
+                  <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet6">
                     เพิ่ม
                   </button>
                 </th>
@@ -421,7 +421,7 @@
             </tbody>
           </table>
         </form>
-                      <form action="" class="specific-take-form inline align-top right-padding-10">
+                      <form action="" id="form1top" class="specific-take-form inline align-top right-padding-10">
                           {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
@@ -435,10 +435,10 @@
               <tr>
                 <th></th>
                 <th class="align-middle">
-                                      <input type="text" class="form-control input-sm max-width-40 inline lighter" id="number-limit-7">
+                                      <input type="text" name="num" class="form-control input-sm max-width-40 inline lighter" id="number-limit-7">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" id="value-limit-7">
-                  <button class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" data-bet-type-id="7">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="top1">
+                  <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet7">
                     เพิ่ม
                   </button>
                 </th>
@@ -452,7 +452,7 @@
             </tbody>
           </table>
         </form>
-                      <form action="" class="specific-take-form inline align-top right-padding-10">
+                      <form action="" id="form1bottom" class="specific-take-form inline align-top right-padding-10">
                           {{ csrf_field() }}
           <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin enable-check-all ">
             <thead class="thin-border-bottom">
@@ -466,10 +466,10 @@
               <tr>
                 <th></th>
                 <th class="align-middle">
-                                      <input type="text" class="form-control input-sm max-width-40 inline lighter" id="number-limit-8">
+                                      <input type="text" name="num" class="form-control input-sm max-width-40 inline lighter" id="number-limit-8">
                                     =
-                  <input type="text" class="form-control input-sm max-width-75 inline lighter" id="value-limit-8">
-                  <button class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" data-bet-type-id="8">
+                  <input type="text" class="form-control input-sm max-width-75 inline lighter" name="bottom1">
+                  <button type="button" class="btn btn-primary btn-xs bigger-110 btn-add-number-limit" id="btn-submit-bet8">
                     เพิ่ม
                   </button>
                 </th>
@@ -570,6 +570,48 @@
         $('#btn-submit-bet2').on('click', function(){
           console.log('Active');
           $.post('/limite_bet', $('#form3bottom').serialize()).done( function(data) {
+            console.log(data);
+        });
+        
+      });
+        $('#btn-submit-bet3').on('click', function(){
+          console.log('Active');
+          $.post('/limite_bet', $('#form3tod').serialize()).done( function(data) {
+            console.log(data);
+        });
+        
+      });
+        $('#btn-submit-bet4').on('click', function(){
+          console.log('Active');
+          $.post('/limite_bet', $('#form2top').serialize()).done( function(data) {
+            console.log(data);
+        });
+        
+      });
+        $('#btn-submit-bet5').on('click', function(){
+          console.log('Active');
+          $.post('/limite_bet', $('#form2bottom').serialize()).done( function(data) {
+            console.log(data);
+        });
+        
+      });
+        $('#btn-submit-bet6').on('click', function(){
+          console.log('Active');
+          $.post('/limite_bet', $('#form2tod').serialize()).done( function(data) {
+            console.log(data);
+        });
+        
+      });
+        $('#btn-submit-bet7').on('click', function(){
+          console.log('Active');
+          $.post('/limite_bet', $('#form1top').serialize()).done( function(data) {
+            console.log(data);
+        });
+        
+      });
+        $('#btn-submit-bet8').on('click', function(){
+          console.log('Active');
+          $.post('/limite_bet', $('#form1bottom').serialize()).done( function(data) {
             console.log(data);
         });
         

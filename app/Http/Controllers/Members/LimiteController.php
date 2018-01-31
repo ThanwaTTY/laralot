@@ -21,36 +21,99 @@ class LimiteController extends Controller
     $datenow = $dt->format('Y-m-d h:i:s');  
     $data_request = $request->all();
     $nums = $request->num;
-    $top = $request->top;
-    $bottom = $request->bottom;
+    $top3 = $request->top3;
+    $bottom3 = $request->bottom3;
+    $tod3 = $request->tod3;
+    $top2 = $request->top2;
+    $bottom2 = $request->bottom2;
+    $tod2 = $request->tod2;
+    $top1 = $request->top1;
+    $bottom1 = $request->bottom1;
+
     $lottos = Lotto::where('day_on','<=',$datenow)->where('day_off','>=',$datenow)->first();
    
     $type = $this->checktype($nums);
 
-        if($top){
+        if($top3){
             Limite_paybet::create([
                 'member_id' => $id,
                 'lotto_id' => $lottos->id,
                 'bet_num' => $nums,
-                'type' => "top".$type,
-                'limite_amount' => $top,
+                'type' => "top3",
+                'limite_amount' => $top3,
             ]);
         }
-        if($bottom){
+        if($bottom3){
             Limite_paybet::create([
                 'member_id' => $id,
                 'lotto_id' => $lottos->id,
                 'bet_num' => $nums,
-                'type' => "bottom".$type,
-                'limite_amount' => $bottom,
+                'type' => "bottom3",
+                'limite_amount' => $bottom3,
+            ]);
+        }
+        if($tod3){
+            Limite_paybet::create([
+                'member_id' => $id,
+                'lotto_id' => $lottos->id,
+                'bet_num' => $nums,
+                'type' => "tod3",
+                'limite_amount' => $tod3,
+            ]);
+        }
+        if($top2){
+            Limite_paybet::create([
+                'member_id' => $id,
+                'lotto_id' => $lottos->id,
+                'bet_num' => $nums,
+                'type' => "top2",
+                'limite_amount' => $top2,
+            ]);
+        }
+        if($bottom2){
+            Limite_paybet::create([
+                'member_id' => $id,
+                'lotto_id' => $lottos->id,
+                'bet_num' => $nums,
+                'type' => "bottom2",
+                'limite_amount' => $bottom2,
+            ]);
+        }
+        if($tod2){
+            Limite_paybet::create([
+                'member_id' => $id,
+                'lotto_id' => $lottos->id,
+                'bet_num' => $nums,
+                'type' => "tod2",
+                'limite_amount' => $tod2,
+            ]);
+        }
+        if($top1){
+            Limite_paybet::create([
+                'member_id' => $id,
+                'lotto_id' => $lottos->id,
+                'bet_num' => $nums,
+                'type' => "top1",
+                'limite_amount' => $top1,
+            ]);
+        }
+        if($bottom1){
+            Limite_paybet::create([
+                'member_id' => $id,
+                'lotto_id' => $lottos->id,
+                'bet_num' => $nums,
+                'type' => "bottom1",
+                'limite_amount' => $bottom1,
             ]);
         }
 
     return response()->json([
         'nums' => $nums,
         'type' => $type,
-        'top' => $top,
-        'bottom' => $bottom,
+        'top3' => $top3,
+        'bottom3' => $bottom3,
+        'top2' => $top2,
+        'bottom2' => $bottom2,
         'data_request'=>$data_request,
         ]);
    }
