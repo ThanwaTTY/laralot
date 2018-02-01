@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Members;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Limite_paybet;
+use App\Limite;
 use App\Lotto;
 use Carbon\Carbon;
 
@@ -34,6 +35,7 @@ class LimiteController extends Controller
    
     $type = $this->checktype($nums);
 
+            
         if($top3){
             Limite_paybet::create([
                 'member_id' => $id,
@@ -123,4 +125,31 @@ class LimiteController extends Controller
     return $datacheck;
    }
    
+   public function limite(Request $request){
+
+    $id = auth()->user()->id;
+    $dt = Carbon::now();
+    $datenow = $dt->format('Y-m-d h:i:s');  
+    $data_request = $request->all();
+
+    $lottos = Lotto::where('day_on','<=',$datenow)->where('day_off','>=',$datenow)->first();
+
+    // Limite::create([
+    //     'member_id' => $id,
+    //     'lotto_id' => $lottos->id,
+    //     'top3' => $request->limitetop3,
+    //     'bottom3' => $request->limitebottom3,
+    //     'tod3' => $request->limitetod3,
+    //     'top2' => $request->limitetop2,
+    //     'bottom2' => $request->limitebottom2,
+    //     'tod2' => $request->limitetod2,
+    //     'top1' => $request->limitetop1,
+    //     'bottom1' => $request->limitebottom1,
+    // ]);
+
+    return response()->json([
+        'data_request'=>$data_request,
+        ]);
+
+   }
 }

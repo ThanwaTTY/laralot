@@ -140,8 +140,8 @@
 
       <div class="space-4"></div>
 
-      <form method="POST" action="https://agent.superlot999.com/update-bet-limit" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form"><input name="_token" type="hidden" value="wVCy2lw6Tr07FXXnoXGA4HgBONZHrhVZERn9GaXW">
-
+      <form id="limite" accept-charset="UTF-8" data-method="put" data-feedback="mixed" class="js-ajax-form">
+        {{ csrf_field() }}
         <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap no-margin">
           <thead class="thin-border-bottom">
             <tr>
@@ -163,56 +163,56 @@
               <td class="align-center align-middle odd bolder width-110">0 = ไม่รับ</td>
                               <td>
                   <div class="input-group-limit_1 input-icon input-icon-left">
-                    <input type="text" name="limit_1" value="100" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetop3" value="100" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_2 input-icon input-icon-left">
-                    <input type="text" name="limit_2" value="100" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitebottom3" value="100" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_3 input-icon input-icon-left">
-                    <input type="text" name="limit_3" value="100" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetod3" value="100" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_4 input-icon input-icon-left">
-                    <input type="text" name="limit_4" value="500" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetop2" value="500" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_5 input-icon input-icon-left">
-                    <input type="text" name="limit_5" value="500" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitebottom2" value="500" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_6 input-icon input-icon-left">
-                    <input type="text" name="limit_6" value="100" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetod2" value="100" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_7 input-icon input-icon-left">
-                    <input type="text" name="limit_7" value="1000" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetop1" value="1000" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_8 input-icon input-icon-left">
-                    <input type="text" name="limit_8" value="1000" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitebottom1" value="1000" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
@@ -221,7 +221,7 @@
               <td>
                 <input name="game_type_id" type="hidden" value="1">
                 <input name="bet_type_group_id" type="hidden" value="1">
-                <button class="btn btn-primary btn-xs bigger-110" id="btn-update-bet-limit" data-game-type-id="1">บันทึก</button>
+                <button type="button" class="btn btn-primary btn-xs bigger-110" id="btn-limite" data-game-type-id="1">บันทึก</button>
               </td>
             </tr>
           </tbody>
@@ -560,6 +560,13 @@
 
 <script>
     $(function(){
+        $('#btn-limite').on('click', function(){
+          console.log('Active');
+          $.post('/limite', $('#limite').serialize()).done( function(data) {
+            console.log(data);
+        });
+        
+      });
         $('#btn-submit-bet').on('click', function(){
           console.log('Active');
           $.post('/limite_bet', $('#form3top').serialize()).done( function(data) {
