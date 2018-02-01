@@ -57,4 +57,8 @@ class Member extends Authenticatable
         return $this->hasOne(Userbet::class, 'member_id','id');
     }
 
+    public function limite_pay()
+    {
+        return $this->hasOne(Userbet::class, 'member_id','id');
+    }
 }
