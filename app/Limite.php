@@ -10,4 +10,8 @@ class Limite extends Model
         'member_id', 'lotto_id','top3','bottom3','tod3','top2','bottom2','tod2','top1','bottom1'
     ];
 
+    public function members()
+    {
+        return $this->belongTo(Member::class, 'member_id','id');
+    }
 }

@@ -134,18 +134,18 @@ class LimiteController extends Controller
 
     $lottos = Lotto::where('day_on','<=',$datenow)->where('day_off','>=',$datenow)->first();
 
-    // Limite::create([
-    //     'member_id' => $id,
-    //     'lotto_id' => $lottos->id,
-    //     'top3' => $request->limitetop3,
-    //     'bottom3' => $request->limitebottom3,
-    //     'tod3' => $request->limitetod3,
-    //     'top2' => $request->limitetop2,
-    //     'bottom2' => $request->limitebottom2,
-    //     'tod2' => $request->limitetod2,
-    //     'top1' => $request->limitetop1,
-    //     'bottom1' => $request->limitebottom1,
-    // ]);
+    Limite::create([
+        'member_id' => $id,
+        'lotto_id' => $lottos->id,
+        'top3' => $request->limitetop3,
+        'bottom3' => $request->limitebottom3,
+        'tod3' => $request->limitetod3,
+        'top2' => $request->limitetop2,
+        'bottom2' => $request->limitebottom2,
+        'tod2' => $request->limitetod2,
+        'top1' => $request->limitetop1,
+        'bottom1' => $request->limitebottom1,
+    ]);
 
     return response()->json([
         'data_request'=>$data_request,
