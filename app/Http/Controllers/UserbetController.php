@@ -8,6 +8,8 @@ use App\Member;
 use App\Lotto;
 use App\Ticket;
 use App\Keep;
+use App\Limite_paybet;
+use App\Limite;
 use App\Ratepaygov;
 use Carbon\Carbon;
 
@@ -33,7 +35,10 @@ class UserbetController extends Controller
 
         $companykeep = 100-$keep->keepset;
         $lottos = Lotto::where('day_on','<=',$datenow)->where('day_off','>=',$datenow)->first();
+        
+        
 
+  
         $tickets = $this->createTicket($id,$lottos,30);
 
         $data_request = $request->all();
@@ -42,13 +47,20 @@ class UserbetController extends Controller
         foreach ($nums as $key => $num) {
             if($num){
                 $type = $this->checktype($num);
-                
+
+                //หาจากตัวเลขที่ซ้ำกันในเลขอั้น
+                $limite_paybet = Limite_paybet::where('bet_num',$num)->first();
+                return response()->json([
+                    'limite_paybet'=>$limite_paybet  
+                    ]);
+
                     if($request->top[$key]){
 
                             if($type==3){
                                 $paytop = $member->ratepaygov->payoutg_1;
                                 $com_7 = $member->ratepaygov->comg_1;
                                 $master = Member::find($useradd);
+                                
                                 if($master){                                     
                                        if($master->level == 6){
                                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
@@ -1057,7 +1069,9 @@ class UserbetController extends Controller
         //return response()->json(['userbet_id'=>$id, 'data_request'=>$data_request, 'add'=>$add, 'userbets'=>$userbets]);
         return response()->json([
             'data_request'=>$data_request,
-            'member'=>$member
+            'member'=>$member,
+            'limite_paybet'=>$limite_paybet->id
+            
             ]);
     }
 //////////////////////////////////////////////////////////////////////////////////////
