@@ -59,7 +59,7 @@ class Member extends Authenticatable
 
     public function limite_pay()
     {
-        return $this->hasMany(Userbet::class, 'member_id','id');
+        return $this->hasOne(Userbet::class, 'member_id','id');
     }
 
     public function limite()

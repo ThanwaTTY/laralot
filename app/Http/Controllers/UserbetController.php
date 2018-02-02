@@ -44,6 +44,10 @@ class UserbetController extends Controller
         $data_request = $request->all();
 
         $nums = $request->num;
+        
+        //  return response()->json([
+        //             'limitebet'=>$limitebet  
+        //             ]);
         foreach ($nums as $key => $num) {
             if($num){
                 $type = $this->checktype($num);
@@ -55,8 +59,7 @@ class UserbetController extends Controller
                 //     ]);
                 
                     if($request->top[$key]){
-                        $limite_paybet = Limite_paybet::where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
-
+                    
                             if($type==3){
                                 $paytop = $member->ratepaygov->payoutg_1;
                                 $com_7 = $member->ratepaygov->comg_1;
@@ -66,16 +69,7 @@ class UserbetController extends Controller
                                        if($master->level == 6){
                                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                                $keep = Keep::where('member_id', $useradd)->first();
-
-                                               $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
-
-                                               $amount_keep = $request->top[$key]*($keep->keepset6/100);
-                                               if($amount_keep > $limite_paybet->limite_amount){
-                                                   $amount_6 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
-                                               }else{
-                                                $amount_6 = $request->top[$key]*($keep->keepset6/100);
-                                               }
-                                               
+                                               $amount_6 = $request->top[$key]*($keep->keepset6/100);
                                                $keep_6 = $keep->keepset6;
                                                $com_6 = $ratepaygov->comg_1;  
                                                $pay_6 = $ratepaygov->payoutg_1;
@@ -91,16 +85,7 @@ class UserbetController extends Controller
                                         if($master->level == 5){
                                            $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                            $keep = Keep::where('member_id', $useradd)->first();
-
-                                           $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
-
-                                            $amount_keep = $request->top[$key]*($keep->keepset5/100);
-                                            if($amount_keep > $limite_paybet->limite_amount){
-                                                $amount_5 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
-                                            }else{
-                                            $amount_5 = $request->top[$key]*($keep->keepset5/100);
-                                            }
-
+                                           $amount_5 = $request->top[$key]*($keep->keepset5/100);
                                            $keep_5 = $keep->keepset5;
                                            $com_5 = $ratepaygov->comg_1; 
                                            $pay_5 = $ratepaygov->payoutg_1;
@@ -119,15 +104,18 @@ class UserbetController extends Controller
                                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                                $keep = Keep::where('member_id', $useradd)->first();
 
-                                               $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
-
                                                $amount_keep = $request->top[$key]*($keep->keepset4/100);
-                                               if($amount_keep > $limite_paybet->limite_amount){
+                                     
+                                               $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
+                                              if($limite_paybet){
+                                                if($amount_keep > $limite_paybet->limite_amount){
                                                    $amount_4 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
-                                               }else{
-                                                $amount_4 = $request->top[$key]*($keep->keepset4/100);
-                                               }
-
+                                                }                      
+                                              }else{
+                                                    $amount_4 = $request->top[$key]*($keep->keepset4/100);
+                                              }
+                                         
+                                             
                                                $keep_4 = $keep->keepset4;
                                                $com_4 = $ratepaygov->comg_1; 
                                                $pay_4 = $ratepaygov->payoutg_1;
@@ -144,16 +132,7 @@ class UserbetController extends Controller
                                            if($master->level == 3){
                                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                                $keep = Keep::where('member_id', $useradd)->first();
-
-                                               $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
-
-                                               $amount_keep = $request->top[$key]*($keep->keepset3/100);
-                                               if($amount_keep > $limite_paybet->limite_amount){
-                                                   $amount_3 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
-                                               }else{
-                                                $amount_3 = $request->top[$key]*($keep->keepset3/100);
-                                               }
-
+                                               $amount_3 = $request->top[$key]*($keep->keepset3/100);
                                                $keep_3 = $keep->keepset3;
                                                $com_3 = $ratepaygov->comg_1; 
                                                $pay_3 = $ratepaygov->payoutg_1;
@@ -171,14 +150,14 @@ class UserbetController extends Controller
                                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                                $keep = Keep::where('member_id', $useradd)->first();
 
-                                               $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
+                                            //    $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
 
-                                               $amount_keep = $request->top[$key]*($keep->keepset2/100);
-                                               if($amount_keep > $limite_paybet->limite_amount){
-                                                   $amount_2 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
-                                               }else{
+                                            //    $amount_keep = $request->top[$key]*($keep->keepset2/100);
+                                            //    if($amount_keep > $limite_paybet->limite_amount){
+                                            //        $amount_2 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
+                                            //    }else{
                                                 $amount_2 = $request->top[$key]*($keep->keepset2/100);
-                                               }
+                                            //    }
                                                
                                                $keep_2 = $keep->keepset2;
                                                $com_2 = $ratepaygov->comg_1;
