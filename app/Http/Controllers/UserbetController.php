@@ -73,7 +73,8 @@ class UserbetController extends Controller
                                                $amount_keep = $request->top[$key]*($keep->keepset6/100);
                                      
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
-                                              
+                                               $limite = Limite::where('member_id', $master->id)->where('lotto_id', $lottos->id)->first();
+                                               
                                                if($limite_paybet){
                                                     if($amount_keep > $limite_paybet->limite_amount){
                                                         $amount_6 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
@@ -82,6 +83,15 @@ class UserbetController extends Controller
                                                         $amount_6 = $request->top[$key]*($keep->keepset6/100);
                                                         $limite_amount6 = 0;
                                                     }                      
+                                                }elseif($amount > $limite->top3){
+                                                    if($limite->top3 == 0){
+                                                        $amount_6 =  0;
+                                                        $limite_amount6 = $request->top[$key];
+                                                    }else{
+                                                        $amount_6 = ($amount + $limite->top3)-$amount;
+                                                        $limite_amount6 = $amount - $limite->top3;
+                                                    }
+                                                    
                                                 }else{
                                                     $amount_6 = $request->top[$key]*($keep->keepset6/100);
                                                     $limite_amount6 = 0;
@@ -106,19 +116,23 @@ class UserbetController extends Controller
                                            $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                            $keep = Keep::where('member_id', $useradd)->first();
 
-                                           $amount_keep = $request->top[$key]*($keep->keepset5/100);
+                                            $amount_keep = $request->top[$key]*($keep->keepset5/100);
                                      
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
-                                            
+                                               $limite = Limite::where('member_id', $master->id)->where('lotto_id', $lottos->id)->latest()->first();;
+
+                                            $amount = $request->top[$key]*($keep->keepset5/100);   
+                                        if($limite_paybet){    
                                             if($limite_amount6 != 0){
                                                 if($limite_paybet){
+                                                    
                                                     if($limite_amount6 > $limite_paybet->limite_amount){
                                                         $amount_5 = ($limite_amount6+$limite_paybet->limite_amount)-$limite_amount6;
-                                                        $limite_amount5 = ($limite_amount6 - $limite_paybet->limite_amount)+$amount_keep;
+                                                        $limite_amount5 = ($limite_amount6 - $limite_paybet->limite_amount)+$amount_keep;                                                       
                                                     }else{
                                                         $amount_5 = ($request->top[$key]*($keep->keepset5/100))+$limite_amount6;
                                                         $limite_amount5 = 0;
-                                                    }                      
+                                                    }                           
                                                 }
                                                 else{
                                                     $amount_5 = ($request->top[$key]*($keep->keepset5/100))+$limite_amount6;
@@ -126,20 +140,51 @@ class UserbetController extends Controller
                                                 }
                                             }     
                                             elseif($limite_paybet){
+                                                   
                                                     if($amount_keep > $limite_paybet->limite_amount){
                                                         $amount_5 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
                                                         $limite_amount5 = $amount_keep - $limite_paybet->limite_amount;
+                                                      
                                                     }else{
                                                         $amount_5 = $request->top[$key]*($keep->keepset5/100);
                                                         $limite_amount5 = 0;
-                                                    }                      
+                                                    }                          
                                                 }
                                             else{
                                                 $amount_5 = $request->top[$key]*($keep->keepset5/100);
                                                 $limite_amount5 = 0;
                                             }
-
-                                             
+                                        }elseif($amount_6 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset5/100)+$limite_amount6;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_5 =  0;
+                                                    $limite_amount5 = $request->top[$key];
+                                                }else{
+                                                    $amount_5 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount5 = $amount - $limite->top3;
+                                                }
+                                                
+                                            }else{
+                                                $amount_5 = $request->top[$key]*($keep->keepset5/100)+$limite_amount6;
+                                                $limite_amount5 = 0;
+                                            }
+                                            
+                                        }elseif($amount > $limite->top3){
+                                            if($limite->top3 == 0){
+                                                $amount_5 =  0;
+                                                $limite_amount5 = $request->top[$key];
+                                            }else{
+                                                $amount_5 = ($amount + $limite->top3)-$amount;
+                                                $limite_amount5 = $amount - $limite->top3;
+                                            }
+                                            
+                                        }else{
+                                            $amount_5 = $request->top[$key]*($keep->keepset5/100);
+                                            $limite_amount5 = 0;
+                                        }
+                                           
+                                        
                                            $keep_5 = $keep->keepset5;
                                            $com_5 = $ratepaygov->comg_1; 
                                            $pay_5 = $ratepaygov->payoutg_1;
@@ -160,8 +205,11 @@ class UserbetController extends Controller
                                                $keep = Keep::where('member_id', $useradd)->first();
 
                                                $amount_keep = $request->top[$key]*($keep->keepset4/100);
-                                     
+                                               $amount = $request->top[$key]*($keep->keepset4/100);
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
+                                               $limite = Limite::where('member_id', $master->id)->where('lotto_id', $lottos->id)->latest()->first();;
+
+                                               
                                         if($limite_paybet){     
                                             if($limite_amount5 != 0){
                                                 if($limite_paybet){
@@ -206,12 +254,49 @@ class UserbetController extends Controller
                                                 $amount_4 = $request->top[$key]*($keep->keepset4/100);
                                                 $limite_amount4 = 0;
                                             }
+                                        }elseif($amount_5 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset4/100)+$limite_amount5;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_4 =  0;
+                                                    $limite_amount4 = $request->top[$key];
+                                                }else{
+                                                    $amount_4 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount4 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_4 = $request->top[$key]*($keep->keepset4/100)+$limite_amount5;
+                                                $limite_amount4 = 0;
+                                            }
+                                            
+                                        }elseif($amount_6 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset4/100)+$limite_amount6;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_4 =  0;
+                                                    $limite_amount4 = $request->top[$key];
+                                                }else{
+                                                    $amount_4 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount4 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_4 = $request->top[$key]*($keep->keepset4/100)+$limite_amount6;
+                                                $limite_amount4 = 0;
+                                            }
+                                        }elseif($amount > $limite->top3){
+                                            if($limite->top3 == 0){
+                                                $amount_4 =  0;
+                                                $limite_amount4 = $request->top[$key];
+                                            }else{
+                                                $amount_4 = ($amount + $limite->top3)-$amount;
+                                                $limite_amount4 = $amount - $limite->top3;
+                                            }
                                         }else{
                                             $amount_4 = $request->top[$key]*($keep->keepset4/100);
                                             $limite_amount4 = 0;
                                         }
-                                            
-                                            
+                                    
+                                       
                                                $keep_4 = $keep->keepset4;
                                                $com_4 = $ratepaygov->comg_1; 
                                                $pay_4 = $ratepaygov->payoutg_1;
@@ -230,7 +315,7 @@ class UserbetController extends Controller
                                                $keep = Keep::where('member_id', $useradd)->first();
 
                                                $amount_keep = $request->top[$key]*($keep->keepset3/100);
-                                     
+                                               $amount = $request->top[$key]*($keep->keepset3/100);
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
                                         if($limite_paybet){        
                                             if($limite_amount4 != 0){
@@ -291,6 +376,58 @@ class UserbetController extends Controller
                                                 $amount_3 = $request->top[$key]*($keep->keepset3/100);
                                                 $limite_amount3 = 0;
                                             }
+                                        }elseif($limite_amount4 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset3/100)+$limite_amount4;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_3 =  0;
+                                                    $limite_amount3 = $request->top[$key];
+                                                }else{
+                                                    $amount_3 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount3 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_3 = $request->top[$key]*($keep->keepset3/100)+$limite_amount4;
+                                                $limite_amount3 = 0;
+                                            }
+                                            
+                                        }elseif($limite_amount5 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset3/100)+$limite_amount5;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_3 =  0;
+                                                    $limite_amount3 = $request->top[$key];
+                                                }else{
+                                                    $amount_3 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount3 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_3 = $request->top[$key]*($keep->keepset3/100)+$limite_amount5;
+                                                $limite_amount3 = 0;
+                                            }
+                                            
+                                        }elseif($limite_amount6 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset3/100)+$limite_amount6;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_3 =  0;
+                                                    $limite_amount3 = $request->top[$key];
+                                                }else{
+                                                    $amount_3 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount3 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_3 = $request->top[$key]*($keep->keepset3/100)+$limite_amount6;
+                                                $limite_amount3 = 0;
+                                            }
+                                        }elseif($amount > $limite->top3){
+                                            if($limite->top3 == 0){
+                                                $amount_3 =  0;
+                                                $limite_amount3 = $request->top[$key];
+                                            }else{
+                                                $amount_3 = ($amount + $limite->top3)-$amount;
+                                                $limite_amount3 = $amount - $limite->top3;
+                                            }
                                         }else{
                                             $amount_3 = $request->top[$key]*($keep->keepset3/100);
                                             $limite_amount3 = 0;
@@ -314,6 +451,7 @@ class UserbetController extends Controller
                                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                                $keep = Keep::where('member_id', $useradd)->first();
 
+                                               $amount = $request->top[$key]*($keep->keepset2/100);
                                                $amount_keep = $request->top[$key]*($keep->keepset2/100);
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
                                         
@@ -391,16 +529,79 @@ class UserbetController extends Controller
                                                 $amount_2 = $request->top[$key]*($keep->keepset2/100);
                                                 $limite_amount2 = 0;
                                             }
+                                        }elseif($amount_3 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset2/100)+$limite_amount3;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_2 =  0;
+                                                    $limite_amount2 = $request->top[$key];
+                                                }else{
+                                                    $amount_2 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount2 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_2 = $request->top[$key]*($keep->keepset2/100)+$limite_amount3;
+                                                $limite_amount2 = 0;
+                                            }
+                                            
+                                        }elseif($amount_4 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset2/100)+$limite_amount4;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_2 =  0;
+                                                    $limite_amount2 = $request->top[$key];
+                                                }else{
+                                                    $amount_2 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount2 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_2 = $request->top[$key]*($keep->keepset2/100)+$limite_amount4;
+                                                $limite_amount2 = 0;
+                                            }
+                                            
+                                        }elseif($amount_5 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset2/100)+$limite_amount5;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_2 =  0;
+                                                    $limite_amount2 = $request->top[$key];
+                                                }else{
+                                                    $amount_2 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount2 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_2 = $request->top[$key]*($keep->keepset2/100)+$limite_amount5;
+                                                $limite_amount2 = 0;
+                                            }
+                                            
+                                        }elseif($amount_6 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset2/100)+$limite_amount6;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_2 =  0;
+                                                    $limite_amount2 = $request->top[$key];
+                                                }else{
+                                                    $amount_2 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount2 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_2 = $request->top[$key]*($keep->keepset2/100)+$limite_amount6;
+                                                $limite_amount2 = 0;
+                                            }
+                                        }elseif($amount > $limite->top3){
+                                            if($limite->top3 == 0){
+                                                $amount_2 =  0;
+                                                $limite_amount2 = $request->top[$key];
+                                            }else{
+                                                $amount_2 = ($amount + $limite->top3)-$amount;
+                                                $limite_amount2 = $amount - $limite->top3;
+                                            }
                                         }else{
                                             $amount_2 = $request->top[$key]*($keep->keepset2/100);
                                             $limite_amount2 = 0;
                                         }
-
-                                            // return response()->json([
-                                            //     'limite_amount2'=> $limite_amount2,
-                                               
-                                                
-                                            //     ]);
+                                      
+                                             
                                                
                                                $keep_2 = $keep->keepset2;
                                                $com_2 = $ratepaygov->comg_1;
@@ -419,7 +620,8 @@ class UserbetController extends Controller
                                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                                $keep = Keep::where('member_id', $useradd)->first();
 
-                                               $amount_keep = $request->top[$key]*($keep->keepset2/100);
+                                               $amount = $request->top[$key]*($keep->keepset1/100);
+                                               $amount_keep = $request->top[$key]*($keep->keepset1/100);
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
 
                                         if($limite_paybet){
@@ -510,6 +712,88 @@ class UserbetController extends Controller
                                             else{
                                                 $amount_1 = $request->top[$key]*($keep->keepset1/100);
                                                 $limite_amount1 = 0;
+                                            }
+                                        }elseif($amount_2 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset1/100)+$limite_amount2;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_1 =  0;
+                                                    $limite_amount1 = $request->top[$key];
+                                                }else{
+                                                    $amount_1 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount1 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_1 = $request->top[$key]*($keep->keepset1/100)+$limite_amount2;
+                                                $limite_amount1 = 0;
+                                            }
+                                            
+                                        }elseif($amount_3 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset1/100)+$limite_amount3;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_1 =  0;
+                                                    $limite_amount1 = $request->top[$key];
+                                                }else{
+                                                    $amount_1 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount1 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_1 = $request->top[$key]*($keep->keepset1/100)+$limite_amount3;
+                                                $limite_amount1 = 0;
+                                            }
+                                            
+                                        }elseif($amount_4 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset1/100)+$limite_amount4;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_1 =  0;
+                                                    $limite_amount1 = $request->top[$key];
+                                                }else{
+                                                    $amount_1 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount1 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_1 = $request->top[$key]*($keep->keepset1/100)+$limite_amount4;
+                                                $limite_amount1 = 0;
+                                            }
+                                            
+                                        }elseif($amount_5 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset1/100)+$limite_amount5;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_1 =  0;
+                                                    $limite_amount1 = $request->top[$key];
+                                                }else{
+                                                    $amount_1 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount1 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_1 = $request->top[$key]*($keep->keepset1/100)+$limite_amount5;
+                                                $limite_amount1 = 0;
+                                            }
+                                            
+                                        }elseif($amount_6 !=0){
+                                            $amount = $request->top[$key]*($keep->keepset1/100)+$limite_amount6;
+                                            if($amount > $limite->top3){
+                                                if($limite->top3 == 0){
+                                                    $amount_1 =  0;
+                                                    $limite_amount1 = $request->top[$key];
+                                                }else{
+                                                    $amount_1 = ($amount + $limite->top3)-$amount;
+                                                    $limite_amount1 = $amount - $limite->top3;
+                                                }
+                                            }else{
+                                                $amount_1 = $request->top[$key]*($keep->keepset1/100)+$limite_amount6;
+                                                $limite_amount1 = 0;
+                                            }
+                                        }elseif($amount > $limite->top3){
+                                            if($limite->top3 == 0){
+                                                $amount_1 =  0;
+                                                $limite_amount1 = $request->top[$key];
+                                            }else{
+                                                $amount_1 = ($amount + $limite->top3)-$amount;
+                                                $limite_amount1 = $amount - $limite->top3;
                                             }
                                         }else{
                                             $amount_1 = $request->top[$key]*($keep->keepset1/100);
