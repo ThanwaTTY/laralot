@@ -87,6 +87,8 @@ class UserbetController extends Controller
                                                     $limite_amount6 = 0;
                                                 }
 
+                                                
+
                                                $keep_6 = $keep->keepset6;
                                                $com_6 = $ratepaygov->comg_1;  
                                                $pay_6 = $ratepaygov->payoutg_1;
@@ -96,6 +98,7 @@ class UserbetController extends Controller
                                                $keep_6 = 0;
                                                $com_6 = 0;
                                                $pay_6 = 0;
+                                               $limite_amount6 = 0;
                                                $master = $master; 
                                            }                                      
                                        if($master){
@@ -106,14 +109,37 @@ class UserbetController extends Controller
                                            $amount_keep = $request->top[$key]*($keep->keepset5/100);
                                      
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
-                                              if($limite_paybet){
-                                                if($amount_keep > $limite_paybet->limite_amount){
-                                                   $amount_5 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
-                                                }                      
-                                              }else{
-                                                    $amount_5 = $request->top[$key]*($keep->keepset5/100);
-                                              }
-                                          
+                                            
+                                            if($limite_amount6 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount6 > $limite_paybet->limite_amount){
+                                                        $amount_5 = ($limite_amount6+$limite_paybet->limite_amount)-$limite_amount6;
+                                                        $limite_amount5 = ($limite_amount6 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_5 = ($request->top[$key]*($keep->keepset5/100))+$limite_amount6;
+                                                        $limite_amount5 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_5 = ($request->top[$key]*($keep->keepset5/100))+$limite_amount6;
+                                                    $limite_amount5 = 0;
+                                                }
+                                            }     
+                                            elseif($limite_paybet){
+                                                    if($amount_keep > $limite_paybet->limite_amount){
+                                                        $amount_5 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
+                                                        $limite_amount5 = $amount_keep - $limite_paybet->limite_amount;
+                                                    }else{
+                                                        $amount_5 = $request->top[$key]*($keep->keepset5/100);
+                                                        $limite_amount5 = 0;
+                                                    }                      
+                                                }
+                                            else{
+                                                $amount_5 = $request->top[$key]*($keep->keepset5/100);
+                                                $limite_amount5 = 0;
+                                            }
+
+                                             
                                            $keep_5 = $keep->keepset5;
                                            $com_5 = $ratepaygov->comg_1; 
                                            $pay_5 = $ratepaygov->payoutg_1;
@@ -124,6 +150,7 @@ class UserbetController extends Controller
                                            $keep_5 = 0;
                                            $com_5 = 0;
                                            $pay_5 = 0;
+                                           $limite_amount5 = 0;
                                            $master = $master; 
                                         }
                                        }
@@ -135,12 +162,23 @@ class UserbetController extends Controller
                                                $amount_keep = $request->top[$key]*($keep->keepset4/100);
                                      
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
-                                            //    return response()->json([
-                                            //     'limite_amount6'=> $limite_amount6,
-                                               
-                                                
-                                            //     ]);
-                                            if($limite_amount6 != 0){
+                                        if($limite_paybet){     
+                                            if($limite_amount5 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount5 > $limite_paybet->limite_amount){
+                                                        $amount_4 = ($limite_amount5+$limite_paybet->limite_amount)-$limite_amount5;
+                                                        $limite_amount4 = ($limite_amount5 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_4 = ($request->top[$key]*($keep->keepset4/100))+$limite_amount5;
+                                                        $limite_amount4 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_4 = ($request->top[$key]*($keep->keepset4/100))+$limite_amount5;
+                                                    $limite_amount4 = 0;
+                                                }
+                                            }        
+                                            elseif($limite_amount6 != 0){
                                                 if($limite_paybet){
                                                     if($limite_amount6 > $limite_paybet->limite_amount){
                                                         $amount_4 = ($limite_amount6+$limite_paybet->limite_amount)-$limite_amount6;
@@ -154,9 +192,8 @@ class UserbetController extends Controller
                                                     $amount_4 = ($request->top[$key]*($keep->keepset4/100))+$limite_amount6;
                                                     $limite_amount4 = 0;
                                                 }
-                                            }
-                                             
-                                               elseif($limite_paybet){
+                                            }     
+                                            elseif($limite_paybet){
                                                     if($amount_keep > $limite_paybet->limite_amount){
                                                         $amount_4 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
                                                         $limite_amount4 = $amount_keep - $limite_paybet->limite_amount;
@@ -165,12 +202,16 @@ class UserbetController extends Controller
                                                         $limite_amount4 = 0;
                                                     }                      
                                                 }
-                                                else{
-                                                    $amount_4 = $request->top[$key]*($keep->keepset4/100);
-                                                    $limite_amount4 = 0;
-                                                }
-                                                
-                                             
+                                            else{
+                                                $amount_4 = $request->top[$key]*($keep->keepset4/100);
+                                                $limite_amount4 = 0;
+                                            }
+                                        }else{
+                                            $amount_4 = $request->top[$key]*($keep->keepset4/100);
+                                            $limite_amount4 = 0;
+                                        }
+                                            
+                                            
                                                $keep_4 = $keep->keepset4;
                                                $com_4 = $ratepaygov->comg_1; 
                                                $pay_4 = $ratepaygov->payoutg_1;
@@ -191,13 +232,69 @@ class UserbetController extends Controller
                                                $amount_keep = $request->top[$key]*($keep->keepset3/100);
                                      
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
-                                              if($limite_paybet){
-                                                if($amount_keep > $limite_paybet->limite_amount){
-                                                   $amount_3 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
-                                                }                      
-                                              }else{
-                                                    $amount_3 = $request->top[$key]*($keep->keepset3/100);
-                                              }
+                                        if($limite_paybet){        
+                                            if($limite_amount4 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount4 > $limite_paybet->limite_amount){
+                                                        $amount_3 = ($limite_amount4+$limite_paybet->limite_amount)-$limite_amount4;
+                                                        $limite_amount3 = ($limite_amount4 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_3 = ($request->top[$key]*($keep->keepset3/100))+$limite_amount4;
+                                                        $limite_amount3 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_3 = ($request->top[$key]*($keep->keepset3/100))+$limite_amount4;
+                                                    $limite_amount3 = 0;
+                                                }
+                                            }   
+                                            elseif($limite_amount5 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount5 > $limite_paybet->limite_amount){
+                                                        $amount_3 = ($limite_amount5+$limite_paybet->limite_amount)-$limite_amount5;
+                                                        $limite_amount3 = ($limite_amount5 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_3 = ($request->top[$key]*($keep->keepset3/100))+$limite_amount5;
+                                                        $limite_amount3 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_3 = ($request->top[$key]*($keep->keepset3/100))+$limite_amount5;
+                                                    $limite_amount3 = 0;
+                                                }
+                                            }        
+                                            elseif($limite_amount6 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount6 > $limite_paybet->limite_amount){
+                                                        $amount_3 = ($limite_amount6+$limite_paybet->limite_amount)-$limite_amount6;
+                                                        $limite_amount3 = ($limite_amount6 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_3 = ($request->top[$key]*($keep->keepset3/100))+$limite_amount6;
+                                                        $limite_amount3 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_3 = ($request->top[$key]*($keep->keepset3/100))+$limite_amount6;
+                                                    $limite_amount3 = 0;
+                                                }
+                                            }     
+                                            elseif($limite_paybet){
+                                                    if($amount_keep > $limite_paybet->limite_amount){
+                                                        $amount_3 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
+                                                        $limite_amount3 = $amount_keep - $limite_paybet->limite_amount;
+                                                    }else{
+                                                        $amount_3 = $request->top[$key]*($keep->keepset3/100);
+                                                        $limite_amount3 = 0;
+                                                    }                      
+                                                }
+                                            else{
+                                                $amount_3 = $request->top[$key]*($keep->keepset3/100);
+                                                $limite_amount3 = 0;
+                                            }
+                                        }else{
+                                            $amount_3 = $request->top[$key]*($keep->keepset3/100);
+                                            $limite_amount3 = 0;
+                                        }
 
                                                $keep_3 = $keep->keepset3;
                                                $com_3 = $ratepaygov->comg_1; 
@@ -208,6 +305,7 @@ class UserbetController extends Controller
                                                $keep_3 = 0;
                                                $com_3 = 0;
                                                $pay_3 = 0;
+                                               $limite_amount3 = 0;
                                                $master = $master ; 
                                            }
                                        }
@@ -218,31 +316,91 @@ class UserbetController extends Controller
 
                                                $amount_keep = $request->top[$key]*($keep->keepset2/100);
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
-                                                
-                                               
-                                               if($limite_amount4 != 0){
+                                        
+                                        if($limite_paybet){         
+                                            if($limite_amount3 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount3 > $limite_paybet->limite_amount){
+                                                        $amount_2 = ($limite_amount3+$limite_paybet->limite_amount)-$limite_amount3;
+                                                        $limite_amount2 = ($limite_amount3 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_2 = ($request->top[$key]*($keep->keepset2/100))+$limite_amount3;
+                                                        $limite_amount2 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_2 = ($request->top[$key]*($keep->keepset2/100))+$limite_amount3;
+                                                    $limite_amount2 = 0;
+                                                }
+                                            }      
+                                            elseif($limite_amount4 != 0){
+                                                if($limite_paybet){
                                                     if($limite_amount4 > $limite_paybet->limite_amount){
                                                         $amount_2 = ($limite_amount4+$limite_paybet->limite_amount)-$limite_amount4;
                                                         $limite_amount2 = ($limite_amount4 - $limite_paybet->limite_amount)+$amount_keep;
                                                     }else{
                                                         $amount_2 = ($request->top[$key]*($keep->keepset2/100))+$limite_amount4;
                                                         $limite_amount2 = 0;
-                                                    }
-                                                }
-                                                elseif($limite_paybet){
-                                                    if($amount_keep > $limite_paybet->limite_amount){
-                                                        $amount_2 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
-                                                        $limite_amount2 = 0;
-                                                        }else{
-                                                            $amount_2 = $request->top[$key]*($keep->keepset2/100);
-                                                            $limite_amount2 = 0;
-                                                        }                      
+                                                    }                      
                                                 }
                                                 else{
-                                                    $amount_2 = $request->top[$key]*($keep->keepset4/100);
+                                                    $amount_2 = ($request->top[$key]*($keep->keepset2/100))+$limite_amount4;
                                                     $limite_amount2 = 0;
                                                 }
+                                            }   
+                                            elseif($limite_amount5 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount5 > $limite_paybet->limite_amount){
+                                                        $amount_2 = ($limite_amount5+$limite_paybet->limite_amount)-$limite_amount5;
+                                                        $limite_amount2 = ($limite_amount5 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_2 = ($request->top[$key]*($keep->keepset2/100))+$limite_amount5;
+                                                        $limite_amount2 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_2 = ($request->top[$key]*($keep->keepset2/100))+$limite_amount5;
+                                                    $limite_amount2 = 0;
+                                                }
+                                            }        
+                                            elseif($limite_amount6 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount6 > $limite_paybet->limite_amount){
+                                                        $amount_2 = ($limite_amount6+$limite_paybet->limite_amount)-$limite_amount6;
+                                                        $limite_amount2 = ($limite_amount6 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_2 = ($request->top[$key]*($keep->keepset2/100))+$limite_amount6;
+                                                        $limite_amount2 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_2 = ($request->top[$key]*($keep->keepset2/100))+$limite_amount6;
+                                                    $limite_amount2 = 0;
+                                                }
+                                            }     
+                                            elseif($limite_paybet){
+                                                    if($amount_keep > $limite_paybet->limite_amount){
+                                                        $amount_2 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
+                                                        $limite_amount2 = $amount_keep - $limite_paybet->limite_amount;
+                                                    }else{
+                                                        $amount_2 = $request->top[$key]*($keep->keepset2/100);
+                                                        $limite_amount2 = 0;
+                                                    }                      
+                                                }
+                                            else{
+                                                $amount_2 = $request->top[$key]*($keep->keepset2/100);
+                                                $limite_amount2 = 0;
+                                            }
+                                        }else{
+                                            $amount_2 = $request->top[$key]*($keep->keepset2/100);
+                                            $limite_amount2 = 0;
+                                        }
+
+                                            // return response()->json([
+                                            //     'limite_amount2'=> $limite_amount2,
+                                               
                                                 
+                                            //     ]);
                                                
                                                $keep_2 = $keep->keepset2;
                                                $com_2 = $ratepaygov->comg_1;
@@ -260,7 +418,104 @@ class UserbetController extends Controller
                                            if($master->level == 1){
                                                $ratepaygov = Ratepaygov::where('member_id', $master->id)->first();
                                                $keep = Keep::where('member_id', $useradd)->first();
-                                               $amount_1 = $request->top[$key]*($keep->keepset1/100);
+
+                                               $amount_keep = $request->top[$key]*($keep->keepset2/100);
+                                               $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
+
+                                        if($limite_paybet){
+                                            if($limite_amount2 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount2 > $limite_paybet->limite_amount){
+                                                        $amount_1 = ($limite_amount2+$limite_paybet->limite_amount)-$limite_amount2;
+                                                        $limite_amount1 = ($limite_amount2 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount2;
+                                                        $limite_amount1 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount2;
+                                                    $limite_amount1 = 0;
+                                                }
+                                            }     
+                                            elseif($limite_amount3 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount3 > $limite_paybet->limite_amount){
+                                                        $amount_1 = ($limite_amount3+$limite_paybet->limite_amount)-$limite_amount3;
+                                                        $limite_amount1 = ($limite_amount3 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount3;
+                                                        $limite_amount1 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount3;
+                                                    $limite_amount1 = 0;
+                                                }
+                                            }      
+                                            elseif($limite_amount4 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount4 > $limite_paybet->limite_amount){
+                                                        $amount_1 = ($limite_amount4+$limite_paybet->limite_amount)-$limite_amount4;
+                                                        $limite_amount1 = ($limite_amount4 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount4;
+                                                        $limite_amount1 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount4;
+                                                    $limite_amount1 = 0;
+                                                }
+                                            }   
+                                            elseif($limite_amount5 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount5 > $limite_paybet->limite_amount){
+                                                        $amount_1 = ($limite_amount5+$limite_paybet->limite_amount)-$limite_amount5;
+                                                        $limite_amount1 = ($limite_amount5 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount5;
+                                                        $limite_amount1 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount5;
+                                                    $limite_amount1 = 0;
+                                                }
+                                            }        
+                                            elseif($limite_amount6 != 0){
+                                                if($limite_paybet){
+                                                    if($limite_amount6 > $limite_paybet->limite_amount){
+                                                        $amount_1 = ($limite_amount6+$limite_paybet->limite_amount)-$limite_amount6;
+                                                        $limite_amount1 = ($limite_amount6 - $limite_paybet->limite_amount)+$amount_keep;
+                                                    }else{
+                                                        $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount6;
+                                                        $limite_amount1 = 0;
+                                                    }                      
+                                                }
+                                                else{
+                                                    $amount_1 = ($request->top[$key]*($keep->keepset1/100))+$limite_amount6;
+                                                    $limite_amount1 = 0;
+                                                }
+                                            }     
+                                            elseif($limite_paybet){
+                                                    if($amount_keep > $limite_paybet->limite_amount){
+                                                        $amount_1 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
+                                                        $limite_amount1 = $amount_keep - $limite_paybet->limite_amount;
+                                                    }else{
+                                                        $amount_1 = $request->top[$key]*($keep->keepset1/100);
+                                                        $limite_amount1 = 0;
+                                                    }                      
+                                                }
+                                            else{
+                                                $amount_1 = $request->top[$key]*($keep->keepset1/100);
+                                                $limite_amount1 = 0;
+                                            }
+                                        }else{
+                                            $amount_1 = $request->top[$key]*($keep->keepset1/100);
+                                            $limite_amount1 = 0;
+                                        }
+
                                                $keep_1 = $keep->keepset1;
                                                $com_1 = $ratepaygov->comg_1; 
                                                $pay_1 = $ratepaygov->payoutg_1;
