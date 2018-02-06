@@ -32,7 +32,7 @@ class MemberController extends Controller
             'phone' => 'required'
         ];
 
-         Member::create([
+         $Member = Member::create([
             'username' => request('useradd').request('username'),
             'password' => bcrypt(request('password')),
             'level' => request('level'),
@@ -41,6 +41,42 @@ class MemberController extends Controller
             'phone' => request('phone'),
             'useradd' => 0 
             ]);
+
+            $keeps = Keep::create([
+                'member_id' =>$Member->id,
+                'keep' => 0,
+                'keepset' => 100,
+                'keepset1' => 100,
+                'keepset2' => 0,
+                'keepset3' => 0,
+                'keepset4' => 0,
+                'keepset5' => 0,
+                'keepset6' => 0,
+                'keepover' => 0
+            ]);
+
+            $Ratepaygov = Ratepaygov::create([
+                'member_id' =>$Member->id,
+                'lotgov_id' =>1,
+                'payoutg_1' =>550,
+                'comg_1' =>33,
+                'payoutg_2' =>128,
+                'comg_2' =>33,
+                'payoutg_3' =>105,
+                'comg_3' =>33,
+                'payoutg_4' =>70,
+                'comg_4' =>28,
+                'payoutg_5' =>70,
+                'comg_5' =>28,
+                'payoutg_6' =>12,
+                'comg_6' =>28,
+                'payoutg_7' =>3,
+                'comg_7' =>12,
+                'payoutg_8' =>4,
+                'comg_8' =>12
+            ]);
+
+
         session()->flash('massagesuccess', "สมัคสมาชิกสำหรับ TEST ระบบเรียบร้อยเเล้ว");
         return redirect('/admin/login');
     }

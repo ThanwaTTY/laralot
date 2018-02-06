@@ -1455,11 +1455,7 @@ class UserbetController extends Controller
                     if($request->tod[$key]){
 
                         $limite_paybet = Limite_paybet::where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "tod".$type)->first();
-                        return response()->json([
-                            'limite_paybet'=>$limite_paybet,
-                            
-                            
-                            ]);
+                        
                         if($type==3){
                             $paytod = $member->ratepaygov->payoutg_3;
                             $com_7 = $member->ratepaygov->comg_3;
