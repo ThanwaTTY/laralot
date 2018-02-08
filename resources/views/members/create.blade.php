@@ -295,7 +295,7 @@
                                 <option value="0.0" selected="selected">0.0%</option>
                               </select>
 								</div>
-								<label for="take" class="control-label col-xs-1">เก็บของ:</label>
+								<label for="take" class="control-label col-xs-1" name="keepover" value="1">เก็บของ:</label>
 								<div class="col-xs-2">
 									<select class="form-control" id="take" name="keepset">
                               @for($i = auth()->user()->keep->keepset; $i >= 0; $i -= 0.5)
