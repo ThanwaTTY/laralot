@@ -45,9 +45,7 @@ class UserbetController extends Controller
 
         $nums = $request->num;
         
-        //  return response()->json([
-        //             'limitebet'=>$limitebet  
-        //             ]);
+        
         foreach ($nums as $key => $num) {
             if($num){
                 $type = $this->checktype($num);
@@ -71,10 +69,11 @@ class UserbetController extends Controller
                                                $keep = Keep::where('member_id', $useradd)->first();
 
                                                $amount_keep = $request->top[$key]*($keep->keepset6/100);
-                                     
+                                               $amount = $request->top[$key]*($keep->keepset6/100);
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
                                                $limite = Limite::where('member_id', $master->id)->where('lotto_id', $lottos->id)->first();
                                                $limite_amount6 = 0;
+                                               
                                                if($limite_paybet){
                                                     if($amount_keep > $limite_paybet->limite_amount){
                                                         $amount_6 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
@@ -94,7 +93,9 @@ class UserbetController extends Controller
                                                     
                                                 }
 
-                                                
+                                                return response()->json([
+                                                    'amount_6'=>$amount_6  
+                                                    ]);
 
                                                $keep_6 = $keep->keepset6;
                                                $com_6 = $ratepaygov->comg_1;  
