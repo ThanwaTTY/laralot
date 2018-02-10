@@ -47,71 +47,84 @@ class UserbetController extends Controller
 
         
 
-        $keepover_6 = 0;
-        $keepover_5 = 0;
-        $keepover_4 = 0;
-        $keepover_3 = 0;
-        $keepover_2 = 0;
-        $keepover_1 = 0;
+        // $keepover_6 = 0;
+        // $keepover_5 = 0;
+        // $keepover_4 = 0;
+        // $keepover_3 = 0;
+        // $keepover_2 = 0;
+        // $keepover_1 = 0;
 
-        foreach ($nums as $key => $num) {
-           $numm = $num;
-           $keep = Keep::where('member_id', $useradd)->first();
-           $master2 = Member::find($useradd);
+        // $limitecheck6 = 0;
+        // $limitecheck5 = 0;
+        // $limitecheck4 = 0;
+        // $limitecheck3 = 0;
+        // $limitecheck2 = 0;
+        // $limitecheck1 = 0;
 
-           if($master2){
-               if($master2->level ==6){
-                   $keepover_6 = 6;
-                   $master2 = Member::find($master2->useradd);
-               }else{
-                $master2 = $master2;
-               }
-           }if($master2){
-                if($master2->level ==5){
-                    $keepover_5 = 5;
-                    $master2 = Member::find($master2->useradd);
-                }else{
-                $master2 = $master2;
-            }
-            }if($master2){
-                if($master2->level ==4){
-                    $keepover_4 = 4;
-                    $master2 = Member::find($master2->useradd);
-                }else{
-                $master2 = $master2;
-                }
-            }if($master2){
-                if($master2->level ==3){
-                    $keepover_3 = 3;
-                    $master2 = Member::find($master2->useradd);
-                }else{
-                $master2 = $master2;
-                }
-            }if($master2){
-                if($master2->level ==2){
-                    $keepover_2 = 2;
-                    $master2 = Member::find($master2->useradd);
-                }else{
-                $master2 = $master2;
-                }
-            }if($master2){
-                if($master2->level ==1){
-                    $keepover_1 = 1;
-                    $master2 = Member::find($master2->useradd);
-                }else{
-                $master2 = $master2;
-                }
-            }
+        // foreach ($nums as $key => $num) {
+        //    $numm = $num;
+        //    $keep = Keep::where('member_id', $useradd)->first();
+        //    $master2 = Member::find($useradd);
 
-           return response()->json([
-            'keepover_6'=>$keepover_6,  
-            'keepover_5'=>$keepover_5,  
-            'keepover_4'=>$keepover_4,  
-            'keepover_3'=>$keepover_3,  
-            'keepover_2'=>$keepover_2,  
-            'keepover_1'=>$keepover_1, 
-            ]);
-        }
+        //    if($master2){
+        //        if($master2->level ==6){
+        //            $keepover_6 = 6;
+        //            $limitecheck6 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+        //            $master2 = Member::find($master2->useradd);
+        //        }else{
+        //         $master2 = $master2;
+        //        }
+        //    }if($master2){
+        //         if($master2->level ==5){
+        //             $keepover_5 = 5;
+        //             $limitecheck5 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+        //             $master2 = Member::find($master2->useradd);
+        //         }else{
+        //         $master2 = $master2;
+        //     }
+        //     }if($master2){
+        //         if($master2->level ==4){
+        //             $keepover_4 = 4;
+        //             $limitecheck4 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+        //             $master2 = Member::find($master2->useradd);
+        //         }else{
+        //         $master2 = $master2;
+        //         }
+        //     }if($master2){
+        //         if($master2->level ==3){
+        //             $keepover_3 = 3;
+        //             $limitecheck3 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+        //             $master2 = Member::find($master2->useradd);
+        //         }else{
+        //         $master2 = $master2;
+        //         }
+        //     }if($master2){
+        //         if($master2->level ==2){
+        //             $keepover_2 = 2;
+        //             $limitecheck2 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+        //             $master2 = Member::find($master2->useradd);
+        //         }else{
+        //         $master2 = $master2;
+        //         }
+        //     }if($master2){
+        //         if($master2->level ==1){
+        //             $keepover_1 = 1;
+        //             $limitecheck1 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+        //             $master2 = Member::find($master2->useradd);
+        //         }else{
+        //         $master2 = $master2;
+        //         }
+        //     }
+
+        //    return response()->json([
+        //     'limitecheck1'=>$limitecheck1,  
+        //     'limitecheck2'=>$limitecheck2,  
+        //     'limitecheck3'=>$limitecheck3,  
+        //     'limitecheck4'=>$limitecheck4,  
+        //     'limitecheck5'=>$limitecheck5,  
+        //     'limitecheck6'=>$limitecheck6, 
+        //     ]);
+        // }
            
         foreach ($nums as $key => $num) {
             if($num){
@@ -161,7 +174,7 @@ class UserbetController extends Controller
                                                 }
 
                                                 // return response()->json([
-                                                //     'amount_6'=>$amount_6  
+                                                //     'amount'=>$amount  
                                                 //     ]);
 
                                                $keep_6 = $keep->keepset6;
