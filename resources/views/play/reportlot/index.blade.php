@@ -1,112 +1,73 @@
-@extends('mastermember')
-@section('footer')
-<script>
-  $(function () {
-    //Initialize Select2 Elements
-    $(".select2").select2();
+<div class="page-content">
+        <div class="space-4"></div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-2" id="user-sidebar">
+            <div id="sidebar-box" class="widget-box no-margin-top no-border col-xs-6 col-sm-6 col-md-12">
+              <div class="widget-body">
+                <div class="widget-main mobile-bet-hide" id="summary-box">
+                  <table class="table no-margin white bolder" id="summary-table" style="border: 0;">
+                    <tbody>
+                      <tr><th><span class="bolder bigger-110">ยอดรวม</span></th></tr>
+                      <tr><th>เครดิต</th><td id="member-credit" class="align-right">1,000</td></tr>
+                      <tr><th>ได้เสียสุทธิ</th><td id="member-bet" class="align-right">-20</td></tr>
+                      <tr><th>ยอดคงเหลือ</th><td id="member-available" class="align-right">980</td></tr>
+                                              <tr class="select-game-hide"><th>&nbsp;</th><td></td></tr>
+                        <tr class="select-game-hide"><th colspan="2"><span class="bolder bigger-110">ยอดรัฐบาลไทย</span></th></tr>
+                        <tr class="select-game-hide"><th>ยอดพนัน</th><td id="member-total-bet" class="align-right">30</td></tr>
+                        <tr class="select-game-hide"><th>ค่าคอม</th><td id="member-total-com" class="align-right">10</td></tr>
+                                          </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
 
-    //Datemask dd/mm/yyyy
-    $("#datemask").inputmask("dd/mm/yyyy", {"placeholder": "dd/mm/yyyy"});
-    //Datemask2 mm/dd/yyyy
-    $("#datemask2").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
-    //Money Euro
-    $("[data-mask]").inputmask();
+            <div class="col-xs-6 col-sm-6 col-md-12 no-padding select-game-hide">
+              <div>
+                                  <select id="bet_type_group_id" class="form-control" name="bet_type_grop_id"><option value="1">3 ตัวท้าย</option></select>
+              </div>
 
-    //Date range picker
-    $('#reservation').daterangepicker();
-    //Date range picker with time picker
-    $('#reservationtime').daterangepicker({timePicker: true, timePickerIncrement: 30, format: 'MM/DD/YYYY h:mm A'});
-    //Date range as a button
-    $('#daterange-btn').daterangepicker(
-        {
-          ranges: {
-            'วันนี้': [moment(), moment()],
-            'เมื่อวาน': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-            '3 วันล่าสุด': [moment().subtract(2, 'days'), moment()],
-            '7 วันล่าสุด': [moment().subtract(6, 'days'), moment()]
-            //'30 วันล่าสุด': [moment().subtract(29, 'days'), moment()],
-            //'This Month': [moment().startOf('month'), moment().endOf('month')],
-            //'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-          },
-          //ranges: {
-          //  'วันนี้': [moment(), moment()],
-          //  'เมื่อวาน': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
-          //  '3 วันล่าสุด': [moment().subtract(2, 'days'), moment()],
-          //  '7 วันล่าสุด': [moment().subtract(6, 'days'), moment()],
-          //  '30 วันล่าสุด': [moment().subtract(29, 'days'), moment()],
-          //  'This Month': [moment().startOf('month'), moment().endOf('month')],
-          //  'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
-          //},
-          startDate: moment().subtract(29, 'days'),
-          endDate: moment()
-        },
-        function (start, end) {
-          $('#daterange-btn span').html(start.format('MMMM D, YYYY') + ' - ' + end.format('MMMM D, YYYY'));
-        }
-    );
+              <div id="close-box-container"><div id="close-box">
+                  <h4 class="align-center">
+                    หมายเลขปิดรับ<br>
+                                          รัฐบาลไทย
+                                        <a href="#" id="close-num-refresh">
+                      <i class="ace-icon fa fa-refresh"></i>
+                    </a>
+                    <div class="space-4"></div>
+                  </h4>
+                  <div class="widget-box transparent no-margin-top">
+                    <div class="widget-body">
+                      <div class="widget-main" id="close-num-box">กำลังโหลด...</div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
 
-    //Date picker
-    $('#datepicker').datepicker({
-      autoclose: true
-    });
-
-    //iCheck for checkbox and radio inputs
-    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-      checkboxClass: 'icheckbox_minimal-blue',
-      radioClass: 'iradio_minimal-blue'
-    });
-    //Red color scheme for iCheck
-    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
-      checkboxClass: 'icheckbox_minimal-red',
-      radioClass: 'iradio_minimal-red'
-    });
-    //Flat red color scheme for iCheck
-    $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
-      checkboxClass: 'icheckbox_flat-green',
-      radioClass: 'iradio_flat-green'
-    });
-
-    //Colorpicker
-    $(".my-colorpicker1").colorpicker();
-    //color picker with addon
-    $(".my-colorpicker2").colorpicker();
-
-    //Timepicker
-    $(".timepicker").timepicker({
-      showInputs: false
-    });
-  });
-</script>
-@endsection
-@section('content')
-
+          <div class="col-xs-12 col-sm-12 col-md-10" id="user-content">
             <div class="alert alert-info invert-select-game-hide mobile-bet-hide hidden" id="news">
               <button type="button" class="close" data-dismiss="alert">
                 <i class="ace-icon fa fa-times"></i>
               </button>
-                  <b>ประกาศระบบ:</b> <b>***ประกาศข่าว*** หวยรัฐงวดวันที่ 16 ตุลาคม 2560<br>
-                  บริษัทจะเปิดรับแทงหวยเร็วขึ้นโดยเริ่ม วันที่ 11 ตุลาคม 2560 เวลา 12.00 น. และปิดรับวันที่ 16 ตุลาคม 2560 เวลา 14.45 น. <br>
-                  <br>
-                  และหวยรัฐงวดต่อไปจากนี้จะเปิดรับแทงทันทีหลังผลออก 7 วัน เช่น<br>
-                  งวดวันที่ 1 พ.ย. 60 เริ่มเปิดรับวันที่ 23 ต.ค. 60<br>
-                  งวดวันที่ 16 พ.ย. 60 เริ่มเปิดรับวันที่ 8 พ.ย. 60  <br>
-                  <br>
-                  ระบบลบโพย หลังจากแทงเข้ามาแล้วจะสามารถลบโพยหรือรายการได้ไม่เกินอย่างละ 10 ครั้ง และภายในเวลา 180 นาที นับจากที่แทงเข้ามาแล้ว เกินจากนี้จะไม่สามารถทำการลบได้<br>
-                  <br>
-                  หากมีการปรับเปลี่ยนอะไรเพิ่มเติม ทางบริษัทจะรีบแจ้งข่าวให้ทราบต่อไป ขอบคุณครับ<br>
-                  <br>
-                  </b><br>
+                            <b>ประกาศระบบ:</b> แจ้งข่าวเรื่องออกผลหวยหุ้นต่างๆ<br>
+เนื่องจากเดือนนี้ มีวันหยุดเทศกาล ในแต่ละประเทศแตกต่างกันไป และค่อนข้างเยอะ จึงทำให้ผลหุ้นต่างประเทศบางตัว อาจจะต้องโมฆะยกเลิก คืนเงิน เช่น หุ้นบางตัวเปิดตลาดแค่ครึ่งวันแล้วก็ปิดก่อนเวลาปกติ ทางบริษัทจึงต้องให้เป็นโมฆะ และคืนเงินกลับไป เป็นต้น<br>
+<br>
+สำหรับเอเย่นต์ที่ทำบัญชีราย สัปดาห์ จันทร์ - อาทิตย์  บริษัทจึงขอแนะนำให้ท่านทำบัญชีหลัง 12.00น. ของวันจันทร์เป็นต้นไป<br>
+<br>
+<br>
             </div>
 
             
             
-<div id="content"><div class="col-xs-12 no-padding-left">
+            <div id="content"><div class="col-xs-12 no-padding-left">
   <h3 class="no-margin-top">
     <i class="fa fa-angle-right blue"></i>
     สรุปงวดหวย
-    <span class="deep-blue" id="finance-date">วันที่ 12-10-2017</span><br>
+    <span class="deep-blue" id="finance-date">วันที่ 11-02-2018</span><br>
     <div class="space-4"></div>
-    <input type="text" class="form-control date-range-picker max-width-180" id="daterange-btn" value="12/10/2017 - 12/10/2017">
+    <input type="text" class="form-control date-range-picker max-width-180" value="11/02/2018 - 11/02/2018">
       </h3>
 
   <table class="table table-bordered table-border-dark table-auto table-nowrap" id="table-game-results">
@@ -122,7 +83,7 @@
       </tr>
     </thead>
     <tbody>
-    </tbody>
+          </tbody>
   </table>
 </div>
 
@@ -137,7 +98,7 @@
     $(this).html(n2c($(this).html()));
   });
 
-  $('.date-range-picker').daterangepicker(dateRangeOptions);
+  //$('.date-range-picker').daterangepicker(dateRangeOptions);
 
   $('.date-range-picker').on('apply.daterangepicker', function(e, picker) {
     $.get('/game-results/load?date='+$('.date-range-picker').val(), function(result) {
@@ -156,5 +117,6 @@
   });
 </script>
 </div>
-
-@endsection
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>

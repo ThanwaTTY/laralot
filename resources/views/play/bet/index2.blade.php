@@ -1,9 +1,4 @@
-@extends('mastermember')
-@section('footer')
 
-
-@endsection
-@section('content')
 <div class="page-content">  
         <div class="space-4"></div>
         <div class="row">
@@ -389,5 +384,3 @@
 
   $('#bet-table input:first').focus();
 </script>
-
-@endsection

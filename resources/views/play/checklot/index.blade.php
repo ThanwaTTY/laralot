@@ -1,22 +1,62 @@
-@extends('mastermember')
-@section('content')
+<div class="page-content">
+        <div class="space-4"></div>
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-2" id="user-sidebar">
+            <div id="sidebar-box" class="widget-box no-margin-top no-border col-xs-6 col-sm-6 col-md-12">
+              <div class="widget-body">
+                <div class="widget-main mobile-bet-hide" id="summary-box">
+                  <table class="table no-margin white bolder" id="summary-table" style="border: 0;">
+                    <tbody>
+                      <tr><th><span class="bolder bigger-110">ยอดรวม</span></th></tr>
+                      <tr><th>เครดิต</th><td id="member-credit" class="align-right">1,000</td></tr>
+                      <tr><th>ได้เสียสุทธิ</th><td id="member-bet" class="align-right">-20</td></tr>
+                      <tr><th>ยอดคงเหลือ</th><td id="member-available" class="align-right">980</td></tr>
+                                              <tr class="select-game-hide"><th>&nbsp;</th><td></td></tr>
+                        <tr class="select-game-hide"><th colspan="2"><span class="bolder bigger-110">ยอดรัฐบาลไทย</span></th></tr>
+                        <tr class="select-game-hide"><th>ยอดพนัน</th><td id="member-total-bet" class="align-right">30</td></tr>
+                        <tr class="select-game-hide"><th>ค่าคอม</th><td id="member-total-com" class="align-right">10</td></tr>
+                                          </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
 
+            <div class="col-xs-6 col-sm-6 col-md-12 no-padding select-game-hide">
+              <div>
+                                  <select id="bet_type_group_id" class="form-control" name="bet_type_grop_id"><option value="1">3 ตัวท้าย</option></select>
+              </div>
+
+              <div id="close-box-container"><div id="close-box">
+                  <h4 class="align-center">
+                    หมายเลขปิดรับ<br>
+                                          รัฐบาลไทย
+                                        <a href="#" id="close-num-refresh">
+                      <i class="ace-icon fa fa-refresh"></i>
+                    </a>
+                    <div class="space-4"></div>
+                  </h4>
+                  <div class="widget-box transparent no-margin-top">
+                    <div class="widget-body">
+                      <div class="widget-main" id="close-num-box"><span class="no-closed">ไม่มีหมายเลขปิดรับ</span></div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-10" id="user-content">
             <div class="alert alert-info invert-select-game-hide mobile-bet-hide hidden" id="news">
               <button type="button" class="close" data-dismiss="alert">
                 <i class="ace-icon fa fa-times"></i>
               </button>
-                            <b>ประกาศระบบ:</b> <b>***ประกาศข่าว*** หวยรัฐงวดวันที่ 16 ตุลาคม 2560<br>
-บริษัทจะเปิดรับแทงหวยเร็วขึ้นโดยเริ่ม วันที่ 11 ตุลาคม 2560 เวลา 12.00 น. และปิดรับวันที่ 16 ตุลาคม 2560 เวลา 14.45 น. <br>
+                            <b>ประกาศระบบ:</b> แจ้งข่าวเรื่องออกผลหวยหุ้นต่างๆ<br>
+เนื่องจากเดือนนี้ มีวันหยุดเทศกาล ในแต่ละประเทศแตกต่างกันไป และค่อนข้างเยอะ จึงทำให้ผลหุ้นต่างประเทศบางตัว อาจจะต้องโมฆะยกเลิก คืนเงิน เช่น หุ้นบางตัวเปิดตลาดแค่ครึ่งวันแล้วก็ปิดก่อนเวลาปกติ ทางบริษัทจึงต้องให้เป็นโมฆะ และคืนเงินกลับไป เป็นต้น<br>
 <br>
-และหวยรัฐงวดต่อไปจากนี้จะเปิดรับแทงทันทีหลังผลออก 7 วัน เช่น<br>
-งวดวันที่ 1 พ.ย. 60 เริ่มเปิดรับวันที่ 23 ต.ค. 60<br>
-งวดวันที่ 16 พ.ย. 60 เริ่มเปิดรับวันที่ 8 พ.ย. 60  <br>
+สำหรับเอเย่นต์ที่ทำบัญชีราย สัปดาห์ จันทร์ - อาทิตย์  บริษัทจึงขอแนะนำให้ท่านทำบัญชีหลัง 12.00น. ของวันจันทร์เป็นต้นไป<br>
 <br>
-ระบบลบโพย หลังจากแทงเข้ามาแล้วจะสามารถลบโพยหรือรายการได้ไม่เกินอย่างละ 10 ครั้ง และภายในเวลา 180 นาที นับจากที่แทงเข้ามาแล้ว เกินจากนี้จะไม่สามารถทำการลบได้<br>
 <br>
-หากมีการปรับเปลี่ยนอะไรเพิ่มเติม ทางบริษัทจะรีบแจ้งข่าวให้ทราบต่อไป ขอบคุณครับ<br>
-<br>
- </b><br>
             </div>
 
             
@@ -37,7 +77,7 @@
   </thead>
   <tbody>
           <tr>
-        <td class="bolder ac">งวดวันที่ 16 ตุลาคม 2560</td>
+        <td class="bolder ac">งวดวันที่ 16 กุมภาพันธ์ 2561</td>
                             <td class="blue bolder ac">–</td>
           <td class="blue bolder ac">–</td>
           <td class="blue bolder ac">–</td>
@@ -46,39 +86,39 @@
                       </td>
                         </tr>
           <tr>
-        <td class="bolder ac">งวดวันที่ 1 ตุลาคม 2560</td>
-                            <td class="blue bolder ac">714</td>
-          <td class="blue bolder ac">14</td>
-          <td class="blue bolder ac">52</td>
-          <td class="blue bolder ac">
-                          611 – 726 – 462 – 952
-                      </td>
-                        </tr>
-          <tr>
-        <td class="bolder ac">งวดวันที่ 16 กันยายน 2560</td>
-                            <td class="blue bolder ac">143</td>
-          <td class="blue bolder ac">43</td>
-          <td class="blue bolder ac">71</td>
-          <td class="blue bolder ac">
-                          172 – 647 – 340 – 388
-                      </td>
-                        </tr>
-          <tr>
-        <td class="bolder ac">งวดวันที่ 1 กันยายน 2560</td>
-                            <td class="blue bolder ac">224</td>
-          <td class="blue bolder ac">24</td>
-          <td class="blue bolder ac">65</td>
-          <td class="blue bolder ac">
-                          345 – 679 – 278 – 195
-                      </td>
-                        </tr>
-          <tr>
-        <td class="bolder ac">งวดวันที่ 16 สิงหาคม 2560</td>
-                            <td class="blue bolder ac">431</td>
+        <td class="bolder ac">งวดวันที่ 1 กุมภาพันธ์ 2561</td>
+                            <td class="blue bolder ac">853</td>
+          <td class="blue bolder ac">53</td>
           <td class="blue bolder ac">31</td>
-          <td class="blue bolder ac">37</td>
           <td class="blue bolder ac">
-                          115 – 302 – 253 – 945
+                          106 – 947 – 181 – 519
+                      </td>
+                        </tr>
+          <tr>
+        <td class="bolder ac">งวดวันที่ 17 มกราคม 2561</td>
+                            <td class="blue bolder ac">823</td>
+          <td class="blue bolder ac">23</td>
+          <td class="blue bolder ac">50</td>
+          <td class="blue bolder ac">
+                          624 – 799 – 236 – 397
+                      </td>
+                        </tr>
+          <tr>
+        <td class="bolder ac">งวดวันที่ 30 ธันวาคม 2560	</td>
+                            <td class="blue bolder ac">234</td>
+          <td class="blue bolder ac">34</td>
+          <td class="blue bolder ac">98</td>
+          <td class="blue bolder ac">
+                          495 – 373 – 953 – 504
+                      </td>
+                        </tr>
+          <tr>
+        <td class="bolder ac">งวดวันที่ 16 ธันวาคม 2560</td>
+                            <td class="blue bolder ac">596</td>
+          <td class="blue bolder ac">96</td>
+          <td class="blue bolder ac">89</td>
+          <td class="blue bolder ac">
+                          616 – 836 – 290 – 938
                       </td>
                         </tr>
       </tbody>
@@ -86,11 +126,11 @@
 
 <h3>
   <i class="fa fa-angle-right blue"></i>
-  หวยหุ้น <span class="deep-blue" id="stock-date">วันที่ 12-10-2017</span>
+  หวยหุ้น <span class="deep-blue" id="stock-date">วันที่ 11-02-2018</span>
   <div class="space-4"></div>
-  <button class="btn btn-primary btn-sm no-border no-margin padding-6-8" id="select-date-prev"><i class="fa fa-chevron-left"></i></button>
-  <input type="button" class="btn btn-primary btn-sm no-border no-margin" id="select-date" value="12-10-2017" data-date="12-10-2017">
-  <button class="btn btn-primary btn-sm no-border no-margin padding-6-8" id="select-date-next"><i class="fa fa-chevron-right"></i></button>
+  <button class="btn btn-primary btn-sm no-border no-margin" id="select-date-prev"><i class="fa fa-chevron-left"></i></button>
+  <input type="button" class="btn btn-primary btn-sm no-border no-margin" id="select-date" value="11-02-2018" data-date="11-02-2018">
+  <button class="btn btn-primary btn-sm no-border no-margin" id="select-date-next"><i class="fa fa-chevron-right"></i></button>
 </h3>
 
 <div class="space-4"></div>
@@ -140,161 +180,35 @@
     </tr>
         <tr>
       <td class="bolder">&lt;&lt;&lt; หวยหุ้นไทย รอบเปิดเช้า &gt;&gt;&gt;</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">526</td>
-        <td class="blue bolder ac">26</td>
-        <td class="blue bolder ac">12</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 2</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">404</td>
-        <td class="blue bolder ac">04</td>
-        <td class="blue bolder ac">90</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 3</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">352</td>
-        <td class="blue bolder ac">52</td>
-        <td class="blue bolder ac">38</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 4</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">661</td>
-        <td class="blue bolder ac">61</td>
-        <td class="blue bolder ac">47</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 5</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">971</td>
-        <td class="blue bolder ac">71</td>
-        <td class="blue bolder ac">57</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 6</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">531</td>
-        <td class="blue bolder ac">31</td>
-        <td class="blue bolder ac">17</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 7</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">505</td>
-        <td class="blue bolder ac">05</td>
-        <td class="blue bolder ac">91</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 8</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">610</td>
-        <td class="blue bolder ac">10</td>
-        <td class="blue bolder ac">96</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 9</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">474</td>
-        <td class="blue bolder ac">74</td>
-        <td class="blue bolder ac">60</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดเช้าคู่ 10</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">365</td>
-        <td class="blue bolder ac">65</td>
-        <td class="blue bolder ac">51</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">&lt;&lt;&lt; หวยหุ้นไทย รอบปิดเที่ยง &gt;&gt;&gt;</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">303</td>
-        <td class="blue bolder ac">03</td>
-        <td class="blue bolder ac">11</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">&lt;&lt;&lt; หวยหุ้นไทย รอบเปิดบ่าย &gt;&gt;&gt;</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">517</td>
-        <td class="blue bolder ac">17</td>
-        <td class="blue bolder ac">97</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 2</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">699</td>
-        <td class="blue bolder ac">99</td>
-        <td class="blue bolder ac">15</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 3</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">699</td>
-        <td class="blue bolder ac">99</td>
-        <td class="blue bolder ac">15</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 4</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">518</td>
-        <td class="blue bolder ac">18</td>
-        <td class="blue bolder ac">96</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 5</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">161</td>
-        <td class="blue bolder ac">61</td>
-        <td class="blue bolder ac">53</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 6</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">578</td>
-        <td class="blue bolder ac">78</td>
-        <td class="blue bolder ac">36</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 7</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">119</td>
-        <td class="blue bolder ac">19</td>
-        <td class="blue bolder ac">95</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 8</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">303</td>
-        <td class="blue bolder ac">03</td>
-        <td class="blue bolder ac">11</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 9</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">898</td>
-        <td class="blue bolder ac">98</td>
-        <td class="blue bolder ac">16</td>
-                  </tr>
-          <tr>
-      <td class="bolder">หุ้นไทยเปิดบ่ายคู่ 10</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">304</td>
-        <td class="blue bolder ac">04</td>
-        <td class="blue bolder ac">10</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">ไทยก่อนปิดเย็น Pre-Close</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">&lt;&lt;&lt; หวยหุ้นไทย รอบปิดเย็น &gt;&gt;&gt;</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
@@ -328,7 +242,7 @@
                   </tr>
           <tr>
       <td class="bolder">หวยมาเลย์ วันอาทิตย์</td>
-      <td class="bolder"></td>
+      <td class="bolder">งวดวันที่ 11-02-2018</td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
@@ -338,129 +252,129 @@
     </tr>
         <tr>
       <td class="bolder">นิเคอิ รอบเช้า</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">856</td>
-        <td class="blue bolder ac">56</td>
-        <td class="blue bolder ac">29</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นจีน รอบเช้า</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">930</td>
-        <td class="blue bolder ac">30</td>
-        <td class="blue bolder ac">80</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">ฮั่งเส็ง รอบเช้า</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">471</td>
-        <td class="blue bolder ac">71</td>
-        <td class="blue bolder ac">14</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นไต้หวัน</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">144</td>
-        <td class="blue bolder ac">44</td>
-        <td class="blue bolder ac">25</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นเกาหลี</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">418</td>
-        <td class="blue bolder ac">18</td>
-        <td class="blue bolder ac">37</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">นิเคอิ รอบบ่าย</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">472</td>
-        <td class="blue bolder ac">72</td>
-        <td class="blue bolder ac">45</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นจีน รอบบ่าย</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">732</td>
-        <td class="blue bolder ac">32</td>
-        <td class="blue bolder ac">18</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">ฮั่งเส็ง รอบบ่าย</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">903</td>
-        <td class="blue bolder ac">03</td>
-        <td class="blue bolder ac">46</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นสิงคโปร์</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นอินเดีย</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นอียิปต์</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder">งวดวันที่ 11-02-2018</td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นรัสเซีย</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นอังกฤษ</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นเยอรมัน</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">หุ้นดาวน์โจน</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
-                      <td class="blue bolder ac">289</td>
-        <td class="blue bolder ac">89</td>
-        <td class="blue bolder ac">21</td>
+      <td class="bolder"></td>
+                      <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
+        <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td colspan="99" class="bolder bg-blue2">หวยเวียดนาม</td>
     </tr>
         <tr>
       <td class="bolder">ฮานอย Hà Nội</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder">งวดวันที่ 11-02-2018</td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">คั้ญฮหว่า Khánh Hòa</td>
-      <td class="bolder"></td>
+      <td class="bolder">งวดวันที่ 11-02-2018</td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">กอนตูม Kon Tum</td>
-      <td class="bolder"></td>
+      <td class="bolder">งวดวันที่ 11-02-2018</td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
@@ -502,21 +416,21 @@
                   </tr>
           <tr>
       <td class="bolder">บิ่ญดิ่ญ Bình Định</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">กว๋างบิ่ญ Quảng Bình</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">กว๋างจิ Quảng Trị</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
@@ -551,21 +465,14 @@
                   </tr>
           <tr>
       <td class="bolder">เกียนซาง Kiên Giang</td>
-      <td class="bolder"></td>
-                      <td class="blue bolder ac">–</td>
-        <td class="blue bolder ac">–</td>
-        <td class="blue bolder ac">–</td>
-                  </tr>
-          <tr>
-      <td class="bolder">เลิมด่ง Lâm Đồng</td>
-      <td class="bolder"></td>
+      <td class="bolder">งวดวันที่ 11-02-2018</td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">เตี่ยนซาง Tiền Giang</td>
-      <td class="bolder"></td>
+      <td class="bolder">งวดวันที่ 11-02-2018</td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
@@ -635,21 +542,21 @@
                   </tr>
           <tr>
       <td class="bolder">อานชาง An Giang</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">บิ่ญถ่วน Bình Thuận</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
                   </tr>
           <tr>
       <td class="bolder">เต็ยนิญ Tây Ninh</td>
-      <td class="bolder">งวดวันที่ 12-10-2017</td>
+      <td class="bolder"></td>
                       <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
         <td class="blue bolder ac">–</td>
@@ -739,5 +646,6 @@
   });
 </script>
 </div>
-
-@endsection
+          </div><!-- /.col -->
+        </div><!-- /.row -->
+      </div>

@@ -17,6 +17,14 @@ class UserbetController extends Controller
 {
     public function index()
     {
+        $id = auth()->user()->id;
+        //echo $id;
+        return view('play.bet.index2');
+        //return view('play.bet.index2');
+    }
+
+    public function home()
+    {
         return view('play.bet.index');
     }
     
@@ -673,7 +681,7 @@ class UserbetController extends Controller
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
                                                $limite_amount1 = 0;
                                             
-
+                                                
                                         if($limite_paybet){
                                             if($limite_amount2 != 0){
                                                 if($limite_paybet){
@@ -775,7 +783,9 @@ class UserbetController extends Controller
                                                 
                                             }
                                             
-                                        }elseif($amount_3 !=0){
+                                        }
+                                       
+                                        elseif($amount_3 !=0){
                                             $amount = $request->top[$key]*($keep->keepset1/100)+$limite_amount3;
                                             if($amount > $limite->top3){
                                                
@@ -832,7 +842,7 @@ class UserbetController extends Controller
                                             $amount_1 = $request->top[$key]*($keep->keepset1/100);
                                             
                                         }
-                                        
+                                     
                                                $keep_1 = $keep->keepset1;
                                                $com_1 = $ratepaygov->comg_1; 
                                                $pay_1 = $ratepaygov->payoutg_1;
@@ -845,7 +855,7 @@ class UserbetController extends Controller
                                                $master = $master ; 
                                            }
                                        }
-                                    
+                                      
                                       
                                     
                                 }  

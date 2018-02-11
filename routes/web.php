@@ -25,6 +25,10 @@ Route::post('/register', 'Members\MemberController@registerstore');
 
 Route::group(['middleware'=>['auth']], function () {
     Route::post('/placebet/{lotto}', 'Bets\PlacebetController@store');
+
+
+
+
 });
 
 
@@ -35,8 +39,11 @@ Route::get('/admin/login', 'AuthController@getlogin');
 Route::post('/admin/login', 'AuthController@postLogin');
 Route::get('/admin/logout', 'AuthController@logout');
 Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberController@register');
-
+Route::group(['middleware'=>['auth']], function () {
+        Route::get('/', 'Members\FormController@index');
+        //รายการเเทง
         Route::get('/play/bet', 'UserbetController@index');
+        Route::get('/home', 'UserbetController@home');
         Route::post('/storebet', 'UserbetController@store');
         // Route::post('/storebet2', 'UserbetController@store2');
 
@@ -67,7 +74,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
          Route::get('/play/cancellist/cancellist', function () {
             return view('play.cancellist.index2');
          });
-    // });
+});
         
 
 
@@ -130,8 +137,7 @@ Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberC
             //return view('welcome');
             // return 'welcome';
              });
-             Route::get('/', 'Members\FormController@index');
-             //รายการเเทง
+
              
 
 
