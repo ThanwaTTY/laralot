@@ -163,56 +163,56 @@
               <td class="align-center align-middle odd bolder width-110">0 = ไม่รับ</td>
                               <td>
                   <div class="input-group-limit_1 input-icon input-icon-left">
-                    <input type="text" name="limitetop3" value="100" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetop3" value="{{$limiteShow->top3}}" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_2 input-icon input-icon-left">
-                    <input type="text" name="limitebottom3" value="100" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitebottom3" value="{{$limiteShow->bottom3}}" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_3 input-icon input-icon-left">
-                    <input type="text" name="limitetod3" value="100" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetod3" value="{{$limiteShow->tod3}}" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_4 input-icon input-icon-left">
-                    <input type="text" name="limitetop2" value="500" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetop2" value="{{$limiteShow->top2}}" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_5 input-icon input-icon-left">
-                    <input type="text" name="limitebottom2" value="500" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitebottom2" value="{{$limiteShow->bottom2}}" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_6 input-icon input-icon-left">
-                    <input type="text" name="limitetod2" value="100" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetod2" value="{{$limiteShow->tod2}}" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_7 input-icon input-icon-left">
-                    <input type="text" name="limitetop1" value="1000" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitetop1" value="{{$limiteShow->top1}}" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>
                 </td>
                               <td>
                   <div class="input-group-limit_8 input-icon input-icon-left">
-                    <input type="text" name="limitebottom1" value="1000" class="form-control input-sm input-small align-right width-110">
+                    <input type="text" name="limitebottom1" value="{{$limiteShow->bottom1}}" class="form-control input-sm input-small align-right width-110">
                     <i class="ace-icon fa fa-check green success hidden"></i>
                     <i class="ace-icon fa fa-times red error hidden"></i>
                   </div>

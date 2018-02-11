@@ -123,7 +123,7 @@ class UserbetController extends Controller
            if($master2){
                if($master2->level ==6){
                    $keepover_6 = 6;
-                   $limitecheck6 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                   $limitecheck6 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->latest()->first();
                     $limitecheck6top3 = $limitecheck6->top3;
                     $limitecheck6bottom3 = $limitecheck6->bottom3;
                     $limitecheck6tod3 = $limitecheck6->tod3;
@@ -139,7 +139,7 @@ class UserbetController extends Controller
            }if($master2){
                 if($master2->level ==5){
                     $keepover_5 = 5;
-                    $limitecheck5 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck5 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->latest()->first();
                     $limitecheck5top3 = $limitecheck5->top3;
                     $limitecheck5bottom3 = $limitecheck5->bottom3;
                     $limitecheck5tod3 = $limitecheck5->tod3;
@@ -155,7 +155,7 @@ class UserbetController extends Controller
             }if($master2){
                 if($master2->level ==4){
                     $keepover_4 = 4;
-                    $limitecheck4 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck4 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->latest()->first();
                     $limitecheck4top3 = $limitecheck4->top3;
                     $limitecheck4bottom3 = $limitecheck4->bottom3;
                     $limitecheck4tod3 = $limitecheck4->tod3;
@@ -171,7 +171,7 @@ class UserbetController extends Controller
             }if($master2){
                 if($master2->level ==3){
                     $keepover_3 = 3;
-                    $limitecheck3 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck3 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->latest()->first();
                     $limitecheck3top3 = $limitecheck3->top3;
                     $limitecheck3bottom3 = $limitecheck3->bottom3;
                     $limitecheck3tod3 = $limitecheck3->tod3;
@@ -187,7 +187,7 @@ class UserbetController extends Controller
             }if($master2){
                 if($master2->level ==2){
                     $keepover_2 = 2;
-                    $limitecheck2 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck2 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->latest()->first();
                     $limitecheck2top3 = $limitecheck2->top3;
                     $limitecheck2bottom3 = $limitecheck2->bottom3;
                     $limitecheck2tod3 = $limitecheck2->tod3;
@@ -203,7 +203,7 @@ class UserbetController extends Controller
             }if($master2){
                 if($master2->level ==1){
                     $keepover_1 = 1;
-                    $limitecheck1 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck1 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->latest()->first();
                     $limitecheck1top3 = $limitecheck1->top3;
                     $limitecheck1bottom3 = $limitecheck1->bottom3;
                     $limitecheck1tod3 = $limitecheck1->tod3;
@@ -262,7 +262,7 @@ class UserbetController extends Controller
                                                $amount_keep = $request->top[$key]*($keep->keepset6/100);
                                                $amount = $request->top[$key]*($keep->keepset6/100);
                                                $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
-                                               $limite = Limite::where('member_id', $master->id)->where('lotto_id', $lottos->id)->first();
+                                               $limite = Limite::where('member_id', $master->id)->where('lotto_id', $lottos->id)->latest()->first();
                                                $limite_amount6 = 0;
                                                
                                                if($limite_paybet){
@@ -307,7 +307,7 @@ class UserbetController extends Controller
 
                                             $amount_keep = $request->top[$key]*($keep->keepset5/100);
                                             $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();   
-                                            $limite = Limite::where('member_id', $master->id)->where('lotto_id', $lottos->id)->latest()->first();;
+                                            $limite = Limite::where('member_id', $master->id)->where('lotto_id', $lottos->id)->latest()->first();
                                             $limite_amount5 = 0;
 
                                             $amount = $request->top[$key]*($keep->keepset5/100);   
