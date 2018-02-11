@@ -47,85 +47,196 @@ class UserbetController extends Controller
 
         
 
-        // $keepover_6 = 0;
-        // $keepover_5 = 0;
-        // $keepover_4 = 0;
-        // $keepover_3 = 0;
-        // $keepover_2 = 0;
-        // $keepover_1 = 0;
+        $keepover_6 = 0;
+        $keepover_5 = 0;
+        $keepover_4 = 0;
+        $keepover_3 = 0;
+        $keepover_2 = 0;
+        $keepover_1 = 0;
 
-        // $limitecheck6 = 0;
-        // $limitecheck5 = 0;
-        // $limitecheck4 = 0;
-        // $limitecheck3 = 0;
-        // $limitecheck2 = 0;
-        // $limitecheck1 = 0;
+        $limitecheck6 = 0;
+        $limitecheck5 = 0;
+        $limitecheck4 = 0;
+        $limitecheck3 = 0;
+        $limitecheck2 = 0;
+        $limitecheck1 = 0;
 
-        // foreach ($nums as $key => $num) {
-        //    $numm = $num;
-        //    $keep = Keep::where('member_id', $useradd)->first();
-        //    $master2 = Member::find($useradd);
+        $limitecheck6top3 = 0;
+        $limitecheck6bottom3 = 0;
+        $limitecheck6tod3 = 0;
+        $limitecheck6top2 = 0;
+        $limitecheck6bottom2 = 0;
+        $limitecheck6tod2 = 0;
+        $limitecheck6top1 = 0;
+        $limitecheck6bottom1 = 0;
 
-        //    if($master2){
-        //        if($master2->level ==6){
-        //            $keepover_6 = 6;
-        //            $limitecheck6 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
-        //            $master2 = Member::find($master2->useradd);
-        //        }else{
-        //         $master2 = $master2;
-        //        }
-        //    }if($master2){
-        //         if($master2->level ==5){
-        //             $keepover_5 = 5;
-        //             $limitecheck5 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
-        //             $master2 = Member::find($master2->useradd);
-        //         }else{
-        //         $master2 = $master2;
-        //     }
-        //     }if($master2){
-        //         if($master2->level ==4){
-        //             $keepover_4 = 4;
-        //             $limitecheck4 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
-        //             $master2 = Member::find($master2->useradd);
-        //         }else{
-        //         $master2 = $master2;
-        //         }
-        //     }if($master2){
-        //         if($master2->level ==3){
-        //             $keepover_3 = 3;
-        //             $limitecheck3 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
-        //             $master2 = Member::find($master2->useradd);
-        //         }else{
-        //         $master2 = $master2;
-        //         }
-        //     }if($master2){
-        //         if($master2->level ==2){
-        //             $keepover_2 = 2;
-        //             $limitecheck2 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
-        //             $master2 = Member::find($master2->useradd);
-        //         }else{
-        //         $master2 = $master2;
-        //         }
-        //     }if($master2){
-        //         if($master2->level ==1){
-        //             $keepover_1 = 1;
-        //             $limitecheck1 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
-        //             $master2 = Member::find($master2->useradd);
-        //         }else{
-        //         $master2 = $master2;
-        //         }
-        //     }
+        $limitecheck5top3 = 0;
+        $limitecheck5bottom3 = 0;
+        $limitecheck5tod3 = 0;
+        $limitecheck5top2 = 0;
+        $limitecheck5bottom2 = 0;
+        $limitecheck5tod2 = 0;
+        $limitecheck5top1 = 0;
+        $limitecheck5bottom1 = 0;
 
-        //    return response()->json([
-        //     'limitecheck1'=>$limitecheck1,  
-        //     'limitecheck2'=>$limitecheck2,  
-        //     'limitecheck3'=>$limitecheck3,  
-        //     'limitecheck4'=>$limitecheck4,  
-        //     'limitecheck5'=>$limitecheck5,  
-        //     'limitecheck6'=>$limitecheck6, 
-        //     ]);
-        // }
+        $limitecheck4top3 = 0;
+        $limitecheck4bottom3 = 0;
+        $limitecheck4tod3 = 0;
+        $limitecheck4top2 = 0;
+        $limitecheck4bottom2 = 0;
+        $limitecheck4tod2 = 0;
+        $limitecheck4top1 = 0;
+        $limitecheck4bottom1 = 0;
+
+        $limitecheck3top3 = 0;
+        $limitecheck3bottom3 = 0;
+        $limitecheck3tod3 = 0;
+        $limitecheck3top2 = 0;
+        $limitecheck3bottom2 = 0;
+        $limitecheck3tod2 = 0;
+        $limitecheck3top1 = 0;
+        $limitecheck3bottom1 = 0;
+
+        $limitecheck2top3 = 0;
+        $limitecheck2bottom3 = 0;
+        $limitecheck2tod3 = 0;
+        $limitecheck2top2 = 0;
+        $limitecheck2bottom2 = 0;
+        $limitecheck2tod2 = 0;
+        $limitecheck2top1 = 0;
+        $limitecheck2bottom1 = 0;
+
+        $limitecheck1top3 = 0;
+        $limitecheck1bottom3 = 0;
+        $limitecheck1tod3 = 0;
+        $limitecheck1top2 = 0;
+        $limitecheck1bottom2 = 0;
+        $limitecheck1tod2 = 0;
+        $limitecheck1top1 = 0;
+        $limitecheck1bottom1 = 0;
+
+        foreach ($nums as $key => $num) {
+           $numm = $num;
+           $keep = Keep::where('member_id', $useradd)->first();
+           $master2 = Member::find($useradd);
+
+           if($master2){
+               if($master2->level ==6){
+                   $keepover_6 = 6;
+                   $limitecheck6 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck6top3 = $limitecheck6->top3;
+                    $limitecheck6bottom3 = $limitecheck6->bottom3;
+                    $limitecheck6tod3 = $limitecheck6->tod3;
+                    $limitecheck6top2 = $limitecheck6->top2;
+                    $limitecheck6bottom2 = $limitecheck6->bottom2;
+                    $limitecheck6tod2 = $limitecheck6->tod2;
+                    $limitecheck6top1 = $limitecheck6->top1;
+                    $limitecheck6bottom1 = $limitecheck6->bottom1;
+                   $master2 = Member::find($master2->useradd);
+               }else{
+                $master2 = $master2;
+               }
+           }if($master2){
+                if($master2->level ==5){
+                    $keepover_5 = 5;
+                    $limitecheck5 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck5top3 = $limitecheck5->top3;
+                    $limitecheck5bottom3 = $limitecheck5->bottom3;
+                    $limitecheck5tod3 = $limitecheck5->tod3;
+                    $limitecheck5top2 = $limitecheck5->top2;
+                    $limitecheck5bottom2 = $limitecheck5->bottom2;
+                    $limitecheck5tod2 = $limitecheck5->tod2;
+                    $limitecheck5top1 = $limitecheck5->top1;
+                    $limitecheck5bottom1 = $limitecheck5->bottom1;
+                    $master2 = Member::find($master2->useradd);
+                }else{
+                $master2 = $master2;
+            }
+            }if($master2){
+                if($master2->level ==4){
+                    $keepover_4 = 4;
+                    $limitecheck4 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck4top3 = $limitecheck4->top3;
+                    $limitecheck4bottom3 = $limitecheck4->bottom3;
+                    $limitecheck4tod3 = $limitecheck4->tod3;
+                    $limitecheck4top2 = $limitecheck4->top2;
+                    $limitecheck4bottom2 = $limitecheck4->bottom2;
+                    $limitecheck4tod2 = $limitecheck4->tod2;
+                    $limitecheck4top1 = $limitecheck4->top1;
+                    $limitecheck4bottom1 = $limitecheck4->bottom1;
+                    $master2 = Member::find($master2->useradd);
+                }else{
+                $master2 = $master2;
+                }
+            }if($master2){
+                if($master2->level ==3){
+                    $keepover_3 = 3;
+                    $limitecheck3 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck3top3 = $limitecheck3->top3;
+                    $limitecheck3bottom3 = $limitecheck3->bottom3;
+                    $limitecheck3tod3 = $limitecheck3->tod3;
+                    $limitecheck3top2 = $limitecheck3->top2;
+                    $limitecheck3bottom2 = $limitecheck3->bottom2;
+                    $limitecheck3tod2 = $limitecheck3->tod2;
+                    $limitecheck3top1 = $limitecheck3->top1;
+                    $limitecheck3bottom1 = $limitecheck3->bottom1;
+                    $master2 = Member::find($master2->useradd);
+                }else{
+                $master2 = $master2;
+                }
+            }if($master2){
+                if($master2->level ==2){
+                    $keepover_2 = 2;
+                    $limitecheck2 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck2top3 = $limitecheck2->top3;
+                    $limitecheck2bottom3 = $limitecheck2->bottom3;
+                    $limitecheck2tod3 = $limitecheck2->tod3;
+                    $limitecheck2top2 = $limitecheck2->top2;
+                    $limitecheck2bottom2 = $limitecheck2->bottom2;
+                    $limitecheck2tod2 = $limitecheck2->tod2;
+                    $limitecheck2top1 = $limitecheck2->top1;
+                    $limitecheck2bottom1 = $limitecheck2->bottom1;
+                    $master2 = Member::find($master2->useradd);
+                }else{
+                $master2 = $master2;
+                }
+            }if($master2){
+                if($master2->level ==1){
+                    $keepover_1 = 1;
+                    $limitecheck1 = Limite::where('member_id', $master2->id)->where('lotto_id', $lottos->id)->first();
+                    $limitecheck1top3 = $limitecheck1->top3;
+                    $limitecheck1bottom3 = $limitecheck1->bottom3;
+                    $limitecheck1tod3 = $limitecheck1->tod3;
+                    $limitecheck1top2 = $limitecheck1->top2;
+                    $limitecheck1bottom2 = $limitecheck1->bottom2;
+                    $limitecheck1tod2 = $limitecheck1->tod2;
+                    $limitecheck1top1 = $limitecheck1->top1;
+                    $limitecheck1bottom1 = $limitecheck1->bottom1;
+                    $master2 = Member::find($master2->useradd);
+                }else{
+                $master2 = $master2;
+                }
+            }
+
            
+        }
+        $limitecheckAlltop3 = $limitecheck6top3+$limitecheck5top3+$limitecheck4top3+$limitecheck3top3+$limitecheck2top3+$limitecheck1top3;
+        $limitecheckAllbottom3 = $limitecheck6bottom3+$limitecheck5bottom3+$limitecheck4bottom3+$limitecheck3bottom3+$limitecheck2bottom3+$limitecheck1bottom3;
+        $limitecheckAlltod3 = $limitecheck6tod3+$limitecheck5tod3+$limitecheck4tod3+$limitecheck3tod3+$limitecheck2tod3+$limitecheck1tod3;
+        $limitecheckAlltop2 = $limitecheck6top2+$limitecheck5top2+$limitecheck4top2+$limitecheck3top2+$limitecheck2top2+$limitecheck1top2;
+        $limitecheckAllbottom2 = $limitecheck6bottom2+$limitecheck5bottom2+$limitecheck4bottom2+$limitecheck3bottom2+$limitecheck2bottom2+$limitecheck1bottom2;
+        $limitecheckAlltod2 = $limitecheck6tod2+$limitecheck5tod2+$limitecheck4tod2+$limitecheck3tod2+$limitecheck2tod2+$limitecheck1tod2;
+        $limitecheckAlltop1 = $limitecheck6top1+$limitecheck5top1+$limitecheck4top1+$limitecheck3top1+$limitecheck2top1+$limitecheck1top1;
+        $limitecheckAllbottom1 = $limitecheck6bottom1+$limitecheck5bottom1+$limitecheck4bottom1+$limitecheck3bottom1+$limitecheck2bottom1+$limitecheck1bottom1;
+
+          return response()->json([
+            'limitecheckAllbottom1'=>$limitecheckAllbottom1,  
+            'limitecheck4top3'=>$limitecheck4top3,  
+            'limitecheck3top3'=>$limitecheck3top3,  
+            'limitecheck2top3'=>$limitecheck2top3,  
+            'limitecheck1top3'=>$limitecheck1top3,  
+            'limitecheck6'=>$limitecheck6, 
+            ]); 
         foreach ($nums as $key => $num) {
             if($num){
                 $type = $this->checktype($num);
