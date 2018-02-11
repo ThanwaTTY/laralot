@@ -10,6 +10,7 @@ use App\Ratepay;
 use App\Ratepaygov;
 use App\Opencloselot;
 use App\Keep;
+use App\Limite;
 use Illuminate\Database\QueryException;
 use Illuminate\Database\PDOException;
 use Exception;
@@ -373,7 +374,19 @@ class MemberController extends Controller
                 }
             }
            
-
+            Limite::create([
+                'member_id' => $membercreate->id,
+                 'lotto_id' => 0,
+                 'top3'=> 0,
+                 'bottom3'=> 0,
+                 'tod3'=> 0,
+                 'top2'=> 0,
+                 'bottom2'=> 0,
+                 'tod2'=> 0,
+                 'top1'=> 0,
+                 'bottom1'=> 0
+            ]);
+            
             Opencloselot::create([
             'member_id' => $membercreate->id,
             'govlot' => 1,
