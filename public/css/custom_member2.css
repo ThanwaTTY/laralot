@@ -94,3 +94,16 @@ input.form-control, .input-group-addon, select, select:focus, select.form-contro
 td, th {
     padding: 1px;
 }
+
+#brief-table td, #sum-table td, #result-table td {
+    font-size: 12px;
+    padding: 4px;
+}
+
+.dark-blue {
+    color: #1a83db !important;
+}
+
+.negative {
+    color: red;
+}

@@ -909,6 +909,7 @@ class UserbetController extends Controller
                                                         $limite_paybet = Limite_paybet::where('member_id', $master->id)->where('bet_num',$num)->where('lotto_id', $lottos->id)->where('type', "top".$type)->first();
                                                         $limite_amount1 = 0;
                                                         
+                                                        
 
                                                     if($limite_paybet){
                                                         if($limite_amount2 != 0){
@@ -987,6 +988,7 @@ class UserbetController extends Controller
                                                             }
                                                         }     
                                                         elseif($limite_paybet){
+                                                                $limit_amounttotal = Userbet::where('bet_num',$num)->sum('amount_1');
                                                                 if($amount_keep > $limite_paybet->limite_amount){
                                                                     $amount_1 = ($amount_keep+$limite_paybet->limite_amount)-$amount_keep;
                                                                     $limite_amount1 = $amount_keep - $limite_paybet->limite_amount;
@@ -1348,6 +1350,12 @@ class UserbetController extends Controller
                                         'pay_7' =>  $paytop,
                                     
                                     ]); 
+                                    if($userbets){
+                                        $top[$key] = true;
+                                    }else{
+                                        $top[$key] = false;                    
+                                    }
+                                    
                                 }
                         
                                 if($request->bottom[$key]){
@@ -1991,8 +1999,11 @@ class UserbetController extends Controller
                             }      
                  }  
                  $checkpass = "บันทึกสำเร็จค่ะ";
+                 $value_return = true;
             }else{
                  $checkpass = "บันทึกไม่สำเร็จค่ะ";
+                 $value_return = false;
+                 
             }
             // return response()->json([
            
@@ -2001,6 +2012,8 @@ class UserbetController extends Controller
         return response()->json([
             'data_request'=>$data_request,
             'checkpass'=>$checkpass,
+            'value_return'=>$value_return,
+            'top'=>$top
             
             ]);
     }

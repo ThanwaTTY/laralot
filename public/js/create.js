@@ -43,10 +43,10 @@ window.onload = sivamtime;
 
 
 function clickmenu(url) {
-    $('li').on('click', function () {
-        $('ul.nav.nav-list li.active').removeClass('active');
-        $(this).addClass('active');
-    });
+    //$('li').on('click', function () {
+    //    $('ul.nav.nav-list li.active').removeClass('active');
+    //    $(this).addClass('active');
+    //});
     $.get(url, function (data) {
         $(".main-content").html(data);
         //alert( data );
@@ -72,5 +72,8 @@ $(function () {
         $('#bill-sum').html(sum_amount);
     });
 
-
+    $('.nav.nav-list>li').on('click', function () {
+        $('.nav.nav-list>li').removeClass('active');
+        $(this).addClass('active');
+    });
 });
