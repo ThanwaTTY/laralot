@@ -12,6 +12,8 @@ use App\Limite_paybet;
 use App\Limite;
 use App\Ratepaygov;
 use Carbon\Carbon;
+use Illuminate\Validation;
+use Illuminate\Validation\Rule;
 
 class UserbetController extends Controller
 {
@@ -30,10 +32,35 @@ class UserbetController extends Controller
     
   public function store(Request $request)
     {
+        // $rules =[
+        //     'num.*' => 'required',
+
+        // ];
+
+        //  $datas = request()->except([ '_token' ]);
+        //  //dd($datas);
+        //          return response()->json([
+        //     'rules'=>true,
+
+             
+        // ]);
+        //  $this->validate($request, $rules);
+
+
+
+
+
+
         $id = auth()->user()->id;
         $useradd = auth()->user()->useradd;
         $useradddetail = auth()->user()->useradddetail;
         $useradd_detail = $useradddetail;
+
+/// แปลงเป็น loop
+                $useradd_detail_loop = explode(" ", $useradddetail);
+                //print_r($useradd_detail_loop);
+
+
         $member = Member::find($id);
         $dt = Carbon::now();
         $datenow = $dt->format('Y-m-d h:i:s');  
@@ -50,12 +77,144 @@ class UserbetController extends Controller
         $tickets = $this->createTicket($id,$lottos,30);
 
         $data_request = $request->all();
+        //$check = 0;
+        foreach ($request->num as $key => $num) {
+            if ($num) {
 
-        $nums = $request->num;
+                $check[$key]="true ".$key;
+                $bet_num[$key]=$request->num[$key];
+                $type = $this->checktype($num);
+                if($type==3){
+                    $d_type[$key]=$type."ตัว";
+                }elseif ($type==2) {
+                    $d_type[$key]=$type."ตัว";
+                }elseif ($type==1) {
+                    $d_type[$key]=$type."ตัว";
+                }
+                //
+                
+                $TypeBet = $this->IsTypeBet($member->id,$tickets,$lottos,$datenow,$num,$type,$request->top[$key],$request->bottom[$key],$request->tod[$key],$member,$useradd_detail_loop,$useradd,$keep);
+                // if($type==3){
+                //     if ($request->top[$key]) {
+                //         // return response()->json([
+                //         //     'result'=>'complate',
+                //         // ]);
+                //         for ($i=1; $i <=6 ; $i++) { 
+                //         $comg_1[$i]=0;
+                //         $payoutg_1[$i]=0;
+                //         }
 
+
+                //         $pay_7 = $member->ratepaygov->payoutg_1;
+                //         $com_7 = $member->ratepaygov->comg_1;
+                //         foreach ($useradd_detail_loop as $loopuser_add => $ID_useradd) {
+                //             if($ID_useradd){
+                //                 $master[$ID_useradd] = Member::find($ID_useradd);
+                //                 $level_useradd = $master[$ID_useradd]->level;
+                                
+                //                 $ratepaygov[$ID_useradd] = Ratepaygov::where('member_id', $master[$ID_useradd]->id)->first();
+                //                 $keep_begin = Keep::where('member_id', $useradd)->first();
+                //                 for ($i=6; $i >= 1; $i--) { 
+                //                     $amount_keep[$i] = $request->top[$key]*($keep['keepset'.$i]/100);
+                //                     //$amount_keep[$i] = $top*($keep['keepset'.$i]/100);
+                //                     //$keep_[$i] = $keep['keepset'.$i];
+                //                 }
+                //                     $comg_1[$level_useradd] = $ratepaygov[$ID_useradd]['comg_1'];  
+                //                     $payoutg_1[$level_useradd] = $ratepaygov[$ID_useradd]['payoutg_1'];
+
+                //             }
+                //         }
+                //         $userbets = Userbet::create([
+                //             'member_id' => $id,
+                //             'ticket_id'=>$tickets->id,
+                //             'lotto_id'=>$lottos->id,
+                //             'latepay' => 'หวยรัฐ70',
+                //             'date_time' => $datenow,
+                //             'pay' => $pay_7,
+                //             'note' => '0',
+                //             'useradd' => $useradd,
+                //             'useradddetail' => $useradddetail,
+                //             'bet_num' => $num,
+                //             'type' => 'top3',
+                //             'amount_1' => $amount_keep[1],
+                //             'keep_1' => $keep->keepset1,
+                //             'com_1' =>  $comg_1[1],
+                //             'pay_1' =>  $payoutg_1[1],
+                //             'amount_2' => $amount_keep[2],
+                //             'keep_2' => $keep->keepset2,
+                //             'com_2' => $comg_1[2],
+                //             'pay_2' =>  $payoutg_1[2],
+                //             'amount_3' => $amount_keep[3],
+                //             'keep_3' => $keep->keepset3,
+                //             'com_3' => $comg_1[3],
+                //             'pay_3' =>  $payoutg_1[3],
+                //             'amount_4' => $amount_keep[4],
+                //             'keep_4' => $keep->keepset4,
+                //             'com_4' => $comg_1[4],
+                //             'pay_4' =>  $payoutg_1[4],
+                //             'amount_5' => $amount_keep[5],
+                //             'keep_5' => $keep->keepset5,
+                //             'com_5' => $comg_1[5],
+                //             'pay_5' =>  $payoutg_1[5],
+                //             'amount_6' => $amount_keep[6],
+                //             'keep_6' => $keep->keepset6,
+                //             'com_6' => $comg_1[6],
+                //             'pay_6' =>  $payoutg_1[6],
+                //             'amount_7' => $request->top[$key],
+                //             'keep_7' => "0",
+                //             'com_7' => $com_7,
+                //             'pay_7' =>  $pay_7,
+                        
+                //         ]); 
+                //     }
+
+
+                // }
+
+
+
+
+
+
+                //////////////////////////////////////////////////////////
+
+            }else{
+                //$check[$key]="false ".$key;
+                //$v_num[$key]=$request->num[$key];
+            // $check[$key]='null';
+            // $v_num[$key]='null';
+            // $d_type[$key]='null';
+            }
+            
+        }
+        return response()->json([
+            'data_request'=>$data_request,
+            'useradd_detail_loop'=>$useradd_detail_loop,
+            'check'=>$check,
+            'bet_num'=>$bet_num,
+            'd_type'=>$d_type,
+            'TypeBet'=>$TypeBet,
+            //'num_array'=>$num_array.
+            // 'master'=>$master,
+            // 'ratepaygov'=>$ratepaygov,
+            'keep'=>$keep,
+            // 'keep_begin'=>$keep_begin,
+            // 'amount_keep'=>$amount_keep,
+            // 'keep_'=>$keep_,
+            // 'comg_1'=>$comg_1,
+            // 'payoutg_1'=>$payoutg_1,
+            
+             
+        ]);
+
+
+
+        /*$nums = $request->num;
+        */
+        /*
         
 
-        $keepover_6 = 0;
+            $keepover_6 = 0;
             $keepover_5 = 0;
             $keepover_4 = 0;
             $keepover_3 = 0;
@@ -122,7 +281,16 @@ class UserbetController extends Controller
             $limitecheck1tod2 = 0;
             $limitecheck1top1 = 0;
         $limitecheck1bottom1 = 0;
+        */
+        /*foreach ($request->num as $key => $num) {
+            if ($num) {
+                $value = true;
+            }
+                $value = false;
+        }*/
 
+
+        /*
         foreach ($nums as $key => $num) {
            $numm = $num;
            $keep = Keep::where('member_id', $useradd)->first();
@@ -2016,6 +2184,7 @@ class UserbetController extends Controller
             'top'=>$top
             
             ]);
+        */
     }
 //////////////////////////////////////////////////////////////////////////////////////
     protected function createTicket($id,$lottos,$balance){
@@ -2027,13 +2196,201 @@ class UserbetController extends Controller
         return $tickets;
     }
 
+    protected function IsTypeBet($id,$tickets,$lottos,$datenow,$num,$type,$top,$bottom,$tod,$member,$useradd_detail_loop,$useradd,$keep){
+        //return $useradd_detail_loop;
+        //if($type==3){
+            if ($top) {
+                for ($i=1; $i <=6 ; $i++) { 
+                    $comg[$i]=0;
+                    $payoutg[$i]=0;
+                }
+                if($type==3){
+                    $ratepaygovcomgtype = 'comg_1';
+                    $ratepaygovpayoutgtype = 'payoutg_1';
+                    $payoutg[7] = $member->ratepaygov[$ratepaygovpayoutgtype];
+                    $comg[7] = $member->ratepaygov[$ratepaygovcomgtype];
+                    
+                }elseif($type==2){
+                    $ratepaygovcomgtype = 'comg_4';
+                    $ratepaygovpayoutgtype = 'payoutg_4';
+                    $payoutg[7] = $member->ratepaygov[$ratepaygovpayoutgtype];
+                    $comg[7] = $member->ratepaygov[$ratepaygovcomgtype];
+
+                }elseif($type==1){
+                    $ratepaygovcomgtype = 'comg_7';
+                    $ratepaygovpayoutgtype = 'payoutg_7';
+                    $payoutg[7] = $member->ratepaygov[$ratepaygovpayoutgtype];
+                    $comg[7] = $member->ratepaygov[$ratepaygovcomgtype];
+                    
+                }
+                foreach ($useradd_detail_loop as $key => $ID_useradd) {
+                    if($ID_useradd){
+                        $master[$ID_useradd] = Member::find($ID_useradd);
+                        $level_useradd = $master[$ID_useradd]->level;
+                        
+                        $ratepaygov[$ID_useradd] = Ratepaygov::where('member_id', $master[$ID_useradd]->id)->first();
+                        for ($i=6; $i >= 1; $i--) { 
+                            $amount_keep[$i] = $top*($keep['keepset'.$i]/100);
+
+                        }
+                        $comg[$level_useradd] = $ratepaygov[$ID_useradd][$ratepaygovcomgtype];  
+                        $payoutg[$level_useradd] = $ratepaygov[$ID_useradd][$ratepaygovpayoutgtype];
+                    }
+                }
+
+                $userbets = $this->Userbet_Create($id,$tickets->id,$lottos->id,'หวยรัฐ70',$datenow,$useradd,$member->useradddetail,$num,"top".$type,$amount_keep,$keep,$comg,$payoutg,$top);
+            }
+            if($bottom) {
+                for ($i=1; $i <=6 ; $i++) { 
+                    $comg[$i]=0;
+                    $payoutg[$i]=0;
+                }
+                if($type==3){
+                    $ratepaygovcomgtype = 'comg_2';
+                    $ratepaygovpayoutgtype = 'payoutg_2';
+                    $payoutg[7] = $member->ratepaygov[$ratepaygovpayoutgtype];
+                    $comg[7] = $member->ratepaygov[$ratepaygovcomgtype];
+                    
+                }elseif($type==2){
+                    $ratepaygovcomgtype = 'comg_5';
+                    $ratepaygovpayoutgtype = 'payoutg_5';
+                    $payoutg[7] = $member->ratepaygov[$ratepaygovpayoutgtype];
+                    $comg[7] = $member->ratepaygov[$ratepaygovcomgtype];
+
+                }elseif($type==1){
+                    $ratepaygovcomgtype = 'comg_8';
+                    $ratepaygovpayoutgtype = 'payoutg_8';
+                    $payoutg[7] = $member->ratepaygov[$ratepaygovpayoutgtype];
+                    $comg[7] = $member->ratepaygov[$ratepaygovcomgtype];
+                    
+                }
+                foreach ($useradd_detail_loop as $key => $ID_useradd) {
+                    if($ID_useradd){
+                        $master[$ID_useradd] = Member::find($ID_useradd);
+                        $level_useradd = $master[$ID_useradd]->level;
+                        
+                        $ratepaygov[$ID_useradd] = Ratepaygov::where('member_id', $master[$ID_useradd]->id)->first();
+                        for ($i=6; $i >= 1; $i--) { 
+                            $amount_keep[$i] = $bottom*($keep['keepset'.$i]/100);
+
+                        }
+                        $comg[$level_useradd] = $ratepaygov[$ID_useradd][$ratepaygovcomgtype];  
+                        $payoutg[$level_useradd] = $ratepaygov[$ID_useradd][$ratepaygovpayoutgtype];
+                    }
+                }
+
+                $userbets = $this->Userbet_Create($id,$tickets->id,$lottos->id,'หวยรัฐ70',$datenow,$useradd,$member->useradddetail,$num,"bottom".$type,$amount_keep,$keep,$comg,$payoutg,$bottom);
+            }
+            if($tod) {
+                for ($i=1; $i <=6 ; $i++) { 
+                    $comg[$i]=0;
+                    $payoutg[$i]=0;
+                }
+                if($type==3){
+                    $ratepaygovcomgtype = 'comg_3';
+                    $ratepaygovpayoutgtype = 'payoutg_3';
+                    $payoutg[7] = $member->ratepaygov[$ratepaygovpayoutgtype];
+                    $comg[7] = $member->ratepaygov[$ratepaygovcomgtype];
+                    
+                }elseif($type==2){
+                    $ratepaygovcomgtype = 'comg_6';
+                    $ratepaygovpayoutgtype = 'payoutg_6';
+                    $payoutg[7] = $member->ratepaygov[$ratepaygovpayoutgtype];
+                    $comg[7] = $member->ratepaygov[$ratepaygovcomgtype];
+
+                }
+                foreach ($useradd_detail_loop as $key => $ID_useradd) {
+                    if($ID_useradd){
+                        $master[$ID_useradd] = Member::find($ID_useradd);
+                        $level_useradd = $master[$ID_useradd]->level;
+                        
+                        $ratepaygov[$ID_useradd] = Ratepaygov::where('member_id', $master[$ID_useradd]->id)->first();
+                        for ($i=6; $i >= 1; $i--) { 
+                            $amount_keep[$i] = $tod*($keep['keepset'.$i]/100);
+
+                        }
+                        $comg[$level_useradd] = $ratepaygov[$ID_useradd][$ratepaygovcomgtype];  
+                        $payoutg[$level_useradd] = $ratepaygov[$ID_useradd][$ratepaygovpayoutgtype];
+                    }
+                }
+
+                $userbets = $this->Userbet_Create($id,$tickets->id,$lottos->id,'หวยรัฐ70',$datenow,$useradd,$member->useradddetail,$num,"tod".$type,$amount_keep,$keep,$comg,$payoutg,$tod);
+            }
+            
+        //}elseif($type==2){
+
+        //}elseif($type==1){
+
+        //}
+        if($userbets){
+            return "success!";
+        }else{
+            return "ERROR [can't insert data too database]";
+        }
+        
+        // return "success!";
+    }
+
+
+
     protected function checktype($num){
          $datacheck = strlen($num);
          return $datacheck;
     }
 
 
+    protected function Userbet_Create($id,$ticketsid,$lottosid,$latepay,$datenow,$useradd,$useradddetail,$num,$type,$amount_keep,$keep,$comg,$payoutg,$amount){
+        $userbets = Userbet::create([
+            'member_id' => $id,
+            'ticket_id'=>$ticketsid,
+            'lotto_id'=>$lottosid,
+            'latepay' => $latepay,
+            'date_time' => $datenow,
+            'pay' => $payoutg[7],
+            'note' => '0',
+            'useradd' => $useradd,
+            'useradddetail' => $useradddetail,
+            'bet_num' => $num,
+            'type' => $type,
+            'amount_1' => $amount_keep[1],
+            'keep_1' => $keep->keepset1,
+            'com_1' =>  $comg[1],
+            'pay_1' =>  $payoutg[1],
+            'amount_2' => $amount_keep[2],
+            'keep_2' => $keep->keepset2,
+            'com_2' => $comg[2],
+            'pay_2' =>  $payoutg[2],
+            'amount_3' => $amount_keep[3],
+            'keep_3' => $keep->keepset3,
+            'com_3' => $comg[3],
+            'pay_3' =>  $payoutg[3],
+            'amount_4' => $amount_keep[4],
+            'keep_4' => $keep->keepset4,
+            'com_4' => $comg[4],
+            'pay_4' =>  $payoutg[4],
+            'amount_5' => $amount_keep[5],
+            'keep_5' => $keep->keepset5,
+            'com_5' => $comg[5],
+            'pay_5' =>  $payoutg[5],
+            'amount_6' => $amount_keep[6],
+            'keep_6' => $keep->keepset6,
+            'com_6' => $comg[6],
+            'pay_6' =>  $payoutg[6],
+            'amount_7' => $amount,
+            'keep_7' => '0',
+            'com_7' => $comg[7],
+            'pay_7' =>  $payoutg[7],
+        
+        ]);   
 
+        if($userbets){
+            return true;
+        }else {
+            return false;
+        }
+
+        
+    }
     
     
 }

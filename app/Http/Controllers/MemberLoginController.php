@@ -23,7 +23,8 @@ class MemberLoginController extends Controller
         if (auth()->attempt($inputs)) {
             if (auth()->user()->level == 7) {
                 if (auth()->user()->status == 0) {
-                    return redirect()->intended('/home');
+                    //return redirect()->intended('/home');
+                    return redirect('/home');
                 } elseif (auth()->user()->status == 1) {
                     session()->flash('massage', 'username ของคุณถูกระงับ');
                     return redirect('/login');

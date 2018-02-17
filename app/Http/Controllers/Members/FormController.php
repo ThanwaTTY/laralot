@@ -9,6 +9,7 @@ class FormController extends Controller
 {
     public function index()
     {
+        //echo "bug";
         return view('index');
     }
     

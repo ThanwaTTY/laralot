@@ -53,12 +53,52 @@ function clickmenu(url) {
     });
     return false;
 }
+
+
+
 $(function () {
+    // $('.input-all.input-number.form-control.input-sm.bolder').on('click', function () {
+    //     alert();
+    // });
+    $('.input-all.input-number.form-control.input-sm.bolder').on('change', function () {
+        let data = $(this).val();
+        $('#betable-number').html(data);
+        $('#betable-0').html("ปิดรับ");
+        $('#betable-1').html("ปิดรับ");
+        $('#betable-2').html("ปิดรับ");
+    });
+
     $('#btn-submit-bet').on('click', function () {
-        console.log('Active');
-        $.post('/storebet', $('#formpatbet').serialize()).done(function (data) {
-            console.log(data);
+        //console.log('Active');
+        //var inputcheck = $('input[name=num\\[\\]]');
+        var input_num_val = 0;
+        $('.input-all.input-number.form-control.input-sm.bolder').each(function (index) {
+            //console.log('input[name=num\[' + index + '\]]');
+            var ll = $('#input-number-row-' + index).val();
+            if (ll) {
+                //console.log(ll);
+                input_num_val += 1;
+            } else {
+                input_num_val += 0;
+            }
         });
+
+        if (input_num_val == 0) {
+            alert('ไม่มีรายการแทง กรุณาตรวจสอบข้อมูล');
+        } else {
+            $.post('/storebet', $('#formpatbet').serialize()).done(function (data) {
+                // $.each(data.check, function (i) {
+                //     if (data.check[i]) {
+                console.log(data);
+                //     } else {
+                //         //alert();
+                //     }
+                //     //console.log(i + ": ");
+                // });
+            });
+
+        }
+
     });
 
     $('.input-amount').on('keyup', function () {

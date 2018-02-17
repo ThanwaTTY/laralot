@@ -39,8 +39,10 @@ Route::get('/admin/login', 'AuthController@getlogin');
 Route::post('/admin/login', 'AuthController@postLogin');
 Route::get('/admin/logout', 'AuthController@logout');
 Route::get('/register/user={user}&pass={pass}&credit={credit}', 'Members\MemberController@register');
-Route::group(['middleware'=>['auth']], function () {
-        Route::get('/', 'Members\FormController@index');
+
+
+Route::group(['middleware'=>['auth','user']], function () {
+        
         //รายการเเทง
         Route::get('/play/bet', 'UserbetController@index');
         Route::get('/home', 'UserbetController@home');
@@ -80,8 +82,8 @@ Route::group(['middleware'=>['auth']], function () {
 
 
 
-         Route::group(['middleware'=>['auth']], function () {
-
+         Route::group(['middleware'=>['auth','admin']], function () {
+            Route::get('/', 'Members\FormController@index');
              Route::get('/members/create', 'Members\MemberController@create');
              Route::post('/members', 'Members\MemberController@store')->name('members.store');
              Route::get('/members/edit', 'Members\MemberController@edit');

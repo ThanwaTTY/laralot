@@ -14,6 +14,7 @@ class LimiteController extends Controller
    public function index(){
      $id = auth()->user()->id;
      $limiteShow = Limite::where('member_id', $id)->latest()->first();
+     echo auth()->user()->username."<BR>".$id;
     //  dd($limiteShow);
     return view('listlottery.settingof.index', compact('limiteShow'));
    }
