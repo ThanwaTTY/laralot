@@ -354,6 +354,7 @@ class MemberController extends Controller
                     'keepset' => request('keepset'),
                     'keepset1' => $memberkeep->keepset1,
                     'keepset2' => $memberkeep->keepset2,
+                    'keepset3' => $memberkeep->keepset3,
                     'keepset4' => $keepsetting4,
                     'keepset6' => request('keepset'),
                     ]);

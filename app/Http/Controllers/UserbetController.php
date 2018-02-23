@@ -93,83 +93,263 @@ class UserbetController extends Controller
                 }
                 //
                 
-                $TypeBet = $this->IsTypeBet($member->id,$tickets,$lottos,$datenow,$num,$type,$request->top[$key],$request->bottom[$key],$request->tod[$key],$member,$useradd_detail_loop,$useradd,$keep);
-                // if($type==3){
-                //     if ($request->top[$key]) {
-                //         // return response()->json([
-                //         //     'result'=>'complate',
-                //         // ]);
-                //         for ($i=1; $i <=6 ; $i++) { 
-                //         $comg_1[$i]=0;
-                //         $payoutg_1[$i]=0;
-                //         }
+                //$TypeBet = $this->IsTypeBet($member->id,$tickets,$lottos,$datenow,$num,$type,$request->top[$key],$request->bottom[$key],$request->tod[$key],$member,$useradd_detail_loop,$useradd,$keep);
+                if($type==3){
+
+                    /////////////////// check limit
+
+                    ///////////////////
+                    if ($request->top[$key]) {
+
+                        $check_after_bet = Userbet::where('member_id',$id)->where('bet_num',$num)->where('type','top'.$type)->where('lotto_id',$lottos->id)->get();
+
+                        $BetUp = 0;
+                        $BetUp_array[] = 0;
+                        // ยอดเกิน
+
+                        for ($i=1; $i <=6 ; $i++) { 
+                            $comg_1[$i]=0;
+                                // ค่าคอมมิชชั่น
+                            $payoutg_1[$i]=0;
+                                // อัตราจ่าย
+                            $limittop3[$i]=0;
+                                // ลิมิตอั่น มาตราฐาน 
+                            $limit_amount[$i]=0;
+                                // รายการอั้นที่เล่นแล้ว
+                            $total_limit[$i]=0;
+                                // ลิมิตอั้นคงเหลือ ที่สามารถรับได้
+                        }
+                        //$useradd_detail_loop_rsort = rsort($useradd_detail_loop);
 
 
-                //         $pay_7 = $member->ratepaygov->payoutg_1;
-                //         $com_7 = $member->ratepaygov->comg_1;
-                //         foreach ($useradd_detail_loop as $loopuser_add => $ID_useradd) {
-                //             if($ID_useradd){
-                //                 $master[$ID_useradd] = Member::find($ID_useradd);
-                //                 $level_useradd = $master[$ID_useradd]->level;
+                        foreach ($check_after_bet as $loop_limit => $limit) {
+                            $limit_amount[1] += $limit->amount_1;
+                            $limit_amount[2] += $limit->amount_2;
+                            $limit_amount[3] += $limit->amount_3;
+                            $limit_amount[4] += $limit->amount_4;
+                            $limit_amount[5] += $limit->amount_5;
+                            $limit_amount[6] += $limit->amount_6;
+                            // ลิมิตตามเลเวล ของ Admin ที่เหลืออยู่
+                        }
+                        for ($i=6; $i >= 1; $i--) { 
+                            // $amount_keep[$i] = $request->top[$key]*($keep['keepset'.$i]/100);
+                            $amount_keep[$i] = number_format(($request->top[$key]*($keep['keepset'.$i]/100)), 2, '.', '');
+                            //ยอดเข้าตามลำดับที่คำนวนจากหุ้นแล้ว
+
+                            //$amount_keep[$i] = $top*($keep['keepset'.$i]/100);
+                            //$keep_[$i] = $keep['keepset'.$i];
+                        }
+                        //$limit_amint = 
+                        // return response()->json([
+                        //     'result'=>'complate',
+                        // ]);
+
+                        $pay_7 = $member->ratepaygov->payoutg_1;
+                        $com_7 = $member->ratepaygov->comg_1;
+                        $useradd_detail_loopsort = rsort($useradd_detail_loop);//rsort = เป็นฟังก์ชันสำหรับการเรียงข้อมูลจากมากไปน้อย
+                        foreach ($useradd_detail_loop as $loopuser_add => $ID_useradd) {
+                            if($ID_useradd){
+                                $master[$ID_useradd] = Member::find($ID_useradd);
+                                $level_useradd = $master[$ID_useradd]->level;
                                 
-                //                 $ratepaygov[$ID_useradd] = Ratepaygov::where('member_id', $master[$ID_useradd]->id)->first();
-                //                 $keep_begin = Keep::where('member_id', $useradd)->first();
-                //                 for ($i=6; $i >= 1; $i--) { 
-                //                     $amount_keep[$i] = $request->top[$key]*($keep['keepset'.$i]/100);
-                //                     //$amount_keep[$i] = $top*($keep['keepset'.$i]/100);
-                //                     //$keep_[$i] = $keep['keepset'.$i];
-                //                 }
-                //                     $comg_1[$level_useradd] = $ratepaygov[$ID_useradd]['comg_1'];  
-                //                     $payoutg_1[$level_useradd] = $ratepaygov[$ID_useradd]['payoutg_1'];
-
-                //             }
-                //         }
-                //         $userbets = Userbet::create([
-                //             'member_id' => $id,
-                //             'ticket_id'=>$tickets->id,
-                //             'lotto_id'=>$lottos->id,
-                //             'latepay' => 'หวยรัฐ70',
-                //             'date_time' => $datenow,
-                //             'pay' => $pay_7,
-                //             'note' => '0',
-                //             'useradd' => $useradd,
-                //             'useradddetail' => $useradddetail,
-                //             'bet_num' => $num,
-                //             'type' => 'top3',
-                //             'amount_1' => $amount_keep[1],
-                //             'keep_1' => $keep->keepset1,
-                //             'com_1' =>  $comg_1[1],
-                //             'pay_1' =>  $payoutg_1[1],
-                //             'amount_2' => $amount_keep[2],
-                //             'keep_2' => $keep->keepset2,
-                //             'com_2' => $comg_1[2],
-                //             'pay_2' =>  $payoutg_1[2],
-                //             'amount_3' => $amount_keep[3],
-                //             'keep_3' => $keep->keepset3,
-                //             'com_3' => $comg_1[3],
-                //             'pay_3' =>  $payoutg_1[3],
-                //             'amount_4' => $amount_keep[4],
-                //             'keep_4' => $keep->keepset4,
-                //             'com_4' => $comg_1[4],
-                //             'pay_4' =>  $payoutg_1[4],
-                //             'amount_5' => $amount_keep[5],
-                //             'keep_5' => $keep->keepset5,
-                //             'com_5' => $comg_1[5],
-                //             'pay_5' =>  $payoutg_1[5],
-                //             'amount_6' => $amount_keep[6],
-                //             'keep_6' => $keep->keepset6,
-                //             'com_6' => $comg_1[6],
-                //             'pay_6' =>  $payoutg_1[6],
-                //             'amount_7' => $request->top[$key],
-                //             'keep_7' => "0",
-                //             'com_7' => $com_7,
-                //             'pay_7' =>  $pay_7,
-                        
-                //         ]); 
-                //     }
+                                $limit_admin = Limite::where('member_id',$ID_useradd)->latest()->first();
+                                $limittop3[$level_useradd] = $limit_admin->top3;
+                                $total_limit[$level_useradd] = $limittop3[$level_useradd] - $limit_amount[$level_useradd] ;
 
 
-                // }
+                                
+                                $ratepaygov[$ID_useradd] = Ratepaygov::where('member_id', $master[$ID_useradd]->id)->first();
+                                $keep_begin = Keep::where('member_id', $ID_useradd)->first();
+
+                                    $comg_1[$level_useradd] = $ratepaygov[$ID_useradd]['comg_1'];  
+                                    $payoutg_1[$level_useradd] = $ratepaygov[$ID_useradd]['payoutg_1'];
+
+
+                                //////////////////// check bet pass
+
+                                //$value_comg_1[$+] = $total_limit[$level_useradd]-$amount_keep[$i];
+                                $resultkeepover[$level_useradd] = $keep_begin->keepover;
+                                if($keep_begin->keepover==1){ // เก็บของเกิน
+                                    if($BetUp<0){ // มียอดยกมา
+                                        $data[$level_useradd] = number_format($amount_keep[$level_useradd]+(-$BetUp), 2, '.', '');//ยอดเข้าตามลำดับที่คำนวนจากหุ้นแล้ว + ของเกินที่ยกมา
+                                        // $data_BetUp[$level_useradd] = $amount_keep[$level_useradd]+$BetUp;
+                                        $datalimit[$level_useradd] = $limit_amount[$level_useradd];// ลิมิตตามเลเวล ของ Admin ที่เล่นไป
+
+                                        $datalimittotal[$level_useradd] = $total_limit[$level_useradd];// ลิมิตอั้นคงเหลือ
+                                        // $BetUp = $total_limit[$level_useradd] - $amount_keep[$level_useradd];
+
+                                        
+
+                                        $count_datalimittotal_data[$level_useradd] = number_format($datalimittotal[$level_useradd] - $data[$level_useradd], 2, '.', '');
+
+                                        // $BetUpcount[$level_useradd] = ($limittop3[$level_useradd]-$amount_keep[$level_useradd]); 
+                                        $BetUpcount[$level_useradd] = ($datalimittotal[$level_useradd]-$data[$level_useradd]); 
+                                        
+                                        if($BetUpcount[$level_useradd]<=0){
+                                            $result[$level_useradd] = $loopuser_add." เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุด ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$datalimittotal[$level_useradd]." - ".$data[$level_useradd]." = รับได้+ยอดยกมา ".$data[$level_useradd]." = ".$amount_keep[$level_useradd]." + ".$BetUp." BetUp < 0  1";
+                                            
+                                        
+                                            $amount_keep[$level_useradd] = number_format($total_limit[$level_useradd], 2, '.', '');
+                                            $BetUp = $BetUpcount[$level_useradd];
+                                            $BetUp_array[$level_useradd] = $BetUpcount[$level_useradd];                                                
+
+                                            
+                                        }else{
+                                            $result[$level_useradd] = $loopuser_add." เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุด ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$datalimittotal[$level_useradd]." - ".$data[$level_useradd]." = รับได้+ยอดยกมา ".$data[$level_useradd]." = ".$amount_keep[$level_useradd]." + ".$BetUp." BetUp < 0  2";
+                                            $BetUp = 0;
+                                            $amount_keep[$level_useradd] = $data[$level_useradd];                                           
+                                        }
+                                        
+                                        
+
+                                    }else{ // ไม่มียอดยกมา
+                                        $data[$level_useradd] = $amount_keep[$level_useradd];
+                                        // $data[$level_useradd] = 'ไม่มียอดยกมา';
+                                        $datalimit[$level_useradd] = $limit_amount[$level_useradd];
+
+                                        $datalimittotal[$level_useradd] = $total_limit[$level_useradd];
+                                        // $BetUp = $total_limit[$level_useradd] - $amount_keep[$level_useradd];
+
+                                        $count_datalimittotal_data[$level_useradd] = $datalimittotal[$level_useradd] - $data[$level_useradd];
+
+
+                                        $BetUpcount[$level_useradd] = ($total_limit[$level_useradd]-$amount_keep[$level_useradd]);
+                                        if($BetUpcount[$level_useradd]<=0){
+                                            $result[$level_useradd] = $loopuser_add." เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุด ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$datalimittotal[$level_useradd]." - ".$amount_keep[$level_useradd]." BetUp > 0  3";
+                                            
+                                            if($BetUpcount[$level_useradd]<=0){
+                                                $amount_keep[$level_useradd] = number_format($total_limit[$level_useradd], 2, '.', '');
+                                                $BetUp += $BetUpcount[$level_useradd];
+                                                $BetUp_array[$level_useradd] = $BetUpcount[$level_useradd];                                                
+                                            }
+                                            // $BetUp = $total_limit[$level_useradd];
+                                        }else{
+                                            $result[$level_useradd] = $loopuser_add." เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุด ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$datalimittotal[$level_useradd]." - ".$amount_keep[$level_useradd]." BetUp > 0  4";
+                                            // $BetUp = $total_limit[$level_useradd]; 
+
+                                        }
+
+                                    }
+                                }else{ //ไม่เก็บของเกิน
+                                    if($BetUp<0){ // มียอดยกมา
+                                        $data[$level_useradd] = $amount_keep[$level_useradd];//ยอดเข้าตามลำดับที่คำนวนจากหุ้นแล้ว
+                                        // $data[$level_useradd] = 'มียอดยกมา';
+                                        $datalimit[$level_useradd] = $limit_amount[$level_useradd];// ลิมิตตามเลเวล ของ Admin ที่เหลืออยู่
+
+                                        $datalimittotal[$level_useradd] = $total_limit[$level_useradd];// ลิมิตอั้นคงเหลือ
+
+                                        $count_datalimittotal_data[$level_useradd] = $datalimittotal[$level_useradd] - $data[$level_useradd];
+                                        
+
+                                        $BetUpcount[$level_useradd] = ($total_limit[$level_useradd]-$amount_keep[$level_useradd]);
+                                        if($BetUpcount[$level_useradd]<=0){
+                                            $result[$level_useradd] = $loopuser_add." ไม่เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุด ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$datalimittotal[$level_useradd]." - ".$amount_keep[$level_useradd]." BetUp > 0  5";
+                                            
+
+                                            if($BetUpcount[$level_useradd]<=0){
+                                                $amount_keep[$level_useradd] = number_format($total_limit[$level_useradd], 2, '.', '');
+                                                $BetUp += $BetUpcount[$level_useradd];
+                                                $BetUp_array[$level_useradd] = $BetUpcount[$level_useradd];                                                
+                                            }
+                                            // $BetUp = $total_limit[$level_useradd];
+                                        }else{
+                                            $result[$level_useradd] = $loopuser_add." ไม่เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุด ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$datalimittotal[$level_useradd]." - ".$amount_keep[$level_useradd]." BetUp > 0  6";
+                                            // $BetUp = $total_limit[$level_useradd];                                            
+                                        }
+                                            
+                                    }else{ // ไม่มียอดยกมา
+                                        $data[$level_useradd] = $amount_keep[$level_useradd];
+                                        // $data[$level_useradd] = 'ไม่มียอดยกมา';
+                                        $datalimit[$level_useradd] = $limit_amount[$level_useradd];
+
+                                        $datalimittotal[$level_useradd] = $total_limit[$level_useradd];
+
+                                        $count_datalimittotal_data[$level_useradd] =$datalimittotal[$level_useradd] - $data[$level_useradd];
+
+                                        
+                                        $BetUpcount[$level_useradd] = ($total_limit[$level_useradd]-$amount_keep[$level_useradd]);
+                                        if($BetUpcount[$level_useradd]<=0){
+                                            $result[$level_useradd] = $loopuser_add." ไม่เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุด ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$total_limit[$level_useradd]." - ".$amount_keep[$level_useradd]." BetUp > 0  7";
+                                            
+                                            
+                                            if($BetUpcount[$level_useradd]<=0){
+                                                $amount_keep[$level_useradd] = number_format($total_limit[$level_useradd], 2, '.', '');
+                                                $BetUp += $BetUpcount[$level_useradd];
+                                                $BetUp_array[$level_useradd] = $BetUpcount[$level_useradd];    
+                                                $test = $BetUp;    
+                                                // $amount_keep[$level_useradd] =                                           
+                                            }else{
+                                                // $amount_keep[$level_useradd] = 
+                                            }
+
+                                            // $BetUp = $total_limit[$level_useradd];
+                                        }else{
+                                            $result[$level_useradd] = $loopuser_add." ไม่เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุด ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$total_limit[$level_useradd]." - ".$amount_keep[$level_useradd]." BetUp > 0  8";
+                                            // $BetUp = $total_limit[$level_useradd];                                            
+                                        }
+                                            
+                                    }
+                                }
+                                
+
+
+                                ///////////////////    
+
+                            }
+                        }
+                           if($BetUpcount[1]>=0){
+                            // if(-1>=0){
+                                $massage = "insert success";
+                                    $userbets = Userbet::create([
+                                        'member_id' => $id,
+                                        'ticket_id'=>$tickets->id,
+                                        'lotto_id'=>$lottos->id,
+                                        'latepay' => 'หวยรัฐ70',
+                                        'date_time' => $datenow,
+                                        'pay' => $pay_7,
+                                        'note' => '0',
+                                        'useradd' => $useradd,
+                                        'useradddetail' => $useradddetail,
+                                        'bet_num' => $num,
+                                        'type' => 'top3',
+                                        'amount_1' => $amount_keep[1],
+                                        'keep_1' => $keep->keepset1,
+                                        'com_1' =>  $comg_1[1],
+                                        'pay_1' =>  $payoutg_1[1],
+                                        'amount_2' => $amount_keep[2],
+                                        'keep_2' => $keep->keepset2,
+                                        'com_2' => $comg_1[2],
+                                        'pay_2' =>  $payoutg_1[2],
+                                        'amount_3' => $amount_keep[3],
+                                        'keep_3' => $keep->keepset3,
+                                        'com_3' => $comg_1[3],
+                                        'pay_3' =>  $payoutg_1[3],
+                                        'amount_4' => $amount_keep[4],
+                                        'keep_4' => $keep->keepset4,
+                                        'com_4' => $comg_1[4],
+                                        'pay_4' =>  $payoutg_1[4],
+                                        'amount_5' => $amount_keep[5],
+                                        'keep_5' => $keep->keepset5,
+                                        'com_5' => $comg_1[5],
+                                        'pay_5' =>  $payoutg_1[5],
+                                        'amount_6' => $amount_keep[6],
+                                        'keep_6' => $keep->keepset6,
+                                        'com_6' => $comg_1[6],
+                                        'pay_6' =>  $payoutg_1[6],
+                                        'amount_7' => $request->top[$key],
+                                        'keep_7' => "0",
+                                        'com_7' => $com_7,
+                                        'pay_7' =>  $pay_7,
+                                    
+                                    ]); 
+                                
+                            }else{
+                                $massage = "insert fail";
+                            }
+                    }
+
+
+                }
 
 
 
@@ -193,16 +373,32 @@ class UserbetController extends Controller
             'check'=>$check,
             'bet_num'=>$bet_num,
             'd_type'=>$d_type,
-            'TypeBet'=>$TypeBet,
+            // 'TypeBet'=>$TypeBet,
             //'num_array'=>$num_array.
             // 'master'=>$master,
             // 'ratepaygov'=>$ratepaygov,
             'keep'=>$keep,
             // 'keep_begin'=>$keep_begin,
-            // 'amount_keep'=>$amount_keep,
+            'amount_keep'=>$amount_keep,
             // 'keep_'=>$keep_,
             // 'comg_1'=>$comg_1,
             // 'payoutg_1'=>$payoutg_1,
+            // 'check_after_bet'=>$check_after_bet,
+            'limit_amount'=>$limit_amount,
+            'limittop3'=>$limittop3,
+            'total_limit'=>$total_limit,
+            'data'=>$data,
+            'datalimit'=>$datalimit,
+            'datalimittotal'=>$datalimittotal,
+            'result'=>$result,
+            'resultkeepover'=>$resultkeepover,
+            'BetUp_array'=>$BetUp_array,
+            'BetUpcount'=>$BetUpcount,
+            'BetUp'=>$BetUp,
+            'useradd_detail_loopsort'=>$useradd_detail_loopsort,
+            'count_datalimittotal_data'=>$count_datalimittotal_data,
+            'massage'=>$massage,
+            'test'=>$test,
             
              
         ]);

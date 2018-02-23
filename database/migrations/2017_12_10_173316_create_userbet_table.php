@@ -24,8 +24,8 @@ class CreateUserbetTable extends Migration
             $table->string('note');
             $table->integer('useradd');
             $table->text('useradddetail')->nullable();
-            $table->integer('bet_num');
-            $table->integer('cal_num')->default(0);
+            $table->string('bet_num');
+            $table->string('cal_num')->default(0);
             $table->string('type');
             for($i=1;$i<=7;$i++)
             {
