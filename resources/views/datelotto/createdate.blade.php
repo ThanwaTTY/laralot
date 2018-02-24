@@ -23,6 +23,10 @@
        folder instead of downloading all of them to reduce the load. -->
 <link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
 
+<link rel="stylesheet" media="all" type="text/css" href="/date/jquery-ui.css" />
+<link rel="stylesheet" media="all" type="text/css" href="/date/jquery-ui-timepicker-addon.css" />
+
+
 <style>
 	.alert {
 		color: #333!important;
@@ -76,7 +80,21 @@
 
     });
   });
+</script>
 
+
+<script type="text/javascript" src="/date/jquery-1.10.2.min.js"></script>
+<script type="text/javascript" src="/date/jquery-ui.min.js"></script>
+
+<script type="text/javascript" src="/date/jquery-ui-timepicker-addon.js"></script>
+<script type="text/javascript" src="/date/jquery-ui-sliderAccess.js"></script>
+<script type="text/javascript">
+    $(function(){
+            $(".datepicker").datetimepicker({
+            dateFormat: 'yy-mm-dd',
+            timeFormat: "HH:mm:ss"
+        });
+    });
 </script>
 {{--
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
@@ -96,7 +114,7 @@
      <ul id="breadcrumbs" class="breadcrumb"> 
       <li> <i class="ace-icon fa fa-home home-icon"></i> 
        <!-- <a href="#">Home</a> --> </li> 
-      <li> จัดการสมาชิก </li>
+      <li> จัดการงวดหวย </li>
       <li> 1. เพิ่มงวดหวย</li>
      </ul>
      <!-- /.breadcrumb --> 
@@ -118,31 +136,31 @@
             {{ csrf_field() }}
         <div class="widget-box widget-color-blue2 width-1100 max-width-1100"> 
          <div class="widget-header"> 
-          <h5 class="widget-title bigger"> ข้อมูลสมาชิก </h5> 
+          <h5 class="widget-title bigger"> ข้อมูลงวดหวย </h5> 
          </div> 
          <div class="widget-body"> 
           <div class="widget-main no-padding-bottom"> 
             <div class="form-group"> 
                 <label for="name" class="control-label col-xs-1">ชื่องวดหวย :</label> 
                 <div class="col-xs-3"> 
-                 <input class="form-control" name="namelotto" type="text" id="name" /> 
+                 <input class="form-control" name="name" type="text" id="name" /> 
                 </div> 
                </div> 
             <div class="form-group"> 
-            <label for="name" class="control-label col-xs-1">วันที่เปิด :</label> 
-            <div class="col-xs-3"> 
-                <input class="form-control" name="dayon" type="text" id=""/> 
-            </div> 
-            <div class="col-xs-2"></div> 
-            <label for="phone" class="control-label col-xs-1">วันที่ปิด:</label> 
-            <div class="col-xs-3"> 
-                <input class="form-control" name="dayoff" type="text" id=""/> 
-            </div> 
+                <label for="name" class="control-label col-xs-1">วันที่เปิด :</label> 
+                <div class="col-xs-3"> 
+                    <input class="form-control datepicker" name="day_on" type="text"/> 
+                </div> 
+                <div class="col-xs-2"></div> 
+                <label for="phone" class="control-label col-xs-1">วันที่ปิด:</label> 
+                <div class="col-xs-3"> 
+                    <input class="form-control datepicker" name="day_off" type="text"/> 
+                </div> 
             </div> 
          </div> 
          </div> 
         </div> 
-        <button type="submit" class="btn btn-primary">เพิ่มสมาชิก</button> 
+        <button type="submit" class="btn btn-primary">เพิ่มงวดหวย</button> 
        </form> 
 
       </div>
