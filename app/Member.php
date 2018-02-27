@@ -66,4 +66,31 @@ class Member extends Authenticatable
     {
         return $this->hasOne(Userbet::class, 'member_id','id');
     }
+
+    public function getParents()
+    {
+        return static::whereIn('id', explode(' ',$this->useradddetail) )
+                        ->orderBy('level','desc')
+                        ->get();        
+    }
+
+    public function limit()
+    {
+        return $this->hasOne(Limite::class, 'member_id');
+    }
+    
+    public function getLimit()
+    {
+        return Limite::where('member_id',$this->id)->latest()->first();
+    }
+
+    public function getLatepaygov()
+    {
+        return Ratepaygov::where('member_id', $this->id)->first();
+    }
+
+    public function getKeep()
+    {
+        return Keep::where('member_id', $this->id)->first();
+    }
 }

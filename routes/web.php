@@ -1,5 +1,31 @@
 <?php
 
+use App\Member;
+use App\Limite;
+Route::get('/usertest', function() {
+    $user = Member::find(15);
+
+    // dump($user->limit->top3);
+
+    foreach( $user->getParents() as $user )
+    {
+        $limit_admin = Limite::where('member_id',$user->id)->latest()->first();
+        // dump("id :".$user->id." ".$user->limit->top3);
+        // dump($user->level);
+        // dump("id :".$limit_admin->id." ".$limit_admin->top3);
+
+        // $limit_admin[$user->id] = $user->getLimit();
+        // $user->getLatepaygov();
+        // dump($user->getLatepaygov());
+
+        $user->getKeep();
+        dump($user->getKeep());
+        
+    }
+
+
+    dd( 'end' );
+});
 /*
 |--------------------------------------------------------------------------
 | Web Routes
