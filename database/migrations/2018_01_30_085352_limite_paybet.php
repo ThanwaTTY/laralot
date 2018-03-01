@@ -17,7 +17,7 @@ class LimitePaybet extends Migration
             $table->increments('id');
             $table->integer('member_id')->index();
             $table->integer('lotto_id')->index();
-            $table->integer('bet_num');
+            $table->string('bet_num');
             $table->string('type');
             $table->decimal('limite_amount',16,2);
             $table->timestamps();

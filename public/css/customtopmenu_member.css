@@ -234,7 +234,7 @@ button {
 .white {
     color: #fff !important;
 }
-.fa {
+/* .fa {
     display: inline-block;
     font-family: FontAwesome;
     font-style: normal;
@@ -242,7 +242,7 @@ button {
     line-height: 1;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-}
+} */
 .grey {
     color: #777 !important;
 }
@@ -964,5 +964,9 @@ a:hover, a:focus {
     max-width: 3px;
     overflow: hidden;
     background-color: #629cc9;
+}
+
+.input-icon {
+    position: relative;
 }
 

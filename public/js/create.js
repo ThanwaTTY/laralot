@@ -87,9 +87,23 @@ $(function () {
             alert('ไม่มีรายการแทง กรุณาตรวจสอบข้อมูล');
         } else {
             $.post('/storebet', $('#formpatbet').serialize()).done(function (data) {
+
+                $.each(data.error, function (i) {
+                    console.log(i);
+                    console.log(data.error[i]);
+                    if (data.error[i] == true) {
+                        $('#' + i + '>i.ace-icon.fa.fa-check.green.success').removeClass('hidden');
+                    } else {
+                        $('#' + i + '>i.ace-icon.fa.fa-times.red.error').removeClass('hidden');
+                    }
+                });
+                console.log(data);
+
                 // $.each(data.check, function (i) {
                 //     if (data.check[i]) {
-                console.log(data);
+                // console.log(data);
+                // console.log(data.error);
+
                 //     } else {
                 //         //alert();
                 //     }
@@ -115,5 +129,14 @@ $(function () {
     $('.nav.nav-list>li').on('click', function () {
         $('.nav.nav-list>li').removeClass('active');
         $(this).addClass('active');
+    });
+
+    $("#btn-clear-bet").on('click', function () {
+        $('input.input-all').val("");
+    });
+
+    $(".btn-delete").on('click', function () {
+        var x = $(this).tabIndex;
+        console.log(x);
     });
 });
