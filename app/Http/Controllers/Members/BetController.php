@@ -81,7 +81,7 @@ class BetController extends Controller
             $usebets[$key] = Userbet::where('ticket_id',$ticket->id)->get();
             // return response()->json(['usebet'=>$usebet->pay]);
             foreach ($usebets[$key] as $key => $usebet) {
-                $useradddetails = explode(" ", $usebet->useradddetail);
+                $useradddetails = explode(" ", $usebet   ->useradddetail);
                 
                 foreach ($useradddetails as $key => $useradddetail) {
                     if($useradddetail==$loginId){
@@ -636,8 +636,19 @@ class BetController extends Controller
     public function listlotuser()
     {
         $id = auth()->user()->id;
-        
-        return view('listlottery.listlotuser.index');
+        $lotto = Lotto::orderBy('id', 'desc')->latest()->first();
+        $tickets = Ticket::where('lotto_id',$lotto->id)->get();
+
+            foreach ($tickets as $key => $ticket) {
+               $userbets[$key] = Userbet::where('ticket_id', $ticket->id)
+                                        ->with('member')
+                                        ->select(DB::Raw('member_id'))
+                                        ->groupBy('member_id')
+                                        ->get();
+            }
+        // dd($userbets);
+        return view('listlottery.listlotuser.index',compact('userbets'));
+     
     }
 
     public function listlotuser2()
@@ -2533,7 +2544,8 @@ class BetController extends Controller
                                                 }
                                             }
 
-                                            
+                                               
+
                                 }
                                 $usersum_s[$key] = number_format($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key],2);
                                 $usercom_s[$key] = number_format($comtop3[$key]+$combottom3[$key]+$comtod3[$key]+$comtop2[$key]+$combottom2[$key]+$comtod2[$key]+$comtop1[$key]+$combottom1[$key],2);

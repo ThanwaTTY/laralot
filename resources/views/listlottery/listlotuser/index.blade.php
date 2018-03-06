@@ -113,37 +113,38 @@
 						</thead>
 
 						<tbody id="tbodyuser">
-
-            	
-							<tr class="odd">
-								<td>
-									<a href="" class="ajax"></a>
-									<span class="span-name jquery-hide">()</span>
-								</td>
-					
-								<td class="type" nowrap=""></td>
-	
-								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span>
-								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
-								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
-								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
-								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
-								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
-								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
-								</td>
-								<td class="align-right n2c"><span class="negative">-<span></span></span>
-								</td>
-								<td class="align-right n2c"><span class="positive"><span></span></span>
-								</td>
-							</tr>
-          
+							@foreach($userbets as $userbet)
+								<tr class="odd">
+									
+									<td>
+										<a href="" class="ajax"></a>
+										<span class="span-name jquery-hide">()</span>
+									</td>
+						
+									<td class="type" nowrap=""></td>
+		
+									<td class="align-right dark-blue bolder n2 bg-blue"></td>
+									<td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span>
+									</td>
+									<td class="align-right n2c"><span class="positive"><span></span></span>
+									</td>
+									<td class="align-right n2c"><span class="negative">-<span></span></span>
+									</td>
+									<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+									</td>
+									<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+									</td>
+									<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+									</td>
+									<td class="align-right n2c"><span class="positive"><span></span></span>
+									</td>
+									<td class="align-right n2c"><span class="negative">-<span></span></span>
+									</td>
+									<td class="align-right n2c"><span class="positive"><span></span></span>
+									</td>
+									
+								</tr>
+							@endforeach
 						</tbody>
 
 						<tfoot class="thin-border-bottom">
