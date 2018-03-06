@@ -21,6 +21,15 @@ class DatelottoController extends Controller
         $dt = Carbon::now();
         $datenow = $dt->format('Y-m-d h:i:s');  
 
+        $rules = [
+            'name' => 'required',
+            'day_on' => 'required',
+            'day_off' => 'required'
+        ];
+
+        $inputs = request()->except(['_token']);
+        $this->validate($request, $rules);
+
         $lotto = Lotto::create([
             'name' => request('name'),
             'type' => '1',
@@ -28,6 +37,7 @@ class DatelottoController extends Controller
             'day_on' => request('day_on'),
             'day_off' => request('day_off')
         ]);
+        session()->flash('massagesuccess', 'เพิ่มงวดหวยสำเร็จ');
         return redirect('/datelotto/create');
     }
 }
