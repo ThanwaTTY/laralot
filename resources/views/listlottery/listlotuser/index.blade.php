@@ -113,37 +113,41 @@
 						</thead>
 
 						<tbody id="tbodyuser">
-							@foreach($userbets as $userbet)
+							{{--  @foreach ($sumallmembers as $key => $sumallmember)   --}}
+							{{--  @foreach ($userbet as $key => $value)   --}}
+							@foreach ($usebet_s as $key => $usebet) 
+
 								<tr class="odd">
 									
 									<td>
-										<a href="" class="ajax"></a>
-										<span class="span-name jquery-hide">()</span>
+										<a href="" class="ajax">
+										<span class="span-name jquery-hide">{{$member_name[$key]}}()</span></a>
 									</td>
 						
 									<td class="type" nowrap=""></td>
 		
 									<td class="align-right dark-blue bolder n2 bg-blue"></td>
-									<td class="align-right n2c"><span class="negative" id="out_1">-<span></span></span>
+								<td class="align-right n2c"><span class="negative" id="out_1">{{ $usersum_s[$key] }}<span></span></span>
 									</td>
-									<td class="align-right n2c"><span class="positive"><span></span></span>
+									<td class="align-right n2c"><span class="positive">{{ $usercom_s[$key] }}<span></span></span>
 									</td>
-									<td class="align-right n2c"><span class="negative">-<span></span></span>
+									<td class="align-right n2c"><span class="negative">{{ $usersumall[$key] }}<span></span></span>
 									</td>
-									<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+									<td class="align-right n2c bg-yellow"><span class="positive">{{ $agsum_s[$key] }}<span></span></span>
 									</td>
-									<td class="align-right n2c bg-yellow"><span class="negative">-<span></span></span>
+									<td class="align-right n2c bg-yellow"><span class="negative">{{ $agcom_s[$key] }}<span></span></span>
 									</td>
-									<td class="align-right n2c bg-yellow"><span class="positive"><span></span></span>
+									<td class="align-right n2c bg-yellow"><span class="positive">{{ $agsumall[$key] }}<span></span></span>
 									</td>
-									<td class="align-right n2c"><span class="positive"><span></span></span>
+									<td class="align-right n2c"><span class="positive">{{ $companysum_s[$key] }}<span></span></span>
 									</td>
-									<td class="align-right n2c"><span class="negative">-<span></span></span>
+									<td class="align-right n2c"><span class="negative">{{ $companycom_s[$key] }}<span></span></span>
 									</td>
-									<td class="align-right n2c"><span class="positive"><span></span></span>
+									<td class="align-right n2c"><span class="positive">{{ $companysumall[$key] }}<span></span></span>
 									</td>
 									
 								</tr>
+							{{--  @endforeach  --}}
 							@endforeach
 						</tbody>
 
@@ -151,23 +155,23 @@
 							<tr class="even">
 								<td colspan="2" class="bolder">รวม :</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sum_allmember"></span></span>
+							<td class="align-right n2c"><span class="negative"><span id="sum_allmember">{{ number_format($aOne['sumallmember'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sum_allcommember"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sum_allcommember">{{ number_format($aOne['sumallcommembers'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sum_allcount"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sum_allcount">{{ number_format($aOne['sumallcounts'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_allag"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_allag">{{ number_format($aOne['sumallags'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="sum_allcomag"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="sum_allcomag">{{ number_format($aOne['sumallcomags'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_allagcount"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_allagcount">{{ number_format($aOne['sumallagcounts'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sum_allcompany"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sum_allcompany">{{ number_format($aOne['sumallcompanys'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sum_allcomcompany"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sum_allcomcompany">{{ number_format($aOne['sumallcomcompanys'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sum_allcountcompany"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sum_allcountcompany">{{ number_format($aOne['sumallcountcompanys'],2) }}</span></span>
 								</td>
 							</tr>
 						</tfoot>
