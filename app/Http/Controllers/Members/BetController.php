@@ -657,13 +657,15 @@ class BetController extends Controller
         foreach (array_unique($datamember_id) as $key => $member_id) {
             $usebet_s[$member_id] = Userbet::where('lotto_id', $lotto->id)->where('member_id', $member_id)->get();
             $datamember_id[$member_id] = $member_id;
-            // $member_lavel[$member_id] = Member::find($usebet[0]->member_id);
+            // $member_lavel[$member_id] = Member::find($userbet[0]->member_id);
         }
        
         foreach ($usebet_s as $key => $usebet) {
             $member = Member::find($usebet[0]->member_id);
             $useradddetail =$member->useradddetail;
             $member_name[$key] = $member->username;
+            $level_member[$key] = $member->level;
+
             $useradddetails = explode(" ", $useradddetail);
                 foreach ($useradddetails as $loop_i => $useradddetail) {
                     if($useradddetail==$id){
@@ -2690,11 +2692,29 @@ class BetController extends Controller
            
         //     dd($aOnes);
         // }
-        // dd($member_name);
+        // dd($sumtop3);
         // return view('listlottery.listlotuser.index',compact('userbets','usersum_s'));
         return view('listlottery.listlotuser.index',compact('usersum_s','usercom_s','usersumall',
                                                             'agsum_s', 'agcom_s', 'agsumall',
-                                                            'companysum_s', 'companycom_s', 'companysumall','aOne','usebet_s','member_name'));
+                                                            'companysum_s', 'companycom_s', 'companysumall','aOne','usebet_s','member_name','level_member',
+                                                            'sum_top3','sum_bottom3','sum_tod3',
+                                                            'sum_top2','sum_bottom2','sum_tod2',
+                                                            'sum_top1','sum_bottom1',
+                                                            'com_top3','com_bottom3','com_tod3',
+                                                            'com_top2','com_bottom2','com_tod2',
+                                                            'com_top1','com_bottom1',
+                                                            'sumusertop3','sumuserbottom3','sumusertod3',
+                                                            'sumusertop2','sumuserbottom2','sumusertod2',
+                                                            'sumusertop1','sumuserbottom1',
+                                                            'sum_agtop3','sum_agbottom3','sum_agtod3',
+                                                            'sum_agtop2','sum_agbottom2','sum_agtod2',
+                                                            'sum_agtop1','sum_agbottom1',
+                                                            'com_agtop3','com_agbottom3','com_agtod3',
+                                                            'com_agtop2','com_agbottom2','com_agtod2',
+                                                            'com_agtop1','com_agbottom1',
+                                                            'sumag_top3','sumag_bottom3','sumag_tod3',
+                                                            'sumag_top2','sumag_bottom2','sumag_tod2',
+                                                            'sumag_top1','sumag_bottom1'));
      
     }
 

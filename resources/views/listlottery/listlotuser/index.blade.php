@@ -115,7 +115,7 @@
 						<tbody id="tbodyuser">
 							{{--  @foreach ($sumallmembers as $key => $sumallmember)   --}}
 							{{--  @foreach ($userbet as $key => $value)   --}}
-							@foreach ($usebet_s as $key => $usebet) 
+							@foreach ($usersum_s as $key => $usersum_ss) 
 
 								<tr class="odd">
 									
@@ -124,9 +124,9 @@
 										<span class="span-name jquery-hide">{{$member_name[$key]}}()</span></a>
 									</td>
 						
-									<td class="type" nowrap=""></td>
+								<td class="type" nowrap="">{{$level_member[$key]}}</td>
 		
-									<td class="align-right dark-blue bolder n2 bg-blue"></td>
+									<td class="align-right dark-blue bolder n2 bg-blue">{{ $usersum_s[$key] }}</td>
 								<td class="align-right n2c"><span class="negative" id="out_1">{{ $usersum_s[$key] }}<span></span></span>
 									</td>
 									<td class="align-right n2c"><span class="positive">{{ $usercom_s[$key] }}<span></span></span>
@@ -220,17 +220,17 @@
 							<tr class="even">
 								<td class="bolder">3 ตัวบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumtop3"></span></span>
+							<td class="align-right n2c"><span class="negative"><span id="sumtop3">{{ number_format($sum_top3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="comtop3"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtop3">{{ number_format($com_top3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumusertop3"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertop3">{{ number_format($sumusertop3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop3">{{ number_format($sum_agtop3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtop3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtop3">{{ number_format($com_agtop3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top3">{{ number_format($sumag_top3,2) }}</span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top3"></span></span>
 								</td>
@@ -244,17 +244,17 @@
 							<tr class="">
 								<td class="bolder">3 ตัวล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumbottom3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumbottom3">{{ number_format($sum_bottom3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="combottom3"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="combottom3">{{ number_format($com_bottom3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom3"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom3">{{ number_format($sumuserbottom3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom3">{{ number_format($sum_agbottom3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom3">{{ number_format($com_agbottom3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom3">{{ number_format($sumag_bottom3,2) }}</span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom3"></span></span>
 								</td>
@@ -268,17 +268,17 @@
 							<tr class="even">
 								<td class="bolder">3 ตัวโต๊ด</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumtod3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtod3">{{ number_format($sum_tod3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="comtod3"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtod3">{{ number_format($com_tod3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumusertod3"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertod3">{{ number_format($sumusertod3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtod3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtod3">{{ number_format($sum_agtod3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtod3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtod3">{{ number_format($com_agtod3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod3"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod3">{{ number_format($sumag_tod3,2) }}</span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="sumcompany_tod3"></span></span>
 								</td>
@@ -292,17 +292,17 @@
 							<tr class="">
 								<td class="bolder">2 ตัวบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumtop2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtop2">{{ number_format($sum_top2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="comtop2"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtop2">{{ number_format($com_tod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumusertop2"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertop2">{{ number_format($sumusertop2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop2">{{ number_format($sum_agtop2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtop2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtop2">{{ number_format($com_agtop2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top2">{{ number_format($sumag_top2,2) }}</span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top2"></span></span>
 								</td>
@@ -316,15 +316,15 @@
 							<tr class="">
 								<td class="bolder">2 ตัวล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumbottom2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumbottom2">{{ number_format($sum_bottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="combottom2"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="combottom2">{{ number_format($com_bottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom2"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom2">{{ number_format($sumuserbottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom2">{{ number_format($sum_agbottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom2">{{ number_format($com_agbottom2,2) }}</span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom2"></span></span>
 								</td>
@@ -340,15 +340,15 @@
 							<tr class="">
 								<td class="bolder">2 ตัวโต๊ด</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumtod2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtod2">{{ number_format($sum_tod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="comtod2"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtod2">{{ number_format($com_tod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumusertod2"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertod2">{{ number_format($sumusertod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtod2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtod2">{{ number_format($sum_agtod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtod2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtod2">{{ number_format($com_agtod2,2) }}</span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod2"></span></span>
 								</td>
@@ -364,15 +364,15 @@
 							<tr class="">
 								<td class="bolder">วิ่งบน</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumtop1"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumtop1">{{ number_format($sum_top1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="comtop1"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="comtop1">{{ number_format($com_top1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumusertop1"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumusertop1">{{ number_format($sumusertop1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop1"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agtop1">{{ number_format($sum_agtop1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span  id="com_agtop1"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span  id="com_agtop1">{{ number_format($com_agtop1,2) }}</span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top1"></span></span>
 								</td>
@@ -388,15 +388,15 @@
 							<tr class="">
 								<td class="bolder">วิ่งล่าง</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumbottom1"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumbottom1">{{ number_format($sum_bottom1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="combottom1"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="combottom1">{{ number_format($com_bottom1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom1"></span></span>
+								<td class="align-right n2c"><span class="negative">-<span id="sumuserbottom1">{{ number_format($sumuserbottom1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom1"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sum_agbottom1">{{ number_format($sum_agbottom1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom1"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom1">{{ number_format($com_agbottom1,2) }}</span></span>
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom1"></span></span>
 								</td>
