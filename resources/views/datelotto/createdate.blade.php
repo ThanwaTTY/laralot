@@ -1,4 +1,5 @@
-@extends('master') @section('head')
+@extends('master')
+@section('head')
 <!-- Bootstrap 3.3.6 -->
 <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
 <!-- Font Awesome -->
@@ -49,7 +50,10 @@
     border-radius: 0;
     }*/
 </style>
-<link rel="stylesheet" href="/css/custom2.css"> @endsection @section('footer')
+<link rel="stylesheet" href="/css/custom2.css">
+@endsection 
+
+@section('footer')
 <!-- jQuery 2.2.3 -->
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
@@ -106,9 +110,37 @@
     $("[data-mask]").inputmask();
   });
 
-</script> --}} @endsection @section('content')
+</script> --}} 
+@endsection 
+@section('content')
 
 <div class="main-content"> 
+        @if(session()->get('massagesuccess'))
+		<div class="box">
+			<div class="box-tools pull-right">
+				<button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                <i class="fa fa-times"></i></button>
+			</div>
+			<div class="callout callout-success">
+				<h4>success!</h4>
+				<p>{{ session()->get('massagesuccess') }}</p>
+			</div>
+		</div>
+		@endif @if(session()->get('massage'))
+		<div class="box">
+			<div class="box-tools pull-right">
+				<button type="button" class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse">
+                <i class="fa fa-minus"></i></button>
+				<button type="button" class="btn btn-box-tool" data-widget="remove" data-toggle="tooltip" title="Remove">
+                <i class="fa fa-times"></i></button>
+			</div>
+			<div class="callout callout-danger">
+				<h4>Fail !</h4>
+
+				<p>{{ session()->get('massage') }}</p>
+			</div>
+		</div>
+		@endif
     <!-- #section:basics/content.breadcrumbs --> 
     <div class="breadcrumbs"> 
      <ul id="breadcrumbs" class="breadcrumb"> 
@@ -144,17 +176,20 @@
                 <label for="name" class="control-label col-xs-1">ชื่องวดหวย :</label> 
                 <div class="col-xs-3"> 
                  <input class="form-control" name="name" type="text" id="name" /> 
+                 <p style="color:red">{{ $errors->first('name') }}</p>
                 </div> 
-               </div> 
+            </div> 
             <div class="form-group"> 
                 <label for="name" class="control-label col-xs-1">วันที่เปิด :</label> 
                 <div class="col-xs-3"> 
                     <input class="form-control datepicker" name="day_on" type="text"/> 
+                    <p style="color:red">{{ $errors->first('day_on') }}</p>
                 </div> 
                 <div class="col-xs-2"></div> 
                 <label for="phone" class="control-label col-xs-1">วันที่ปิด:</label> 
                 <div class="col-xs-3"> 
                     <input class="form-control datepicker" name="day_off" type="text"/> 
+                    <p style="color:red">{{ $errors->first('day_off') }}</p>
                 </div> 
             </div> 
          </div> 

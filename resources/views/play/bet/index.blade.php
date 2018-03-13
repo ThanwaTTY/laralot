@@ -191,7 +191,7 @@
                   <td class="ac am bigger-120" id="betable-2">–</td>
                   <td></td>
               </tr>
-              @for($i = 1; $i <=100; $i++)
+              {{--  @for($i = 1; $i <=100; $i++)
                   <tr id="tr-row-{{$i}}" class="all-tr {{($i<6)?'':' jquery-hide'}}" data-check-num="{{$i}}">
                   <td><div class="line-number" style="color: #999; position: absolute; width: 75px; line-height: 32px; text-align: right; margin-left: -80px">
                         {{$i}}
@@ -217,7 +217,7 @@
                     <a href="#" class="btn-delete" tabindex="-{{$i}}"><i class="fa fa-times red bigger-175"></i></a>
                   </td>
               </tr>
-              @endfor
+              @endfor  --}}
               
             </tbody>
             <tfoot>

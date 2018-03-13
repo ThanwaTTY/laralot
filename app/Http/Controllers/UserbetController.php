@@ -80,6 +80,7 @@ class UserbetController extends Controller
         $data_request = $request->all();
         //$check = 0;
         foreach ($request->num as $key => $num) {
+            $row =$key+1;
             if ($num) {
 
                 $check[$key]="true ".$key;
@@ -217,11 +218,32 @@ class UserbetController extends Controller
                                 
                                 ///////////////////    
                         }
+                        $limite_paybets = Limite_paybet::where('member_id',$user->id)->where('lotto_id',$lottos->id)->where('type','top3')->where('bet_num',$num)->first();
+                        if($limite_paybets){
+                        //    dump($limite_paybets->bet_num); 
+                            $data[$level_useradd] = $amount_keep[$level_useradd];//ยอดเข้าตามลำดับที่คำนวนจากหุ้นแล้ว
+                            $datalimit[$level_useradd] = $limite_paybets->limite_amount;// ลิมิตตามเลเวล ของ Admin ที่เหลืออยู่
+                            $total_limit[$level_useradd] = $datalimit[$level_useradd] - $limit_amount[$level_useradd];
+                            $datalimittotal[$level_useradd] = $total_limit[$level_useradd];// ลิมิตอั้นคงเหลือ
+                            $BetUpcount[$level_useradd] = ($total_limit[$level_useradd]-$amount_keep[$level_useradd]);
+                            if($BetUpcount[$level_useradd]<=0){
+                                $result[$level_useradd] = " ไม่เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุดที่ตั้งอั้น ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$total_limit[$level_useradd]." - ".$amount_keep[$level_useradd]." BetUp > 0  limit 1";
+                                // $amount_keep[$level_useradd] = number_format($total_limit[$level_useradd], 2, '.', '');
+                                $BetUp += $BetUpcount[$level_useradd];
+                                // $BetUp_array[$level_useradd] = $BetUpcount[$level_useradd];     
+                            }else{
+                                $result[$level_useradd] = " ไม่เก็บของเกิน รับเข้า ".$amount_keep[$level_useradd]." มียอดยกมา ".$BetUp." รับสูงสุดที่ตั้งอั้น ".$datalimittotal[$level_useradd]." ลิมิตอั้นคงเหลือ ".$BetUpcount[$level_useradd]." = ".$total_limit[$level_useradd]." - ".$amount_keep[$level_useradd]." BetUp > 0  limit 2";                                          
+                            }
+                            
+                        }
+                        
                             if($BetUpcount[1]>=0){
-                                $massage = "insert success";
+                                $massage[] = "insert success";
+                                $error["td-0-row-".$row]=true;
                                     $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'top3',$amount_keep,$keep,$comg,$payoutg,$request->top[$key],$key);                                
                             }else{
-                                $massage = "insert fail";
+                                $massage[] = "insert fail";
+                                $error["td-0-row-".$row]=false;
                             }
                     }
                     /////////////////// bottom3
@@ -345,10 +367,12 @@ class UserbetController extends Controller
                                 ///////////////////    
                         }
                             if($BetUpcount[1]>=0){
-                                $massage = "insert success";
+                                $massage[] = "insert success";
+                                $error["td-1-row-".$row]=true;
                                     $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'bottom3',$amount_keep,$keep,$comg,$payoutg,$request->bottom[$key],$key);                                
                             }else{
-                                $massage = "insert fail";
+                                $massage[] = "insert fail";
+                                $error["td-1-row-".$row]=false;                              
                             }
                     }
                     /////////////////// tod3
@@ -473,10 +497,12 @@ class UserbetController extends Controller
                         }
                         
                             if($BetUpcount[1]>=0){
-                                $massage = "insert success";
+                                $massage[] = "insert success";
+                                $error["td-2-row-".$row]=true;                                                             
                                     $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'tod3',$amount_keep,$keep,$comg,$payoutg,$request->tod[$key],$key);                                                                    
                             }else{
-                                $massage = "insert fail";
+                                $massage[] = "insert fail";
+                                $error["td-2-row-".$row]=false;                                                            
                             }
                     }
                     
@@ -600,10 +626,12 @@ class UserbetController extends Controller
                                 ///////////////////    
                         }
                             if($BetUpcount[1]>=0){
-                                $massage = "insert success";
+                                $massage[] = "insert success";
+                                $error["td-0-row-".$row]=true;                                                              
                                     $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'top2',$amount_keep,$keep,$comg,$payoutg,$request->top[$key],$key);                                
                             }else{
-                                $massage = "insert fail";
+                                $massage[] = "insert fail";
+                                $error["td-0-row-".$row]=false;                                                                                              
                             }
                     }
                     /////////////////// bottom2
@@ -727,10 +755,12 @@ class UserbetController extends Controller
                                 ///////////////////    
                         }
                             if($BetUpcount[1]>=0){
-                                $massage = "insert success";
+                                $massage[] = "insert success";
+                                $error["td-1-row-".$row]=true;                                                                                               
                                     $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'bottom2',$amount_keep,$keep,$comg,$payoutg,$request->bottom[$key],$key);                                
                             }else{
-                                $massage = "insert fail";
+                                $massage[] = "insert fail";
+                                $error["td-1-row-".$row]=false;                                                                                              
                             }
                     }
                     /////////////////// tod2
@@ -855,10 +885,12 @@ class UserbetController extends Controller
                         }
                         
                             if($BetUpcount[1]>=0){
-                                $massage = "insert success";
-                                    $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'tod2',$amount_keep,$keep,$comg,$payoutg,$request->tod[$key],$key);                                                                    
+                                $massage[] = "insert success";
+                                $error["td-2-row-".$row]=true; ;                                                                                              
+                                $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'tod2',$amount_keep,$keep,$comg,$payoutg,$request->tod[$key],$key);                                                                    
                             }else{
-                                $massage = "insert fail";
+                                $massage[] = "insert fail";
+                                $error["td-2-row-".$row]=false;                                                                                              
                             }
                     }
                 }elseif($type==1){
@@ -981,10 +1013,12 @@ class UserbetController extends Controller
                                 ///////////////////    
                         }
                             if($BetUpcount[1]>=0){
-                                $massage = "insert success";
-                                    $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'top1',$amount_keep,$keep,$comg,$payoutg,$request->top[$key],$key);                                
+                                $massage[] = "insert success";
+                                $error["td-0-row-".$row]=true;                                                                                              
+                                $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'top1',$amount_keep,$keep,$comg,$payoutg,$request->top[$key],$key);                                
                             }else{
-                                $massage = "insert fail";
+                                $massage[] = "insert fail";
+                                $error["td-0-row-".$row]=false;                                                                                              
                             }
                     }
                     /////////////////// bottom1
@@ -1108,10 +1142,12 @@ class UserbetController extends Controller
                                 ///////////////////    
                         }
                             if($BetUpcount[1]>=0){
-                                $massage = "insert success";
-                                    $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'bottom1',$amount_keep,$keep,$comg,$payoutg,$request->bottom[$key],$key);                                
+                                $massage[] = "insert success";
+                                $error["td-1-row-".$row]=true;                                                                                               
+                                $userbets[] = $this->Userbet_Create($id,$tickets,$lottos,'หวยรัฐ70',$datenow,$useradd,$useradddetail,$num,'bottom1',$amount_keep,$keep,$comg,$payoutg,$request->bottom[$key],$key);                                
                             }else{
-                                $massage = "insert fail";
+                                $massage[] = "insert fail";
+                                $error["td-1-row-".$row]=false;                                                                                               
                             }
                     }
                 }
@@ -1168,6 +1204,7 @@ class UserbetController extends Controller
                 // 'limit_admin'->$limit_admin,
                 // 'testArray'=>$testArray,
             // 'userbets'=>$userbets,
+            'error'=>$error,
             
              
         ]);

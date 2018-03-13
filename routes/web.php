@@ -2,6 +2,7 @@
 
 use App\Member;
 use App\Limite;
+use App\Limite_paybet;
 Route::get('/usertest', function() {
     $user = Member::find(15);
 
@@ -9,7 +10,7 @@ Route::get('/usertest', function() {
 
     foreach( $user->getParents() as $user )
     {
-        $limit_admin = Limite::where('member_id',$user->id)->latest()->first();
+        // $limit_admin = Limite::where('member_id',$user->id)->latest()->first();
         // dump("id :".$user->id." ".$user->limit->top3);
         // dump($user->level);
         // dump("id :".$limit_admin->id." ".$limit_admin->top3);
@@ -18,9 +19,15 @@ Route::get('/usertest', function() {
         // $user->getLatepaygov();
         // dump($user->getLatepaygov());
 
-        $user->getKeep();
-        dump($user->getKeep());
+        // $user->getKeep();
+        // dump($user->getKeep());
+        $limite_paybets = Limite_paybet::where('member_id',$user->id)->where('lotto_id',2)->where('type','top3')->where('bet_num',"000")->first();
+        if($limite_paybets){
+           dump($limite_paybets->bet_num); 
+        }
         
+        // dump($limite_paybets->bet_num);
+        // dump($user->id);
     }
 
 

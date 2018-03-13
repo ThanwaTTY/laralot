@@ -50,7 +50,7 @@
                 <div class="title">
                     คุณไม่มีสิทธิ์ใช้งานหน้านี้
                     <br>
-                    <a href="/adminLSM"><h5>กลับสู่หน้าหลัก</h5></a>
+                    <a href="/admin/login"><h5>กลับสู่หน้าหลัก</h5></a>
                 </div>
             </div>
         </div>
