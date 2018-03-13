@@ -326,7 +326,7 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom2">{{ number_format($com_agbottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom2">{{ number_format($sumag_,2) }}</span></span>
 								</td>
 								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom2"></span></span>
 								</td>
