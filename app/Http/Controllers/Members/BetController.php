@@ -2714,7 +2714,16 @@ class BetController extends Controller
                                                             'com_agtop1','com_agbottom1',
                                                             'sumag_top3','sumag_bottom3','sumag_tod3',
                                                             'sumag_top2','sumag_bottom2','sumag_tod2',
-                                                            'sumag_top1','sumag_bottom1'));
+                                                            'sumag_top1','sumag_bottom1',
+                                                            'sumcompany_top3','sumcompany_bottom3','sumcompany_tod3',
+                                                            'sumcompany_top2','sumcompany_bottom2','sumcompany_tod2',
+                                                            'sumcompany_top1','sumcompany_bottom1',
+                                                            'comcompany_top3','comcompany_bottom3','comcompany_tod3',
+                                                            'comcompany_top2','comcompany_bottom2','comcompany_tod2',
+                                                            'comcompany_top1','comcompany_bottom1',
+                                                            'sumtop3_company','sumbottom3_company','sumtod3_company',
+                                                            'sumtop2_company','sumbottom2_company','sumtod2_company',
+                                                            'sumtop1_company','sumbottom1_company'));
      
     }
 

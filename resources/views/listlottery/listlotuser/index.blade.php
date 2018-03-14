@@ -232,11 +232,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top3">{{ number_format($sumag_top3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top3"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top3">{{ number_format($sumcompany_top3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="comcompany_top3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_top3">{{ number_format($comcompany_top3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumtop3_company"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtop3_company">{{ number_format($sumtop3_company,2) }}</span></span>
 								</td>
 							</tr>
  
@@ -256,11 +256,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom3">{{ number_format($sumag_bottom3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom3"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom3">{{ number_format($sumcompany_bottom3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom3">{{ number_format($comcompany_bottom3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumbottom3_company"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumbottom3_company">{{ number_format($sumbottom3_company,2) }}</span></span>
 								</td>
 							</tr>
 
@@ -280,11 +280,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod3">{{ number_format($sumag_tod3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumcompany_tod3"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_tod3">{{ number_format($sumcompany_tod3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="comcompany_tod3"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_tod3">{{ number_format($comcompany_tod3,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumtod3_company"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtod3_company">{{ number_format($sumtod3_company,2) }}</span></span>
 								</td>
 							</tr>
 
@@ -304,11 +304,11 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top2">{{ number_format($sumag_top2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top2"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top2">{{ number_format($sumcompany_top2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="comcompany_top2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_top2">{{ number_format($comcompany_top2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumtop2_company"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtop2_company">{{ number_format($sumtop2_company,2) }}</span></span>
 								</td>
 							</tr>
 
@@ -326,13 +326,13 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom2">{{ number_format($com_agbottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom2">{{ number_format($sumag_,2) }}</span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom2">{{ number_format($sumag_bottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom2"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom2">{{ number_format($sumcompany_bottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom2">{{ number_format($comcompany_bottom2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumbottom2_company"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumbottom2_company">{{ number_format($sumbottom2_company,2) }}</span></span>
 								</td>
 							</tr>
 
@@ -350,13 +350,13 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agtod2">{{ number_format($com_agtod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod2"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_tod2">{{ number_format($sumag_tod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumcompany_tod2"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_tod2">{{ number_format($sumcompany_tod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="comcompany_tod2"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_tod2">{{ number_format($comcompany_tod2,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumtod2_company"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtod2_company">{{ number_format($sumtod2_company,2) }}</span></span>
 								</td>
 							</tr>
 
@@ -374,13 +374,13 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative"><span  id="com_agtop1">{{ number_format($com_agtop1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top1"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_top1">{{ number_format($sumag_top1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top1"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_top1">{{ number_format($sumcompany_top1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="comcompany_top1"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_top1">{{ number_format($comcompany_top1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumtop1_company"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumtop1_company">{{ number_format($sumtop1_company,2) }}</span></span>
 								</td>
 							</tr>
 
@@ -398,13 +398,13 @@
 								</td>
 								<td class="align-right n2c bg-yellow"><span class="negative"><span id="com_agbottom1">{{ number_format($com_agbottom1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom1"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumag_bottom1">{{ number_format($sumag_bottom1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom1"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumcompany_bottom1">{{ number_format($sumcompany_bottom1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom1"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="comcompany_bottom1">{{ number_format($comcompany_bottom1,2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumbottom1_company"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumbottom1_company">{{ number_format($sumbottom1_company,2) }}</span></span>
 								</td>
 							</tr>
 						</tbody>
@@ -413,23 +413,23 @@
 							<tr class="even">
 								<td class="bolder">รวม :</td>
 								<td class="align-right dark-blue bolder n2 bg-blue"></td>
-								<td class="align-right n2c"><span class="negative"><span id="sumallmember"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumallmember">{{ number_format($aOne['sumallmember'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumallcommember"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumallcommember">{{ number_format($aOne['sumallcommembers'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="sumallcount"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumallcount">{{ number_format($aOne['sumallcounts'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumallag"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumallag">{{ number_format($aOne['sumallags'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="negative"><span id="sumallcomag"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="negative"><span id="sumallcomag">{{ number_format($aOne['sumallcomags'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumallagcount"></span></span>
+								<td class="align-right n2c bg-yellow"><span class="positive"><span id="sumallagcount">{{ number_format($aOne['sumallagcounts'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumallcompany"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumallcompany">{{ number_format($aOne['sumallcompanys'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="negative"><span id="sumallcomcompany"></span></span>
+								<td class="align-right n2c"><span class="negative"><span id="sumallcomcompany">{{ number_format($aOne['sumallcomcompanys'],2) }}</span></span>
 								</td>
-								<td class="align-right n2c"><span class="positive"><span id="sumallcountcompany"></span></span>
+								<td class="align-right n2c"><span class="positive"><span id="sumallcountcompany">{{ number_format($aOne['sumallcountcompanys'],2) }}</span></span>
 								</td>
 							</tr>
 						</tfoot>
