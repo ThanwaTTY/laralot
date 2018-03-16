@@ -796,6 +796,7 @@ class BetController extends Controller
                             $comcompany_bottom1 =0;
 
                             $member_name[$key] = $member->username;
+                            $memberlist_id[$key] = $member->id;
                             $userbets_[$key] = $usebet[0]->ticket_id;
                             //$userbets_[$key] = Userbet::where('id', $usebet[0]->id)->get();
                             //$userbets_[$key] = Userbet::where('ticket_id', $usebet[0]->ticket_id)->get();
@@ -2723,7 +2724,7 @@ class BetController extends Controller
                                                             'comcompany_top1','comcompany_bottom1',
                                                             'sumtop3_company','sumbottom3_company','sumtod3_company',
                                                             'sumtop2_company','sumbottom2_company','sumtod2_company',
-                                                            'sumtop1_company','sumbottom1_company'));
+                                                            'sumtop1_company','sumbottom1_company','memberlist_id'));
      
     }
 
@@ -2909,6 +2910,7 @@ class BetController extends Controller
                             $comcompany_bottom1 =0;
 
                             $member_name[$key] = $member->username;
+                            $memberlist_id[$key] = $member->id;
                             $userbets_[$key] = $usebet[0]->ticket_id;
                             //$userbets_[$key] = Userbet::where('id', $usebet[0]->id)->get();
                             //$userbets_[$key] = Userbet::where('ticket_id', $usebet[0]->ticket_id)->get();
@@ -4806,6 +4808,7 @@ class BetController extends Controller
             'data'=>array_unique( $datamember_id ),
             'member_lavel'=>$member_lavel,
             'userbets_'=>$userbets_,
+            'memberlist_id'=>$memberlist_id,
 
             'sum_top3'=>number_format($sum_top3,2),
             'sum_bottom3'=>number_format($sum_bottom3,2),
@@ -4898,6 +4901,12 @@ class BetController extends Controller
             'sumallcomcompany'=>number_format($sumallcomcompany,2),
             'sumallcountcompany'=>number_format($sumallcountcompany,2),
         ]);
+    }
+
+    public function list($id){
+        // dd($id);
+        return view('listlottery.listlotuser.list');
+
     }
    
 }

@@ -120,7 +120,7 @@
 								<tr class="odd">
 									
 									<td>
-										<a href="" class="ajax">
+										<a href="/{{$memberlist_id[$key]}}/list_id" class="ajaxmember">
 										<span class="span-name jquery-hide">{{$member_name[$key]}}()</span></a>
 									</td>
 						
@@ -574,8 +574,8 @@
 					console.log(response.agcom_s[i]);
 					console.log(i)
 					if(response.member_name[i]){
-					$("#tbodyuser").append('	<tr class="odd"><td><a href="'+"value1.member.level"
-						+'" class="ajax"><span class="span-name jquery-hide">'+response.member_name[i]
+					$("#tbodyuser").append('	<tr class="odd"><td><a href="/'+response.memberlist_id[i]+"/list_id"
+						+'" class="ajaxmember"><span class="span-name jquery-hide">'+response.member_name[i]
 						+'()</span></a></td><td class="type" nowrap="">'+response.member_lavel[i].level
 						+'</td><td class="align-right dark-blue bolder n2 bg-blue">'+response.usersum_s[i]
 						+'</td><td class="align-right n2c"><span class="negative" id="out_1">'+response.usersum_s[i]
@@ -745,7 +745,14 @@
 		});
   
 		});
+
+
 	  });
+	// $(function(){
+	// 	$('.ajaxmember').on('click', function(){  
+	// 		console.log('Ok');
+	// 	}); 
+	// });
    
-  </script>
+</script>
 @endsection
