@@ -1,3 +1,59 @@
+@extends('master') @section('head')
+<!-- Bootstrap 3.3.6 -->
+<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<!-- Ionicons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
+<!-- daterange picker -->
+<link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
+<!-- bootstrap datepicker -->
+<link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
+<!-- iCheck for checkboxes and radio inputs -->
+<link rel="stylesheet" href="/plugins/iCheck/all.css">
+<!-- Bootstrap Color Picker -->
+<link rel="stylesheet" href="/plugins/colorpicker/bootstrap-colorpicker.min.css">
+<!-- Bootstrap time Picker -->
+<link rel="stylesheet" href="/plugins/timepicker/bootstrap-timepicker.min.css">
+<!-- Select2 -->
+<link rel="stylesheet" href="../../plugins/select2/select2.min.css">
+<!-- Theme style -->
+<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
+<!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+<link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
+<link rel="stylesheet" href="/css/custom2.css">
+<style>
+	.tab-content {
+		border: unset;
+		padding: 16px 12px;
+		position: relative;
+	}
+
+	.table-fancy>tfoot>tr {
+		border-top: 3px double #999999;
+	}   
+</style>
+@endsection 
+@section('content')
+<div class="breadcrumbs">
+	<ul id="breadcrumbs" class="breadcrumb">
+		<li>
+			<i class="ace-icon fa fa-home home-icon"></i>
+			<!-- <a href="#">Home</a> -->
+		</li>
+		<li>
+			รายการแทง
+		</li>
+		<li>
+			ดูของ สมาชิก/ประเภท
+		</li>
+	</ul>
+	<!-- /.breadcrumb -->
+
+	<span id="global-clock" class="pull-right"></span>
+</div>
+
 <div class="page-content" id="user-content">
     <div class="row">
         <div id="content" class="col-xs-12">
@@ -8,12 +64,12 @@
                     <i class="ace-icon fa fa-angle-double-right"></i>
                   <a href="https://agent.superlot999.com/items/by-member/9306" class="ajax">3M3K</a>
                       <i class="ace-icon fa fa-angle-double-right"></i>
-                  3M3KTESTPOR
+                  3M3KTOR
                   </small>
   </h1>
                 <h4 class="sub">
     <i class="fa fa-angle-right orange"></i>
-    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 2 มีนาคม 2561	
+    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 กุมภาพันธ์ 2561
     <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
   </h4>
             </div>
@@ -59,161 +115,65 @@
                 </thead>
 
                 <tbody>
+            @foreach($member_name as $key => $member_names)
                     <tr class="even">
                         <td class="ac">1</td>
-                        <td class="ac">3M3KTESTPOR</td>
+                        <td class="ac">{{$member_name[$key]}}</td>
                         <td class="ac">1</td>
-                        <td class="ac">15452132</td>
+                        <td class="ac">14468208</td>
                         <td class="ac">หวยรัฐ 70</td>
-                        <td class="ac">28/02 12:01:41</td>
+                        <td class="ac">10/02 14:54:59</td>
                         <td class="ac">3 ตัวท้าย</td>
                         <td class="ac">
                             <span class="positive">3 ตัวบน</span> =
-                            <span class="deep-blue">000</span>
+                            <span class="deep-blue">325</span>
                         </td>
                         <td class="ac">550</td>
                         <td class="ar">
-                            <span class="n0 clear0">100</span>
+                            <span class="n0 clear0">10</span>
                             <br>
                             <span class="span-detail jquery-hide">
-              ค่าคอม <span class="n2c"><span class="positive">32.00<span></span></span>
+              ค่าคอม <span class="n2c"><span class="positive">3.30<span></span></span>
                             </span>
                             </span>
                         </td>
                         <td class="ar">
                             <div>
                                 <span class="span-detail jquery-hide">ถือสู้</span>
-                                <span class="n2 clear0">90.00</span>
+                                <span class="n2 clear0">9.00</span>
                                 <span class="span-detail jquery-hide">
                                     [90%<span class="orange"></span>]
                                 </span>
                             </div>
                             <span class="span-detail jquery-hide">
-                ค่าคอม <span class="n2c"><span class="negative">-28.70<span></span></span>
+                ค่าคอม <span class="n2c"><span class="negative">-2.97<span></span></span>
                             </span>
-                            <br> รวม <span class="n2c"><span class="positive">61.30<span></span></span>
+                            <br> รวม <span class="n2c"><span class="positive">6.03<span></span></span>
                             </span>
                             </span>
                         </td>
                         <td class="ar">
                             <span class="span-detail jquery-hide">
-                ค่าคอม <span class="n2c"><span class="negative">-3.30<span></span></span>
+                ค่าคอม <span class="n2c"><span class="negative">-0.33<span></span></span>
                             </span>
                             <br> ถือสู้
                             </span>
-                            <span class="n2 clear0">10.00</span>
+                            <span class="n2 clear0">1.00</span>
                             <span class="span-detail jquery-hide">
-                [10%]
-              </span>
+                        [10%]
+                    </span>
                         </td>
                         <td></td>
                     </tr>
-                    <tr class="odd">
-                        <td class="ac">2</td>
-                        <td class="ac">3M3KTESTPOR</td>
-                        <td class="ac">1</td>
-                        <td class="ac">15452133</td>
-                        <td class="ac">หวยรัฐ 70</td>
-                        <td class="ac">28/02 12:01:41</td>
-                        <td class="ac">3 ตัวท้าย</td>
-                        <td class="ac">
-                            <span class="positive">3 ตัวล่าง</span> =
-                            <span class="deep-blue">000</span>
-                        </td>
-                        <td class="ac">100</td>
-                        <td class="ar">
-                            <span class="n0 clear0">100</span>
-                            <br>
-                            <span class="span-detail jquery-hide">
-              ค่าคอม <span class="n2c"><span class="positive">31.00<span></span></span>
-                            </span>
-                            </span>
-                        </td>
-                        <td class="ar">
-                            <div>
-                                <span class="span-detail jquery-hide">ถือสู้</span>
-                                <span class="n2 clear0">90.00</span>
-                                <span class="span-detail jquery-hide">
-                                    [90%<span class="orange"></span>]
-                                </span>
-                            </div>
-                            <span class="span-detail jquery-hide">
-                ค่าคอม <span class="n2c"><span class="negative">-27.70<span></span></span>
-                            </span>
-                            <br> รวม <span class="n2c"><span class="positive">62.30<span></span></span>
-                            </span>
-                            </span>
-                        </td>
-                        <td class="ar">
-                            <span class="span-detail jquery-hide">
-                ค่าคอม <span class="n2c"><span class="negative">-3.30<span></span></span>
-                            </span>
-                            <br> ถือสู้
-                            </span>
-                            <span class="n2 clear0">10.00</span>
-                            <span class="span-detail jquery-hide">
-                [10%]
-              </span>
-                        </td>
-                        <td></td>
-                    </tr>
-                    <tr class="even">
-                        <td class="ac">3</td>
-                        <td class="ac">3M3KTESTPOR</td>
-                        <td class="ac">1</td>
-                        <td class="ac">15452134</td>
-                        <td class="ac">หวยรัฐ 70</td>
-                        <td class="ac">28/02 12:01:41</td>
-                        <td class="ac">3 ตัวท้าย</td>
-                        <td class="ac">
-                            <span class="positive">3 ตัวโต๊ด</span> =
-                            <span class="deep-blue">000</span>
-                        </td>
-                        <td class="ac">105</td>
-                        <td class="ar">
-                            <span class="n0 clear0">100</span>
-                            <br>
-                            <span class="span-detail jquery-hide">
-              ค่าคอม <span class="n2c"><span class="positive">30.00<span></span></span>
-                            </span>
-                            </span>
-                        </td>
-                        <td class="ar">
-                            <div>
-                                <span class="span-detail jquery-hide">ถือสู้</span>
-                                <span class="n2 clear0">90.00</span>
-                                <span class="span-detail jquery-hide">
-                                    [90%<span class="orange"></span>]
-                                </span>
-                            </div>
-                            <span class="span-detail jquery-hide">
-                ค่าคอม <span class="n2c"><span class="negative">-26.70<span></span></span>
-                            </span>
-                            <br> รวม <span class="n2c"><span class="positive">63.30<span></span></span>
-                            </span>
-                            </span>
-                        </td>
-                        <td class="ar">
-                            <span class="span-detail jquery-hide">
-                ค่าคอม <span class="n2c"><span class="negative">-3.30<span></span></span>
-                            </span>
-                            <br> ถือสู้
-                            </span>
-                            <span class="n2 clear0">10.00</span>
-                            <span class="span-detail jquery-hide">
-                [10%]
-              </span>
-                        </td>
-                        <td></td>
-                    </tr>
+            @endforeach
                 </tbody>
 
                 <tfoot class="thin-border-bottom">
-                    <tr class="odd">
+                    <tr class="even">
                         <td colspan="9" class="ac bolder">รวม</td>
-                        <td class="ar bolder n0">300</td>
-                        <td class="ar bolder n2 clear0">270.00</td>
-                        <td class="ar bolder n2 clear0">30.00</td>
+                        <td class="ar bolder n0">375</td>
+                        <td class="ar bolder n2 clear0">337.50</td>
+                        <td class="ar bolder n2 clear0">37.50</td>
                         <td></td>
                     </tr>
                 </tfoot>
@@ -245,3 +205,45 @@
     </div>
     <!-- /.row -->
 </div>
+@endsection @section('footer')
+<!-- jQuery 2.2.3 -->
+<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<!-- jQuery UI 1.11.4 -->
+<script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+<script>
+	$.widget.bridge('uibutton', $.ui.button);
+
+</script>
+<!-- Bootstrap 3.3.6 -->
+<script src="/bootstrap/js/bootstrap.min.js"></script>
+<!-- Morris.js charts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+<script src="/plugins/morris/morris.min.js"></script>
+<!-- Sparkline -->
+<script src="/plugins/sparkline/jquery.sparkline.min.js"></script>
+<!-- jvectormap -->
+<script src="/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
+<script src="/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+<!-- jQuery Knob Chart -->
+<script src="/plugins/knob/jquery.knob.js"></script>
+<!-- daterangepicker -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.11.2/moment.min.js"></script>
+<script src="/plugins/daterangepicker/daterangepicker.js"></script>
+<!-- datepicker -->
+<script src="/plugins/datepicker/bootstrap-datepicker.js"></script>
+<!-- Bootstrap WYSIHTML5 -->
+<script src="/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js"></script>
+<!-- Slimscroll -->
+<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="/plugins/fastclick/fastclick.js"></script>
+<!-- AdminLTE App -->
+<script src="/dist/js/app.min.js"></script>
+<!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+{{--
+<script src="/dist/js/pages/dashboard.js"></script> --}}
+<!-- AdminLTE for demo purposes -->
+<script src="/dist/js/demo.js"></script>
+
+@endsection

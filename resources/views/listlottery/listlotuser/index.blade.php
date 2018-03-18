@@ -34,7 +34,8 @@
 		border-top: 3px double #999999;
 	}
 </style>
-@endsection @section('content')
+@endsection 
+@section('content')
 <div class="breadcrumbs">
 	<ul id="breadcrumbs" class="breadcrumb">
 		<li>

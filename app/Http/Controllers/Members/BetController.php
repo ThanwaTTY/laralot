@@ -4905,7 +4905,1825 @@ class BetController extends Controller
 
     public function list($id){
         // dd($id);
-        return view('listlottery.listlotuser.list');
+        // $lotto = Lotto::orderBy('id', 'desc')->latest()->first();
+        // $userbet = Userbet::where('lotto_id', $lotto->id)->where('member_id',$id)->get();
+        $id_choose = $id;
+        $id = auth()->user()->id;
+        $level = auth()->user()->level;
+        $lotto = Lotto::orderBy('id', 'desc')->latest()->first();
+        $tickets = Ticket::where('lotto_id',$lotto->id)->get();
+
+        $usebet_s = Userbet::where('lotto_id', $lotto->id)->where('member_id',$id_choose)->get();
+      
+        foreach ($usebet_s as $key => $usebet_c) {
+            $member = Member::find($usebet_c->member_id);
+            $useradddetail =$member->useradddetail;
+            $member_name[$key] = $member->username;
+            $level_member[$key] = $member->level;
+             
+                            $it_have[] =$key;
+                            $sumtop3[$key] =0;
+                            $sumbottom3[$key] =0;
+                            $sumtod3[$key] =0;
+                            $sumtop2[$key] =0;
+                            $sumbottom2[$key] =0;
+                            $sumtod2[$key] =0;
+                            $sumtop1[$key] =0;
+                            $sumbottom1[$key] =0;
+                            
+                            //////////////////////////////////
+                            $comtop3[$key] =0;
+                            $combottom3[$key] =0;
+                            $comtod3[$key] =0;
+                            $comtop2[$key] =0;
+                            $combottom2[$key] =0;
+                            $comtod2[$key] =0;
+                            $comtop1[$key] =0;
+                            $combottom1[$key] =0;
+                            /////////////////////////////////
+                            $usercom_s[$key] =0;
+                            $usersum_s[$key] =0;
+                            $usersumall[$key] =0;
+
+                            //////AG///////////////////
+                            $sumagtop3[$key] =0;
+                            $sumagbottom3[$key] =0;
+                            $sumagtod3[$key] =0;
+                            $sumagtop2[$key] =0;
+                            $sumagbottom2[$key] =0;
+                            $sumagtod2[$key] =0;
+                            $sumagtop1[$key] =0;
+                            $sumagbottom1[$key] =0;
+                            
+                            //////////////////////////////////
+                            $comagtop3[$key] =0;
+                            $comagbottom3[$key] =0;
+                            $comagtod3[$key] =0;
+                            $comagtop2[$key] =0;
+                            $comagbottom2[$key] =0;
+                            $comagtod2[$key] =0;
+                            $comagtop1[$key] =0;
+                            $comagbottom1[$key] =0;
+                            /////////////////////////////////
+                            $agcom_s[$key] =0;
+                            $agsum_s[$key] =0;
+                            $agsumall[$key] =0;
+
+                            //////COMPANY///////////////////
+                            $sumcompanytop3[$key] =0;
+                            $sumcompanybottom3[$key] =0;
+                            $sumcompanytod3[$key] =0;
+                            $sumcompanytop2[$key] =0;
+                            $sumcompanybottom2[$key] =0;
+                            $sumcompanytod2[$key] =0;
+                            $sumcompanytop1[$key] =0;
+                            $sumcompanybottom1[$key] =0;
+                            
+                            //////////////////////////////////
+                            $comcompanytop3[$key] =0;
+                            $comcompanybottom3[$key] =0;
+                            $comcompanytod3[$key] =0;
+                            $comcompanytop2[$key] =0;
+                            $comcompanybottom2[$key] =0;
+                            $comcompanytod2[$key] =0;
+                            $comcompanytop1[$key] =0;
+                            $comcompanybottom1[$key] =0;
+                            /////////////////////////////////
+                            $companycom_s[$key] =0;
+                            $companysum_s[$key] =0;
+                            $companysumall[$key] =0;
+                            /////////////////////////////////
+
+                            
+                                //   dd($usebet_c->type);
+                                            $data[] = $usebet_c;
+
+                                            /////////////////////AG/////////////////////////////////
+                                            if($level == 6){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumtop3[$key] += number_format($usebet_c->amount_7,2);
+                                                    $comtop3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                    $sumagtop3[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comagtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumbottom3[$key] += number_format($usebet_c->amount_7,2);
+                                                    $combottom3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                    $sumagbottom3[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comagbottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumtod3[$key] += number_format($usebet_c->amount_7,2);
+                                                    $comtod3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                    $sumagtod3[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comagtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumtop2[$key] += number_format($usebet_c->amount_7,2);
+                                                    $comtop2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                    $sumagtop2[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comagtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumbottom2[$key] += number_format($usebet_c->amount_7,2);
+                                                    $combottom2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                    $sumagbottom2[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comagbottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumtod2[$key] += number_format($usebet_c->amount_7,2);
+                                                    $comtod2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                    $sumagtod2[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comagtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumtop1[$key] += number_format($usebet_c->amount_7,2);
+                                                    $comtop1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                    $sumagtop1[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comagtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
+                                                    $combottom1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                    $sumagbottom1[$key] += number_format($usebet_c->amount_6,2);
+                                                    $comagbottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                }
+                                            }elseif($level == 5){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumagtop3[$key] += number_format($usebet_c->amount_5,2);
+                                                    if($usebet_c->amount_6 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);   
+                                                        }elseif($usebet_c->amount_7 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_7,2);
+                                                            $comtop3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                            $comagtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                            
+                                                        }
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumagbottom3[$key] += number_format($usebet_c->amount_5,2);
+                                                    if($usebet_c->amount_6 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);   
+                                                        }elseif($usebet_c->amount_7 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_7,2);
+                                                            $combottom3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                            $comagbottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                            
+                                                        }
+                                                    //$comagbottom3[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumagtod3[$key] += number_format($usebet_c->amount_5,2);
+                                                    if($usebet_c->amount_6 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);   
+                                                        }elseif($usebet_c->amount_7 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_7,2);
+                                                            $comtod3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                            $comagtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                            
+                                                        }
+                                                    //$comagtod3[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumagtop2[$key] += number_format($usebet_c->amount_5,2);
+                                                    if($usebet_c->amount_6 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);   
+                                                        }elseif($usebet_c->amount_7 != 0){
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_7,2);
+                                                            $comtop2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                            $comagtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                            
+                                                        }
+                                                    //$comagtop2[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumagbottom2[$key] += number_format($usebet_c->amount_5,2);
+                                                    if($usebet_c->amount_6 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);   
+                                                        }elseif($usebet_c->amount_7 != 0){
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_7,2);
+                                                            $combottom2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                            $comagbottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                            
+                                                        }
+                                                    //$comagbottom2[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumagtod2[$key] += number_format($usebet_c->amount_5,2);
+                                                    if($usebet_c->amount_6 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);   
+                                                        }elseif($usebet_c->amount_7 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_7,2);
+                                                            $comtod2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                            $comagtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                            
+                                                        }
+                                                    //$comagtod2[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumagtop1[$key] += number_format($usebet_c->amount_5,2);
+                                                    if($usebet_c->amount_6 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);   
+                                                        }elseif($usebet_c->amount_7 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_7,2);
+                                                            $comtop1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                            $comagtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                            
+                                                        }
+                                                    //$comagtop1[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumagbottom1[$key] += number_format($usebet_c->amount_5,2);
+                                                    if($usebet_c->amount_6 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);   
+                                                        }elseif($usebet_c->amount_7 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
+                                                            $combottom1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                            $comagbottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                            
+                                                        }
+                                                    //$comagbottom1[$key] += number_format($usebet_c->amount_5*($usebet_c->com_5/100),2);
+                                                }
+                                            }elseif($level == 4){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumagtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                    if($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }        
+                                                    //$comagtop3[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumagbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                    if($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }  
+                                                    //$comagbottom3[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumagtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                    if($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtod3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    //$comagtod3[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumagtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                    if($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }
+                                                    //$comagtop2[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumagbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                    if($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }
+                                                    //$comagbottom2[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumagtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                    if($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtod2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }
+                                                    //$comagtod2[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumagtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                    if($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }
+                                                    //$comagtop1[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumagbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                    if($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }
+                                                    //$comagbottom1[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
+                                                }
+                                            }elseif($level == 3){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumagtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                    if($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_6,2);   
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }  
+                                                    //$comagtop3[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumagbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                    if($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagbottom3[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumagtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                    if($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtod3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtod3[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumagtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                    if($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtop2[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumagbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                    if($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagbottom2[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumagtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                    if($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtod2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtod2[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumagtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                    if($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtop1[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumagbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                    if($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagbottom1[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
+                                                }
+                                            }elseif($level == 2){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumagtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_3 != 0){
+                                                        if($usebet_c->amount_4 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                        }elseif($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }  
+                                                   // $comagtop3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumagbottom3[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_3 != 0){
+                                                       
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagbottom3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumagtod3[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_3 != 0){
+                                                        
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtod3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtod3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumagtop2[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_3 != 0){
+                                                       
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                            if($usebet_c->amount_5 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtop2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumagbottom2[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_3 != 0){
+                                                        
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                            if($usebet_c->amount_5 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    //$comagbottom2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumagtod2[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_3 != 0){
+                                                       
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtod2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtod2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumagtop1[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_3 != 0){
+                                                        
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtop1[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumagbottom1[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_3 != 0){
+                                                        
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        $comagbottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagbottom1[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }
+                                            }elseif($level == 1){
+                                                if($usebet_c->type=="top3"){
+                                                    // $sumagtop3[$key] += number_format($usebet_c->amount_2,2);
+
+                                                    if($usebet_c->amount_2 != 0){
+                                                        if($usebet_c->amount_3 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                        }elseif($usebet_c->amount_4 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                        }elseif($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        
+                                                        // $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_3 != 0){
+                                                        if($usebet_c->amount_4 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                        }elseif($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_3/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_3,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        
+                                                        // $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        // $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        // $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        // $comagtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        // $comagtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    }  
+                                                   // $comagtop3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    if($usebet_c->amount_2 != 0){
+                                                        if($usebet_c->amount_3 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                        }elseif($usebet_c->amount_4 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                        }elseif($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                    // $sumagbottom3[$key] += number_format($usebet_c->amount_2,2);
+                                                    }elseif($usebet_c->amount_3 != 0){
+                                                       
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumbottom3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        // $comagbottom3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        // $comagbottom3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        // $comagbottom3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        // $comagbottom3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        // $comagbottom3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagbottom3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    // $sumagtod3[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_2 != 0){
+                                                        if($usebet_c->amount_3 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                        }elseif($usebet_c->amount_4 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                        }elseif($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                    }elseif($usebet_c->amount_3 != 0){
+                                                        
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtod3[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        // $comagtod3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        // $comagtod3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        // $comagtod3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        // $comagtod3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtod3[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtod3[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        // $comagtod3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtod3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    // $sumagtop2[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_2 != 0){
+                                                        if($usebet_c->amount_3 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                        }elseif($usebet_c->amount_4 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                        }elseif($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                    }elseif($usebet_c->amount_3 != 0){
+                                                       
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        // $comagtop2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                            if($usebet_c->amount_5 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtop2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        // $comagtop2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        // $comagtop2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        // $comagtop2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        // $comagtop2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtop2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    // $sumagbottom2[$key] += number_format($usebet_c->amount_2,2);
+                                                    if($usebet_c->amount_2 != 0){
+                                                        if($usebet_c->amount_3 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                        }elseif($usebet_c->amount_4 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                        }elseif($usebet_c->amount_5 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                            $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                    }elseif($usebet_c->amount_3 != 0){
+                                                        
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        // $comagbottom2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                            if($usebet_c->amount_5 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumbottom2[$key] += number_format($usebet_c->amount_4,2);
+                                                                $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                        // $comagbottom2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                        // $comagbottom2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        // $comagbottom2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                        // $comagbottom2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    //$comagbottom2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                  //  $sumagtod2[$key] += number_format($usebet_c->amount_2,2);
+                                                  if($usebet_c->amount_2 != 0){
+                                                    if($usebet_c->amount_3 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                    }else{
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                    }
+                                                 } elseif($usebet_c->amount_3 != 0){
+                                                       
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtod2[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                      //  $comagtod2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                       // $comagtod2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtod2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                       // $comagtod2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                      //  $comagtod2[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtod2[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtod2[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                      //  $comagtod2[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtod2[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                  //  $sumagtop1[$key] += number_format($usebet_c->amount_2,2);
+                                                  if($usebet_c->amount_2 != 0){
+                                                    if($usebet_c->amount_3 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                    }else{
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                    }
+                                                }elseif($usebet_c->amount_3 != 0){
+                                                        
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumtop1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                       // $comagtop1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                      //  $comagtop1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_5,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumtop1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                       // $comagtop1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $comtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                      //  $comagtop1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumtop1[$key] += number_format($usebet_c->amount_7,2);
+                                                        $comtop1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                      //  $comagtop1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagtop1[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                  //  $sumagbottom1[$key] += number_format($usebet_c->amount_2,2);
+                                                  if($usebet_c->amount_2 != 0){
+                                                    if($usebet_c->amount_3 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                    }else{
+                                                        $sumtop3[$key] += number_format($usebet_c->amount_2,2);
+                                                        $comtop3[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                    }
+                                                }elseif($usebet_c->amount_3 != 0){
+                                                        
+                                                            if($usebet_c->amount_4 != 0){
+                                                                $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                            }elseif($usebet_c->amount_5 != 0){
+                                                                $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                            }elseif($usebet_c->amount_6 != 0){
+                                                                $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                            }else{
+                                                                $sumbottom1[$key] += number_format($usebet_c->amount_3,2);
+                                                                $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_3)*$usebet_c->com_3/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                            }
+                                                     //   $comagbottom1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4-$usebet_c->amount_3)*$usebet_c->com_3/100,2);
+                                                    }elseif($usebet_c->amount_4 != 0){
+                                                        if($usebet_c->amount_5 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);
+                                                        }elseif($usebet_c->amount_6 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3)*$usebet_c->com_4/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_4,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_4)*$usebet_c->com_4/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                      //  $comagbottom1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5-$usebet_c->amount_4)*$usebet_c->com_4/100,2);
+                                                    }elseif($usebet_c->amount_5 != 0){
+                                                        if($usebet_c->amount_6 != 0){
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_5,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_1+$usebet_c->amount_2+$usebet_c->amount_3+$usebet_c->amount_4)*$usebet_c->com_5/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);
+                                                        }else{
+                                                            $sumbottom1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_6,2);
+                                                            $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                        }
+                                                      //  $comagbottom1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6-$usebet_c->amount_5)*$usebet_c->com_5/100,2);   
+                                                    }elseif($usebet_c->amount_6 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_6,2);
+                                                        $combottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
+                                                      //  $comagbottom1[$key] += number_format(($usebet_c->amount_1)*$usebet_c->com_2/100-($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2);          
+                                                    }elseif($usebet_c->amount_7 != 0){
+                                                        $sumbottom1[$key] += number_format($usebet_c->amount_7,2);
+                                                        $combottom1[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
+                                                     //   $comagbottom1[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_2)*$usebet_c->com_2/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
+                                                        
+                                                    } 
+                                                    // $comagbottom1[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
+                                                }
+                                            }
+                                            /////////////////////COMPANY//////////////////////////////
+                                            if($level == 6){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop3[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom3[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytod3[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop2[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom2[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytod2[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop1[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom1[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
+                                                }
+                                            }elseif($level == 5){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop3[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom3[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytod3[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop2[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom2[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytod2[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop1[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom1[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
+                                                }
+                                            }elseif($level == 4){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop3[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom3[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytod3[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop2[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom2[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytod2[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop1[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom1[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
+                                                }
+                                            }elseif($level == 3){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop3[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom3[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytod3[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop2[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom2[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytod2[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanytop1[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
+                                                    $comcompanybottom1[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
+                                                }
+                                            }elseif($level == 2){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop3[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom3[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytod3[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop2[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom2[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytod2[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop1[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom1[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
+                                                }
+                                            }elseif($level == 1){
+                                                if($usebet_c->type=="top3"){
+                                                    $sumcompanytop3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop3[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="bottom3"){
+                                                    $sumcompanybottom3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom3[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="tod3"){
+                                                    $sumcompanytod3[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytod3[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="top2"){
+                                                    $sumcompanytop2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop2[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="bottom2"){
+                                                    $sumcompanybottom2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom2[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="tod2"){
+                                                    $sumcompanytod2[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytod2[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="top1"){
+                                                    $sumcompanytop1[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanytop1[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }if($usebet_c->type=="bottom1"){
+                                                    $sumcompanybottom1[$key] += number_format($usebet_c->amount_1,2);
+                                                    $comcompanybottom1[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
+                                                }
+                                            }
+
+                                               
+
+                                }
+                                $usersum_s[$key] = number_format($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key],2);
+                                $usercom_s[$key] = number_format($comtop3[$key]+$combottom3[$key]+$comtod3[$key]+$comtop2[$key]+$combottom2[$key]+$comtod2[$key]+$comtop1[$key]+$combottom1[$key],2);
+                                $usersumall[$key] = number_format($usersum_s[$key]+$usercom_s[$key],2);
+                                ///////////////////////////AG///////////////////////////////////////////////////////////////
+                                $agsum_s[$key] = number_format($sumagtop3[$key]+$sumagbottom3[$key]+$sumagtod3[$key]+$sumagtop2[$key]+$sumagbottom2[$key]+$sumagtod2[$key]+$sumagtop1[$key]+$sumagbottom1[$key],2);
+                                $agcom_s[$key] = number_format($comagtop3[$key]+$comagbottom3[$key]+$comagtod3[$key]+$comagtop2[$key]+$comagbottom2[$key]+$comagtod2[$key]+$comagtop1[$key]+$comagbottom1[$key],2);
+                                $agsumall[$key] = number_format($agsum_s[$key]+$agcom_s[$key],2);
+                                //////////////////////////COMPANY////////////////////////////////////////////////////////////////
+                                $companysum_s[$key] = number_format($sumcompanytop3[$key]+$sumcompanybottom3[$key]+$sumcompanytod3[$key]+$sumcompanytop2[$key]+$sumcompanybottom2[$key]+$sumcompanytod2[$key]+$sumcompanytop1[$key]+$sumcompanybottom1[$key],2);
+                                $companycom_s[$key] = number_format($comcompanytop3[$key]+$comcompanybottom3[$key]+$comcompanytod3[$key]+$comcompanytop2[$key]+$comcompanybottom2[$key]+$comcompanytod2[$key]+$comcompanytop1[$key]+$comcompanybottom1[$key],2);
+                                $companysumall[$key] = number_format($companysum_s[$key]-$companycom_s[$key],2); 
+                                /////////////////////////TAP2/////////////////////////////////////////////////////////////////////
+
+             
+        
+        
+
+  
+        // dd($sumtop3);
+        return view('listlottery.listlotuser.list',compact('usebet_c','member_name'));
 
     }
    
