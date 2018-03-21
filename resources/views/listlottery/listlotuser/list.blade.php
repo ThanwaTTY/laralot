@@ -119,21 +119,21 @@
                     <tr class="even">
                         <td class="ac">1</td>
                         <td class="ac">{{$member_name[$key]}}</td>
-                        <td class="ac">1</td>
+                        <td class="ac">{{$member_ticket[$key]}}</td>
                         <td class="ac">14468208</td>
-                        <td class="ac">หวยรัฐ 70</td>
-                        <td class="ac">10/02 14:54:59</td>
-                        <td class="ac">3 ตัวท้าย</td>
+                        <td class="ac">{{$member_ratepay[$key]}}</td>
+                        <td class="ac">{{$member_date[$key]}}</td>
+                        <td class="ac">{{$member_type[$key]}}</td>
                         <td class="ac">
-                            <span class="positive">3 ตัวบน</span> =
-                            <span class="deep-blue">325</span>
+                            <span class="positive">{{$member_type[$key]}}</span> =
+                            <span class="deep-blue">{{$member_num[$key]}}</span>
                         </td>
-                        <td class="ac">550</td>
+                        <td class="ac">{{number_format($member_pay[$key])}}</td>
                         <td class="ar">
-                            <span class="n0 clear0">10</span>
+                        <span class="n0 clear0">{{$sumbet_mem[$key]}}</span>
                             <br>
                             <span class="span-detail jquery-hide">
-              ค่าคอม <span class="n2c"><span class="positive">3.30<span></span></span>
+              ค่าคอม <span class="n2c"><span class="positive">{{$combet_mem[$key]}}<span></span></span>
                             </span>
                             </span>
                         </td>
