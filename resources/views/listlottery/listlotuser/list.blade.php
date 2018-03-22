@@ -140,25 +140,25 @@
                         <td class="ar">
                             <div>
                                 <span class="span-detail jquery-hide">ถือสู้</span>
-                                <span class="n2 clear0">9.00</span>
+                                <span class="n2 clear0">{{$sumagbet_mem[$key]}}</span>
                                 <span class="span-detail jquery-hide">
-                                    [90%<span class="orange"></span>]
+                                [{{number_format($Ag_keep[$key])}}%<span class="orange"></span>]
                                 </span>
                             </div>
                             <span class="span-detail jquery-hide">
-                ค่าคอม <span class="n2c"><span class="negative">-2.97<span></span></span>
+                            ค่าคอม <span class="n2c"><span class="negative">{{$comagbet_mem[$key]}}<span></span></span>
                             </span>
-                            <br> รวม <span class="n2c"><span class="positive">6.03<span></span></span>
+                        <br> รวม <span class="n2c"><span class="positive">{{$sumAG[$key]}}<span></span></span>
                             </span>
                             </span>
                         </td>
                         <td class="ar">
                             <span class="span-detail jquery-hide">
-                ค่าคอม <span class="n2c"><span class="negative">-0.33<span></span></span>
+                            ค่าคอม <span class="n2c"><span class="negative">{{$comconpany[$key]}}<span></span></span>
                             </span>
                             <br> ถือสู้
                             </span>
-                            <span class="n2 clear0">1.00</span>
+                        <span class="n2 clear0">{{$sumconpany[$key]}}</span>
                             <span class="span-detail jquery-hide">
                         [10%]
                     </span>
@@ -171,9 +171,9 @@
                 <tfoot class="thin-border-bottom">
                     <tr class="even">
                         <td colspan="9" class="ac bolder">รวม</td>
-                        <td class="ar bolder n0">375</td>
-                        <td class="ar bolder n2 clear0">337.50</td>
-                        <td class="ar bolder n2 clear0">37.50</td>
+                        <td class="ar bolder n0">{{$totalmember}}</td>
+                        <td class="ar bolder n2 clear0">{{$totalAg}}</td>
+                        <td class="ar bolder n2 clear0">{{$totalCompany}}</td>
                         <td></td>
                     </tr>
                 </tfoot>

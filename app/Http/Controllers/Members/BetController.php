@@ -4914,7 +4914,10 @@ class BetController extends Controller
         $tickets = Ticket::where('lotto_id',$lotto->id)->get();
 
         $usebet_s = Userbet::where('lotto_id', $lotto->id)->where('member_id',$id_choose)->get();
-      
+        
+        $totalmember = 0;
+        $totalAg = 0;
+        $totalCompany = 0;
         foreach ($usebet_s as $key => $usebet_c) {
             $member = Member::find($usebet_c->member_id);
             $useradddetail =$member->useradddetail;
@@ -4925,6 +4928,7 @@ class BetController extends Controller
             $member_date[$key] = $usebet_c->date_time;
             $member_pay[$key] = $usebet_c->pay_7;
             $member_num[$key] = $usebet_c->bet_num;
+            
                         
             // $member_keep[$key] = $usebet_c->
 
@@ -4940,8 +4944,10 @@ class BetController extends Controller
                             $comconpany[$key] =0;
                             $sumtop1[$key] =0;
                             $sumbottom1[$key] =0;
+                            $Ag_keep[$key] =0;
+                            $sumAG[$key] = 0;
                             
-                      
+                            
                                             $data[] = $usebet_c;
 
                                             /////////////////////AG/////////////////////////////////
@@ -4951,7 +4957,7 @@ class BetController extends Controller
                                                     $combet_mem[$key] += number_format(-$usebet_c->amount_7*($usebet_c->com_7/100),2);
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_6,2);
                                                     $comagbet_mem[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
-                                                
+                                                    $Ag_keep[$key] = $usebet_c->keep_6;
                                             }elseif($level == 5){
                                                 
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_5,2);
@@ -4965,6 +4971,7 @@ class BetController extends Controller
                                                             $comagbet_mem[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_5)*$usebet_c->com_5/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));   
                                                             
                                                         }
+                                                    $Ag_keep[$key] = $usebet_c->keep_5;
                                                  
                                             }elseif($level == 4){
                                                 
@@ -4989,7 +4996,7 @@ class BetController extends Controller
                                                         
                                                     }        
                                                     //$comagtop3[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
-                                                
+                                                $Ag_keep[$key] = $usebet_c->keep_4;
                                             }elseif($level == 3){
                                                 
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_3,2);
@@ -5026,7 +5033,7 @@ class BetController extends Controller
                                                         
                                                     }  
                                                     //$comagtop3[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
-                                                
+                                                $Ag_keep[$key] = $usebet_c->keep_3;
                                             }elseif($level == 2){
                                                 
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_2,2);
@@ -5078,7 +5085,7 @@ class BetController extends Controller
                                                         
                                                     }  
                                                    // $comagtop3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
-                                                
+                                                $Ag_keep[$key] = $usebet_c->keep_2;
                                             }elseif($level == 1){
                                                 
                                                     // $sumagtop3[$key] += number_format($usebet_c->amount_2,2);
@@ -5150,54 +5157,59 @@ class BetController extends Controller
                                                         
                                                     }  
                                                    // $comagtop3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
-                                                
+                                                $Ag_keep[$key] = 0;
                                             }
                                             /////////////////////COMPANY//////////////////////////////
                                             if($level == 6){
-                                                if($usebet_c->type=="top3"){
+                                                
                                                     $sumconpany[$key] += number_format($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
                                                     $comconpany[$key] += number_format(($usebet_c->amount_5+$usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_6/100),2);
-                                                }
+                                                
                                             }elseif($level == 5){
-                                                if($usebet_c->type=="top3"){
+                                                
                                                     $sumconpany[$key] += number_format($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
                                                     $comconpany[$key] += number_format(($usebet_c->amount_4+$usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_5/100),2);
-                                                }
+                                                
                                             }elseif($level == 4){
-                                                if($usebet_c->type=="top3"){
+                                                
                                                     $sumconpany[$key] += number_format($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1,2);
                                                     $comconpany[$key] += number_format(($usebet_c->amount_3+$usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_4/100),2);
-                                                }
+                                                
                                             }elseif($level == 3){
-                                                if($usebet_c->type=="top3"){
+                                                
                                                     $sumconpany[$key] += number_format($usebet_c->amount_2+$usebet_c->amount_1,2);
                                                     $comconpany[$key] += number_format(($usebet_c->amount_2+$usebet_c->amount_1)*($usebet_c->com_3/100),2);
-                                                }
+                                                
                                             }elseif($level == 2){
-                                                if($usebet_c->type=="top3"){
+                                                
                                                     $sumconpany[$key] += number_format($usebet_c->amount_1,2);
                                                     $comconpany[$key] += number_format(($usebet_c->amount_1)*($usebet_c->com_2/100),2);
-                                                }
+                                                
                                             }elseif($level == 1){
-                                                if($usebet_c->type=="top3"){
+                                                
                                                     $sumconpany[$key] += number_format($usebet_c->amount_1,2);
                                                     $comconpany[$key] += number_format($usebet_c->amount_1*($usebet_c->com_1/100),2);
-                                                }
+                                                
                                             }
 
-                                               
-
+                                            $sumAG[$key] = $sumagbet_mem[$key] + $comagbet_mem[$key];
+                                            
                                 }
 
-             
-        
-        
+                                foreach($sumbet_mem as $sumbet_mems){
+                                $totalmember += $sumbet_mems;
+                                }foreach($sumagbet_mem as $sumagbet_mems){
+                                $totalAg += $sumagbet_mems;
+                                }foreach($sumconpany as $sumconpanys){
+                                $totalCompany += $sumconpanys;
+                                }
 
   
-        // dd($combet_mem);
+        // dd($totalCompany);
         return view('listlottery.listlotuser.list',compact('usebet_c','member_name','member_type','member_ticket',
                                                            'member_ratepay','member_date','member_pay','member_num',
-                                                            'sumbet_mem','combet_mem'));
+                                                            'sumbet_mem','combet_mem','sumagbet_mem','Ag_keep','comagbet_mem','sumAG',
+                                                            'sumconpany','comconpany','totalmember','totalAg','totalCompany'));
 
     }
    
