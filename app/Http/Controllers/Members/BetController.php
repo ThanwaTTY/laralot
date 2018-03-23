@@ -4946,7 +4946,7 @@ class BetController extends Controller
                             $sumbottom1[$key] =0;
                             $Ag_keep[$key] =0;
                             $sumAG[$key] = 0;
-                            
+                            $CompanyKeep[$key] =0;
                             
                                             $data[] = $usebet_c;
 
@@ -4958,6 +4958,7 @@ class BetController extends Controller
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_6,2);
                                                     $comagbet_mem[$key] += number_format(($usebet_c->amount_7-$usebet_c->amount_6)*$usebet_c->com_6/100,2)-($usebet_c->amount_7*($usebet_c->com_7/100));
                                                     $Ag_keep[$key] = $usebet_c->keep_6;
+                                                    $CompanyKeep[$key] = 100-$usebet_c->keep_6;
                                             }elseif($level == 5){
                                                 
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_5,2);
@@ -4972,7 +4973,7 @@ class BetController extends Controller
                                                             
                                                         }
                                                     $Ag_keep[$key] = $usebet_c->keep_5;
-                                                 
+                                                    $CompanyKeep[$key] = 100-$usebet_c->keep_6-$usebet_c->keep_5;
                                             }elseif($level == 4){
                                                 
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_4,2);
@@ -4997,6 +4998,7 @@ class BetController extends Controller
                                                     }        
                                                     //$comagtop3[$key] += number_format($usebet_c->amount_4*($usebet_c->com_4/100),2);
                                                 $Ag_keep[$key] = $usebet_c->keep_4;
+                                                $CompanyKeep[$key] = 100-$usebet_c->keep_6-$usebet_c->keep_5-$usebet_c->keep_4;
                                             }elseif($level == 3){
                                                 
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_3,2);
@@ -5034,6 +5036,7 @@ class BetController extends Controller
                                                     }  
                                                     //$comagtop3[$key] += number_format($usebet_c->amount_3*($usebet_c->com_3/100),2);
                                                 $Ag_keep[$key] = $usebet_c->keep_3;
+                                                $CompanyKeep[$key] = 100-$usebet_c->keep_6-$usebet_c->keep_5-$usebet_c->keep_4-$usebet_c->keep_3;
                                             }elseif($level == 2){
                                                 
                                                     $sumagbet_mem[$key] += number_format($usebet_c->amount_2,2);
@@ -5086,6 +5089,7 @@ class BetController extends Controller
                                                     }  
                                                    // $comagtop3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
                                                 $Ag_keep[$key] = $usebet_c->keep_2;
+                                                $CompanyKeep[$key] = 100-$usebet_c->keep_6-$usebet_c->keep_5-$usebet_c->keep_4-$usebet_c->keep_3-$usebet_c->keep_2;
                                             }elseif($level == 1){
                                                 
                                                     // $sumagtop3[$key] += number_format($usebet_c->amount_2,2);
@@ -5158,6 +5162,7 @@ class BetController extends Controller
                                                     }  
                                                    // $comagtop3[$key] += number_format($usebet_c->amount_2*($usebet_c->com_2/100),2);
                                                 $Ag_keep[$key] = 0;
+                                                $CompanyKeep[$key] = $usebet_c->keep_1;
                                             }
                                             /////////////////////COMPANY//////////////////////////////
                                             if($level == 6){
@@ -5205,11 +5210,11 @@ class BetController extends Controller
                                 }
 
   
-        // dd($totalCompany);
+        // dd($CompanyKeep);
         return view('listlottery.listlotuser.list',compact('usebet_c','member_name','member_type','member_ticket',
                                                            'member_ratepay','member_date','member_pay','member_num',
                                                             'sumbet_mem','combet_mem','sumagbet_mem','Ag_keep','comagbet_mem','sumAG',
-                                                            'sumconpany','comconpany','totalmember','totalAg','totalCompany'));
+                                                            'sumconpany','comconpany','totalmember','totalAg','totalCompany','CompanyKeep'));
 
     }
    

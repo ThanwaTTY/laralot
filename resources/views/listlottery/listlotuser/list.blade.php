@@ -160,7 +160,7 @@
                             </span>
                         <span class="n2 clear0">{{$sumconpany[$key]}}</span>
                             <span class="span-detail jquery-hide">
-                        [10%]
+                            [{{$CompanyKeep[$key]}}%]
                     </span>
                         </td>
                         <td></td>
