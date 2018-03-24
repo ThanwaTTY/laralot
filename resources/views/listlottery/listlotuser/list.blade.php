@@ -34,6 +34,7 @@
 		border-top: 3px double #999999;
 	}   
 </style>
+
 @endsection 
 @section('content')
 <div class="breadcrumbs">
@@ -83,7 +84,7 @@
                 <span class="lbl"> แสดงรายละเอียด</span>
             </label>
 
-            <div class="alert alert-info span-detail jquery-hide">
+            <div class="alert alert-info span-detail jquery-hide" id="jquery-hidelist">
                 ถือสู้ 1,000.00 [50%+<span class="orange">10%</span>]
                 <br> ค่าคอม <span class="n2c"><span class="negative">-300.00<span></span></span>
                 </span>
@@ -179,27 +180,8 @@
                 </tfoot>
             </table>
 
-            <script>
-                $.each($('tbody tr, tfoot tr'), function(key, value) {
-                    $(this).addClass(key % 2 == 0 ? 'odd' : 'even');
-                });
-                $.each($('.n0'), function(key, value) {
-                    $(this).html(n0($(this).text()));
-                });
-                $.each($('.n0c'), function(key, value) {
-                    $(this).html(n0c($(this).text()));
-                });
-                $.each($('.n2'), function(key, value) {
-                    $(this).html(n2($(this).text()));
-                });
-                $.each($('.n2c'), function(key, value) {
-                    $(this).html(n2c($(this).text()));
-                });
-                $.each($('.clear0'), function(key, value) {
-                    if ($(this).text() == 0)
-                        $(this).text('');
-                });
-            </script>
+
+            
         </div>
         <!-- /.col -->
     </div>
@@ -207,6 +189,7 @@
 </div>
 @endsection @section('footer')
 <!-- jQuery 2.2.3 -->
+
 <script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
 <!-- jQuery UI 1.11.4 -->
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
@@ -245,5 +228,24 @@
 <script src="/dist/js/pages/dashboard.js"></script> --}}
 <!-- AdminLTE for demo purposes -->
 <script src="/dist/js/demo.js"></script>
-
+<script type="text/javascript">
+    $(function(){
+        $(".alert.alert-info.span-detail.jquery-hide").hide();
+        $(".span-detail.jquery-hide").hide();
+        $('#input-checkbox-detail').change(function() {
+			input_checkbox_detail();
+		});
+   
+    });
+    function input_checkbox_detail() {
+        if($('#input-checkbox-detail').is(':checked')){
+            $(".alert.alert-info.span-detail.jquery-hide").show();
+            $(".span-detail.jquery-hide").show();
+        }else{
+            $(".alert.alert-info.span-detail.jquery-hide").hide();
+            $(".span-detail.jquery-hide").hide();
+        }
+    }
+    
+</script>
 @endsection
