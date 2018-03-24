@@ -639,6 +639,7 @@
 			}*/
 		  $('#navbar-game-title').html(response.lotto.name);
 		  $('#namelotto').html(response.lotto.name);
+		  
 		  $('#agent').html(response.levellog);
 		  $('#agent2').html(response.levellog);
 		  ////////////////////////////////////////////////////////

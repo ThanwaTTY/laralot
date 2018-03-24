@@ -5214,8 +5214,18 @@ class BetController extends Controller
         return view('listlottery.listlotuser.list',compact('usebet_c','member_name','member_type','member_ticket',
                                                            'member_ratepay','member_date','member_pay','member_num',
                                                             'sumbet_mem','combet_mem','sumagbet_mem','Ag_keep','comagbet_mem','sumAG',
-                                                            'sumconpany','comconpany','totalmember','totalAg','totalCompany','CompanyKeep'));
+                                                            'sumconpany','comconpany','totalmember','totalAg','totalCompany','CompanyKeep','id_choose'));
 
     }
    
+    public function list2(){
+        
+        $idlotto = request("id");
+        $lotto = Lotto::find($idlotto);
+        return response()->json([
+         
+            'idlotto' => $idlotto,
+            'lotto' => $lotto
+        ]);
+    }
 }

@@ -70,7 +70,7 @@
   </h1>
                 <h4 class="sub">
     <i class="fa fa-angle-right orange"></i>
-    <span class="deep-blue">รัฐบาลไทย</span>, งวดวันที่ 16 กุมภาพันธ์ 2561
+    <span class="deep-blue">รัฐบาลไทย</span>, <span id="namelotto">งวดวันที่ 16 ตุลาคม 2560</span>
     <span class="smaller near-white"><i>(เปลี่ยนได้ที่แถบเมนูด้านบน)</i></span>
   </h4>
             </div>
@@ -115,7 +115,7 @@
                     </tr>
                 </thead>
 
-                <tbody>
+                <tbody id="tbodyold">
             @foreach($member_name as $key => $member_names)
                     <tr class="even">
                         <td class="ac">1</td>
@@ -169,7 +169,7 @@
             @endforeach
                 </tbody>
 
-                <tfoot class="thin-border-bottom">
+                <tfoot class="thin-border-bottom" id="tfootold">
                     <tr class="even">
                         <td colspan="9" class="ac bolder">รวม</td>
                         <td class="ar bolder n0">{{$totalmember}}</td>
@@ -235,7 +235,29 @@
         $('#input-checkbox-detail').change(function() {
 			input_checkbox_detail();
 		});
-   
+        
+        $('.getdatelot').on('click', function(){
+            var id = $(this).attr("vaule");
+            console.log(id);
+            $.get('/list2',{
+                id
+            }).done(function(response){
+                console.log(response);
+                $("#tbodyold").remove();
+                $("#tfootold").remove();
+               
+
+
+
+
+            $('#namelotto').html(response.lotto.name);
+                
+
+
+
+
+            });
+        });
     });
     function input_checkbox_detail() {
         if($('#input-checkbox-detail').is(':checked')){
@@ -246,6 +268,6 @@
             $(".span-detail.jquery-hide").hide();
         }
     }
-    
+     
 </script>
 @endsection

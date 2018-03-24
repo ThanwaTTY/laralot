@@ -159,6 +159,7 @@ Route::group(['middleware'=>['auth','user']], function () {
              Route::get('/listlottery/listlotuser', 'Members\BetController@listlotuser');
              Route::get('/listlottery/listlotuser2', 'Members\BetController@listlotuser2');
              Route::get('/{id}/list_id', 'Members\BetController@list');
+             Route::get('/list2', 'Members\BetController@list2');
              
              //////////////////////////////////////////////////////////////////////////
              Route::get('/datelotto/create', 'Members\DatelottoController@create');
