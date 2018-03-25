@@ -99,7 +99,7 @@
             <table class="table table-bordered table-border-dark table-fancy table-auto table-nowrap" id="by-member-table">
                 <thead class="thin-border-bottom">
                     <tr>
-                        <th class="ac">&nbsp;#&nbsp;</th>
+                        <th class="ac" id="id_choose" value="{{$id_choose}}">&nbsp;#&nbsp;</th>
                         <th class="ac width-90px">ชื่อผู้ใช้</th>
                         <th class="ac">โพย#</th>
                         <th class="ac">Bet#</th>
@@ -118,7 +118,7 @@
                 <tbody id="tbodyold">
             @foreach($member_name as $key => $member_names)
                     <tr class="even">
-                        <td class="ac">1</td>
+                        <td class="ac" >{{$id_choose[$key]}}</td>
                         <td class="ac">{{$member_name[$key]}}</td>
                         <td class="ac">{{$member_ticket[$key]}}</td>
                         <td class="ac">14468208</td>
@@ -238,14 +238,17 @@
         
         $('.getdatelot').on('click', function(){
             var id = $(this).attr("vaule");
-            console.log(id);
+            var idmember = $('#id_choose').attr("value");
+            console.log(idmember);
             $.get('/list2',{
-                id
+                id,idmember
             }).done(function(response){
                 console.log(response);
                 $("#tbodyold").remove();
                 $("#tfootold").remove();
-               
+            $.each(response.data, function(key1,i){
+                console.log(response.agcom_s[i]);
+            });
 
 
 
