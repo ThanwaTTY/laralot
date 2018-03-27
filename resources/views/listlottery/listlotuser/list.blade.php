@@ -118,7 +118,7 @@
                 <tbody id="tbodyold">
             @foreach($member_name as $key => $member_names)
                     <tr class="even">
-                        <td class="ac" >{{$id_choose[$key]}}</td>
+                        <td class="ac" >1</td>
                         <td class="ac">{{$member_name[$key]}}</td>
                         <td class="ac">{{$member_ticket[$key]}}</td>
                         <td class="ac">14468208</td>
@@ -134,7 +134,7 @@
                         <span class="n0 clear0">{{$sumbet_mem[$key]}}</span>
                             <br>
                             <span class="span-detail jquery-hide">
-              ค่าคอม <span class="n2c"><span class="positive">{{$combet_mem[$key]}}<span></span></span>
+                    ค่าคอม <span class="n2c"><span class="positive">{{$combet_mem[$key]}}<span></span></span>
                             </span>
                             </span>
                         </td>
@@ -244,13 +244,65 @@
                 id,idmember
             }).done(function(response){
                 console.log(response);
-                $("#tbodyold").remove();
-                $("#tfootold").remove();
+                
+                $("tr.even").remove();
+                for (let index = 0; index < response.member_name.length; index++) {
+                    // const element = response[index];
+                    console.log(response.member_name[index]);
+                if(response.member_name[index]){
+                    $("#tbodyold").append(' <tr class="even">'+"ไงล้ะ"
+                        +'<td class="ac" >'+"1"
+                        +'</td><td class="aca">'+response.member_name[index]
+                        +'</td><td class="ac">'+response.member_ticket[index]
+                        +'</td><td class="ac">'+"123455"
+                        +'</td><td class="ac">'+response.member_ratepay[index] 
+                        +'</td><td class="ac">'+response.member_date[index] 
+                        +'</td><td class="ac">'+response.member_type[index]  
+                        +'</td><td class="ac"><span class="positive">'+response.member_type[index]
+                        +'</span> = <span class="deep-blue">'+response.member_num[index]
+                        +'</span></td><td class="ac">'+response.member_pay[index]
+                        +'</td><td class="ar"><span class="n0 clear0">'+response.sumbet_mem[index]        
+                        +'</span><br><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="positive">'+response.combet_mem[index]                  
+                        +'<span></span></span></span></span></td><td class="ar"><div><span class="span-detail jquery-hide">ถือสู้</span><span class="n2 clear0">'+response.sumagbet_mem[index]
+                        +'</span><span class="span-detail jquery-hide">['+response.Ag_keep[index]
+                        +'%<span class="orange"></span>]</span> </div><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="negative">'+response.comagbet_mem[index]
+                        +'<span></span></span></span><br> รวม <span class="n2c"><span class="positive">'+response.sumAG[index]
+                        +'<span></span></span></span></span></td><td class="ar"><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="negative">'+response.comconpany[index]
+                        +'<span></span></span></span><br> ถือสู้ </span><span class="n2 clear0">'+response.sumconpany[index]
+                        +'</span><span class="span-detail jquery-hide">['+response.CompanyKeep[index]
+                        +'%]</span></td><td></td></tr>');
+                }
+                }
+             
             $.each(response.data, function(key1,i){
-                console.log(response.agcom_s[i]);
+                console.log("in loop");
+                console.log(response.member_name[i]);
+                // if(response.member_name[i]){
+                //     $("#tbodyold").html(' <tr class="even">'+"ไงล้ะ"
+                //         +'<td class="ac" >'+"1"
+                //         +'</td><td class="aca">'+response.member_name[i]
+                //         +'</td><td class="ac">'
+                //         +'</td><td class="ac">'+"123455"
+                //         +'</td><td class="ac">'   
+                //         +'</td><td class="ac">'
+                //         +'</td><td class="ac">'
+                //         +'</td><td class="ac"><span class="positive">'
+                //         +'</span> = <span class="deep-blue">'
+                //         +'</span></td><td class="ac">'
+                //         +'</td><td class="ar"><span class="n0 clear0">'         
+                //         +'</span><br><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="positive">'                  
+                //         +'<span></span></span></span></span></td><td class="ar"><div><span class="span-detail jquery-hide">ถือสู้</span><span class="n2 clear0">'
+                //         +'</span><span class="span-detail jquery-hide">['
+                //         +'%<span class="orange"></span>]</span> </div><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="negative">'
+                //         +'<span></span></span></span><br> รวม <span class="n2c"><span class="positive">'
+                //         +'<span></span></span></span></span></td><td class="ar"><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="negative">'
+                //         +'<span></span></span></span><br> ถือสู้ </span><span class="n2 clear0">'
+                //         +'</span><span class="span-detail jquery-hide">['
+                //         +'%]</span></td><td></td></tr>');
+                // }
             });
 
-
+            
 
 
             $('#namelotto').html(response.lotto.name);

@@ -5532,7 +5532,23 @@ class BetController extends Controller
             'idlotto' => $idlotto,
             'lotto' => $lotto,
             'id_choose' => $id_choose,
-            'member_name' => $member_name
+            'member_name' => $member_name,
+            'member_type'=>$member_type,
+            'member_ticket'=>$member_ticket,
+            'member_ratepay'=>$member_ratepay,
+            'member_date'=>$member_date,
+            'member_pay'=>$member_pay,
+            'member_num'=>$member_num,
+            'sumbet_mem'=>$sumbet_mem,
+            'combet_mem'=>$combet_mem,
+            'sumagbet_mem'=>$sumagbet_mem,
+            'Ag_keep'=>$Ag_keep,
+            'comagbet_mem'=>$comagbet_mem,
+            'sumAG'=>$sumAG,
+            'comconpany'=>$comconpany,
+            'sumconpany'=>$sumconpany,
+            'CompanyKeep'=>$CompanyKeep,
+
         ]);
     }
 }
