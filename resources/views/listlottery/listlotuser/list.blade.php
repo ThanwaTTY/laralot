@@ -250,7 +250,7 @@
                     // const element = response[index];
                     console.log(response.member_name[index]);
                 if(response.member_name[index]){
-                    $("#tbodyold").append(' <tr class="even">'+"ไงล้ะ"
+                    $("#tbodyold").append(' <tr class="even">'
                         +'<td class="ac" >'+"1"
                         +'</td><td class="aca">'+response.member_name[index]
                         +'</td><td class="ac">'+response.member_ticket[index]
@@ -271,6 +271,10 @@
                         +'<span></span></span></span><br> ถือสู้ </span><span class="n2 clear0">'+response.sumconpany[index]
                         +'</span><span class="span-detail jquery-hide">['+response.CompanyKeep[index]
                         +'%]</span></td><td></td></tr>');
+
+                        
+                        $(".alert.alert-info.span-detail.jquery-hide").hide();
+                        $(".span-detail.jquery-hide").hide();
                 }
                 }
              
