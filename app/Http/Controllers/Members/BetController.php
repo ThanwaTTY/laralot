@@ -5547,7 +5547,10 @@ class BetController extends Controller
             'sumAG'=>$sumAG,
             'comconpany'=>$comconpany,
             'sumconpany'=>$sumconpany,
-            'CompanyKeep'=>$CompanyKeep,
+            'CompanyKeep'=>$CompanyKeep,  
+            'totalmember'=>$totalmember,  
+            'totalAg'=>$totalAg,  
+            'totalCompany'=>$totalCompany,  
 
         ]);
     }

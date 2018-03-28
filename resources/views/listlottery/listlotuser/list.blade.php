@@ -272,7 +272,12 @@
                         +'</span><span class="span-detail jquery-hide">['+response.CompanyKeep[index]
                         +'%]</span></td><td></td></tr>');
 
-                        
+                    $("#tfootold").append('<tr class="even">'
+                        +'<td colspan="9" class="ac bolder">รวม</td><td class="ar bolder n0">'+response.totalmember
+                        +'</td><td class="ar bolder n2 clear0">'+response.totalAg
+                        +'</td><td class="ar bolder n2 clear0">'+response.totalCompany
+                        +'</td><td></td></tr>');
+
                         $(".alert.alert-info.span-detail.jquery-hide").hide();
                         $(".span-detail.jquery-hide").hide();
                 }
