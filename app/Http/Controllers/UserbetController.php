@@ -11,6 +11,7 @@ use App\Keep;
 use App\Limite_paybet;
 use App\Limite;
 use App\Ratepaygov;
+use App\Bet_result;
 use Carbon\Carbon;
 use Illuminate\Validation;
 use Illuminate\Validation\Rule;
@@ -1168,6 +1169,10 @@ class UserbetController extends Controller
             }
             
         }
+
+
+        
+
         return response()->json([
             'data_request'=>$data_request,
             'useradd_detail_loop'=>$useradd_detail_loop,
@@ -1222,7 +1227,7 @@ class UserbetController extends Controller
         return $tickets;
     }
 
-    // protected function IsTypeBet($id,$tickets,$lottos,$datenow,$num,$type,$top,$bottom,$tod,$member,$useradd_detail_loop,$useradd,$keep){
+   // protected function IsTypeBet($id,$tickets,$lottos,$datenow,$num,$type,$top,$bottom,$tod,$member,$useradd_detail_loop,$useradd,$keep){
     //     //return $useradd_detail_loop;
     //     //if($type==3){
     //         if ($top) {
@@ -1355,7 +1360,7 @@ class UserbetController extends Controller
     //     }
         
     //     // return "success!";
-    // }
+   // }
 
 
 
@@ -1368,7 +1373,7 @@ class UserbetController extends Controller
     // protected function Userbet_Create()
     protected function Userbet_Create($id,$tickets,$lottos,$latepay,$datenow,$useradd,$useradddetail,$num,$type,$amount_keep,$keep,$comg,$payoutg,$amount,$key)
     {
-        
+       
         $userbets = Userbet::create([
             'member_id' => $id,
             'ticket_id'=> $tickets->id,
@@ -1410,7 +1415,51 @@ class UserbetController extends Controller
             'com_7' => $comg[7],
             'pay_7' =>  $payoutg[7],
         
-        ]);  
+        ]); 
+        
+            Bet_result::create([
+            'member_id' => $id,
+            'userbet_id' => $userbets->id,
+            'ticket_id'=> $tickets->id,
+            'lotto_id'=> $lottos->id,
+            'latepay' => $latepay,
+            'date_time' => $datenow,
+            'pay' => $payoutg[2],
+            'note' => '0',
+            'useradd' => $useradd,
+            'useradddetail' => $useradddetail,
+            'bet_num' => $num,
+            'type' => $type,
+            'amount_1' => $amount_keep[1],
+            'keep_1' => $keep->keepset1,
+            'com_1' =>  $comg[1],
+            'pay_1' =>  $payoutg[1],
+            'amount_2' => $amount_keep[2],
+            'keep_2' => $keep->keepset2,
+            'com_2' => $comg[2],
+            'pay_2' =>  $payoutg[2],
+            'amount_3' => $amount_keep[3],
+            'keep_3' => $keep->keepset3,
+            'com_3' => $comg[3],
+            'pay_3' =>  $payoutg[3],
+            'amount_4' => $amount_keep[4],
+            'keep_4' => $keep->keepset4,
+            'com_4' => $comg[4],
+            'pay_4' =>  $payoutg[4],
+            'amount_5' => $amount_keep[5],
+            'keep_5' => $keep->keepset5,
+            'com_5' => $comg[5],
+            'pay_5' =>  $payoutg[5],
+            'amount_6' => $amount_keep[6],
+            'keep_6' => $keep->keepset6,
+            'com_6' => $comg[6],
+            'pay_6' =>  $payoutg[6],
+            'amount_7' => $amount,
+            'keep_7' => '0',
+            'com_7' => $comg[7],
+            'pay_7' =>  $payoutg[7],
+ 
+            ]);
         
 
 
