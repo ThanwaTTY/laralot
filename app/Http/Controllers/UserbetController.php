@@ -1416,7 +1416,16 @@ class UserbetController extends Controller
             'pay_7' =>  $payoutg[7],
         
         ]); 
-        
+      
+
+            
+      
+  
+            $result_com7 = $userbets->amount_7 * $userbets->com_7/100;
+            $result_com5 = ($userbets->amount_1+$userbets->amount_2+$userbets->amount_3+$userbets->amount_4)*($userbets->com_5/100);
+            
+
+
             Bet_result::create([
             'member_id' => $id,
             'userbet_id' => $userbets->id,
@@ -1448,15 +1457,15 @@ class UserbetController extends Controller
             'pay_4' =>  $payoutg[4],
             'amount_5' => $amount_keep[5],
             'keep_5' => $keep->keepset5,
-            'com_5' => $comg[5],
+            'com_5' => $result_com5,
             'pay_5' =>  $payoutg[5],
             'amount_6' => $amount_keep[6],
             'keep_6' => $keep->keepset6,
-            'com_6' => $comg[6],
+            'com_6' => 0,
             'pay_6' =>  $payoutg[6],
             'amount_7' => $amount,
             'keep_7' => '0',
-            'com_7' => $comg[7],
+            'com_7' => $result_com7,
             'pay_7' =>  $payoutg[7],
  
             ]);
