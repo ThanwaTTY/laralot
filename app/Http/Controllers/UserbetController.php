@@ -1437,31 +1437,70 @@ class UserbetController extends Controller
         
     //////////////
             if($userbets->amount_6 != 0){
-                $result_com6 = $result_com7-$result_com_6;
+                $result_com6 = $result_com_7-$result_com_6;
             }
         //////////////
             if($userbets->amount_5 != 0){
                 if($userbets->amount_6 != 0){
-                    $result_com5 = $result_com6-$result_com_5;
+                    $result_com5 = $result_com_6-$result_com_5;
                 }elseif($userbets->amount_7 != 0){
                     $result_com5 = ($result_com_7-$result_com_5);
                 }
             }
         /////////////
             if($userbets->amount_4 != 0){
-                $result_com4 = $userbets->amount_1+$userbets->amount_2+$userbets->amount_3 * $userbets->com_4/100;
+                if($userbets->amount_5 != 0){
+                    $result_com4 = $result_com_5-$result_com_4;
+                }elseif($userbets->amount_6 != 0){
+                    $result_com4 = $result_com_6-$result_com_4;
+                }elseif($userbets->amount_7 != 0){
+                    $result_com4 = ($result_com_7-$result_com_4);
+                }
+                
+
             }
          ////////////
             if($userbets->amount_3 != 0){
-                $result_com3 = $userbets->amount_1+$userbets->amount_2 * $userbets->com_3/100;
+                
+                if($userbets->amount_4 != 0){
+                    $result_com3 = $result_com_4-$result_com_3;
+                }elseif($userbets->amount_5 != 0){
+                    $result_com3 = $result_com_5-$result_com_3;
+                }elseif($userbets->amount_6 != 0){
+                    $result_com3 = $result_com_6-$result_com_3;
+                }elseif($userbets->amount_7 != 0){
+                    $result_com3 = ($result_com_7-$result_com_3);
+                }
             }
         ///////////
             if($userbets->amount_2 != 0){
-                $result_com2 = $userbets->amount_1 * $userbets->com_2/100;
+                if($userbets->amount_3 != 0){
+                    $result_com2 = $result_com_3-$result_com_2;
+                }elseif($userbets->amount_4 != 0){
+                    $result_com2 = $result_com_4-$result_com_2;
+                }elseif($userbets->amount_5 != 0){
+                    $result_com2 = $result_com_5-$result_com_2;
+                }elseif($userbets->amount_6 != 0){
+                    $result_com2 = $result_com_6-$result_com_2;
+                }elseif($userbets->amount_7 != 0){
+                    $result_com2 = ($result_com_7-$result_com_2);
+                }
             }
         ///////////
             if($userbets->amount_1 != 0){
-                $result_com1 = $userbets->amount_1 * $userbets->com_1/100;
+                if($userbets->amount_2 != 0){
+                    $result_com1 = $result_com_7-($result_com2+$result_com3+$result_com4+$result_com5+$result_com6);
+                }elseif($userbets->amount_3 != 0){
+                    $result_com1 = $result_com_7-($result_com3+$result_com4+$result_com5+$result_com6);
+                }elseif($userbets->amount_4 != 0){
+                    $result_com1 = $result_com_7-($result_com4+$result_com5+$result_com6);
+                }elseif($userbets->amount_5 != 0){
+                    $result_com1 = $result_com_7-($result_com5+$result_com6);
+                }elseif($userbets->amount_6 != 0){
+                    $result_com1 = $result_com_7-($result_com6);
+                }elseif($userbets->amount_7 != 0){
+                    $result_com1 = ($result_com_7-$result_com_1);
+                }
             }
     ///////////
             Bet_result::create([
