@@ -93,4 +93,14 @@ class Member extends Authenticatable
     {
         return Keep::where('member_id', $this->id)->first();
     }
+
+    public function bet_result()
+    {
+        return $this->belongTo(Bet_result::class, 'id','member_id');
+    }
+
+    public function userbet_result()
+    {
+        return $this->hasOne(Bet_result::class, 'member_id','id');
+    }
 }

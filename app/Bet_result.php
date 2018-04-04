@@ -18,4 +18,14 @@ class Bet_result extends Model
         'amount_6','keep_6','com_6','pay_6',
         'amount_7','keep_7','com_7','pay_7',
     ];
+
+    public function member()
+    {
+        return  $this->hasOne(Member::class, 'id', 'member_id');
+    }
+
+    public function members()
+    {
+        return $this->belongTo(Member::class, 'member_id','id');
+    }
 }

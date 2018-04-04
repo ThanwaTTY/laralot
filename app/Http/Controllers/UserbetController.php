@@ -1435,7 +1435,7 @@ class UserbetController extends Controller
             $result_com_1 = $userbets->amount_1 * ($userbets->com_1/100);
       
         
-    //////////////
+    //////////////ค่าคอมมิชชั่น///////////////////////////
             if($userbets->amount_6 != 0){
                 $result_com6 = $result_com_7-$result_com_6;
             }
