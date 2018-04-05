@@ -131,7 +131,7 @@
                         </td>
                         <td class="ac">{{number_format($member_pay[$key])}}</td>
                         <td class="ar">
-                        <span class="n0 clear0"></span>
+                        <span class="n0 clear0">{{$sumbet_mem[$key]}}</span>
                             <br>
                             <span class="span-detail jquery-hide">
                     ค่าคอม <span class="n2c"><span class="positive">{{$combet_mem[$key]}}<span></span></span>
