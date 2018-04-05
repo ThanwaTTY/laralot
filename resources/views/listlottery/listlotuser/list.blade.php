@@ -131,7 +131,7 @@
                         </td>
                         <td class="ac">{{number_format($member_pay[$key])}}</td>
                         <td class="ar">
-                        <span class="n0 clear0">{{$sumbet_mem[$key]}}</span>
+                        <span class="n0 clear0"></span>
                             <br>
                             <span class="span-detail jquery-hide">
                     ค่าคอม <span class="n2c"><span class="positive">{{$combet_mem[$key]}}<span></span></span>
@@ -272,53 +272,18 @@
                         +'</span><span class="span-detail jquery-hide">['+response.CompanyKeep[index]
                         +'%]</span></td><td></td></tr>');
 
-                    $("#tfootold").append('<tr class="even">'
-                        +'<td colspan="9" class="ac bolder">รวม</td><td class="ar bolder n0">'+response.totalmember
-                        +'</td><td class="ar bolder n2 clear0">'+response.totalAg
-                        +'</td><td class="ar bolder n2 clear0">'+response.totalCompany
-                        +'</td><td></td></tr>');
-
                         $(".alert.alert-info.span-detail.jquery-hide").hide();
                         $(".span-detail.jquery-hide").hide();
                 }
                 }
-             
-            $.each(response.data, function(key1,i){
-                console.log("in loop");
-                console.log(response.member_name[i]);
-                // if(response.member_name[i]){
-                //     $("#tbodyold").html(' <tr class="even">'+"ไงล้ะ"
-                //         +'<td class="ac" >'+"1"
-                //         +'</td><td class="aca">'+response.member_name[i]
-                //         +'</td><td class="ac">'
-                //         +'</td><td class="ac">'+"123455"
-                //         +'</td><td class="ac">'   
-                //         +'</td><td class="ac">'
-                //         +'</td><td class="ac">'
-                //         +'</td><td class="ac"><span class="positive">'
-                //         +'</span> = <span class="deep-blue">'
-                //         +'</span></td><td class="ac">'
-                //         +'</td><td class="ar"><span class="n0 clear0">'         
-                //         +'</span><br><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="positive">'                  
-                //         +'<span></span></span></span></span></td><td class="ar"><div><span class="span-detail jquery-hide">ถือสู้</span><span class="n2 clear0">'
-                //         +'</span><span class="span-detail jquery-hide">['
-                //         +'%<span class="orange"></span>]</span> </div><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="negative">'
-                //         +'<span></span></span></span><br> รวม <span class="n2c"><span class="positive">'
-                //         +'<span></span></span></span></span></td><td class="ar"><span class="span-detail jquery-hide">ค่าคอม <span class="n2c"><span class="negative">'
-                //         +'<span></span></span></span><br> ถือสู้ </span><span class="n2 clear0">'
-                //         +'</span><span class="span-detail jquery-hide">['
-                //         +'%]</span></td><td></td></tr>');
-                // }
-            });
 
-            
-
+                $("#tfootold").append('<tr class="even">'
+                    +'<td colspan="9" class="ac bolder">รวม</td><td class="ar bolder n0">'+response.totalmember
+                    +'</td><td class="ar bolder n2 clear0">'+response.totalAg
+                    +'</td><td class="ar bolder n2 clear0">'+response.totalCompany
+                    +'</td><td></td></tr>');
 
             $('#namelotto').html(response.lotto.name);
-                
-
-
-
 
             });
         });
