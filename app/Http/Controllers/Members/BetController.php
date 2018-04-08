@@ -18,11 +18,28 @@ class BetController extends Controller
 {
     public function listlotpoint()
     {
-        //  response()->json([request('id')=>$id]);
-        $id = request('id');
-        //return $id;
-        // dd($id);
-        // echo "<li>".$id."</li>";
+        $id = auth()->user()->id;
+        $level = auth()->user()->level;
+        $lotto = Lotto::orderBy('id', 'desc')->latest()->first();
+        $tickets = Ticket::where('lotto_id',$lotto->id)->get();
+        foreach ($tickets as $key => $ticket) {
+            
+            $usebets[$key] = Bet_result::where('ticket_id',$ticket->id)->get();
+            // return response()->json(['usebet'=>$usebet->pay]);
+            foreach ($usebets[$key] as $key => $usebet) {
+                $useradddetails = explode(" ", $usebet->useradddetail);
+                
+                foreach ($useradddetails as $key => $useradddetail) {
+                    if($useradddetail==$id){
+                        
+                    }
+                }
+
+                  
+            }
+
+        }
+        dd($usebet);    
         return view('listlottery.listlotpoint.index');
     }
 

@@ -1426,6 +1426,13 @@ class UserbetController extends Controller
             $result_com2 =0;
             $result_com1 =0;
 
+            $result_pay6 =0;
+            $result_pay5 =0;
+            $result_pay4 =0;
+            $result_pay3 =0;
+            $result_pay2 =0;
+            $result_pay1 =0;
+
             $result_com_7 = $userbets->amount_7 * $userbets->com_7/100;
             $result_com_6 = ($userbets->amount_1+$userbets->amount_2+$userbets->amount_3+$userbets->amount_4+$userbets->amount_5) * ($userbets->com_6/100);
             $result_com_5 = ($userbets->amount_1+$userbets->amount_2+$userbets->amount_3+$userbets->amount_4) * ($userbets->com_5/100);
@@ -1433,14 +1440,24 @@ class UserbetController extends Controller
             $result_com_3 = ($userbets->amount_1+$userbets->amount_2) * ($userbets->com_3/100);
             $result_com_2 = $userbets->amount_1 * ($userbets->com_2/100);
             $result_com_1 = $userbets->amount_1 * ($userbets->com_1/100);
+
+            $result_pay_6 =($userbets->amount_1+$userbets->amount_2+$userbets->amount_3+$userbets->amount_4+$userbets->amount_5);
+            $result_pay_5 =($userbets->amount_1+$userbets->amount_2+$userbets->amount_3+$userbets->amount_4);
+            $result_pay_4 =($userbets->amount_1+$userbets->amount_2+$userbets->amount_3);
+            $result_pay_3 =($userbets->amount_1+$userbets->amount_2);
+            $result_pay_2 =$userbets->amount_1;
+
+            $result_pay_7 = ($userbets->amount_7 * $userbets->pay_7)-$userbets->amount_7+$result_com_7;
       
         
     //////////////ค่าคอมมิชชั่น///////////////////////////
             if($userbets->amount_6 != 0){
                 $result_com6 = $result_com_7-$result_com_6;
+                $result_pay6 = ($result_pay_6*$userbets->pay_6)-$result_pay_6+$result_com_6;
             }
         //////////////
             if($userbets->amount_5 != 0){
+                $result_pay5 = ($result_pay_5*$userbets->pay_5)-$result_pay_5+$result_com_5;
                 if($userbets->amount_6 != 0){
                     $result_com5 = $result_com_6-$result_com_5;
                 }elseif($userbets->amount_7 != 0){
@@ -1449,6 +1466,7 @@ class UserbetController extends Controller
             }
         /////////////
             if($userbets->amount_4 != 0){
+                $result_pay4 = ($result_pay_4*$userbets->pay_4)-$result_pay_4+$result_com_4;
                 if($userbets->amount_5 != 0){
                     $result_com4 = $result_com_5-$result_com_4;
                 }elseif($userbets->amount_6 != 0){
@@ -1461,7 +1479,7 @@ class UserbetController extends Controller
             }
          ////////////
             if($userbets->amount_3 != 0){
-                
+                $result_pay3 = ($result_pay_3*$userbets->pay_3)-$result_pay_3+$result_com_3;
                 if($userbets->amount_4 != 0){
                     $result_com3 = $result_com_4-$result_com_3;
                 }elseif($userbets->amount_5 != 0){
@@ -1474,6 +1492,7 @@ class UserbetController extends Controller
             }
         ///////////
             if($userbets->amount_2 != 0){
+                $result_pay2 = ($result_pay_2*$userbets->pay_2)-$result_pay_2+$result_com_2;
                 if($userbets->amount_3 != 0){
                     $result_com2 = $result_com_3-$result_com_2;
                 }elseif($userbets->amount_4 != 0){
@@ -1488,6 +1507,7 @@ class UserbetController extends Controller
             }
         ///////////
             if($userbets->amount_1 != 0){
+                
                 if($userbets->amount_2 != 0){
                     $result_com1 = $result_com_7-($result_com2+$result_com3+$result_com4+$result_com5+$result_com6);
                 }elseif($userbets->amount_3 != 0){
@@ -1503,6 +1523,9 @@ class UserbetController extends Controller
                 }
             }
     ///////////
+
+            
+            
             Bet_result::create([
             'member_id' => $id,
             'userbet_id' => $userbets->id,
@@ -1523,27 +1546,27 @@ class UserbetController extends Controller
             'amount_2' => $amount_keep[2],
             'keep_2' => $keep->keepset2,
             'com_2' => $result_com2,
-            'pay_2' =>  $payoutg[2],
+            'pay_2' =>  $result_pay2,
             'amount_3' => $amount_keep[3],
             'keep_3' => $keep->keepset3,
             'com_3' => $result_com3,
-            'pay_3' =>  $payoutg[3],
+            'pay_3' =>  $result_pay3,
             'amount_4' => $amount_keep[4],
             'keep_4' => $keep->keepset4,
             'com_4' => $result_com4,
-            'pay_4' =>  $payoutg[4],
+            'pay_4' =>  $result_pay4,
             'amount_5' => $amount_keep[5],
             'keep_5' => $keep->keepset5,
             'com_5' => $result_com5,
-            'pay_5' =>  $payoutg[5],
+            'pay_5' =>  $result_pay5,
             'amount_6' => $amount_keep[6],
             'keep_6' => $keep->keepset6,
             'com_6' => $result_com6,
-            'pay_6' =>  $payoutg[6],
+            'pay_6' =>  $result_pay6,
             'amount_7' => $amount,
             'keep_7' => '0',
             'com_7' => $result_com_7,
-            'pay_7' =>  $payoutg[7],
+            'pay_7' =>  $result_pay_7,
  
             ]);
         
