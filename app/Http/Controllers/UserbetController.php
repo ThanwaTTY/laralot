@@ -1441,23 +1441,17 @@ class UserbetController extends Controller
             $result_com_2 = $userbets->amount_1 * ($userbets->com_2/100);
             $result_com_1 = $userbets->amount_1 * ($userbets->com_1/100);
 
-            $result_pay_6 =($userbets->amount_1+$userbets->amount_2+$userbets->amount_3+$userbets->amount_4+$userbets->amount_5);
-            $result_pay_5 =($userbets->amount_1+$userbets->amount_2+$userbets->amount_3+$userbets->amount_4);
-            $result_pay_4 =($userbets->amount_1+$userbets->amount_2+$userbets->amount_3);
-            $result_pay_3 =($userbets->amount_1+$userbets->amount_2);
-            $result_pay_2 =$userbets->amount_1;
-
             $result_pay_7 = ($userbets->amount_7 * $userbets->pay_7)-$userbets->amount_7+$result_com_7;
       
         
     //////////////ค่าคอมมิชชั่น///////////////////////////
             if($userbets->amount_6 != 0){
                 $result_com6 = $result_com_7-$result_com_6;
-                $result_pay6 = ($result_pay_6*$userbets->pay_6)-$result_pay_6+$result_com_6;
+                $result_pay6 = ($userbets->amount_6*$userbets->pay_6)-$userbets->amount_5+($userbets->amount_6*$userbets->com_6/100);
             }
         //////////////
             if($userbets->amount_5 != 0){
-                $result_pay5 = ($result_pay_5*$userbets->pay_5)-$result_pay_5+$result_com_5;
+                $result_pay5 = ($userbets->amount_5*$userbets->pay_5)-$result_pay_5+($userbets->amount_5*$userbets->com_5/100);
                 if($userbets->amount_6 != 0){
                     $result_com5 = $result_com_6-$result_com_5;
                 }elseif($userbets->amount_7 != 0){
@@ -1466,7 +1460,7 @@ class UserbetController extends Controller
             }
         /////////////
             if($userbets->amount_4 != 0){
-                $result_pay4 = ($result_pay_4*$userbets->pay_4)-$result_pay_4+$result_com_4;
+                $result_pay4 = ($userbets->amount_4*$userbets->pay_4)-$userbets->amount_4+($userbets->amount_4*$userbets->com_4/100);
                 if($userbets->amount_5 != 0){
                     $result_com4 = $result_com_5-$result_com_4;
                 }elseif($userbets->amount_6 != 0){
@@ -1479,7 +1473,7 @@ class UserbetController extends Controller
             }
          ////////////
             if($userbets->amount_3 != 0){
-                $result_pay3 = ($result_pay_3*$userbets->pay_3)-$result_pay_3+$result_com_3;
+                $result_pay3 = ($userbets->amount_3*$userbets->pay_3)-$userbets->amount_3+($userbets->amount_3*$userbets->com_3/100);
                 if($userbets->amount_4 != 0){
                     $result_com3 = $result_com_4-$result_com_3;
                 }elseif($userbets->amount_5 != 0){
@@ -1492,7 +1486,7 @@ class UserbetController extends Controller
             }
         ///////////
             if($userbets->amount_2 != 0){
-                $result_pay2 = ($result_pay_2*$userbets->pay_2)-$result_pay_2+$result_com_2;
+                $result_pay2 = ($userbets->amount_2*$userbets->pay_2)-$userbets->amount_2+($userbets->amount_2*$userbets->com_2/100);
                 if($userbets->amount_3 != 0){
                     $result_com2 = $result_com_3-$result_com_2;
                 }elseif($userbets->amount_4 != 0){
@@ -1507,7 +1501,7 @@ class UserbetController extends Controller
             }
         ///////////
             if($userbets->amount_1 != 0){
-                
+                $result_pay1 = ($userbets->amount_1*$userbets->pay_1)-$userbets->amount_1+($userbets->amount_1*$userbets->com_1/100);
                 if($userbets->amount_2 != 0){
                     $result_com1 = $result_com_7-($result_com2+$result_com3+$result_com4+$result_com5+$result_com6);
                 }elseif($userbets->amount_3 != 0){
@@ -1542,7 +1536,7 @@ class UserbetController extends Controller
             'amount_1' => $amount_keep[1],
             'keep_1' => $keep->keepset1,
             'com_1' =>  $result_com1,
-            'pay_1' =>  $payoutg[1],
+            'pay_1' =>  $result_pay1,
             'amount_2' => $amount_keep[2],
             'keep_2' => $keep->keepset2,
             'com_2' => $result_com2,
