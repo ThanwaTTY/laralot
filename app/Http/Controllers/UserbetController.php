@@ -1447,11 +1447,11 @@ class UserbetController extends Controller
     //////////////ค่าคอมมิชชั่น///////////////////////////
             if($userbets->amount_6 != 0){
                 $result_com6 = $result_com_7-$result_com_6;
-                $result_pay6 = ($userbets->amount_6*$userbets->pay_6)-$userbets->amount_5+($userbets->amount_6*$userbets->com_6/100);
+                $result_pay6 = ($userbets->amount_6*$userbets->pay_6)-$userbets->amount_6+($userbets->amount_6*$userbets->com_6/100);
             }
         //////////////
             if($userbets->amount_5 != 0){
-                $result_pay5 = ($userbets->amount_5*$userbets->pay_5)-$result_pay_5+($userbets->amount_5*$userbets->com_5/100);
+                $result_pay5 = ($userbets->amount_5*$userbets->pay_5)-$userbets->amount_5+($userbets->amount_5*$userbets->com_5/100);
                 if($userbets->amount_6 != 0){
                     $result_com5 = $result_com_6-$result_com_5;
                 }elseif($userbets->amount_7 != 0){
