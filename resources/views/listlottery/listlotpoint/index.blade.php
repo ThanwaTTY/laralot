@@ -133,7 +133,7 @@
                   <span class="pull-left">ซื้อ</span>
                   <span class="pull-right n2c sum-buy-1"><span class="positive" id="sumbuy"></span></span>
                 </td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_1"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_1">{{$buytop3}}</span></td>
                           <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_2"></span></td>
                           <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_3"></span></td>
                           <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_4"></span></td>

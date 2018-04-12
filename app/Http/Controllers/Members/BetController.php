@@ -22,16 +22,92 @@ class BetController extends Controller
         $level = auth()->user()->level;
         $lotto = Lotto::orderBy('id', 'desc')->latest()->first();
         $tickets = Ticket::where('lotto_id',$lotto->id)->get();
-        foreach ($tickets as $key => $ticket) {
-            
+
+        $buytop3 = 0;
+        $buytop2 = 0;
+        $buytop1 = 0;
+        $buybottom1 = 0;
+        $buybottom2 = 0;
+        $buybottom3 = 0;
+        $buytod2 = 0;
+        $buytod3 = 0;
+        /////////////////////////////////////////////////////////////////////////////
+        $comtop3 = 0;
+        $combottom3 = 0;
+        $comtod3 = 0;
+        $comtop2 = 0;
+        $combottom2 = 0;
+        $comtod2 = 0;
+        $comtop1 = 0;
+        $combottom1 = 0;
+        ////////////////////////////////////////////////////////////////////////////
+        $taketop3 = 0;
+        $takebottom3 = 0;
+        $taketod3 = 0;
+        $taketop2 = 0;
+        $takebottom2 = 0;
+        $taketod2 = 0;
+        $taketop1 = 0;
+        $takebottom1 = 0;
+        ////////////////////////////////////////////////////////////////////////////
+        $paytop3 = 0;
+        $paybottom3 = 0;
+        $paytod3 = 0;
+        $paytop2 = 0;
+        $paybottom2 = 0;
+        $paytod2 = 0;
+        $paytop1 = 0;
+        $paybottom1 = 0;
+        
+        foreach ($tickets as $key => $ticket) { 
             $usebets[$key] = Bet_result::where('ticket_id',$ticket->id)->get();
             // return response()->json(['usebet'=>$usebet->pay]);
             foreach ($usebets[$key] as $key => $usebet) {
                 $useradddetails = explode(" ", $usebet->useradddetail);
-                
+               
                 foreach ($useradddetails as $key => $useradddetail) {
                     if($useradddetail==$id){
-                        
+                           if($usebet->type=="top3"){
+                                $buytop3 += $usebet['amount_'.$level];
+                                $comtop3 += $usebet['com_'.$level];     
+                                $taketop3 +=  $buytop3-$comtop3;
+                                $paytop3 += $usebet['pay_'.$level];
+                            }if($usebet->type=="top2"){
+                                $buytop2 += $usebet['amount_'.$level];
+                                $comtop2 += $usebet['com_'.$level];
+                                $taketop2 +=  $buytop2-$comtop2;
+                                $paytop2 += $usebet['pay_'.$level];
+                            }if($usebet->type=="top1"){
+                                $buytop1 += $usebet['amount_'.$level];
+                                $comtop1 += $usebet['com_'.$level];
+                                $taketop1 +=  $buytop1-$comtop1;
+                                $paytop1 += $usebet['pay_'.$level];
+                            }if($usebet->type=="bottom3"){
+                                $buybottom3 += $usebet['amount_'.$level];
+                                $combottom3 += $usebet['com_'.$level];
+                                $takebottom3 +=  $buybottom3-$combottom3;
+                                $paybottom3 += $usebet['pay_'.$level];
+                            }if($usebet->type=="bottom2"){
+                                $buybottom2 += $usebet['amount_'.$level];
+                                $combottom2 += $usebet['com_'.$level];
+                                $takebottom2 +=  $buybottom2-$combottom2;
+                                $paybottom2 += $usebet['pay_'.$level];
+                            }if($usebet->type=="bottom1"){
+                                $buybottom1 += $usebet['amount_'.$level];
+                                $combottom1 += $usebet['com_'.$level];
+                                $takebottom1 +=  $buybottom1-$combottom1;
+                                $paybottom1 += $usebet['pay_'.$level];
+                            }if($usebet->type=="tod2"){
+                                $buytod2 += $usebet['amount_'.$level];
+                                $comtod2 += $usebet['com_'.$level];
+                                $taketod2 +=  $buytod2-$comtod2;
+                                $paytod2 += $usebet['pay_'.$level];
+                            }if($usebet->type=="tod3"){
+                                $buytod3 += $usebet['amount_'.$level];
+                                $comtod3 += $usebet['com_'.$level];
+                                $taketod3 +=  $buytod3-$comtod3;
+                                $paytod3 += $usebet['pay_'.$level];
+                            }
                     }
                 }
 
@@ -39,8 +115,8 @@ class BetController extends Controller
             }
 
         }
-        dd($usebet);    
-        return view('listlottery.listlotpoint.index');
+        // dd($buytop3);    
+        return view('listlottery.listlotpoint.index',compact('buytop3'));
     }
 
     public function listlotpoint2()
