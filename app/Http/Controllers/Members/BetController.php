@@ -116,7 +116,9 @@ class BetController extends Controller
 
         }
         // dd($buytop3);    
-        return view('listlottery.listlotpoint.index',compact('buytop3'));
+        return view('listlottery.listlotpoint.index',compact('buytop3','buytop2','buytop1','buybottom3','buybottom2','buybottom1','buytod2','buytod3',
+                                                             'comtop3','comtop2','comtop1','combottom3','combottom2','combottom1','comtod2','comtod3',
+                                                             'paytop3','paytop2','paytop1','paybottom3','paybottom2','paybottom1','paytod2','paytod3'));
     }
 
     public function listlotpoint2()

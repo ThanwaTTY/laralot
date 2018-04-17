@@ -133,56 +133,56 @@
                   <span class="pull-left">ซื้อ</span>
                   <span class="pull-right n2c sum-buy-1"><span class="positive" id="sumbuy"></span></span>
                 </td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_1">{{$buytop3}}</span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_2"></span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_3"></span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_4"></span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_5"></span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_6"></span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_7"></span></td>
-                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_8"></span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_1">{{number_format($buytop3,2)}}</span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_2">{{number_format($buybottom3,2)}}</span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_3">{{number_format($buytod3,2)}}</span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_4">{{number_format($buytop2,2)}}</span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_5">{{number_format($buybottom2,2)}}</span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_6">{{number_format($buytod2,2)}}</span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_7">{{number_format($buytop1,2)}}</span></td>
+                          <td class="align-center bg-yellow n2c buy-1"><span class="positive" id="buy_8">{{number_format($buybottom1,2)}}</span></td>
                     </tr>
                 <tr class="even">
                 <td class="bolder">
                   <span class="pull-left">คอม</span>
                   <span class="pull-right n2c sum-com-1"><span class="negative" id="sumcom"></span></span>
                 </td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_1">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_2">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_3">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_4">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_5">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_6">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_7">-</span></td>
-                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_8">-</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_1">{{number_format($comtop3,2)}}</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_2">{{number_format($combottom3,2)}}</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_3">{{number_format($comtod3,2)}}</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_4">{{number_format($comtop2,2)}}</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_5">{{number_format($combottom2,2)}}</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_6">{{number_format($comtod2,2)}}</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_7">{{number_format($comtop1,2)}}</span></td>
+                      <td class="align-center bg-yellow n2c com-1"><span class="negative" id="com_8">{{number_format($combottom1,2)}}</span></td>
                 </tr>
                           <tr class="odd">
                 <td class="bolder">
                   <span class="pull-left">รับ</span>
                   <span class="pull-right n2c sum-take-1"><span class="positive"><span class="positive" id="sumtake"></span></span>
                 </td>
-                                  <td class="align-center bg-yellow n2c take-1"><span class="positive" id="take_1"></span></td>
-                                  <td class="align-center bg-yellow n2c take-2"><span class="positive" id="take_2"></span></td>
-                                  <td class="align-center bg-yellow n2c take-3"><span class="positive" id="take_3"></span></td>
-                                  <td class="align-center bg-yellow n2c take-4"><span class="positive" id="take_4"></span></td>
-                                  <td class="align-center bg-yellow n2c take-5"><span class="positive" id="take_5"></span></td>
-                                  <td class="align-center bg-yellow n2c take-6"><span class="positive" id="take_6"></span></td>
-                                  <td class="align-center bg-yellow n2c take-7"><span class="positive" id="take_7"></span></td>
-                                  <td class="align-center bg-yellow n2c take-8"><span class="positive" id="take_8"></span></td>
+                                  <td class="align-center bg-yellow n2c take-1"><span class="positive" id="take_1">{{number_format($buytop3-$comtop3,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-2"><span class="positive" id="take_2">{{number_format($buybottom3-$combottom3,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-3"><span class="positive" id="take_3">{{number_format($buytod3-$comtod3,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-4"><span class="positive" id="take_4">{{number_format($buytop2-$comtop2,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-5"><span class="positive" id="take_5">{{number_format($buybottom2-$combottom2,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-6"><span class="positive" id="take_6">{{number_format($buytod2-$comtod2,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-7"><span class="positive" id="take_7">{{number_format($buytop1-$comtop1,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c take-8"><span class="positive" id="take_8">{{number_format($buybottom1-$combottom1,2)}}</span></td>
                               </tr>
                           <tr class="even">
                 <td class="bolder">
                   <span class="pull-left">จ่าย</span>
                   <span class="pull-right n2c sum-pay-1"><span class="positive" id="sumpay"></span></span>
                 </td>
-                                  <td class="align-center bg-yellow n2c pay-1"><span class="positive" id="pay_1"></span></td>
-                                  <td class="align-center bg-yellow n2c pay-2"><span class="positive" id="pay_2"></span></td>
-                                  <td class="align-center bg-yellow n2c pay-3"><span class="positive" id="pay_3"></span></td>
-                                  <td class="align-center bg-yellow n2c pay-4"><span class="positive" id="pay_4"></span></td>
-                                  <td class="align-center bg-yellow n2c pay-5"><span class="positive" id="pay_5"></span></td>
-                                  <td class="align-center bg-yellow n2c pay-6"><span class="positive" id="pay_6"></span></td>
-                                  <td class="align-center bg-yellow n2c pay-7"><span class="positive" id="pay_7"></span></td>
-                                  <td class="align-center bg-yellow n2c pay-8"><span class="positive" id="pay_8"></span></td>
+                                  <td class="align-center bg-yellow n2c pay-1"><span class="positive" id="pay_1">{{number_format($paytop3,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c pay-2"><span class="positive" id="pay_2">{{number_format($paybottom3,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c pay-3"><span class="positive" id="pay_3">{{number_format($paytod3,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c pay-4"><span class="positive" id="pay_4">{{number_format($paytop2,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c pay-5"><span class="positive" id="pay_5">{{number_format($paybottom2,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c pay-6"><span class="positive" id="pay_6">{{number_format($paytod2,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c pay-7"><span class="positive" id="pay_7">{{number_format($paytop1,2)}}</span></td>
+                                  <td class="align-center bg-yellow n2c pay-8"><span class="positive" id="pay_8">{{number_format($paybottom1,2)}}</span></td>
                               </tr>
                       </tbody>
 
