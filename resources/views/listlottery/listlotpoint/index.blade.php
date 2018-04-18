@@ -355,13 +355,9 @@
           $("#pay_7").html(response.paytop1);
           $("#pay_8").html(response.paybottom1);
           /////////////////////////////////////////////
-          $("#sumbuy").html(response.sumbuy);
-          $("#sumcom").html(response.sumcom);
-          $("#sumtake").html(response.sumtake);
-          $("#sumpay").html(response.sumpay);
         }
 
-       
+        console.log(response.buytop3);
         console.log(response.lotto.name);
         $('#navbar-game-title').html(response.lotto.name);
         $('#lottodate').html(response.lotto.name);
