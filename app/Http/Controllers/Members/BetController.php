@@ -308,13 +308,9 @@ class BetController extends Controller
             $useradddetail =$member->useradddetail;
             $member_name[$key] = $member->username;
             $level_member[$key] = $member->level;
-
-            $useradddetails = explode(" ", $useradddetail);
-                foreach ($useradddetails as $loop_i => $useradddetail) {
-                    if($useradddetail==$id){
-                            $it_have[] =$key;
-
+            
                         $sumtop3[$key] =0;
+                            $memberlist_id[$key] =0;             
                             $sumbottom3[$key] =0;
                             $sumtod3[$key] =0;
                             $sumtop2[$key] =0;
@@ -382,7 +378,7 @@ class BetController extends Controller
                             /////////////////////////////////
                             $companycom_s[$key] =0;
                             $companysum_s[$key] =0;
-                        $companysumall[$key] =0;
+                            $companysumall[$key] =0;
 
                             /////////////////////////////////
                             $sum_top3 =0;
@@ -438,6 +434,52 @@ class BetController extends Controller
                             $comcompany_tod2 =0;
                             $comcompany_top1 =0;
                             $comcompany_bottom1 =0;
+                           ///////////////////////////////////
+                            $sumusertop3 =  0;
+                            $sumuserbottom3 =  0;
+                            $sumusertod3 =  0;
+                            $sumusertop2 =  0;
+                            $sumuserbottom2 =  0;
+                            $sumusertod2 =  0;
+                            $sumusertop1 =  0;
+                            $sumuserbottom1 =  0;
+                           ///////////////////////////////////
+                            $sumag_top3 = 0;
+                            $sumag_bottom3 = 0;
+                            $sumag_tod3 = 0;
+                            $sumag_top2 = 0;
+                            $sumag_bottom2 = 0;
+                            $sumag_tod2 = 0;
+                            $sumag_top1 = 0;
+                            $sumag_bottom1 = 0;
+                           ////////////////////////////////////
+                            $sumtop3_company = 0;
+                            $sumbottom3_company = 0;
+                            $sumtod3_company = 0;
+                            $sumtop2_company = 0;
+                            $sumbottom2_company = 0;
+                            $sumtod2_company = 0;
+                            $sumtop1_company = 0;
+                            $sumbottom1_company = 0;
+                            //////////////////////////////////
+                            $sumallmembers = 0;
+                            $sumallcommembers = 0;
+                            $sumallcounts = 0;
+
+                            $sumallags = 0;
+                            $sumallcomags = 0;
+                            $sumallagcounts =0;
+
+                            $sumallcompanys = 0;
+                            $sumallcomcompanys = 0;
+                        $sumallcountcompanys = 0;
+                        
+            $useradddetails = explode(" ", $useradddetail);
+                foreach ($useradddetails as $loop_i => $useradddetail) {
+                    if($useradddetail==$id){
+                            $it_have[] =$key;
+
+                            
 
                             $member_name[$key] = $member->username;
                             $memberlist_id[$key] = $member->id;
@@ -529,7 +571,7 @@ class BetController extends Controller
 
                                 }
 
-                            // dd($sumagtop2);
+                            // dd($sumcompanybottom1);
                        
                                 $usersum_s[$key] = ($sumtop3[$key]+$sumbottom3[$key]+$sumtod3[$key]+$sumtop2[$key]+$sumbottom2[$key]+$sumtod2[$key]+$sumtop1[$key]+$sumbottom1[$key]);
                                 $usercom_s[$key] = ($comtop3[$key]+$combottom3[$key]+$comtod3[$key]+$comtop2[$key]+$combottom2[$key]+$comtod2[$key]+$comtop1[$key]+$combottom1[$key]);
@@ -695,16 +737,7 @@ class BetController extends Controller
           
         }
 
-        $aOne = array('sumallmember'=>$sumallmembers,
-                    'sumallcommembers'=>$sumallcommembers,
-                    'sumallcounts'=>$sumallcounts,
-                    'sumallags'=>$sumallags,
-                    'sumallcomags'=>$sumallcomags,
-                    'sumallagcounts'=>$sumallagcounts,
-                    'sumallcompanys'=>$sumallcompanys,
-                    'sumallcomcompanys'=>$sumallcomcompanys,
-                    'sumallcountcompanys'=>$sumallcountcompanys);
-       
+        
     
         
         
@@ -712,11 +745,11 @@ class BetController extends Controller
            
         //     dd($aOnes);
         // }
-        // dd($sumtop3);
+        // dd($sumallmembers);
         // return view('listlottery.listlotuser.index',compact('userbets','usersum_s'));
         return view('listlottery.listlotuser.index',compact('usersum_s','usercom_s','usersumall',
                                                             'agsum_s', 'agcom_s', 'agsumall',
-                                                            'companysum_s', 'companycom_s', 'companysumall','aOne','usebet_s','member_name','level_member',
+                                                            'companysum_s', 'companycom_s', 'companysumall','usebet_s','member_name','level_member',
                                                             'sum_top3','sum_bottom3','sum_tod3',
                                                             'sum_top2','sum_bottom2','sum_tod2',
                                                             'sum_top1','sum_bottom1',
@@ -743,7 +776,9 @@ class BetController extends Controller
                                                             'comcompany_top1','comcompany_bottom1',
                                                             'sumtop3_company','sumbottom3_company','sumtod3_company',
                                                             'sumtop2_company','sumbottom2_company','sumtod2_company',
-                                                            'sumtop1_company','sumbottom1_company','memberlist_id'));
+                                                            'sumtop1_company','sumbottom1_company','memberlist_id',
+                                                            'sumallmembers','sumallcommembers','sumallcounts','sumallags','sumallcomags','sumallagcounts',
+                                                            'sumallcompanys','sumallcomcompanys','sumallcountcompanys'));
      
     }
 
