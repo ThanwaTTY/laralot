@@ -178,9 +178,7 @@ Route::group(['middleware'=>['auth','user']], function () {
              
 
 
-             Route::get('/listlottery/listresult', function () {
-                return view('listlottery.listresult.index');
-             });
+             Route::get('/listlottery/listresult', 'Members\ListresultController@index');
 
              
 

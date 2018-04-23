@@ -473,14 +473,11 @@ class BetController extends Controller
                             $sumallcompanys = 0;
                             $sumallcomcompanys = 0;
                         $sumallcountcompanys = 0;
-                        
+
             $useradddetails = explode(" ", $useradddetail);
                 foreach ($useradddetails as $loop_i => $useradddetail) {
                     if($useradddetail==$id){
                             $it_have[] =$key;
-
-                            
-
                             $member_name[$key] = $member->username;
                             $memberlist_id[$key] = $member->id;
                             $userbets_[$key] = $usebet[0]->ticket_id;
