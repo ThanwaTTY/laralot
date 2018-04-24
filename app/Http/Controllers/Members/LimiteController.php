@@ -14,7 +14,7 @@ class LimiteController extends Controller
    public function index(){
      $id = auth()->user()->id;
      $limiteShow = Limite::where('member_id', $id)->latest()->first();
-     echo auth()->user()->username."<BR>".$id;
+    //  echo auth()->user()->username."<BR>".$id;
     //  dd($limiteShow);
     return view('listlottery.settingof.index', compact('limiteShow'));
    }
@@ -138,18 +138,17 @@ class LimiteController extends Controller
 
     $lottos = Lotto::where('day_on','<=',$datenow)->where('day_off','>=',$datenow)->first();
 
-    Limite::create([
-        'member_id' => $id,
-        'lotto_id' => $lottos->id,
-        'top3' => $request->limitetop3,
-        'bottom3' => $request->limitebottom3,
-        'tod3' => $request->limitetod3,
-        'top2' => $request->limitetop2,
-        'bottom2' => $request->limitebottom2,
-        'tod2' => $request->limitetod2,
-        'top1' => $request->limitetop1,
-        'bottom1' => $request->limitebottom1,
-    ]);
+    $limite = Limite::where('member_id',$id)->first();
+        $limite->lotto_id = $lottos->id;
+        $limite->top3 = $request->limitetop3;
+        $limite->bottom3 = $request->limitebottom3;
+        $limite->tod3 = $request->limitetod3;
+        $limite->top2 = $request->limitetop2;
+        $limite->bottom2 = $request->limitebottom2;
+        $limite->tod2 = $request->limitetod2;
+        $limite->top1 = $request->limitetop1;
+        $limite->bottom1 = $request->limitebottom1;
+    $limite->update();
 
     return response()->json([
         'data_request'=>$data_request,

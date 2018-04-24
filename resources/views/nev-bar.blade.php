@@ -73,7 +73,7 @@
             <li><a href="#" class"listlotpoint" id="listlotpoint"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
             <li><a href="#" class"listlotuser" id="listlotuser"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
             <li><a href="#" class"listresult" id="listresult"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
-            <li><a href="/listlottery/settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
+            <li><a href="#" class"settingof" id="settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
             <li><a href="/listlottery/settingtype"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
             <li><a href="/listlottery/cancellot"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
           </ul>
