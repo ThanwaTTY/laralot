@@ -492,6 +492,9 @@
         $('#btn-limite').on('click', function(){
           console.log('Active');
           $.post('/limite', $('#limite').serialize()).done( function(data) {
+           
+                $('.ace-icon.fa.fa-check.green.success.hidden').removeClass("hidden");
+           
             console.log(data);
         });
         

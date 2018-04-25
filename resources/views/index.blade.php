@@ -62,7 +62,10 @@
 
   </style> --}}
   <style>
-
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+    color: #fff;
+    background-color: unset;
+}
   </style>
 @endsection
 @section('content')
@@ -160,11 +163,11 @@
               </tbody>
             </table>
 
-            <script>
+            {{-- <script>
               $.each($('.n2c'), function(key, value) {
                 $(this).html(n2c($(this).text()));
               });
-            </script>
+            </script> --}}
       </div><!-- /.col -->
     </div><!-- /.row -->
   </div><!-- /.page-content -->
@@ -183,8 +186,8 @@
 <!-- Bootstrap 3.3.6 -->
 <script src="bootstrap/js/bootstrap.min.js"></script>
 <!-- Morris.js charts -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
-<script src="plugins/morris/morris.min.js"></script>
+{{-- <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script> --}}
+{{-- <script src="plugins/morris/morris.min.js"></script> --}}
 <!-- Sparkline -->
 <script src="plugins/sparkline/jquery.sparkline.min.js"></script>
 <!-- jvectormap -->
@@ -206,7 +209,7 @@
 <!-- AdminLTE App -->
 <script src="dist/js/app.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="dist/js/pages/dashboard.js"></script>
+{{-- <script src="dist/js/pages/dashboard.js"></script> --}}
 <!-- AdminLTE for demo purposes -->
 <script src="dist/js/demo.js"></script>
 @endsection
