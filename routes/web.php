@@ -168,6 +168,10 @@ Route::group(['middleware'=>['auth','user']], function () {
              Route::get('/listlottery/settingof', 'Members\LimiteController@index');
              Route::post('/limite_bet', 'Members\LimiteController@store');
              Route::post('/limite', 'Members\LimiteController@limite');
+
+             Route::get('/listlottery/settingtype','Members\SettingtypeController@index');
+
+             Route::get('/listlottery/cancellot','Members\CancellotController@index');
             });
              Route::get('/test', function () {
                 return view('portest');
@@ -182,14 +186,9 @@ Route::group(['middleware'=>['auth','user']], function () {
 
              
 
-             Route::get('/listlottery/settingtype', function () {
-                return view('listlottery.settingtype.index');
-             });
+             
 
-             Route::get('/listlottery/cancellot', function () {
-                return view('listlottery.cancellot.index');
-             });
-
+            
              Route::get('/user/useronline', function () {
                 return view('user.useronline.index');
              });

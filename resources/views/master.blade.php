@@ -83,7 +83,7 @@
 {{-- @include('nev-bar2') --}}
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof">
+  <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot">
 @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -138,8 +138,22 @@ $(function(){
 
       $('#settingof').on('click',function(){
         $.get("{{ URL::to('/listlottery/settingof') }}",function(data){
-          console.log(data);
+          
           $('.settingof').empty().html(data);
+        });
+      });
+
+      $('#settingtype').on('click',function(){
+        $.get("{{ URL::to('/listlottery/settingtype') }}",function(data){
+          
+          $('.settingtype').empty().html(data);
+        });
+      });
+
+      $('#cancellot').on('click',function(){
+        $.get("{{ URL::to('/listlottery/cancellot') }}",function(data){
+
+          $('.cancellot').empty().html(data);
         });
       });
 
