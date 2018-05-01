@@ -83,7 +83,7 @@
 {{-- @include('nev-bar2') --}}
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot">
+  <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot memberonline listkeep">
 @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -154,6 +154,18 @@ $(function(){
         $.get("{{ URL::to('/listlottery/cancellot') }}",function(data){
 
           $('.cancellot').empty().html(data);
+        });
+      });
+
+      $('#memberonline').on('click' , function(){
+        $.get(" {{URL::to('/user/useronline')}}",function(data){
+          $('.memberonline').empty().html(data);
+        });
+      });
+
+      $('#listkeep').on('click',function(data){
+        $.get(" {{ URL::to('/user/listkeep')}} ", function(data){
+          $('.listkeep').empty().html(data);
         });
       });
 

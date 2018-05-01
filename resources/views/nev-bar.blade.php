@@ -92,8 +92,8 @@
             <li><a href="/user/high-low-number"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
             <li><a href="/user/commission"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
             <li><a href="/user/open-close-lottery"><i class="fa fa-circle-o"></i> เปิด-ปิด หวย/อัตราจ่าย</a></li>
-            <li><a href="/user/useronline"><i class="fa fa-circle-o"></i> สมาชิกออนไลน์</a></li>
-            <li><a href="/user/listkeep"><i class="fa fa-circle-o"></i> รายการเก็บของ / อั้น</a></li>
+            <li><a href="#" class"memberonline" id="memberonline"><i class="fa fa-circle-o"></i> สมาชิกออนไลน์</a></li>
+            <li><a href="#" class"listkeep" id="listkeep"><i class="fa fa-circle-o"></i> รายการเก็บของ / อั้น</a></li>
           </ul>
         </li>
        

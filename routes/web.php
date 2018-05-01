@@ -184,18 +184,11 @@ Route::group(['middleware'=>['auth','user']], function () {
 
              Route::get('/listlottery/listresult', 'Members\ListresultController@index');
 
-             
+             Route::get('/user/useronline','Members\MemberonlineController@index'); 
 
-             
+             Route::get('/user/listkeep','Members\ListkeepController@index');     
 
             
-             Route::get('/user/useronline', function () {
-                return view('user.useronline.index');
-             });
-
-             Route::get('/user/listkeep', function () {
-                return view('user.listkeep.index');
-             });
 
             
 
