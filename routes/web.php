@@ -188,7 +188,7 @@ Route::group(['middleware'=>['auth','user']], function () {
 
              Route::get('/user/listkeep','Members\ListkeepController@index');     
 
-            
+             Route::get('/shopmanagement/chitmanagement','Members\ChitmanagementController@index');
 
             
 
@@ -199,9 +199,7 @@ Route::group(['middleware'=>['auth','user']], function () {
             //     return view('user.commission.index',compact('tab1','tab2','tab3','order'));
             //  });
 
-             Route::get('/shopmanagement/chitmanagement', function () {
-                return view('shopmanagement.chitmanagement.index');
-             });
+             
 
              Route::get('/shopmanagement/settinguser', function () {
                 return view('shopmanagement.settinguser.index');

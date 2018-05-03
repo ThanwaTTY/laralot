@@ -83,7 +83,7 @@
 {{-- @include('nev-bar2') --}}
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot memberonline listkeep">
+  <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot memberonline listkeep chitmanagement">
 @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -166,6 +166,12 @@ $(function(){
       $('#listkeep').on('click',function(data){
         $.get(" {{ URL::to('/user/listkeep')}} ", function(data){
           $('.listkeep').empty().html(data);
+        });
+      });
+
+      $('#chitmanagement').on('click',function(){
+        $.get(" {{ URL::to('/shopmanagement/chitmanagement') }} " ,function(data){
+          $('.chitmanagement').empty().html(data);
         });
       });
 
