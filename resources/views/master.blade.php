@@ -84,7 +84,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot memberonline listkeep 
-  chitmanagement settinguser userreport winlossreport jackpot resultjackpot">
+  chitmanagement settinguser userreport winlossreport jackpot resultjackpot manage-balance history">
 @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -203,6 +203,18 @@ $(function(){
       $('#resultjackpot').on('click',function(){
         $.get(" {{ URL::to('/report/resultjackpot') }} ",function(data){
           $('.resultjackpot').empty().html(data);
+        });
+      });
+
+      $('#manage-balance').on('click',function(){
+        $.get(" {{ URL::to('/money/manage-balance') }} " ,function(data){
+          $('.manage-balance').empty().html(data);
+        });
+      });
+
+      $('#history').on('click',function(){
+        $.get(" {{ URL::to('/money/history') }} " ,function(data){
+          $('.history').empty().html(data);
         });
       });
 
