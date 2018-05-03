@@ -190,20 +190,17 @@ Route::group(['middleware'=>['auth','user']], function () {
 
              Route::get('/shopmanagement/chitmanagement','Members\ChitmanagementController@index');
 
-            
+             Route::get('/shopmanagement/settinguser','Members\SettinguserController@index');
 
-             
+             Route::get('/report/userreport','Members\UserreportController@index');
 
-             
+             Route::get('/report/winlossreport', 'Members\WinlossreportController@index');
             //  Route::get('/user/commission/tab1={tab1}&tab2={tab2}&tab3={tab3}&order={order}', function () {
             //     return view('user.commission.index',compact('tab1','tab2','tab3','order'));
             //  });
 
              
 
-             Route::get('/shopmanagement/settinguser', function () {
-                return view('shopmanagement.settinguser.index');
-             });
 
              Route::get('/money/manage-balance', function () {
                 return view('money.manage-balance.index');
@@ -214,18 +211,6 @@ Route::group(['middleware'=>['auth','user']], function () {
              });
 
              
-
-       
-
-
-             Route::get('/report/userreport', function () {
-                return view('report.userreport.index');
-             });
-
-             Route::get('/report/winlossreport', function () {
-                return view('report.winlossreport.index');
-             });
-
              Route::get('/report/jackpot', function () {
                 return view('report.jackpot.index');
              });

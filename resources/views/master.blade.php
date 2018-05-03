@@ -83,7 +83,8 @@
 {{-- @include('nev-bar2') --}}
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot memberonline listkeep chitmanagement">
+  <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot memberonline listkeep 
+  chitmanagement settinguser userreport winlossreport">
 @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -172,6 +173,24 @@ $(function(){
       $('#chitmanagement').on('click',function(){
         $.get(" {{ URL::to('/shopmanagement/chitmanagement') }} " ,function(data){
           $('.chitmanagement').empty().html(data);
+        });
+      });
+
+      $('#settinguser').on('click',function(){
+        $.get(" {{ URL::to('/shopmanagement/settinguser') }} ",function(data){
+          $('.settinguser').empty().html(data);
+        });
+      });
+
+      $('#userreport').on('click',function(){
+        $.get(" {{ URL::to('/report/userreport') }} ",function(data){
+          $('.userreport').empty().html(data);
+        });
+      });
+
+      $('#winlossreport').on('click', function(){
+        $.get(" {{ URL::to('/report/winlossreport') }} ",function(data){
+          $('.winlossreport').empty().html(data);
         });
       });
 
