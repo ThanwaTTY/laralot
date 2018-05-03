@@ -195,6 +195,10 @@ Route::group(['middleware'=>['auth','user']], function () {
              Route::get('/report/userreport','Members\UserreportController@index');
 
              Route::get('/report/winlossreport', 'Members\WinlossreportController@index');
+
+             Route::get('/report/jackpot','Members\JackpotController@index');
+
+
             //  Route::get('/user/commission/tab1={tab1}&tab2={tab2}&tab3={tab3}&order={order}', function () {
             //     return view('user.commission.index',compact('tab1','tab2','tab3','order'));
             //  });
@@ -211,9 +215,6 @@ Route::group(['middleware'=>['auth','user']], function () {
              });
 
              
-             Route::get('/report/jackpot', function () {
-                return view('report.jackpot.index');
-             });
 
              Route::get('/report/resultjackpot', function () {
                 return view('report.resultjackpot.index');
