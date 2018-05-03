@@ -121,7 +121,7 @@
             <li><a href="#" class"userreport" id="userreport"><i class="fa fa-circle-o"></i> แพ้-ชนะ สมาชิก/ประเภท</a></li>
             <li><a href="#" class"winlossreport" id="winlossreport"><i class="fa fa-circle-o"></i> แพ้-ชนะ สุทธิ</a></li>
             <li><a href="#" class"jackpot" id="jackpot"><i class="fa fa-circle-o"></i> รายการที่ถูกรางวัล</a></li>
-            <li><a href="/report/resultjackpot"><i class="fa fa-circle-o"></i> ผลการออกรางวัล</a></li>
+            <li><a href="#" class"resultjackpot" id="resultjackpot"><i class="fa fa-circle-o"></i> ผลการออกรางวัล</a></li>
           </ul>
         </li>
         <li class="treeview">

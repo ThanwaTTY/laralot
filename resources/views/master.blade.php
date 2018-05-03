@@ -84,7 +84,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot memberonline listkeep 
-  chitmanagement settinguser userreport winlossreport jackpot">
+  chitmanagement settinguser userreport winlossreport jackpot resultjackpot">
 @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -197,6 +197,12 @@ $(function(){
       $('#jackpot').on('click',function(){
         $.get(" {{ URL::to('/report/jackpot') }} ",function(data){
           $('.jackpot').empty().html(data);
+        });
+      });
+
+      $('#resultjackpot').on('click',function(){
+        $.get(" {{ URL::to('/report/resultjackpot') }} ",function(data){
+          $('.resultjackpot').empty().html(data);
         });
       });
 

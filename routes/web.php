@@ -198,7 +198,7 @@ Route::group(['middleware'=>['auth','user']], function () {
 
              Route::get('/report/jackpot','Members\JackpotController@index');
 
-
+             Route::get('/report/resultjackpot','Members\ResultjackpotController@index');
             //  Route::get('/user/commission/tab1={tab1}&tab2={tab2}&tab3={tab3}&order={order}', function () {
             //     return view('user.commission.index',compact('tab1','tab2','tab3','order'));
             //  });
@@ -214,11 +214,6 @@ Route::group(['middleware'=>['auth','user']], function () {
                 return view('money.history.index');
              });
 
-             
-
-             Route::get('/report/resultjackpot', function () {
-                return view('report.resultjackpot.index');
-             });
 
 
 Route::get('/closed-nums/1/1', function(){
