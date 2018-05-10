@@ -134,8 +134,8 @@
 				</div>
 			</div> --}} @endif
 
-			<form method="POST" action="{{ route('members.store') }}" accept-charset="UTF-8" id="create-user-form" class="form-horizontal"
-			 autocomplete="off"><input name="_token" type="hidden" value="uxxSpiZ338ZTX1mxPhKq1ql7p446dvtlqPlNnN6n"> {{ csrf_field() }}
+			<form  id="create-user-form" class="form-horizontal">
+			 {{ csrf_field() }}
 				<div class="widget-box widget-color-blue2 width-1100 max-width-1100">
 					<div class="widget-header">
 						<h5 class="widget-title bigger">
@@ -684,48 +684,9 @@
 				</div>
 
 				<div class="space-8"></div>
-				<button type="submit" class="btn btn-primary">เพิ่มสมาชิก</button>
+				<button type="button" id="btn-submit-create" class="btn btn-primary">เพิ่มสมาชิก</button>
 			</form>
-
-			{{--
-			<script>
-				//setup before functions
-          var typingTimer;              //timer identifier
-          var doneTypingInterval = 400; //time in ms, 5 second for example
-
-          //on change, start the countdown
-          $('#username').change(function(){
-              clearTimeout(typingTimer);
-              if ($('#username').val().length > 0) {
-                $('#username-availability').html('กำลังโหลด...');
-                typingTimer = setTimeout(doneTyping, doneTypingInterval);
-              }
-          });
-
-          //on keydown, clear the countdown
-          $('#username').keydown(function(){
-              clearTimeout(typingTimer);
-          });
-
-          $(document).ready(function() {
-            $('#username').on('blur', doneTyping);
-          });
-
-          //user is "finished typing," do something
-          function doneTyping () {
-              var data = {username: $('#username').val()};
-
-              $.post('/check-username', data, function(result) {
-                if (result.success) {
-                  $('#username-availability').html('<span class="deep-green">'+result.message+'</span>');
-                } else if (result.error) {
-                  $('#username-availability').html('<span class="deep-red">'+result.message+'</span>');
-                } else {
-                  // alert('เกิดข้อผิดพลาด');
-                }
-              });
-          }
-			</script> --}}
+			
 		</div>
 		<!-- /.col -->
 	</div>

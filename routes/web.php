@@ -118,7 +118,7 @@ Route::group(['middleware'=>['auth','user']], function () {
          Route::group(['middleware'=>['auth','admin']], function () {
             Route::get('/', 'Members\FormController@index');
              Route::get('/members/create', 'Members\MemberController@create');
-             Route::post('/members', 'Members\MemberController@store')->name('members.store');
+             Route::post('/members/store', 'Members\MemberController@store');
              Route::get('/members/edit', 'Members\MemberController@edit');
              Route::post('/members/{id}/edit', 'Members\MemberController@update');
              ////////////////////////////////////////////////////////////////////////

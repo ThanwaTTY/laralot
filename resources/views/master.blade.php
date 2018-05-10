@@ -102,15 +102,15 @@
 
 @yield('footer')
 <script>
-$(function(){
-  var li = $('a[href="'+location.pathname+'"]').parent();
-  li.addClass('active');
+  $(function(){
+    var li = $('a[href="'+location.pathname+'"]').parent();
+    li.addClass('active');
 
-  li.parent().parent().addClass('active');
+    li.parent().parent().addClass('active');
 
-  li.parent().parent().parent().parent().addClass('active');
-  li.parent().parent().parent().parent().parent().parent().addClass('active');
-})
+    li.parent().parent().parent().parent().addClass('active');
+    li.parent().parent().parent().parent().parent().parent().addClass('active');
+  })
 </script>
 
 
@@ -422,6 +422,16 @@ $(function(){
 <script src="/dist/js/demo.js"></script>
 
 
+<script>
+				$('#btn-submit-create').on('click', function () {
+				
+            $.post('/members/store', $('#create-user-form').serialize()).done(function (data) {
 
+							console.log(data);
+							
+							});
+					
+				});
+</script>
 </body>
 </html>
