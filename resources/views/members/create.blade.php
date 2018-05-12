@@ -1,68 +1,9 @@
-@extends('master') @section('head')
-<!-- Bootstrap 3.3.6 -->
-<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<!-- Ionicons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<!-- daterange picker -->
-<link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
-<!-- bootstrap datepicker -->
-<link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
-<!-- iCheck for checkboxes and radio inputs -->
-<link rel="stylesheet" href="/plugins/iCheck/all.css">
-<!-- Bootstrap Color Picker -->
-<link rel="stylesheet" href="/plugins/colorpicker/bootstrap-colorpicker.min.css">
-<!-- Bootstrap time Picker -->
-<link rel="stylesheet" href="/plugins/timepicker/bootstrap-timepicker.min.css">
-<!-- Select2 -->
-<link rel="stylesheet" href="../../plugins/select2/select2.min.css">
-<!-- Theme style -->
-<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
 
 <style>
 	.alert {
 		color: #333!important;
 	}
-	/*.sidebar .sidebar-shortcuts-large {
-        line-height: 45px;
-    }
-    .bot-margin-3 {
-        margin-bottom: 13px !important;
-        margin-left: 18px !important;
-        border-button: 2px;
-    }
-
-    .bot-margin-3 i {
-        font-size: 28px;
-    }
-
-     .nav-tabs-custom>.nav-tabs>li>a {
-    color: #fff;
-    border-radius: 0;
-    }*/
 </style>
-<link rel="stylesheet" href="/css/custom2.css"> @endsection @section('footer')
-<!-- jQuery 2.2.3 -->
-<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="/bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="/plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="/plugins/datatables/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="/plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="/dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="/dist/js/demo.js"></script>
-
-<script src="/js/custom.js"></script>
 <script>
 	$(function(){
     $('#credit').on("keyup", function(){
@@ -78,17 +19,71 @@
   });
 
 </script>
-{{--
-<script src="/plugins/jQuery/jquery-2.2.3.min.js"></script>
-<script src="/plugins/input-mask/jquery.inputmask.js"></script>
-
 <script>
-	$(function () {
-    //Money Euro
-    $("[data-mask]").inputmask();
-  });
 
-</script> --}} @endsection @section('content')
+    $("#info").hide();
+    $("#success").hide();
+    $("#error").hide();
+
+    
+
+		$('#btn-submit-create').on('click', function () {
+ 
+		$("#info").hide();
+		$("#success").hide();
+		$("#error").hide();
+	
+        $("#crediterror").hide();
+        $("#usernameerror").hide();
+        $("#passworderror").hide();
+        $("#nameerror").hide();
+		$("#phoneerror").hide();
+		
+        var credit = $("#credit").val();
+        var username = $("#username").val();
+        var password = $("#password").val();
+        var name = $("#name").val();
+		var phone = $("#phone").val();
+		
+        if(credit == ''){
+          $('#error').show();
+          $('#crediterror').show();
+          $("#credit").focus();
+          
+        }if(username == ''){
+          $('#error').show();
+          $("#usernameerror").show();
+          $("#username").focus();
+          
+        }if(password == ''){
+          $('#error').show();
+          $("#passworderror").show();
+          $("#password").focus();
+          
+        }if(name == ''){
+          $('#error').show();
+          $("#nameerror").show();
+          $("#name").focus();
+          
+        }if(phone == ''){
+          $('#error').show();
+          $("#phoneerror").show();
+          $("#phone").focus();
+          
+        }
+            $.post('/members/store', $('#create-user-form').serialize()).done(function (data) {
+
+			console.log(data);
+              
+              $('#success').show();
+               $("#level").focus();
+              });
+              
+					
+        });
+      
+       
+</script>
 <div class="breadcrumbs">
 	<ul id="breadcrumbs" class="breadcrumb">
 		<li>
@@ -119,22 +114,19 @@
 				<h1>1. เพิ่มสมาชิก</h1>
 			</div>
 
-			<div class="alert alert-info hidden" id="info">กำลังโหลด...</div>
-			<div class="alert alert-success hidden" id="success"></div>
-			@if($errors->all())
-			<div class="alert alert-danger" id="error" style="">
-				@foreach($errors->all() as $message) {{ $message }}. <br> @endforeach
+			<div class="alert alert-info " id="info">กำลังโหลด...</div>
+			<div class="alert alert-success " id="success">บันทึกข้อมูลสมาชิก สำเร็จค่ะ</div>
+			
+			<div class="alert alert-danger " id="error" style="">
+				<span id="crediterror">กรุณา ใส่จำนวนเครดิต</span><br>
+				<span id="usernameerror">กรุณา ใส่ชื่อผู้ใช้</span><br>
+				<span id="passworderror">กรุณา ใส่รหัสผ่าน</span><br>
+				<span id="nameerror">กรุณา ใส่ชื่อ-นามสกุล</span><br>
+				<span id="phoneerror">กรุณา ใส่เบอร์โทร</span><br>
 			</div>
-			{{--
-			<div class="box-body">
-				<div class="alert alert-warning alert-dismissible">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
-					<h4><i class="icon fa fa-warning"></i> Alert!</h4>
-					@foreach($errors->all() as $message) {{ $message }}. <br> @endforeach
-				</div>
-			</div> --}} @endif
+			
 
-			<form  id="create-user-form" class="form-horizontal">
+			<form  id="create-user-form" class="form-horizontal" onsubmit="return chk_form()">
 			 {{ csrf_field() }}
 				<div class="widget-box widget-color-blue2 width-1100 max-width-1100">
 					<div class="widget-header">
@@ -209,7 +201,7 @@
 								<div class="has-feedback{{ $errors->has('credit') ? ' has-error' : '' }}">
 									<label for="credit" class="control-label col-xs-1">เครดิต:</label>
 									<div class="col-xs-3">
-										<input class="form-control" id="credit" name="credit" type="text" data-limit="{{ $credit }}" value="{{ old('credit') }}">
+										<input class="form-control credit" id="credit" name="credit" type="text" data-limit="{{ $credit }}" value="{{ old('credit') }}">
 										<p style="color:red">{{ $errors->first('credit') }}</p>
 									</div>
 									<span class="help-inline col-xs-2">
@@ -693,4 +685,3 @@
 	<!-- /.row -->
 </div>
 
-@endsection

@@ -72,7 +72,7 @@
            <ul class="treeview-menu">
             <li><a href="#" class"listlotpoint" id="listlotpoint"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
             <li><a href="#" class"listlotuser" id="listlotuser"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
-            <li><a href="#" class"listresult" id="listresult"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
+            <li id="listresultlink"><a href="#" class"listresult" id="listresult"><i class="fa fa-circle-o active"></i> รอผลเดิมพัน</a></li>
             <li><a href="#" class"settingof" id="settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
             <li><a href="#" class"settingtype" id="settingtype"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
             <li><a href="#" class"cancellot" id="cancellot"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
@@ -87,7 +87,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/members/create"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
+            <li><a href="#" class"createmember" id="createmember"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
             <li><a href="/members/edit"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
             <li><a href="/user/high-low-number"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
             <li><a href="/user/commission"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>

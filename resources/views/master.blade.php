@@ -84,7 +84,7 @@
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper  table-responsive listresult listlotpoint listlotuser settingof settingtype cancellot memberonline listkeep 
-  chitmanagement settinguser userreport winlossreport jackpot resultjackpot manage-balance history">
+  chitmanagement settinguser userreport winlossreport jackpot resultjackpot manage-balance history createmember">
 @yield('content')
   </div>
   <!-- /.content-wrapper -->
@@ -115,9 +115,11 @@
 
 
   <script type="text/javascript">
-			$('#listresult').on('click',function(){				
+  
+			$('#listresult').on('click',function(){			
+        	  $('#listresultlink').addClass('active');
         $.get("{{ URL::to('/listlottery/listresult') }}",function(data){
-          
+        
           $('.listresult').empty().html(data);
           
         });
@@ -155,6 +157,13 @@
         $.get("{{ URL::to('/listlottery/cancellot') }}",function(data){
 
           $('.cancellot').empty().html(data);
+        });
+      });
+
+      $('#createmember').on('click', function(){
+        $.get(" {{ URL::to('/members/create') }} " ,function(data){
+
+          $('.createmember').empty().html(data);
         });
       });
 
@@ -421,17 +430,7 @@
   
 <script src="/dist/js/demo.js"></script>
 
+  
 
-<script>
-				$('#btn-submit-create').on('click', function () {
-				
-            $.post('/members/store', $('#create-user-form').serialize()).done(function (data) {
-
-							console.log(data);
-							
-							});
-					
-				});
-</script>
 </body>
 </html>
