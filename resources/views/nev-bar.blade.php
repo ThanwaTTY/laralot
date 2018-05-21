@@ -70,12 +70,12 @@
             </span>
           </a>
            <ul class="treeview-menu">
-            <li><a href="#" class"listlotpoint" id="listlotpoint"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
-            <li><a href="#" class"listlotuser" id="listlotuser"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
-            <li id="listresultlink"><a href="#" class"listresult" id="listresult"><i class="fa fa-circle-o active"></i> รอผลเดิมพัน</a></li>
-            <li><a href="#" class"settingof" id="settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
-            <li><a href="#" class"settingtype" id="settingtype"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
-            <li><a href="#" class"cancellot" id="cancellot"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
+            <li id="listlotpointlink"><a href="#"  id="listlotpoint"><i class="fa fa-circle-o"></i> ดูของรวม / คาดคะเนได้เสีย</a></li>
+            <li id="listlotuserlink"><a href="#"  id="listlotuser"><i class="fa fa-circle-o"></i> ดูของ สมาชิก/ประเภท</a></li>
+            <li id="listresultlink"><a href="#"  id="listresult"><i class="fa fa-circle-o"></i> รอผลเดิมพัน</a></li>
+            <li id="settingoflink"><a href="#"  id="settingof"><i class="fa fa-circle-o"></i> ตั้งค่าการรับของ</a></li>
+            <li id="settingtypelink"><a href="#"  id="settingtype"><i class="fa fa-circle-o"></i> ตั้งค่ารับของแยกตามชนิด</a></li>
+            <li id="cancellotlink"><a href="#"  id="cancellot"><i class="fa fa-circle-o"></i> ยกเลิก โพย/รายการแทง</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -87,13 +87,13 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#" class"createmember" id="createmember"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
-            <li><a href="/members/edit"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
+            <li id="creatememberlink"><a href="#"  id="createmember"><i class="fa fa-circle-o"></i> เพิ่มสมาชิก</a></li>
+            <li><a href="#" id="membersedit"><i class="fa fa-circle-o"></i> ข้อมูลทั่วไป/เก็บของ</a></li>
             <li><a href="/user/high-low-number"><i class="fa fa-circle-o"></i> ขั้นต่ำ/สูงสุด/สูงสุดต่อเลข</a></li>
             <li><a href="/user/commission"><i class="fa fa-circle-o"></i> อัตราจ่าย/คอมมิชชั่น</a></li>
             <li><a href="/user/open-close-lottery"><i class="fa fa-circle-o"></i> เปิด-ปิด หวย/อัตราจ่าย</a></li>
-            <li><a href="#" class"memberonline" id="memberonline"><i class="fa fa-circle-o"></i> สมาชิกออนไลน์</a></li>
-            <li><a href="#" class"listkeep" id="listkeep"><i class="fa fa-circle-o"></i> รายการเก็บของ / อั้น</a></li>
+            <li id="memberonlinelink"><a href="#"  id="memberonline"><i class="fa fa-circle-o"></i> สมาชิกออนไลน์</a></li>
+            <li id="listkeeplink"><a href="#" id="listkeep"><i class="fa fa-circle-o"></i> รายการเก็บของ / อั้น</a></li>
           </ul>
         </li>
        
@@ -106,8 +106,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#" class"chitmanagement" id="chitmanagement"><i class="fa fa-circle-o"></i> จัดการโพย</a></li>
-            <li><a href="#" class"settinguser" id="settinguser"><i class="fa fa-circle-o"></i> ตั้งค่าสมาชิก</a></li>
+            <li id="chitmanagementlink"><a href="#"  id="chitmanagement"><i class="fa fa-circle-o"></i> จัดการโพย</a></li>
+            <li id="settinguserlink"><a href="#"  id="settinguser"><i class="fa fa-circle-o"></i> ตั้งค่าสมาชิก</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -118,10 +118,10 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#" class"userreport" id="userreport"><i class="fa fa-circle-o"></i> แพ้-ชนะ สมาชิก/ประเภท</a></li>
-            <li><a href="#" class"winlossreport" id="winlossreport"><i class="fa fa-circle-o"></i> แพ้-ชนะ สุทธิ</a></li>
-            <li><a href="#" class"jackpot" id="jackpot"><i class="fa fa-circle-o"></i> รายการที่ถูกรางวัล</a></li>
-            <li><a href="#" class"resultjackpot" id="resultjackpot"><i class="fa fa-circle-o"></i> ผลการออกรางวัล</a></li>
+            <li id="userreportlink"><a href="#"  id="userreport"><i class="fa fa-circle-o"></i> แพ้-ชนะ สมาชิก/ประเภท</a></li>
+            <li id="winlossreportlink"><a href="#"  id="winlossreport"><i class="fa fa-circle-o"></i> แพ้-ชนะ สุทธิ</a></li>
+            <li id="jackpotlink"><a href="#"  id="jackpot"><i class="fa fa-circle-o"></i> รายการที่ถูกรางวัล</a></li>
+            <li id="resultjackpotlink"><a href="#"  id="resultjackpot"><i class="fa fa-circle-o"></i> ผลการออกรางวัล</a></li>
           </ul>
         </li>
         <li class="treeview">
@@ -132,8 +132,8 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#" class"manage-balance" id="manage-balance"><i class="fa fa-circle-o"></i> จัดการยอด</a></li>
-            <li><a href="#" class"history" id="history"><i class="fa fa-circle-o"></i> ประวัติการเงิน</a></li>
+            <li id="manage-balancelink"><a href="#"  id="manage-balance"><i class="fa fa-circle-o"></i> จัดการยอด</a></li>
+            <li id="historylink"><a href="#"  id="history"><i class="fa fa-circle-o"></i> ประวัติการเงิน</a></li>
           </ul>
         </li>
 				@if(auth()->user()->helper == 0)
@@ -175,7 +175,7 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="/datelotto/create"><i class="fa fa-circle-o"></i> เพิ่มงวดหวย</a></li>
+            <li id="datelottolink"><a href="#" id="datelotto"><i class="fa fa-circle-o"></i> เพิ่มงวดหวย</a></li>
           </ul>
         </li>
       </ul>

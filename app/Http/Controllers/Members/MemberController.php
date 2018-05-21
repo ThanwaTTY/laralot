@@ -732,7 +732,7 @@ class MemberController extends Controller
         
         if( request()->ajax() )
         {
-            return view('members/table', compact('member'));
+            return view('members/edit', compact('member'));
         }
 
         return view('members/edit', compact('member') );
@@ -756,14 +756,15 @@ class MemberController extends Controller
         return $query->get();        
     }
 
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
+
+        $data_request = $request->all();
+        return response()->json([
+            'data_request'=>$data_request,
+        ]);
             $members = Member::find($id);
-            // dd($members->name);
-            // $members = Member::where('id', $members->id)->first();
-            //dd($members);
-            // dd(request('password'));
-            // dd($request->password);
+        
         if (request('name')) {
             $members->name = request('name');
         }

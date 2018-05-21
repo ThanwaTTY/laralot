@@ -120,7 +120,7 @@ Route::group(['middleware'=>['auth','user']], function () {
              Route::get('/members/create', 'Members\MemberController@create');
              Route::post('/members/store', 'Members\MemberController@store');
              Route::get('/members/edit', 'Members\MemberController@edit');
-             Route::post('/members/{id}/edit', 'Members\MemberController@update');
+             Route::get('/members/edit/update', 'Members\MemberController@update');
              ////////////////////////////////////////////////////////////////////////
              Route::get('/helper/create', 'Members\HelperController@create');
              Route::post('/helper', 'Members\HelperController@store')->name('helper.store');

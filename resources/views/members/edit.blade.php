@@ -1,51 +1,26 @@
-@extends('master') @section('head')
-<!-- Bootstrap 3.3.6 -->
-<link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
-<!-- Ionicons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
-<!-- daterange picker -->
-<link rel="stylesheet" href="/plugins/daterangepicker/daterangepicker.css">
-<!-- bootstrap datepicker -->
-<link rel="stylesheet" href="/plugins/datepicker/datepicker3.css">
-<!-- iCheck for checkboxes and radio inputs -->
-<link rel="stylesheet" href="/plugins/iCheck/all.css">
-<!-- Bootstrap Color Picker -->
-<link rel="stylesheet" href="/plugins/colorpicker/bootstrap-colorpicker.min.css">
-<!-- Bootstrap time Picker -->
-<link rel="stylesheet" href="/plugins/timepicker/bootstrap-timepicker.min.css">
-<!-- Select2 -->
-<link rel="stylesheet" href="../../plugins/select2/select2.min.css">
-<!-- Theme style -->
-<link rel="stylesheet" href="../../dist/css/AdminLTE.min.css">
-<!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-<link rel="stylesheet" href="/dist/css/skins/_all-skins.min.css">
-<link rel="stylesheet" href="/css/custom2.css">
+
 <style>
 	.hiddenButton {
 		display: none;
 	}
 </style>
-@endsection @section('footer')
-<!-- jQuery 2.2.3 -->
-<script src="../../plugins/jQuery/jquery-2.2.3.min.js"></script>
-<!-- Bootstrap 3.3.6 -->
-<script src="../../bootstrap/js/bootstrap.min.js"></script>
-<!-- DataTables -->
-<script src="../../plugins/datatables/jquery.dataTables.min.js"></script>
-<script src="../../plugins/datatables/dataTables.bootstrap.min.js"></script>
-<!-- SlimScroll -->
-<script src="../../plugins/slimScroll/jquery.slimscroll.min.js"></script>
-<!-- FastClick -->
-<script src="../../plugins/fastclick/fastclick.js"></script>
-<!-- AdminLTE App -->
-<script src="../../dist/js/app.min.js"></script>
-<!-- AdminLTE for demo purposes -->
-<script src="../../dist/js/demo.js"></script>
+
 <script src="../../js/jscustom.js"></script>
-@endsection @section('content') @if($errors->all())
+
+<script>
+	$('.btn-submit-general').on('click',function(){
+		var idmember = $(this).data("id");
+		var name = $("#name_"+idmember).val();
+		var phone = $("#phone_"+idmember).val();
+		// console.log(idmember);
+		$.get('/members/edit/update',{idmember,name,phone}).done(function (data) {
+			console.log(data);
+		});
+
+	});
+</script>
+
+@if($errors->all())
 <div class="box-body">
 	<div class="alert alert-warning alert-dismissible">
 		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
@@ -142,7 +117,7 @@
 
 							<tbody>
 								@foreach($member as $members)
-								<form action="/members/{{$members->id}}/edit" method="post">
+								<form id="updategeneral_{{$members->id}}">
 									{{ csrf_field() }}
 									<tr data-parent-id="9306" data-member-id="{{$members->id}}" data-status="{{ $members->status }}" class="@if($members->status==1) {{'jquery-hide bg-warning'}} @elseif($members->status==2) {{'jquery-hide bg-danger'}} @endif">
 										<td class="ac">{{$members->id}}</td>
@@ -174,7 +149,7 @@
 										</td>
 										<td class="control child-hidden">
 											<div id="button_{{ $members->id }}" class="hiddenButton">
-												<button class="btn-save btn btn-xs btn-success no-border" type="submit"><i class="ace-icon fa fa-check"></i></button>
+												<button class="btn-save btn btn-xs btn-success no-border btn-submit-general" type="button" id="" data-id="{{ $members->id }}"><i class="ace-icon fa fa-check"></i></button>
 												<button class="btn-cancel btn btn-xs btn-danger no-border" type="cancel"><i class="ace-icon fa fa-times"></i></button>
 											</div>
 										</td>
@@ -291,4 +266,3 @@
 	</div>
 	<!-- /.page-content -->
 
-	@endsection
